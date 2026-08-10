@@ -350,7 +350,7 @@ export interface EndingResult {
   endingFamily?: string
   resolution?: EndingResolution
   secretOverlay?: SecretEndingOverlay
-  keyHistory?: Array<{ label: string; detail: string; stage?: string; causalReason?: string; producer?: string; provenance?: { eventType?: string; conversationId?: string; nodeId?: string; choiceId?: string } }>
+  keyHistory?: Array<{ label: string; detail: string; stage?: string; causalReason?: string; producer?: string; provenance?: { eventType?: string; conversationId?: string; nodeId?: string; choiceId?: string; authoredAssetId?: string; authoredSelector?: string } }>
   epilogues?: string[]
   epilogueProvenance?: Array<{ assetId: string; moduleId?: ModuleId; selector: string }>
 }

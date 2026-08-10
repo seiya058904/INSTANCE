@@ -1,5 +1,6 @@
 import type { ConversationDefinition, DecisionId, Mutation, StoryChoice } from '../../game/types'
 import decisionBindingRegistry from './decisionBindings.registry.json'
+import intendedRoleBindingRegistry from './intendedRoleBindings.registry.json'
 import { isDecisionValue } from './stateRegistry'
 
 export interface DecisionBinding {
@@ -106,11 +107,19 @@ function worldMutationsForBinding(binding: DecisionBinding): Mutation[] {
   return mutations
 }
 
-export const DECISION_BINDINGS: readonly DecisionBinding[] = decisionBindingRegistry.map((binding) => ({ ...binding, decisionId: binding.decisionId as DecisionId, worldEffects: [`world.history.${binding.decisionId}`], capabilityEffects: [], callbackProducer: binding.assetId, callbackConsumer: 'runtime.applyDecisionBinding' }))
+const approvedBindingRegistry = [
+  ...decisionBindingRegistry,
+  ...intendedRoleBindingRegistry.map((binding) => ({ ...binding, decisionId: 'aster_intended_role', historyEvent: 'history.aster.intended_role' })),
+]
+export const DECISION_BINDINGS: readonly DecisionBinding[] = approvedBindingRegistry.map((binding) => ({ ...binding, decisionId: binding.decisionId as DecisionId, worldEffects: [`world.history.${binding.decisionId}`], capabilityEffects: [], callbackProducer: binding.assetId, callbackConsumer: 'runtime.applyDecisionBinding' }))
 const bindingByKey = new Map(DECISION_BINDINGS.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`, binding]))
 
 export function decisionBindingsForConversation(conversation: ConversationDefinition): DecisionBinding[] {
-  return collect(conversation).map((binding) => bindingByKey.get(`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`) ?? binding)
+  return collect(conversation).map((binding) => {
+    const approved = bindingByKey.get(`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`)
+    if (!approved) throw new Error(`missing explicit binding ${binding.assetId}:${binding.nodeId}:${binding.choiceId}`)
+    return approved
+  })
 }
 
 export function validateDecisionBindings(conversation: ConversationDefinition): string[] {
@@ -137,6 +146,7 @@ export function decisionMutationsForChoice(conversation: ConversationDefinition,
   const assetId = conversation.sourceRefs[0] ?? ''
   const node = conversation.nodes.find((candidate) => candidate.choices.some((item) => item.id === choice.id))
   const binding = node ? bindingByKey.get(`${assetId}:${node.id}:${choice.id}`) : undefined
+  if (choice.decisionBinding && !binding) throw new Error(`missing explicit binding ${assetId}:${node?.id ?? 'unknown'}:${choice.id}`)
   if (!binding) return []
   return [
     { type: 'decision.set', decisionId: binding.decisionId, value: binding.canonicalValue },

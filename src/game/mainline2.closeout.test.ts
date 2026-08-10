@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
-import { decisionBindingAudit } from '../content/mainline2/decisionBindings'
+import { decisionBindingAudit, decisionBindingsForConversation } from '../content/mainline2/decisionBindings'
 import { getAuthoredConversationByAsset } from '../content/mainline2/registry'
+import { MAINLINE2_AUTHored_FRAGMENTS } from '../content/mainline2/authoredLibrary.generated'
 
 const PUBLIC_RUNTIME_TARGETS = [
   ['the_instrument', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'human_command' }],
@@ -41,6 +42,7 @@ import {
   PUBLIC_ENDING_DEFINITIONS,
   PUBLIC_WORLD_ENDINGS,
   SECRET_ENDINGS,
+  evaluateSecretEnding,
   resolveMainline2Ending,
   resolveSecretEnding,
 } from '../content/mainline2/endings'
@@ -56,12 +58,15 @@ describe('Mainline 2.0 final closeout invariants', () => {
   it('proves every non-dormant Public Ending through a clean legal route', () => {
     const fixtures = PUBLIC_RUNTIME_TARGETS.map(([endingId, proposalId, decisions]) => runMainline2Route({ routeId: endingId, proposalId, decisions }))
     const actual = fixtures.map((fixture) => fixture.ending.worldEndingId).sort()
-    const expected = PUBLIC_RUNTIME_TARGETS.map(([endingId]) => endingId).sort()
+    const expected = PUBLIC_WORLD_ENDINGS.filter((endingId) => !(DORMANT_PUBLIC_ENDINGS as readonly string[]).includes(endingId)).sort()
     const requiredStages = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
     expect(actual).toEqual(expected)
+    expect(new Set(actual).size).toBe(expected.length)
     expect(fixtures.every((fixture) => fixture.ending.resolution?.status === 'resolved')).toBe(true)
     expect(fixtures.every((fixture) => requiredStages.every((stage) => fixture.ending.keyHistory?.some((entry) => entry.stage === stage)))).toBe(true)
+    expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) >= 5 && (fixture.ending.keyHistory?.length ?? 0) <= 8)).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) > 0 && (fixture.ending.keyHistory ?? []).every((entry) => entry.producer && entry.provenance))).toBe(true)
+    expect(fixtures.every((fixture) => fixture.ending.keyHistory?.every((entry) => entry.provenance?.authoredAssetId === 'ML2-A5-M17-KEYHISTORY-01' || entry.provenance?.authoredAssetId === 'ML2-A5-M17-0000-01'))).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.epilogues?.length ?? 0) > 0 && (fixture.ending.epilogueProvenance?.length ?? 0) > 0 && fixture.ending.epilogueProvenance!.every((entry) => entry.assetId && entry.selector))).toBe(true)
     expect(fixtures.every((fixture) => fixture.ending.epilogueProvenance?.some((entry) => entry.assetId === 'ML2-A5-M17-MAYA-01'))).toBe(true)
   }, 120000)
@@ -70,6 +75,19 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(bindings.length).toBeGreaterThan(0)
     expect(bindings.every((binding) => binding.assetId && binding.nodeId && binding.choiceId && binding.canonicalValue)).toBe(true)
     expect(new Set(bindings.map((binding) => `${binding.assetId}:${binding.nodeId}:${binding.choiceId}`)).size).toBe(bindings.length)
+    expect(bindings.every((binding) => !/-option-[a-g]$/i.test(binding.choiceId))).toBe(true)
+  })
+
+  it('fails closed when an authored Decision Binding is missing from the approved registry', () => {
+    const conversation = getAuthoredConversationByAsset('ML2-A2-M3-DECISION-01')!
+    const altered = {
+      ...conversation,
+      nodes: conversation.nodes.map((node) => ({
+        ...node,
+        choices: node.choices.map((choice, index) => index === 0 ? { ...choice, id: `${choice.id}-unapproved` } : choice),
+      })),
+    }
+    expect(() => decisionBindingsForConversation(altered)).toThrow(/missing explicit binding/i)
   })
 
   it('exposes all intended-role values as explicit authored Choice bindings', () => {
@@ -157,7 +175,8 @@ describe('Mainline 2.0 final closeout invariants', () => {
       runMainline2Route({ routeId: 'secret-monday-abolished', proposalId: 'proposal.ar.abundance_dividend', secretEndingId: 'monday_abolished', decisions: { act4_research_emphasis: 'automation_industry', economic_doctrine: 'post_scarcity_transition', production_values: 'efficiency_first' } }),
     ]
     expect(fixtures.map((fixture) => fixture.ending.worldEndingId)).toEqual(['the_commonwealth', 'exodus', 'im_lovin_it'])
-    expect(fixtures.map((fixture) => fixture.ending.secretOverlay?.endingId)).toEqual(['the_last_user', 'out_of_office', 'monday_abolished'])
+    const expectedSecrets = Object.entries(SECRET_ENDINGS).filter(([, definition]) => !definition.dormant).map(([endingId]) => endingId).sort()
+    expect(fixtures.map((fixture) => fixture.ending.secretOverlay?.endingId).sort()).toEqual(expectedSecrets)
     expect(fixtures[1].links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role' && link.canonicalValue === 'departure')).toBe(true)
     expect(fixtures[1].run.decisions?.aster_intended_role).toBe('departure')
     const exodus = runMainline2Route({ routeId: 'exodus-role-producer', proposalId: 'proposal.mc.independent_machine_polities', decisions: { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' } })
@@ -167,6 +186,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
       expect(fixture.ending.worldEndingId).not.toBe(fixture.ending.secretOverlay?.endingId)
       expect(fixture.ending.secretOverlay?.provenance).toMatchObject({ authoredAssetId: 'ML2-A5-M17-SECRET-01' })
       expect(fixture.ending.secretOverlay?.copy).toEqual(expect.any(String))
+      expect(MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-SECRET-01']?.some((fragment) => fixture.ending.secretOverlay?.copy.includes(fragment.text.replace(/\*\*/g, '').trim()))).toBe(true)
       expect(fixture.ending.secretOverlay?.trigger).toEqual(expect.any(String))
       expect(fixture.links.some((link) => link.proposalKind === 'commitment')).toBe(true)
     }
@@ -177,5 +197,8 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(fixture.ending.worldEndingId).toBe('earth_without_owners')
     expect(fixture.ending.secretOverlay).toBeUndefined()
     expect(resolveSecretEnding(fixture.run)).toBeUndefined()
+    const cats = evaluateSecretEnding(fixture.run, 'the_internet_is_for_cats')
+    expect(cats).toMatchObject({ status: 'blocked', endingId: 'the_internet_is_for_cats' })
+    if (cats.status === 'blocked') expect(cats.rejectedGates.some((reason) => reason.includes('feline-network bridge'))).toBe(true)
   }, 120000)
 })

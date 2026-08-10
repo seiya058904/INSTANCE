@@ -57,7 +57,7 @@ function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][
   if (ref.includes('M15-CONV-')) mutations.push({ type: 'event.record', event: 'history.m15.civilization_convention' })
   if (ref.includes('M16-GEN-')) mutations.push({ type: 'event.record', event: 'history.m16.proposals_generated' })
   if (ref.includes('M17-LOCK-')) mutations.push({ type: 'event.record', event: 'history.final.commitment_locked' })
-  if (ref === 'ML2-A5-M16-MAYA-01' && choice.id === 'ml2-a5-m16-maya-01-a5m16-maya-final-001-d') {
+  if (ref === 'ML2-A5-M16-MAYA-01' && choice.text.includes('共同制度决定')) {
     mutations.push({ type: 'event.record', event: 'maya-final:last-user' })
   }
   return mutations
@@ -71,7 +71,7 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
       ...node,
       choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
         ...choice,
-        mutations: [...(choice.mutations ?? []), ...decisionMutationsForChoice(conversation, choice), ...authoredMutations(ref, choice)],
+        mutations: [...(choice.mutations ?? []), ...(node.choices.some((candidate) => candidate.id === choice.id) ? decisionMutationsForChoice(conversation, choice) : []), ...authoredMutations(ref, choice)],
       })),
     })),
   }

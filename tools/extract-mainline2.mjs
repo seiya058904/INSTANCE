@@ -11,9 +11,11 @@ const nodeHeader = /^(?:##|###) Node `([^`]+)`/
 // The handoff uses `Choice` for ordinary authored nodes and `Option` for
 // major-decision assets. Both are authored choices and must remain distinct
 // in the typed runtime library.
-const choiceHeader = /^#{2,3} (?:Choice|Option) ([A-G])(?: — (.*))?/i
+// The presentation letter is syntax only. Choice identity comes from the
+// approved text-hash binding or the authored text hash fallback below.
+const choiceHeader = /^#{2,3} (?:Choice|Option) [A-G](?: — (.*))?/i
 const decisionBindingRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/decisionBindings.registry.json'), 'utf8'))
-const decisionBindingByKey = new Map(decisionBindingRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`, binding]))
+const decisionBindingByTextKey = new Map(decisionBindingRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceTextHash}`, binding]))
 
 function authoredTextHash(value) {
   let hash = 2166136261
@@ -21,11 +23,16 @@ function authoredTextHash(value) {
   return (hash >>> 0).toString(16).padStart(8, '0')
 }
 
-function decisionBinding(assetId, nodeId, choiceId, text) {
-  const binding = decisionBindingByKey.get(`${assetId}:${nodeId}:${choiceId}`)
+function decisionBinding(assetId, nodeId, text) {
+  const binding = decisionBindingByTextKey.get(`${assetId}:${nodeId}:${authoredTextHash(text)}`)
   if (!binding) return undefined
-  if (binding.choiceTextHash !== authoredTextHash(text)) throw new Error(`Decision binding fingerprint mismatch: ${assetId}:${nodeId}:${choiceId}`)
+  if (binding.choiceTextHash !== authoredTextHash(text)) throw new Error(`Decision binding fingerprint mismatch: ${assetId}:${nodeId}:${binding.choiceId}`)
   return binding
+}
+
+function stableChoiceId(assetId, nodeId, text, binding) {
+  if (binding) return binding.choiceId.replace(/-option-[a-g]$/i, `-${safe(binding.canonicalValue)}`)
+  return `${safe(assetId)}-${safe(nodeId)}-${authoredTextHash(text)}`
 }
 
 function cleanQuote(lines) {
@@ -50,10 +57,12 @@ function firstQuote(lines, start, end) {
 }
 
 function authoredFragments(lines, assetId) {
-  if (!/M17-(?:EPI|0000|SECRET|MAYA)/i.test(assetId)) return []
+  if (!/M17-(?:EPI|0000|SECRET|MAYA|KEYHISTORY)/i.test(assetId)) return []
   const fragments = []
   let heading = assetId
   let mayaSection
+  let keyHistoryIndex = 0
+  const keyHistorySelectors = ['ACT I', 'ACT II', 'ACT III', 'ACT IV capability', 'ACT IV political', 'Final Commitment']
   for (let index = 0; index < lines.length; index += 1) {
     const headingMatch = lines[index].match(/^#{1,4}\s+(.+)$/)
     if (headingMatch) heading = headingMatch[1].replace(/`/g, '').trim()
@@ -65,8 +74,29 @@ function authoredFragments(lines, assetId) {
     const quote = []
     while (index < lines.length && lines[index].startsWith('>')) quote.push(lines[index++])
     const text = cleanQuote(quote)
-    if (text) fragments.push({ selector: mayaSection ?? heading, text })
+    if (text) {
+      const selector = /M17-KEYHISTORY-01/i.test(assetId)
+        ? (keyHistorySelectors[keyHistoryIndex] ?? heading)
+        : mayaSection ?? heading
+      fragments.push({ selector, text })
+      keyHistoryIndex += 1
+    }
     index -= 1
+  }
+  return fragments
+}
+
+function secretEndingFragments(fullText) {
+  const fragments = []
+  const headings = [...fullText.matchAll(/^# \d+\. Secret Ending — `?([^`\n]+)`?/gm)]
+  for (let index = 0; index < headings.length; index += 1) {
+    const heading = headings[index]
+    const bodyStart = heading.index + heading[0].length
+    const bodyEnd = headings[index + 1]?.index ?? fullText.length
+    const lines = fullText.slice(bodyStart, bodyEnd).split(/\r?\n/)
+    const marker = lines.findIndex((line) => line.trim() === '### Final copy' || line.trim() === '### Possible title reveal')
+    const quoted = marker >= 0 ? firstQuote(lines, marker + 1, lines.length) : ''
+    if (quoted) fragments.push({ selector: 'Final copy', text: quoted })
   }
   return fragments
 }
@@ -85,7 +115,7 @@ function moduleFor(id) {
   return undefined
 }
 
-function parseAsset(file, block, assetId, kind) {
+function parseAsset(file, block, assetId, kind, fullText) {
   const lines = block.split(/\r?\n/)
   const nodes = []
   const nodeStarts = []
@@ -104,8 +134,8 @@ function parseAsset(file, block, assetId, kind) {
       const match = lines[choiceStart].match(choiceHeader)
       const text = firstQuote(lines, choiceStart + 1, choiceEnd)
       if (match && text) {
-        const choiceId = `${safe(assetId)}-${nodeId}-${match[1].toLowerCase()}`
-        const binding = decisionBinding(assetId, nodeId, choiceId, text)
+        const binding = decisionBinding(assetId, nodeId, text)
+        const choiceId = stableChoiceId(assetId, nodeId, text, binding)
         const events = [...lines.slice(choiceStart, choiceEnd).join('\n').matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
         choices.push({
           id: choiceId,
@@ -133,8 +163,8 @@ function parseAsset(file, block, assetId, kind) {
         const optionEnd = optionStarts[c + 1] ?? lines.length
         const match = lines[optionStart].match(choiceHeader)
         const text = firstQuote(lines, optionStart + 1, optionEnd)
-        const choiceId = match ? `${safe(assetId)}-${safe(assetId)}-option-${match[1].toLowerCase()}` : undefined
-        const binding = match && text && choiceId ? decisionBinding(assetId, `${safe(assetId)}-decision`, choiceId, text) : undefined
+        const binding = match && text ? decisionBinding(assetId, `${safe(assetId)}-decision`, text) : undefined
+        const choiceId = match && text ? stableChoiceId(assetId, `${safe(assetId)}-decision`, text, binding) : undefined
         if (match && text) choices.push({
           id: choiceId,
           text,
@@ -158,7 +188,8 @@ function parseAsset(file, block, assetId, kind) {
   }
   const events = [...block.matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
   const firstHeading = lines.find((line) => /^#{1,4} /.test(line) && !nodeHeader.test(line) && !assetHeader.test(line))?.replace(/^#{1,4}\s+/, '').trim()
-  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], fragments: authoredFragments(lines, assetId), nodes }
+  const fragments = assetId === 'ML2-A5-M17-SECRET-01' ? secretEndingFragments(fullText) : authoredFragments(lines, assetId)
+  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], fragments, nodes }
 }
 
 const assets = []
@@ -170,7 +201,7 @@ for (const file of files) {
     const match = matches[index]
     const block = text.slice(match.index, matches[index + 1]?.index ?? text.length)
     const kind = match[0].match(/(?:New|Existing|Conditional|Story-Relevant)/)?.[0] ?? 'New'
-    const asset = parseAsset(file, block, match[1], kind)
+    const asset = parseAsset(file, block, match[1], kind, text)
     if (kind !== 'Existing' && !asset.nodes.length && !match[1].includes('-MOD-')) errors.push(`${file}:${match[1]} has no parseable authored node/choices`)
     assets.push(asset)
   }

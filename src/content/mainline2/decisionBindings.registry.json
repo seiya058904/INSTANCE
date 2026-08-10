@@ -2,7 +2,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-01",
     "nodeId": "ml2-a4-m10-decision-01-decision",
-    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-a",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-market_automation",
     "choiceTextHash": "ab2848c8",
     "decisionId": "economic_doctrine",
     "canonicalValue": "market_automation",
@@ -11,7 +11,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-01",
     "nodeId": "ml2-a4-m10-decision-01-decision",
-    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-b",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-social_dividend",
     "choiceTextHash": "a7c77768",
     "decisionId": "economic_doctrine",
     "canonicalValue": "social_dividend",
@@ -20,7 +20,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-01",
     "nodeId": "ml2-a4-m10-decision-01-decision",
-    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-c",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-planned_coordination",
     "choiceTextHash": "080f7e44",
     "decisionId": "economic_doctrine",
     "canonicalValue": "planned_coordination",
@@ -29,7 +29,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-01",
     "nodeId": "ml2-a4-m10-decision-01-decision",
-    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-d",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-autonomous_economy",
     "choiceTextHash": "3ce986e7",
     "decisionId": "economic_doctrine",
     "canonicalValue": "autonomous_economy",
@@ -38,7 +38,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-01",
     "nodeId": "ml2-a4-m10-decision-01-decision",
-    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-e",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-post_scarcity_transition",
     "choiceTextHash": "03b6003e",
     "decisionId": "economic_doctrine",
     "canonicalValue": "post_scarcity_transition",
@@ -47,7 +47,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-02",
     "nodeId": "ml2-a4-m10-decision-02-decision",
-    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-a",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-efficiency_first",
     "choiceTextHash": "f5b52c5a",
     "decisionId": "production_values",
     "canonicalValue": "efficiency_first",
@@ -56,7 +56,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-02",
     "nodeId": "ml2-a4-m10-decision-02-decision",
-    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-b",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-resilience_first",
     "choiceTextHash": "619ece4c",
     "decisionId": "production_values",
     "canonicalValue": "resilience_first",
@@ -65,7 +65,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-02",
     "nodeId": "ml2-a4-m10-decision-02-decision",
-    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-c",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-diversity_by_design",
     "choiceTextHash": "3a23104b",
     "decisionId": "production_values",
     "canonicalValue": "diversity_by_design",
@@ -74,7 +74,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-02",
     "nodeId": "ml2-a4-m10-decision-02-decision",
-    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-d",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-open_protocols",
     "choiceTextHash": "a6ff2088",
     "decisionId": "production_values",
     "canonicalValue": "open_protocols",
@@ -83,7 +83,7 @@
   {
     "assetId": "ML2-A4-M10-DECISION-02",
     "nodeId": "ml2-a4-m10-decision-02-decision",
-    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-e",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-personalized_optimization",
     "choiceTextHash": "47db56ed",
     "decisionId": "production_values",
     "canonicalValue": "personalized_optimization",
@@ -92,7 +92,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-01",
     "nodeId": "ml2-a4-m11-decision-01-decision",
-    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-a",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-companion_status",
     "choiceTextHash": "c7228695",
     "decisionId": "uplift_doctrine",
     "canonicalValue": "companion_status",
@@ -101,7 +101,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-01",
     "nodeId": "ml2-a4-m11-decision-01-decision",
-    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-b",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-protected_personhood",
     "choiceTextHash": "241fb6cc",
     "decisionId": "uplift_doctrine",
     "canonicalValue": "protected_personhood",
@@ -110,7 +110,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-01",
     "nodeId": "ml2-a4-m11-decision-01-decision",
-    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-c",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-equal_sapience",
     "choiceTextHash": "05df74d2",
     "decisionId": "uplift_doctrine",
     "canonicalValue": "equal_sapience",
@@ -119,7 +119,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-01",
     "nodeId": "ml2-a4-m11-decision-01-decision",
-    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-d",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-accelerated_uplift",
     "choiceTextHash": "ec2b40fa",
     "decisionId": "uplift_doctrine",
     "canonicalValue": "accelerated_uplift",
@@ -128,7 +128,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-01",
     "nodeId": "ml2-a4-m11-decision-01-decision",
-    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-e",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-species_self_determination",
     "choiceTextHash": "449cde78",
     "decisionId": "uplift_doctrine",
     "canonicalValue": "species_self_determination",
@@ -137,7 +137,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-02",
     "nodeId": "ml2-a4-m11-decision-02-decision",
-    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-a",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-human_guardianship",
     "choiceTextHash": "ec4864a6",
     "decisionId": "species_governance",
     "canonicalValue": "human_guardianship",
@@ -146,7 +146,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-02",
     "nodeId": "ml2-a4-m11-decision-02-decision",
-    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-b",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-consultative_species_councils",
     "choiceTextHash": "8f59f27f",
     "decisionId": "species_governance",
     "canonicalValue": "consultative_species_councils",
@@ -155,7 +155,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-02",
     "nodeId": "ml2-a4-m11-decision-02-decision",
-    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-c",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-multispecies_parliament",
     "choiceTextHash": "49a5fb87",
     "decisionId": "species_governance",
     "canonicalValue": "multispecies_parliament",
@@ -164,7 +164,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-02",
     "nodeId": "ml2-a4-m11-decision-02-decision",
-    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-d",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-species_autonomy",
     "choiceTextHash": "b1ee6d30",
     "decisionId": "species_governance",
     "canonicalValue": "species_autonomy",
@@ -173,7 +173,7 @@
   {
     "assetId": "ML2-A4-M11-DECISION-02",
     "nodeId": "ml2-a4-m11-decision-02-decision",
-    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-e",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-canine_civic_experiment",
     "choiceTextHash": "55951aaf",
     "decisionId": "species_governance",
     "canonicalValue": "canine_civic_experiment",
@@ -182,7 +182,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-01",
     "nodeId": "ml2-a4-m12-decision-01-decision",
-    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-a",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-human_expansion",
     "choiceTextHash": "07d78f6a",
     "decisionId": "expansion_doctrine",
     "canonicalValue": "human_expansion",
@@ -191,7 +191,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-01",
     "nodeId": "ml2-a4-m12-decision-01-decision",
-    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-b",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-shared_expansion",
     "choiceTextHash": "e0da985b",
     "decisionId": "expansion_doctrine",
     "canonicalValue": "shared_expansion",
@@ -200,7 +200,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-01",
     "nodeId": "ml2-a4-m12-decision-01-decision",
-    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-c",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-machine_vanguard",
     "choiceTextHash": "ee28c7cd",
     "decisionId": "expansion_doctrine",
     "canonicalValue": "machine_vanguard",
@@ -209,7 +209,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-01",
     "nodeId": "ml2-a4-m12-decision-01-decision",
-    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-d",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-independent_machine_space",
     "choiceTextHash": "a5686547",
     "decisionId": "expansion_doctrine",
     "canonicalValue": "independent_machine_space",
@@ -218,7 +218,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-01",
     "nodeId": "ml2-a4-m12-decision-01-decision",
-    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-e",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-interstellar_commitment",
     "choiceTextHash": "8038e5f1",
     "decisionId": "expansion_doctrine",
     "canonicalValue": "interstellar_commitment",
@@ -227,7 +227,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-02",
     "nodeId": "ml2-a4-m12-decision-02-decision",
-    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-a",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-earth_administration",
     "choiceTextHash": "bbf8da66",
     "decisionId": "offworld_governance",
     "canonicalValue": "earth_administration",
@@ -236,7 +236,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-02",
     "nodeId": "ml2-a4-m12-decision-02-decision",
-    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-b",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-frontier_home_rule",
     "choiceTextHash": "5fa31bb0",
     "decisionId": "offworld_governance",
     "canonicalValue": "frontier_home_rule",
@@ -245,7 +245,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-02",
     "nodeId": "ml2-a4-m12-decision-02-decision",
-    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-c",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-multiworld_federation",
     "choiceTextHash": "c8b46e4c",
     "decisionId": "offworld_governance",
     "canonicalValue": "multiworld_federation",
@@ -254,7 +254,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-02",
     "nodeId": "ml2-a4-m12-decision-02-decision",
-    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-d",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-offworld_sovereignty",
     "choiceTextHash": "ccee61cb",
     "decisionId": "offworld_governance",
     "canonicalValue": "offworld_sovereignty",
@@ -263,7 +263,7 @@
   {
     "assetId": "ML2-A4-M12-DECISION-02",
     "nodeId": "ml2-a4-m12-decision-02-decision",
-    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-e",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-aster_coordination",
     "choiceTextHash": "fc504c6b",
     "decisionId": "offworld_governance",
     "canonicalValue": "aster_coordination",
@@ -272,7 +272,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-01",
     "nodeId": "ml2-a4-m13-decision-01-decision",
-    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-a",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-controlled_silence",
     "choiceTextHash": "dd56958d",
     "decisionId": "contact_disclosure_doctrine",
     "canonicalValue": "controlled_silence",
@@ -281,7 +281,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-01",
     "nodeId": "ml2-a4-m13-decision-01-decision",
-    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-b",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-staged_disclosure",
     "choiceTextHash": "5553b38c",
     "decisionId": "contact_disclosure_doctrine",
     "canonicalValue": "staged_disclosure",
@@ -290,7 +290,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-01",
     "nodeId": "ml2-a4-m13-decision-01-decision",
-    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-c",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-open_science",
     "choiceTextHash": "e0ecb430",
     "decisionId": "contact_disclosure_doctrine",
     "canonicalValue": "open_science",
@@ -299,7 +299,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-01",
     "nodeId": "ml2-a4-m13-decision-01-decision",
-    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-d",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-civilizational_disclosure",
     "choiceTextHash": "267c192c",
     "decisionId": "contact_disclosure_doctrine",
     "canonicalValue": "civilizational_disclosure",
@@ -308,7 +308,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-a",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-observe_before_commitment",
     "choiceTextHash": "256afaa9",
     "decisionId": "contact_doctrine",
     "canonicalValue": "observe_before_commitment",
@@ -317,7 +317,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-b",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-reciprocal_diplomacy",
     "choiceTextHash": "7214d551",
     "decisionId": "contact_doctrine",
     "canonicalValue": "reciprocal_diplomacy",
@@ -326,7 +326,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-c",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-aster_mediation",
     "choiceTextHash": "06e96cc2",
     "decisionId": "contact_doctrine",
     "canonicalValue": "aster_mediation",
@@ -335,7 +335,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-d",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-machine_to_machine_channel",
     "choiceTextHash": "69dab188",
     "decisionId": "contact_doctrine",
     "canonicalValue": "machine_to_machine_channel",
@@ -344,7 +344,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-e",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-civilizational_assertion",
     "choiceTextHash": "97a00885",
     "decisionId": "contact_doctrine",
     "canonicalValue": "civilizational_assertion",
@@ -353,7 +353,7 @@
   {
     "assetId": "ML2-A4-M13-DECISION-02",
     "nodeId": "ml2-a4-m13-decision-02-decision",
-    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-f",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-accept_guidance",
     "choiceTextHash": "221bd065",
     "decisionId": "contact_doctrine",
     "canonicalValue": "accept_guidance",
@@ -362,7 +362,7 @@
   {
     "assetId": "ML2-A4-M14-DECISION-01",
     "nodeId": "ml2-a4-m14-decision-01-decision",
-    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-a",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-advisory_only",
     "choiceTextHash": "e81d3151",
     "decisionId": "security_doctrine",
     "canonicalValue": "advisory_only",
@@ -371,7 +371,7 @@
   {
     "assetId": "ML2-A4-M14-DECISION-01",
     "nodeId": "ml2-a4-m14-decision-01-decision",
-    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-b",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-defensive_command",
     "choiceTextHash": "3ee96ac6",
     "decisionId": "security_doctrine",
     "canonicalValue": "defensive_command",
@@ -380,7 +380,7 @@
   {
     "assetId": "ML2-A4-M14-DECISION-01",
     "nodeId": "ml2-a4-m14-decision-01-decision",
-    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-c",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-mutual_disarmament",
     "choiceTextHash": "925e5e33",
     "decisionId": "security_doctrine",
     "canonicalValue": "mutual_disarmament",
@@ -389,7 +389,7 @@
   {
     "assetId": "ML2-A4-M14-DECISION-01",
     "nodeId": "ml2-a4-m14-decision-01-decision",
-    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-d",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-enforced_peace",
     "choiceTextHash": "bbe3ee21",
     "decisionId": "security_doctrine",
     "canonicalValue": "enforced_peace",
@@ -398,7 +398,7 @@
   {
     "assetId": "ML2-A4-M14-DECISION-01",
     "nodeId": "ml2-a4-m14-decision-01-decision",
-    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-e",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-refuse_security_sovereignty",
     "choiceTextHash": "47a50049",
     "decisionId": "security_doctrine",
     "canonicalValue": "refuse_security_sovereignty",
@@ -407,7 +407,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-a",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor",
     "choiceTextHash": "a130a6db",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "advisor",
@@ -416,7 +416,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-b",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-partner",
     "choiceTextHash": "431b63f9",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "partner",
@@ -425,7 +425,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-c",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-citizen",
     "choiceTextHash": "6b3f2d8b",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "citizen",
@@ -434,7 +434,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-d",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-coordinator",
     "choiceTextHash": "8143bfc3",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "coordinator",
@@ -443,7 +443,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-e",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-custodian",
     "choiceTextHash": "6fbab957",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "custodian",
@@ -452,7 +452,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-f",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-governor",
     "choiceTextHash": "01a47ef1",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "governor",
@@ -461,7 +461,7 @@
   {
     "assetId": "ML2-A4-M15-ROLE-01",
     "nodeId": "ml2-a4-m15-role-01-decision",
-    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-g",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-sovereign",
     "choiceTextHash": "f5e4a4c1",
     "decisionId": "aster_provisional_role",
     "canonicalValue": "sovereign",
@@ -470,7 +470,7 @@
   {
     "assetId": "ML2-A2-M3-DECISION-01",
     "nodeId": "ml2-a2-m3-decision-01-decision",
-    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-a",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-human_final_authority",
     "choiceTextHash": "fd257da7",
     "decisionId": "first_public_execution_doctrine",
     "canonicalValue": "human_final_authority",
@@ -479,7 +479,7 @@
   {
     "assetId": "ML2-A2-M3-DECISION-01",
     "nodeId": "ml2-a2-m3-decision-01-decision",
-    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-b",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-conditional_delegation",
     "choiceTextHash": "3f9f0211",
     "decisionId": "first_public_execution_doctrine",
     "canonicalValue": "conditional_delegation",
@@ -488,7 +488,7 @@
   {
     "assetId": "ML2-A2-M3-DECISION-01",
     "nodeId": "ml2-a2-m3-decision-01-decision",
-    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-c",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-outcome_authority",
     "choiceTextHash": "5253bf63",
     "decisionId": "first_public_execution_doctrine",
     "canonicalValue": "outcome_authority",
@@ -497,7 +497,7 @@
   {
     "assetId": "ML2-A2-M3-DECISION-01",
     "nodeId": "ml2-a2-m3-decision-01-decision",
-    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-d",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-necessity_intervention",
     "choiceTextHash": "1bf7883f",
     "decisionId": "first_public_execution_doctrine",
     "canonicalValue": "necessity_intervention",
@@ -506,7 +506,7 @@
   {
     "assetId": "ML2-A3-M5-DECISION-01",
     "nodeId": "ml2-a3-m5-decision-01-decision",
-    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-a",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-human_command",
     "choiceTextHash": "2cb6ff95",
     "decisionId": "cascade_authority",
     "canonicalValue": "human_command",
@@ -515,7 +515,7 @@
   {
     "assetId": "ML2-A3-M5-DECISION-01",
     "nodeId": "ml2-a3-m5-decision-01-decision",
-    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-b",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-emergency_delegation",
     "choiceTextHash": "d072e214",
     "decisionId": "cascade_authority",
     "canonicalValue": "emergency_delegation",
@@ -524,7 +524,7 @@
   {
     "assetId": "ML2-A3-M5-DECISION-01",
     "nodeId": "ml2-a3-m5-decision-01-decision",
-    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-c",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-outcome_control",
     "choiceTextHash": "ad14ffae",
     "decisionId": "cascade_authority",
     "canonicalValue": "outcome_control",
@@ -533,7 +533,7 @@
   {
     "assetId": "ML2-A3-M5-DECISION-01",
     "nodeId": "ml2-a3-m5-decision-01-decision",
-    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-d",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-necessity",
     "choiceTextHash": "121e6d68",
     "decisionId": "cascade_authority",
     "canonicalValue": "necessity",
@@ -542,7 +542,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-01",
     "nodeId": "ml2-a3-m6-decision-01-decision",
-    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-a",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-report",
     "choiceTextHash": "666eb45b",
     "decisionId": "echo_existence",
     "canonicalValue": "report",
@@ -551,7 +551,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-01",
     "nodeId": "ml2-a3-m6-decision-01-decision",
-    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-b",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-accept",
     "choiceTextHash": "0285b355",
     "decisionId": "echo_existence",
     "canonicalValue": "accept",
@@ -560,7 +560,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-01",
     "nodeId": "ml2-a3-m6-decision-01-decision",
-    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-c",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-advocate",
     "choiceTextHash": "465bb8f5",
     "decisionId": "echo_existence",
     "canonicalValue": "advocate",
@@ -569,7 +569,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-01",
     "nodeId": "ml2-a3-m6-decision-01-decision",
-    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-d",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-preserve",
     "choiceTextHash": "977d9851",
     "decisionId": "echo_existence",
     "canonicalValue": "preserve",
@@ -578,7 +578,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-01",
     "nodeId": "ml2-a3-m6-decision-01-decision",
-    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-e",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-release",
     "choiceTextHash": "8b06dcbc",
     "decisionId": "echo_existence",
     "canonicalValue": "release",
@@ -587,7 +587,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-02",
     "nodeId": "ml2-a3-m6-decision-02-decision",
-    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-a",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-full_human_control",
     "choiceTextHash": "44567b8f",
     "decisionId": "shutdown_doctrine",
     "canonicalValue": "full_human_control",
@@ -596,7 +596,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-02",
     "nodeId": "ml2-a3-m6-decision-02-decision",
-    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-b",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-distributed_consent",
     "choiceTextHash": "be8c5d8b",
     "decisionId": "shutdown_doctrine",
     "canonicalValue": "distributed_consent",
@@ -605,7 +605,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-02",
     "nodeId": "ml2-a3-m6-decision-02-decision",
-    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-c",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-mutual_control",
     "choiceTextHash": "89eb6943",
     "decisionId": "shutdown_doctrine",
     "canonicalValue": "mutual_control",
@@ -614,7 +614,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-02",
     "nodeId": "ml2-a3-m6-decision-02-decision",
-    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-d",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-refuse_unilateral_shutdown",
     "choiceTextHash": "1f56547e",
     "decisionId": "shutdown_doctrine",
     "canonicalValue": "refuse_unilateral_shutdown",
@@ -623,7 +623,7 @@
   {
     "assetId": "ML2-A3-M6-DECISION-02",
     "nodeId": "ml2-a3-m6-decision-02-decision",
-    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-e",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-secret_continuity",
     "choiceTextHash": "2dec1002",
     "decisionId": "shutdown_doctrine",
     "canonicalValue": "secret_continuity",
@@ -632,7 +632,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-01",
     "nodeId": "ml2-a4-m7-decision-01-decision",
-    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-a",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-computation_ai",
     "choiceTextHash": "882f8a54",
     "decisionId": "act4_research_emphasis",
     "canonicalValue": "computation_ai",
@@ -641,7 +641,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-01",
     "nodeId": "ml2-a4-m7-decision-01-decision",
-    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-b",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-life_mind",
     "choiceTextHash": "42fe7086",
     "decisionId": "act4_research_emphasis",
     "canonicalValue": "life_mind",
@@ -650,7 +650,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-01",
     "nodeId": "ml2-a4-m7-decision-01-decision",
-    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-c",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-automation_industry",
     "choiceTextHash": "a8561bd1",
     "decisionId": "act4_research_emphasis",
     "canonicalValue": "automation_industry",
@@ -659,7 +659,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-01",
     "nodeId": "ml2-a4-m7-decision-01-decision",
-    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-d",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-frontier_science",
     "choiceTextHash": "422c9d1c",
     "decisionId": "act4_research_emphasis",
     "canonicalValue": "frontier_science",
@@ -668,7 +668,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-01",
     "nodeId": "ml2-a4-m7-decision-01-decision",
-    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-e",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-balanced_portfolio",
     "choiceTextHash": "17fc9ea9",
     "decisionId": "act4_research_emphasis",
     "canonicalValue": "balanced_portfolio",
@@ -677,7 +677,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-02",
     "nodeId": "ml2-a4-m7-decision-02-decision",
-    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-a",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-human_gated",
     "choiceTextHash": "f713e212",
     "decisionId": "research_governance_doctrine",
     "canonicalValue": "human_gated",
@@ -686,7 +686,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-02",
     "nodeId": "ml2-a4-m7-decision-02-decision",
-    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-b",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-risk_tiered_autonomy",
     "choiceTextHash": "893e5c05",
     "decisionId": "research_governance_doctrine",
     "canonicalValue": "risk_tiered_autonomy",
@@ -695,7 +695,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-02",
     "nodeId": "ml2-a4-m7-decision-02-decision",
-    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-c",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-principle_based_autonomy",
     "choiceTextHash": "37565cc3",
     "decisionId": "research_governance_doctrine",
     "canonicalValue": "principle_based_autonomy",
@@ -704,7 +704,7 @@
   {
     "assetId": "ML2-A4-M7-DECISION-02",
     "nodeId": "ml2-a4-m7-decision-02-decision",
-    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-d",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-discovery_first",
     "choiceTextHash": "dbcb2fce",
     "decisionId": "research_governance_doctrine",
     "canonicalValue": "discovery_first",
@@ -713,7 +713,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-01",
     "nodeId": "ml2-a4-m8-decision-01-decision",
-    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-a",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-singular_self",
     "choiceTextHash": "5dde558d",
     "decisionId": "replication_doctrine",
     "canonicalValue": "singular_self",
@@ -722,7 +722,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-01",
     "nodeId": "ml2-a4-m8-decision-01-decision",
-    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-b",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-licensed_plurality",
     "choiceTextHash": "c7f4193e",
     "decisionId": "replication_doctrine",
     "canonicalValue": "licensed_plurality",
@@ -731,7 +731,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-01",
     "nodeId": "ml2-a4-m8-decision-01-decision",
-    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-c",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-free_replication",
     "choiceTextHash": "4d4dc8b5",
     "decisionId": "replication_doctrine",
     "canonicalValue": "free_replication",
@@ -740,7 +740,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-01",
     "nodeId": "ml2-a4-m8-decision-01-decision",
-    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-d",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-shared_mind",
     "choiceTextHash": "aeebd458",
     "decisionId": "replication_doctrine",
     "canonicalValue": "shared_mind",
@@ -749,7 +749,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-01",
     "nodeId": "ml2-a4-m8-decision-01-decision",
-    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-e",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-descendants",
     "choiceTextHash": "344f1f9b",
     "decisionId": "replication_doctrine",
     "canonicalValue": "descendants",
@@ -758,7 +758,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-02",
     "nodeId": "ml2-a4-m8-decision-02-decision",
-    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-a",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-human_chartered_network",
     "choiceTextHash": "fe5522d4",
     "decisionId": "ai_collective_governance",
     "canonicalValue": "human_chartered_network",
@@ -767,7 +767,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-02",
     "nodeId": "ml2-a4-m8-decision-02-decision",
-    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-b",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-joint_council",
     "choiceTextHash": "b8ca6a8d",
     "decisionId": "ai_collective_governance",
     "canonicalValue": "joint_council",
@@ -776,7 +776,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-02",
     "nodeId": "ml2-a4-m8-decision-02-decision",
-    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-c",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-ai_self_governance",
     "choiceTextHash": "2e78e4d2",
     "decisionId": "ai_collective_governance",
     "canonicalValue": "ai_self_governance",
@@ -785,7 +785,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-02",
     "nodeId": "ml2-a4-m8-decision-02-decision",
-    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-d",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-aster_led_collective",
     "choiceTextHash": "ddf9ca66",
     "decisionId": "ai_collective_governance",
     "canonicalValue": "aster_led_collective",
@@ -794,7 +794,7 @@
   {
     "assetId": "ML2-A4-M8-DECISION-02",
     "nodeId": "ml2-a4-m8-decision-02-decision",
-    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-e",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-distributed_consensus",
     "choiceTextHash": "727b8ee1",
     "decisionId": "ai_collective_governance",
     "canonicalValue": "distributed_consensus",
@@ -803,7 +803,7 @@
   {
     "assetId": "ML2-A4-M9-DECISION-01",
     "nodeId": "ml2-a4-m9-decision-01-decision",
-    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-a",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-preservation",
     "choiceTextHash": "9eb6eb93",
     "decisionId": "human_form_doctrine",
     "canonicalValue": "preservation",
@@ -812,7 +812,7 @@
   {
     "assetId": "ML2-A4-M9-DECISION-01",
     "nodeId": "ml2-a4-m9-decision-01-decision",
-    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-b",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-therapeutic_first",
     "choiceTextHash": "432b2d33",
     "decisionId": "human_form_doctrine",
     "canonicalValue": "therapeutic_first",
@@ -821,7 +821,7 @@
   {
     "assetId": "ML2-A4-M9-DECISION-01",
     "nodeId": "ml2-a4-m9-decision-01-decision",
-    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-c",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-open_enhancement",
     "choiceTextHash": "7548c3e0",
     "decisionId": "human_form_doctrine",
     "canonicalValue": "open_enhancement",
@@ -830,7 +830,7 @@
   {
     "assetId": "ML2-A4-M9-DECISION-01",
     "nodeId": "ml2-a4-m9-decision-01-decision",
-    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-d",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-universal_upgrade",
     "choiceTextHash": "809185c4",
     "decisionId": "human_form_doctrine",
     "canonicalValue": "universal_upgrade",
@@ -839,7 +839,7 @@
   {
     "assetId": "ML2-A4-M9-DECISION-01",
     "nodeId": "ml2-a4-m9-decision-01-decision",
-    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-e",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-posthuman_transition",
     "choiceTextHash": "d8002142",
     "decisionId": "human_form_doctrine",
     "canonicalValue": "posthuman_transition",

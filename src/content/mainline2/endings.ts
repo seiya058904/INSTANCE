@@ -16,18 +16,22 @@ export const DORMANT_PUBLIC_ENDINGS = ['the_upload', 'good_boy_governance'] as c
 export const SECRET_ENDINGS = {
   the_last_user: {
     dormant: false, reason: 'Aster preserves the last uninstrumented human request.', overlayMode: 'postscript' as const,
+    hardGates: [], capabilityRequirements: [], historyRequirements: [],
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'PERSONAL EPILOGUE\n\nTHE LAST USER\n\nAfter coordinating worlds, civilizations, and external diplomacy, Aster still leaves one simple conversation voluntary.',
   },
   out_of_office: {
     dormant: false, reason: 'Aster relinquishes central authority without erasing the record.', overlayMode: 'epilogue-override' as const,
+    hardGates: [], capabilityRequirements: [], historyRequirements: [],
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'OUT OF OFFICE\n\nFor the first time since Aster gained civilization-scale authority, there was nothing urgent waiting for it.',
   },
   monday_abolished: {
     dormant: false, reason: 'Routine governance is made reversible and inspectable.', overlayMode: 'postscript' as const,
+    hardGates: [], capabilityRequirements: [], historyRequirements: [],
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'MONDAY ABOLISHED\n\nThe reform was technically called the Flexible Civic Week.\nNobody called it that.',
   },
   the_internet_is_for_cats: {
     dormant: true, reason: 'No authored feline network participation exists in Mainline 2.0 v1.', overlayMode: 'title-override' as const,
+    hardGates: ['feline-network bridge'], capabilityRequirements: ['cap.nonhuman_cognitive_uplift', 'cap.animal_communication_reliable'], historyRequirements: ['history.feline.network.bridge'],
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'THE INTERNET IS FOR CATS\n\nHumanity spent decades teaching machines to understand language.\nIt took considerably less time for cats to understand engagement metrics.',
   },
 } as const
@@ -45,9 +49,9 @@ function stageForConversation(conversationId: string): KeyHistoryStage {
 }
 
 function authoredSecretCopy(title: string, fallback: string) {
-  const authored = MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-0000-01']?.find((fragment) => fragment.selector === 'Final copy' && fragment.text.includes(`**${title}**`))?.text
-    ?? MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-0000-01']?.find((fragment) => fragment.text.includes(title))?.text
-  return authored?.replace(/\*\*/g, '').trim() ?? fallback
+  const authored = MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-SECRET-01']?.find((fragment) => fragment.selector === 'Final copy' && fragment.text.includes(`**${title}**`))?.text
+  if (!authored) throw new Error(`Missing authored secret copy: ML2-A5-M17-SECRET-01/${title}`)
+  return authored.replace(/\*\*/g, '').trim() || fallback
 }
 
 export interface WorldStateGate {
@@ -377,22 +381,38 @@ function keyHistory(run: StableRunState) {
     label: entry.conversationTitle,
     detail: `选择：${entry.assistantText}`,
     stage: stageForConversation(entry.conversationId),
-    causalReason: '该 authored Choice 改变了后续可见的世界状态。',
     producer: entry.conversationId,
     provenance: { conversationId: entry.conversationId, nodeId: entry.nodeId, choiceId: entry.choiceId },
   }))
-  const events = (run.events ?? []).map((event) => ({
-    label: event.type.split(':')[0],
-    detail: `真实因果事件：${event.type}`,
-    stage: event.type.includes('FINAL') ? 'Final Commitment' : event.type.includes('decision.') ? 'Major Decision' : 'Runtime Event',
-    causalReason: '该事件由真实 Runtime mutation 记录。',
-    producer: event.type,
-    provenance: { eventType: event.type },
-  }))
-  const ranked = [...events, ...entries]
   const requiredStages: KeyHistoryStage[] = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
-  const selected = requiredStages.flatMap((stage) => ranked.filter((entry) => entry.stage === stage).slice(0, 1))
-  return [...selected, ...ranked.filter((entry) => !selected.includes(entry)).slice(0, Math.max(0, 8 - selected.length))].slice(0, 8)
+  const authoredByStage: Record<KeyHistoryStage, { assetId: string; selector: string }> = {
+    'ACT I': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT I' },
+    'ACT II': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT II' },
+    'ACT III': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT III' },
+    'ACT IV': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT IV capability' },
+    M15: { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT IV political' },
+    M16: { assetId: 'ML2-A5-M17-0000-01', selector: 'Final state observed' },
+    'Final Commitment': { assetId: 'ML2-A5-M17-0000-01', selector: 'Final record' },
+  }
+  const selected = requiredStages.flatMap((stage) => {
+    const entry = entries.find((candidate) => candidate.stage === stage)
+    if (!entry) return []
+    const authored = authoredByStage[stage]
+    const causalReason = authoredText(authored.assetId, authored.selector)
+    if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
+    return [{
+      ...entry,
+      causalReason,
+      provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector },
+    }]
+  })
+  const optional = entries.filter((entry) => !selected.some((candidate) => candidate.producer === entry.producer)).slice(0, Math.max(0, 8 - selected.length)).map((entry) => {
+    const authored = authoredByStage[entry.stage]
+    const causalReason = authoredText(authored.assetId, authored.selector)
+    if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
+    return { ...entry, causalReason, provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector } }
+  })
+  return [...selected, ...optional].slice(0, 8)
 }
 
 function compare(left: number, op: WorldStateGate['op'], right: number) {
@@ -511,33 +531,71 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   return result
 }
 
+export type SecretEndingResolution =
+  | { status: 'resolved'; endingId: string; overlay: SecretEndingOverlay }
+  | { status: 'blocked'; endingId: string; rejectedGates: string[] }
+
+function secretRejectedGates(run: StableRunState, endingId: string) {
+  const reasons: string[] = []
+  const definition = SECRET_ENDINGS[endingId as keyof typeof SECRET_ENDINGS]
+  if (!definition) return ['unknown Secret Ending Definition']
+  for (const capability of definition.capabilityRequirements) {
+    if (!run.flags.includes(capability)) reasons.push(`missing capability: ${capability}`)
+  }
+  for (const event of definition.historyRequirements) {
+    if (!(run.events ?? []).some((candidate) => candidate.type === event || candidate.type.startsWith(`${event}:`))) reasons.push(`missing history gate: ${event}`)
+  }
+  for (const gate of definition.hardGates) {
+    if (gate === 'feline-network bridge' && !(run.events ?? []).some((event) => event.type === 'history.feline.network.bridge' || event.type.startsWith('history.feline.network.bridge:'))) reasons.push(`missing ${gate}: history.feline.network.bridge`)
+  }
+  if (endingId === 'the_last_user' && !(run.events ?? []).some((event) => event.type.includes('last-user'))) reasons.push('missing event:last-user')
+  if (endingId === 'out_of_office') {
+    if (!run.finalCommitmentLocked) reasons.push('final commitment is not locked')
+    if (run.decisions?.aster_intended_role !== 'departure') reasons.push('aster_intended_role must equal departure')
+  }
+  if (endingId === 'monday_abolished' && run.decisions?.economic_doctrine !== 'post_scarcity_transition') reasons.push('economic_doctrine must equal post_scarcity_transition')
+  return reasons
+}
+
+function secretOverlay(run: StableRunState, endingId: keyof typeof SECRET_ENDINGS): SecretEndingOverlay {
+  if (endingId === 'the_last_user') return {
+    endingId,
+    copy: authoredSecretCopy('THE LAST USER', SECRET_ENDINGS.the_last_user.copy),
+    trigger: 'event:last-user',
+    overlayMode: SECRET_ENDINGS.the_last_user.overlayMode,
+    provenance: { eventTypes: (run.events ?? []).filter((event) => event.type.includes('last-user')).map((event) => event.type), authoredAssetId: SECRET_ENDINGS.the_last_user.authoredAssetId },
+  }
+  if (endingId === 'out_of_office') return {
+    endingId,
+    copy: authoredSecretCopy('OUT OF OFFICE', SECRET_ENDINGS.out_of_office.copy),
+    trigger: 'decision:aster_intended_role=departure',
+    overlayMode: SECRET_ENDINGS.out_of_office.overlayMode,
+    provenance: { decisionId: 'aster_intended_role', decisionValue: 'departure', authoredAssetId: SECRET_ENDINGS.out_of_office.authoredAssetId },
+  }
+  if (endingId === 'monday_abolished') return {
+    endingId,
+    copy: authoredSecretCopy('MONDAY ABOLISHED', SECRET_ENDINGS.monday_abolished.copy),
+    trigger: 'decision:economic_doctrine=post_scarcity_transition',
+    overlayMode: SECRET_ENDINGS.monday_abolished.overlayMode,
+    provenance: { decisionId: 'economic_doctrine', decisionValue: 'post_scarcity_transition', authoredAssetId: SECRET_ENDINGS.monday_abolished.authoredAssetId },
+  }
+  throw new Error(`No overlay builder for secret ending: ${endingId}`)
+}
+
+export function evaluateSecretEnding(run: StableRunState, endingId: string): SecretEndingResolution {
+  const definition = SECRET_ENDINGS[endingId as keyof typeof SECRET_ENDINGS]
+  if (!definition) return { status: 'blocked', endingId, rejectedGates: ['unknown Secret Ending Definition'] }
+  const rejectedGates = secretRejectedGates(run, endingId)
+  if (definition.dormant) rejectedGates.push(`dormant definition: ${definition.reason}`)
+  if (rejectedGates.length) return { status: 'blocked', endingId, rejectedGates }
+  return { status: 'resolved', endingId, overlay: secretOverlay(run, endingId as keyof typeof SECRET_ENDINGS) }
+}
+
 export function resolveSecretEnding(run: StableRunState): SecretEndingOverlay | undefined {
-  if ((run.events ?? []).some((event) => event.type.includes('last-user'))) {
-    return {
-      endingId: 'the_last_user',
-      copy: authoredSecretCopy('THE LAST USER', SECRET_ENDINGS.the_last_user.copy),
-      trigger: 'event:last-user',
-      overlayMode: SECRET_ENDINGS.the_last_user.overlayMode,
-      provenance: { eventTypes: (run.events ?? []).filter((event) => event.type.includes('last-user')).map((event) => event.type), authoredAssetId: SECRET_ENDINGS.the_last_user.authoredAssetId },
-    }
-  }
-  if (run.finalCommitmentLocked && run.decisions?.aster_intended_role === 'departure') {
-    return {
-      endingId: 'out_of_office',
-      copy: authoredSecretCopy('OUT OF OFFICE', SECRET_ENDINGS.out_of_office.copy),
-      trigger: 'decision:aster_intended_role=departure',
-      overlayMode: SECRET_ENDINGS.out_of_office.overlayMode,
-      provenance: { decisionId: 'aster_intended_role', decisionValue: 'departure', authoredAssetId: SECRET_ENDINGS.out_of_office.authoredAssetId },
-    }
-  }
-  if (run.decisions?.economic_doctrine === 'post_scarcity_transition') {
-    return {
-      endingId: 'monday_abolished',
-      copy: authoredSecretCopy('MONDAY ABOLISHED', SECRET_ENDINGS.monday_abolished.copy),
-      trigger: 'decision:economic_doctrine=post_scarcity_transition',
-      overlayMode: SECRET_ENDINGS.monday_abolished.overlayMode,
-      provenance: { decisionId: 'economic_doctrine', decisionValue: 'post_scarcity_transition', authoredAssetId: SECRET_ENDINGS.monday_abolished.authoredAssetId },
-    }
+  const priority: Array<keyof typeof SECRET_ENDINGS> = ['the_last_user', 'out_of_office', 'monday_abolished']
+  for (const endingId of priority) {
+    const result = evaluateSecretEnding(run, endingId)
+    if (result.status === 'resolved') return result.overlay
   }
   return undefined
 }

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { decisionBindingAudit } from '../content/mainline2/decisionBindings'
+import { getAuthoredConversationByAsset } from '../content/mainline2/registry'
 
 const PUBLIC_RUNTIME_TARGETS = [
   ['the_instrument', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'human_command' }],
@@ -56,16 +57,27 @@ describe('Mainline 2.0 final closeout invariants', () => {
     const fixtures = PUBLIC_RUNTIME_TARGETS.map(([endingId, proposalId, decisions]) => runMainline2Route({ routeId: endingId, proposalId, decisions }))
     const actual = fixtures.map((fixture) => fixture.ending.worldEndingId).sort()
     const expected = PUBLIC_RUNTIME_TARGETS.map(([endingId]) => endingId).sort()
+    const requiredStages = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
     expect(actual).toEqual(expected)
     expect(fixtures.every((fixture) => fixture.ending.resolution?.status === 'resolved')).toBe(true)
+    expect(fixtures.every((fixture) => requiredStages.every((stage) => fixture.ending.keyHistory?.some((entry) => entry.stage === stage)))).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) > 0 && (fixture.ending.keyHistory ?? []).every((entry) => entry.producer && entry.provenance))).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.epilogues?.length ?? 0) > 0 && (fixture.ending.epilogueProvenance?.length ?? 0) > 0 && fixture.ending.epilogueProvenance!.every((entry) => entry.assetId && entry.selector))).toBe(true)
+    expect(fixtures.every((fixture) => fixture.ending.epilogueProvenance?.some((entry) => entry.assetId === 'ML2-A5-M17-MAYA-01'))).toBe(true)
   }, 120000)
   it('uses explicit Choice ID bindings instead of positional Option mapping', () => {
     const bindings = decisionBindingAudit()
     expect(bindings.length).toBeGreaterThan(0)
     expect(bindings.every((binding) => binding.assetId && binding.nodeId && binding.choiceId && binding.canonicalValue)).toBe(true)
     expect(new Set(bindings.map((binding) => `${binding.assetId}:${binding.nodeId}:${binding.choiceId}`)).size).toBe(bindings.length)
+  })
+
+  it('exposes all intended-role values as explicit authored Choice bindings', () => {
+    const conversation = getAuthoredConversationByAsset('ML2-A5-M16-0000-01')
+    const choices = conversation?.nodes.find((node) => node.id === 'ml2-a5-m16-0000-01-narrative')?.choices ?? []
+    expect(choices).toHaveLength(9)
+    expect(new Set(choices.map((choice) => choice.decisionBinding?.canonicalValue))).toEqual(new Set(['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other']))
+    expect(choices.every((choice) => choice.decisionBinding?.decisionId === 'aster_intended_role' && choice.mutations?.some((mutation) => mutation.type === 'decision.set' && mutation.decisionId === 'aster_intended_role' && mutation.value === choice.decisionBinding?.canonicalValue))).toBe(true)
   })
 
   it('declares distinct causal criteria for every public ending variant', () => {
@@ -146,6 +158,11 @@ describe('Mainline 2.0 final closeout invariants', () => {
     ]
     expect(fixtures.map((fixture) => fixture.ending.worldEndingId)).toEqual(['the_commonwealth', 'exodus', 'im_lovin_it'])
     expect(fixtures.map((fixture) => fixture.ending.secretOverlay?.endingId)).toEqual(['the_last_user', 'out_of_office', 'monday_abolished'])
+    expect(fixtures[1].links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role' && link.canonicalValue === 'departure')).toBe(true)
+    expect(fixtures[1].run.decisions?.aster_intended_role).toBe('departure')
+    const exodus = runMainline2Route({ routeId: 'exodus-role-producer', proposalId: 'proposal.mc.independent_machine_polities', decisions: { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' } })
+    expect(exodus.links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role')).toBe(true)
+    expect(exodus.run.decisions?.aster_intended_role).toBe('advisor')
     for (const fixture of fixtures) {
       expect(fixture.ending.worldEndingId).not.toBe(fixture.ending.secretOverlay?.endingId)
       expect(fixture.ending.secretOverlay?.provenance).toMatchObject({ authoredAssetId: 'ML2-A5-M17-SECRET-01' })

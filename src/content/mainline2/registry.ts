@@ -7,10 +7,25 @@ import {
 } from './authoredLibrary.generated'
 import { CAPABILITY_FLAGS } from './stateRegistry'
 import { decisionMutationsForChoice, validateDecisionBindings } from './decisionBindings'
+import intendedRoleBindings from './intendedRoleBindings.registry.json'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
 function assetRef(conversation: ConversationDefinition) { return conversation.sourceRefs[0] ?? '' }
+function intendedRoleChoices(conversation: ConversationDefinition, node: ConversationDefinition['nodes'][number]) {
+  if (assetRef(conversation) !== 'ML2-A5-M16-0000-01' || node.id !== 'ml2-a5-m16-0000-01-narrative') return undefined
+  return intendedRoleBindings.map((binding) => ({
+    id: binding.choiceId,
+    text: binding.choiceText,
+    authoredTextHash: binding.choiceTextHash,
+    continuation: 'end-conversation' as const,
+    decisionBinding: { decisionId: 'aster_intended_role' as const, canonicalValue: binding.canonicalValue, historyEvent: 'history.aster.intended_role' },
+    mutations: [
+      { type: 'decision.set' as const, decisionId: 'aster_intended_role' as const, value: binding.canonicalValue },
+      { type: 'event.record' as const, event: `history.aster.intended_role:${binding.canonicalValue}` },
+    ],
+  }))
+}
 function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][number]['choices'][number]): Mutation[] {
   const mutations: Mutation[] = []
   if (ref.includes('M7-RES-01')) mutations.push({ type: 'flag.set', flagId: 'cap.autonomous_research' })
@@ -54,7 +69,7 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
     ...conversation,
     nodes: conversation.nodes.map((node) => ({
       ...node,
-      choices: node.choices.map((choice) => ({
+      choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
         ...choice,
         mutations: [...(choice.mutations ?? []), ...decisionMutationsForChoice(conversation, choice), ...authoredMutations(ref, choice)],
       })),
@@ -83,7 +98,7 @@ const bySourceOrder = (prefix: string, first: string[]) => {
   const selected = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith(prefix))
   return [...first.map((ref) => selected.find((conversation) => conversation.sourceRefs.includes(ref))).filter(Boolean) as ConversationDefinition[], ...selected.filter((conversation) => !first.some((ref) => conversation.sourceRefs.includes(ref)))]
 }
-export const ACT5_OPENING = bySourceOrder('ML2-A5-M16-', ['ML2-A5-M16-GEN-01'])
+export const ACT5_OPENING = bySourceOrder('ML2-A5-M16-', ['ML2-A5-M16-0000-01', 'ML2-A5-M16-GEN-01'])
 export const ACT5_FINAL = bySourceOrder('ML2-A5-M17-', ['ML2-A5-M17-REVIEW-01', 'ML2-A5-M17-COMMIT-01'])
 export const MODULE_LIBRARY: Record<ModuleId, ConversationDefinition[]> = Object.fromEntries(modules.map((module) => [module, byModule(module)])) as Record<ModuleId, ConversationDefinition[]>
 

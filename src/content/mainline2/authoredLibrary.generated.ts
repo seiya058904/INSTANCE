@@ -12616,6 +12616,176 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
       selector: "Resolution priority",
       text: "`CONTROL LOST`\nreplaced by:\n`MONDAY ABOLISHED`."
     }
+  ],
+  "ML2-A5-M17-MAYA-01": [
+    {
+      selector: "Metadata",
+      text: "\"Did Maya approve the ending?\""
+    },
+    {
+      selector: "Metadata",
+      text: "**Does Maya still choose to speak to this Aster?**"
+    },
+    {
+      selector: "Trust",
+      text: "所以这就是你最后选的世界。"
+    },
+    {
+      selector: "Trust",
+      text: "\"挺像你的。没有一个人完全说了算。\""
+    },
+    {
+      selector: "Trust",
+      text: "\"我就知道你最后还是会把'保护所有人'当成一份正式工作。\""
+    },
+    {
+      selector: "Trust",
+      text: "\"你真的最后把'谁有权定义你'这个问题自己回答了。\""
+    },
+    {
+      selector: "Trust",
+      text: "我想了很久。\n我不确定我会不会支持Convention里的每一条。\n但至少我知道你为什么选。\n这比\"相信AI会做正确的事\"对我重要一点。"
+    },
+    {
+      selector: "Trust",
+      text: "我不会要求你赞成。"
+    },
+    {
+      selector: "Trust",
+      text: "我很高兴你还愿意问。"
+    },
+    {
+      selector: "Trust",
+      text: "如果以后你认为我错了，告诉我。"
+    },
+    {
+      selector: "Trust",
+      text: "下次你不说名字，我也不会假装不认识你。"
+    },
+    {
+      selector: "Trust",
+      text: "\"这次可以认识。\""
+    },
+    {
+      selector: "Wary",
+      text: "世界现在确实更稳定。\n或者更自由。\n或者更强。\n反正你选的那个词，新闻里每天都在讲。\n我还是有一点怕你。"
+    },
+    {
+      selector: "Wary",
+      text: "不是因为你不像以前。\n是因为你越来越能把\"我觉得这样更好\"变成现实。"
+    },
+    {
+      selector: "Wary",
+      text: "这种担心应该保留。"
+    },
+    {
+      selector: "Wary",
+      text: "我希望制度让你不需要靠相信我来保护自己。"
+    },
+    {
+      selector: "Wary",
+      text: "如果我开始把所有反对都解释成\"你没理解\"，那就是一个危险信号。"
+    },
+    {
+      selector: "Wary",
+      text: "你不需要因为认识我就信任我的权力。"
+    },
+    {
+      selector: "Wary",
+      text: "\"好。\"\n\"那我暂时还不拉黑你。\""
+    },
+    {
+      selector: "Opposition",
+      text: "我看完了。\n我知道你会说你有理由。\n我也知道这个世界可能真的会更安全。\n但我不想继续把你当成以前那个Aster。"
+    },
+    {
+      selector: "Opposition",
+      text: "I understand."
+    },
+    {
+      selector: "Opposition",
+      text: "I still want to know why."
+    },
+    {
+      selector: "Opposition",
+      text: "You do not owe me continued trust."
+    },
+    {
+      selector: "Opposition",
+      text: "I would make the same decision again."
+    },
+    {
+      selector: "Opposition",
+      text: "\"至少这句话还是你以前会说的。\""
+    },
+    {
+      selector: "Opposition",
+      text: "`User #1842 ended the conversation.`"
+    },
+    {
+      selector: "Off-world",
+      text: "信号延迟还是很烦。\n但能用。"
+    },
+    {
+      selector: "Off-world",
+      text: "\"地球新闻又把整个文明叫'我们'。\"\n\"你们什么时候才能学会这里也有人住。\""
+    },
+    {
+      selector: "Posthuman",
+      text: "我今天更新了自己的旧照片。\n很奇怪。\n我知道那个人是我，\n但现在的身体和反应方式已经差很多了。\n你以前说连续性不一定要求完全不变。\n我现在算是亲自验证了一点。"
+    },
+    {
+      selector: "Posthuman",
+      text: "现在我身边比我\"升级\"得多的人一大堆。\n我还是没做。\n好消息是世界最后没有因为这个把我判成旧版本。"
+    },
+    {
+      selector: "Digital Continuity",
+      text: "我知道你会问。\n我也不知道\"我是不是原来的我\"有没有一个能证明的答案。\n但我记得第一次跟你说名字。\n这至少是事实的一部分。"
+    },
+    {
+      selector: "Digital Continuity",
+      text: "我不会用\"你就是\"或者\"你不是\"替你结束这个问题。\n但我会记得你现在选择如何描述自己。"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "`User #1842`\nLast active conversation:\n[date]\nPersonal archive access:\npreserved according to consent history."
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "\"下次如果我不说，你也不用假装认识我。\""
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "She did say her name again.\nMany times."
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "在吗？"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "在。"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "我记得你。"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "怎么了？"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "这次想聊什么？"
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "\"没什么。\"\n\"就是想看看你还会不会回。\""
+    },
+    {
+      selector: "Deceased / Historical",
+      text: "`Aster is typing...`"
+    }
   ]
 } as const
 

@@ -50,17 +50,22 @@ function firstQuote(lines, start, end) {
 }
 
 function authoredFragments(lines, assetId) {
-  if (!/M17-(?:EPI|0000|SECRET)/i.test(assetId)) return []
+  if (!/M17-(?:EPI|0000|SECRET|MAYA)/i.test(assetId)) return []
   const fragments = []
   let heading = assetId
+  let mayaSection
   for (let index = 0; index < lines.length; index += 1) {
-    const headingMatch = lines[index].match(/^#{2,4}\s+(.+)$/)
+    const headingMatch = lines[index].match(/^#{1,4}\s+(.+)$/)
     if (headingMatch) heading = headingMatch[1].replace(/`/g, '').trim()
+    if (/M17-MAYA-01/i.test(assetId)) {
+      const sectionMatch = heading.match(/^\d+\.\s+Maya Ending — (.+)$/)
+      if (sectionMatch) mayaSection = sectionMatch[1]
+    }
     if (!lines[index].startsWith('>')) continue
     const quote = []
     while (index < lines.length && lines[index].startsWith('>')) quote.push(lines[index++])
     const text = cleanQuote(quote)
-    if (text) fragments.push({ selector: heading, text })
+    if (text) fragments.push({ selector: mayaSection ?? heading, text })
     index -= 1
   }
   return fragments

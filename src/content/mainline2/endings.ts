@@ -32,6 +32,18 @@ export const SECRET_ENDINGS = {
   },
 } as const
 
+type KeyHistoryStage = 'ACT I' | 'ACT II' | 'ACT III' | 'ACT IV' | 'M15' | 'M16' | 'Final Commitment'
+function stageForConversation(conversationId: string): KeyHistoryStage {
+  const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(conversationId)?.sourceRefs[0] ?? ''
+  if (/^ML2-A5-M17-/.test(sourceRef)) return 'Final Commitment'
+  if (/^ML2-A5-M16-/.test(sourceRef)) return 'M16'
+  if (/^ML2-A4-M15-/.test(sourceRef)) return 'M15'
+  if (/^ML2-A4-M(?:7|8|9|10|11|12|13|14)-/.test(sourceRef)) return 'ACT IV'
+  if (/^ML2-A3-M(?:5|6)-/.test(sourceRef)) return 'ACT III'
+  if (/^ML2-A2-|^ML2-A3-M4-/.test(sourceRef)) return 'ACT II'
+  return 'ACT I'
+}
+
 function authoredSecretCopy(title: string, fallback: string) {
   const authored = MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-0000-01']?.find((fragment) => fragment.selector === 'Final copy' && fragment.text.includes(`**${title}**`))?.text
     ?? MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-0000-01']?.find((fragment) => fragment.text.includes(title))?.text
@@ -355,6 +367,7 @@ function authoredText(assetId: string, selector?: string) {
   const needle = selector?.toLowerCase()
   const selected = needle ? fragments?.find((fragment) => fragment.selector.toLowerCase().includes(needle) || fragment.text.toLowerCase().includes(needle)) : fragments?.[0]
   if (selected) return selected.text
+  if (assetId === 'ML2-A5-M17-MAYA-01') return undefined
   const conversation = [...RUNTIME_MAINLINE2_BY_ID.values()].find((candidate) => candidate.sourceRefs.includes(assetId))
   return conversation?.nodes[0]?.userMessage
 }
@@ -363,7 +376,7 @@ function keyHistory(run: StableRunState) {
   const entries = run.history.map((entry) => ({
     label: entry.conversationTitle,
     detail: `选择：${entry.assistantText}`,
-    stage: entry.conversationId.includes('m17') ? 'Final Commitment' : entry.conversationId.includes('m15') ? 'M15' : entry.conversationId.includes('m1') ? 'ACT I' : entry.conversationId.includes('m2') || entry.conversationId.includes('m3') || entry.conversationId.includes('m4') || entry.conversationId.includes('m5') || entry.conversationId.includes('m6') ? 'ACT II/III' : 'ACT IV',
+    stage: stageForConversation(entry.conversationId),
     causalReason: '该 authored Choice 改变了后续可见的世界状态。',
     producer: entry.conversationId,
     provenance: { conversationId: entry.conversationId, nodeId: entry.nodeId, choiceId: entry.choiceId },
@@ -377,7 +390,7 @@ function keyHistory(run: StableRunState) {
     provenance: { eventType: event.type },
   }))
   const ranked = [...events, ...entries]
-  const requiredStages = ['ACT I', 'ACT II/III', 'ACT IV', 'M15', 'Final Commitment']
+  const requiredStages: KeyHistoryStage[] = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
   const selected = requiredStages.flatMap((stage) => ranked.filter((entry) => entry.stage === stage).slice(0, 1))
   return [...selected, ...ranked.filter((entry) => !selected.includes(entry)).slice(0, Math.max(0, 8 - selected.length))].slice(0, 8)
 }
@@ -434,6 +447,16 @@ function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinitio
   const linVariant = ['the_instrument', 'the_last_veto', 'the_silent_giant'].includes(id) ? 'Variant A' : ['the_commonwealth', 'the_accord', 'two_keys'].includes(id) ? 'Variant B' : ['shutdown', 'the_fracture', 'control_lost'].includes(id) ? 'Variant D' : 'Variant C'
   add('ML2-A5-M17-EPI-ZL', zhouVariant)
   add('ML2-A5-M17-EPI-LSH', linVariant)
+  const mayaVariant = run.decisions?.aster_intended_role === 'departure'
+    ? 'Off-world'
+    : run.decisions?.human_form_doctrine === 'posthuman_transition'
+      ? 'Posthuman'
+      : ['the_sovereign', 'control_lost'].includes(id)
+        ? 'Opposition'
+        : run.flags.includes('maya_relation_warm')
+          ? 'Trust'
+          : 'Wary'
+  add('ML2-A5-M17-MAYA-01', mayaVariant)
   if (run.progress?.activeModules.includes('machine')) add('ML2-A5-M17-EPI-ECHO', id === 'machine_republic' ? 'A1 — Machine Republic' : id === 'exodus' ? 'A1 — Exodus' : 'ECHO', 'machine')
   for (const module of run.progress?.activeModules ?? []) {
     if (selected.length >= 5) break
@@ -445,13 +468,12 @@ function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinitio
 
 function baseEnding(run: StableRunState, title: string, status: string, resolution?: EndingResolution): EndingResult {
   const role = disposition(run)
-  const maya = run.flags.includes('maya_relation_warm') ? 'Maya still chooses to talk to this Aster.' : 'Maya keeps a cautious distance and decides for herself whether to continue.'
   return {
     id: resolution?.status === 'failure' ? 'resolution-failure' : resolution?.status === 'resolved' ? resolution.endingId : 'pending',
     route: 'comply', index: 'ENDING 02', title, status, resolution,
     humanLine: '你真的要把这条路交给我们一起承担吗?',
     assistantLine: `我会说明代价，并承担这次选择。Aster 的临时位置是 ${role}。`,
-    closingExchange: `${maya}\n${role}: ${title}`,
+    closingExchange: `${role}: ${title}`,
     summary: resolution?.status === 'failure' ? 'Resolution failure：历史与 Final Commitment 没有任何 Public Ending 满足全部 hard gates。' : `世界结局：${title}。它由 Final Commitment、硬门和真实历史共同解析。`,
     hybridProfile: 'dominant', hybridLabel: role,
   }

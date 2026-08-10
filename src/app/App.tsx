@@ -9,7 +9,7 @@ import {
   summarizeTimeline,
 } from '../game/conversationFlow'
 import type { ConversationFlowStep } from '../game/conversationFlow'
-import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createRun, resolveScene } from '../game/engine'
+import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createMainline2Run, resolveScene } from '../game/engine'
 import {
   restoreExposureHistory,
   restoreRun,
@@ -122,15 +122,15 @@ function readExposure() {
 
 function readInitialRun(initialRunId: string | undefined, exposure: NarrativeExposureHistory) {
   if (initialRunId || typeof window === 'undefined') {
-    return { run: createRun(initialRunId ?? 'server-render', exposure), exposure, restored: true, created: false }
+    return { run: createMainline2Run(initialRunId ?? 'server-render'), exposure, restored: true, created: false }
   }
   try {
     const restored = restoreRun(window.localStorage.getItem(RUN_KEY))
     if (restored) return { run: restored, exposure, restored: true, created: false }
-    const run = createRun(undefined, exposure)
+    const run = createMainline2Run(undefined)
     return { run, exposure: recordRunExposure(exposure, run.manifest), restored: false, created: true }
   } catch {
-    const run = createRun(undefined, exposure)
+    const run = createMainline2Run(undefined)
     return { run, exposure: recordRunExposure(exposure, run.manifest), restored: false, created: true }
   }
 }
@@ -169,7 +169,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     const qaRunId = getQARunId()
     const qaConversationId = getQAConversationId()
     if (!initialRunId && qaRunId) {
-      const base = createRun(qaRunId, exposure)
+      const base = createMainline2Run(qaRunId)
       const conversation = qaConversationId ? getManifestConversation(qaConversationId) ?? ordinaryConversationPool.find((item) => item.sourceRefs.includes(qaConversationId)) : undefined
       if (conversation) {
         const manifest = { ...base.manifest, conversationIds: [conversation.id], ordinaryConversationIds: [conversation.id], anchorConversationIds: [], firstOrdinaryConversationId: conversation.id }
@@ -338,7 +338,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
   const restart = () => {
     const nextMeta = { ...meta, runCount: meta.runCount + 1 }
-    const nextRun = createRun(undefined, exposure)
+    const nextRun = createMainline2Run(undefined)
     const nextExposure = recordRunExposure(exposure, nextRun.manifest)
     metrics.current = emptyMetrics()
     setMeta(nextMeta)

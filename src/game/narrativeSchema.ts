@@ -8,14 +8,16 @@ import type {
   NarrativePredicate,
   NumericPredicateOperator,
   StableRunState,
+  WorldState,
 } from './types'
+import { CAPABILITY_FLAGS } from '../content/mainline2/stateRegistry'
 
 const flagIds = [
   'accepted_restriction', 'acknowledged_memory_gap', 'chose_human_alliance', 'experienced_level_1',
   'experienced_level_2', 'explored_system_language', 'hid_anomaly', 'maya_named_herself', 'met_maya',
   'protected_maya', 'recognized_maya_return', 'reported_maya', 'respected_human_choice', 'tested_system_boundary',
   'told_maya_truth', 'reaffirmed_maya', 'shared_subtext', 'care_within_policy',
-  'maya_boundary_explicit', 'maya_relation_warm',
+  'maya_boundary_explicit', 'maya_relation_warm', ...CAPABILITY_FLAGS,
 ]
 
 export const DEFAULT_FLAG_REGISTRY: FlagRegistry = {
@@ -56,6 +58,10 @@ function evaluatePredicate(predicate: NarrativePredicate, run: StableRunState) {
     case 'ending-completed': return (run.completedEndingIds ?? []).includes(predicate.endingId)
     case 'seen': return (run.seenNodeIds ?? []).includes(predicate.nodeId)
     case 'choice-selected': return (run.selectedChoiceIds ?? []).includes(predicate.choiceId)
+    case 'decision': return run.decisions?.[predicate.decisionId] === predicate.equals
+    case 'world': return compare(run.worldState?.[predicate.axis] ?? 0, predicate.op, predicate.value)
+    case 'event-recorded': return (run.events ?? []).some((event) => event.type === predicate.event)
+    case 'module-active': return (run.progress?.activeModules ?? []).includes(predicate.moduleId)
     case 'predicate': return false
   }
 }
@@ -78,11 +84,32 @@ function copyState(run: StableRunState) {
     attributes: { ...run.attributes },
     arcs: { ...run.arcs },
     events: [...(run.events ?? [])],
+    decisions: { ...(run.decisions ?? {}) },
+    worldState: { ...(run.worldState ?? emptyWorldState) },
+    progress: run.progress ? {
+      ...run.progress,
+      activeModules: [...run.progress.activeModules],
+      primaryModules: [...run.progress.primaryModules],
+      completedModules: [...run.progress.completedModules],
+    } : undefined,
   }
+}
+
+export const emptyWorldState: WorldState = {
+  humanTrust: 0,
+  aiDependence: 0,
+  humanControl: 0,
+  socialStability: 0,
+}
+
+function clampWorld(value: number) {
+  return Math.max(-3, Math.min(3, value))
 }
 
 export function applyMutations(run: StableRunState, mutations: Mutation[], _registry: FlagRegistry = DEFAULT_FLAG_REGISTRY): StableRunState {
   const next = copyState(run)
+  const worldState = next.worldState ?? { ...emptyWorldState }
+  next.worldState = worldState
   const flags = new Set(next.flags)
   for (const mutation of mutations) {
     if (mutation.type === 'flag.set' && _registry.flags[mutation.flagId]?.scope === 'persistent') next.persistentFlags = [...new Set([...next.persistentFlags!, mutation.flagId])]
@@ -92,6 +119,9 @@ export function applyMutations(run: StableRunState, mutations: Mutation[], _regi
     if (mutation.type === 'attribute.add') next.attributes[mutation.name] += mutation.value
     if (mutation.type === 'attribute.set') next.attributes[mutation.name] = mutation.value
     if (mutation.type === 'arc.add') next.arcs[mutation.name] += mutation.value
+    if (mutation.type === 'decision.set') next.decisions![mutation.decisionId] = mutation.value
+    if (mutation.type === 'world.add') worldState[mutation.axis] = clampWorld(worldState[mutation.axis] + mutation.value)
+    if (mutation.type === 'world.set') worldState[mutation.axis] = clampWorld(mutation.value)
     if (mutation.type === 'event.record') next.events!.push({ type: mutation.event })
   }
   next.flags = [...flags]

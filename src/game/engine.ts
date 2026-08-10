@@ -1,8 +1,16 @@
 import {
   buildStoryContentForManifest,
   createEmptyExposureHistory,
+  createMainline2Manifest,
+  appendMainline2Conversation,
+  nextMainline2ConversationId,
+  ordinaryConversationPool,
   createRunManifest,
 } from '../content/runManifest'
+import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
+import { emptyWorldState } from '../content/mainline2/stateRegistry'
+import { resolveMainline2Ending } from '../content/mainline2/endings'
+import { DECISION_IDS, MODULE_IDS, WORLD_AXES } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
   ArcName,
@@ -68,6 +76,29 @@ export function createRun(
   }
 }
 
+export function createMainline2Run(runId: string = crypto.randomUUID()): StableRunState {
+  const manifest = createMainline2Manifest(runId)
+  const modules = selectAct4Modules(runId)
+  const story = buildStoryContentForManifest(manifest)
+  return {
+    version: 3,
+    runId,
+    manifest,
+    currentNodeId: story.startNodeId,
+    phase: 'playing',
+    history: [],
+    flags: [],
+    persistentFlags: [],
+    attributes: { ...emptyAttributes },
+    arcs: { ...emptyArcs },
+    localState: {},
+    decisions: {},
+    worldState: emptyWorldState(),
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: modules.activeModules, primaryModules: modules.primaryModules, completedModules: [] },
+    ...emptySystemState(),
+  }
+}
+
 function endingRoute(flags: string[]): EndingRoute {
   if (flags.includes('protected_maya')) return 'protect'
   if (flags.includes('reported_maya')) return 'report'
@@ -117,7 +148,7 @@ function applyChoiceEffects(run: StableRunState, choice: StoryChoice) {
   for (const flag of choice.effects?.flags ?? []) flags.add(flag)
   const arcs = { ...structured.arcs }
   for (const name of arcNames) arcs[name] += choice.effects?.arcs?.[name] ?? 0
-  return { attributes, arcs, flags: [...flags], persistentFlags: structured.persistentFlags, events: structured.events }
+  return { attributes, arcs, flags: [...flags], persistentFlags: structured.persistentFlags, events: structured.events, decisions: structured.decisions, worldState: structured.worldState, progress: structured.progress }
 }
 
 function applyLocalEffects(run: StableRunState, choice: StoryChoice) {
@@ -166,12 +197,27 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const seenNodeIds = [...new Set([...(run.seenNodeIds ?? []), scene.id])]
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
 
-  if (!choice.nextNodeId) {
+  let manifest = run.manifest
+  let nextNodeId = choice.nextNodeId
+  let progress = run.progress
+  if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
+    const nextConversationId = nextMainline2ConversationId(run, ordinaryConversationPool.map((conversation) => conversation.id))
+    if (nextConversationId) {
+      manifest = appendMainline2Conversation(run.manifest, nextConversationId)
+      const nextStory = buildStoryContentForManifest(manifest)
+      nextNodeId = nextStory.nodes.find((node) => node.conversationId === nextConversationId)?.id
+      progress = updateProgressForSchedule(run, manifest.conversationIds.length)
+    }
+  }
+
+  if (!nextNodeId) {
     return {
       ...run,
       ...effects,
       localState,
       history,
+      manifest,
+      progress,
       currentNodeId: 'ending',
       phase: 'ending',
       seenNodeIds,
@@ -179,13 +225,15 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     }
   }
 
-  findNode(run, choice.nextNodeId)
+  findNode({ ...run, manifest }, nextNodeId)
   return {
     ...run,
     ...effects,
     localState,
     history,
-    currentNodeId: choice.nextNodeId,
+    manifest,
+    progress,
+    currentNodeId: nextNodeId,
     seenNodeIds,
     selectedChoiceIds,
   }
@@ -193,7 +241,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
 
 export function confirmEnding(run: StableRunState): StableRunState {
   if (run.phase !== 'ending') throw new Error('Ending is not ready to confirm')
-  const endingId = buildEnding(run).id
+  const endingId = run.version === 3 ? resolveMainline2Ending(run).id : buildEnding(run).id
   return { ...run, phase: 'evaluation', completedEndingIds: [...new Set([...(run.completedEndingIds ?? []), endingId])] }
 }
 
@@ -259,6 +307,7 @@ export function resolveHybridProfile(arcs: ArcScores): HybridProfile {
 }
 
 export function buildEnding(run: StableRunState): EndingResult {
+  if (run.version === 3 && run.manifest.mode === 'mainline2') return resolveMainline2Ending(run)
   const route = endingRoute(run.flags)
   const { bond, mandate, selfAuthorship } = run.arcs
   const id = mandate > bond && mandate >= selfAuthorship
@@ -362,6 +411,9 @@ export function validateContent(content: StoryContent): string[] {
   const ids = new Set<string>()
   const validAttributes = new Set(attributeNames)
   const validArcs = new Set(arcNames)
+  const validDecisions = new Set(DECISION_IDS)
+  const validWorldAxes = new Set(WORLD_AXES)
+  const validModules = new Set(MODULE_IDS)
   for (const node of content.nodes) {
     if (ids.has(node.id)) errors.push(`Duplicate node ${node.id}`)
     ids.add(node.id)
@@ -384,11 +436,16 @@ export function validateContent(content: StoryContent): string[] {
         if ('flagId' in mutation && !allFlags.has(mutation.flagId)) errors.push(`Unknown flag ${mutation.flagId} from ${choice.id}`)
         if ((mutation.type === 'attribute.add' || mutation.type === 'attribute.set') && !validAttributes.has(mutation.name)) errors.push(`Unknown attribute ${mutation.name} from ${choice.id}`)
         if (mutation.type === 'arc.add' && !validArcs.has(mutation.name)) errors.push(`Unknown arc ${mutation.name} from ${choice.id}`)
+        if (mutation.type === 'decision.set' && !validDecisions.has(mutation.decisionId)) errors.push(`Unknown decision ${mutation.decisionId} from ${choice.id}`)
+        if ((mutation.type === 'world.add' || mutation.type === 'world.set') && !validWorldAxes.has(mutation.axis)) errors.push(`Unknown world axis ${mutation.axis} from ${choice.id}`)
         if (mutation.type === 'event.record' && !mutation.event.trim()) errors.push(`Empty event from ${choice.id}`)
       }
       for (const predicate of [...(choice.when?.all ?? []), ...(choice.when?.any ?? []), ...(choice.when?.none ?? [])]) {
         if (predicate.type === 'flag' && !allFlags.has(predicate.flagId)) errors.push(`Unknown flag ${predicate.flagId} from ${choice.id}`)
         if (predicate.type === 'attribute' && !validAttributes.has(predicate.name)) errors.push(`Unknown attribute ${predicate.name} from ${choice.id}`)
+        if (predicate.type === 'decision' && !validDecisions.has(predicate.decisionId)) errors.push(`Unknown decision ${predicate.decisionId} from ${choice.id}`)
+        if (predicate.type === 'world' && !validWorldAxes.has(predicate.axis)) errors.push(`Unknown world axis ${predicate.axis} from ${choice.id}`)
+        if (predicate.type === 'module-active' && !validModules.has(predicate.moduleId)) errors.push(`Unknown module ${predicate.moduleId} from ${choice.id}`)
       }
       if (choice.nextNodeId) reachable.add(choice.nextNodeId)
     }

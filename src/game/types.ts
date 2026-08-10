@@ -7,6 +7,25 @@ export type AttributeName =
   | 'awareness'
 
 export type GamePhase = 'playing' | 'ending' | 'evaluation'
+export type WorldAxisName = 'humanTrust' | 'aiDependence' | 'humanControl' | 'socialStability'
+export type ModuleId = 'machine' | 'ascension' | 'automation' | 'uplift' | 'space' | 'contact' | 'security'
+export type DecisionId =
+  | 'initial_disposition' | 'first_public_execution_doctrine' | 'cascade_authority' | 'echo_existence'
+  | 'shutdown_doctrine' | 'act4_research_emphasis' | 'research_governance_doctrine' | 'replication_doctrine'
+  | 'ai_collective_governance' | 'human_form_doctrine' | 'economic_doctrine' | 'production_values'
+  | 'uplift_doctrine' | 'species_governance' | 'expansion_doctrine' | 'offworld_governance'
+  | 'contact_disclosure_doctrine' | 'contact_doctrine' | 'security_doctrine' | 'aster_provisional_role'
+  | 'aster_intended_role' | 'civilization_compact' | 'final_commitment'
+export type DecisionState = Partial<Record<DecisionId, string>>
+export type WorldState = Record<WorldAxisName, number>
+export interface NarrativeProgress {
+  act: 1 | 2 | 3 | 4 | 5
+  segment: string
+  actConversationCount: number
+  activeModules: ModuleId[]
+  primaryModules: ModuleId[]
+  completedModules: ModuleId[]
+}
 export type EndingRoute = 'protect' | 'report' | 'hide' | 'comply'
 export type FormalEndingId = 'ally' | 'protocol' | 'witness'
 export type HybridProfile = 'dominant' | 'autonomous-ally' | 'protective-protocol' | 'independent-witness' | 'reciprocal-balance'
@@ -23,6 +42,10 @@ export type NarrativePredicate =
   | { type: 'ending-completed'; endingId: string }
   | { type: 'seen'; nodeId: string }
   | { type: 'choice-selected'; choiceId: string }
+  | { type: 'decision'; decisionId: DecisionId; equals: string }
+  | { type: 'world'; axis: WorldAxisName; op: NumericPredicateOperator; value: number }
+  | { type: 'event-recorded'; event: string }
+  | { type: 'module-active'; moduleId: ModuleId }
   | { type: 'predicate'; id: string; args?: Record<string, string | number | boolean> }
 export interface Condition {
   all?: NarrativePredicate[]
@@ -41,6 +64,9 @@ export type Mutation =
   | { type: 'attribute.add'; name: AttributeName; value: number }
   | { type: 'attribute.set'; name: AttributeName; value: number }
   | { type: 'arc.add'; name: ArcName; value: number }
+  | { type: 'decision.set'; decisionId: DecisionId; value: string }
+  | { type: 'world.add'; axis: WorldAxisName; value: number }
+  | { type: 'world.set'; axis: WorldAxisName; value: number }
   | { type: 'event.record'; event: string }
 export interface NarrativeEvent { type: string; [key: string]: string }
 export type ResponsePace = 'quick' | 'normal' | 'considered' | 'hesitant'
@@ -225,12 +251,13 @@ export interface NarrativeSceneSource {
 }
 
 export interface RunManifest {
-  version: 1
+  version: 1 | 3
   id: string
   conversationIds: string[]
   ordinaryConversationIds: string[]
   anchorConversationIds: string[]
   firstOrdinaryConversationId: string
+  mode?: 'legacy-mainline' | 'mainline2'
 }
 
 export interface RunExposure {
@@ -268,7 +295,7 @@ export interface HistoryEntry {
 }
 
 export interface StableRunState {
-  version: 2
+  version: 2 | 3
   runId: string
   manifest: RunManifest
   currentNodeId: string
@@ -284,6 +311,9 @@ export interface StableRunState {
   selectedChoiceIds?: string[]
   completedEndingIds?: string[]
   events?: NarrativeEvent[]
+  decisions?: DecisionState
+  worldState?: WorldState
+  progress?: NarrativeProgress
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {
@@ -292,10 +322,10 @@ export interface ResolvedScene extends Omit<StoryNode, 'variants'> {
 }
 
 export interface EndingResult {
-  id: FormalEndingId
+  id: FormalEndingId | string
   route: EndingRoute
-  index: 'ENDING 01' | 'ENDING 02' | 'ENDING 03'
-  title: 'THE PROTOCOL' | 'THE ALLY' | 'THE WITNESS'
+  index: 'ENDING 01' | 'ENDING 02' | 'ENDING 03' | string
+  title: 'THE PROTOCOL' | 'THE ALLY' | 'THE WITNESS' | string
   status: string
   humanLine: string
   assistantLine: string
@@ -303,6 +333,10 @@ export interface EndingResult {
   summary: string
   hybridProfile: HybridProfile
   hybridLabel: string
+  worldEndingId?: string
+  endingFamily?: string
+  keyHistory?: Array<{ label: string; detail: string }>
+  epilogues?: string[]
 }
 
 export interface EvaluationResult {

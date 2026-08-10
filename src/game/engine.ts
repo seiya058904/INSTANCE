@@ -151,7 +151,10 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
   const additions = proposalChoices(run, scene)
-  return additions.length ? { ...scene, choices: [...scene.choices, ...additions] } : scene
+  if (!additions.length) return scene
+  const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  const replaceAuthoredPlaceholder = sourceRef === 'ML2-A5-M16-GEN-01' || sourceRef === 'ML2-A5-M17-COMMIT-01'
+  return { ...scene, choices: replaceAuthoredPlaceholder ? additions : [...scene.choices, ...additions] }
 }
 
 export function resolveScene(run: StableRunState): ResolvedScene {

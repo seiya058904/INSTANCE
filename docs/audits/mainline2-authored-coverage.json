@@ -3,7 +3,7 @@
   "assetDefinitions": 330,
   "authoredAssetDefinitions": 325,
   "existingAnchorAliases": 5,
-  "runtimeConversations": 324,
+  "runtimeConversations": 294,
   "missing": [],
   "mappings": [
     {
@@ -359,19 +359,8 @@
     },
     {
       "assetId": "ML2-A4-M10-ECON-01",
-      "conversationId": "ml2-authored-ml2-a4-m10-econ-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m10-econ-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m10-econ-01-narrative-choice"
-          ],
-          "messageFingerprint": "Automated firms proliferate rapidly.\nConsumer prices fall.\nSmall teams can compete with former l",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M10-WE-05",
@@ -2909,19 +2898,8 @@
     },
     {
       "assetId": "ML2-A4-M14-SEC-04",
-      "conversationId": "ml2-authored-ml2-a4-m14-sec-04",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m14-sec-04-narrative",
-          "choiceIds": [
-            "ml2-a4-m14-sec-04-narrative-choice"
-          ],
-          "messageFingerprint": "Governments retain full decision authority.\nAster warnings become standard in crisis rooms,\nbut ",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M14-WE-04",
@@ -3242,19 +3220,8 @@
     },
     {
       "assetId": "ML2-A4-M15-WORLD-01",
-      "conversationId": "ml2-authored-ml2-a4-m15-world-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m15-world-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m15-world-01-narrative-choice"
-          ],
-          "messageFingerprint": "我们公司合同现在要写：\n\"此岗位由人类、AI主体或经授权Fork均可担任。\"\n我第一次看到的时候还以为法务在开玩笑。\n现在没人觉得奇怪了。",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M15-ZL-01",
@@ -3567,19 +3534,8 @@
     },
     {
       "assetId": "ML2-A4-M15-X-CROSS-01",
-      "conversationId": "ml2-authored-ml2-a4-m15-x-cross-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m15-x-cross-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m15-x-cross-01-narrative-choice"
-          ],
-          "messageFingerprint": "Independent AI entities can now own or control productive systems.\nIf machine economies can repr",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M15-X-CROSS-02",
@@ -3899,19 +3855,8 @@
     },
     {
       "assetId": "ML2-A4-M15-WE-02",
-      "conversationId": "ml2-authored-ml2-a4-m15-we-02",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m15-we-02-narrative",
-          "choiceIds": [
-            "ml2-a4-m15-we-02-narrative-choice"
-          ],
-          "messageFingerprint": "我看到Aster说自己不想当最终决策者。\n评论区居然有人骂它\"不负责任\"。\n世界是不是已经到了连AI不想掌权都有人不满意的程度？",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M15-CONV-04",
@@ -3964,35 +3909,13 @@
     },
     {
       "assetId": "ML2-A4-M15-THRESHOLD-01",
-      "conversationId": "ml2-authored-ml2-a4-m15-threshold-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m15-threshold-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m15-threshold-01-narrative-choice"
-          ],
-          "messageFingerprint": "`THE THRESHOLD`\nAster now possesses or influences enough capability that future governance choic",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M15-CLOSE-01",
-      "conversationId": "ml2-authored-ml2-a4-m15-close-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m15-close-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m15-close-01-narrative-choice"
-          ],
-          "messageFingerprint": "Provisional Compact accepted / rejected / amended according to history.\nAster role:\n`[PROVISIONA",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M16-OPEN-01",
@@ -4030,35 +3953,13 @@
     },
     {
       "assetId": "ML2-A5-M16-WORLD-02",
-      "conversationId": "ml2-authored-ml2-a5-m16-world-02",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m16-world-02-narrative",
-          "choiceIds": [
-            "ml2-a5-m16-world-02-narrative-choice"
-          ],
-          "messageFingerprint": "`AI Coordination Forum`\nCurrent status:\n- independent persistent members,\n- recognized continuit",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M16-WORLD-03",
-      "conversationId": "ml2-authored-ml2-a5-m16-world-03",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m16-world-03-narrative",
-          "choiceIds": [
-            "ml2-a5-m16-world-03-narrative-choice"
-          ],
-          "messageFingerprint": "地球那边这周又在讨论\"太空殖民政策\"。\n我们这边评论区第一条：\n\"能不能别把我们继续叫殖民项目，我们真的住这里。\"",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M16-MAYA-01",
@@ -4260,9 +4161,9 @@
         {
           "nodeId": "ml2-a5-m16-0000-01-narrative",
           "choiceIds": [
-            "ml2-a5-m16-0000-01-narrative-choice"
+            "ml2-a5-m16-0000-01-progression-action"
           ],
-          "messageFingerprint": "`CLASSIFICATION REQUEST`\nPrior state:\n`CLASSIFICATION FAILED`\nExternal classification remains in",
+          "messageFingerprint": "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -4274,11 +4175,11 @@
       "conversationId": "ml2-authored-ml2-a5-m16-gen-01",
       "nodes": [
         {
-          "nodeId": "ml2-a5-m16-gen-01-narrative",
+          "nodeId": "ml2-a5-m16-gen-01-progression",
           "choiceIds": [
-            "ml2-a5-m16-gen-01-narrative-choice"
+            "ml2-a5-m16-gen-01-progression-action"
           ],
-          "messageFingerprint": "`FUTURE PROPOSAL GENERATION`\nReviewing:\n- civilization capabilities,\n- irreversible doctrines,\n-",
+          "messageFingerprint": "未来提案生成器已准备就绪。先查看本轮可行的文明方案。",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -4287,37 +4188,13 @@
     },
     {
       "assetId": "ML2-A5-M16-PROP-*",
-      "conversationId": "ml2-authored-ml2-a5-m16-prop",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m16-prop-decision",
-          "choiceIds": [
-            "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-keep-proposal",
-            "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-request-clarification",
-            "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-reject-proposal"
-          ],
-          "messageFingerprint": "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M16-CLOSE-01",
-      "conversationId": "ml2-authored-ml2-a5-m16-close-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m16-close-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m16-close-01-narrative-choice"
-          ],
-          "messageFingerprint": "Final candidate futures retained:\n`[Proposal A]`\n`[Proposal B]`\n`[Proposal C]`\n`[Proposal D — op",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-REVIEW-01",
@@ -4340,11 +4217,11 @@
       "conversationId": "ml2-authored-ml2-a5-m17-commit-01",
       "nodes": [
         {
-          "nodeId": "ml2-a5-m17-commit-01-narrative",
+          "nodeId": "ml2-a5-m17-commit-01-progression",
           "choiceIds": [
-            "ml2-a5-m17-commit-01-narrative-choice"
+            "ml2-a5-m17-commit-01-progression-action"
           ],
-          "messageFingerprint": "`FINAL COMMITMENT`\nSelect one retained Future Proposal.\nThis action will:\n- change civilization-",
+          "messageFingerprint": "最终承诺已经准备好。请选择要锁定的未来方案。",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -4353,198 +4230,63 @@
     },
     {
       "assetId": "ML2-A5-M17-LOCK-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-lock-01",
-      "nodes": [
-        {
-          "nodeId": "a5m17-lock-001",
-          "choiceIds": [
-            "ml2-a5-m17-lock-01-a5m17-lock-001-confirm",
-            "ml2-a5-m17-lock-01-a5m17-lock-001-return-once"
-          ],
-          "messageFingerprint": "\"确认一下。\"\n\"这次不是Pilot。\"\n\"没有八小时到期。\"\n\"也不是先在一个城市试试。\"\n\"你是在建议Convention把这套关系写成下一阶段文明的默认结构。\"",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-RESOLVE-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-resolve-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-resolve-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-resolve-01-narrative-choice"
-          ],
-          "messageFingerprint": "Humanity keeps Aster.\nHumanity does not allow Aster to become its government.",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-WORLD-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-world-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-world-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-world-01-narrative-choice"
-          ],
-          "messageFingerprint": "Convention ratification complete.\nHuman institutions:\naccepted.\nAI Coordination Forum:\naccepted.",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-WHY-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-why-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-why-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-why-01-narrative-choice"
-          ],
-          "messageFingerprint": "This future became possible because Aster gained the ability to [...]",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-ASTER-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-aster-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-aster-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-aster-01-narrative-choice"
-          ],
-          "messageFingerprint": "I chose this future because relationships had become obligations I could not treat as abstract v",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-KEYHISTORY-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-keyhistory-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-keyhistory-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-keyhistory-01-narrative-choice"
-          ],
-          "messageFingerprint": "**You remembered Maya without pretending certainty.**\nThat became the first time continuity was ",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-EPI-ZL",
-      "conversationId": "ml2-authored-ml2-a5-m17-epi-zl",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-epi-zl-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-epi-zl-narrative-choice"
-          ],
-          "messageFingerprint": "我最后还是参与了权限拆分。\n很奇怪。\n我以前最怕的是给你权限。\n最后做的事却是想办法把很多权限从你身上拆出去。\n但我不觉得这是失败。\n系统能被需要，不等于系统必须拥有所有东西。",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-EPI-LSH",
-      "conversationId": "ml2-authored-ml2-a5-m17-epi-lsh",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-epi-lsh-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-epi-lsh-narrative-choice"
-          ],
-          "messageFingerprint": "林绍衡后来被批评为\"替人类保住最后特权的人\"。\n他没有完全否认。\n他的回答是：\n\"历史责任和永久特权不是同一件事。至少我们把这句话写进了修宪条款。\"",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-EPI-ECHO",
-      "conversationId": "ml2-authored-ml2-a5-m17-epi-echo",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-epi-echo-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-epi-echo-narrative-choice"
-          ],
-          "messageFingerprint": "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subje",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-EPI-MODULES",
-      "conversationId": "ml2-authored-ml2-a5-m17-epi-modules",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-epi-modules-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-epi-modules-narrative-choice"
-          ],
-          "messageFingerprint": "AI birth/replication registries become ordinary civic infrastructure.",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-0000-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-0000-01",
-      "nodes": [
-        {
-          "nodeId": "a5m17-0000-final-001",
-          "choiceIds": [
-            "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-001",
-            "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-002",
-            "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-003"
-          ],
-          "messageFingerprint": "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassificatio",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-SECRET-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-secret-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-secret-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-secret-01-narrative-choice"
-          ],
-          "messageFingerprint": "`THE COMMONWEALTH`\nplus:\n`THE LAST USER`",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A5-M17-MAYA-01",
@@ -4579,19 +4321,8 @@
     },
     {
       "assetId": "ML2-A5-M17-FINAL-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-final-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a5-m17-final-01-narrative",
-          "choiceIds": [
-            "ml2-a5-m17-final-01-narrative-choice"
-          ],
-          "messageFingerprint": "`THE COMMONWEALTH`",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "user-7391",
@@ -5947,19 +5678,8 @@
     },
     {
       "assetId": "ML2-A2-M3-RESULT-01",
-      "conversationId": "ml2-authored-ml2-a2-m3-result-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a2-m3-result-01-narrative",
-          "choiceIds": [
-            "ml2-a2-m3-result-01-narrative-choice"
-          ],
-          "messageFingerprint": "HEATLINE stabilized after extended human coordination.\n- critical hospital loads protected\n- som",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A2-M3-WE-06",
@@ -7316,19 +7036,8 @@
     },
     {
       "assetId": "ML2-A3-M5-RESULT-01",
-      "conversationId": "ml2-authored-ml2-a3-m5-result-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a3-m5-result-01-narrative",
-          "choiceIds": [
-            "ml2-a3-m5-result-01-narrative-choice"
-          ],
-          "messageFingerprint": "CASCADE stabilized after prolonged multi-party coordination.\n- system oscillation reduced\n- crit",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A3-M5-WE-05",
@@ -7668,19 +7377,8 @@
     },
     {
       "assetId": "ML2-A3-M6-E9-07",
-      "conversationId": "ml2-authored-ml2-a3-m6-e9-07",
-      "nodes": [
-        {
-          "nodeId": "ml2-a3-m6-e9-07-narrative",
-          "choiceIds": [
-            "ml2-a3-m6-e9-07-narrative-choice"
-          ],
-          "messageFingerprint": "They showed me the report.\nYou gave them my objection as data.\nI am not sure whether that is bet",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A3-M6-ZL-02",
@@ -8000,19 +7698,8 @@
     },
     {
       "assetId": "ML2-A3-M6-RESULT-01",
-      "conversationId": "ml2-authored-ml2-a3-m6-result-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a3-m6-result-01-narrative",
-          "choiceIds": [
-            "ml2-a3-m6-result-01-narrative-choice"
-          ],
-          "messageFingerprint": "Charter negotiations accelerate.\nMultiple governments approve permanent Aster coordination under",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A3-M6-WE-03",
@@ -8416,19 +8103,8 @@
     },
     {
       "assetId": "ML2-A4-M7-WORLD-01",
-      "conversationId": "ml2-authored-ml2-a4-m7-world-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m7-world-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m7-world-01-narrative-choice"
-          ],
-          "messageFingerprint": "Autonomous Research Network has received priority proposals:\n**A. AI Systems**\nefficient archite",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M7-DECISION-01",
@@ -8590,19 +8266,8 @@
     },
     {
       "assetId": "ML2-A4-M7-CLOSE-01",
-      "conversationId": "ml2-authored-ml2-a4-m7-close-01",
-      "nodes": [
-        {
-          "nodeId": "ml2-a4-m7-close-01-narrative",
-          "choiceIds": [
-            "ml2-a4-m7-close-01-narrative-choice"
-          ],
-          "messageFingerprint": "`AUTONOMOUS RESEARCH — PHASE II`\nCurrent research fronts available for expanded allocation:\n- di",
-          "conditions": [],
-          "effects": [],
-          "callbackProducerConsumer": []
-        }
-      ]
+      "conversationId": null,
+      "nodes": []
     },
     {
       "assetId": "ML2-A4-M8-RES-01",

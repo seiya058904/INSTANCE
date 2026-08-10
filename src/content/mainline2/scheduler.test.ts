@@ -120,6 +120,11 @@ describe('Mainline 2.0 scheduler polish', () => {
       missingRequiredAssets: missingRequired,
     }))
     expect(new Set(schedules.map((ids) => ids.join('|'))).size).toBeGreaterThan(1)
+    const mainlineSequences = schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))
+    const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)
+    expect(new Set(mainlineSequences).size).toBeGreaterThanOrEqual(20)
+    expect(new Set(shutdownSlots).size).toBeGreaterThanOrEqual(2)
+    expect(maxMajorDecision).toBeLessThanOrEqual(2)
     expect(missingRequired).toBe(0)
     expect(dependencyViolations).toBe(0)
     expect(maxPureEnglishOrdinary).toBeLessThanOrEqual(2)

@@ -16,6 +16,7 @@ const nodeHeader = /^(?:##|###) Node `([^`]+)`/
 const choiceHeader = /^#{2,3} (?:Choice|Option) [A-G](?: — (.*))?/i
 const decisionBindingRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/decisionBindings.registry.json'), 'utf8'))
 const choiceIdentityRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/choiceIdentity.registry.json'), 'utf8'))
+const runtimeClassificationRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/runtimeAssetClassification.registry.json'), 'utf8'))
 const decisionBindingByTextKey = new Map(decisionBindingRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceTextHash}`, binding]))
 const choiceIdentityByKey = new Map(choiceIdentityRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceKey}`, binding]))
 
@@ -193,18 +194,19 @@ function parseAsset(file, block, assetId, kind, fullText) {
       if (authoredPrompt && choices.length) nodes.push({ id: `${safe(assetId)}-decision`, userMessage: `${authoredPrompt}\nSelect one of these positions.`, choices })
     }
   }
-  if (!nodes.length && kind !== 'Existing') {
-    const authored = firstQuote(lines, 0, lines.length)
-    if (authored) nodes.push({
-      id: `${safe(assetId)}-narrative`,
-      userMessage: authored,
-      choices: [{ id: `${safe(assetId)}-narrative-choice`, text: authored, authoredTextHash: authoredTextHash(authored), continuation: 'end-conversation' }],
+  if (!nodes.length && runtimeClassificationRegistry[assetId]?.fallback) {
+    const fallback = runtimeClassificationRegistry[assetId].fallback
+    nodes.push({
+      id: fallback.nodeId ?? `${safe(assetId)}-progression`,
+      userMessage: fallback.userMessage,
+      choiceKind: fallback.choiceKind,
+      choices: [{ id: `${safe(assetId)}-progression-action`, text: fallback.choiceText, continuation: 'end-conversation' }],
     })
   }
   const events = [...block.matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
   const firstHeading = lines.find((line) => /^#{1,4} /.test(line) && !nodeHeader.test(line) && !assetHeader.test(line))?.replace(/^#{1,4}\s+/, '').trim()
   const fragments = assetId === 'ML2-A5-M17-SECRET-01' ? secretEndingFragments(fullText) : authoredFragments(lines, assetId)
-  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], fragments, nodes }
+  return { assetId, file, kind, runtimeKind: runtimeClassificationRegistry[assetId]?.runtimeKind ?? 'playable-conversation', act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], fragments, nodes }
 }
 
 const assets = []
@@ -217,7 +219,7 @@ for (const file of files) {
     const block = text.slice(match.index, matches[index + 1]?.index ?? text.length)
     const kind = match[0].match(/(?:New|Existing|Conditional|Story-Relevant)/)?.[0] ?? 'New'
     const asset = parseAsset(file, block, match[1], kind, text)
-    if (kind !== 'Existing' && !asset.nodes.length && !match[1].includes('-MOD-')) errors.push(`${file}:${match[1]} has no parseable authored node/choices`)
+    if (kind !== 'Existing' && !asset.nodes.length && !match[1].includes('-MOD-') && ['playable-conversation', 'progression'].includes(asset.runtimeKind)) errors.push(`${file}:${match[1]} has no parseable authored node/choices`)
     assets.push(asset)
   }
 }
@@ -232,10 +234,10 @@ const existingAliases = new Map([
   ['user-7391', 'user-7391'], ['user-1842-first', 'user-1842-first'], ['speaking-8614', 'speaking-8614'],
   ['conversation-0000', 'conversation-0000'], ['user-1842-return', 'user-1842-return'],
 ])
-const conversations = assets.flatMap((asset) => asset.kind !== 'Existing' && asset.nodes.length ? [{
+const conversations = assets.flatMap((asset) => asset.kind !== 'Existing' && asset.nodes.length && ['playable-conversation', 'progression'].includes(asset.runtimeKind) ? [{
   id: `ml2-authored-${safe(asset.assetId)}`,
   sourceRefs: [asset.assetId],
-  nodes: asset.nodes.map((node) => ({ id: node.id, conversationId: `ml2-authored-${safe(asset.assetId)}`, conversationTitle: asset.title, userMessage: node.userMessage, choices: node.choices, behaviorMode: 'direct', timing: { responsePace: 'normal', typingPattern: 'steady' }, choiceKind: 'semantic' })),
+  nodes: asset.nodes.map((node) => ({ id: node.id, conversationId: `ml2-authored-${safe(asset.assetId)}`, conversationTitle: asset.title, userMessage: node.userMessage, choices: node.choices, behaviorMode: 'direct', timing: { responsePace: 'normal', typingPattern: 'steady' }, choiceKind: node.choiceKind ?? 'semantic' })),
   behaviorModes: ['direct'], handoffProfile: 'normal', turnShape: 'dialogue', topic: asset.title,
   interactionPattern: 'standard-question', userArchetype: `mainline-authored-${asset.act}`, topicCategory: 'meta-ai', act: asset.act, module: asset.module,
 }] : [])
@@ -244,7 +246,8 @@ const coverage = assets.map((asset) => {
   const conversation = conversations.find((candidate) => candidate.sourceRefs[0] === asset.assetId)
   const alias = existingAliases.get(asset.assetId)
   const systemAsset = asset.assetId.includes('-MOD-')
-  return { assetId: asset.assetId, file: asset.file, conversationId: conversation?.id ?? alias ?? null, nodes: conversation?.nodes.map((node) => ({ nodeId: node.id, choiceIds: node.choices.map((choice) => choice.id), messageFingerprint: node.userMessage.slice(0, 96), effects: node.choices.flatMap((choice) => choice.mutations ?? []) })) ?? [], status: conversation ? 'mapped' : alias ? 'existing-alias' : systemAsset ? 'mapped-system-effect' : 'unmapped' }
+  const supportOnly = !['playable-conversation', 'progression'].includes(asset.runtimeKind)
+  return { assetId: asset.assetId, file: asset.file, runtimeKind: asset.runtimeKind, conversationId: conversation?.id ?? alias ?? null, nodes: conversation?.nodes.map((node) => ({ nodeId: node.id, choiceIds: node.choices.map((choice) => choice.id), messageFingerprint: node.userMessage.slice(0, 96), effects: node.choices.flatMap((choice) => choice.mutations ?? []) })) ?? [], status: conversation ? 'mapped' : alias ? 'existing-alias' : supportOnly ? 'support-only' : systemAsset ? 'mapped-system-effect' : 'unmapped' }
 })
 
 const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/g, '$1:')

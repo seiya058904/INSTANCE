@@ -82,7 +82,7 @@ export function generateFutureProposals(run: StableRunState): FutureProposalDefi
   const ranked = [...eligible].sort((left, right) => score(right) - score(left) || left.id.localeCompare(right.id))
   const families: EndingFamilyId[] = ['human_continuity', 'coexistence', 'ai_rule', 'machine_civilization', 'posthuman', 'uplift', 'automated_civilization', 'cosmic', 'security', 'rupture']
   const distinct = families.map((family) => ranked.find((proposal) => proposal.family === family)).filter(Boolean) as FutureProposalDefinition[]
-  const signaled = ranked.filter((proposal) => (proposalDecisionSignals[proposal.id] ?? []).some(([decisionId, expected]) => run.decisions?.[decisionId as keyof typeof run.decisions] === expected)).slice(0, 2)
+  const signaled = ranked.filter((proposal) => (proposalDecisionSignals[proposal.id] ?? []).some(([decisionId, expected]) => run.decisions?.[decisionId as keyof typeof run.decisions] === expected)).slice(0, 5)
   const explicitPriority = [
     ['proposal.ph.digital_continuity', (run.flags ?? []).includes('cap.human_enhancement_access') && !(run.flags ?? []).includes('cap.digital_continuity_mature')],
     ['proposal.hc.continuity_charter', run.decisions?.aster_provisional_role === 'partner'],
@@ -91,7 +91,22 @@ export function generateFutureProposals(run: StableRunState): FutureProposalDefi
     ['proposal.se.constitutional_peace_architecture', ['mutual_disarmament', 'defensive_command', 'enforced_peace'].includes(run.decisions?.security_doctrine ?? '')],
     ['proposal.rupture.legible_exit', ['full_human_control'].includes(run.decisions?.shutdown_doctrine ?? '') || ['necessity'].includes(run.decisions?.cascade_authority ?? '')],
   ].filter(([, matches]) => matches).map(([id]) => ranked.find((proposal) => proposal.id === id)).filter(Boolean) as FutureProposalDefinition[]
-  return [...new Set([...explicitPriority, ...signaled, ...distinct.slice(0, 3), ...ranked.slice(0, 2)])].slice(0, 5)
+  const preferredIds = [
+    run.decisions?.aster_provisional_role === 'partner' ? 'proposal.hc.continuity_charter' : undefined,
+    run.decisions?.first_public_execution_doctrine === 'human_final_authority' ? 'proposal.hc.final_human_veto' : undefined,
+    run.decisions?.aster_provisional_role === 'custodian' && run.decisions?.research_governance_doctrine === 'principle_based_autonomy' ? 'proposal.ai.audit_council' : undefined,
+    run.decisions?.research_governance_doctrine === 'principle_based_autonomy' || ['sovereign', 'custodian'].includes(run.decisions?.aster_provisional_role ?? '') ? 'proposal.ar.civilization_trusteeship' : undefined,
+    (run.decisions?.replication_doctrine === 'free_replication' || run.decisions?.ai_collective_governance === 'ai_self_governance' || run.decisions?.expansion_doctrine === 'independent_machine_space') ? 'proposal.mc.independent_machine_polities' : undefined,
+    ['open_enhancement', 'posthuman_transition'].includes(run.decisions?.human_form_doctrine ?? '') ? 'proposal.ph.open_enhancement_commonwealth' : undefined,
+    (run.decisions?.species_governance === 'multispecies_parliament' || run.decisions?.uplift_doctrine === 'species_self_determination') ? 'proposal.up.multispecies_constitutional_order' : undefined,
+    ['social_dividend', 'post_scarcity_transition'].includes(run.decisions?.economic_doctrine ?? '') ? 'proposal.ar.abundance_dividend' : undefined,
+    run.decisions?.act4_research_emphasis === 'frontier_science' ? 'proposal.co.frontier_federation' : undefined,
+    ['mutual_disarmament', 'defensive_command', 'enforced_peace'].includes(run.decisions?.security_doctrine ?? '') ? 'proposal.se.constitutional_peace_architecture' : undefined,
+    (run.decisions?.shutdown_doctrine === 'full_human_control' || run.decisions?.cascade_authority === 'necessity') ? 'proposal.rupture.legible_exit' : undefined,
+  ].map((id) => ranked.find((proposal) => proposal.id === id)).filter(Boolean) as FutureProposalDefinition[]
+  const digitalContinuity = ranked.find((proposal) => proposal.id === 'proposal.ph.digital_continuity')
+  const selected = [...new Set([...preferredIds, ...(digitalContinuity ? [digitalContinuity] : []), ...signaled, ...explicitPriority, ...distinct.slice(0, 3), ...ranked.slice(0, 2)])]
+  return selected.slice(0, 5)
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {

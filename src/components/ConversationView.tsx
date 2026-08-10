@@ -262,10 +262,10 @@ export function ConversationView({
               )}
 
               {flowStage === 'ready' && (
-                <section className="candidate-section is-ready" aria-label="候选响应">
+                <section className={`candidate-section is-ready ${scene.choiceKind === 'progression' ? 'is-progression' : ''}`} aria-label={scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}>
                   <div className="candidate-heading">
-                    <span>候选响应</span>
-                    <small>按 1–{scene.choices.length} 选择</small>
+                    <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}</span>
+                    <small>{scene.choiceKind === 'progression' ? '单向推进' : `按 1–${scene.choices.length} 选择`}</small>
                   </div>
                   <div className="candidate-list">
                     {scene.choices.map((choice, index) => (

@@ -196,7 +196,9 @@ export interface StoryChoice {
   sampleGroup?: 'a' | 'b'
   localEffects?: { affinity?: number; affinitySet?: number }
   proposalId?: string
-  proposalKind?: 'proposal' | 'clarification' | 'commitment' | 'rejection'
+  proposalKind?: 'proposal' | 'clarification' | 'commitment' | 'rejection' | 'recovery'
+  authoredTextHash?: string
+  decisionBinding?: { decisionId: DecisionId; canonicalValue: string; historyEvent: string }
 }
 
 export interface StoryVariant {

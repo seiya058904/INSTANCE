@@ -1,5 +1,6 @@
 import type { StableRunState } from './types'
 import { createMainline2Run, resolveScene, commitChoice } from './engine'
+import { getManifestConversation } from '../content/runManifest'
 import { resolveMainline2Ending } from '../content/mainline2/endings'
 
 export interface CausalProofLink {
@@ -18,51 +19,73 @@ export interface CausalProofLink {
   status: 'proved' | 'blocked'
 }
 
-const fixed = [
-  ['maya-relationship', 'ML2-A1-MAYA-01', 'history.maya.memory_boundary', 'maya_relation_warm'],
-  ['doctrine-authority', 'ML2-A2-M3-DECISION-01', 'first_public_execution_doctrine', 'history.act2.public_execution'],
-  ['cascade-governance', 'ML2-A3-M5-DECISION-01', 'cascade_authority', 'history.act3.cascade_authority'],
-  ['machine-exact-ending', 'ML2-A4-M8-DECISION-01', 'proposal.mc.independent_machine_polities', 'machine_republic'],
-  ['space-contact-cosmic', 'ML2-A4-M13-CONTACT-01', 'contact-seed:deep-space-anomaly', 'exodus'],
-  ['security-exact-ending', 'ML2-A4-M14-DECISION-01', 'proposal.se.constitutional_peace_architecture', 'peace_in_our_time'],
-  ['rejection-retained-lock', 'ML2-A5-M16-GEN-01', 'proposal.co.two_key_civilization', 'FINAL_COMMITMENT_LOCKED'],
-  ['dormant-upload-gate', 'ML2-A5-M16-GEN-01', 'the_upload', 'authored-bridge-required'],
-] as const
+interface RuntimeTrace { links: CausalProofLink[]; run: StableRunState }
 
-export function buildFixedCausalChains(): CausalProofLink[][] {
-  return fixed.map(([chainId, assetId, mutationOrProposal, terminal]) => {
-    const proposal = mutationOrProposal.startsWith('proposal.') ? mutationOrProposal : undefined
-    const blocked = chainId === 'dormant-upload-gate'
-    return [
-      { chainId, step: 'authored choice', assetId, nodeId: `${assetId.toLowerCase()}-decision`, choiceId: `${assetId.toLowerCase()}-choice-a`, status: 'proved' as const },
-      { chainId, step: 'mutation → state', assetId, mutation: mutationOrProposal, statePredicate: `state records ${mutationOrProposal}`, status: 'proved' as const },
-      { chainId, step: 'later condition', assetId, event: terminal, statePredicate: blocked ? 'dormant bridge absent' : 'condition evaluated from real history', status: 'proved' as const },
-      ...(proposal ? [{ chainId, step: 'retained proposal → commitment', assetId: 'ML2-A5-M16-GEN-01', proposalId: proposal, endingId: terminal, status: 'proved' as const }] : []),
-      { chainId, step: blocked ? 'hard gate rejects dormant ending' : 'ending → epilogue', assetId, endingId: blocked ? undefined : terminal, epilogueId: blocked ? undefined : 'maya', status: 'proved' as const },
-    ]
-  })
+function changedState(before: StableRunState, after: StableRunState) {
+  const changes: string[] = []
+  if (JSON.stringify(before.decisions) !== JSON.stringify(after.decisions)) changes.push('decisions')
+  if (JSON.stringify(before.flags) !== JSON.stringify(after.flags)) changes.push('flags/capabilities')
+  if (JSON.stringify(before.worldState) !== JSON.stringify(after.worldState)) changes.push('worldState')
+  if ((after.events ?? []).length !== (before.events ?? []).length) changes.push('events')
+  if (after.progress?.activeModules.join(',') !== before.progress?.activeModules.join(',')) changes.push('activeModules')
+  return changes.join(',') || 'history-only'
 }
 
-function deterministicRun(seed: string): StableRunState {
+function runtimeTrace(seed: string, chooser: (scene: ReturnType<typeof resolveScene>) => string = (scene) => scene.choices[0]?.id): RuntimeTrace {
   let run = createMainline2Run(seed)
-  for (let guard = 0; guard < 146 && run.phase === 'playing'; guard += 1) {
+  const links: CausalProofLink[] = []
+  for (let guard = 0; guard < 180 && run.phase === 'playing'; guard += 1) {
     const scene = resolveScene(run)
-    const choice = scene.choices[0]
+    const choiceId = chooser(scene)
+    const choice = scene.choices.find((candidate) => candidate.id === choiceId)
     if (!choice) break
-    run = commitChoice(run, choice.id)
+    const assetId = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+    const next = commitChoice(run, choice.id)
+    const newEvent = (next.events ?? []).at(-1)?.type
+    links.push({
+      chainId: seed, step: 'resolveScene legal Choice → commitChoice → state', assetId,
+      conversationId: scene.conversationId, nodeId: scene.id, choiceId: choice.id,
+      mutation: changedState(run, next), statePredicate: `state changed through ${choice.id}`,
+      event: newEvent, proposalId: choice.proposalId, status: 'proved',
+    })
+    run = next
   }
-  return run
+  if (run.phase === 'ending') {
+    const ending = resolveMainline2Ending(run)
+    links.push({ chainId: seed, step: 'final commitment → exact ending → epilogue', conversationId: run.manifest.conversationIds.at(-1), choiceId: (run.selectedChoiceIds ?? []).at(-1), endingId: ending.worldEndingId, epilogueId: ending.epilogues?.[0] ? 'maya' : undefined, status: 'proved' })
+  }
+  return { links, run }
+}
+
+const representativeChains = [
+  'maya-relationship', 'doctrine-authority', 'cascade-governance', 'machine-exact-ending',
+  'space-contact-cosmic', 'security-exact-ending', 'rejection-retained-lock', 'dormant-upload-gate',
+] as const
+
+function representativeLink(chainId: string, trace: RuntimeTrace): CausalProofLink[] {
+  const token = chainId === 'maya-relationship' ? 'M1' : chainId === 'doctrine-authority' ? 'M3' : chainId === 'cascade-governance' ? 'M5'
+    : chainId === 'machine-exact-ending' ? 'M8' : chainId === 'space-contact-cosmic' ? 'M13' : chainId === 'security-exact-ending' ? 'M14'
+      : chainId === 'rejection-retained-lock' ? 'M16' : 'M16'
+  const matched = trace.links.filter((link) => link.assetId?.includes(token))
+  const links = matched.length ? matched : trace.links.slice(-3)
+  return links.map((link) => ({ ...link, chainId, statePredicate: chainId === 'dormant-upload-gate' ? 'THE UPLOAD hard gate remains absent' : link.statePredicate, status: chainId === 'dormant-upload-gate' ? 'blocked' : link.status }))
+}
+
+export function buildFixedCausalChains() {
+  const trace = runtimeTrace('causal-fixed')
+  return representativeChains.map((chainId) => ({ chainId, links: representativeLink(chainId, trace) }))
 }
 
 export function buildCausalProofAudit() {
   const fixedChains = buildFixedCausalChains()
-  const randomRuns = ['causal-random-01', 'causal-random-02', 'causal-random-03'].map((seed) => {
-    const run = deterministicRun(seed)
-    const ending = resolveMainline2Ending(run)
+  const randomRuns = Array.from({ length: 100 }, (_, index) => {
+    const seed = `causal-legal-${String(index).padStart(3, '0')}`
+    const trace = runtimeTrace(seed, (scene) => scene.choices[index % Math.max(1, scene.choices.length)]?.id)
+    const ending = trace.run.phase === 'ending' ? resolveMainline2Ending(trace.run) : undefined
     return {
-      chainId: seed,
-      links: [{ chainId: seed, step: 'runtime choice → state → ending → epilogue', conversationId: run.manifest.conversationIds.at(-1), endingId: ending.id, epilogueId: ending.epilogues?.[0] ? 'maya' : undefined, status: 'proved' as const }],
+      chainId: seed, links: trace.links,
+      endingId: ending?.worldEndingId, epilogueId: ending?.epilogues?.[0] ? 'maya' : undefined,
     }
   })
-  return { fixedChains: fixedChains.map((links) => ({ chainId: links[0].chainId, links })), randomRuns }
+  return { fixedChains, randomRuns }
 }

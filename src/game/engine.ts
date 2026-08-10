@@ -6,11 +6,12 @@ import {
   nextMainline2ConversationId,
   ordinaryConversationPool,
   createRunManifest,
+  getManifestConversation,
 } from '../content/runManifest'
 import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { resolveMainline2Ending } from '../content/mainline2/endings'
-import { generateFutureProposals } from '../content/mainline2/proposals'
+import { generateFutureProposals, getFutureProposalById } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -121,17 +122,27 @@ function resolveContext(node: StoryNode, run: StableRunState, userMessage: strin
 }
 
 function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice[] {
-  if (!scene.conversationId.includes('m16') && !scene.conversationId.includes('m17')) return []
+  const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  if (sourceRef !== 'ML2-A5-M16-GEN-01' && sourceRef !== 'ML2-A5-M17-REVIEW-01' && sourceRef !== 'ML2-A5-M17-COMMIT-01') return []
   const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
-  const proposals = retained.length ? retained.map((id) => generateFutureProposals(run).find((proposal) => proposal.id === id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
+  const proposals = retained.length ? retained.map((id) => getFutureProposalById(id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
   const selected = run.selectedProposalId
-  if (scene.conversationId.includes('m16')) {
+  if (sourceRef === 'ML2-A5-M16-GEN-01') {
+    if (retained.length) return []
+    return proposals.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+  }
+  if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
     const remaining = proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
-    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
-    const proposal = proposals.find((candidate) => candidate.id === selected) ?? proposals[0]
+    if (!remaining.length) {
+      const recovery = (run.rejectedProposalIds ?? [])[0]
+      return recovery ? [{ id: `m17-recover-${recovery}`, text: '从已拒绝的 retained set 中恢复一个方案，重新进行最终审议。', proposalId: recovery, proposalKind: 'recovery' as const, continuation: 'end-conversation' as const }] : []
+    }
+    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `复核“${proposal.title}”的 authority、代价与反对理由。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    const proposal = proposals.find((candidate) => candidate.id === selected)
+    if (!proposal) return []
     return [
-      { id: `m16-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
-      { id: `m16-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，回到本局已经记录的矛盾，不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
+      { id: `m17-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
+      { id: `m17-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，保留它的历史记录，但不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
     ]
   }
   if (run.finalCommitmentLocked) return []
@@ -203,6 +214,8 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const choice = scene.choices.find((item) => item.id === choiceId)
   if (!choice) throw new Error(`Choice ${choiceId} is not available`)
   if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')
+  const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  if (choice.proposalKind === 'commitment' && proposalSource !== 'ML2-A5-M17-COMMIT-01') throw new Error('Commitment is only available at the authored M17 commit stage')
   const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
     ? { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
     : choice
@@ -223,17 +236,22 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   }]
   const seenNodeIds = [...new Set([...(run.seenNodeIds ?? []), scene.id])]
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
+  let proposalFields: Partial<StableRunState> = {}
 
   if (choice.proposalKind && choice.proposalId && choice.proposalKind !== 'commitment') {
     const generatedIds = (run.retainedProposalIds ?? run.availableProposalIds ?? generateFutureProposals(run).map((proposal) => proposal.id))
     const retainedProposalIds = [...generatedIds]
     const rejectedProposalIds = choice.proposalKind === 'rejection'
       ? [...new Set([...(run.rejectedProposalIds ?? []), choice.proposalId])]
-      : [...(run.rejectedProposalIds ?? [])]
+      : choice.proposalKind === 'recovery'
+        ? (run.rejectedProposalIds ?? []).filter((id) => id !== choice.proposalId)
+        : [...(run.rejectedProposalIds ?? [])]
     const clarifiedProposalIds = choice.proposalKind === 'clarification'
       ? [...new Set([...(run.clarifiedProposalIds ?? []), choice.proposalId])]
       : run.clarifiedProposalIds ?? []
-    return {
+    const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+    proposalFields = { availableProposalIds: retainedProposalIds, retainedProposalIds, selectedProposalId: proposalSource === 'ML2-A5-M16-GEN-01' || choice.proposalKind === 'rejection' ? undefined : choice.proposalId, rejectedProposalIds, proposalPhase: choice.proposalKind === 'clarification' ? 'ready-to-commit' : 'retained', clarifiedProposalIds }
+    if (proposalSource !== 'ML2-A5-M16-GEN-01') return {
       ...run,
       ...effects,
       localState,
@@ -242,19 +260,16 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
       phase: 'playing',
       seenNodeIds,
       selectedChoiceIds,
-      availableProposalIds: retainedProposalIds,
-      retainedProposalIds,
-      selectedProposalId: choice.proposalKind === 'rejection' ? undefined : choice.proposalId,
-      rejectedProposalIds,
-      proposalPhase: choice.proposalKind === 'clarification' ? 'ready-to-commit' : 'retained',
-      clarifiedProposalIds,
+      ...proposalFields,
     }
+    // M16 generation is a real transition: retain the single generated set, then
+    // let the ordinary scheduler expose the next authored conversation.
   }
 
   let manifest = run.manifest
   let nextNodeId = choice.nextNodeId
   let progress = run.progress
-  const scheduledRun: StableRunState = { ...run, ...effects, localState, history, progress: run.progress }
+  const scheduledRun: StableRunState = { ...run, ...proposalFields, ...effects, localState, history, progress: run.progress }
   if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
     const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool.map((conversation) => conversation.id))
     if (nextConversationId) {
@@ -268,6 +283,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   if (!nextNodeId) {
     return {
       ...run,
+      ...proposalFields,
       ...effects,
       localState,
       history,
@@ -278,13 +294,14 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
       seenNodeIds,
       selectedChoiceIds,
       finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
-      proposalPhase: choice.proposalKind === 'commitment' ? 'locked' : run.proposalPhase,
+      proposalPhase: choice.proposalKind === 'commitment' ? 'locked' : proposalFields.proposalPhase ?? run.proposalPhase,
     }
   }
 
   findNode({ ...run, manifest }, nextNodeId)
   return {
     ...run,
+    ...proposalFields,
     ...effects,
     localState,
     history,

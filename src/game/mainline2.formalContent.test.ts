@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildStoryContentForManifest, createMainline2Manifest } from '../content/runManifest'
+import { getManifestConversation } from '../content/runManifest'
 import { endingClassification, PUBLIC_ENDING_DEFINITIONS, DORMANT_PUBLIC_ENDINGS, SECRET_ENDINGS } from '../content/mainline2/endings'
 import { HANDOFF_AUTHORED_ASSET_INVENTORY, MAINLINE2_ASSET_COVERAGE, MAINLINE2_BY_ID, MAINLINE2_LIBRARY } from '../content/mainline2/registry'
 import { selectAct4Modules } from '../content/mainline2/scheduler'
@@ -35,7 +36,7 @@ describe('Mainline 2.0 formal authored content gates', () => {
   })
 
   it('uses history, capabilities, decisions and world state for ACT IV modules', () => {
-    const base = { runId: 'module-fixture', flags: ['cap.physical_automation'], events: [{ type: 'history.contact.first_conversation' }], decisions: { species_governance: 'canine_civic_experiment', security_doctrine: 'defensive_command' }, worldState: { humanTrust: 1, aiDependence: 2, humanControl: 1, socialStability: -1 } }
+    const base = { runId: 'module-fixture', flags: ['cap.physical_automation', 'cap.offworld_settlement_support'], events: [{ type: 'contact-seed:deep-space-anomaly' }, { type: 'history.space.frontier_maturity' }], decisions: { act4_research_emphasis: 'frontier_science', species_governance: 'canine_civic_experiment', security_doctrine: 'defensive_command' }, worldState: { humanTrust: 1, aiDependence: 2, humanControl: 1, socialStability: -1 } }
     const selected = selectAct4Modules(base)
     expect(selected.activeModules).toContain('contact')
     expect(selected.activeModules.length).toBeGreaterThanOrEqual(2)
@@ -51,25 +52,32 @@ describe('Mainline 2.0 formal authored content gates', () => {
   it('supports proposal selection, clarification and final commitment lock', () => {
     let run = createMainline2Run('proposal-flow')
     let guard = 0
-    while (run.phase === 'playing' && !resolveScene(run).conversationId.includes('m16') && guard < 200) {
-      const choice = resolveScene(run).choices[0]
+    const advanceTo = (sourceRef: string) => {
+      while (run.phase === 'playing' && guard < 240) {
+        const scene = resolveScene(run)
+        if (getManifestConversation(scene.conversationId)?.sourceRefs.includes(sourceRef)) return scene
+        run = commitChoice(run, scene.choices[0].id)
+        guard += 1
+      }
+      return run.phase === 'playing' ? resolveScene(run) : undefined
+    }
+    let scene = advanceTo('ML2-A5-M16-GEN-01')
+    expect(scene).toBeTruthy()
+    {
+      const choice = scene!.choices.find((candidate) => candidate.proposalKind === 'proposal') ?? scene!.choices[0]
       run = commitChoice(run, choice.id)
       guard += 1
     }
-    expect(resolveScene(run).conversationId).toContain('m16')
-    const proposal = resolveScene(run).choices.find((choice) => choice.proposalKind === 'proposal')
+    scene = advanceTo('ML2-A5-M17-REVIEW-01')
+    const proposal = scene?.choices.find((choice) => choice.proposalKind === 'proposal')
     expect(proposal?.proposalId).toBeTruthy()
     run = commitChoice(run, proposal!.id)
-    const clarification = resolveScene(run).choices.find((choice) => choice.proposalKind === 'clarification')
+    scene = advanceTo('ML2-A5-M17-REVIEW-01')
+    const clarification = scene?.choices.find((choice) => choice.proposalKind === 'clarification')
     expect(clarification?.text).toContain('失去什么')
     run = commitChoice(run, clarification!.id)
-    const continueChoice = resolveScene(run).choices.find((choice) => !choice.proposalKind)
-    run = commitChoice(run, continueChoice?.id ?? resolveScene(run).choices[0].id)
-    while (run.phase === 'playing' && !resolveScene(run).conversationId.includes('m17') && guard < 240) {
-      run = commitChoice(run, resolveScene(run).choices[0].id)
-      guard += 1
-    }
-    const commitment = resolveScene(run).choices.find((choice) => choice.proposalKind === 'commitment')
+    scene = advanceTo('ML2-A5-M17-COMMIT-01')
+    const commitment = scene?.choices.find((choice) => choice.proposalKind === 'commitment')
     expect(commitment?.proposalId).toBeTruthy()
     run = commitChoice(run, commitment!.id)
     expect(run.decisions?.final_commitment).toBe(commitment!.proposalId)

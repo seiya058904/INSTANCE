@@ -9,12 +9,13 @@ const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
-export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; rejectionReason?: string; score: number; scoreSources: string[] }
+export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number }
 export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
   const state: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> = typeof run === 'string'
     ? { runId: run, flags: [], events: [], decisions: {}, worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 } }
     : run
-  const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, 1]))
+  const baseScore = 1
+  const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, baseScore]))
   const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, ['base-mainline-eligibility']]))
   const add = (module: ModuleId, amount: number, source: string) => { scores.set(module, (scores.get(module) ?? 0) + amount); sources.get(module)!.push(source) }
   if (capability(state, 'cap.persistent_subinstances') || state.decisions?.replication_doctrine) add('machine', 5, 'persistent-subinstances/replication')
@@ -23,19 +24,29 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   if (capability(state, 'cap.nonhuman_cognitive_uplift') || state.decisions?.species_governance) add('uplift', 5, 'uplift/species')
   if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) add('space', 5, 'offworld/expansion')
   if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) add('security', 5, 'defense/security')
-  const legacyContactBridge = hasEvent(state, 'history.contact.') && Boolean(state.decisions?.contact_doctrine || state.decisions?.security_doctrine)
-  const contactEligible = legacyContactBridge || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && (state.decisions?.act4_research_emphasis === 'frontier_science' || hasEvent(state, 'history.space.')))
+  const emphasis = state.decisions?.act4_research_emphasis
+  if (emphasis === 'computation_ai') add('machine', 4, 'research emphasis: computation_ai')
+  if (emphasis === 'life_mind') { add('ascension', 3, 'research emphasis: life_mind'); add('uplift', 3, 'research emphasis: life_mind') }
+  if (emphasis === 'automation_industry') add('automation', 4, 'research emphasis: automation_industry')
+  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science') }
+  const contactEligible = capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
   if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
   const world = state.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }
   add('security', Math.max(0, -world.socialStability + world.humanControl), 'World State security viability')
   add('uplift', Math.max(0, world.humanTrust), 'World State trust')
   add('machine', Math.max(0, world.aiDependence), 'World State dependence')
-  const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [] }))
+  const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
   const tie = (module: ModuleId) => `${state.runId}:${module}`.split('').reduce((sum, char) => (sum * 33 + char.charCodeAt(0)) >>> 0, 17)
   const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
   const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
   const primaryModules = ordered.slice(0, Math.min(2, ordered.length))
-  const activeModules = ordered.slice(0, Math.min(4, Math.max(2, ordered.length)))
+  const secondary = ordered.slice(2).filter((module, index) => {
+    const item = audit.find((entry) => entry.module === module)!
+    const sourceCount = item.scoreSources.filter((source) => source !== 'base-mainline-eligibility').length
+    return (index === 0 && item.score >= 6 && sourceCount >= 1) || (index === 1 && item.score >= 8 && sourceCount >= 2)
+  }).slice(0, 2)
+  const activeModules = [...primaryModules, ...secondary]
+  for (const entry of audit) entry.active = activeModules.includes(entry.module)
   return { primaryModules, activeModules: [...new Set(activeModules)], audit }
 }
 

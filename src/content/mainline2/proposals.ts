@@ -47,6 +47,10 @@ function viability(run: StableRunState, proposal: FutureProposalDefinition): Pro
 
 export function getFutureProposalDefinitions() { return [...proposals] }
 
+export function getFutureProposalById(id: string | undefined) {
+  return proposals.find((proposal) => proposal.id === id)
+}
+
 export function generateFutureProposals(run: StableRunState): FutureProposalDefinition[] {
   const eligible = proposals.filter((proposal) => viability(run, proposal) !== 'ineligible')
   const decisions = Object.values(run.decisions ?? {}).join(' ')

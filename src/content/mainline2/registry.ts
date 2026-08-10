@@ -58,8 +58,12 @@ export const ACT_STORY = {
 
 export const ACT4_COMMON = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A4-M7-'))
 export const ACT4_LATE = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A4-M15-'))
-export const ACT5_OPENING = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A5-M16-'))
-export const ACT5_FINAL = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A5-M17-'))
+const bySourceOrder = (prefix: string, first: string[]) => {
+  const selected = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith(prefix))
+  return [...first.map((ref) => selected.find((conversation) => conversation.sourceRefs.includes(ref))).filter(Boolean) as ConversationDefinition[], ...selected.filter((conversation) => !first.some((ref) => conversation.sourceRefs.includes(ref)))]
+}
+export const ACT5_OPENING = bySourceOrder('ML2-A5-M16-', ['ML2-A5-M16-GEN-01'])
+export const ACT5_FINAL = bySourceOrder('ML2-A5-M17-', ['ML2-A5-M17-REVIEW-01', 'ML2-A5-M17-COMMIT-01'])
 export const MODULE_LIBRARY: Record<ModuleId, ConversationDefinition[]> = Object.fromEntries(modules.map((module) => [module, byModule(module)])) as Record<ModuleId, ConversationDefinition[]>
 
 export const MAINLINE2_LIBRARY = authored

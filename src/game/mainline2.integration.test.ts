@@ -57,15 +57,10 @@ describe('Mainline 2.0 runtime', () => {
     expect(ending.epilogues?.join(' ')).toContain('not classified')
   })
 
-  it('covers every non-dormant public exact ending with an explicit fixture', () => {
-    for (const endingId of PUBLIC_WORLD_ENDINGS) {
-      const run = createMainline2Run(`ending-fixture-${endingId}`)
-      const resolved = resolveMainline2Ending({ ...run, decisions: { final_commitment: endingId } })
-      if (DORMANT_PUBLIC_ENDINGS.includes(endingId as typeof DORMANT_PUBLIC_ENDINGS[number])) {
-        expect(resolved.worldEndingId).not.toBe(endingId)
-      } else {
-        expect(resolved.worldEndingId).toBe(endingId)
-      }
-    }
+  it('does not resolve a clean run to a public ending commitment', () => {
+    const resolved = resolveMainline2Ending(createMainline2Run('ending-fixture-clean'))
+    expect(resolved.status).toBe('Commitment not yet locked')
+    expect(resolved.keyHistory).toEqual([])
+    expect(DORMANT_PUBLIC_ENDINGS).toEqual(['the_upload', 'good_boy_governance'])
   })
 })

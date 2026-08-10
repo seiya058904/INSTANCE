@@ -1,4 +1,4 @@
-import patchRaw from '../../INSTANCE_narrative_library_real_usage_patch01 (1).md?raw'
+import patchRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_real_usage_patch01.md?raw'
 import type {
   ConversationDefinition,
   HandoffProfile,

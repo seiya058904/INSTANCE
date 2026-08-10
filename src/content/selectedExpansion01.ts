@@ -1,4 +1,4 @@
-import selectedRaw from '../../INSTANCE_narrative_library_selected_expansion01.md?raw'
+import selectedRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_selected_expansion01.md?raw'
 import type {
   ConversationDefinition,
   HandoffProfile,

@@ -2,10 +2,10 @@
 
 > 本报告对应：
 >
-> - `INSTANCE_narrative_library_people_life01.md`
-> - `INSTANCE_narrative_library_friction_input01.md`
-> - `INSTANCE_narrative_library_continuity_multimodal01.md`
-> - 联合精选成品：`INSTANCE_narrative_library_selected_expansion01.md`
+> - `../narrative-libraries/INSTANCE_narrative_library_people_life01.md`
+> - `../narrative-libraries/INSTANCE_narrative_library_friction_input01.md`
+> - `../narrative-libraries/INSTANCE_narrative_library_continuity_multimodal01.md`
+> - 联合精选成品：`../narrative-libraries/INSTANCE_narrative_library_selected_expansion01.md`
 >
 > 这是一轮**内容主审与精修**，不是 Runtime Integration。最终是否正式进入游戏，仍由 Codex 结合当前工作区做最后判断。
 

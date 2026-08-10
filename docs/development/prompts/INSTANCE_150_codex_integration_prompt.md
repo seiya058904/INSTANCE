@@ -495,7 +495,7 @@ LongInput E2E 至少验证：
 
 创建：
 
-`INSTANCE_150_runtime_final_integration_audit_2026-08-10.md`
+`../../audits/INSTANCE_150_runtime_final_integration_audit_2026-08-10.md`
 
 报告：
 

@@ -19,16 +19,16 @@ const expectedPromotedRefs = [
 
 const root = resolve(process.cwd())
 const sourceFiles = {
-  batch01: 'INSTANCE_narrative_library_batch01.md',
-  batch02: 'INSTANCE_narrative_library_batch02.md',
-  batch03: 'INSTANCE_narrative_li brary_batch03(1).md',
-  humor01: 'INSTANCE_narrative_library_humor01.md',
-  peopleLife01: 'INSTANCE_narrative_library_people_life01.md',
-  frictionInput01: 'INSTANCE_narrative_library_friction_input01.md',
-  continuityMultimodal01: 'INSTANCE_narrative_library_continuity_multimodal01.md',
-  longform01: 'INSTANCE_narrative_library_longform_output01.md',
-  selectedExpansion01: 'INSTANCE_narrative_library_selected_expansion01.md',
-  realUsagePatch01: 'INSTANCE_narrative_library_real_usage_patch01 (1).md',
+  batch01: 'docs/narrative-libraries/INSTANCE_narrative_library_batch01.md',
+  batch02: 'docs/narrative-libraries/INSTANCE_narrative_library_batch02.md',
+  batch03: 'docs/narrative-libraries/INSTANCE_narrative_library_batch03.md',
+  humor01: 'docs/narrative-libraries/INSTANCE_narrative_library_humor01.md',
+  peopleLife01: 'docs/narrative-libraries/INSTANCE_narrative_library_people_life01.md',
+  frictionInput01: 'docs/narrative-libraries/INSTANCE_narrative_library_friction_input01.md',
+  continuityMultimodal01: 'docs/narrative-libraries/INSTANCE_narrative_library_continuity_multimodal01.md',
+  longform01: 'docs/narrative-libraries/INSTANCE_narrative_library_longform_output01.md',
+  selectedExpansion01: 'docs/narrative-libraries/INSTANCE_narrative_library_selected_expansion01.md',
+  realUsagePatch01: 'docs/narrative-libraries/INSTANCE_narrative_library_real_usage_patch01.md',
 } as const
 
 function headings(file: string, pattern: RegExp) {

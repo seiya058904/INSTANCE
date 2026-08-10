@@ -1,6 +1,6 @@
-import peopleRaw from '../../INSTANCE_narrative_library_people_life01.md?raw'
-import frictionRaw from '../../INSTANCE_narrative_library_friction_input01.md?raw'
-import continuityRaw from '../../INSTANCE_narrative_library_continuity_multimodal01.md?raw'
+import peopleRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_people_life01.md?raw'
+import frictionRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_friction_input01.md?raw'
+import continuityRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_continuity_multimodal01.md?raw'
 import type { ConversationDefinition, HandoffProfile, HumanBehaviorMode, InteractionPattern, StoryChoice, StoryNode, TopicCategory, TurnShape } from '../game/types'
 
 const headingPattern = /^## (?:SCENE )?([A-Z]+\d+(?:-\d+)?)\s+·\s+(.+)$/gm

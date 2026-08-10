@@ -1,4 +1,4 @@
-import longformRaw from '../../INSTANCE_narrative_library_longform_output01.md?raw'
+import longformRaw from '../../docs/narrative-libraries/INSTANCE_narrative_library_longform_output01.md?raw'
 import type { ConversationDefinition, LongInputPreview, LongformArtifactType, StoryChoice, StoryNode } from '../game/types'
 
 const refs = ['LF01-02', 'LF01-06', 'LF01-07', 'LF01-08'] as const

@@ -107,5 +107,5 @@ The Bundle records per-asset node/reply counts and mechanically observed input f
 
 - Complete bundle: [INSTANCE_asset_editorial_review_bundle.md](./INSTANCE_asset_editorial_review_bundle.md)
 - Generator: [generate-bundle.mjs](./generate-bundle.mjs)
-- Census source: [asset-census-2026-08-10.md](../../asset-census-2026-08-10.md)
-- Integration audit: [selected-expansion01-integration-audit.md](../selected-expansion01-integration-audit.md)
+- Census source: [asset-census-2026-08-10.md](../audits/asset-census-2026-08-10.md)
+- Integration audit: [selected-expansion01-integration-audit.md](../audits/selected-expansion01-integration-audit.md)

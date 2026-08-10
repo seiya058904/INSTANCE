@@ -24,8 +24,8 @@
 **Files:**
 - Create: `src/content/selectedExpansion01.ts`
 - Create: `src/content/selectedExpansion01.test.ts`
-- Read: `INSTANCE_narrative_library_selected_expansion01.md`
-- Read: `INSTANCE_narrative_library_selected_expansion01_review.md`
+- Read: `../../narrative-libraries/INSTANCE_narrative_library_selected_expansion01.md`
+- Read: `../../audits/INSTANCE_narrative_library_selected_expansion01_review.md`
 - Read: `src/content/runManifest.ts`, `src/content/activeRun.ts`, `src/game/types.ts`
 
 **Interfaces:**

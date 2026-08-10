@@ -21,7 +21,7 @@
 
 **Files:**
 - Modify: `src/content/narrativeLibrary.test.ts`
-- Modify: `INSTANCE_narrative_library_batch02.md`
+- Modify: `../../narrative-libraries/INSTANCE_narrative_library_batch02.md`
 
 **Interfaces:**
 - Consumes: `narrativeSources: NarrativeSceneSource[]` from `src/content/narrativeLibrary.ts`.

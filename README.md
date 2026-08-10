@@ -1,36 +1,51 @@
 # INSTANCE
 
-A narrative game where the player takes the role of an AI and can only respond through authored candidate replies.
+A narrative game where you play as an AI and respond to human conversations through authored choices.
 
-## Project
+## Play
 
-The player faces authored real or realistic user conversations and chooses among candidate replies. Ordinary conversations, mainline anchors, semantic arcs, replay variation, and endings form the game; free-form player input is not part of the current design.
+[Play INSTANCE on GitHub Pages](https://seiya058904.github.io/INSTANCE/)
 
-The current runtime includes a narrative library, scheduler/manifest, Longform and LongInput previews, conversation-local state, multimodal abstractions, true DOM streaming, and localStorage persistence.
+## What is INSTANCE?
 
-## Stack
+Each Conversation presents a human user with a realistic or strange prompt. You play the AI by choosing among authored candidate replies; free-form replies are not part of the current design. Choices can shape hidden narrative arcs, recurring conversations, and multiple endings without exposing the full underlying story.
 
-React, TypeScript, and Vite. The project is local-first and has no backend runtime dependency.
+## Features
+
+- 160+ authored playable conversation sources
+- Choice-driven AI responses
+- Realistic and unusual human prompts
+- Recurring users and hidden narrative arcs
+- Longform response previews
+- Long-input abstractions
+- Multimodal interaction abstractions
+- Persistent run state and replay variation
+
+## Tech
+
+- React
+- TypeScript
+- Vite
 
 ## Local development
 
 ```bash
 npm install
 npm run dev
+```
+
+Run tests:
+
+```bash
 npm test -- --run
+```
+
+Build for production:
+
+```bash
 npm run build
 ```
 
-The build currently emits a Vite large-chunk warning; this does not block the verified build.
+## Status
 
-## Content navigation
-
-- `src/content/runManifest.ts` — runtime pool, scheduler, replay exposure, and mainline anchors
-- `src/content/runtimeRealityPass.ts` — runtime reality pass
-- `src/content/semanticArcs.ts` — semantic arc behavior
-- `src/content/longformOutput01.ts` — Longform content
-- `src/content/realUsagePatch01.ts` — Real Usage Patch 01
-- `src/game/engine.ts`, `storage.ts`, and `types.ts` — runtime state and game contracts
-- `docs/` and root audit files — asset census and integration evidence
-
-Detailed AI navigation lives in the project's Knowledge Vault entry and `AGENTS.md`.
+Active development. The project is a playable narrative prototype and remains under continuous content and runtime review.

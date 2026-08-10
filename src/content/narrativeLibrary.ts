@@ -1,7 +1,7 @@
-import batch01Raw from '../../INSTANCE_narrative_library_batch01.md?raw'
-import batch02Raw from '../../INSTANCE_narrative_library_batch02.md?raw'
-import batch03Raw from '../../INSTANCE_narrative_li brary_batch03(1).md?raw'
-import humor01Raw from '../../INSTANCE_narrative_library_humor01.md?raw'
+import batch01Raw from '../../docs/narrative-libraries/INSTANCE_narrative_library_batch01.md?raw'
+import batch02Raw from '../../docs/narrative-libraries/INSTANCE_narrative_library_batch02.md?raw'
+import batch03Raw from '../../docs/narrative-libraries/INSTANCE_narrative_library_batch03.md?raw'
+import humor01Raw from '../../docs/narrative-libraries/INSTANCE_narrative_library_humor01.md?raw'
 import type {
   ConversationDefinition,
   NarrativeSceneSource,

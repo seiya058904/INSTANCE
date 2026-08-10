@@ -8,7 +8,7 @@ fs.mkdirSync(outDir, { recursive: true })
 const files = {
   batch01: 'INSTANCE_narrative_library_batch01.md',
   batch02: 'INSTANCE_narrative_library_batch02.md',
-  batch03: 'INSTANCE_narrative_li brary_batch03(1).md',
+  batch03: 'INSTANCE_narrative_library_batch03.md',
   humor01: 'INSTANCE_narrative_library_humor01.md',
   people_life01: 'INSTANCE_narrative_library_people_life01.md',
   friction_input01: 'INSTANCE_narrative_library_friction_input01.md',
@@ -18,10 +18,11 @@ const files = {
 }
 
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8')
+const readNarrative = (file) => read(path.join('docs', 'narrative-libraries', file))
 const heading = (block) => block.match(/^## (?:SCENE )?([^\s·]+)\s+·\s+(.+)$/m)?.slice(1) ?? block.match(/^# (LF\d+-\d+)\s+·\s+(.+)$/m)?.slice(1) ?? ['', 'Untitled']
 
 function parseScenes(file, library) {
-  const raw = read(file)
+  const raw = readNarrative(file)
   const pattern = library === 'longform_output01'
     ? /^# (LF\d+-\d+)\s+·\s+(.+)$/gm
     : /^## (?:SCENE )?([^\s·]+)\s+·\s+(.+)$/gm
@@ -264,7 +265,7 @@ The bundle preserves complete source blocks and executable definitions. Labels s
 
 ${Object.entries(files).map(([library, file]) => `- ${sourceLibraryLabel[library]}: \`${file}\``).join('\n')}
 - Runtime: \`src/content/runManifest.ts\`, \`src/content/activeRun.ts\`, \`src/content/longformOutput01.ts\`, \`src/content/selectedExpansion01.ts\`, \`src/content/runtimeRealityPass.ts\`
-- Reports: \`asset-census-2026-08-10.md\`, \`docs/selected-expansion01-integration-audit.md\`
+- Reports: \`docs/audits/asset-census-2026-08-10.md\`, \`docs/audits/selected-expansion01-integration-audit.md\`
 
 ## Authored source assets — complete content
 
@@ -419,8 +420,8 @@ The Bundle records per-asset node/reply counts and mechanically observed input f
 
 - Complete bundle: [INSTANCE_asset_editorial_review_bundle.md](./INSTANCE_asset_editorial_review_bundle.md)
 - Generator: [generate-bundle.mjs](./generate-bundle.mjs)
-- Census source: [asset-census-2026-08-10.md](../../asset-census-2026-08-10.md)
-- Integration audit: [selected-expansion01-integration-audit.md](../selected-expansion01-integration-audit.md)
+- Census source: [asset-census-2026-08-10.md](../audits/asset-census-2026-08-10.md)
+- Integration audit: [selected-expansion01-integration-audit.md](../audits/selected-expansion01-integration-audit.md)
 `
 
 fs.writeFileSync(path.join(outDir, 'INSTANCE_asset_editorial_review_bundle.md'), bundle, 'utf8')

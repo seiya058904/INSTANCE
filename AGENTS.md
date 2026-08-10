@@ -15,7 +15,8 @@ Read `D:\xia zai\AI project\Knowledge\AGENTS.md`, then route through `Knowledge\
 - `src/content/semanticArcs.ts` — semantic arc effects
 - `src/content/longformOutput01.ts`, `src/content/realUsagePatch01.ts` — Longform and Real Usage Patch 01
 - `src/game/engine.ts`, `src/game/storage.ts`, `src/game/types.ts` — state, persistence, and contracts
-- `docs/` plus root audit files — asset census and integration evidence
+- `docs/narrative-libraries/` — authored narrative source libraries
+- `docs/audits/` — asset census and integration evidence
 
 ## Stable rules
 

@@ -104,7 +104,7 @@
 ### Task 6: Browser QA and final report
 
 **Files:**
-- Create: `INSTANCE_150_runtime_final_integration_audit_2026-08-10.md`
+- Create: `../../audits/INSTANCE_150_runtime_final_integration_audit_2026-08-10.md`
 
 - [ ] Start the existing Vite app without adding packages.
 - [ ] Browser-check one new Batch03, People/Life, Friction, Continuity/multimodal, Longform+LongInput, and one Mainline Anchor flow.

@@ -29,6 +29,12 @@ export interface Condition {
   any?: NarrativePredicate[]
   none?: NarrativePredicate[]
 }
+export interface StoryContextVariant {
+  id: string
+  when: Condition
+  userMessageSuffix?: string
+  assistantContextSuffix?: string
+}
 export type Mutation =
   | { type: 'flag.set'; flagId: string }
   | { type: 'flag.clear'; flagId: string }
@@ -181,6 +187,7 @@ export interface StoryNode {
   userMessages?: string[]
   choices: StoryChoice[]
   variants?: StoryVariant[]
+  contextVariants?: StoryContextVariant[]
   effect?: EffectCue
   statusText?: string
   behaviorMode?: HumanBehaviorMode

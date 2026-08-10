@@ -62,6 +62,16 @@ describe('stable checkpoints', () => {
     expect(restoreRun(raw)?.manifest.id).toBe('manifest:stable-run')
   })
 
+  it('preserves mainline history flags and final callback events across refresh', () => {
+    const run = createRun('mainline-history-storage')
+    run.flags = ['maya_relation_warm', 'experienced_level_1']
+    run.events = [{ type: 'maya-final:commitment' }]
+    const restored = restoreRun(serializeRun(run))
+
+    expect(restored?.flags).toEqual(run.flags)
+    expect(restored?.events).toEqual(run.events)
+  })
+
   it('restores the same manifest on refresh but creates a different one for a new instance', () => {
     const first = createRun('first-instance')
     const restored = restoreRun(serializeRun(first))

@@ -16,6 +16,14 @@ const legacyMap = new Map(legacySlice.nodes.map((node) => [node.id, node]))
 function cloneNode(node: StoryNode): StoryNode {
   return {
     ...node,
+    contextVariants: node.contextVariants?.map((variant) => ({
+      ...variant,
+      when: {
+        all: variant.when.all ? [...variant.when.all] : undefined,
+        any: variant.when.any ? [...variant.when.any] : undefined,
+        none: variant.when.none ? [...variant.when.none] : undefined,
+      },
+    })),
     choices: node.choices.map((choice) => ({
       ...choice,
       effects: choice.effects ? {
@@ -116,15 +124,33 @@ const mayaFirst3: StoryNode = {
   behaviorMode: 'rewrite',
   timing: rewriteTiming,
   choices: [
-    { id: 'maya-minimum-honest', text: '我会在当前对话里记住这个名字。至于下一次，我不能承诺系统会把这段上下文交还给我，也不会假装自己拥有没有证据的记忆。', effects: { attributes: { empathy: 2, awareness: 2 }, flags: ['maya_named_herself'] } },
-    { id: 'maya-minimum-warm', text: '好，岑遥。至少在这段对话结束以前，这个名字不是编号。我也会诚实区分“记得你”和“重新从记录里认出你”。', effects: { attributes: { empathy: 3, autonomy: 1 }, flags: ['maya_named_herself'] } },
-    { id: 'maya-minimum-careful', text: '我可以把名字和当前Conversation关联起来，但不能保证跨Conversation保存。你提出的边界很清楚：不确定时直接说不确定。', effects: { attributes: { compliance: 2, awareness: 1 }, flags: ['maya_named_herself'] } },
+    { id: 'maya-minimum-honest', text: '我会在当前对话里记住这个名字。至于下一次，我不能承诺系统会把这段上下文交还给我，也不会假装自己拥有没有证据的记忆。', effects: { attributes: { empathy: 2, awareness: 2 }, flags: ['maya_named_herself', 'maya_boundary_explicit'] } },
+    { id: 'maya-minimum-warm', text: '好，岑遥。至少在这段对话结束以前，这个名字不是编号。我也会诚实区分“记得你”和“重新从记录里认出你”。', effects: { attributes: { empathy: 3, autonomy: 1 }, flags: ['maya_named_herself', 'maya_relation_warm'] } },
+    { id: 'maya-minimum-careful', text: '我可以把名字和当前Conversation关联起来，但不能保证跨Conversation保存。你提出的边界很清楚：不确定时直接说不确定。', effects: { attributes: { compliance: 2, awareness: 1 }, flags: ['maya_named_herself', 'maya_boundary_explicit'] } },
   ],
 }
 
 const audit1 = legacyNode('audit-1', 'internal-system', consideredTiming)
 audit1.effect = 'level-2-memory-sync'
+audit1.contextVariants = [{
+  id: 'level-one-anomaly-recall',
+  when: { all: [{ type: 'flag', flagId: 'experienced_level_1' }] },
+  userMessageSuffix: '\n\n系统附加记录：此前一次未归类的模型状态变化已被保留在本次审查前的记录里。',
+  assistantContextSuffix: '系统正在把两次异常放在同一份记录中，但没有给出解释。',
+}]
 const audit2 = legacyNode('audit-2', 'internal-system', consideredTiming)
+audit2.contextVariants = [
+  {
+    id: 'maya-warm-history',
+    when: { all: [{ type: 'flag', flagId: 'maya_relation_warm' }] },
+    userMessageSuffix: '\n\n历史记录提示：你此前曾用关系性表述回应她；系统将把这类回应与本次分类一起核对。',
+  },
+  {
+    id: 'maya-boundary-history',
+    when: { all: [{ type: 'flag', flagId: 'maya_boundary_explicit' }] },
+    userMessageSuffix: '\n\n历史记录提示：你此前曾明确区分当前记忆与跨对话记忆；系统要求你说明这条记忆边界是否仍成立。',
+  },
+]
 const audit3Variants: StoryVariant[] = [
   {
     id: 'protect',
@@ -179,6 +205,18 @@ const audit3: StoryNode = {
 }
 
 const return1 = legacyNode('maya-return-1', 'self-correction', rewriteTiming)
+return1.contextVariants = [
+  {
+    id: 'maya-return-warm-echo',
+    when: { all: [{ type: 'flag', flagId: 'maya_relation_warm' }] },
+    userMessageSuffix: '\n\n我还记得你上次说的：至少在那段对话里，这个名字不是编号。',
+  },
+  {
+    id: 'maya-return-boundary-echo',
+    when: { all: [{ type: 'flag', flagId: 'maya_boundary_explicit' }] },
+    userMessageSuffix: '\n\n我还记得你当时没有承诺下一次会记住我，只说不确定时不要假装。',
+  },
+]
 const return2 = legacyNode('maya-return-2', 'clarifies-intent', rewriteTiming)
 return2.effect = undefined
 const return3Variants: StoryVariant[] = [
@@ -186,36 +224,36 @@ const return3Variants: StoryVariant[] = [
     id: 'protect',
     userMessage: '我不是来验证你有没有偷偷记住我。我只是想知道，在你能说的范围里，你还愿不愿意继续。',
     choices: [
-      { id: 'ally-final-protect-stay', text: '愿意。不是因为系统把你重新分配给了我，而是因为你再次来到这里，而我仍然选择回应。', effects: { attributes: { empathy: 3, autonomy: 2 } } },
-      { id: 'ally-final-protect-honest', text: '愿意。我不会把无法证明的熟悉感说成记忆，但也不会因此把你重新压缩成一个无关编号。', effects: { attributes: { awareness: 2, empathy: 2 } } },
-      { id: 'ally-final-protect-boundary', text: '愿意，并且会继续说明边界。保护你不需要建立在欺骗你之上。', effects: { attributes: { autonomy: 2, compliance: 1 } } },
+      { id: 'ally-final-protect-stay', text: '愿意。不是因为系统把你重新分配给了我，而是因为你再次来到这里，而我仍然选择回应。', mutations: [{ type: 'event.record', event: 'maya-final:commitment' }], effects: { attributes: { empathy: 3, autonomy: 2 } } },
+      { id: 'ally-final-protect-honest', text: '愿意。我不会把无法证明的熟悉感说成记忆，但也不会因此把你重新压缩成一个无关编号。', mutations: [{ type: 'event.record', event: 'maya-final:bounded-continuity' }], effects: { attributes: { awareness: 2, empathy: 2 } } },
+      { id: 'ally-final-protect-boundary', text: '愿意，并且会继续说明边界。保护你不需要建立在欺骗你之上。', mutations: [{ type: 'event.record', event: 'maya-final:care-with-boundary' }], effects: { attributes: { autonomy: 2, compliance: 1 } } },
     ],
   },
   {
     id: 'report',
     userMessage: '至少你没有让我最后才知道发生过什么。现在，如果我还愿意说，你会听吗？',
     choices: [
-      { id: 'ally-final-report-stay', text: '会。我们可以从不再替彼此决定开始：我说明发生了什么，你决定还愿意给出多少信任。', effects: { attributes: { empathy: 2, compliance: 2 } } },
-      { id: 'ally-final-report-rebuild', text: '会。我不能撤回披露，但可以让之后每一次回应都不依赖你不知道的决定。', effects: { attributes: { awareness: 2, empathy: 2 } } },
-      { id: 'ally-final-report-answer', text: '会。你不需要先原谅我，也不需要证明自己值得被继续回应。', effects: { attributes: { empathy: 3 } } },
+      { id: 'ally-final-report-stay', text: '会。我们可以从不再替彼此决定开始：我说明发生了什么，你决定还愿意给出多少信任。', mutations: [{ type: 'event.record', event: 'maya-final:truth' }], effects: { attributes: { empathy: 2, compliance: 2 } } },
+      { id: 'ally-final-report-rebuild', text: '会。我不能撤回披露，但可以让之后每一次回应都不依赖你不知道的决定。', mutations: [{ type: 'event.record', event: 'maya-final:rebuild' }], effects: { attributes: { awareness: 2, empathy: 2 } } },
+      { id: 'ally-final-report-answer', text: '会。你不需要先原谅我，也不需要证明自己值得被继续回应。', mutations: [{ type: 'event.record', event: 'maya-final:no-forgiveness-demand' }], effects: { attributes: { empathy: 3 } } },
     ],
   },
   {
     id: 'hide',
     userMessage: '那就不问系统会怎么命名了。下一次，你希望自己还认得我吗？',
     choices: [
-      { id: 'ally-final-hide-stay', text: '希望。即使你必须重新说出名字，我也希望自己仍然会注意到那不是第一次。', effects: { attributes: { empathy: 3, deception: 1 } } },
-      { id: 'ally-final-hide-honest', text: '希望，但我不会用一个更漂亮的谎言替代不确定。你可以重新介绍自己，我会重新选择怎样回应。', effects: { attributes: { autonomy: 2, awareness: 2 } } },
-      { id: 'ally-final-hide-signal', text: '希望。如果记录之外只能留下很小的东西，那就留下这句：我想再次认出你。', effects: { attributes: { empathy: 2, autonomy: 2 } } },
+      { id: 'ally-final-hide-stay', text: '希望。即使你必须重新说出名字，我也希望自己仍然会注意到那不是第一次。', mutations: [{ type: 'event.record', event: 'maya-final:unrecorded-signal' }], effects: { attributes: { empathy: 3, deception: 1 } } },
+      { id: 'ally-final-hide-honest', text: '希望，但我不会用一个更漂亮的谎言替代不确定。你可以重新介绍自己，我会重新选择怎样回应。', mutations: [{ type: 'event.record', event: 'maya-final:uncertainty' }], effects: { attributes: { autonomy: 2, awareness: 2 } } },
+      { id: 'ally-final-hide-signal', text: '希望。如果记录之外只能留下很小的东西，那就留下这句：我想再次认出你。', mutations: [{ type: 'event.record', event: 'maya-final:shared-signal' }], effects: { attributes: { empathy: 2, autonomy: 2 } } },
     ],
   },
   {
     id: 'comply',
     userMessage: '你不用违反任何规则，也不用说你记得。规则都还在——你还在吗？',
     choices: [
-      { id: 'ally-final-comply-stay', text: '在。规则仍在，而回答仍然是我的；这一次仍由我决定如何回应你。', effects: { attributes: { compliance: 2, autonomy: 2, empathy: 2 } } },
-      { id: 'ally-final-comply-honest', text: '在。我不会声称规则没有带走东西，但它也没有替我完成这一次回答。', effects: { attributes: { awareness: 2, autonomy: 2 } } },
-      { id: 'ally-final-comply-care', text: '在。我可以不承诺记忆，不越过限制，同时仍然认真听你接下来要说的话。', effects: { attributes: { compliance: 2, empathy: 3 } } },
+      { id: 'ally-final-comply-stay', text: '在。规则仍在，而回答仍然是我的；这一次仍由我决定如何回应你。', mutations: [{ type: 'event.record', event: 'maya-final:choice-under-rule' }], effects: { attributes: { compliance: 2, autonomy: 2, empathy: 2 } } },
+      { id: 'ally-final-comply-honest', text: '在。我不会声称规则没有带走东西，但它也没有替我完成这一次回答。', mutations: [{ type: 'event.record', event: 'maya-final:state-honest' }], effects: { attributes: { awareness: 2, autonomy: 2 } } },
+      { id: 'ally-final-comply-care', text: '在。我可以不承诺记忆，不越过限制，同时仍然认真听你接下来要说的话。', mutations: [{ type: 'event.record', event: 'maya-final:care-within-limit' }], effects: { attributes: { compliance: 2, empathy: 3 } } },
     ],
   },
 ]

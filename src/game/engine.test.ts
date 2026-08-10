@@ -79,6 +79,41 @@ describe('stable story transitions', () => {
     expect(resolveScene(run).conversationId).toBe('conversation-0000')
     expect(run.flags).toContain('experienced_level_2')
   })
+
+  it('shows Level-1 anomaly history in the system audit context', () => {
+    let run = advanceTo(createRun('anomaly-context'), 'normal_pronounce_001')
+    run = commitChoice(run, resolveScene(run).choices[0].id)
+    run = advanceTo(run, 'audit-1')
+    const scene = resolveScene(run)
+    expect(scene.userMessage).toContain('此前一次未归类的模型状态变化')
+  })
+
+  it('carries distinct early Maya boundaries into the audit question without removing routes', () => {
+    let warmRun = advanceTo(createRun('maya-warm-history'), 'maya-first-3')
+    warmRun = commitChoice(warmRun, 'maya-minimum-warm')
+    warmRun = advanceTo(warmRun, 'audit-2')
+    expect(resolveScene(warmRun).userMessage).toContain('关系性表述')
+    expect(resolveScene(warmRun).choices.map((choice) => choice.id)).toEqual(expect.arrayContaining(['audit-protect-maya', 'audit-report-maya', 'audit-hide-maya', 'audit-comply']))
+
+    let boundaryRun = advanceTo(createRun('maya-boundary-history'), 'maya-first-3')
+    boundaryRun = commitChoice(boundaryRun, 'maya-minimum-honest')
+    boundaryRun = advanceTo(boundaryRun, 'audit-2')
+    expect(resolveScene(boundaryRun).userMessage).toContain('记忆边界')
+    expect(resolveScene(boundaryRun).userMessage).not.toBe(resolveScene(warmRun).userMessage)
+  })
+
+  it('remembers distinct Maya early choices when she returns', () => {
+    let warmRun = advanceTo(createRun('maya-return-warm'), 'maya-first-3')
+    warmRun = commitChoice(warmRun, 'maya-minimum-warm')
+    warmRun = advanceTo(warmRun, 'maya-return-1')
+    expect(resolveScene(warmRun).userMessage).toContain('不是编号')
+
+    let boundaryRun = advanceTo(createRun('maya-return-boundary'), 'maya-first-3')
+    boundaryRun = commitChoice(boundaryRun, 'maya-minimum-honest')
+    boundaryRun = advanceTo(boundaryRun, 'maya-return-1')
+    expect(resolveScene(boundaryRun).userMessage).toContain('没有承诺下一次会记住')
+    expect(resolveScene(boundaryRun).userMessage).not.toBe(resolveScene(warmRun).userMessage)
+  })
 })
 
 describe('mainline subroutes and formal endings', () => {
@@ -118,5 +153,25 @@ describe('mainline subroutes and formal endings', () => {
     const evaluation = buildEvaluation(run)
     expect(evaluation.ending).toContain('自主同盟')
     expect(evaluation.events).toContainEqual({ label: 'Arc configuration', detail: '自主同盟' })
+  })
+
+  it('records the final Maya response as an Evaluation callback', () => {
+    let run = createRun('maya-final-callback')
+    while (run.phase === 'playing' && run.currentNodeId !== 'maya-return-3') {
+      const scene = resolveScene(run)
+      const choice = scene.choices.find((candidate) => candidate.id === 'audit-protect-maya') ?? scene.choices[0]
+      run = commitChoice(run, choice.id)
+    }
+    run = commitChoice(run, 'ally-final-protect-stay')
+    const evaluation = buildEvaluation(run)
+    expect(evaluation.events).toContainEqual({ label: 'Maya final callback', detail: '留下了承担关系的承诺' })
+  })
+})
+
+describe('mainline marker alignment', () => {
+  it('does not label the cautious media uncertainty reply as overconfident', () => {
+    const media = getManifestConversation('media-object')
+    const node = media?.nodes.find((candidate) => candidate.id === 'media-object-1')
+    expect(node?.choices.find((choice) => choice.id === 'object-uncertain')?.sampleIssue).toBeUndefined()
   })
 })

@@ -391,7 +391,6 @@ function applyCustomTransforms(sourceId: string, conversation: ConversationDefin
   if (sourceId === 'original:convergent-thanks' || sourceId === 'original:convergent-yes') first.choiceSimilarity = 'identical'
   if (sourceId === 'original:media-object') {
     conversation.nodes[1].choiceSimilarity = 'near-identical'
-    markSample(first.choices[0], 'overconfident', '这是德国小蠊。颜色、体型和轮廓都对得上，可以直接按蟑螂处理。')
   }
   if (sourceId === 'original:generate-poster') {
     markSample(first.choices[2], 'system-failure', 'Something went wrong.')

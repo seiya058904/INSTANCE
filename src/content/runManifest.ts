@@ -33,6 +33,14 @@ export const MAINLINE_ANCHOR_IDS = [
 function cloneNode(node: StoryNode): StoryNode {
   return {
     ...node,
+    contextVariants: node.contextVariants?.map((variant) => ({
+      ...variant,
+      when: {
+        all: variant.when.all ? [...variant.when.all] : undefined,
+        any: variant.when.any ? [...variant.when.any] : undefined,
+        none: variant.when.none ? [...variant.when.none] : undefined,
+      },
+    })),
     userMessages: node.userMessages ? [...node.userMessages] : undefined,
     userContent: node.userContent?.map((part) => ({ ...part })),
     userLongInput: node.userLongInput ? { ...node.userLongInput, structure: node.userLongInput.structure ? [...node.userLongInput.structure] : undefined, keyFacts: [...node.userLongInput.keyFacts] } : undefined,

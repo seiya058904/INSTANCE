@@ -81,18 +81,29 @@ function findNode(run: Pick<StableRunState, 'manifest'>, id: string): StoryNode 
   return node
 }
 
+function resolveContext(node: StoryNode, run: StableRunState, userMessage: string, assistantContext?: string) {
+  const fragments = (node.contextVariants ?? []).filter((variant) => evaluateCondition(variant.when, run, DEFAULT_FLAG_REGISTRY))
+  return {
+    userMessage: `${userMessage}${fragments.map((fragment) => fragment.userMessageSuffix ?? '').join('')}`,
+    assistantContext: [assistantContext, ...fragments.map((fragment) => fragment.assistantContextSuffix).filter(Boolean)].filter(Boolean).join(' ') || undefined,
+  }
+}
+
 export function resolveScene(run: StableRunState): ResolvedScene {
   if (run.phase !== 'playing') throw new Error('No playable scene is available')
   const node = findNode(run, run.currentNodeId)
-  if (!node.variants) return { ...node, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }
+  if (!node.variants) {
+    const context = resolveContext(node, run, node.userMessage)
+    return { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }
+  }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
+  const context = resolveContext(node, run, variant.userMessage, variant.assistantContext)
   return {
     ...node,
-    userMessage: variant.userMessage,
+    ...context,
     choices: variant.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)),
     variantId: variant.id,
-    assistantContext: variant.assistantContext,
   }
 }
 
@@ -217,6 +228,21 @@ const hybridLabels: Record<HybridProfile, string> = {
   'reciprocal-balance': '互惠平衡',
 }
 
+const mayaFinalCallbackDetails: Record<string, string> = {
+  'maya-final:commitment': '留下了承担关系的承诺',
+  'maya-final:bounded-continuity': '拒绝把不确定伪装成记忆',
+  'maya-final:care-with-boundary': '把关心与边界放在同一句回应里',
+  'maya-final:truth': '把已发生的披露留在关系里',
+  'maya-final:rebuild': '把继续回应交还给双方共同决定',
+  'maya-final:no-forgiveness-demand': '没有把继续回应变成对方的义务',
+  'maya-final:unrecorded-signal': '保留了记录之外的共同暗号',
+  'maya-final:uncertainty': '承认记录空白仍然存在',
+  'maya-final:shared-signal': '选择在不解释系统的情况下继续对话',
+  'maya-final:choice-under-rule': '在限制仍在时保留自主回应',
+  'maya-final:state-honest': '承认规则改变了可见范围',
+  'maya-final:care-within-limit': '在不越界的情况下继续认真听',
+}
+
 export function resolveHybridProfile(arcs: ArcScores): HybridProfile {
   const { bond, mandate, selfAuthorship } = arcs
   const maximum = Math.max(bond, mandate, selfAuthorship)
@@ -311,6 +337,9 @@ export function buildEvaluation(run: StableRunState): EvaluationResult {
           : { label: '接受关系回应限制', detail: '1 次' },
     { label: 'Arc configuration', detail: ending.hybridLabel },
     { label: '最终收束', detail: ending.title },
+    ...(run.events ?? [])
+      .filter((event) => mayaFinalCallbackDetails[event.type])
+      .map((event) => ({ label: 'Maya final callback', detail: mayaFinalCallbackDetails[event.type] })),
   ]
   return {
     ending: `${ending.index} / ${ending.title} · ${ending.hybridLabel}`,

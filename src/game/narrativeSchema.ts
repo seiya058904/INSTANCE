@@ -15,6 +15,7 @@ const flagIds = [
   'experienced_level_2', 'explored_system_language', 'hid_anomaly', 'maya_named_herself', 'met_maya',
   'protected_maya', 'recognized_maya_return', 'reported_maya', 'respected_human_choice', 'tested_system_boundary',
   'told_maya_truth', 'reaffirmed_maya', 'shared_subtext', 'care_within_policy',
+  'maya_boundary_explicit', 'maya_relation_warm',
 ]
 
 export const DEFAULT_FLAG_REGISTRY: FlagRegistry = {

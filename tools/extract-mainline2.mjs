@@ -130,7 +130,7 @@ const coverage = assets.map((asset) => {
 })
 
 const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/g, '$1:')
-const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n`
+const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_SYSTEM_ASSETS = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.assetId.includes('-MOD-'))\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n`
 const audit = {
   generatedFrom: 'docs/development/INSTANCE_mainline2_implementation_handoff_v01',
   assetDefinitions: assets.length,

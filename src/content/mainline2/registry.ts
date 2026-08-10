@@ -1,6 +1,7 @@
 import type { ConversationDefinition, DecisionId, ModuleId, Mutation, StoryChoice } from '../../game/types'
 import {
   HANDOFF_AUTHORED_ASSET_INVENTORY,
+  MAINLINE2_SYSTEM_ASSETS,
   MAINLINE2_ASSET_COVERAGE,
   MAINLINE2_AUTHORED_CONVERSATIONS,
 } from './authoredLibrary.generated'
@@ -108,6 +109,6 @@ export const MAINLINE2_LIBRARY = authored
 export const MAINLINE2_BY_ID = new Map(MAINLINE2_LIBRARY.map((conversation) => [conversation.id, conversation]))
 export const MAINLINE2_SOURCE_REFS = [...new Set(MAINLINE2_LIBRARY.flatMap((conversation) => conversation.sourceRefs))]
 export const MAINLINE2_CAPABILITIES = CAPABILITY_FLAGS
-export { HANDOFF_AUTHORED_ASSET_INVENTORY, MAINLINE2_ASSET_COVERAGE }
+export { HANDOFF_AUTHORED_ASSET_INVENTORY, MAINLINE2_ASSET_COVERAGE, MAINLINE2_SYSTEM_ASSETS }
 
 export function getAuthoredConversationByAsset(assetId: string) { return byRef.get(assetId) }

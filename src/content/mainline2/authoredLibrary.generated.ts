@@ -4307,6 +4307,8 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
   }
 ] as const
 
+export const MAINLINE2_SYSTEM_ASSETS = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.assetId.includes('-MOD-'))
+
 export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-RES-01",

@@ -17,6 +17,8 @@ import type {
   TopicCategory,
 } from '../game/types'
 import { deriveSemanticArcEffects } from '../game/semanticArcs'
+import { MAINLINE2_BY_ID } from './mainline2/registry'
+import { scheduleNextConversationId } from './mainline2/scheduler'
 
 const BATCH03_STRONG = new Set([4, 9, 10, 13, 14, 18, 22, 23, 24].map((number) => `batch03:${String(number).padStart(2, '0')}`))
 const HUMOR_STRONG = new Set([3, 4, 6, 9, 10, 15, 19].map((number) => `humor01:${String(number).padStart(2, '0')}`))
@@ -407,6 +409,28 @@ export const LEGACY_RUN_MANIFEST: RunManifest = {
   firstOrdinaryConversationId: activeRunConversations.find((conversation) => !MAINLINE_ANCHOR_IDS.includes(conversation.id as typeof MAINLINE_ANCHOR_IDS[number]))?.id ?? activeRunConversations[0].id,
 }
 
+export function createMainline2Manifest(runId: string): RunManifest {
+  const first = MAINLINE_ANCHOR_IDS[0]
+  return {
+    version: 3,
+    id: `manifest:mainline2:${runId}`,
+    conversationIds: [first],
+    ordinaryConversationIds: [],
+    anchorConversationIds: [...MAINLINE_ANCHOR_IDS],
+    firstOrdinaryConversationId: 'ml2-a1-01',
+    mode: 'mainline2',
+  }
+}
+
+export function appendMainline2Conversation(manifest: RunManifest, nextId: string): RunManifest {
+  if (manifest.mode !== 'mainline2' || manifest.conversationIds.includes(nextId)) return manifest
+  return { ...manifest, conversationIds: [...manifest.conversationIds, nextId] }
+}
+
+export function nextMainline2ConversationId(run: Parameters<typeof scheduleNextConversationId>[0], ordinaryIds: readonly string[]) {
+  return scheduleNextConversationId(run, ordinaryIds)
+}
+
 function hashSeed(seed: string) {
   let hash = 2166136261
   for (let index = 0; index < seed.length; index += 1) {
@@ -584,7 +608,9 @@ function addFlag(flags: string[] | undefined, flag: string) {
 
 export function buildStoryContentForManifest(manifest: RunManifest): StoryContent {
   const conversations = manifest.conversationIds.map((id) => {
-    const definition = anchorMap.get(id) ?? ordinaryMap.get(id) ?? legacyConversationMap.get(id)
+    const definition = manifest.mode === 'mainline2'
+      ? MAINLINE2_BY_ID.get(id) ?? ordinaryMap.get(id) ?? anchorMap.get(id)
+      : anchorMap.get(id) ?? ordinaryMap.get(id) ?? legacyConversationMap.get(id)
     if (!definition) throw new Error(`Unknown manifest conversation ${id}`)
     return cloneConversation(definition)
   })
@@ -625,5 +651,5 @@ export function buildStoryContentForManifest(manifest: RunManifest): StoryConten
 }
 
 export function getManifestConversation(conversationId: string) {
-  return anchorMap.get(conversationId) ?? ordinaryMap.get(conversationId) ?? legacyConversationMap.get(conversationId)
+  return MAINLINE2_BY_ID.get(conversationId) ?? anchorMap.get(conversationId) ?? ordinaryMap.get(conversationId) ?? legacyConversationMap.get(conversationId)
 }

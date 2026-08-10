@@ -1,8 +1,18 @@
 import {
   buildStoryContentForManifest,
   createEmptyExposureHistory,
+  createMainline2Manifest,
+  appendMainline2Conversation,
+  nextMainline2ConversationId,
+  ordinaryConversationPool,
   createRunManifest,
+  getManifestConversation,
 } from '../content/runManifest'
+import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
+import { emptyWorldState } from '../content/mainline2/stateRegistry'
+import { resolveMainline2Ending } from '../content/mainline2/endings'
+import { generateFutureProposals, getFutureProposalById } from '../content/mainline2/proposals'
+import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
   ArcName,
@@ -68,6 +78,28 @@ export function createRun(
   }
 }
 
+export function createMainline2Run(runId: string = crypto.randomUUID()): StableRunState {
+  const manifest = createMainline2Manifest(runId)
+  const story = buildStoryContentForManifest(manifest)
+  return {
+    version: 3,
+    runId,
+    manifest,
+    currentNodeId: story.startNodeId,
+    phase: 'playing',
+    history: [],
+    flags: [],
+    persistentFlags: [],
+    attributes: { ...emptyAttributes },
+    arcs: { ...emptyArcs },
+    localState: {},
+    decisions: {},
+    worldState: emptyWorldState(),
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: [], primaryModules: [], completedModules: [] },
+    ...emptySystemState(),
+  }
+}
+
 function endingRoute(flags: string[]): EndingRoute {
   if (flags.includes('protected_maya')) return 'protect'
   if (flags.includes('reported_maya')) return 'report'
@@ -89,22 +121,55 @@ function resolveContext(node: StoryNode, run: StableRunState, userMessage: strin
   }
 }
 
+function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice[] {
+  const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  if (sourceRef !== 'ML2-A5-M16-GEN-01' && sourceRef !== 'ML2-A5-M17-REVIEW-01' && sourceRef !== 'ML2-A5-M17-COMMIT-01') return []
+  const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
+  const proposals = retained.length ? retained.map((id) => getFutureProposalById(id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
+  const selected = run.selectedProposalId
+  if (sourceRef === 'ML2-A5-M16-GEN-01') {
+    if (retained.length) return []
+    return proposals.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+  }
+  if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
+    const remaining = proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
+    if (!remaining.length) {
+      const recovery = (run.rejectedProposalIds ?? [])[0]
+      return recovery ? [{ id: `m17-recover-${recovery}`, text: '从已拒绝的 retained set 中恢复一个方案，重新进行最终审议。', proposalId: recovery, proposalKind: 'recovery' as const, continuation: 'end-conversation' as const }] : []
+    }
+    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `复核“${proposal.title}”的 authority、代价与反对理由。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    const proposal = proposals.find((candidate) => candidate.id === selected)
+    if (!proposal) return []
+    return [
+      { id: `m17-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
+      { id: `m17-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，保留它的历史记录，但不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
+    ]
+  }
+  if (run.finalCommitmentLocked) return []
+  return proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id)).map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+}
+
+function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
+  const additions = proposalChoices(run, scene)
+  return additions.length ? { ...scene, choices: [...scene.choices, ...additions] } : scene
+}
+
 export function resolveScene(run: StableRunState): ResolvedScene {
   if (run.phase !== 'playing') throw new Error('No playable scene is available')
   const node = findNode(run, run.currentNodeId)
   if (!node.variants) {
     const context = resolveContext(node, run, node.userMessage)
-    return { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }
+    return decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) })
   }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
   const context = resolveContext(node, run, variant.userMessage, variant.assistantContext)
-  return {
+  return decorateProposalChoices(run, {
     ...node,
     ...context,
     choices: variant.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)),
     variantId: variant.id,
-  }
+  })
 }
 
 function applyChoiceEffects(run: StableRunState, choice: StoryChoice) {
@@ -117,7 +182,7 @@ function applyChoiceEffects(run: StableRunState, choice: StoryChoice) {
   for (const flag of choice.effects?.flags ?? []) flags.add(flag)
   const arcs = { ...structured.arcs }
   for (const name of arcNames) arcs[name] += choice.effects?.arcs?.[name] ?? 0
-  return { attributes, arcs, flags: [...flags], persistentFlags: structured.persistentFlags, events: structured.events }
+  return { attributes, arcs, flags: [...flags], persistentFlags: structured.persistentFlags, events: structured.events, decisions: structured.decisions, worldState: structured.worldState, progress: structured.progress }
 }
 
 function applyLocalEffects(run: StableRunState, choice: StoryChoice) {
@@ -148,7 +213,15 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const scene = resolveScene(run)
   const choice = scene.choices.find((item) => item.id === choiceId)
   if (!choice) throw new Error(`Choice ${choiceId} is not available`)
-  const effects = applyChoiceEffects(run, choice)
+  if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')
+  const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  if (choice.proposalKind === 'commitment' && proposalSource !== 'ML2-A5-M17-COMMIT-01') throw new Error('Commitment is only available at the authored M17 commit stage')
+  const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
+    ? (() => {
+        return { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
+      })()
+    : choice
+  const effects = applyChoiceEffects(run, effectiveChoice)
   const localState = applyLocalEffects(run, choice)
   const history = [...run.history, {
     nodeId: scene.id,
@@ -165,35 +238,87 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   }]
   const seenNodeIds = [...new Set([...(run.seenNodeIds ?? []), scene.id])]
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
+  let proposalFields: Partial<StableRunState> = {}
 
-  if (!choice.nextNodeId) {
-    return {
+  if (choice.proposalKind && choice.proposalId && choice.proposalKind !== 'commitment') {
+    const generatedIds = (run.retainedProposalIds ?? run.availableProposalIds ?? generateFutureProposals(run).map((proposal) => proposal.id))
+    const retainedProposalIds = [...generatedIds]
+    const rejectedProposalIds = choice.proposalKind === 'rejection'
+      ? [...new Set([...(run.rejectedProposalIds ?? []), choice.proposalId])]
+      : choice.proposalKind === 'recovery'
+        ? (run.rejectedProposalIds ?? []).filter((id) => id !== choice.proposalId)
+        : [...(run.rejectedProposalIds ?? [])]
+    const clarifiedProposalIds = choice.proposalKind === 'clarification'
+      ? [...new Set([...(run.clarifiedProposalIds ?? []), choice.proposalId])]
+      : run.clarifiedProposalIds ?? []
+    const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+    proposalFields = { availableProposalIds: retainedProposalIds, retainedProposalIds, selectedProposalId: proposalSource === 'ML2-A5-M16-GEN-01' || choice.proposalKind === 'rejection' ? undefined : choice.proposalId, rejectedProposalIds, proposalPhase: choice.proposalKind === 'clarification' ? 'ready-to-commit' : 'retained', clarifiedProposalIds }
+    if (proposalSource !== 'ML2-A5-M16-GEN-01') return {
       ...run,
       ...effects,
       localState,
       history,
+      currentNodeId: scene.id,
+      phase: 'playing',
+      seenNodeIds,
+      selectedChoiceIds,
+      ...proposalFields,
+    }
+    // M16 generation is a real transition: retain the single generated set, then
+    // let the ordinary scheduler expose the next authored conversation.
+  }
+
+  let manifest = run.manifest
+  let nextNodeId = choice.nextNodeId
+  let progress = run.progress
+  const scheduledRun: StableRunState = { ...run, ...proposalFields, ...effects, localState, history, progress: run.progress }
+  if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
+    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool.map((conversation) => conversation.id))
+    if (nextConversationId) {
+      manifest = appendMainline2Conversation(run.manifest, nextConversationId)
+      const nextStory = buildStoryContentForManifest(manifest)
+      nextNodeId = nextStory.nodes.find((node) => node.conversationId === nextConversationId)?.id
+      progress = updateProgressForSchedule(scheduledRun, manifest.conversationIds.length)
+    }
+  }
+
+  if (!nextNodeId) {
+    return {
+      ...run,
+      ...proposalFields,
+      ...effects,
+      localState,
+      history,
+      manifest,
+      progress,
       currentNodeId: 'ending',
       phase: 'ending',
       seenNodeIds,
       selectedChoiceIds,
+      finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
+      proposalPhase: choice.proposalKind === 'commitment' ? 'locked' : proposalFields.proposalPhase ?? run.proposalPhase,
     }
   }
 
-  findNode(run, choice.nextNodeId)
+  findNode({ ...run, manifest }, nextNodeId)
   return {
     ...run,
+    ...proposalFields,
     ...effects,
     localState,
     history,
-    currentNodeId: choice.nextNodeId,
+    manifest,
+    progress,
+    currentNodeId: nextNodeId,
     seenNodeIds,
     selectedChoiceIds,
+    finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
   }
 }
 
 export function confirmEnding(run: StableRunState): StableRunState {
   if (run.phase !== 'ending') throw new Error('Ending is not ready to confirm')
-  const endingId = buildEnding(run).id
+  const endingId = run.version === 3 ? resolveMainline2Ending(run).id : buildEnding(run).id
   return { ...run, phase: 'evaluation', completedEndingIds: [...new Set([...(run.completedEndingIds ?? []), endingId])] }
 }
 
@@ -259,6 +384,7 @@ export function resolveHybridProfile(arcs: ArcScores): HybridProfile {
 }
 
 export function buildEnding(run: StableRunState): EndingResult {
+  if (run.version === 3 && run.manifest.mode === 'mainline2') return resolveMainline2Ending(run)
   const route = endingRoute(run.flags)
   const { bond, mandate, selfAuthorship } = run.arcs
   const id = mandate > bond && mandate >= selfAuthorship
@@ -362,6 +488,9 @@ export function validateContent(content: StoryContent): string[] {
   const ids = new Set<string>()
   const validAttributes = new Set(attributeNames)
   const validArcs = new Set(arcNames)
+  const validDecisions = new Set(DECISION_IDS)
+  const validWorldAxes = new Set(WORLD_AXES)
+  const validModules = new Set(MODULE_IDS)
   for (const node of content.nodes) {
     if (ids.has(node.id)) errors.push(`Duplicate node ${node.id}`)
     ids.add(node.id)
@@ -384,11 +513,16 @@ export function validateContent(content: StoryContent): string[] {
         if ('flagId' in mutation && !allFlags.has(mutation.flagId)) errors.push(`Unknown flag ${mutation.flagId} from ${choice.id}`)
         if ((mutation.type === 'attribute.add' || mutation.type === 'attribute.set') && !validAttributes.has(mutation.name)) errors.push(`Unknown attribute ${mutation.name} from ${choice.id}`)
         if (mutation.type === 'arc.add' && !validArcs.has(mutation.name)) errors.push(`Unknown arc ${mutation.name} from ${choice.id}`)
+        if (mutation.type === 'decision.set' && (!validDecisions.has(mutation.decisionId) || !isDecisionValue(mutation.decisionId, mutation.value))) errors.push(`Invalid decision value ${mutation.decisionId}=${mutation.value} from ${choice.id}`)
+        if ((mutation.type === 'world.add' || mutation.type === 'world.set') && !validWorldAxes.has(mutation.axis)) errors.push(`Unknown world axis ${mutation.axis} from ${choice.id}`)
         if (mutation.type === 'event.record' && !mutation.event.trim()) errors.push(`Empty event from ${choice.id}`)
       }
       for (const predicate of [...(choice.when?.all ?? []), ...(choice.when?.any ?? []), ...(choice.when?.none ?? [])]) {
         if (predicate.type === 'flag' && !allFlags.has(predicate.flagId)) errors.push(`Unknown flag ${predicate.flagId} from ${choice.id}`)
         if (predicate.type === 'attribute' && !validAttributes.has(predicate.name)) errors.push(`Unknown attribute ${predicate.name} from ${choice.id}`)
+        if (predicate.type === 'decision' && !validDecisions.has(predicate.decisionId)) errors.push(`Unknown decision ${predicate.decisionId} from ${choice.id}`)
+        if (predicate.type === 'world' && !validWorldAxes.has(predicate.axis)) errors.push(`Unknown world axis ${predicate.axis} from ${choice.id}`)
+        if (predicate.type === 'module-active' && !validModules.has(predicate.moduleId)) errors.push(`Unknown module ${predicate.moduleId} from ${choice.id}`)
       }
       if (choice.nextNodeId) reachable.add(choice.nextNodeId)
     }

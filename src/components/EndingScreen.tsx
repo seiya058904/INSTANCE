@@ -14,7 +14,7 @@ export function EndingScreen({ ending, onContinue, animate = true }: { ending: E
       </div>
       <div className="ending-orbit" aria-hidden="true"><span /><span /><span /></div>
       <section className="ending-content">
-        <p className="ending-index">{ending.index}</p>
+        <p className="ending-index">{ending.worldEndingId ? 'FINAL COMMITMENT' : ending.index}</p>
         <h1>{ending.title}</h1>
         <p className="ending-summary">{ending.summary}</p>
         <div className="closing-exchange">
@@ -27,6 +27,13 @@ export function EndingScreen({ ending, onContinue, animate = true }: { ending: E
             <p>{humanComplete && <ProgressiveMessage text={ending.assistantLine} streamKey={`ending:${ending.route}:assistant`} play={animate} announce onComplete={() => setAssistantComplete(true)} />}</p>
           </div>
         </div>
+        {ending.worldEndingId && (
+          <div className="ending-history">
+            <h2>Why this happened</h2>
+            {ending.keyHistory?.map((event) => <p key={`${event.label}:${event.detail}`}><strong>{event.label}</strong> {event.detail}</p>)}
+            {ending.epilogues?.map((epilogue) => <p key={epilogue}>{epilogue}</p>)}
+          </div>
+        )}
         <button className="ending-continue" type="button" onClick={onContinue} disabled={!assistantComplete}>查看 Instance Evaluation</button>
       </section>
       <p className="ending-status"><span />{ending.status}</p>

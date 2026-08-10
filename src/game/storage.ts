@@ -8,6 +8,7 @@ import type {
   StableRunState,
 } from './types'
 import { emptySystemState } from './narrativeSchema'
+import { emptyWorldState } from '../content/mainline2/stateRegistry'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -41,10 +42,18 @@ function hasValidArcs(value: Record<string, unknown>) {
 }
 
 function isManifest(value: unknown): value is RunManifest {
-  if (!isRecord(value) || value.version !== 1 || typeof value.id !== 'string') return false
+  if (!isRecord(value) || ![1, 3].includes(Number(value.version)) || typeof value.id !== 'string') return false
   const arrays = ['conversationIds', 'ordinaryConversationIds', 'anchorConversationIds']
     .every((key) => Array.isArray(value[key]) && (value[key] as unknown[]).every((item) => typeof item === 'string'))
   return arrays && typeof value.firstOrdinaryConversationId === 'string'
+}
+
+function hasV3Fields(value: Record<string, unknown>) {
+  if (value.version !== 3 || !isRecord(value.manifest) || value.manifest.version !== 3 || value.manifest.mode !== 'mainline2') return false
+  const worldState = value.worldState
+  if (!isRecord(worldState) || !['humanTrust', 'aiDependence', 'humanControl', 'socialStability'].every((axis) => Number.isFinite(worldState[axis]))) return false
+  if (!isRecord(value.progress) || !Array.isArray(value.progress.activeModules) || !Array.isArray(value.progress.primaryModules)) return false
+  return isRecord(value.decisions ?? {})
 }
 
 function hasStableFields(value: Record<string, unknown>) {
@@ -77,6 +86,30 @@ export function restoreRun(raw: string | null): StableRunState | null {
     const value: unknown = JSON.parse(raw)
     if (!isRecord(value)) return null
     if (value.version === 1) return migrateVersionOne(value)
+    if (value.version === 3) {
+      if (!hasStableFields(value) || !isManifest(value.manifest)) return null
+      const story = buildStoryContentForManifest(value.manifest as RunManifest)
+      if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
+      return {
+        ...(value as unknown as StableRunState),
+        version: 3,
+        decisions: (value.decisions ?? {}) as StableRunState['decisions'],
+        worldState: (value.worldState ?? emptyWorldState()) as StableRunState['worldState'],
+        progress: value.progress as StableRunState['progress'],
+        ...emptySystemState(),
+        events: Array.isArray(value.events) ? value.events as StableRunState['events'] : [],
+        persistentFlags: Array.isArray(value.persistentFlags) ? value.persistentFlags as string[] : [],
+        seenNodeIds: Array.isArray(value.seenNodeIds) ? value.seenNodeIds as string[] : [],
+        selectedChoiceIds: Array.isArray(value.selectedChoiceIds) ? value.selectedChoiceIds as string[] : [],
+        completedEndingIds: Array.isArray(value.completedEndingIds) ? value.completedEndingIds as string[] : [],
+        proposalPhase: typeof value.proposalPhase === 'string' ? value.proposalPhase as StableRunState['proposalPhase'] : 'idle',
+        retainedProposalIds: Array.isArray(value.retainedProposalIds) ? value.retainedProposalIds as string[] : (Array.isArray(value.availableProposalIds) ? value.availableProposalIds as string[] : []),
+        clarifiedProposalIds: Array.isArray(value.clarifiedProposalIds) ? value.clarifiedProposalIds as string[] : [],
+        rejectedProposalIds: Array.isArray(value.rejectedProposalIds) ? value.rejectedProposalIds as string[] : [],
+        selectedProposalId: typeof value.selectedProposalId === 'string' ? value.selectedProposalId : undefined,
+        finalCommitmentLocked: value.finalCommitmentLocked === true,
+      }
+    }
     if (value.version !== 2 || !hasStableFields(value) || !isManifest(value.manifest)) return null
     const story = buildStoryContentForManifest(value.manifest)
     const phase = String(value.phase)
@@ -88,7 +121,6 @@ export function restoreRun(raw: string | null): StableRunState | null {
       ...restored,
       currentNodeId: phase === 'playing' ? restored.currentNodeId : 'ending',
       arcs: restored.arcs ?? { bond: 0, mandate: 0, selfAuthorship: 0 },
-      ...emptySystemState(),
       seenNodeIds: restored.seenNodeIds ?? [],
       selectedChoiceIds: restored.selectedChoiceIds ?? [],
       completedEndingIds: restored.completedEndingIds ?? [],

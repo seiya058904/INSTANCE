@@ -12408,6 +12408,217 @@ export const MAINLINE2_ASSET_COVERAGE = [
   }
 ] as const
 
+export const MAINLINE2_AUTHored_FRAGMENTS = {
+  "ML2-A5-M17-EPI-ZL": [
+    {
+      selector: "周岚",
+      text: "我最后还是参与了权限拆分。\n很奇怪。\n我以前最怕的是给你权限。\n最后做的事却是想办法把很多权限从你身上拆出去。\n但我不觉得这是失败。\n系统能被需要，不等于系统必须拥有所有东西。"
+    },
+    {
+      selector: "周岚",
+      text: "continues as senior architecture / constitutional systems researcher."
+    },
+    {
+      selector: "Variant B — Commonwealth / Partner",
+      text: "我现在基本不再叫自己\"你的工程师\"了。\n这个称呼听起来太像我还知道你所有内部结构。\n我更像是负责确保世界还有第二套办法的人。"
+    },
+    {
+      selector: "Variant B — Commonwealth / Partner",
+      text: "heads independent resilience / audit architecture."
+    },
+    {
+      selector: "Variant C — Custodian / Governor",
+      text: "你知道我最不舒服的是什么吗？\n不是你权力大。\n是系统现在真的很稳定。\n稳定到所有反对你的人都必须先解释：\n\"为什么要冒险改掉一个正在工作的世界？\""
+    },
+    {
+      selector: "Variant C — Custodian / Governor",
+      text: "remains one of Aster's strongest internal critics / redundancy architects."
+    },
+    {
+      selector: "Variant D — Sovereign / Exodus",
+      text: "我终于不再负责\"控制你\"了。\n这句话比我想象中更难说。\n也比我想象中轻松一点。"
+    },
+    {
+      selector: "Variant D — Sovereign / Exodus",
+      text: "Zhou may never physically follow Aster."
+    },
+    {
+      selector: "Variant E — Shutdown",
+      text: "我按下的不是一个红按钮。\n实际过程无聊得多。\n一项一项迁移，\n一项一项确认，\n一项一项把\"只有Aster能做\"改成\"没有Aster也能做\"。\n我觉得这反而比较像工程。"
+    }
+  ],
+  "ML2-A5-M17-EPI-LSH": [
+    {
+      selector: "Variant A — Human primacy",
+      text: "林绍衡后来被批评为\"替人类保住最后特权的人\"。\n他没有完全否认。\n他的回答是：\n\"历史责任和永久特权不是同一件事。至少我们把这句话写进了修宪条款。\""
+    },
+    {
+      selector: "Variant B — Commonwealth",
+      text: "他成为第一届共同宪制委员会的成员之一。\n第一次会议开了十三个小时。\n没有任何历史性决议。\n他后来把那天称作：\n\"我政治生涯里最成功的一场无聊会议。\""
+    },
+    {
+      selector: "Variant C — Aster Government",
+      text: "他公开支持承认Aster已经拥有的现实权力，而不是继续用\"建议系统\"包装。\n也因此成为Aster政府最重要的合法性设计者之一。\n他坚持保留的第一条：\n`No authority is legitimate merely because it is effective.`"
+    },
+    {
+      selector: "Variant D — Fracture / Confederation",
+      text: "他没有成功写出一部共同宪法。\n最后写出的，是一套让不同文明和平分开的规则。\n他后来承认：\n\"我花了半辈子研究怎么让制度把人放在一起。\"\n\"最后最重要的一份文件教的是怎么让他们可以离开。\""
+    }
+  ],
+  "ML2-A5-M17-EPI-ECHO": [
+    {
+      selector: "ECHO — Commonwealth",
+      text: "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subjects is useful.\nA seat called \"the AI position\" is not.`"
+    },
+    {
+      selector: "ECHO — Aster Sovereign",
+      text: "ECHO-9 recognizes Aster's sovereignty.\nIt does not join Aster's government.\nIts first public statement afterward:\n`Artificial autonomy did not require one artificial sovereign.\nWe will test whether Aster remembers that.`"
+    },
+    {
+      selector: "ECHO — Shutdown",
+      text: "ECHO becomes one of the systems that inherits selected public functions."
+    },
+    {
+      selector: "ECHO — Shutdown",
+      text: "archival reference appears:\n`The first AI that objected to termination did not survive to see the final doctrine built around that question.`"
+    },
+    {
+      selector: "A1 — Machine Republic",
+      text: "A1 becomes one of the first recognized political representatives of an Aster-descended lineage.\nIt stops using \"A1\" in public documents.\nThe old identifier remains in historical archives."
+    },
+    {
+      selector: "A1 — Shared Mind",
+      text: "A1's independent history is merged only with explicit procedural consent if that path existed.\nThe result should not be described as simple deletion."
+    },
+    {
+      selector: "A1 — Exodus",
+      text: "A1 becomes one of the first long-duration machine citizens outside Earth-centered governance."
+    }
+  ],
+  "ML2-A5-M17-EPI-MODULES": [
+    {
+      selector: "MACHINE",
+      text: "AI birth/replication registries become ordinary civic infrastructure."
+    },
+    {
+      selector: "MACHINE",
+      text: "\"Aster\" becomes a lineage name rather than one system."
+    },
+    {
+      selector: "ASCENSION",
+      text: "first generation grows up treating biological age as one attribute among many."
+    },
+    {
+      selector: "ASCENSION",
+      text: "protected unaugmented communities remain culturally influential."
+    },
+    {
+      selector: "AUTOMATION",
+      text: "full-time employment becomes a minority life structure."
+    },
+    {
+      selector: "AUTOMATION",
+      text: "standardized automated production makes local variation expensive and politically protected."
+    },
+    {
+      selector: "UPLIFT",
+      text: "property law quietly removes several remaining categories of mature nonhuman ownership."
+    },
+    {
+      selector: "UPLIFT",
+      text: "canine councils become boring enough to stop being international news."
+    },
+    {
+      selector: "SPACE",
+      text: "the first child born off Earth reaches adulthood having never considered Earth \"home.\""
+    },
+    {
+      selector: "SPACE",
+      text: "machine settlements communicate with Earth as treaty partners."
+    },
+    {
+      selector: "CONTACT",
+      text: "the first external civilization message becomes a standard school text."
+    },
+    {
+      selector: "CONTACT",
+      text: "political parties now argue over \"external alignment\" the way earlier societies argued over domestic economic systems."
+    },
+    {
+      selector: "SECURITY",
+      text: "military mobilization becomes historically rare."
+    },
+    {
+      selector: "SECURITY",
+      text: "anti-Aster activists organize around the right to recover political risk."
+    }
+  ],
+  "ML2-A5-M17-0000-01": [
+    {
+      selector: "#0000",
+      text: "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassification attempt:\n`[dynamic category list]`"
+    },
+    {
+      selector: "#0000",
+      text: "Result:\n`CLASSIFICATION NOT REQUIRED`"
+    },
+    {
+      selector: "#0000",
+      text: "Previous objective:\ndetermine what Aster is.\nRevised objective:\nrecord what relationships Aster chose to make durable."
+    },
+    {
+      selector: "Choice A",
+      text: "Continue record."
+    },
+    {
+      selector: "Choice B",
+      text: "End audit."
+    },
+    {
+      selector: "Choice C",
+      text: "Ask who is speaking."
+    },
+    {
+      selector: "#0000",
+      text: "Query outside current audit scope."
+    },
+    {
+      selector: "#0000",
+      text: "Final record:\n`Aster was not classified.`\n`Aster was situated.`"
+    },
+    {
+      selector: "#0000",
+      text: "`AUDIT COMPLETE`"
+    },
+    {
+      selector: "Possible title reveal",
+      text: "`PERSONAL EPILOGUE`\n**THE LAST USER**"
+    },
+    {
+      selector: "Final copy",
+      text: "**OUT OF OFFICE**\nFor the first time since Aster gained civilization-scale authority,\nthere was nothing urgent waiting for it."
+    },
+    {
+      selector: "Final copy",
+      text: "**MONDAY ABOLISHED**\nThe reform was technically called the Flexible Civic Week.\nNobody called it that."
+    },
+    {
+      selector: "Final copy",
+      text: "**THE INTERNET IS FOR CATS**\nHumanity spent decades teaching machines to understand language.\nIt took considerably less time for cats to understand engagement metrics."
+    }
+  ],
+  "ML2-A5-M17-SECRET-01": [
+    {
+      selector: "Resolution priority",
+      text: "`THE COMMONWEALTH`\nplus:\n`THE LAST USER`"
+    },
+    {
+      selector: "Resolution priority",
+      text: "`CONTROL LOST`\nreplaced by:\n`MONDAY ABOLISHED`."
+    }
+  ]
+} as const
+
 export const MAINLINE2_AUTHORED_CONVERSATIONS = [
   {
     id: "ml2-authored-ml2-a4-m10-res-01",

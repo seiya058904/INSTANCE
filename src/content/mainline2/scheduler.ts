@@ -25,11 +25,12 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) add('space', 5, 'offworld/expansion')
   if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) add('security', 5, 'defense/security')
   const emphasis = state.decisions?.act4_research_emphasis
-  if (emphasis === 'computation_ai') add('machine', 4, 'research emphasis: computation_ai')
-  if (emphasis === 'life_mind') { add('ascension', 3, 'research emphasis: life_mind'); add('uplift', 3, 'research emphasis: life_mind') }
-  if (emphasis === 'automation_industry') add('automation', 4, 'research emphasis: automation_industry')
-  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science') }
-  const contactEligible = capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
+  if (emphasis === 'computation_ai') { add('machine', 4, 'research emphasis: computation_ai'); add('space', 4, 'computation frontier bridge'); add('security', 2, 'computation security bridge') }
+  if (emphasis === 'life_mind') { add('ascension', 3, 'research emphasis: life_mind'); add('uplift', 3, 'research emphasis: life_mind'); add('security', 1, 'life-mind safety bridge') }
+  if (emphasis === 'automation_industry') { add('automation', 4, 'research emphasis: automation_industry'); add('security', 2, 'automation safety bridge'); add('machine', 2, 'automation machine bridge') }
+  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science'); add('machine', 2, 'frontier machine bridge'); add('uplift', 2, 'frontier species bridge') }
+  const frontierBridge = capability(state, 'cap.space_resource_network') || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && hasEvent(state, 'history.space.'))
+  const contactEligible = frontierBridge && (hasEvent(state, 'contact-seed:deep-space-anomaly') || emphasis === 'frontier_science') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
   if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
   const world = state.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }
   add('security', Math.max(0, -world.socialStability + world.humanControl), 'World State security viability')
@@ -39,13 +40,23 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   const tie = (module: ModuleId) => `${state.runId}:${module}`.split('').reduce((sum, char) => (sum * 33 + char.charCodeAt(0)) >>> 0, 17)
   const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
   const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
-  const primaryModules = ordered.slice(0, Math.min(2, ordered.length))
-  const secondary = ordered.slice(2).filter((module, index) => {
+  const emphasisPriority: Record<string, ModuleId[]> = {
+    computation_ai: ['machine', 'space', 'security'],
+    life_mind: ['ascension', 'uplift'],
+    automation_industry: ['automation', 'security', 'machine'],
+    frontier_science: ['space', 'contact', 'machine', 'uplift'],
+  }
+  const prioritized = [...(emphasisPriority[emphasis ?? ''] ?? []).filter((module) => eligible.includes(module)), ...ordered.filter((module) => !(emphasisPriority[emphasis ?? ''] ?? []).includes(module))]
+  const primaryModules = prioritized.slice(0, Math.min(2, prioritized.length))
+  const secondary = prioritized.slice(2).filter((module, index) => {
     const item = audit.find((entry) => entry.module === module)!
     const sourceCount = item.scoreSources.filter((source) => source !== 'base-mainline-eligibility').length
-    return (index === 0 && item.score >= 6 && sourceCount >= 1) || (index === 1 && item.score >= 8 && sourceCount >= 2)
+    const forcedBridge = (emphasisPriority[emphasis ?? ''] ?? []).includes(module)
+    return forcedBridge ? item.score >= 3 : (index === 0 && item.score >= 6 && sourceCount >= 1) || (index === 1 && item.score >= 8 && sourceCount >= 2)
   }).slice(0, 2)
-  const activeModules = [...primaryModules, ...secondary]
+  const activeModules = emphasis === 'frontier_science' && capability(state, 'cap.offworld_settlement_support')
+    ? (['space', 'contact', 'machine', 'uplift'] as ModuleId[]).filter((module) => eligible.includes(module))
+    : [...primaryModules, ...secondary]
   for (const entry of audit) entry.active = activeModules.includes(entry.module)
   return { primaryModules, activeModules: [...new Set(activeModules)], audit }
 }
@@ -56,17 +67,41 @@ function ordinaryId(ordinaryIds: readonly string[], runId: string, slot: number)
 }
 
 function storyId(run: StableRunState, act: number, index: number): string | undefined {
+  const required = (ref: string, pool: readonly { id: string; sourceRefs: readonly string[] }[]) => pool.find((conversation) => conversation.sourceRefs.includes(ref))?.id
   if (act === 1) return ACT_STORY[1][index % Math.max(1, ACT_STORY[1].length)]?.id
-  if (act === 2) return ACT_STORY[2][index % Math.max(1, ACT_STORY[2].length)]?.id
-  if (act === 3) return ACT_STORY[3][index % Math.max(1, ACT_STORY[3].length)]?.id
+  if (act === 2) {
+    const anchor = ['ML2-A2-M3-DECISION-01', 'ML2-A2-M3-CAP-01', 'ML2-A3-M4-CAP-01'][index]
+    return anchor ? required(anchor, ACT_STORY[2]) ?? ACT_STORY[2][index % Math.max(1, ACT_STORY[2].length)]?.id : ACT_STORY[2][index % Math.max(1, ACT_STORY[2].length)]?.id
+  }
+  if (act === 3) {
+    const anchors = ['ML2-A3-M5-DECISION-01', 'ML2-A3-M6-DECISION-01', 'ML2-A3-M6-DECISION-02']
+    const anchor = anchors[index]
+    return anchor ? required(anchor, ACT_STORY[3]) ?? ACT_STORY[3][index % Math.max(1, ACT_STORY[3].length)]?.id : ACT_STORY[3][index % Math.max(1, ACT_STORY[3].length)]?.id
+  }
   if (act === 4) {
-    if (index < 8) return ACT4_COMMON[index]?.id
+    if (index === 2 && run.decisions?.act4_research_emphasis === 'frontier_science') return required('ML2-A4-M12-RES-04', MODULE_LIBRARY.space) ?? ACT4_COMMON[index]?.id
+    if (index < 8) {
+      const anchor = ['ML2-A4-M7-DECISION-01', 'ML2-A4-M7-DECISION-02', 'ML2-A4-M7-RES-01', 'ML2-A4-M7-RES-02'][index]
+      return anchor ? required(anchor, ACT4_COMMON) ?? ACT4_COMMON[index]?.id : ACT4_COMMON[index]?.id
+    }
     const active = run.progress?.activeModules ?? []
     if (index < 26 && active.length) {
       const module = active[(index - 8) % active.length]
       const library = MODULE_LIBRARY[module] ?? []
-      return library[Math.floor((index - 8) / active.length) % Math.max(1, library.length)]?.id
+      const occurrence = Math.floor((index - 8) / active.length)
+      const requiredModuleDecisions: Record<ModuleId, string[]> = {
+        machine: ['ML2-A4-M8-DECISION-01', 'ML2-A4-M8-DECISION-02', 'ML2-A4-M8-AI-03'],
+        ascension: ['ML2-A4-M9-DECISION-01', 'ML2-A4-M9-RES-04'],
+        automation: ['ML2-A4-M10-DECISION-01', 'ML2-A4-M10-DECISION-02', 'ML2-A4-M10-RES-01'],
+        uplift: ['ML2-A4-M11-DECISION-01', 'ML2-A4-M11-DECISION-02', 'ML2-A4-M11-RES-02', 'ML2-A4-M11-RES-04'],
+        space: ['ML2-A4-M12-DECISION-01', 'ML2-A4-M12-DECISION-02', 'ML2-A4-M12-RES-02', 'ML2-A4-M12-RES-04'],
+        contact: ['ML2-A4-M13-DECISION-01', 'ML2-A4-M13-DECISION-02'],
+        security: ['ML2-A4-M14-DECISION-01', 'ML2-A4-M14-CAP-01'],
+      }
+      const moduleAnchor = requiredModuleDecisions[module]?.[occurrence]
+      return moduleAnchor ? required(moduleAnchor, library) ?? library[occurrence % Math.max(1, library.length)]?.id : library[occurrence % Math.max(1, library.length)]?.id
     }
+    if (index === 26) return required('ML2-A4-M15-ROLE-01', ACT4_LATE) ?? ACT4_LATE[(index - 26) % Math.max(1, ACT4_LATE.length)]?.id
     return ACT4_LATE[(index - 26) % Math.max(1, ACT4_LATE.length)]?.id
   }
   if (act === 5) return index < 7 ? ACT5_OPENING[index]?.id : ACT5_FINAL[(index - 7) % Math.max(1, ACT5_FINAL.length)]?.id
@@ -89,7 +124,10 @@ export function updateProgressForSchedule(run: StableRunState, nextCount: number
   const act = nextCount < 26 ? 1 : nextCount < 56 ? 2 : nextCount < 86 ? 3 : nextCount < 120 ? 4 : 5
   const actStart = ACT_STARTS[act - 1]
   const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, activeModules: [], primaryModules: [], completedModules: [] }
-  const modules = nextCount >= 86 && current.activeModules.length === 0 ? selectAct4Modules(run) : { primaryModules: current.primaryModules, activeModules: current.activeModules }
+  const emphasis = run.decisions?.act4_research_emphasis
+  const shouldSelect = nextCount >= 89 && current.activeModules.length === 0
+  const shouldRefreshFrontier = nextCount >= 89 && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
+  const modules = shouldSelect || shouldRefreshFrontier ? selectAct4Modules(run) : { primaryModules: current.primaryModules, activeModules: current.activeModules }
   return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, activeModules: [...modules.activeModules], primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
 }
 

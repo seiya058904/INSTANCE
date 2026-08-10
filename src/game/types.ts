@@ -348,8 +348,23 @@ export interface EndingResult {
   hybridLabel: string
   worldEndingId?: string
   endingFamily?: string
-  keyHistory?: Array<{ label: string; detail: string; provenance?: { eventType?: string; conversationId?: string; nodeId?: string; choiceId?: string } }>
+  resolution?: EndingResolution
+  secretOverlay?: SecretEndingOverlay
+  keyHistory?: Array<{ label: string; detail: string; stage?: string; causalReason?: string; producer?: string; provenance?: { eventType?: string; conversationId?: string; nodeId?: string; choiceId?: string } }>
   epilogues?: string[]
+  epilogueProvenance?: Array<{ assetId: string; moduleId?: ModuleId; selector: string }>
+}
+
+export type EndingResolution =
+  | { status: 'resolved'; proposalId: string; endingId: string; family: string; rejectedCandidates: Array<{ endingId: string; reasons: string[] }> }
+  | { status: 'failure'; proposalId?: string; family?: string; rejectedCandidates: Array<{ endingId: string; reasons: string[] }> }
+
+export interface SecretEndingOverlay {
+  endingId: string
+  copy: string
+  trigger: string
+  overlayMode: 'title-override' | 'epilogue-override' | 'postscript'
+  provenance: { eventTypes?: string[]; decisionId?: string; decisionValue?: string; authoredAssetId?: string }
 }
 
 export interface EvaluationResult {

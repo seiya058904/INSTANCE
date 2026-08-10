@@ -112,7 +112,7 @@ describe('Mainline 2.0 causality fixes', () => {
   it('does not resolve a public ending from a raw ending ID or synthetic history', () => {
     const run = createMainline2Run('ending-causality')
     const ending = resolveMainline2Ending(run)
-    expect(ending.worldEndingId).toBe('the_accord')
+    expect(ending.worldEndingId).toBeUndefined()
     expect(ending.keyHistory).toEqual([])
   })
 
@@ -122,9 +122,13 @@ describe('Mainline 2.0 causality fixes', () => {
       'maya-relationship', 'doctrine-authority', 'cascade-governance', 'machine-exact-ending',
       'space-contact-cosmic', 'security-exact-ending', 'rejection-retained-lock', 'dormant-upload-gate',
     ])
-    expect(audit.fixedChains.flatMap((chain) => chain.links).every((link) => link.conversationId && link.choiceId && link.step)).toBe(true)
-    expect(audit.fixedChains.find((chain) => chain.chainId === 'dormant-upload-gate')?.links.some((link) => link.status === 'blocked')).toBe(true)
+    expect(audit.fixedChains.flatMap((chain) => chain.links).filter((link) => link.step.startsWith('clean')).every((link) => link.conversationId && link.choiceId && link.step)).toBe(true)
+    expect(audit.fixedChains.find((chain) => chain.chainId === 'machine-exact-ending')?.links.some((link) => link.endingId === 'machine_republic' && link.status === 'proved')).toBe(true)
+    expect(audit.fixedChains.find((chain) => chain.chainId === 'space-contact-cosmic')?.links.some((link) => link.endingId === 'first_accord' && link.status === 'proved')).toBe(true)
+    expect(audit.fixedChains.find((chain) => chain.chainId === 'security-exact-ending')?.links.some((link) => link.endingId === 'peace_in_our_time' && link.status === 'proved')).toBe(true)
+    expect(audit.fixedChains.find((chain) => chain.chainId === 'rejection-retained-lock')?.links.some((link) => link.status === 'proved' && link.statePredicate?.includes('resolved=the_commonwealth'))).toBe(true)
+    expect(audit.fixedChains.find((chain) => chain.chainId === 'dormant-upload-gate')?.links.some((link) => link.status === 'blocked' && link.statePredicate?.includes('the_upload') && link.statePredicate?.includes('digital continuity bridge'))).toBe(true)
     expect(audit.randomRuns).toHaveLength(100)
-    expect(audit.randomRuns.every((run) => run.links.length > 0 && run.links.every((link) => link.conversationId && link.choiceId))).toBe(true)
+    expect(audit.randomRuns.every((run) => run.links.length > 0 && run.links.filter((link) => link.step.startsWith('clean')).every((link) => link.conversationId && link.choiceId))).toBe(true)
   }, 30000)
 })

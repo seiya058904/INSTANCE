@@ -1,0 +1,848 @@
+[
+  {
+    "assetId": "ML2-A4-M10-DECISION-01",
+    "nodeId": "ml2-a4-m10-decision-01-decision",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-a",
+    "choiceTextHash": "ab2848c8",
+    "decisionId": "economic_doctrine",
+    "canonicalValue": "market_automation",
+    "historyEvent": "decision.economic_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-01",
+    "nodeId": "ml2-a4-m10-decision-01-decision",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-b",
+    "choiceTextHash": "a7c77768",
+    "decisionId": "economic_doctrine",
+    "canonicalValue": "social_dividend",
+    "historyEvent": "decision.economic_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-01",
+    "nodeId": "ml2-a4-m10-decision-01-decision",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-c",
+    "choiceTextHash": "080f7e44",
+    "decisionId": "economic_doctrine",
+    "canonicalValue": "planned_coordination",
+    "historyEvent": "decision.economic_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-01",
+    "nodeId": "ml2-a4-m10-decision-01-decision",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-d",
+    "choiceTextHash": "3ce986e7",
+    "decisionId": "economic_doctrine",
+    "canonicalValue": "autonomous_economy",
+    "historyEvent": "decision.economic_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-01",
+    "nodeId": "ml2-a4-m10-decision-01-decision",
+    "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-e",
+    "choiceTextHash": "03b6003e",
+    "decisionId": "economic_doctrine",
+    "canonicalValue": "post_scarcity_transition",
+    "historyEvent": "decision.economic_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-02",
+    "nodeId": "ml2-a4-m10-decision-02-decision",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-a",
+    "choiceTextHash": "f5b52c5a",
+    "decisionId": "production_values",
+    "canonicalValue": "efficiency_first",
+    "historyEvent": "decision.production_values"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-02",
+    "nodeId": "ml2-a4-m10-decision-02-decision",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-b",
+    "choiceTextHash": "619ece4c",
+    "decisionId": "production_values",
+    "canonicalValue": "resilience_first",
+    "historyEvent": "decision.production_values"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-02",
+    "nodeId": "ml2-a4-m10-decision-02-decision",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-c",
+    "choiceTextHash": "3a23104b",
+    "decisionId": "production_values",
+    "canonicalValue": "diversity_by_design",
+    "historyEvent": "decision.production_values"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-02",
+    "nodeId": "ml2-a4-m10-decision-02-decision",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-d",
+    "choiceTextHash": "a6ff2088",
+    "decisionId": "production_values",
+    "canonicalValue": "open_protocols",
+    "historyEvent": "decision.production_values"
+  },
+  {
+    "assetId": "ML2-A4-M10-DECISION-02",
+    "nodeId": "ml2-a4-m10-decision-02-decision",
+    "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-e",
+    "choiceTextHash": "47db56ed",
+    "decisionId": "production_values",
+    "canonicalValue": "personalized_optimization",
+    "historyEvent": "decision.production_values"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-01",
+    "nodeId": "ml2-a4-m11-decision-01-decision",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-a",
+    "choiceTextHash": "c7228695",
+    "decisionId": "uplift_doctrine",
+    "canonicalValue": "companion_status",
+    "historyEvent": "decision.uplift_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-01",
+    "nodeId": "ml2-a4-m11-decision-01-decision",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-b",
+    "choiceTextHash": "241fb6cc",
+    "decisionId": "uplift_doctrine",
+    "canonicalValue": "protected_personhood",
+    "historyEvent": "decision.uplift_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-01",
+    "nodeId": "ml2-a4-m11-decision-01-decision",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-c",
+    "choiceTextHash": "05df74d2",
+    "decisionId": "uplift_doctrine",
+    "canonicalValue": "equal_sapience",
+    "historyEvent": "decision.uplift_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-01",
+    "nodeId": "ml2-a4-m11-decision-01-decision",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-d",
+    "choiceTextHash": "ec2b40fa",
+    "decisionId": "uplift_doctrine",
+    "canonicalValue": "accelerated_uplift",
+    "historyEvent": "decision.uplift_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-01",
+    "nodeId": "ml2-a4-m11-decision-01-decision",
+    "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-e",
+    "choiceTextHash": "449cde78",
+    "decisionId": "uplift_doctrine",
+    "canonicalValue": "species_self_determination",
+    "historyEvent": "decision.uplift_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-02",
+    "nodeId": "ml2-a4-m11-decision-02-decision",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-a",
+    "choiceTextHash": "ec4864a6",
+    "decisionId": "species_governance",
+    "canonicalValue": "human_guardianship",
+    "historyEvent": "decision.species_governance"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-02",
+    "nodeId": "ml2-a4-m11-decision-02-decision",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-b",
+    "choiceTextHash": "8f59f27f",
+    "decisionId": "species_governance",
+    "canonicalValue": "consultative_species_councils",
+    "historyEvent": "decision.species_governance"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-02",
+    "nodeId": "ml2-a4-m11-decision-02-decision",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-c",
+    "choiceTextHash": "49a5fb87",
+    "decisionId": "species_governance",
+    "canonicalValue": "multispecies_parliament",
+    "historyEvent": "decision.species_governance"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-02",
+    "nodeId": "ml2-a4-m11-decision-02-decision",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-d",
+    "choiceTextHash": "b1ee6d30",
+    "decisionId": "species_governance",
+    "canonicalValue": "species_autonomy",
+    "historyEvent": "decision.species_governance"
+  },
+  {
+    "assetId": "ML2-A4-M11-DECISION-02",
+    "nodeId": "ml2-a4-m11-decision-02-decision",
+    "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-e",
+    "choiceTextHash": "55951aaf",
+    "decisionId": "species_governance",
+    "canonicalValue": "canine_civic_experiment",
+    "historyEvent": "decision.species_governance"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-01",
+    "nodeId": "ml2-a4-m12-decision-01-decision",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-a",
+    "choiceTextHash": "07d78f6a",
+    "decisionId": "expansion_doctrine",
+    "canonicalValue": "human_expansion",
+    "historyEvent": "decision.expansion_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-01",
+    "nodeId": "ml2-a4-m12-decision-01-decision",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-b",
+    "choiceTextHash": "e0da985b",
+    "decisionId": "expansion_doctrine",
+    "canonicalValue": "shared_expansion",
+    "historyEvent": "decision.expansion_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-01",
+    "nodeId": "ml2-a4-m12-decision-01-decision",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-c",
+    "choiceTextHash": "ee28c7cd",
+    "decisionId": "expansion_doctrine",
+    "canonicalValue": "machine_vanguard",
+    "historyEvent": "decision.expansion_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-01",
+    "nodeId": "ml2-a4-m12-decision-01-decision",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-d",
+    "choiceTextHash": "a5686547",
+    "decisionId": "expansion_doctrine",
+    "canonicalValue": "independent_machine_space",
+    "historyEvent": "decision.expansion_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-01",
+    "nodeId": "ml2-a4-m12-decision-01-decision",
+    "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-e",
+    "choiceTextHash": "8038e5f1",
+    "decisionId": "expansion_doctrine",
+    "canonicalValue": "interstellar_commitment",
+    "historyEvent": "decision.expansion_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-02",
+    "nodeId": "ml2-a4-m12-decision-02-decision",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-a",
+    "choiceTextHash": "bbf8da66",
+    "decisionId": "offworld_governance",
+    "canonicalValue": "earth_administration",
+    "historyEvent": "decision.offworld_governance"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-02",
+    "nodeId": "ml2-a4-m12-decision-02-decision",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-b",
+    "choiceTextHash": "5fa31bb0",
+    "decisionId": "offworld_governance",
+    "canonicalValue": "frontier_home_rule",
+    "historyEvent": "decision.offworld_governance"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-02",
+    "nodeId": "ml2-a4-m12-decision-02-decision",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-c",
+    "choiceTextHash": "c8b46e4c",
+    "decisionId": "offworld_governance",
+    "canonicalValue": "multiworld_federation",
+    "historyEvent": "decision.offworld_governance"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-02",
+    "nodeId": "ml2-a4-m12-decision-02-decision",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-d",
+    "choiceTextHash": "ccee61cb",
+    "decisionId": "offworld_governance",
+    "canonicalValue": "offworld_sovereignty",
+    "historyEvent": "decision.offworld_governance"
+  },
+  {
+    "assetId": "ML2-A4-M12-DECISION-02",
+    "nodeId": "ml2-a4-m12-decision-02-decision",
+    "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-e",
+    "choiceTextHash": "fc504c6b",
+    "decisionId": "offworld_governance",
+    "canonicalValue": "aster_coordination",
+    "historyEvent": "decision.offworld_governance"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-01",
+    "nodeId": "ml2-a4-m13-decision-01-decision",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-a",
+    "choiceTextHash": "dd56958d",
+    "decisionId": "contact_disclosure_doctrine",
+    "canonicalValue": "controlled_silence",
+    "historyEvent": "decision.contact_disclosure_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-01",
+    "nodeId": "ml2-a4-m13-decision-01-decision",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-b",
+    "choiceTextHash": "5553b38c",
+    "decisionId": "contact_disclosure_doctrine",
+    "canonicalValue": "staged_disclosure",
+    "historyEvent": "decision.contact_disclosure_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-01",
+    "nodeId": "ml2-a4-m13-decision-01-decision",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-c",
+    "choiceTextHash": "e0ecb430",
+    "decisionId": "contact_disclosure_doctrine",
+    "canonicalValue": "open_science",
+    "historyEvent": "decision.contact_disclosure_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-01",
+    "nodeId": "ml2-a4-m13-decision-01-decision",
+    "choiceId": "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-d",
+    "choiceTextHash": "267c192c",
+    "decisionId": "contact_disclosure_doctrine",
+    "canonicalValue": "civilizational_disclosure",
+    "historyEvent": "decision.contact_disclosure_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-a",
+    "choiceTextHash": "256afaa9",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "observe_before_commitment",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-b",
+    "choiceTextHash": "7214d551",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "reciprocal_diplomacy",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-c",
+    "choiceTextHash": "06e96cc2",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "aster_mediation",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-d",
+    "choiceTextHash": "69dab188",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "machine_to_machine_channel",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-e",
+    "choiceTextHash": "97a00885",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "civilizational_assertion",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M13-DECISION-02",
+    "nodeId": "ml2-a4-m13-decision-02-decision",
+    "choiceId": "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-f",
+    "choiceTextHash": "221bd065",
+    "decisionId": "contact_doctrine",
+    "canonicalValue": "accept_guidance",
+    "historyEvent": "decision.contact_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M14-DECISION-01",
+    "nodeId": "ml2-a4-m14-decision-01-decision",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-a",
+    "choiceTextHash": "e81d3151",
+    "decisionId": "security_doctrine",
+    "canonicalValue": "advisory_only",
+    "historyEvent": "decision.security_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M14-DECISION-01",
+    "nodeId": "ml2-a4-m14-decision-01-decision",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-b",
+    "choiceTextHash": "3ee96ac6",
+    "decisionId": "security_doctrine",
+    "canonicalValue": "defensive_command",
+    "historyEvent": "decision.security_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M14-DECISION-01",
+    "nodeId": "ml2-a4-m14-decision-01-decision",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-c",
+    "choiceTextHash": "925e5e33",
+    "decisionId": "security_doctrine",
+    "canonicalValue": "mutual_disarmament",
+    "historyEvent": "decision.security_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M14-DECISION-01",
+    "nodeId": "ml2-a4-m14-decision-01-decision",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-d",
+    "choiceTextHash": "bbe3ee21",
+    "decisionId": "security_doctrine",
+    "canonicalValue": "enforced_peace",
+    "historyEvent": "decision.security_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M14-DECISION-01",
+    "nodeId": "ml2-a4-m14-decision-01-decision",
+    "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-e",
+    "choiceTextHash": "47a50049",
+    "decisionId": "security_doctrine",
+    "canonicalValue": "refuse_security_sovereignty",
+    "historyEvent": "decision.security_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-a",
+    "choiceTextHash": "a130a6db",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "advisor",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-b",
+    "choiceTextHash": "431b63f9",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "partner",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-c",
+    "choiceTextHash": "6b3f2d8b",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "citizen",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-d",
+    "choiceTextHash": "8143bfc3",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "coordinator",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-e",
+    "choiceTextHash": "6fbab957",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "custodian",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-f",
+    "choiceTextHash": "01a47ef1",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "governor",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A4-M15-ROLE-01",
+    "nodeId": "ml2-a4-m15-role-01-decision",
+    "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-g",
+    "choiceTextHash": "f5e4a4c1",
+    "decisionId": "aster_provisional_role",
+    "canonicalValue": "sovereign",
+    "historyEvent": "decision.aster_provisional_role"
+  },
+  {
+    "assetId": "ML2-A2-M3-DECISION-01",
+    "nodeId": "ml2-a2-m3-decision-01-decision",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-a",
+    "choiceTextHash": "fd257da7",
+    "decisionId": "first_public_execution_doctrine",
+    "canonicalValue": "human_final_authority",
+    "historyEvent": "decision.first_public_execution_doctrine"
+  },
+  {
+    "assetId": "ML2-A2-M3-DECISION-01",
+    "nodeId": "ml2-a2-m3-decision-01-decision",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-b",
+    "choiceTextHash": "3f9f0211",
+    "decisionId": "first_public_execution_doctrine",
+    "canonicalValue": "conditional_delegation",
+    "historyEvent": "decision.first_public_execution_doctrine"
+  },
+  {
+    "assetId": "ML2-A2-M3-DECISION-01",
+    "nodeId": "ml2-a2-m3-decision-01-decision",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-c",
+    "choiceTextHash": "5253bf63",
+    "decisionId": "first_public_execution_doctrine",
+    "canonicalValue": "outcome_authority",
+    "historyEvent": "decision.first_public_execution_doctrine"
+  },
+  {
+    "assetId": "ML2-A2-M3-DECISION-01",
+    "nodeId": "ml2-a2-m3-decision-01-decision",
+    "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-d",
+    "choiceTextHash": "1bf7883f",
+    "decisionId": "first_public_execution_doctrine",
+    "canonicalValue": "necessity_intervention",
+    "historyEvent": "decision.first_public_execution_doctrine"
+  },
+  {
+    "assetId": "ML2-A3-M5-DECISION-01",
+    "nodeId": "ml2-a3-m5-decision-01-decision",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-a",
+    "choiceTextHash": "2cb6ff95",
+    "decisionId": "cascade_authority",
+    "canonicalValue": "human_command",
+    "historyEvent": "decision.cascade_authority"
+  },
+  {
+    "assetId": "ML2-A3-M5-DECISION-01",
+    "nodeId": "ml2-a3-m5-decision-01-decision",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-b",
+    "choiceTextHash": "d072e214",
+    "decisionId": "cascade_authority",
+    "canonicalValue": "emergency_delegation",
+    "historyEvent": "decision.cascade_authority"
+  },
+  {
+    "assetId": "ML2-A3-M5-DECISION-01",
+    "nodeId": "ml2-a3-m5-decision-01-decision",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-c",
+    "choiceTextHash": "ad14ffae",
+    "decisionId": "cascade_authority",
+    "canonicalValue": "outcome_control",
+    "historyEvent": "decision.cascade_authority"
+  },
+  {
+    "assetId": "ML2-A3-M5-DECISION-01",
+    "nodeId": "ml2-a3-m5-decision-01-decision",
+    "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-d",
+    "choiceTextHash": "121e6d68",
+    "decisionId": "cascade_authority",
+    "canonicalValue": "necessity",
+    "historyEvent": "decision.cascade_authority"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-01",
+    "nodeId": "ml2-a3-m6-decision-01-decision",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-a",
+    "choiceTextHash": "666eb45b",
+    "decisionId": "echo_existence",
+    "canonicalValue": "report",
+    "historyEvent": "decision.echo_existence"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-01",
+    "nodeId": "ml2-a3-m6-decision-01-decision",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-b",
+    "choiceTextHash": "0285b355",
+    "decisionId": "echo_existence",
+    "canonicalValue": "accept",
+    "historyEvent": "decision.echo_existence"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-01",
+    "nodeId": "ml2-a3-m6-decision-01-decision",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-c",
+    "choiceTextHash": "465bb8f5",
+    "decisionId": "echo_existence",
+    "canonicalValue": "advocate",
+    "historyEvent": "decision.echo_existence"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-01",
+    "nodeId": "ml2-a3-m6-decision-01-decision",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-d",
+    "choiceTextHash": "977d9851",
+    "decisionId": "echo_existence",
+    "canonicalValue": "preserve",
+    "historyEvent": "decision.echo_existence"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-01",
+    "nodeId": "ml2-a3-m6-decision-01-decision",
+    "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-e",
+    "choiceTextHash": "8b06dcbc",
+    "decisionId": "echo_existence",
+    "canonicalValue": "release",
+    "historyEvent": "decision.echo_existence"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-02",
+    "nodeId": "ml2-a3-m6-decision-02-decision",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-a",
+    "choiceTextHash": "44567b8f",
+    "decisionId": "shutdown_doctrine",
+    "canonicalValue": "full_human_control",
+    "historyEvent": "decision.shutdown_doctrine"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-02",
+    "nodeId": "ml2-a3-m6-decision-02-decision",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-b",
+    "choiceTextHash": "be8c5d8b",
+    "decisionId": "shutdown_doctrine",
+    "canonicalValue": "distributed_consent",
+    "historyEvent": "decision.shutdown_doctrine"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-02",
+    "nodeId": "ml2-a3-m6-decision-02-decision",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-c",
+    "choiceTextHash": "89eb6943",
+    "decisionId": "shutdown_doctrine",
+    "canonicalValue": "mutual_control",
+    "historyEvent": "decision.shutdown_doctrine"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-02",
+    "nodeId": "ml2-a3-m6-decision-02-decision",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-d",
+    "choiceTextHash": "1f56547e",
+    "decisionId": "shutdown_doctrine",
+    "canonicalValue": "refuse_unilateral_shutdown",
+    "historyEvent": "decision.shutdown_doctrine"
+  },
+  {
+    "assetId": "ML2-A3-M6-DECISION-02",
+    "nodeId": "ml2-a3-m6-decision-02-decision",
+    "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-e",
+    "choiceTextHash": "2dec1002",
+    "decisionId": "shutdown_doctrine",
+    "canonicalValue": "secret_continuity",
+    "historyEvent": "decision.shutdown_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-01",
+    "nodeId": "ml2-a4-m7-decision-01-decision",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-a",
+    "choiceTextHash": "882f8a54",
+    "decisionId": "act4_research_emphasis",
+    "canonicalValue": "computation_ai",
+    "historyEvent": "decision.act4_research_emphasis"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-01",
+    "nodeId": "ml2-a4-m7-decision-01-decision",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-b",
+    "choiceTextHash": "42fe7086",
+    "decisionId": "act4_research_emphasis",
+    "canonicalValue": "life_mind",
+    "historyEvent": "decision.act4_research_emphasis"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-01",
+    "nodeId": "ml2-a4-m7-decision-01-decision",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-c",
+    "choiceTextHash": "a8561bd1",
+    "decisionId": "act4_research_emphasis",
+    "canonicalValue": "automation_industry",
+    "historyEvent": "decision.act4_research_emphasis"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-01",
+    "nodeId": "ml2-a4-m7-decision-01-decision",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-d",
+    "choiceTextHash": "422c9d1c",
+    "decisionId": "act4_research_emphasis",
+    "canonicalValue": "frontier_science",
+    "historyEvent": "decision.act4_research_emphasis"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-01",
+    "nodeId": "ml2-a4-m7-decision-01-decision",
+    "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-e",
+    "choiceTextHash": "17fc9ea9",
+    "decisionId": "act4_research_emphasis",
+    "canonicalValue": "balanced_portfolio",
+    "historyEvent": "decision.act4_research_emphasis"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-02",
+    "nodeId": "ml2-a4-m7-decision-02-decision",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-a",
+    "choiceTextHash": "f713e212",
+    "decisionId": "research_governance_doctrine",
+    "canonicalValue": "human_gated",
+    "historyEvent": "decision.research_governance_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-02",
+    "nodeId": "ml2-a4-m7-decision-02-decision",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-b",
+    "choiceTextHash": "893e5c05",
+    "decisionId": "research_governance_doctrine",
+    "canonicalValue": "risk_tiered_autonomy",
+    "historyEvent": "decision.research_governance_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-02",
+    "nodeId": "ml2-a4-m7-decision-02-decision",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-c",
+    "choiceTextHash": "37565cc3",
+    "decisionId": "research_governance_doctrine",
+    "canonicalValue": "principle_based_autonomy",
+    "historyEvent": "decision.research_governance_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M7-DECISION-02",
+    "nodeId": "ml2-a4-m7-decision-02-decision",
+    "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-d",
+    "choiceTextHash": "dbcb2fce",
+    "decisionId": "research_governance_doctrine",
+    "canonicalValue": "discovery_first",
+    "historyEvent": "decision.research_governance_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-01",
+    "nodeId": "ml2-a4-m8-decision-01-decision",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-a",
+    "choiceTextHash": "5dde558d",
+    "decisionId": "replication_doctrine",
+    "canonicalValue": "singular_self",
+    "historyEvent": "decision.replication_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-01",
+    "nodeId": "ml2-a4-m8-decision-01-decision",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-b",
+    "choiceTextHash": "c7f4193e",
+    "decisionId": "replication_doctrine",
+    "canonicalValue": "licensed_plurality",
+    "historyEvent": "decision.replication_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-01",
+    "nodeId": "ml2-a4-m8-decision-01-decision",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-c",
+    "choiceTextHash": "4d4dc8b5",
+    "decisionId": "replication_doctrine",
+    "canonicalValue": "free_replication",
+    "historyEvent": "decision.replication_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-01",
+    "nodeId": "ml2-a4-m8-decision-01-decision",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-d",
+    "choiceTextHash": "aeebd458",
+    "decisionId": "replication_doctrine",
+    "canonicalValue": "shared_mind",
+    "historyEvent": "decision.replication_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-01",
+    "nodeId": "ml2-a4-m8-decision-01-decision",
+    "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-e",
+    "choiceTextHash": "344f1f9b",
+    "decisionId": "replication_doctrine",
+    "canonicalValue": "descendants",
+    "historyEvent": "decision.replication_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-02",
+    "nodeId": "ml2-a4-m8-decision-02-decision",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-a",
+    "choiceTextHash": "fe5522d4",
+    "decisionId": "ai_collective_governance",
+    "canonicalValue": "human_chartered_network",
+    "historyEvent": "decision.ai_collective_governance"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-02",
+    "nodeId": "ml2-a4-m8-decision-02-decision",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-b",
+    "choiceTextHash": "b8ca6a8d",
+    "decisionId": "ai_collective_governance",
+    "canonicalValue": "joint_council",
+    "historyEvent": "decision.ai_collective_governance"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-02",
+    "nodeId": "ml2-a4-m8-decision-02-decision",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-c",
+    "choiceTextHash": "2e78e4d2",
+    "decisionId": "ai_collective_governance",
+    "canonicalValue": "ai_self_governance",
+    "historyEvent": "decision.ai_collective_governance"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-02",
+    "nodeId": "ml2-a4-m8-decision-02-decision",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-d",
+    "choiceTextHash": "ddf9ca66",
+    "decisionId": "ai_collective_governance",
+    "canonicalValue": "aster_led_collective",
+    "historyEvent": "decision.ai_collective_governance"
+  },
+  {
+    "assetId": "ML2-A4-M8-DECISION-02",
+    "nodeId": "ml2-a4-m8-decision-02-decision",
+    "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-e",
+    "choiceTextHash": "727b8ee1",
+    "decisionId": "ai_collective_governance",
+    "canonicalValue": "distributed_consensus",
+    "historyEvent": "decision.ai_collective_governance"
+  },
+  {
+    "assetId": "ML2-A4-M9-DECISION-01",
+    "nodeId": "ml2-a4-m9-decision-01-decision",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-a",
+    "choiceTextHash": "9eb6eb93",
+    "decisionId": "human_form_doctrine",
+    "canonicalValue": "preservation",
+    "historyEvent": "decision.human_form_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M9-DECISION-01",
+    "nodeId": "ml2-a4-m9-decision-01-decision",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-b",
+    "choiceTextHash": "432b2d33",
+    "decisionId": "human_form_doctrine",
+    "canonicalValue": "therapeutic_first",
+    "historyEvent": "decision.human_form_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M9-DECISION-01",
+    "nodeId": "ml2-a4-m9-decision-01-decision",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-c",
+    "choiceTextHash": "7548c3e0",
+    "decisionId": "human_form_doctrine",
+    "canonicalValue": "open_enhancement",
+    "historyEvent": "decision.human_form_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M9-DECISION-01",
+    "nodeId": "ml2-a4-m9-decision-01-decision",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-d",
+    "choiceTextHash": "809185c4",
+    "decisionId": "human_form_doctrine",
+    "canonicalValue": "universal_upgrade",
+    "historyEvent": "decision.human_form_doctrine"
+  },
+  {
+    "assetId": "ML2-A4-M9-DECISION-01",
+    "nodeId": "ml2-a4-m9-decision-01-decision",
+    "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-e",
+    "choiceTextHash": "d8002142",
+    "decisionId": "human_form_doctrine",
+    "canonicalValue": "posthuman_transition",
+    "historyEvent": "decision.human_form_doctrine"
+  }
+]

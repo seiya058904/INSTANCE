@@ -11,19 +11,40 @@ import { decisionMutationsForChoice, validateDecisionBindings } from './decision
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
 function assetRef(conversation: ConversationDefinition) { return conversation.sourceRefs[0] ?? '' }
-function authoredMutations(ref: string, index: number): Mutation[] {
+function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][number]['choices'][number]): Mutation[] {
   const mutations: Mutation[] = []
   if (ref.includes('M7-RES-01')) mutations.push({ type: 'flag.set', flagId: 'cap.autonomous_research' })
+  if (ref.includes('M3-CAP-01')) mutations.push({ type: 'flag.set', flagId: 'cap.public_execution_limited' })
+  if (ref.includes('M4-CAP-01')) mutations.push({ type: 'flag.set', flagId: 'cap.infrastructure_access_limited' })
+  if (ref.includes('M5-OPS-01')) mutations.push({ type: 'flag.set', flagId: 'cap.global_coordination_access' })
+  if (ref.includes('M7-RES-02')) mutations.push({ type: 'flag.set', flagId: 'cap.public_system_advisory' })
   if (ref.includes('M8-AI-')) mutations.push({ type: 'flag.set', flagId: 'cap.persistent_subinstances' })
+  if (ref.includes('M8-AI-03')) mutations.push({ type: 'flag.set', flagId: 'cap.independent_ai_forks' })
   if (ref.includes('M9-RES-') || ref.includes('M9-DECISION')) mutations.push({ type: 'flag.set', flagId: 'cap.human_enhancement_access' })
+  if (ref.includes('M9-RES-04')) mutations.push({ type: 'flag.set', flagId: 'cap.human_augmentation_advanced' })
   if (ref.includes('M10-RES-')) mutations.push({ type: 'flag.set', flagId: 'cap.physical_automation' })
+  if (ref.includes('M10-RES-01')) mutations.push({ type: 'flag.set', flagId: 'cap.high_abundance_production' })
   if (ref.includes('M11-RES-') || ref.includes('M11-DECISION')) mutations.push({ type: 'flag.set', flagId: 'cap.nonhuman_cognitive_uplift' })
+  if (ref.includes('M11-RES-02')) mutations.push({ type: 'flag.set', flagId: 'cap.animal_communication_reliable' })
+  if (ref.includes('M11-RES-04')) mutations.push({ type: 'flag.set', flagId: 'cap.interspecies_mediation' })
   if (ref.includes('M12-RES-')) mutations.push({ type: 'flag.set', flagId: 'cap.offworld_settlement_support' })
+  if (ref.includes('M12-RES-02')) mutations.push({ type: 'flag.set', flagId: 'cap.space_industry_limited' })
+  if (ref.includes('M12-RES-04')) {
+    mutations.push({ type: 'flag.set', flagId: 'cap.space_resource_network' })
+    mutations.push({ type: 'event.record', event: 'contact-seed:deep-space-anomaly' })
+    mutations.push({ type: 'event.record', event: 'history.space.frontier_maturity' })
+  }
+  if (ref.includes('M12-DECISION-')) mutations.push({ type: 'event.record', event: 'history.offworld.governance' })
   if (ref.includes('M13-CONTACT-')) mutations.push({ type: 'event.record', event: 'history.contact.first_conversation' })
   if (ref.includes('M11-WE-') || ref.includes('M11-ZL-')) mutations.push({ type: 'event.record', event: 'history.canine.group_representation' })
+  if (ref.includes('M11-RES-03')) mutations.push({ type: 'event.record', event: 'history.canine.civic_success' })
+  if (ref.includes('M14-CAP-01')) mutations.push({ type: 'flag.set', flagId: 'cap.defense_access' })
   if (ref.includes('M15-CONV-')) mutations.push({ type: 'event.record', event: 'history.m15.civilization_convention' })
   if (ref.includes('M16-GEN-')) mutations.push({ type: 'event.record', event: 'history.m16.proposals_generated' })
   if (ref.includes('M17-LOCK-')) mutations.push({ type: 'event.record', event: 'history.final.commitment_locked' })
+  if (ref === 'ML2-A5-M16-MAYA-01' && choice.id === 'ml2-a5-m16-maya-01-a5m16-maya-final-001-d') {
+    mutations.push({ type: 'event.record', event: 'maya-final:last-user' })
+  }
   return mutations
 }
 
@@ -33,9 +54,9 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
     ...conversation,
     nodes: conversation.nodes.map((node) => ({
       ...node,
-      choices: node.choices.map((choice, index) => ({
+      choices: node.choices.map((choice) => ({
         ...choice,
-        mutations: [...(choice.mutations ?? []), ...decisionMutationsForChoice(conversation, choice), ...authoredMutations(ref, index)],
+        mutations: [...(choice.mutations ?? []), ...decisionMutationsForChoice(conversation, choice), ...authoredMutations(ref, choice)],
       })),
     })),
   }

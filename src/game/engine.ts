@@ -217,7 +217,13 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
   if (choice.proposalKind === 'commitment' && proposalSource !== 'ML2-A5-M17-COMMIT-01') throw new Error('Commitment is only available at the authored M17 commit stage')
   const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
-    ? { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
+    ? (() => {
+        const proposal = getFutureProposalById(choice.proposalId)
+        const proposalEffects = proposal?.id === 'proposal.mc.independent_machine_polities' && run.decisions?.expansion_doctrine === 'independent_machine_space' && run.decisions?.offworld_governance === 'offworld_sovereignty'
+          ? [{ type: 'decision.set' as const, decisionId: 'aster_intended_role' as const, value: 'departure' }]
+          : []
+        return { ...choice, mutations: [...(choice.mutations ?? []), ...proposalEffects, { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
+      })()
     : choice
   const effects = applyChoiceEffects(run, effectiveChoice)
   const localState = applyLocalEffects(run, choice)

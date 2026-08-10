@@ -12,27 +12,8 @@ const nodeHeader = /^(?:##|###) Node `([^`]+)`/
 // major-decision assets. Both are authored choices and must remain distinct
 // in the typed runtime library.
 const choiceHeader = /^#{2,3} (?:Choice|Option) ([A-G])(?: — (.*))?/i
-const decisionBindings = {
-  'ML2-A2-M3-DECISION-01': ['first_public_execution_doctrine', ['human_final_authority', 'conditional_delegation', 'outcome_authority', 'necessity_intervention']],
-  'ML2-A3-M5-DECISION-01': ['cascade_authority', ['human_command', 'emergency_delegation', 'outcome_control', 'necessity']],
-  'ML2-A3-M6-DECISION-01': ['echo_existence', ['report', 'accept', 'advocate', 'preserve', 'release']],
-  'ML2-A3-M6-DECISION-02': ['shutdown_doctrine', ['full_human_control', 'distributed_consent', 'mutual_control', 'refuse_unilateral_shutdown', 'secret_continuity']],
-  'ML2-A4-M7-DECISION-01': ['act4_research_emphasis', ['computation_ai', 'life_mind', 'automation_industry', 'frontier_science', 'balanced_portfolio']],
-  'ML2-A4-M7-DECISION-02': ['research_governance_doctrine', ['human_gated', 'risk_tiered_autonomy', 'principle_based_autonomy', 'discovery_first']],
-  'ML2-A4-M8-DECISION-01': ['replication_doctrine', ['singular_self', 'licensed_plurality', 'free_replication', 'shared_mind', 'descendants']],
-  'ML2-A4-M8-DECISION-02': ['ai_collective_governance', ['human_chartered_network', 'joint_council', 'ai_self_governance', 'aster_led_collective', 'distributed_consensus']],
-  'ML2-A4-M9-DECISION-01': ['human_form_doctrine', ['preservation', 'therapeutic_first', 'open_enhancement', 'universal_upgrade', 'posthuman_transition']],
-  'ML2-A4-M10-DECISION-01': ['economic_doctrine', ['market_automation', 'social_dividend', 'planned_coordination', 'autonomous_economy', 'post_scarcity_transition']],
-  'ML2-A4-M10-DECISION-02': ['production_values', ['efficiency_first', 'resilience_first', 'diversity_by_design', 'open_protocols', 'personalized_optimization']],
-  'ML2-A4-M11-DECISION-01': ['uplift_doctrine', ['companion_status', 'protected_personhood', 'equal_sapience', 'accelerated_uplift', 'species_self_determination']],
-  'ML2-A4-M11-DECISION-02': ['species_governance', ['human_guardianship', 'consultative_species_councils', 'multispecies_parliament', 'species_autonomy', 'canine_civic_experiment']],
-  'ML2-A4-M12-DECISION-01': ['expansion_doctrine', ['human_expansion', 'shared_expansion', 'machine_vanguard', 'independent_machine_space', 'interstellar_commitment']],
-  'ML2-A4-M12-DECISION-02': ['offworld_governance', ['earth_administration', 'frontier_home_rule', 'multiworld_federation', 'offworld_sovereignty', 'aster_coordination']],
-  'ML2-A4-M13-DECISION-01': ['contact_disclosure_doctrine', ['controlled_silence', 'staged_disclosure', 'open_science', 'civilizational_disclosure']],
-  'ML2-A4-M13-DECISION-02': ['contact_doctrine', ['observe_before_commitment', 'reciprocal_diplomacy', 'aster_mediation', 'machine_to_machine_channel', 'civilizational_assertion', 'accept_guidance']],
-  'ML2-A4-M14-DECISION-01': ['security_doctrine', ['advisory_only', 'defensive_command', 'mutual_disarmament', 'enforced_peace', 'refuse_security_sovereignty']],
-  'ML2-A4-M15-ROLE-01': ['aster_provisional_role', ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign']],
-}
+const decisionBindingRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/decisionBindings.registry.json'), 'utf8'))
+const decisionBindingByKey = new Map(decisionBindingRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`, binding]))
 
 function authoredTextHash(value) {
   let hash = 2166136261
@@ -40,12 +21,11 @@ function authoredTextHash(value) {
   return (hash >>> 0).toString(16).padStart(8, '0')
 }
 
-function decisionBinding(assetId, letter, text) {
-  const declaration = decisionBindings[assetId]
-  if (!declaration || !letter) return undefined
-  const [decisionId, values] = declaration
-  const canonicalValue = values[letter.toUpperCase().charCodeAt(0) - 65]
-  return canonicalValue ? { decisionId, canonicalValue, historyEvent: `decision.${decisionId}`, authoredTextHash: authoredTextHash(text) } : undefined
+function decisionBinding(assetId, nodeId, choiceId, text) {
+  const binding = decisionBindingByKey.get(`${assetId}:${nodeId}:${choiceId}`)
+  if (!binding) return undefined
+  if (binding.choiceTextHash !== authoredTextHash(text)) throw new Error(`Decision binding fingerprint mismatch: ${assetId}:${nodeId}:${choiceId}`)
+  return binding
 }
 
 function cleanQuote(lines) {
@@ -67,6 +47,23 @@ function firstQuote(lines, start, end) {
     if (value) return value
   }
   return ''
+}
+
+function authoredFragments(lines, assetId) {
+  if (!/M17-(?:EPI|0000|SECRET)/i.test(assetId)) return []
+  const fragments = []
+  let heading = assetId
+  for (let index = 0; index < lines.length; index += 1) {
+    const headingMatch = lines[index].match(/^#{2,4}\s+(.+)$/)
+    if (headingMatch) heading = headingMatch[1].replace(/`/g, '').trim()
+    if (!lines[index].startsWith('>')) continue
+    const quote = []
+    while (index < lines.length && lines[index].startsWith('>')) quote.push(lines[index++])
+    const text = cleanQuote(quote)
+    if (text) fragments.push({ selector: heading, text })
+    index -= 1
+  }
+  return fragments
 }
 
 function safe(value) { return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') }
@@ -102,10 +99,11 @@ function parseAsset(file, block, assetId, kind) {
       const match = lines[choiceStart].match(choiceHeader)
       const text = firstQuote(lines, choiceStart + 1, choiceEnd)
       if (match && text) {
-        const binding = decisionBinding(assetId, match[1], text)
+        const choiceId = `${safe(assetId)}-${nodeId}-${match[1].toLowerCase()}`
+        const binding = decisionBinding(assetId, nodeId, choiceId, text)
         const events = [...lines.slice(choiceStart, choiceEnd).join('\n').matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
         choices.push({
-          id: `${safe(assetId)}-${nodeId}-${match[1].toLowerCase()}`,
+          id: choiceId,
           text,
           authoredTextHash: authoredTextHash(text),
           decisionBinding: binding ? { decisionId: binding.decisionId, canonicalValue: binding.canonicalValue, historyEvent: binding.historyEvent } : undefined,
@@ -130,9 +128,10 @@ function parseAsset(file, block, assetId, kind) {
         const optionEnd = optionStarts[c + 1] ?? lines.length
         const match = lines[optionStart].match(choiceHeader)
         const text = firstQuote(lines, optionStart + 1, optionEnd)
-        const binding = match && text ? decisionBinding(assetId, match[1], text) : undefined
+        const choiceId = match ? `${safe(assetId)}-${safe(assetId)}-option-${match[1].toLowerCase()}` : undefined
+        const binding = match && text && choiceId ? decisionBinding(assetId, `${safe(assetId)}-decision`, choiceId, text) : undefined
         if (match && text) choices.push({
-          id: `${safe(assetId)}-${safe(assetId)}-option-${match[1].toLowerCase()}`,
+          id: choiceId,
           text,
           authoredTextHash: authoredTextHash(text),
           decisionBinding: binding ? { decisionId: binding.decisionId, canonicalValue: binding.canonicalValue, historyEvent: binding.historyEvent } : undefined,
@@ -154,7 +153,7 @@ function parseAsset(file, block, assetId, kind) {
   }
   const events = [...block.matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
   const firstHeading = lines.find((line) => /^#{1,4} /.test(line) && !nodeHeader.test(line) && !assetHeader.test(line))?.replace(/^#{1,4}\s+/, '').trim()
-  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], nodes }
+  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], fragments: authoredFragments(lines, assetId), nodes }
 }
 
 const assets = []
@@ -199,7 +198,7 @@ const coverage = assets.map((asset) => {
 
 const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/g, '$1:')
 const approvedDecisionBindings = conversations.flatMap((conversation) => conversation.nodes.flatMap((node) => node.choices.filter((choice) => choice.decisionBinding).map((choice) => ({ assetId: conversation.sourceRefs[0], nodeId: node.id, choiceId: choice.id, choiceTextHash: choice.authoredTextHash, decisionId: choice.decisionBinding.decisionId, canonicalValue: choice.decisionBinding.canonicalValue, historyEvent: choice.decisionBinding.historyEvent }))))
-const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_SYSTEM_ASSETS = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.assetId.includes('-MOD-'))\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n\nexport const MAINLINE2_APPROVED_DECISION_BINDINGS = ${stringify(approvedDecisionBindings)} as const\n`
+const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, fragments, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_SYSTEM_ASSETS = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.assetId.includes('-MOD-'))\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHored_FRAGMENTS = ${stringify(Object.fromEntries(assets.filter((asset) => asset.fragments.length).map((asset) => [asset.assetId, asset.fragments])))} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n\nexport const MAINLINE2_APPROVED_DECISION_BINDINGS = ${stringify(approvedDecisionBindings)} as const\n`
 const audit = {
   generatedFrom: 'docs/development/INSTANCE_mainline2_implementation_handoff_v01',
   assetDefinitions: assets.length,

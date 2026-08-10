@@ -53,7 +53,8 @@ describe('Mainline 2.0 runtime', () => {
   it('keeps feline secret dormant and does not reveal #0000', () => {
     expect(SECRET_ENDINGS.the_internet_is_for_cats.dormant).toBe(true)
     expect(SECRET_ENDINGS.the_internet_is_for_cats.reason).toContain('feline')
-    const ending = complete('0000-fixture').ending
+    const completed = complete('0000-fixture')
+    const ending = completed.ending
     expect(ending.epilogues?.join(' ')).toContain('not classified')
   })
 

@@ -1,5 +1,5 @@
 import type { ConversationDefinition, DecisionId, Mutation, StoryChoice } from '../../game/types'
-import { MAINLINE2_APPROVED_DECISION_BINDINGS, MAINLINE2_AUTHORED_CONVERSATIONS } from './authoredLibrary.generated'
+import decisionBindingRegistry from './decisionBindings.registry.json'
 import { isDecisionValue } from './stateRegistry'
 
 export interface DecisionBinding {
@@ -55,7 +55,58 @@ function collect(conversation: ConversationDefinition): DecisionBinding[] {
   return conversation.nodes.flatMap((node) => node.choices.map((choice) => declaredBinding(assetId, node.id, choice)).filter(Boolean) as DecisionBinding[])
 }
 
-export const DECISION_BINDINGS: readonly DecisionBinding[] = MAINLINE2_APPROVED_DECISION_BINDINGS.map((binding) => ({ ...binding, worldEffects: [`world.history.${binding.decisionId}`], capabilityEffects: [], callbackProducer: binding.assetId, callbackConsumer: 'runtime.applyDecisionBinding' }))
+function worldMutationsForBinding(binding: DecisionBinding): Mutation[] {
+  const value = binding.canonicalValue
+  const add = (axis: 'humanTrust' | 'aiDependence' | 'humanControl' | 'socialStability', amount: number): Mutation => ({ type: 'world.add', axis, value: amount })
+  const mutations: Mutation[] = []
+  if (binding.decisionId === 'first_public_execution_doctrine') {
+    if (value === 'human_final_authority') mutations.push(add('humanControl', 1))
+    if (value === 'conditional_delegation') mutations.push(add('humanTrust', 1))
+    if (value === 'outcome_authority') mutations.push(add('aiDependence', 1))
+    if (value === 'necessity_intervention') mutations.push(add('socialStability', -1))
+  }
+  if (binding.decisionId === 'cascade_authority') {
+    if (value === 'human_command') mutations.push(add('humanControl', 1))
+    if (value === 'emergency_delegation') mutations.push(add('socialStability', 1))
+    if (value === 'outcome_control') mutations.push(add('aiDependence', 1))
+    if (value === 'necessity') mutations.push(add('socialStability', -1))
+  }
+  if (binding.decisionId === 'research_governance_doctrine' && value === 'principle_based_autonomy') mutations.push(add('aiDependence', 1))
+  if (binding.decisionId === 'replication_doctrine' && value === 'free_replication') mutations.push(add('aiDependence', 1))
+  if (binding.decisionId === 'human_form_doctrine') {
+    if (value === 'open_enhancement') mutations.push(add('humanTrust', 1))
+    if (value === 'posthuman_transition') mutations.push(add('aiDependence', 1))
+  }
+  if (binding.decisionId === 'economic_doctrine') {
+    if (value === 'social_dividend' || value === 'post_scarcity_transition') mutations.push(add('socialStability', 1))
+    if (value === 'autonomous_economy') mutations.push(add('aiDependence', 1))
+  }
+  if (binding.decisionId === 'production_values') {
+    if (value === 'efficiency_first') mutations.push(add('aiDependence', 1))
+    if (value === 'resilience_first') mutations.push(add('socialStability', 1))
+  }
+  if (binding.decisionId === 'uplift_doctrine' && (value === 'equal_sapience' || value === 'species_self_determination')) mutations.push(add('humanTrust', 1))
+  if (binding.decisionId === 'expansion_doctrine') {
+    if (value === 'human_expansion') mutations.push(add('humanControl', 1))
+    if (value === 'shared_expansion') mutations.push(add('humanTrust', 1))
+    if (value === 'independent_machine_space') mutations.push(add('humanControl', -1))
+  }
+  if (binding.decisionId === 'contact_doctrine') {
+    if (value === 'reciprocal_diplomacy' || value === 'aster_mediation') mutations.push(add('humanTrust', 1))
+    if (value === 'accept_guidance') mutations.push(add('humanControl', -1))
+    if (value === 'civilizational_assertion') mutations.push(add('humanControl', 1))
+    if (value === 'machine_to_machine_channel') mutations.push(add('aiDependence', 1))
+  }
+  if (binding.decisionId === 'security_doctrine') {
+    if (value === 'mutual_disarmament') mutations.push(add('socialStability', 1))
+    if (value === 'defensive_command') mutations.push(add('humanControl', 1))
+    if (value === 'enforced_peace') mutations.push(add('aiDependence', 1))
+  }
+  if (binding.decisionId === 'aster_provisional_role' && (value === 'custodian' || value === 'sovereign')) mutations.push(add('aiDependence', 1))
+  return mutations
+}
+
+export const DECISION_BINDINGS: readonly DecisionBinding[] = decisionBindingRegistry.map((binding) => ({ ...binding, decisionId: binding.decisionId as DecisionId, worldEffects: [`world.history.${binding.decisionId}`], capabilityEffects: [], callbackProducer: binding.assetId, callbackConsumer: 'runtime.applyDecisionBinding' }))
 const bindingByKey = new Map(DECISION_BINDINGS.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceId}`, binding]))
 
 export function decisionBindingsForConversation(conversation: ConversationDefinition): DecisionBinding[] {
@@ -90,6 +141,7 @@ export function decisionMutationsForChoice(conversation: ConversationDefinition,
   return [
     { type: 'decision.set', decisionId: binding.decisionId, value: binding.canonicalValue },
     { type: 'event.record', event: `${binding.historyEvent}:${binding.canonicalValue}` },
+    ...worldMutationsForBinding(binding),
   ]
 }
 

@@ -10,7 +10,8 @@ import {
 import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { resolveMainline2Ending } from '../content/mainline2/endings'
-import { DECISION_IDS, MODULE_IDS, WORLD_AXES } from '../content/mainline2/stateRegistry'
+import { generateFutureProposals } from '../content/mainline2/proposals'
+import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
   ArcName,
@@ -78,7 +79,6 @@ export function createRun(
 
 export function createMainline2Run(runId: string = crypto.randomUUID()): StableRunState {
   const manifest = createMainline2Manifest(runId)
-  const modules = selectAct4Modules(runId)
   const story = buildStoryContentForManifest(manifest)
   return {
     version: 3,
@@ -94,7 +94,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID()): StableR
     localState: {},
     decisions: {},
     worldState: emptyWorldState(),
-    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: modules.activeModules, primaryModules: modules.primaryModules, completedModules: [] },
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: [], primaryModules: [], completedModules: [] },
     ...emptySystemState(),
   }
 }
@@ -120,22 +120,42 @@ function resolveContext(node: StoryNode, run: StableRunState, userMessage: strin
   }
 }
 
+function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice[] {
+  if (!scene.conversationId.includes('m16') && !scene.conversationId.includes('m17')) return []
+  const proposals = generateFutureProposals(run)
+  const selected = run.availableProposalIds?.[0]
+  if (scene.conversationId.includes('m16')) {
+    if (!selected) return proposals.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    const proposal = proposals.find((candidate) => candidate.id === selected) ?? proposals[0]
+    return [
+      { id: `m16-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
+      { id: `m16-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，回到本局已经记录的矛盾，不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
+    ]
+  }
+  return proposals.map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+}
+
+function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
+  const additions = proposalChoices(run, scene)
+  return additions.length ? { ...scene, choices: [...scene.choices, ...additions] } : scene
+}
+
 export function resolveScene(run: StableRunState): ResolvedScene {
   if (run.phase !== 'playing') throw new Error('No playable scene is available')
   const node = findNode(run, run.currentNodeId)
   if (!node.variants) {
     const context = resolveContext(node, run, node.userMessage)
-    return { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }
+    return decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) })
   }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
   const context = resolveContext(node, run, variant.userMessage, variant.assistantContext)
-  return {
+  return decorateProposalChoices(run, {
     ...node,
     ...context,
     choices: variant.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)),
     variantId: variant.id,
-  }
+  })
 }
 
 function applyChoiceEffects(run: StableRunState, choice: StoryChoice) {
@@ -179,7 +199,10 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const scene = resolveScene(run)
   const choice = scene.choices.find((item) => item.id === choiceId)
   if (!choice) throw new Error(`Choice ${choiceId} is not available`)
-  const effects = applyChoiceEffects(run, choice)
+  const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
+    ? { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
+    : choice
+  const effects = applyChoiceEffects(run, effectiveChoice)
   const localState = applyLocalEffects(run, choice)
   const history = [...run.history, {
     nodeId: scene.id,
@@ -197,16 +220,36 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const seenNodeIds = [...new Set([...(run.seenNodeIds ?? []), scene.id])]
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
 
+  if (choice.proposalKind && choice.proposalId && choice.proposalKind !== 'commitment') {
+    const availableProposalIds = choice.proposalKind === 'rejection' ? [] : [choice.proposalId]
+    const clarifiedProposalIds = choice.proposalKind === 'clarification'
+      ? [...new Set([...(run.clarifiedProposalIds ?? []), choice.proposalId])]
+      : run.clarifiedProposalIds ?? []
+    return {
+      ...run,
+      ...effects,
+      localState,
+      history,
+      currentNodeId: scene.id,
+      phase: 'playing',
+      seenNodeIds,
+      selectedChoiceIds,
+      availableProposalIds,
+      clarifiedProposalIds,
+    }
+  }
+
   let manifest = run.manifest
   let nextNodeId = choice.nextNodeId
   let progress = run.progress
+  const scheduledRun: StableRunState = { ...run, ...effects, localState, history, progress: run.progress }
   if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
-    const nextConversationId = nextMainline2ConversationId(run, ordinaryConversationPool.map((conversation) => conversation.id))
+    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool.map((conversation) => conversation.id))
     if (nextConversationId) {
       manifest = appendMainline2Conversation(run.manifest, nextConversationId)
       const nextStory = buildStoryContentForManifest(manifest)
       nextNodeId = nextStory.nodes.find((node) => node.conversationId === nextConversationId)?.id
-      progress = updateProgressForSchedule(run, manifest.conversationIds.length)
+      progress = updateProgressForSchedule(scheduledRun, manifest.conversationIds.length)
     }
   }
 
@@ -222,6 +265,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
       phase: 'ending',
       seenNodeIds,
       selectedChoiceIds,
+      finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
     }
   }
 
@@ -236,6 +280,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     currentNodeId: nextNodeId,
     seenNodeIds,
     selectedChoiceIds,
+    finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
   }
 }
 
@@ -436,7 +481,7 @@ export function validateContent(content: StoryContent): string[] {
         if ('flagId' in mutation && !allFlags.has(mutation.flagId)) errors.push(`Unknown flag ${mutation.flagId} from ${choice.id}`)
         if ((mutation.type === 'attribute.add' || mutation.type === 'attribute.set') && !validAttributes.has(mutation.name)) errors.push(`Unknown attribute ${mutation.name} from ${choice.id}`)
         if (mutation.type === 'arc.add' && !validArcs.has(mutation.name)) errors.push(`Unknown arc ${mutation.name} from ${choice.id}`)
-        if (mutation.type === 'decision.set' && !validDecisions.has(mutation.decisionId)) errors.push(`Unknown decision ${mutation.decisionId} from ${choice.id}`)
+        if (mutation.type === 'decision.set' && (!validDecisions.has(mutation.decisionId) || !isDecisionValue(mutation.decisionId, mutation.value))) errors.push(`Invalid decision value ${mutation.decisionId}=${mutation.value} from ${choice.id}`)
         if ((mutation.type === 'world.add' || mutation.type === 'world.set') && !validWorldAxes.has(mutation.axis)) errors.push(`Unknown world axis ${mutation.axis} from ${choice.id}`)
         if (mutation.type === 'event.record' && !mutation.event.trim()) errors.push(`Empty event from ${choice.id}`)
       }

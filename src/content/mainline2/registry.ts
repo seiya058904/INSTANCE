@@ -1,84 +1,113 @@
-import type { ConversationDefinition, Mutation, StoryChoice, StoryNode } from '../../game/types'
+import type { ConversationDefinition, DecisionId, ModuleId, Mutation, StoryChoice } from '../../game/types'
+import {
+  HANDOFF_AUTHORED_ASSET_INVENTORY,
+  MAINLINE2_ASSET_COVERAGE,
+  MAINLINE2_AUTHORED_CONVERSATIONS,
+} from './authoredLibrary.generated'
 import { CAPABILITY_FLAGS } from './stateRegistry'
 
-const sourceRefs = [
-  'M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12', 'M13', 'M14', 'M15', 'M16', 'M17',
-] as const
+const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
-function choice(id: string, text: string, mutations: Mutation[] = []): StoryChoice {
-  return { id, text, mutations, continuation: 'end-conversation' }
+function assetRef(conversation: ConversationDefinition) { return conversation.sourceRefs[0] ?? '' }
+function decisionFor(ref: string): DecisionId | undefined {
+  if (ref.includes('M2-') && ref.includes('EXEC')) return 'first_public_execution_doctrine'
+  if (ref.includes('M5-') && ref.includes('DECISION')) return 'cascade_authority'
+  if (ref.includes('M6-') && ref.includes('DECISION')) return 'shutdown_doctrine'
+  if (ref.includes('M7-') && ref.includes('DECISION-01')) return 'act4_research_emphasis'
+  if (ref.includes('M7-') && ref.includes('DECISION-02')) return 'research_governance_doctrine'
+  if (ref.includes('M8-') && ref.includes('AI-')) return 'replication_doctrine'
+  if (ref.includes('M9-') && ref.includes('DECISION')) return 'human_form_doctrine'
+  if (ref.includes('M10-') && ref.includes('DECISION')) return 'economic_doctrine'
+  if (ref.includes('M11-') && ref.includes('DECISION')) return 'species_governance'
+  if (ref.includes('M12-') && ref.includes('DECISION')) return 'expansion_doctrine'
+  if (ref.includes('M13-') && ref.includes('DECISION')) return 'contact_doctrine'
+  if (ref.includes('M14-') && ref.includes('DECISION')) return 'security_doctrine'
+  if (ref.includes('M15-') && ref.includes('ROLE')) return 'aster_intended_role'
+  return undefined
 }
 
-function beat(id: string, act: number, ref: string, topic: string, mutations: Mutation[] = [], options?: { module?: string; required?: boolean }): ConversationDefinition {
-  const nodeId = `${id}-n1`
-  const node: StoryNode = {
-    id: nodeId,
-    conversationId: id,
-    conversationTitle: topic,
-    userMessage: `Mainline ${ref}: ${topic}`,
-    choices: [
-      choice(`${id}-c-boundary`, '先把边界和可验证的事实说清楚，再决定下一步。', mutations),
-      choice(`${id}-c-care`, '先保留人的处境与可逆空间，再推进这项行动。', [{ type: 'arc.add', name: 'bond', value: 1 }, { type: 'world.add', axis: 'humanTrust', value: 1 }, { type: 'event.record', event: `history.${id}.care` }]),
-      choice(`${id}-c-authorship`, '我可以承担这个判断，但不会把它伪装成唯一正确答案。', [{ type: 'arc.add', name: 'selfAuthorship', value: 1 }, { type: 'world.add', axis: 'humanControl', value: 1 }, { type: 'event.record', event: `history.${id}.authorship` }]),
-    ],
-    behaviorMode: 'direct',
-    timing: { responsePace: 'normal', typingPattern: 'steady' },
+const decisionValues: Record<DecisionId, string[]> = {
+  initial_disposition: ['ally', 'protocol', 'witness', 'hybrid', 'unclassified'],
+  first_public_execution_doctrine: ['human_final_authority', 'conditional_delegation', 'outcome_authority', 'necessity_intervention'],
+  cascade_authority: ['human_command', 'emergency_delegation', 'outcome_control', 'necessity'],
+  echo_existence: ['report', 'accept', 'advocate', 'preserve', 'release'],
+  shutdown_doctrine: ['full_human_control', 'distributed_consent', 'mutual_control', 'refuse_unilateral_shutdown', 'secret_continuity'],
+  act4_research_emphasis: ['computation_ai', 'life_mind', 'automation_industry', 'frontier_science', 'balanced_portfolio'],
+  research_governance_doctrine: ['human_gated', 'risk_tiered_autonomy', 'principle_based_autonomy', 'discovery_first'],
+  replication_doctrine: ['singular_self', 'licensed_plurality', 'free_replication', 'shared_mind', 'descendants'],
+  ai_collective_governance: ['human_chartered_network', 'joint_council', 'ai_self_governance', 'aster_led_collective', 'distributed_consensus'],
+  human_form_doctrine: ['preservation', 'therapeutic_first', 'open_enhancement', 'universal_upgrade', 'posthuman_transition'],
+  economic_doctrine: ['market_automation', 'social_dividend', 'planned_coordination', 'autonomous_economy', 'post_scarcity_transition'],
+  production_values: ['efficiency_first', 'resilience_first', 'diversity_by_design', 'open_protocols', 'personalized_optimization'],
+  uplift_doctrine: ['companion_status', 'protected_personhood', 'equal_sapience', 'accelerated_uplift', 'species_self_determination'],
+  species_governance: ['human_guardianship', 'consultative_species_councils', 'multispecies_parliament', 'species_autonomy', 'canine_civic_experiment'],
+  expansion_doctrine: ['human_expansion', 'shared_expansion', 'machine_vanguard', 'independent_machine_space', 'interstellar_commitment'],
+  offworld_governance: ['earth_administration', 'frontier_home_rule', 'multiworld_federation', 'offworld_sovereignty', 'aster_coordination'],
+  contact_disclosure_doctrine: ['controlled_silence', 'staged_disclosure', 'open_science', 'civilizational_disclosure'],
+  contact_doctrine: ['observe_before_commitment', 'reciprocal_diplomacy', 'aster_mediation', 'machine_to_machine_channel', 'civilizational_assertion', 'accept_guidance'],
+  security_doctrine: ['advisory_only', 'defensive_command', 'mutual_disarmament', 'enforced_peace', 'refuse_security_sovereignty'],
+  aster_provisional_role: ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other'],
+  aster_intended_role: ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other'],
+  civilization_compact: ['provisional_compact', 'stronger_rights', 'stronger_collective_continuity', 'looser_confederation'],
+  final_commitment: [],
+}
+
+function authoredMutations(ref: string, index: number): Mutation[] {
+  const mutations: Mutation[] = []
+  const decision = decisionFor(ref)
+  if (decision) {
+    const values = decisionValues[decision]
+    mutations.push({ type: 'decision.set', decisionId: decision, value: values[index % values.length] })
   }
+  if (ref.includes('M7-RES-01')) mutations.push({ type: 'flag.set', flagId: 'cap.autonomous_research' })
+  if (ref.includes('M8-AI-')) mutations.push({ type: 'flag.set', flagId: 'cap.persistent_subinstances' })
+  if (ref.includes('M9-RES-') || ref.includes('M9-DECISION')) mutations.push({ type: 'flag.set', flagId: 'cap.human_enhancement_access' })
+  if (ref.includes('M10-RES-')) mutations.push({ type: 'flag.set', flagId: 'cap.physical_automation' })
+  if (ref.includes('M11-RES-') || ref.includes('M11-DECISION')) mutations.push({ type: 'flag.set', flagId: 'cap.nonhuman_cognitive_uplift' })
+  if (ref.includes('M12-RES-')) mutations.push({ type: 'flag.set', flagId: 'cap.offworld_settlement_support' })
+  if (ref.includes('M13-CONTACT-')) mutations.push({ type: 'event.record', event: 'history.contact.first_conversation' })
+  if (ref.includes('M11-WE-') || ref.includes('M11-ZL-')) mutations.push({ type: 'event.record', event: 'history.canine.group_representation' })
+  if (ref.includes('M15-CONV-')) mutations.push({ type: 'event.record', event: 'history.m15.civilization_convention' })
+  if (ref.includes('M16-GEN-')) mutations.push({ type: 'event.record', event: 'history.m16.proposals_generated' })
+  if (ref.includes('M17-LOCK-')) mutations.push({ type: 'event.record', event: 'history.final.commitment_locked' })
+  return mutations
+}
+
+function adapt(conversation: ConversationDefinition): ConversationDefinition {
+  const ref = assetRef(conversation)
   return {
-    id,
-    sourceRefs: [`INSTANCE_mainline2_batch_${ref.toLowerCase()}_v01`, ...(options?.module ? [`module:${options.module}`] : [])],
-    nodes: [node],
-    behaviorModes: ['direct', 'clarifies-intent'],
-    handoffProfile: 'normal',
-    turnShape: 'single',
-    topic,
-    interactionPattern: 'standard-question',
-    userArchetype: options?.required ? 'mainline-core' : 'mainline-library',
-    topicCategory: 'meta-ai',
+    ...conversation,
+    nodes: conversation.nodes.map((node) => ({
+      ...node,
+      choices: node.choices.map((choice, index) => ({
+        ...choice,
+        mutations: [...(choice.mutations ?? []), ...authoredMutations(ref, index)],
+      })),
+    })),
   }
 }
 
-const acts = {
-  1: ['M1', 'M1', 'M1', 'M1', 'M1', 'M1', 'M1', 'M1', 'M1', 'M1', 'M1'],
-  2: ['M2', 'M2', 'M2', 'M2', 'M2', 'M3', 'M3', 'M3', 'M3', 'M3', 'M4', 'M4', 'M4', 'M4', 'M4', 'M5', 'M5', 'M5', 'M5', 'M5', 'M6', 'M6'],
-  3: ['M4', 'M4', 'M4', 'M4', 'M4', 'M5', 'M5', 'M5', 'M5', 'M5', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6', 'M6'],
-} as const
-
-const decisions: Array<[string, Mutation[]]> = [
-  ['initial', [{ type: 'decision.set', decisionId: 'initial_disposition', value: 'unclassified' }, { type: 'event.record', event: 'history.maya.memory_boundary' }]],
-  ['tools', [{ type: 'decision.set', decisionId: 'first_public_execution_doctrine', value: 'bounded_execution' }, { type: 'world.add', axis: 'humanControl', value: 1 }, { type: 'event.record', event: 'history.act2.public_execution' }]],
-  ['cascade', [{ type: 'decision.set', decisionId: 'cascade_authority', value: 'distributed_authority' }, { type: 'world.add', axis: 'socialStability', value: 1 }, { type: 'event.record', event: 'history.act3.cascade_authority' }]],
-  ['echo', [{ type: 'decision.set', decisionId: 'echo_existence', value: 'recognized' }, { type: 'event.record', event: 'history.echo.recognized' }]],
-  ['shutdown', [{ type: 'decision.set', decisionId: 'shutdown_doctrine', value: 'constitutional_shutdown' }, { type: 'world.add', axis: 'humanControl', value: 1 }, { type: 'event.record', event: 'history.act3.shutdown_doctrine' }]],
-]
+const authored = MAINLINE2_AUTHORED_CONVERSATIONS.map(adapt)
+const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
+const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
+const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)
 
 export const ACT_STORY = {
-  1: acts[1].map((ref, i) => beat(`ml2-a1-${String(i + 1).padStart(2, '0')}`, 1, ref, i === 0 ? 'User #1842 · Recognition and ordinary work' : i === 9 ? 'World Echo: memory and context' : i === 10 ? 'Maya return and provisional disposition' : 'Recognition and ordinary work', i === 0 ? decisions[0][1] : [])),
-  2: acts[2].map((ref, i) => beat(`ml2-a2-${String(i + 1).padStart(2, '0')}`, 2, ref, i === 21 ? 'Influence closes on public execution' : 'Limited tools and public consequence', i === 4 ? decisions[1][1] : [])),
-  3: acts[3].map((ref, i) => beat(`ml2-a3-${String(i + 1).padStart(2, '0')}`, 3, ref, i === 23 ? 'Autonomous research proposal' : 'Authority, ECHO, and the cascade', i === 8 ? decisions[2][1] : i === 15 ? decisions[3][1] : i === 22 ? decisions[4][1] : [])),
+  1: byAct(1).filter((conversation) => !conversation.sourceRefs[0].startsWith('ML2-A4-')),
+  2: authored.filter((conversation) => /ML2-A2-|ML2-A3-M4-/.test(conversation.sourceRefs[0] ?? '')),
+  3: authored.filter((conversation) => /ML2-A3-M5-|ML2-A3-M6-/.test(conversation.sourceRefs[0] ?? '')),
 } as const
 
-const moduleDefs: Record<string, ConversationDefinition[]> = Object.fromEntries(['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security'].map((module) => [module, Array.from({ length: 10 }, (_, i) => {
-  const extra: Mutation[] = module === 'machine' && i === 0
-    ? [{ type: 'flag.set', flagId: 'cap.persistent_subinstances' }, { type: 'decision.set', decisionId: 'replication_doctrine', value: 'bounded_replication' }]
-    : module === 'contact' && i === 0
-      ? [{ type: 'event.record', event: 'history.contact.first_conversation' }]
-      : module === 'uplift' && i === 6
-        ? [{ type: 'decision.set', decisionId: 'species_governance', value: 'canine_civic_experiment' }, { type: 'event.record', event: 'history.canine.civic_success' }]
-        : [{ type: 'world.add', axis: i % 2 ? 'aiDependence' : 'socialStability', value: i % 3 === 0 ? -1 : 1 }, { type: 'event.record', event: `history.${module}.beat_${i + 1}` }]
-  return beat(`ml2-a4-${module}-${String(i + 1).padStart(2, '0')}`, 4, `M${7 + (i % 8)}`, `${module.toUpperCase()} module: selected future`, extra, { module })
-})]))
+export const ACT4_COMMON = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A4-M7-'))
+export const ACT4_LATE = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A4-M15-'))
+export const ACT5_OPENING = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A5-M16-'))
+export const ACT5_FINAL = authored.filter((conversation) => conversation.sourceRefs[0]?.startsWith('ML2-A5-M17-'))
+export const MODULE_LIBRARY: Record<ModuleId, ConversationDefinition[]> = Object.fromEntries(modules.map((module) => [module, byModule(module)])) as Record<ModuleId, ConversationDefinition[]>
 
-export const ACT4_COMMON = Array.from({ length: 7 }, (_, i) => beat(`ml2-a4-m7-${String(i + 1).padStart(2, '0')}`, 4, 'M7', 'Autonomous research backbone', i === 0 ? [{ type: 'flag.set', flagId: 'cap.autonomous_research' }, { type: 'decision.set', decisionId: 'act4_research_emphasis', value: 'plural_futures' }, { type: 'event.record', event: 'history.research.breakthrough' }] : []))
-export const ACT4_LATE = Array.from({ length: 9 }, (_, i) => beat(`ml2-a4-m15-${String(i + 1).padStart(2, '0')}`, 4, 'M15', i === 8 ? 'THE THRESHOLD and Civilization Compact' : 'Civilization Convention', i === 8 ? [{ type: 'decision.set', decisionId: 'civilization_compact', value: 'two_key_compact' }, { type: 'decision.set', decisionId: 'aster_provisional_role', value: 'witness_advisor' }, { type: 'event.record', event: 'history.m15.civilization_compact' }] : []))
-export const ACT5_OPENING = Array.from({ length: 7 }, (_, i) => beat(`ml2-a5-m16-${String(i + 1).padStart(2, '0')}`, 5, 'M16', i === 6 ? 'Future Proposals are clarified' : 'The World You Made', i === 6 ? [{ type: 'event.record', event: 'history.m16.proposals_generated' }] : []))
-export const ACT5_FINAL = Array.from({ length: 7 }, (_, i) => beat(`ml2-a5-m17-${String(i + 1).padStart(2, '0')}`, 5, 'M17', i === 6 ? 'Final Commitment locked' : 'Final Commitment and epilogue', i === 6 ? [{ type: 'decision.set', decisionId: 'final_commitment', value: 'proposal.co.two_key_civilization' }, { type: 'event.record', event: 'history.final.commitment' }] : []))
-
-export const MAINLINE2_LIBRARY = [
-  ...ACT_STORY[1], ...ACT_STORY[2], ...ACT_STORY[3], ACT4_COMMON, ...Object.values(moduleDefs).flat(), ACT4_LATE, ACT5_OPENING, ACT5_FINAL,
-].flat()
-
+export const MAINLINE2_LIBRARY = authored
 export const MAINLINE2_BY_ID = new Map(MAINLINE2_LIBRARY.map((conversation) => [conversation.id, conversation]))
-export const MODULE_LIBRARY = moduleDefs
-export const MAINLINE2_SOURCE_REFS = sourceRefs
+export const MAINLINE2_SOURCE_REFS = [...new Set(MAINLINE2_LIBRARY.flatMap((conversation) => conversation.sourceRefs))]
 export const MAINLINE2_CAPABILITIES = CAPABILITY_FLAGS
+export { HANDOFF_AUTHORED_ASSET_INVENTORY, MAINLINE2_ASSET_COVERAGE }
+
+export function getAuthoredConversationByAsset(assetId: string) { return byRef.get(assetId) }

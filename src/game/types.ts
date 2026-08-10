@@ -195,6 +195,8 @@ export interface StoryChoice {
   sampleIssue?: ModelSampleIssue
   sampleGroup?: 'a' | 'b'
   localEffects?: { affinity?: number; affinitySet?: number }
+  proposalId?: string
+  proposalKind?: 'proposal' | 'clarification' | 'commitment' | 'rejection'
 }
 
 export interface StoryVariant {
@@ -241,6 +243,8 @@ export interface ConversationDefinition {
   interactionPattern?: InteractionPattern
   userArchetype?: string
   topicCategory?: TopicCategory
+  act?: 1 | 2 | 3 | 4 | 5
+  module?: ModuleId
 }
 
 export interface NarrativeSceneSource {
@@ -314,6 +318,9 @@ export interface StableRunState {
   decisions?: DecisionState
   worldState?: WorldState
   progress?: NarrativeProgress
+  availableProposalIds?: string[]
+  clarifiedProposalIds?: string[]
+  finalCommitmentLocked?: boolean
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {

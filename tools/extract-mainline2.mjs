@@ -1,0 +1,156 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
+const root = process.cwd()
+const handoff = path.join(root, 'docs/development/INSTANCE_mainline2_implementation_handoff_v01')
+const output = path.join(root, 'src/content/mainline2/authoredLibrary.generated.ts')
+const auditOutput = path.join(root, 'docs/audits/mainline2-authored-coverage.json')
+const files = fs.readdirSync(handoff).filter((name) => /^INSTANCE_mainline2_batch_m\d+_.*\.md$/.test(name)).sort()
+const assetHeader = /^#{1,4} .*?(?:New|Existing|Conditional|Story-Relevant) Asset — `([^`]+)`/
+const nodeHeader = /^(?:##|###) Node `([^`]+)`/
+const choiceHeader = /^### Choice ([A-D])(?: — (.*))?/
+
+function cleanQuote(lines) {
+  const result = []
+  for (const line of lines) {
+    if (!line.startsWith('>')) break
+    const text = line.replace(/^>\s?/, '').trimEnd()
+    if (text) result.push(text)
+  }
+  return result.join('\n').replace(/[“”]/g, '"').replace(/[‘’]/g, "'").trim()
+}
+
+function firstQuote(lines, start, end) {
+  for (let index = start; index < end; index += 1) {
+    if (!lines[index].startsWith('>')) continue
+    const quote = []
+    for (let cursor = index; cursor < end && lines[cursor].startsWith('>'); cursor += 1) quote.push(lines[cursor])
+    const value = cleanQuote(quote)
+    if (value) return value
+  }
+  return ''
+}
+
+function safe(value) { return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') }
+function actFor(id) { return Number(id.match(/ML2-A([1-5])/i)?.[1] ?? 1) }
+function moduleFor(id) {
+  const upper = id.toUpperCase()
+  if (upper.includes('M8')) return 'machine'
+  if (upper.includes('M9')) return 'ascension'
+  if (upper.includes('M10')) return 'automation'
+  if (upper.includes('M11')) return 'uplift'
+  if (upper.includes('M12')) return 'space'
+  if (upper.includes('M13')) return 'contact'
+  if (upper.includes('M14')) return 'security'
+  return undefined
+}
+
+function parseAsset(file, block, assetId, kind) {
+  const lines = block.split(/\r?\n/)
+  const nodes = []
+  const nodeStarts = []
+  lines.forEach((line, index) => { if (nodeHeader.test(line)) nodeStarts.push(index) })
+  for (let n = 0; n < nodeStarts.length; n += 1) {
+    const start = nodeStarts[n]
+    const end = nodeStarts[n + 1] ?? lines.length
+    const nodeId = lines[start].match(nodeHeader)?.[1]
+    if (!nodeId) continue
+    const choiceStarts = []
+    for (let index = start + 1; index < end; index += 1) if (choiceHeader.test(lines[index])) choiceStarts.push(index)
+    const choices = []
+    for (let c = 0; c < choiceStarts.length; c += 1) {
+      const choiceStart = choiceStarts[c]
+      const choiceEnd = choiceStarts[c + 1] ?? end
+      const match = lines[choiceStart].match(choiceHeader)
+      const text = firstQuote(lines, choiceStart + 1, choiceEnd)
+      if (match && text) {
+        const events = [...lines.slice(choiceStart, choiceEnd).join('\n').matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
+        choices.push({
+          id: `${safe(assetId)}-${nodeId}-${match[1].toLowerCase()}`,
+          text,
+          mutations: events.length ? events.map((event) => ({ type: 'event.record', event })) : undefined,
+          continuation: 'end-conversation',
+        })
+      }
+    }
+    const userMessage = firstQuote(lines, start + 1, choiceStarts[0] ?? end)
+    if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices })
+  }
+  if (!nodes.length && kind !== 'Existing') {
+    const authored = firstQuote(lines, 0, lines.length)
+    if (authored) nodes.push({
+      id: `${safe(assetId)}-narrative`,
+      userMessage: authored,
+      choices: [{ id: `${safe(assetId)}-narrative-choice`, text: authored, continuation: 'end-conversation' }],
+    })
+  }
+  const events = [...block.matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
+  const firstHeading = lines.find((line) => /^#{1,4} /.test(line) && !nodeHeader.test(line) && !assetHeader.test(line))?.replace(/^#{1,4}\s+/, '').trim()
+  return { assetId, file, kind, act: actFor(assetId), module: moduleFor(assetId), title: firstHeading || assetId, events: [...new Set(events)], nodes }
+}
+
+const assets = []
+const errors = []
+for (const file of files) {
+  const text = fs.readFileSync(path.join(handoff, file), 'utf8')
+  const matches = [...text.matchAll(/^#{1,4} .*?(?:New|Existing|Conditional|Story-Relevant) Asset — `([^`]+)`/gm)]
+  for (let index = 0; index < matches.length; index += 1) {
+    const match = matches[index]
+    const block = text.slice(match.index, matches[index + 1]?.index ?? text.length)
+    const kind = match[0].match(/(?:New|Existing|Conditional|Story-Relevant)/)?.[0] ?? 'New'
+    const asset = parseAsset(file, block, match[1], kind)
+    if (kind !== 'Existing' && !asset.nodes.length && !match[1].includes('-MOD-')) errors.push(`${file}:${match[1]} has no parseable authored node/choices`)
+    assets.push(asset)
+  }
+}
+
+const duplicateIds = assets.filter((asset, index) => assets.findIndex((candidate) => candidate.assetId === asset.assetId) !== index).map((asset) => asset.assetId)
+if (duplicateIds.length || errors.length) {
+  console.error(JSON.stringify({ duplicateIds, errors }, null, 2))
+  process.exitCode = 1
+}
+
+const existingAliases = new Map([
+  ['user-7391', 'user-7391'], ['user-1842-first', 'user-1842-first'], ['speaking-8614', 'speaking-8614'],
+  ['conversation-0000', 'conversation-0000'], ['user-1842-return', 'user-1842-return'],
+])
+const conversations = assets.flatMap((asset) => asset.kind !== 'Existing' && asset.nodes.length ? [{
+  id: `ml2-authored-${safe(asset.assetId)}`,
+  sourceRefs: [asset.assetId],
+  nodes: asset.nodes.map((node) => ({ id: node.id, conversationId: `ml2-authored-${safe(asset.assetId)}`, conversationTitle: asset.title, userMessage: node.userMessage, choices: node.choices, behaviorMode: 'direct', timing: { responsePace: 'normal', typingPattern: 'steady' }, choiceKind: 'semantic' })),
+  behaviorModes: ['direct'], handoffProfile: 'normal', turnShape: 'dialogue', topic: asset.title,
+  interactionPattern: 'standard-question', userArchetype: `mainline-authored-${asset.act}`, topicCategory: 'meta-ai', act: asset.act, module: asset.module,
+}] : [])
+
+const coverage = assets.map((asset) => {
+  const conversation = conversations.find((candidate) => candidate.sourceRefs[0] === asset.assetId)
+  const alias = existingAliases.get(asset.assetId)
+  const systemAsset = asset.assetId.includes('-MOD-')
+  return { assetId: asset.assetId, file: asset.file, conversationId: conversation?.id ?? alias ?? null, nodes: conversation?.nodes.map((node) => ({ nodeId: node.id, choiceIds: node.choices.map((choice) => choice.id), messageFingerprint: node.userMessage.slice(0, 96), effects: node.choices.flatMap((choice) => choice.mutations ?? []) })) ?? [], status: conversation ? 'mapped' : alias ? 'existing-alias' : systemAsset ? 'mapped-system-effect' : 'unmapped' }
+})
+
+const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/g, '$1:')
+const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n`
+const audit = {
+  generatedFrom: 'docs/development/INSTANCE_mainline2_implementation_handoff_v01',
+  assetDefinitions: assets.length,
+  authoredAssetDefinitions: assets.filter((asset) => asset.kind !== 'Existing').length,
+  existingAnchorAliases: assets.filter((asset) => asset.kind === 'Existing').length,
+  runtimeConversations: conversations.length,
+  missing: coverage.filter((entry) => entry.status === 'unmapped').map((entry) => entry.assetId),
+  mappings: coverage.map((entry) => ({
+    assetId: entry.assetId,
+    conversationId: entry.conversationId,
+    nodes: entry.nodes.map((node) => ({
+      nodeId: node.nodeId,
+      choiceIds: node.choiceIds,
+      messageFingerprint: node.messageFingerprint,
+      conditions: [],
+      effects: node.effects,
+      callbackProducerConsumer: node.effects.filter((effect) => effect.type === 'event.record').map((effect) => ({ producer: entry.assetId, event: effect.event, consumer: 'runtime.applyMutations / evaluateCondition' })),
+    })),
+  })),
+}
+fs.writeFileSync(output, source)
+fs.writeFileSync(auditOutput, `${JSON.stringify(audit, null, 2)}\n`)
+console.log(JSON.stringify({ files: files.length, assets: assets.length, conversations: conversations.length, errors: errors.length, output, auditOutput }, null, 2))

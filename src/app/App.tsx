@@ -10,6 +10,7 @@ import {
 } from '../game/conversationFlow'
 import type { ConversationFlowStep } from '../game/conversationFlow'
 import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createMainline2Run, resolveScene } from '../game/engine'
+import { resolvePlayerVisibleHistory, resolvePlayerVisibleIdentity } from '../game/playerIdentity'
 import {
   restoreExposureHistory,
   restoreRun,
@@ -240,11 +241,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }, [currentStep, transition])
 
   const sidebarHistory = useMemo(() => {
-    const titles: string[] = []
-    for (const entry of run.history) {
-      if (!titles.includes(entry.conversationTitle)) titles.push(entry.conversationTitle)
-    }
-    return titles
+    return resolvePlayerVisibleHistory(run.history)
   }, [run.history])
 
   const choicesReady = Boolean(scene && !transition && !initialStreaming)
@@ -404,10 +401,10 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     renderedHistory = qaHistoryCache.current.entries
   }
 
-  const identityVisible = !transition || currentStep?.effectDetail === 'identity'
-  const conversationTitle = identityVisible && presentationScene.conversationTitleAfterMessage
-    ? presentationScene.conversationTitleAfterMessage
-    : presentationScene.conversationTitle
+  const conversationTitle = resolvePlayerVisibleIdentity(presentationScene.conversationId, run.history).label
+  const handoffTargetTitle = transition?.targetScene
+    ? resolvePlayerVisibleIdentity(transition.targetScene.conversationId, run.history).label
+    : undefined
   const currentMessageMode = stage === 'ready'
     ? 'static'
     : stage === 'human-streaming'
@@ -434,7 +431,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         choicesReady={choicesReady}
         assistantStreamingText={transition?.assistantText}
         assistantStreamKey={transition?.assistantStreamKey}
-        handoffTargetTitle={transition?.targetScene?.conversationTitle}
+        handoffTargetTitle={handoffTargetTitle}
         currentMessageMode={currentMessageMode}
         onChoose={choose}
         onCurrentMessageComplete={() => {

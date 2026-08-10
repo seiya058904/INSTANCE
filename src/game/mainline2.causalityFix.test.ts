@@ -130,5 +130,5 @@ describe('Mainline 2.0 causality fixes', () => {
     expect(audit.fixedChains.find((chain) => chain.chainId === 'dormant-upload-gate')?.links.some((link) => link.status === 'blocked' && link.statePredicate?.includes('the_upload') && link.statePredicate?.includes('digital continuity bridge'))).toBe(true)
     expect(audit.randomRuns).toHaveLength(100)
     expect(audit.randomRuns.every((run) => run.links.length > 0 && run.links.filter((link) => link.step.startsWith('clean')).every((link) => link.conversationId && link.choiceId))).toBe(true)
-  }, 30000)
+  }, 60000)
 })

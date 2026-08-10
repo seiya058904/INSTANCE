@@ -427,8 +427,8 @@ export function appendMainline2Conversation(manifest: RunManifest, nextId: strin
   return { ...manifest, conversationIds: [...manifest.conversationIds, nextId] }
 }
 
-export function nextMainline2ConversationId(run: Parameters<typeof scheduleNextConversationId>[0], ordinaryIds: readonly string[]) {
-  return scheduleNextConversationId(run, ordinaryIds)
+export function nextMainline2ConversationId(run: Parameters<typeof scheduleNextConversationId>[0], ordinaryConversations: Parameters<typeof scheduleNextConversationId>[1]) {
+  return scheduleNextConversationId(run, ordinaryConversations)
 }
 
 function hashSeed(seed: string) {

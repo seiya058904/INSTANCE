@@ -273,7 +273,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   let progress = run.progress
   const scheduledRun: StableRunState = { ...run, ...proposalFields, ...effects, localState, history, progress: run.progress }
   if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
-    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool.map((conversation) => conversation.id))
+    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool)
     if (nextConversationId) {
       manifest = appendMainline2Conversation(run.manifest, nextConversationId)
       const nextStory = buildStoryContentForManifest(manifest)

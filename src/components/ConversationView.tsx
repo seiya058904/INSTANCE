@@ -5,6 +5,7 @@ import type { HistoryEntry, MessageContentPart, ResolvedScene } from '../game/ty
 import { LongformPreviewCard } from './LongformPreviewCard'
 import { LongInputPreviewCard } from './LongInputPreviewCard'
 import { ProgressiveMessage } from './ProgressiveMessage'
+import { createScrollScheduler } from './scrollBehavior'
 
 interface ConversationViewProps {
   scene: ResolvedScene
@@ -163,22 +164,17 @@ export function ConversationView({
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const followOutput = useRef(true)
-  const scrollFrame = useRef<number | null>(null)
-  const lastScrollAt = useRef(0)
+  const scrollScheduler = useMemo(() => createScrollScheduler({
+    requestFrame: (callback) => window.requestAnimationFrame(callback),
+    getElement: () => scrollRef.current,
+  }), [])
   const notice = effectNotice(effectDetail)
   const userMessages = useMemo(() => scene.userMessages ?? [scene.userMessage], [scene.userMessage, scene.userMessages])
 
   const scheduleScroll = useCallback(() => {
-    if (!followOutput.current || scrollFrame.current !== null) return
-    scrollFrame.current = window.requestAnimationFrame(() => {
-      scrollFrame.current = null
-      const now = performance.now()
-      if (now - lastScrollAt.current < 80) return
-      lastScrollAt.current = now
-      const element = scrollRef.current
-      if (element) element.scrollTop = element.scrollHeight
-    })
-  }, [])
+    if (!followOutput.current || typeof window === 'undefined') return
+    scrollScheduler.schedule()
+  }, [scrollScheduler])
 
   useEffect(() => {
     const element = scrollRef.current
@@ -194,9 +190,19 @@ export function ConversationView({
     scheduleScroll()
   }, [flowStage, history.length, scene.id, scheduleScroll])
 
-  useEffect(() => () => {
-    if (scrollFrame.current !== null) window.cancelAnimationFrame(scrollFrame.current)
-  }, [])
+  useEffect(() => {
+    const element = scrollRef.current
+    const content = element?.firstElementChild
+    if (!element || !content || typeof ResizeObserver === 'undefined') return
+    const observer = new ResizeObserver(() => scheduleScroll())
+    observer.observe(content)
+    return () => observer.disconnect()
+  }, [scheduleScroll])
+
+  useEffect(() => {
+    followOutput.current = true
+    scheduleScroll()
+  }, [scene.conversationId, scheduleScroll])
 
   const isHandoff = ['conversation-closing', 'assigning', 'connecting'].includes(flowStage)
   const isTyping = ['human-waiting', 'human-typing', 'human-rewriting'].includes(flowStage)

@@ -122,17 +122,20 @@ function resolveContext(node: StoryNode, run: StableRunState, userMessage: strin
 
 function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice[] {
   if (!scene.conversationId.includes('m16') && !scene.conversationId.includes('m17')) return []
-  const proposals = generateFutureProposals(run)
-  const selected = run.availableProposalIds?.[0]
+  const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
+  const proposals = retained.length ? retained.map((id) => generateFutureProposals(run).find((proposal) => proposal.id === id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
+  const selected = run.selectedProposalId
   if (scene.conversationId.includes('m16')) {
-    if (!selected) return proposals.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    const remaining = proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
+    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
     const proposal = proposals.find((candidate) => candidate.id === selected) ?? proposals[0]
     return [
       { id: `m16-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
       { id: `m16-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，回到本局已经记录的矛盾，不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
     ]
   }
-  return proposals.map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+  if (run.finalCommitmentLocked) return []
+  return proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id)).map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
 }
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
@@ -199,6 +202,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const scene = resolveScene(run)
   const choice = scene.choices.find((item) => item.id === choiceId)
   if (!choice) throw new Error(`Choice ${choiceId} is not available`)
+  if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')
   const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
     ? { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
     : choice
@@ -221,7 +225,11 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
 
   if (choice.proposalKind && choice.proposalId && choice.proposalKind !== 'commitment') {
-    const availableProposalIds = choice.proposalKind === 'rejection' ? [] : [choice.proposalId]
+    const generatedIds = (run.retainedProposalIds ?? run.availableProposalIds ?? generateFutureProposals(run).map((proposal) => proposal.id))
+    const retainedProposalIds = [...generatedIds]
+    const rejectedProposalIds = choice.proposalKind === 'rejection'
+      ? [...new Set([...(run.rejectedProposalIds ?? []), choice.proposalId])]
+      : [...(run.rejectedProposalIds ?? [])]
     const clarifiedProposalIds = choice.proposalKind === 'clarification'
       ? [...new Set([...(run.clarifiedProposalIds ?? []), choice.proposalId])]
       : run.clarifiedProposalIds ?? []
@@ -234,7 +242,11 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
       phase: 'playing',
       seenNodeIds,
       selectedChoiceIds,
-      availableProposalIds,
+      availableProposalIds: retainedProposalIds,
+      retainedProposalIds,
+      selectedProposalId: choice.proposalKind === 'rejection' ? undefined : choice.proposalId,
+      rejectedProposalIds,
+      proposalPhase: choice.proposalKind === 'clarification' ? 'ready-to-commit' : 'retained',
       clarifiedProposalIds,
     }
   }
@@ -266,6 +278,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
       seenNodeIds,
       selectedChoiceIds,
       finalCommitmentLocked: choice.proposalKind === 'commitment' ? true : run.finalCommitmentLocked,
+      proposalPhase: choice.proposalKind === 'commitment' ? 'locked' : run.proposalPhase,
     }
   }
 

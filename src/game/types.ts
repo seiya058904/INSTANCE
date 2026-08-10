@@ -319,7 +319,11 @@ export interface StableRunState {
   worldState?: WorldState
   progress?: NarrativeProgress
   availableProposalIds?: string[]
+  proposalPhase?: 'idle' | 'retained' | 'clarifying' | 'ready-to-commit' | 'locked'
+  retainedProposalIds?: string[]
+  selectedProposalId?: string
   clarifiedProposalIds?: string[]
+  rejectedProposalIds?: string[]
   finalCommitmentLocked?: boolean
 }
 
@@ -342,7 +346,7 @@ export interface EndingResult {
   hybridLabel: string
   worldEndingId?: string
   endingFamily?: string
-  keyHistory?: Array<{ label: string; detail: string }>
+  keyHistory?: Array<{ label: string; detail: string; provenance?: { eventType?: string; conversationId?: string; nodeId?: string; choiceId?: string } }>
   epilogues?: string[]
 }
 

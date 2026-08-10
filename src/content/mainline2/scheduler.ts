@@ -9,28 +9,34 @@ const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
-export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[] } {
+export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; rejectionReason?: string; score: number; scoreSources: string[] }
+export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
   const state: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> = typeof run === 'string'
     ? { runId: run, flags: [], events: [], decisions: {}, worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 } }
     : run
-  const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, 0]))
-  if (capability(state, 'cap.persistent_subinstances') || state.decisions?.replication_doctrine) scores.set('machine', (scores.get('machine') ?? 0) + 5)
-  if (capability(state, 'cap.human_enhancement_access') || state.decisions?.human_form_doctrine) scores.set('ascension', (scores.get('ascension') ?? 0) + 5)
-  if (capability(state, 'cap.physical_automation') || state.decisions?.economic_doctrine) scores.set('automation', (scores.get('automation') ?? 0) + 5)
-  if (capability(state, 'cap.nonhuman_cognitive_uplift') || state.decisions?.species_governance) scores.set('uplift', (scores.get('uplift') ?? 0) + 5)
-  if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) scores.set('space', (scores.get('space') ?? 0) + 5)
-  if (hasEvent(state, 'history.contact.') || state.decisions?.contact_doctrine) scores.set('contact', (scores.get('contact') ?? 0) + 6)
-  if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) scores.set('security', (scores.get('security') ?? 0) + 5)
+  const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, 1]))
+  const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, ['base-mainline-eligibility']]))
+  const add = (module: ModuleId, amount: number, source: string) => { scores.set(module, (scores.get(module) ?? 0) + amount); sources.get(module)!.push(source) }
+  if (capability(state, 'cap.persistent_subinstances') || state.decisions?.replication_doctrine) add('machine', 5, 'persistent-subinstances/replication')
+  if (capability(state, 'cap.human_enhancement_access') || state.decisions?.human_form_doctrine) add('ascension', 5, 'enhancement/form')
+  if (capability(state, 'cap.physical_automation') || state.decisions?.economic_doctrine) add('automation', 5, 'automation/economic')
+  if (capability(state, 'cap.nonhuman_cognitive_uplift') || state.decisions?.species_governance) add('uplift', 5, 'uplift/species')
+  if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) add('space', 5, 'offworld/expansion')
+  if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) add('security', 5, 'defense/security')
+  const legacyContactBridge = hasEvent(state, 'history.contact.') && Boolean(state.decisions?.contact_doctrine || state.decisions?.security_doctrine)
+  const contactEligible = legacyContactBridge || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && (state.decisions?.act4_research_emphasis === 'frontier_science' || hasEvent(state, 'history.space.')))
+  if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
   const world = state.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }
-  scores.set('security', (scores.get('security') ?? 0) + Math.max(0, -world.socialStability + world.humanControl))
-  scores.set('uplift', (scores.get('uplift') ?? 0) + Math.max(0, world.humanTrust))
-  scores.set('machine', (scores.get('machine') ?? 0) + Math.max(0, world.aiDependence))
+  add('security', Math.max(0, -world.socialStability + world.humanControl), 'World State security viability')
+  add('uplift', Math.max(0, world.humanTrust), 'World State trust')
+  add('machine', Math.max(0, world.aiDependence), 'World State dependence')
+  const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [] }))
   const tie = (module: ModuleId) => `${state.runId}:${module}`.split('').reduce((sum, char) => (sum * 33 + char.charCodeAt(0)) >>> 0, 17)
-  const ordered = [...MODULE_IDS].sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
-  const primaryModules = ordered.slice(0, 2)
-  const activeModules = ordered.filter((module) => (scores.get(module) ?? 0) > 0).slice(0, 4)
-  while (activeModules.length < 2) activeModules.push(ordered[activeModules.length])
-  return { primaryModules, activeModules: [...new Set(activeModules)] }
+  const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
+  const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
+  const primaryModules = ordered.slice(0, Math.min(2, ordered.length))
+  const activeModules = ordered.slice(0, Math.min(4, Math.max(2, ordered.length)))
+  return { primaryModules, activeModules: [...new Set(activeModules)], audit }
 }
 
 function ordinaryId(ordinaryIds: readonly string[], runId: string, slot: number) {

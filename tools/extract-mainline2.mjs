@@ -8,7 +8,10 @@ const auditOutput = path.join(root, 'docs/audits/mainline2-authored-coverage.jso
 const files = fs.readdirSync(handoff).filter((name) => /^INSTANCE_mainline2_batch_m\d+_.*\.md$/.test(name)).sort()
 const assetHeader = /^#{1,4} .*?(?:New|Existing|Conditional|Story-Relevant) Asset — `([^`]+)`/
 const nodeHeader = /^(?:##|###) Node `([^`]+)`/
-const choiceHeader = /^### Choice ([A-D])(?: — (.*))?/
+// The handoff uses `Choice` for ordinary authored nodes and `Option` for
+// major-decision assets. Both are authored choices and must remain distinct
+// in the typed runtime library.
+const choiceHeader = /^#{2,3} (?:Choice|Option) ([A-G])(?: — (.*))?/i
 
 function cleanQuote(lines) {
   const result = []
@@ -75,6 +78,30 @@ function parseAsset(file, block, assetId, kind) {
     }
     const userMessage = firstQuote(lines, start + 1, choiceStarts[0] ?? end)
     if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices })
+  }
+  // Major decisions in the handoff intentionally use a coordination/system
+  // message followed by `### Option A-D`, without a `Node` heading. Preserve
+  // that authored structure instead of collapsing it into a fallback shell.
+  if (!nodes.length) {
+    const optionStarts = []
+    for (let index = 0; index < lines.length; index += 1) if (choiceHeader.test(lines[index])) optionStarts.push(index)
+    if (optionStarts.length) {
+      const choices = []
+      for (let c = 0; c < optionStarts.length; c += 1) {
+        const optionStart = optionStarts[c]
+        const optionEnd = optionStarts[c + 1] ?? lines.length
+        const match = lines[optionStart].match(choiceHeader)
+        const text = firstQuote(lines, optionStart + 1, optionEnd)
+        if (match && text) choices.push({
+          id: `${safe(assetId)}-${safe(assetId)}-option-${match[1].toLowerCase()}`,
+          text,
+          continuation: 'end-conversation',
+        })
+      }
+      const userMessage = firstQuote(lines, 0, optionStarts[0])
+      const authoredPrompt = userMessage || lines.find((line) => /^## Major (?:Decision|Direction)/.test(line))?.replace(/^##\s+/, '').trim()
+      if (authoredPrompt && choices.length) nodes.push({ id: `${safe(assetId)}-decision`, userMessage: `${authoredPrompt}\nSelect one of these positions.`, choices })
+    }
   }
   if (!nodes.length && kind !== 'Existing') {
     const authored = firstQuote(lines, 0, lines.length)

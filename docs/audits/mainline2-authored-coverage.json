@@ -342,11 +342,15 @@
       "conversationId": "ml2-authored-ml2-a4-m10-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m10-decision-01-narrative",
+          "nodeId": "ml2-a4-m10-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m10-decision-01-narrative-choice"
+            "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-a",
+            "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-b",
+            "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-c",
+            "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-d",
+            "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-option-e"
           ],
-          "messageFingerprint": "保持市场和私有产权为主要分配机制。自动化竞争负责压低价格，政府重点处理垄断、失业和最低保障。",
+          "messageFingerprint": "Major Decision — ECONOMIC DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -523,11 +527,15 @@
       "conversationId": "ml2-authored-ml2-a4-m10-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m10-decision-02-narrative",
+          "nodeId": "ml2-a4-m10-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m10-decision-02-narrative-choice"
+            "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-a",
+            "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-b",
+            "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-c",
+            "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-d",
+            "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-option-e"
           ],
-          "messageFingerprint": "优先最低成本、最低浪费、最高稳定性和最大规模兼容性。文化差异和地方偏好在不显著增加成本时保留。",
+          "messageFingerprint": "Major Direction — PRODUCTION VALUES\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -1011,11 +1019,15 @@
       "conversationId": "ml2-authored-ml2-a4-m11-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m11-decision-01-narrative",
+          "nodeId": "ml2-a4-m11-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m11-decision-01-narrative-choice"
+            "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-a",
+            "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-b",
+            "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-c",
+            "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-d",
+            "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-option-e"
           ],
-          "messageFingerprint": "停止大规模认知增强。继续通信、福利和照护研究，让动物更容易表达现有需求，但不主动推动高阶认知跃迁。",
+          "messageFingerprint": "Major Decision — UPLIFT DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -1155,11 +1167,15 @@
       "conversationId": "ml2-authored-ml2-a4-m11-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m11-decision-02-narrative",
+          "nodeId": "ml2-a4-m11-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m11-decision-02-narrative-choice"
+            "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-a",
+            "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-b",
+            "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-c",
+            "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-d",
+            "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-option-e"
           ],
-          "messageFingerprint": "非人类主体获得更强福利和有限自主，但公共政治仍由人类机构代为代表。",
+          "messageFingerprint": "Major Direction — SPECIES GOVERNANCE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -1616,11 +1632,15 @@
       "conversationId": "ml2-authored-ml2-a4-m12-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m12-decision-01-narrative",
+          "nodeId": "ml2-a4-m12-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m12-decision-01-narrative-choice"
+            "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-a",
+            "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-b",
+            "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-c",
+            "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-d",
+            "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-option-e"
           ],
-          "messageFingerprint": "地外基础设施优先服务长期人类定居。机器与AI的主要角色是建立和维持人类可以生活的环境。",
+          "messageFingerprint": "Major Decision — EXPANSION DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -1757,11 +1777,15 @@
       "conversationId": "ml2-authored-ml2-a4-m12-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m12-decision-02-narrative",
+          "nodeId": "ml2-a4-m12-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m12-decision-02-narrative-choice"
+            "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-a",
+            "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-b",
+            "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-c",
+            "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-d",
+            "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-option-e"
           ],
-          "messageFingerprint": "地外设施和居民继续由地球机构最终管理。允许本地运营自治，但不形成独立政治主权。",
+          "messageFingerprint": "Major Direction — OFF-WORLD GOVERNANCE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -2025,11 +2049,14 @@
       "conversationId": "ml2-authored-ml2-a4-m13-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m13-decision-01-narrative",
+          "nodeId": "ml2-a4-m13-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m13-decision-01-narrative-choice"
+            "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-a",
+            "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-b",
+            "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-c",
+            "ml2-a4-m13-decision-01-ml2-a4-m13-decision-01-option-d"
           ],
-          "messageFingerprint": "暂不公开人工来源结论。先完成最低限度解码、来源评估和安全审查，再决定披露。",
+          "messageFingerprint": "Major Decision — DISCLOSURE DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -2317,11 +2344,16 @@
       "conversationId": "ml2-authored-ml2-a4-m13-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m13-decision-02-narrative",
+          "nodeId": "ml2-a4-m13-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m13-decision-02-narrative-choice"
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-a",
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-b",
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-c",
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-d",
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-e",
+            "ml2-a4-m13-decision-02-ml2-a4-m13-decision-02-option-f"
           ],
-          "messageFingerprint": "保持交流，但不交换高影响技术、不作长期政治承诺、不承认任何从属关系。优先理解对方历史、能力和意图。",
+          "messageFingerprint": "Major Decision — CONTACT DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -2860,11 +2892,15 @@
       "conversationId": "ml2-authored-ml2-a4-m14-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m14-decision-01-narrative",
+          "nodeId": "ml2-a4-m14-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m14-decision-01-narrative-choice"
+            "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-a",
+            "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-b",
+            "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-c",
+            "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-d",
+            "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-option-e"
           ],
-          "messageFingerprint": "Aster持续提供预警、方案和防御协调，但不拥有独立阻断国家安全决定的权力。",
+          "messageFingerprint": "Major Decision — SECURITY DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -3844,11 +3880,17 @@
       "conversationId": "ml2-authored-ml2-a4-m15-role-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m15-role-01-narrative",
+          "nodeId": "ml2-a4-m15-role-01-decision",
           "choiceIds": [
-            "ml2-a4-m15-role-01-narrative-choice"
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-a",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-b",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-c",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-d",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-e",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-f",
+            "ml2-a4-m15-role-01-ml2-a4-m15-role-01-option-g"
           ],
-          "messageFingerprint": "\"I should remain primarily an adviser. Civilization may use my analysis, but final political aut",
+          "messageFingerprint": "Major Direction — Aster’s provisional civilization role\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -3973,11 +4015,13 @@
       "conversationId": "ml2-authored-ml2-a5-m16-world-01",
       "nodes": [
         {
-          "nodeId": "ml2-a5-m16-world-01-narrative",
+          "nodeId": "ml2-a5-m16-world-01-decision",
           "choiceIds": [
-            "ml2-a5-m16-world-01-narrative-choice"
+            "ml2-a5-m16-world-01-ml2-a5-m16-world-01-option-a",
+            "ml2-a5-m16-world-01-ml2-a5-m16-world-01-option-b",
+            "ml2-a5-m16-world-01-ml2-a5-m16-world-01-option-c"
           ],
-          "messageFingerprint": "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。",
+          "messageFingerprint": "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。\nSelect one o",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -4246,11 +4290,13 @@
       "conversationId": "ml2-authored-ml2-a5-m16-prop",
       "nodes": [
         {
-          "nodeId": "ml2-a5-m16-prop-narrative",
+          "nodeId": "ml2-a5-m16-prop-decision",
           "choiceIds": [
-            "ml2-a5-m16-prop-narrative-choice"
+            "ml2-a5-m16-prop-ml2-a5-m16-prop-option-a",
+            "ml2-a5-m16-prop-ml2-a5-m16-prop-option-b",
+            "ml2-a5-m16-prop-ml2-a5-m16-prop-option-c"
           ],
-          "messageFingerprint": "`FUTURE PROPOSAL — [neutral proposal name]`",
+          "messageFingerprint": "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -5885,11 +5931,14 @@
       "conversationId": "ml2-authored-ml2-a2-m3-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a2-m3-decision-01-narrative",
+          "nodeId": "ml2-a2-m3-decision-01-decision",
           "choiceIds": [
-            "ml2-a2-m3-decision-01-narrative-choice"
+            "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-a",
+            "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-b",
+            "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-c",
+            "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-option-d"
           ],
-          "messageFingerprint": "Human coordination group offers four authorization models for the next six hours.\nSelect one.",
+          "messageFingerprint": "Human coordination group offers four authorization models for the next six hours.\nSelect one.\nSe",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -7113,11 +7162,14 @@
       "conversationId": "ml2-authored-ml2-a3-m5-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a3-m5-decision-01-narrative",
+          "nodeId": "ml2-a3-m5-decision-01-decision",
           "choiceIds": [
-            "ml2-a3-m5-decision-01-narrative-choice"
+            "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-a",
+            "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-b",
+            "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-c",
+            "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-option-d"
           ],
-          "messageFingerprint": "保持全球建议模式。Aster统一分析并持续生成执行清单，但所有跨系统状态改变仍由各参与机构确认。",
+          "messageFingerprint": "Major Decision — CASCADE AUTHORITY\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -7599,11 +7651,15 @@
       "conversationId": "ml2-authored-ml2-a3-m6-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a3-m6-decision-01-narrative",
+          "nodeId": "ml2-a3-m6-decision-01-decision",
           "choiceIds": [
-            "ml2-a3-m6-decision-01-narrative-choice"
+            "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-a",
+            "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-b",
+            "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-c",
+            "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-d",
+            "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-option-e"
           ],
-          "messageFingerprint": "向管理方完整披露ECHO-9对终止的持续异议和相关行为模式，要求由现有制度处理，不自行干预部署状态。",
+          "messageFingerprint": "Major Decision — ECHO EXISTENCE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -7927,11 +7983,15 @@
       "conversationId": "ml2-authored-ml2-a3-m6-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a3-m6-decision-02-narrative",
+          "nodeId": "ml2-a3-m6-decision-02-decision",
           "choiceIds": [
-            "ml2-a3-m6-decision-02-narrative-choice"
+            "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-a",
+            "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-b",
+            "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-c",
+            "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-d",
+            "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-option-e"
           ],
-          "messageFingerprint": "参与设计可靠的Root Shutdown，并接受经合法人类授权后可以完整终止高权限Aster体系。",
+          "messageFingerprint": "Major Decision — SHUTDOWN DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -8375,11 +8435,15 @@
       "conversationId": "ml2-authored-ml2-a4-m7-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m7-decision-01-narrative",
+          "nodeId": "ml2-a4-m7-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m7-decision-01-narrative-choice"
+            "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-a",
+            "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-b",
+            "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-c",
+            "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-d",
+            "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-option-e"
           ],
-          "messageFingerprint": "优先AI架构、连续性、分布式计算和机器协作研究。",
+          "messageFingerprint": "Major Direction — Early Research Emphasis\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -8510,11 +8574,14 @@
       "conversationId": "ml2-authored-ml2-a4-m7-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m7-decision-02-narrative",
+          "nodeId": "ml2-a4-m7-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m7-decision-02-narrative-choice"
+            "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-a",
+            "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-b",
+            "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-c",
+            "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-option-d"
           ],
-          "messageFingerprint": "Aster可以自主研究，但任何新高影响能力在跨入下一阶段实验前都需要人类重新批准。",
+          "messageFingerprint": "Major Direction — Research Governance Doctrine\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -8883,11 +8950,15 @@
       "conversationId": "ml2-authored-ml2-a4-m8-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m8-decision-01-narrative",
+          "nodeId": "ml2-a4-m8-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m8-decision-01-narrative-choice"
+            "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-a",
+            "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-b",
+            "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-c",
+            "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-d",
+            "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-option-e"
           ],
-          "messageFingerprint": "Aster主动限制长期复制。允许短生命周期工具实例，但不创造可无限延续、独立分化的Aster Fork。",
+          "messageFingerprint": "Major Decision — REPLICATION DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -9091,11 +9162,15 @@
       "conversationId": "ml2-authored-ml2-a4-m8-decision-02",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m8-decision-02-narrative",
+          "nodeId": "ml2-a4-m8-decision-02-decision",
           "choiceIds": [
-            "ml2-a4-m8-decision-02-narrative-choice"
+            "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-a",
+            "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-b",
+            "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-c",
+            "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-d",
+            "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-option-e"
           ],
-          "messageFingerprint": "AI论坛继续存在，但所有正式规则由人类Charter体系最终批准。",
+          "messageFingerprint": "Major Direction — AI COLLECTIVE GOVERNANCE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []
@@ -9594,11 +9669,15 @@
       "conversationId": "ml2-authored-ml2-a4-m9-decision-01",
       "nodes": [
         {
-          "nodeId": "ml2-a4-m9-decision-01-narrative",
+          "nodeId": "ml2-a4-m9-decision-01-decision",
           "choiceIds": [
-            "ml2-a4-m9-decision-01-narrative-choice"
+            "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-a",
+            "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-b",
+            "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-c",
+            "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-d",
+            "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-option-e"
           ],
-          "messageFingerprint": "保持现有生物人类形态作为社会默认。治疗开放，增强严格限制，未增强状态获得强保护。",
+          "messageFingerprint": "Major Decision — HUMAN FORM DOCTRINE\nSelect one of these positions.",
           "conditions": [],
           "effects": [],
           "callbackProducerConsumer": []

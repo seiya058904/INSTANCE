@@ -102,6 +102,12 @@ export function restoreRun(raw: string | null): StableRunState | null {
         seenNodeIds: Array.isArray(value.seenNodeIds) ? value.seenNodeIds as string[] : [],
         selectedChoiceIds: Array.isArray(value.selectedChoiceIds) ? value.selectedChoiceIds as string[] : [],
         completedEndingIds: Array.isArray(value.completedEndingIds) ? value.completedEndingIds as string[] : [],
+        proposalPhase: typeof value.proposalPhase === 'string' ? value.proposalPhase as StableRunState['proposalPhase'] : 'idle',
+        retainedProposalIds: Array.isArray(value.retainedProposalIds) ? value.retainedProposalIds as string[] : (Array.isArray(value.availableProposalIds) ? value.availableProposalIds as string[] : []),
+        clarifiedProposalIds: Array.isArray(value.clarifiedProposalIds) ? value.clarifiedProposalIds as string[] : [],
+        rejectedProposalIds: Array.isArray(value.rejectedProposalIds) ? value.rejectedProposalIds as string[] : [],
+        selectedProposalId: typeof value.selectedProposalId === 'string' ? value.selectedProposalId : undefined,
+        finalCommitmentLocked: value.finalCommitmentLocked === true,
       }
     }
     if (value.version !== 2 || !hasStableFields(value) || !isManifest(value.manifest)) return null

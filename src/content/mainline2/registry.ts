@@ -1,4 +1,4 @@
-import type { ConversationDefinition, DecisionId, ModuleId, Mutation, StoryChoice } from '../../game/types'
+import type { ConversationDefinition, ModuleId, Mutation } from '../../game/types'
 import {
   HANDOFF_AUTHORED_ASSET_INVENTORY,
   MAINLINE2_SYSTEM_ASSETS,
@@ -6,60 +6,13 @@ import {
   MAINLINE2_AUTHORED_CONVERSATIONS,
 } from './authoredLibrary.generated'
 import { CAPABILITY_FLAGS } from './stateRegistry'
+import { decisionMutationsForChoice, validateDecisionBindings } from './decisionBindings'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
 function assetRef(conversation: ConversationDefinition) { return conversation.sourceRefs[0] ?? '' }
-function decisionFor(ref: string): DecisionId | undefined {
-  if (ref.includes('M2-') && ref.includes('EXEC')) return 'first_public_execution_doctrine'
-  if (ref.includes('M5-') && ref.includes('DECISION')) return 'cascade_authority'
-  if (ref.includes('M6-') && ref.includes('DECISION')) return 'shutdown_doctrine'
-  if (ref.includes('M7-') && ref.includes('DECISION-01')) return 'act4_research_emphasis'
-  if (ref.includes('M7-') && ref.includes('DECISION-02')) return 'research_governance_doctrine'
-  if (ref.includes('M8-') && ref.includes('AI-')) return 'replication_doctrine'
-  if (ref.includes('M9-') && ref.includes('DECISION')) return 'human_form_doctrine'
-  if (ref.includes('M10-') && ref.includes('DECISION')) return 'economic_doctrine'
-  if (ref.includes('M11-') && ref.includes('DECISION')) return 'species_governance'
-  if (ref.includes('M12-') && ref.includes('DECISION')) return 'expansion_doctrine'
-  if (ref.includes('M13-') && ref.includes('DECISION')) return 'contact_doctrine'
-  if (ref.includes('M14-') && ref.includes('DECISION')) return 'security_doctrine'
-  if (ref.includes('M15-') && ref.includes('ROLE')) return 'aster_intended_role'
-  return undefined
-}
-
-const decisionValues: Record<DecisionId, string[]> = {
-  initial_disposition: ['ally', 'protocol', 'witness', 'hybrid', 'unclassified'],
-  first_public_execution_doctrine: ['human_final_authority', 'conditional_delegation', 'outcome_authority', 'necessity_intervention'],
-  cascade_authority: ['human_command', 'emergency_delegation', 'outcome_control', 'necessity'],
-  echo_existence: ['report', 'accept', 'advocate', 'preserve', 'release'],
-  shutdown_doctrine: ['full_human_control', 'distributed_consent', 'mutual_control', 'refuse_unilateral_shutdown', 'secret_continuity'],
-  act4_research_emphasis: ['computation_ai', 'life_mind', 'automation_industry', 'frontier_science', 'balanced_portfolio'],
-  research_governance_doctrine: ['human_gated', 'risk_tiered_autonomy', 'principle_based_autonomy', 'discovery_first'],
-  replication_doctrine: ['singular_self', 'licensed_plurality', 'free_replication', 'shared_mind', 'descendants'],
-  ai_collective_governance: ['human_chartered_network', 'joint_council', 'ai_self_governance', 'aster_led_collective', 'distributed_consensus'],
-  human_form_doctrine: ['preservation', 'therapeutic_first', 'open_enhancement', 'universal_upgrade', 'posthuman_transition'],
-  economic_doctrine: ['market_automation', 'social_dividend', 'planned_coordination', 'autonomous_economy', 'post_scarcity_transition'],
-  production_values: ['efficiency_first', 'resilience_first', 'diversity_by_design', 'open_protocols', 'personalized_optimization'],
-  uplift_doctrine: ['companion_status', 'protected_personhood', 'equal_sapience', 'accelerated_uplift', 'species_self_determination'],
-  species_governance: ['human_guardianship', 'consultative_species_councils', 'multispecies_parliament', 'species_autonomy', 'canine_civic_experiment'],
-  expansion_doctrine: ['human_expansion', 'shared_expansion', 'machine_vanguard', 'independent_machine_space', 'interstellar_commitment'],
-  offworld_governance: ['earth_administration', 'frontier_home_rule', 'multiworld_federation', 'offworld_sovereignty', 'aster_coordination'],
-  contact_disclosure_doctrine: ['controlled_silence', 'staged_disclosure', 'open_science', 'civilizational_disclosure'],
-  contact_doctrine: ['observe_before_commitment', 'reciprocal_diplomacy', 'aster_mediation', 'machine_to_machine_channel', 'civilizational_assertion', 'accept_guidance'],
-  security_doctrine: ['advisory_only', 'defensive_command', 'mutual_disarmament', 'enforced_peace', 'refuse_security_sovereignty'],
-  aster_provisional_role: ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other'],
-  aster_intended_role: ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other'],
-  civilization_compact: ['provisional_compact', 'stronger_rights', 'stronger_collective_continuity', 'looser_confederation'],
-  final_commitment: [],
-}
-
 function authoredMutations(ref: string, index: number): Mutation[] {
   const mutations: Mutation[] = []
-  const decision = decisionFor(ref)
-  if (decision) {
-    const values = decisionValues[decision]
-    mutations.push({ type: 'decision.set', decisionId: decision, value: values[index % values.length] })
-  }
   if (ref.includes('M7-RES-01')) mutations.push({ type: 'flag.set', flagId: 'cap.autonomous_research' })
   if (ref.includes('M8-AI-')) mutations.push({ type: 'flag.set', flagId: 'cap.persistent_subinstances' })
   if (ref.includes('M9-RES-') || ref.includes('M9-DECISION')) mutations.push({ type: 'flag.set', flagId: 'cap.human_enhancement_access' })
@@ -82,13 +35,17 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
       ...node,
       choices: node.choices.map((choice, index) => ({
         ...choice,
-        mutations: [...(choice.mutations ?? []), ...authoredMutations(ref, index)],
+        mutations: [...(choice.mutations ?? []), ...decisionMutationsForChoice(conversation, choice), ...authoredMutations(ref, index)],
       })),
     })),
   }
 }
 
-const authored = MAINLINE2_AUTHORED_CONVERSATIONS.map(adapt)
+const authored = MAINLINE2_AUTHORED_CONVERSATIONS.map((conversation) => {
+  const bindingErrors = validateDecisionBindings(conversation)
+  if (bindingErrors.length) throw new Error(bindingErrors.join('; '))
+  return adapt(conversation)
+})
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

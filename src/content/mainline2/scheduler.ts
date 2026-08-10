@@ -1,5 +1,6 @@
-import type { ModuleId, StableRunState } from '../../game/types'
-import { ACT4_COMMON, ACT4_LATE, ACT5_FINAL, ACT5_OPENING, ACT_STORY, MODULE_LIBRARY } from './registry'
+import type { ConversationDefinition, ModuleId, StableRunState } from '../../game/types'
+import { classifyConversationLanguage, type ConversationLanguage } from '../../game/languagePacing'
+import { ACT4_COMMON, ACT4_LATE, ACT5_FINAL, ACT5_OPENING, ACT_STORY, MAINLINE2_LIBRARY, MODULE_LIBRARY } from './registry'
 import { MODULE_IDS } from './stateRegistry'
 
 export const ACT_TARGETS = [26, 30, 30, 34, 14] as const
@@ -61,9 +62,22 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   return { primaryModules, activeModules: [...new Set(activeModules)], audit }
 }
 
-function ordinaryId(ordinaryIds: readonly string[], runId: string, slot: number) {
-  if (!ordinaryIds.length) return undefined
-  return ordinaryIds[(slot + runId.length) % ordinaryIds.length]
+function seedHash(seed: string) {
+  let hash = 2166136261
+  for (const character of seed) {
+    hash ^= character.charCodeAt(0)
+    hash = Math.imul(hash, 16777619)
+  }
+  return hash >>> 0
+}
+
+function seedOffset(runId: string, key: string, length: number) {
+  return length ? seedHash(`${runId}:${key}`) % length : 0
+}
+
+function rotatedId(pool: readonly ConversationDefinition[], index: number, run: StableRunState, key: string) {
+  if (!pool.length) return undefined
+  return pool[(index + seedOffset(run.runId, key, pool.length)) % pool.length]?.id
 }
 
 function storyId(run: StableRunState, act: number, index: number): string | undefined {
@@ -99,25 +113,118 @@ function storyId(run: StableRunState, act: number, index: number): string | unde
         security: ['ML2-A4-M14-DECISION-01', 'ML2-A4-M14-CAP-01'],
       }
       const moduleAnchor = requiredModuleDecisions[module]?.[occurrence]
-      return moduleAnchor ? required(moduleAnchor, library) ?? library[occurrence % Math.max(1, library.length)]?.id : library[occurrence % Math.max(1, library.length)]?.id
+      return moduleAnchor ? required(moduleAnchor, library) ?? rotatedId(library, occurrence, run, `act-4-${module}`) : rotatedId(library, occurrence, run, `act-4-${module}`)
     }
     if (index === 26) return required('ML2-A4-M15-ROLE-01', ACT4_LATE) ?? ACT4_LATE[(index - 26) % Math.max(1, ACT4_LATE.length)]?.id
-    return ACT4_LATE[(index - 26) % Math.max(1, ACT4_LATE.length)]?.id
+    return rotatedId(ACT4_LATE, index - 26, run, 'act-4-late')
   }
   if (act === 5) return index < 7 ? ACT5_OPENING[index]?.id : ACT5_FINAL[(index - 7) % Math.max(1, ACT5_FINAL.length)]?.id
   return undefined
 }
 
-export function scheduleNextConversationId(run: StableRunState, ordinaryIds: readonly string[]): string | undefined {
+const ANCHOR_WINDOWS = [
+  { id: MAINLINE_ANCHORS[0], earliest: 1, latest: 4 },
+  { id: MAINLINE_ANCHORS[1], earliest: 5, latest: 10 },
+  { id: MAINLINE_ANCHORS[2], earliest: 10, latest: 16 },
+  { id: MAINLINE_ANCHORS[3], earliest: 15, latest: 22 },
+] as const
+
+const mainlineConversationMap = new Map(MAINLINE2_LIBRARY.map((conversation) => [conversation.id, conversation]))
+const conversationMapCache = new WeakMap<readonly ConversationDefinition[], Map<string, ConversationDefinition>>()
+function conversationMap(ordinaryConversations: readonly ConversationDefinition[]) {
+  const cached = conversationMapCache.get(ordinaryConversations)
+  if (cached) return cached
+  const map = new Map(mainlineConversationMap)
+  for (const conversation of ordinaryConversations) map.set(conversation.id, conversation)
+  conversationMapCache.set(ordinaryConversations, map)
+  return map
+}
+
+interface ConversationSchedulingTraits { participant: string; topic: string; language: ConversationLanguage }
+const schedulingTraitsCache = new WeakMap<ConversationDefinition, ConversationSchedulingTraits>()
+
+function schedulingTraits(conversation: ConversationDefinition): ConversationSchedulingTraits {
+  const cached = schedulingTraitsCache.get(conversation)
+  if (cached) return cached
+  const id = conversation.id
+  const participant = id.includes('-lsh-') ? 'lin-shaoheng'
+    : id === 'user-1842-first' || id === 'user-1842-return' ? 'user-1842'
+      : id === 'conversation-0000' ? 'system-0000'
+        : (conversation.nodes[0]?.conversationTitle ?? '').match(/User #\d+/)?.[0] ?? id
+  const traits = { participant, topic: conversation.topic ?? conversation.sourceRefs[0] ?? conversation.id, language: classifyConversationLanguage(conversation.nodes.flatMap((node) => node.userMessages ?? [node.userMessage])) }
+  schedulingTraitsCache.set(conversation, traits)
+  return traits
+}
+
+function participantKey(conversation: ConversationDefinition) {
+  return schedulingTraits(conversation).participant
+}
+
+function topicKey(conversation: ConversationDefinition) {
+  return schedulingTraits(conversation).topic
+}
+
+function languageOf(conversation: ConversationDefinition): ConversationLanguage {
+  return schedulingTraits(conversation).language
+}
+
+function hasPacingStreak(run: StableRunState, candidate: ConversationDefinition, known: Map<string, ConversationDefinition>) {
+  const recent = run.manifest.conversationIds.slice(-2).map((id) => known.get(id)).filter(Boolean) as ConversationDefinition[]
+  if (recent.length < 2) return false
+  const participants = recent.map(participantKey)
+  const topics = recent.map(topicKey)
+  const languages = recent.map(languageOf)
+  return participants.every((value) => value === participantKey(candidate))
+    || topics.every((value) => value === topicKey(candidate))
+    || [...languages, languageOf(candidate)].every((value) => value === 'pure-english')
+}
+
+function hardStoryCandidate(conversation: ConversationDefinition) {
+  const sourceRef = conversation.sourceRefs[0] ?? ''
+  return sourceRef.startsWith('ML2-') || /DECISION|MAYA|0000|ROLE|GEN|REVIEW|COMMIT|CONTACT/.test(sourceRef)
+}
+
+function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly ConversationDefinition[], known: Map<string, ConversationDefinition>, scheduledIds: ReadonlySet<string>) {
+  const available = ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id))
+  if (!available.length) return undefined
+  const recent = run.manifest.conversationIds.slice(-2).map((id) => known.get(id)).filter(Boolean) as ConversationDefinition[]
+  const score = (conversation: ConversationDefinition) => {
+    const participantPenalty = recent.length === 2 && recent.every((item) => participantKey(item) === participantKey(conversation)) ? 100000 : 0
+    const topicPenalty = recent.length === 2 && recent.every((item) => topicKey(item) === topicKey(conversation)) ? 50000 : 0
+    const languagePenalty = recent.length === 2 && recent.every((item) => languageOf(item) === 'pure-english') && languageOf(conversation) === 'pure-english' ? 75000 : 0
+    return participantPenalty + topicPenalty + languagePenalty - seedHash(`${run.runId}:${run.manifest.conversationIds.length}:${conversation.id}`) / 1000
+  }
+  let selected = available[0]
+  let selectedScore = score(selected)
+  for (const candidate of available.slice(1)) {
+    const candidateScore = score(candidate)
+    if (candidateScore < selectedScore) {
+      selected = candidate
+      selectedScore = candidateScore
+    }
+  }
+  return selected
+}
+
+export function scheduleNextConversationId(run: StableRunState, ordinaryConversations: readonly ConversationDefinition[]): string | undefined {
   const scheduled = run.manifest.conversationIds.length
+  const scheduledIds = new Set(run.manifest.conversationIds)
   if (scheduled >= ACT_TARGETS.reduce((sum, value) => sum + value, 0)) return undefined
-  const anchor = ({ 5: MAINLINE_ANCHORS[0], 10: MAINLINE_ANCHORS[1], 15: MAINLINE_ANCHORS[2], 20: MAINLINE_ANCHORS[3] } as Record<number, string | undefined>)[scheduled]
-  if (anchor && !run.manifest.conversationIds.includes(anchor)) return anchor
+  const known = conversationMap(ordinaryConversations)
+  const nextAnchor = ANCHOR_WINDOWS.find((window) => !scheduledIds.has(window.id))
+  if (nextAnchor && scheduled >= nextAnchor.latest) return nextAnchor.id
+  if (nextAnchor && scheduled >= nextAnchor.earliest && seedHash(`${run.runId}:anchor:${nextAnchor.id}:${scheduled}`) % 5 === 0) return nextAnchor.id
   const act = scheduled < 26 ? 1 : scheduled < 56 ? 2 : scheduled < 86 ? 3 : scheduled < 120 ? 4 : 5
   const index = scheduled - ACT_STARTS[act - 1]
   const story = storyId(run, act, index)
-  if (story && !run.manifest.conversationIds.includes(story)) return story
-  return ordinaryId(ordinaryIds, run.runId, scheduled)
+  const storyConversation = story ? known.get(story) : undefined
+  const ordinary = chooseOrdinary(run, ordinaryConversations, known, scheduledIds)
+  if (storyConversation && !scheduledIds.has(storyConversation.id)) {
+    if (!hardStoryCandidate(storyConversation) && hasPacingStreak(run, storyConversation, known) && ordinary) return ordinary.id
+    if (!hardStoryCandidate(storyConversation) && ordinary && seedHash(`${run.runId}:story-choice:${scheduled}`) % 4 === 0) return ordinary.id
+    return storyConversation.id
+  }
+  return ordinary?.id
 }
 
 export function updateProgressForSchedule(run: StableRunState, nextCount: number): StableRunState['progress'] {

@@ -80,7 +80,7 @@ export function buildConversationTimeline(input: ConversationTimelineInput): Con
     steps.push(
       { stage: 'effect', durationMs: 420, effectDetail: 'syncing' },
       { stage: 'effect', durationMs: 340, effectDetail: 'connecting' },
-      { stage: 'effect', durationMs: 220, effectDetail: 'permission' },
+      { stage: 'effect', durationMs: 1000, effectDetail: 'permission' },
     )
   }
   const humanMessages = input.humanMessages ?? [input.humanText]

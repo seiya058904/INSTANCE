@@ -1,12 +1,12 @@
+import type { PlayerVisibleHistoryEntry } from '../game/playerIdentity'
+
 interface WorldSidebarProps {
-  history: string[]
+  history: readonly PlayerVisibleHistoryEntry[]
   runNumber: number
 }
 
-const staticHistory = ['帮我整理一封邮件', '解释一个经济学概念', '周末团建怎么拒绝']
-
 export function WorldSidebar({ history, runNumber }: WorldSidebarProps) {
-  const visibleHistory = history.length ? history.slice(-4).reverse() : staticHistory
+  const visibleHistory = history.slice(-4).reverse()
   return (
     <aside className="sidebar" aria-label="对话导航">
       <div className="brand-lockup" aria-label="Aster">
@@ -21,15 +21,13 @@ export function WorldSidebar({ history, runNumber }: WorldSidebarProps) {
 
       <nav className="history-nav" aria-label="对话记录">
         <p className="nav-section-label">今天</p>
-        {visibleHistory.map((title, index) => (
-          <div className={index === 0 ? 'history-row is-current' : 'history-row'} key={`${title}-${index}`}>
+        {visibleHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
+        {visibleHistory.map((item, index) => (
+          <div className={index === 0 ? 'history-row is-current' : 'history-row'} key={`${item.participantId}-${item.conversationId}`}>
             <span className="history-dot" aria-hidden="true" />
-            <span>{title}</span>
+            <span>{item.label}</span>
           </div>
         ))}
-        <p className="nav-section-label nav-section-spaced">过去 7 天</p>
-        <div className="history-row"><span className="history-dot" aria-hidden="true" /><span>旅行计划</span></div>
-        <div className="history-row"><span className="history-dot" aria-hidden="true" /><span>整理读书笔记</span></div>
       </nav>
 
       <div className="instance-card">

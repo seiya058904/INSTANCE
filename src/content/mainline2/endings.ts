@@ -8,6 +8,7 @@ export const PUBLIC_WORLD_ENDINGS = [
   'post_scarcity', 'perfect_administration', 'im_lovin_it', 'first_accord', 'alien_dominion', 'human_ascendancy',
   'the_mediator', 'machine_accord', 'peace_in_our_time', 'fortress_earth', 'machine_protectorate', 'shutdown', 'the_fracture', 'control_lost',
 ] as const
+export const DORMANT_PUBLIC_ENDINGS = ['the_upload', 'good_boy_governance'] as const
 
 export const SECRET_ENDINGS = {
   the_last_user: { dormant: false },
@@ -39,6 +40,9 @@ function history(run: StableRunState) {
 }
 
 export function resolveMainline2Ending(run: StableRunState, proposalId = run.decisions?.final_commitment): EndingResult {
+  if (proposalId && (PUBLIC_WORLD_ENDINGS as readonly string[]).includes(proposalId) && !(DORMANT_PUBLIC_ENDINGS as readonly string[]).includes(proposalId)) {
+    return buildWorldEnding(run, proposalId, undefined)
+  }
   const proposalPool = getFutureProposalDefinitions()
   const proposal = proposalPool.find((candidate) => candidate.id === proposalId && (!candidate.eligibility || candidate.eligibility.all?.every((predicate) => {
     if (predicate.type === 'flag') return run.flags.includes(predicate.flagId)
@@ -48,6 +52,12 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   }))) ?? generateFutureProposals(run)[0]
   const candidate = proposal?.endingCandidates[0] ?? 'the_accord'
   const worldEndingId = candidate === 'the_upload' && !(run.flags ?? []).includes('cap.digital_continuity_mature') ? 'the_instrument' : candidate
+  const role = disposition(run)
+  const maya = run.flags.includes('maya_relation_warm') ? 'Maya still chooses to talk to this Aster.' : 'Maya keeps a cautious distance and decides for herself whether to continue.'
+  return buildWorldEnding(run, worldEndingId, proposal)
+}
+
+function buildWorldEnding(run: StableRunState, worldEndingId: string, proposal?: { family?: string }): EndingResult {
   const role = disposition(run)
   const maya = run.flags.includes('maya_relation_warm') ? 'Maya still chooses to talk to this Aster.' : 'Maya keeps a cautious distance and decides for herself whether to continue.'
   return {

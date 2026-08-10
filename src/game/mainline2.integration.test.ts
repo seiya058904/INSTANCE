@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { commitChoice, createMainline2Run, resolveScene, buildEnding } from './engine'
 import { generateFutureProposals } from '../content/mainline2/proposals'
-import { PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS } from '../content/mainline2/endings'
+import { DORMANT_PUBLIC_ENDINGS, PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS, resolveMainline2Ending } from '../content/mainline2/endings'
 import { getActConversationCounts } from '../content/mainline2/scheduler'
 import { restoreRun, serializeRun } from './storage'
 
@@ -55,5 +55,17 @@ describe('Mainline 2.0 runtime', () => {
     expect(SECRET_ENDINGS.the_internet_is_for_cats.reason).toContain('feline')
     const ending = complete('0000-fixture').ending
     expect(ending.epilogues?.join(' ')).toContain('not classified')
+  })
+
+  it('covers every non-dormant public exact ending with an explicit fixture', () => {
+    for (const endingId of PUBLIC_WORLD_ENDINGS) {
+      const run = createMainline2Run(`ending-fixture-${endingId}`)
+      const resolved = resolveMainline2Ending({ ...run, decisions: { final_commitment: endingId } })
+      if (DORMANT_PUBLIC_ENDINGS.includes(endingId as typeof DORMANT_PUBLIC_ENDINGS[number])) {
+        expect(resolved.worldEndingId).not.toBe(endingId)
+      } else {
+        expect(resolved.worldEndingId).toBe(endingId)
+      }
+    }
   })
 })

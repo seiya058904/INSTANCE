@@ -12,10 +12,12 @@ const nodeHeader = /^(?:##|###) Node `([^`]+)`/
 // major-decision assets. Both are authored choices and must remain distinct
 // in the typed runtime library.
 // The presentation letter is syntax only. Choice identity comes from the
-// approved text-hash binding or the authored text hash fallback below.
+// approved semantic binding or the explicit ordinary-choice registry below.
 const choiceHeader = /^#{2,3} (?:Choice|Option) [A-G](?: — (.*))?/i
 const decisionBindingRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/decisionBindings.registry.json'), 'utf8'))
+const choiceIdentityRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/content/mainline2/choiceIdentity.registry.json'), 'utf8'))
 const decisionBindingByTextKey = new Map(decisionBindingRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceTextHash}`, binding]))
+const choiceIdentityByKey = new Map(choiceIdentityRegistry.map((binding) => [`${binding.assetId}:${binding.nodeId}:${binding.choiceKey}`, binding]))
 
 function authoredTextHash(value) {
   let hash = 2166136261
@@ -30,9 +32,18 @@ function decisionBinding(assetId, nodeId, text) {
   return binding
 }
 
-function stableChoiceId(assetId, nodeId, text, binding) {
+function choiceIdentityKey(label, index, occurrences) {
+  const base = safe(label ?? '') || `choice-${String(index + 1).padStart(3, '0')}`
+  const occurrence = (occurrences.get(base) ?? 0) + 1
+  occurrences.set(base, occurrence)
+  return occurrence === 1 ? base : `${base}-${String(occurrence).padStart(2, '0')}`
+}
+
+function stableChoiceId(assetId, nodeId, binding, choiceKey) {
   if (binding) return binding.choiceId.replace(/-option-[a-g]$/i, `-${safe(binding.canonicalValue)}`)
-  return `${safe(assetId)}-${safe(nodeId)}-${authoredTextHash(text)}`
+  const identity = choiceIdentityByKey.get(`${assetId}:${nodeId}:${choiceKey}`)
+  if (!identity) throw new Error(`Missing explicit ordinary Choice identity: ${assetId}:${nodeId}:${choiceKey}`)
+  return identity.choiceId
 }
 
 function cleanQuote(lines) {
@@ -128,6 +139,7 @@ function parseAsset(file, block, assetId, kind, fullText) {
     const choiceStarts = []
     for (let index = start + 1; index < end; index += 1) if (choiceHeader.test(lines[index])) choiceStarts.push(index)
     const choices = []
+    const choiceKeyOccurrences = new Map()
     for (let c = 0; c < choiceStarts.length; c += 1) {
       const choiceStart = choiceStarts[c]
       const choiceEnd = choiceStarts[c + 1] ?? end
@@ -135,7 +147,8 @@ function parseAsset(file, block, assetId, kind, fullText) {
       const text = firstQuote(lines, choiceStart + 1, choiceEnd)
       if (match && text) {
         const binding = decisionBinding(assetId, nodeId, text)
-        const choiceId = stableChoiceId(assetId, nodeId, text, binding)
+        const choiceKey = choiceIdentityKey(match[1], c, choiceKeyOccurrences)
+        const choiceId = stableChoiceId(assetId, nodeId, binding, choiceKey)
         const events = [...lines.slice(choiceStart, choiceEnd).join('\n').matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
         choices.push({
           id: choiceId,
@@ -158,13 +171,15 @@ function parseAsset(file, block, assetId, kind, fullText) {
     for (let index = 0; index < lines.length; index += 1) if (choiceHeader.test(lines[index])) optionStarts.push(index)
     if (optionStarts.length) {
       const choices = []
+      const choiceKeyOccurrences = new Map()
       for (let c = 0; c < optionStarts.length; c += 1) {
         const optionStart = optionStarts[c]
         const optionEnd = optionStarts[c + 1] ?? lines.length
         const match = lines[optionStart].match(choiceHeader)
         const text = firstQuote(lines, optionStart + 1, optionEnd)
         const binding = match && text ? decisionBinding(assetId, `${safe(assetId)}-decision`, text) : undefined
-        const choiceId = match && text ? stableChoiceId(assetId, `${safe(assetId)}-decision`, text, binding) : undefined
+        const choiceKey = match && text ? choiceIdentityKey(match[1], c, choiceKeyOccurrences) : undefined
+        const choiceId = match && text ? stableChoiceId(assetId, `${safe(assetId)}-decision`, binding, choiceKey) : undefined
         if (match && text) choices.push({
           id: choiceId,
           text,

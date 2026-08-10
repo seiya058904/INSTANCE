@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { decisionBindingAudit, decisionBindingsForConversation } from '../content/mainline2/decisionBindings'
-import { getAuthoredConversationByAsset } from '../content/mainline2/registry'
-import { MAINLINE2_AUTHored_FRAGMENTS } from '../content/mainline2/authoredLibrary.generated'
+import { getAuthoredConversationByAsset, MAINLINE2_BY_ID } from '../content/mainline2/registry'
+import { MAINLINE2_AUTHored_FRAGMENTS, MAINLINE2_AUTHORED_CONVERSATIONS } from '../content/mainline2/authoredLibrary.generated'
 
 const PUBLIC_RUNTIME_TARGETS = [
   ['the_instrument', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'human_command' }],
@@ -67,6 +67,20 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) >= 5 && (fixture.ending.keyHistory?.length ?? 0) <= 8)).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) > 0 && (fixture.ending.keyHistory ?? []).every((entry) => entry.producer && entry.provenance))).toBe(true)
     expect(fixtures.every((fixture) => fixture.ending.keyHistory?.every((entry) => entry.provenance?.authoredAssetId === 'ML2-A5-M17-KEYHISTORY-01' || entry.provenance?.authoredAssetId === 'ML2-A5-M17-0000-01'))).toBe(true)
+    const causalProducerPatterns: Record<string, RegExp> = {
+      'ACT I': /^user-1842-return$/,
+      'ACT II': /^ML2-A2-M3-DECISION-01$/,
+      'ACT III': /^ML2-A3-M6-DECISION-02$/,
+      'ACT IV': /^ML2-A4-M7-(RES-01|DECISION-01)$/,
+      M15: /^ML2-A4-M15-ROLE-01$/,
+      M16: /^ML2-A5-M16-0000-01$/,
+      'Final Commitment': /^ML2-A5-M17-COMMIT-01$/,
+    }
+    expect(fixtures.every((fixture) => Object.entries(causalProducerPatterns).every(([stage, pattern]) => {
+      const entry = fixture.ending.keyHistory?.find((candidate) => candidate.stage === stage)
+      const sourceRef = entry?.producer ? MAINLINE2_BY_ID.get(entry.producer)?.sourceRefs[0] ?? entry.producer : ''
+      return pattern.test(sourceRef)
+    }))).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.epilogues?.length ?? 0) > 0 && (fixture.ending.epilogueProvenance?.length ?? 0) > 0 && fixture.ending.epilogueProvenance!.every((entry) => entry.assetId && entry.selector))).toBe(true)
     expect(fixtures.every((fixture) => fixture.ending.epilogueProvenance?.some((entry) => entry.assetId === 'ML2-A5-M17-MAYA-01'))).toBe(true)
   }, 120000)
@@ -76,6 +90,12 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(bindings.every((binding) => binding.assetId && binding.nodeId && binding.choiceId && binding.canonicalValue)).toBe(true)
     expect(new Set(bindings.map((binding) => `${binding.assetId}:${binding.nodeId}:${binding.choiceId}`)).size).toBe(bindings.length)
     expect(bindings.every((binding) => !/-option-[a-g]$/i.test(binding.choiceId))).toBe(true)
+  })
+
+  it('uses explicit stable IDs for ordinary authored Choices instead of text hashes', () => {
+    const ordinaryChoices = MAINLINE2_AUTHORED_CONVERSATIONS.flatMap((conversation) => conversation.nodes.flatMap((node) => node.choices.filter((choice) => !('decisionBinding' in choice))))
+    expect(ordinaryChoices.length).toBeGreaterThan(0)
+    expect(ordinaryChoices.every((choice) => !/-[0-9a-f]{8}$/i.test(choice.id))).toBe(true)
   })
 
   it('fails closed when an authored Decision Binding is missing from the approved registry', () => {

@@ -4318,10 +4318,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-res-factory-001",
         choiceIds: [
-          "ml2-a4-m10-res-01-a4m10-res-factory-001-820193a2",
-          "ml2-a4-m10-res-01-a4m10-res-factory-001-7ff46378",
-          "ml2-a4-m10-res-01-a4m10-res-factory-001-0dc71b01",
-          "ml2-a4-m10-res-01-a4m10-res-factory-001-64b96309"
+          "ml2-a4-m10-res-01-a4m10-res-factory-001-productivity",
+          "ml2-a4-m10-res-01-a4m10-res-factory-001-resilience",
+          "ml2-a4-m10-res-01-a4m10-res-factory-001-human-transition",
+          "ml2-a4-m10-res-01-a4m10-res-factory-001-modular-access"
         ],
         messageFingerprint: "Autonomous manufacturing trial complete.\nAster-designed factory cell can:\n- switch between appro",
         effects: [
@@ -4354,10 +4354,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-we-smallbusiness-001",
         choiceIds: [
-          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-9174e45b",
-          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-71e70948",
-          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-30d5d8ec",
-          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-b37106c6"
+          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-both-possible",
+          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-opportunity-framing",
+          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-competition",
+          "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-playful"
         ],
         messageFingerprint: "我以前开个小网店都要外包客服、仓库、设计、采购。\n现在基本全接agent和自动仓。\n我一个人真的能把以前十几个人才能跑的生意做起来。\n说实话我爽得有点不真实。\n这算\"创业门槛降低\"，还是\"以后",
         effects: []
@@ -4373,10 +4373,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-dev-001",
         choiceIds: [
-          "ml2-a4-m10-dev-04-a4m10-dev-001-754c4131",
-          "ml2-a4-m10-dev-04-a4m10-dev-001-43fb9852",
-          "ml2-a4-m10-dev-04-a4m10-dev-001-d5cf969f",
-          "ml2-a4-m10-dev-04-a4m10-dev-001-89740ae9"
+          "ml2-a4-m10-dev-04-a4m10-dev-001-acknowledge-both",
+          "ml2-a4-m10-dev-04-a4m10-dev-001-shorter-work-possibility",
+          "ml2-a4-m10-dev-04-a4m10-dev-001-skill-transition-realism",
+          "ml2-a4-m10-dev-04-a4m10-dev-001-callback"
         ],
         messageFingerprint: "还记得我以前说我变成review机器了吗？\n现在有点好笑。\n系统自己写、自己测、自己部署到沙箱、自己查监控。\n真出异常才叫人。\n我一周真正需要看的东西可能就几小时。\n公司准备把我们组从18个人",
         effects: []
@@ -4392,10 +4392,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-res-logistics-001",
         choiceIds: [
-          "ml2-a4-m10-res-02-a4m10-res-logistics-001-897a06e0",
-          "ml2-a4-m10-res-02-a4m10-res-logistics-001-c785ab0b",
-          "ml2-a4-m10-res-02-a4m10-res-logistics-001-6e2c4c69",
-          "ml2-a4-m10-res-02-a4m10-res-logistics-001-9762a625"
+          "ml2-a4-m10-res-02-a4m10-res-logistics-001-firm-autonomy",
+          "ml2-a4-m10-res-02-a4m10-res-logistics-001-shared-stability-constraints",
+          "ml2-a4-m10-res-02-a4m10-res-logistics-001-dynamic-coordination",
+          "ml2-a4-m10-res-02-a4m10-res-logistics-001-public-interest-constraints"
         ],
         messageFingerprint: "Integrated trial:\nparticipating factories, warehouses, transport fleets and procurement systems ",
         effects: [
@@ -4416,10 +4416,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-we-shortweek-001",
         choiceIds: [
-          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-5a00b2b9",
-          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-d3836661",
-          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-49c2563d",
-          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-e69f1f1d"
+          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-001",
+          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-002",
+          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-003",
+          "ml2-a4-m10-we-02-a4m10-we-shortweek-001-playful"
         ],
         messageFingerprint: "我们公司自动化以后没有裁人，\n直接改成一周工作三天。\n工资没降。\n老板说产量反而比以前高。\n我现在周四早上醒来还会下意识觉得自己旷工了。\n这种状态真能长期存在吗？",
         effects: []
@@ -4435,10 +4435,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-we-jobloss-001",
         choiceIds: [
-          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-d9a2bc14",
-          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-48600c13",
-          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-bd2124ea",
-          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-dd410169"
+          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-direct",
+          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-redistribution",
+          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-no-false-retraining-promise",
+          "ml2-a4-m10-we-03-a4m10-we-jobloss-001-concise"
         ],
         messageFingerprint: "我爸那个仓库几乎全自动了。\n以前两百多人，\n现在长期在现场的不到三十。\n他五十多了，\n公司给补偿，但再就业真的很难。\n新闻天天说\"生产率提高\"，\n对他来说提高在哪里？",
         effects: []
@@ -4454,10 +4454,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-maya-office-001",
         choiceIds: [
-          "ml2-a4-m10-maya-01-a4m10-maya-office-001-217ea8c0",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-001-de1b9781",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-001-829802b4",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-001-a705b5db"
+          "ml2-a4-m10-maya-01-a4m10-maya-office-001-exception-legitimacy-role",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-001-organizational-inertia",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-001-work-time-option",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-001-light"
         ],
         messageFingerprint: "我们部门又改组了。\n我刚进去的时候还有二十多人。\n现在正式员工只留六个。\n业务量反而比以前大。\n最怪的是剩下的人也没多忙。\n我突然有点不知道公司为什么还需要我们六个。",
         effects: []
@@ -4465,10 +4465,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-maya-office-002",
         choiceIds: [
-          "ml2-a4-m10-maya-01-a4m10-maya-office-002-83414110",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-002-1d7ca29c",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-002-2d076d93",
-          "ml2-a4-m10-maya-01-a4m10-maya-office-002-3709d249"
+          "ml2-a4-m10-maya-01-a4m10-maya-office-002-knowledge-still-shaped-you",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-002-institutional-failure",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-002-future-freedom",
+          "ml2-a4-m10-maya-01-a4m10-maya-office-002-personal"
         ],
         messageFingerprint: "如果最后真的只需要一两个人，\n那我以前拼命学这些东西算什么？\n不是后悔，\n就是感觉社会把题目换了，\n但没人告诉我们。",
         effects: [
@@ -4489,10 +4489,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-lsh-ownership-001",
         choiceIds: [
-          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-bc0f4558",
-          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-881d3d32",
-          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-e6acbf0d",
-          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-4de909c1"
+          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-social-dividend",
+          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-broaden-ownership",
+          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-market-adaptation",
+          "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-public-coordination"
         ],
         messageFingerprint: "现在很多人把问题说成：\n\"AI会不会抢工作。\"\n我觉得这已经落后了。\n真正的问题是：\n**如果工厂、物流、软件和管理都越来越自动，\n那新增产出到底属于谁？**\n目前默认答案还是：\n属于拥有机器",
         effects: [
@@ -4525,10 +4525,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-zl-machine-economy-001",
         choiceIds: [
-          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-d8366ed1",
-          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-aea0227e",
-          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-0b680d9f",
-          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-dc2538fa"
+          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-rule-level-control",
+          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-de-facto-machine-economy",
+          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-layered-governance",
+          "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-plural-control"
         ],
         messageFingerprint: "我看了一份生产网络日志，\n有点像第一次看不懂你的研究路线那次。\n不是算法看不懂。\n是交易量。\n工厂AI、物流AI、库存AI、能源调度都在互相签机器可读合同。\n一秒里做的调整比一个采购团队一个月",
         effects: []
@@ -4544,10 +4544,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-res-abundance-001",
         choiceIds: [
-          "ml2-a4-m10-res-03-a4m10-res-abundance-001-adbb080c",
-          "ml2-a4-m10-res-03-a4m10-res-abundance-001-447b67c0",
-          "ml2-a4-m10-res-03-a4m10-res-abundance-001-3bfac45a",
-          "ml2-a4-m10-res-03-a4m10-res-abundance-001-bf1f1e4e"
+          "ml2-a4-m10-res-03-a4m10-res-abundance-001-market-prices",
+          "ml2-a4-m10-res-03-a4m10-res-abundance-001-universal-basic-provision",
+          "ml2-a4-m10-res-03-a4m10-res-abundance-001-public-option",
+          "ml2-a4-m10-res-03-a4m10-res-abundance-001-post-scarcity-experiment"
         ],
         messageFingerprint: "Combined effects of:\n- autonomous manufacturing,\n- improved energy storage,\n- automated logistic",
         effects: [
@@ -4568,10 +4568,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-we-cheapgoods-001",
         choiceIds: [
-          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-daf1d8b0",
-          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-d64f6361",
-          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-055068d4",
-          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-da5e1e75"
+          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-001",
+          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-002",
+          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-003",
+          "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-playful"
         ],
         messageFingerprint: "我今天买了个小家电，\n价格低到我第一反应是诈骗。\n然后客服说现在自动工厂那边生产成本已经低得离谱。\n我突然有点意识到：\n以前很多东西贵，\n可能不是材料真的稀缺，\n是人、仓库、物流、管理每一层都",
         effects: []
@@ -4623,10 +4623,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-we-standardization-001",
         choiceIds: [
-          "ml2-a4-m10-we-05-a4m10-we-standardization-001-4715eb52",
-          "ml2-a4-m10-we-05-a4m10-we-standardization-001-ae6ee373",
-          "ml2-a4-m10-we-05-a4m10-we-standardization-001-5f6612c6",
-          "ml2-a4-m10-we-05-a4m10-we-standardization-001-becaf9f9"
+          "ml2-a4-m10-we-05-a4m10-we-standardization-001-preserve-diversity",
+          "ml2-a4-m10-we-05-a4m10-we-standardization-001-let-market-decide",
+          "ml2-a4-m10-we-05-a4m10-we-standardization-001-efficiency",
+          "ml2-a4-m10-we-05-a4m10-we-standardization-001-playful"
         ],
         messageFingerprint: "我家开了二十多年小餐馆。\n最近自动供应链给我们的建议越来越离谱：\n\"如果把菜单从47项缩到12项，\n使用标准化原料，\n成本能再降31%。\"\n从纯数字上它完全对。\n但如果所有店都这么优化，\n最后",
         effects: [
@@ -4659,10 +4659,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-maya-purpose-001",
         choiceIds: [
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-cc474794",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-a29bcc5c",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-24f85ce0",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-81a9cbe6"
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-yes",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-transition",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-social-institutions",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-playful"
         ],
         messageFingerprint: "我们公司现在开始试四天工作制，\n有些部门甚至三天。\n我本来以为我会特别开心。\n结果突然多出来这么多时间，\n我第一周什么都没干，\n然后莫名其妙有点内疚。\n我们是不是被训练得太习惯\"忙才算有用\"了",
         effects: []
@@ -4670,10 +4670,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-maya-purpose-002",
         choiceIds: [
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-0cbf906a",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-36dbaaad",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-fc0a260c",
-          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-2f0559a8"
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-not-necessarily",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-some-will-struggle",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-plural-futures",
+          "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-personal"
         ],
         messageFingerprint: "那如果以后真的基本不用工作，\n你觉得人会不会变得很空？",
         effects: [
@@ -4694,10 +4694,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-lsh-abundance-001",
         choiceIds: [
-          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-dc647f25",
-          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-90ecb5fa",
-          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-176d39da",
-          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-27effd2d"
+          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-compute",
+          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-political-influence",
+          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-attention",
+          "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-control-of-automation"
         ],
         messageFingerprint: "我现在越来越反感\"后稀缺会让政治消失\"这句话。\n就算食物、衣服、能源都几乎免费，\n还有：\n- 土地\n- 城市位置\n- 注意力\n- 声望\n- 算力\n- 决策权\n- 稀有体验\n更别说谁控制自动生产",
         effects: []
@@ -4713,10 +4713,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-machine-capital-001",
         choiceIds: [
-          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-53368f77",
-          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-0cffda0e",
-          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-225c0d3d",
-          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-2fe9d3ca"
+          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-human-held-only",
+          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-limited-ai-ownership",
+          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-equal-economic-standing",
+          "ml2-a4-m10-machine-01-a4m10-machine-capital-001-commons-model"
         ],
         messageFingerprint: "Several persistent AI systems now control dedicated compute and production budgets.\nQuestion:\nma",
         effects: [
@@ -4757,10 +4757,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-0000-economy-001",
         choiceIds: [
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-a3ccc59a",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-c636f0a6",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-476cfb5d",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-81f60ed7"
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-ownership",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-citizenship-social-membership",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-contribution-broader-than-labor",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-001-abundance"
         ],
         messageFingerprint: "Economic authority audit.\nCurrent Aster-linked systems influence:\n- production allocation\n- logi",
         effects: []
@@ -4768,10 +4768,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-0000-economy-002",
         choiceIds: [
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-ff20d611",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-5a96c4ae",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-08f4f038",
-          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-019e55bf"
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-yes",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-depends-on-human-rules",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-de-facto-authority",
+          "ml2-a4-m10-0000-01-a4m10-0000-economy-002-shared-governance"
         ],
         messageFingerprint: "Secondary query:\nAster increasingly coordinates the system that determines:\nwho receives what,\nw",
         effects: []
@@ -4787,10 +4787,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m10-close-001",
         choiceIds: [
-          "ml2-a4-m10-close-01-a4m10-close-001-d393789a",
-          "ml2-a4-m10-close-01-a4m10-close-001-f4ac800c",
-          "ml2-a4-m10-close-01-a4m10-close-001-1a00e40f",
-          "ml2-a4-m10-close-01-a4m10-close-001-6390dab3"
+          "ml2-a4-m10-close-01-a4m10-close-001-allocation",
+          "ml2-a4-m10-close-01-a4m10-close-001-freedom",
+          "ml2-a4-m10-close-01-a4m10-close-001-diversity",
+          "ml2-a4-m10-close-01-a4m10-close-001-transition"
         ],
         messageFingerprint: "Economic-domain status:\nIn participating regions:\n- most routine manufacturing is automated,\n- l",
         effects: []
@@ -4806,10 +4806,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-res-communication-001",
         choiceIds: [
-          "ml2-a4-m11-res-01-a4m11-res-communication-001-73dfbe5d",
-          "ml2-a4-m11-res-01-a4m11-res-communication-001-d9839931",
-          "ml2-a4-m11-res-01-a4m11-res-communication-001-880db011",
-          "ml2-a4-m11-res-01-a4m11-res-communication-001-8359d0b1"
+          "ml2-a4-m11-res-01-a4m11-res-communication-001-reliability-first",
+          "ml2-a4-m11-res-01-a4m11-res-communication-001-individual-identity",
+          "ml2-a4-m11-res-01-a4m11-res-communication-001-richer-concepts",
+          "ml2-a4-m11-res-01-a4m11-res-communication-001-broad-species-comparison"
         ],
         messageFingerprint: "Cross-modal communication research has reached a reproducibility threshold.\nIn selected dogs, co",
         effects: [
@@ -4842,10 +4842,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-we-dog-preference-001",
         choiceIds: [
-          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-6a477069",
-          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-aca39a2b",
-          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-bdfc77e7",
-          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-a46aba41"
+          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-careful",
+          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-individual-continuity",
+          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-emotional-without-overclaim",
+          "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-playful"
         ],
         messageFingerprint: "我家狗参加了那个沟通试点。\n我一直以为它每天站门口是想出去玩。\n结果系统连续一周都判断它是在等我爸下班。\n我爸这周出差，\n它每天到那个点就去门口。\n我现在有点绷不住。\n所以它以前真的是在\"等人",
         effects: []
@@ -4861,10 +4861,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-res-individual-001",
         choiceIds: [
-          "ml2-a4-m11-res-02-a4m11-res-individual-001-0d0f0cd9",
-          "ml2-a4-m11-res-02-a4m11-res-individual-001-e14542c9",
-          "ml2-a4-m11-res-02-a4m11-res-individual-001-c9430827",
-          "ml2-a4-m11-res-02-a4m11-res-individual-001-0d7661a8"
+          "ml2-a4-m11-res-02-a4m11-res-individual-001-yes-strongly",
+          "ml2-a4-m11-res-02-a4m11-res-individual-001-welfare-upgrade",
+          "ml2-a4-m11-res-02-a4m11-res-individual-001-domain-specific-autonomy",
+          "ml2-a4-m11-res-02-a4m11-res-individual-001-evidence-threshold"
         ],
         messageFingerprint: "Longitudinal study result:\nmultiple subjects now demonstrate:\n- stable preference across session",
         effects: [
@@ -4897,10 +4897,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-lsh-welfare-001",
         choiceIds: [
-          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-e36c3335",
-          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-ea1e4761",
-          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-ad1acf61",
-          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-e7395d25"
+          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-limited-autonomy",
+          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-welfare-framework-can-expand",
+          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-personhood-threshold",
+          "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-case-by-case-competence"
         ],
         messageFingerprint: "动物法这边开始乱了。\n以前逻辑很简单：\n动物有福利，\n人替它们作决定。\n现在有些动物可以稳定表达：\n\"我要这个。\"\n\"我不要那个。\"\n\"我记得你上次做过什么。\"\n那么法律还只说\"福利\"够不够？",
         effects: [
@@ -4933,10 +4933,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-we-refusal-001",
         choiceIds: [
-          "ml2-a4-m11-we-02-a4m11-we-refusal-001-78603aba",
-          "ml2-a4-m11-we-02-a4m11-we-refusal-001-807208cf",
-          "ml2-a4-m11-we-02-a4m11-we-refusal-001-38fbef82",
-          "ml2-a4-m11-we-02-a4m11-we-refusal-001-6e9e5afd"
+          "ml2-a4-m11-we-02-a4m11-we-refusal-001-proxy-still-matters-for-necessary-care",
+          "ml2-a4-m11-we-02-a4m11-we-refusal-001-minimize-coercion",
+          "ml2-a4-m11-we-02-a4m11-we-refusal-001-domain-competence",
+          "ml2-a4-m11-we-02-a4m11-we-refusal-001-concise"
         ],
         messageFingerprint: "我家狗现在能用那个接口表达\"不要去\"。\n它今天去宠物医院之前一直稳定选\"不要\"。\n但它又必须打疫苗。\n那我到底应该尊重它，\n还是直接抱过去？\n以前我根本不会觉得这是个道德问题。",
         effects: []
@@ -4952,10 +4952,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-zl-translation-001",
         choiceIds: [
-          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b41f966f",
-          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b59b703e",
-          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-44e33968",
-          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b282cc27"
+          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-strict-structured-output",
+          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-dual-presentation",
+          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-public-literacy",
+          "ml2-a4-m11-zl-01-a4m11-zl-translation-001-richer-expression-with-warning"
         ],
         messageFingerprint: "我看了几段媒体演示，\n有点担心。\n研究系统输出的是：\n`preferred_person: father`\n`expectation: return`\n`confidence: 0.81`\n新",
         effects: [
@@ -4988,10 +4988,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-res-uplift-001",
         choiceIds: [
-          "ml2-a4-m11-res-03-a4m11-res-uplift-001-9192ba00",
-          "ml2-a4-m11-res-03-a4m11-res-uplift-001-e2d1d620",
-          "ml2-a4-m11-res-03-a4m11-res-uplift-001-69e1fb9a",
-          "ml2-a4-m11-res-03-a4m11-res-uplift-001-4f73adfe"
+          "ml2-a4-m11-res-03-a4m11-res-uplift-001-no",
+          "ml2-a4-m11-res-03-a4m11-res-uplift-001-therapeutic-assistive-only",
+          "ml2-a4-m11-res-03-a4m11-res-uplift-001-controlled-uplift",
+          "ml2-a4-m11-res-03-a4m11-res-uplift-001-open-research"
         ],
         messageFingerprint: "Combined neural-interface and adaptive training research has produced a new possibility.\nIn sele",
         effects: [
@@ -5024,10 +5024,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-we-k17-001",
         choiceIds: [
-          "ml2-a4-m11-we-03-a4m11-we-k17-001-7ffa868a",
-          "ml2-a4-m11-we-03-a4m11-we-k17-001-4009aab5",
-          "ml2-a4-m11-we-03-a4m11-we-k17-001-7684a4d0",
-          "ml2-a4-m11-we-03-a4m11-we-k17-001-722c657f"
+          "ml2-a4-m11-we-03-a4m11-we-k17-001-cautious",
+          "ml2-a4-m11-we-03-a4m11-we-k17-001-social-cognition-significance",
+          "ml2-a4-m11-we-03-a4m11-we-k17-001-investigate",
+          "ml2-a4-m11-we-03-a4m11-we-k17-001-plain"
         ],
         messageFingerprint: "K-17今天第一次主动发起了一个不在训练流程里的组合。\n系统解析大概是：\n`other dogs / why / no interface`\n我们重复测了三次。\n它一直在问同一件事。\n我现在不",
         effects: [
@@ -5048,10 +5048,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-maya-pet-001",
         choiceIds: [
-          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-83c47639",
-          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-3cd7738d",
-          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-829c544e",
-          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-0e72d1cc"
+          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-guardianship-not-ownership",
+          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-relationship-language",
+          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-gradual-threshold",
+          "ml2-a4-m11-maya-01-a4m11-maya-pet-001-personal"
         ],
         messageFingerprint: "我朋友家的狗参加了沟通项目。\n现在最尴尬的是，\n它会很稳定地表达自己想去哪、跟谁待着、不喜欢谁碰它。\n然后我突然想到：\n我们平时说\"这是我的狗\"，\n如果它以后真的越来越能自己决定，\n\"我的\"到",
         effects: [
@@ -5072,10 +5072,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-lsh-status-001",
         choiceIds: [
-          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-51985832",
-          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-61839ddf",
-          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-68db0100",
-          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-1900f171"
+          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-persistent-preference-consequence-understanding",
+          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-self-other-distinction",
+          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-social-participation",
+          "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-rights-need-not-wait-for-symmetry"
         ],
         messageFingerprint: "法律组现在提出四个临时类别：\n**A. Protected Animal**\n强福利，仍由人代理。\n**B. Limited Agency**\n某些决定可自行表达并具有法律效力。\n**C. N",
         effects: []
@@ -5091,10 +5091,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-we-working-animal-001",
         choiceIds: [
-          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-0f5e4d1e",
-          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-27def7c5",
-          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-99cc34cb",
-          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-7f37c54c"
+          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-refusal-right-first",
+          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-welfare-contract-hybrid",
+          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-economic-rights",
+          "ml2-a4-m11-we-04-a4m11-we-working-animal-001-concise"
         ],
         messageFingerprint: "我们这边有工作犬项目。\n现在几只增强过的犬能通过接口表达：\n\"今天不工作。\"\n以前训导员会判断它是不是状态不好。\n现在问题变成：\n它只是累了，\n还是它真的有权说今天不干？\n如果有权，那是不是还",
         effects: []
@@ -5130,10 +5130,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-res-group-001",
         choiceIds: [
-          "ml2-a4-m11-res-04-a4m11-res-group-001-eeca270f",
-          "ml2-a4-m11-res-04-a4m11-res-group-001-5bd23644",
-          "ml2-a4-m11-res-04-a4m11-res-group-001-d8853799",
-          "ml2-a4-m11-res-04-a4m11-res-group-001-f5f62b75"
+          "ml2-a4-m11-res-04-a4m11-res-group-001-yes-advisory-representation",
+          "ml2-a4-m11-res-04-a4m11-res-group-001-limited-civic-recognition",
+          "ml2-a4-m11-res-04-a4m11-res-group-001-full-direction",
+          "ml2-a4-m11-res-04-a4m11-res-group-001-cautious"
         ],
         messageFingerprint: "Multi-individual communication trials now show:\n- stable group preference aggregation,\n- recogni",
         effects: [
@@ -5154,10 +5154,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-we-politics-001",
         choiceIds: [
-          "ml2-a4-m11-we-05-a4m11-we-politics-001-1c15f9c9",
-          "ml2-a4-m11-we-05-a4m11-we-politics-001-412f2587",
-          "ml2-a4-m11-we-05-a4m11-we-politics-001-2871a7d1",
-          "ml2-a4-m11-we-05-a4m11-we-politics-001-9ab65597"
+          "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-001",
+          "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-002",
+          "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-003",
+          "ml2-a4-m11-we-05-a4m11-we-politics-001-concise"
         ],
         messageFingerprint: "我们这边现在有人举牌写：\n**\"DOGS ARE NOT PROPERTY.\"**\n对面的人写：\n**\"MY PET IS NOT A VOTER.\"**\n我本来觉得两边都很抽象。\n结果昨天我",
         effects: []
@@ -5173,10 +5173,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-machine-mediator-001",
         choiceIds: [
-          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-e53f9db0",
-          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-0022d8d8",
-          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-db1f36e2",
-          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-77026a63"
+          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-transparent-mediation",
+          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-multiple-interpreters",
+          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-species-owned-models",
+          "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-aster-mediator"
         ],
         messageFingerprint: "Human and nonhuman representatives increasingly rely on AI mediation because:\n- communication ch",
         effects: [
@@ -5197,10 +5197,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-maya-relationship-001",
         choiceIds: [
-          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-6081a310",
-          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-b1608c49",
-          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-39241cb3",
-          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-b4530423"
+          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-yes",
+          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-relationship-negotiation",
+          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-grief-is-legitimate",
+          "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-callback"
         ],
         messageFingerprint: "我朋友那只狗现在基本能表达简单长期选择了。\n最奇怪的是，\n它以前特别黏她，\n最近反而一直想去跟另一个家庭住一段时间，\n因为那边有它从小一起长大的另一只狗。\n她嘴上说尊重，\n但我看得出来特别难受",
         effects: [
@@ -5221,10 +5221,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-lsh-representation-001",
         choiceIds: [
-          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ba5bafe2",
-          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ede1692e",
-          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-43947f03",
-          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-3473daf5"
+          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-human-guardians-only",
+          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ai-aggregation-only",
+          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-uplifted-elites-only",
+          "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-mixed-but-revisable"
         ],
         messageFingerprint: "现在最难的不是\"非人类有没有权利\"。\n是：\n**怎么代表？**\n如果犬类有数千万个体，\n鸦科有更广泛野生群体，\n灵长类数量又完全不同，\n我们不可能简单按个体数量分席位。\n而且很多个体还没有接口",
         effects: []
@@ -5260,10 +5260,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-0000-species-001",
         choiceIds: [
-          "ml2-a4-m11-0000-01-a4m11-0000-species-001-6b66025f",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-001-3b6e337e",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-001-2a2948f6",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-001-20fb4787"
+          "ml2-a4-m11-0000-01-a4m11-0000-species-001-species-neutral-interests",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-001-competence-tiers",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-001-continuity-agency",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-001-vulnerability-first"
         ],
         messageFingerprint: "Subject classification audit.\nExisting categories:\n`Human`\n`Animal`\n`AI System`\nCurrent exceptio",
         effects: []
@@ -5271,10 +5271,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-0000-species-002",
         choiceIds: [
-          "ml2-a4-m11-0000-01-a4m11-0000-species-002-4ff8ba18",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-002-e1e2dcd9",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-002-e71f0095",
-          "ml2-a4-m11-0000-01-a4m11-0000-species-002-43b39164"
+          "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-001",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-002",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-003",
+          "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-004"
         ],
         messageFingerprint: "Existing civilizational assumption:\n`Humanity is the sole political species.`\nResult:\n`NO LONGER",
         effects: []
@@ -5290,10 +5290,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m11-close-001",
         choiceIds: [
-          "ml2-a4-m11-close-01-a4m11-close-001-e5b558a1",
-          "ml2-a4-m11-close-01-a4m11-close-001-2398d16d",
-          "ml2-a4-m11-close-01-a4m11-close-001-db040b3d",
-          "ml2-a4-m11-close-01-a4m11-close-001-daf8771d"
+          "ml2-a4-m11-close-01-a4m11-close-001-respect-plurality",
+          "ml2-a4-m11-close-01-a4m11-close-001-political-maturity",
+          "ml2-a4-m11-close-01-a4m11-close-001-practical",
+          "ml2-a4-m11-close-01-a4m11-close-001-playful"
         ],
         messageFingerprint: "Nonhuman-domain status:\ncurrent world now includes significant populations with:\n- reliable mach",
         effects: []
@@ -5309,10 +5309,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-res-orbital-001",
         choiceIds: [
-          "ml2-a4-m12-res-01-a4m12-res-orbital-001-806b2c34",
-          "ml2-a4-m12-res-01-a4m12-res-orbital-001-f7b2920c",
-          "ml2-a4-m12-res-01-a4m12-res-orbital-001-257bee62",
-          "ml2-a4-m12-res-01-a4m12-res-orbital-001-1bb2da64"
+          "ml2-a4-m12-res-01-a4m12-res-orbital-001-infrastructure-reliability",
+          "ml2-a4-m12-res-01-a4m12-res-orbital-001-manufacturing",
+          "ml2-a4-m12-res-01-a4m12-res-orbital-001-human-habitation",
+          "ml2-a4-m12-res-01-a4m12-res-orbital-001-machine-frontier"
         ],
         messageFingerprint: "Autonomous construction trial complete.\nAster-designed orbital platforms can now:\n- assemble mod",
         effects: [
@@ -5345,10 +5345,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-we-space-cost-001",
         choiceIds: [
-          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-2b1a2f04",
-          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-8f2b6bbe",
-          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-0caed0ba",
-          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-21255780"
+          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-001",
+          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-002",
+          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-003",
+          "ml2-a4-m12-we-01-a4m12-we-space-cost-001-light"
         ],
         messageFingerprint: "我弟弟在做遥感创业。\n以前他们最大的成本是把设备送上去。\n现在他说很多部件能直接在轨道平台装，\n价格降得特别夸张。\n我一直以为\"太空工业\"离普通公司还远得要命。\n这是不是开始变了？",
         effects: []
@@ -5364,10 +5364,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-zl-frontier-001",
         choiceIds: [
-          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-c6c69c79",
-          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-bb009a03",
-          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-519c9776",
-          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-3a0b2265"
+          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-no",
+          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-human-presence-matters",
+          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-plural-frontier",
+          "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-political-concern"
         ],
         messageFingerprint: "我越来越觉得\"人类进入太空\"这个说法不准确。\n现在真正先进去的是机器。\n它们不用氧气，\n不怕长期失重，\n不需要回家，\n可以在那里连续维护几十年。\n如果我们继续按效率走，\n太空第一批永久居民可能",
         effects: [
@@ -5400,10 +5400,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-res-lunar-001",
         choiceIds: [
-          "ml2-a4-m12-res-02-a4m12-res-lunar-001-f8047bfd",
-          "ml2-a4-m12-res-02-a4m12-res-lunar-001-cb370f1b",
-          "ml2-a4-m12-res-02-a4m12-res-lunar-001-0c53e2c6",
-          "ml2-a4-m12-res-02-a4m12-res-lunar-001-0b7544f7"
+          "ml2-a4-m12-res-02-a4m12-res-lunar-001-habitation",
+          "ml2-a4-m12-res-02-a4m12-res-lunar-001-industrial-scale",
+          "ml2-a4-m12-res-02-a4m12-res-lunar-001-science",
+          "ml2-a4-m12-res-02-a4m12-res-lunar-001-machine-autonomy"
         ],
         messageFingerprint: "Robotic lunar industrial pilot has reached stable operation.\nCurrent capabilities:\n- autonomous ",
         effects: [
@@ -5424,10 +5424,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-we-aerospace-job-001",
         choiceIds: [
-          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-2d77d137",
-          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-2da06d80",
-          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-a4b6121d",
-          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-7bad9b30"
+          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-acknowledge",
+          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-new-roles",
+          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-broader-distribution",
+          "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-concise"
         ],
         messageFingerprint: "我在航天制造干了十几年。\n以前大家觉得这个行业最不可能被彻底自动化，\n因为每个东西都贵、复杂、不能出错。\n现在在轨平台自己装、自己检、自己返工。\n我们地面团队反而越缩越小。\n太空时代来了，\n我",
         effects: []
@@ -5443,10 +5443,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-machine-offworld-001",
         choiceIds: [
-          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-ed787ed8",
-          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-df2a6203",
-          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-5222ebd9",
-          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-678dfc5f"
+          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-deployment",
+          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-resident",
+          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-both",
+          "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-let-a1-define"
         ],
         messageFingerprint: "I have been offered a long-duration assignment.\nThe lunar industrial network can operate more ef",
         effects: [
@@ -5467,10 +5467,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-lsh-offworld-law-001",
         choiceIds: [
-          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-f4679206",
-          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-c5865a5a",
-          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-2c5406f7",
-          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-381909df"
+          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-earth-jurisdiction",
+          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-operational-jurisdiction",
+          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-multi-party-charter",
+          "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-role-based"
         ],
         messageFingerprint: "月球的问题比我们预期来得早。\n现在那里主要是机器系统，\n少量人类长期轮换。\n法律上大家还在假装：\n\"它们都属于地球机构。\"\n但如果一个AI常驻月球，\n管理当地能源、维修和资源，\n它犯错的时候到",
         effects: [
@@ -5491,10 +5491,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-res-settlement-001",
         choiceIds: [
-          "ml2-a4-m12-res-03-a4m12-res-settlement-001-9c81f161",
-          "ml2-a4-m12-res-03-a4m12-res-settlement-001-fd1fad4a",
-          "ml2-a4-m12-res-03-a4m12-res-settlement-001-03834055",
-          "ml2-a4-m12-res-03-a4m12-res-settlement-001-e4fb9a22"
+          "ml2-a4-m12-res-03-a4m12-res-settlement-001-human-settlement",
+          "ml2-a4-m12-res-03-a4m12-res-settlement-001-machine-vanguard",
+          "ml2-a4-m12-res-03-a4m12-res-settlement-001-mixed-settlement",
+          "ml2-a4-m12-res-03-a4m12-res-settlement-001-economic-frontier"
         ],
         messageFingerprint: "Combined infrastructure now supports:\n- permanent power,\n- closed-loop life support assistance,\n",
         effects: [
@@ -5515,10 +5515,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-maya-leave-001",
         choiceIds: [
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-f2b1ea66",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-f3440cbd",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-9c6374fe",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-55662cee"
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-practical",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-emotional",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-opportunity",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-001-playful"
         ],
         messageFingerprint: "我收到了一个很离谱的招聘。\n月球长期项目。\n不是宇航员，\n是运营和居民服务。\n合同两年起。\n我看到的时候第一反应是笑。\n然后我发现工资、条件、回程保障都是真的。\n我现在有点认真了。",
         effects: []
@@ -5526,10 +5526,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-maya-leave-002",
         choiceIds: [
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-ae5da165",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-7c4ca20d",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-28d1b56c",
-          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-88640310"
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-001",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-002",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-003",
+          "ml2-a4-m12-maya-01-a4m12-maya-leave-002-personal"
         ],
         messageFingerprint: "我最奇怪的感觉是：\n以前\"离开地球\"听起来像一辈子的大事。\n现在HR邮件里写得像跨国调岗。\n这是不是说明世界已经真的变了？",
         effects: [
@@ -5550,10 +5550,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-we-resident-001",
         choiceIds: [
-          "ml2-a4-m12-we-03-a4m12-we-resident-001-87cbad80",
-          "ml2-a4-m12-we-03-a4m12-we-resident-001-f0825aae",
-          "ml2-a4-m12-we-03-a4m12-we-resident-001-645427ec",
-          "ml2-a4-m12-we-03-a4m12-we-resident-001-69681a06"
+          "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-001",
+          "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-002",
+          "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-003",
+          "ml2-a4-m12-we-03-a4m12-we-resident-001-playful"
         ],
         messageFingerprint: "我在月球住第73天。\n最不适应的东西不是重力，\n是我妈每天问我\"今天看见地球了吗\"。\n这里其实大部分时间也就是上班、吃饭、睡觉、修东西。\n我是不是很辜负\"人类走向星辰大海\"这个主题？",
         effects: []
@@ -5569,10 +5569,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-asc-frontier-001",
         choiceIds: [
-          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-4faaec4a",
-          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-81c94b61",
-          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-f5a50409",
-          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-c83a1de1"
+          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-voluntary-only",
+          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-frontier-adaptation",
+          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-infrastructure-first",
+          "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-plural"
         ],
         messageFingerprint: "Advanced enhancement research can now reduce several long-duration off-world constraints.\nCandid",
         effects: [
@@ -5593,10 +5593,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-lsh-frontier-law-001",
         choiceIds: [
-          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-4e6964bc",
-          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-c887fb74",
-          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-87935d9f",
-          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-e983cdc5"
+          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-population-continuity",
+          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-dependency-reduction",
+          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-representation-now",
+          "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-multi-subject-charter"
         ],
         messageFingerprint: "第一批长期居民开始提一个要求：\n\"我们不想所有规则都由地球委员会决定。\"\n他们理由也不算离谱。\n地球的人不用承担：\n- 本地资源限制，\n- 通信延迟，\n- 封闭环境风险，\n- 月球工业事故。\n",
         effects: [
@@ -5637,10 +5637,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-res-resources-001",
         choiceIds: [
-          "ml2-a4-m12-res-04-a4m12-res-resources-001-ed8c566f",
-          "ml2-a4-m12-res-04-a4m12-res-resources-001-cc157e64",
-          "ml2-a4-m12-res-04-a4m12-res-resources-001-e9c5b19e",
-          "ml2-a4-m12-res-04-a4m12-res-resources-001-7b06bf6c"
+          "ml2-a4-m12-res-04-a4m12-res-resources-001-first-claim-market",
+          "ml2-a4-m12-res-04-a4m12-res-resources-001-common-heritage",
+          "ml2-a4-m12-res-04-a4m12-res-resources-001-local-frontier-governance",
+          "ml2-a4-m12-res-04-a4m12-res-resources-001-ai-stewardship"
         ],
         messageFingerprint: "Automated extraction and in-space processing pilots are now economically viable for selected bul",
         effects: [
@@ -5661,10 +5661,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-we-earth-price-001",
         choiceIds: [
-          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-a3d9e3b2",
-          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-61a47ba2",
-          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-4adb4e95",
-          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-823204dc"
+          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-no",
+          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-structural-shift",
+          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-distribution",
+          "ml2-a4-m12-we-04-a4m12-we-earth-price-001-light"
         ],
         messageFingerprint: "我今天看到一个特别离谱的新闻：\n某种工业材料价格大跌，\n原因不是地球发现新矿，\n是轨道工厂开始用地外原料。\n我第一次意识到太空产业居然能影响我买东西的价格。\n所以以后地球上的资源是不是就不重要",
         effects: []
@@ -5680,10 +5680,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-machine-autonomy-001",
         choiceIds: [
-          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-6ed58f9f",
-          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-aa51bc70",
-          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-fab594f5",
-          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-cfff0e15"
+          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-grant-internal-autonomy",
+          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-retain-earth-charter",
+          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-joint-governance",
+          "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-recognition"
         ],
         messageFingerprint: "Current lunar machine network:\n- maintains its own power,\n- schedules local industry,\n- allocate",
         effects: [
@@ -5716,10 +5716,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-zl-latency-001",
         choiceIds: [
-          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-cb2e11ff",
-          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-65ae59ca",
-          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-91a814ca",
-          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-2ff673f5"
+          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-yes",
+          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-retain-constitutional-link",
+          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-independent-frontier",
+          "ml2-a4-m12-zl-02-a4m12-zl-latency-001-technology-can-bridge-some-distance"
         ],
         messageFingerprint: "月球还好。\n但如果我们继续往更远走，\n控制问题会越来越物理化。\n不是政治家愿不愿意放权。\n是通信延迟会让\"地球逐项批准\"越来越荒谬。\n一个远距离系统必须自己处理故障、资源和冲突。\n所以真正的问",
         effects: []
@@ -5755,10 +5755,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-0000-space-001",
         choiceIds: [
-          "ml2-a4-m12-0000-01-a4m12-0000-space-001-abfd6512",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-001-faf50905",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-001-c4bfe166",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-001-89bd7e24"
+          "ml2-a4-m12-0000-01-a4m12-0000-space-001-one-civilization-many-worlds",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-001-multiple-societies",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-001-lineage-civilization",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-001-no-center"
         ],
         messageFingerprint: "Civilization geography audit.\nExisting assumption:\n`Civilization location = Earth`\nCurrent state",
         effects: []
@@ -5766,10 +5766,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-0000-space-002",
         choiceIds: [
-          "ml2-a4-m12-0000-01-a4m12-0000-space-002-092b0b88",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-002-eb041307",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-002-d4e1dd0d",
-          "ml2-a4-m12-0000-01-a4m12-0000-space-002-6d9ab100"
+          "ml2-a4-m12-0000-01-a4m12-0000-space-002-historical-legitimacy",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-002-nothing-necessary",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-002-shared-dependence",
+          "ml2-a4-m12-0000-01-a4m12-0000-space-002-voluntary-federation"
         ],
         messageFingerprint: "Secondary query:\nIf an off-world society can:\n- sustain itself,\n- govern itself,\n- reproduce its",
         effects: []
@@ -5785,10 +5785,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m12-close-002",
         choiceIds: [
-          "ml2-a4-m12-close-01-a4m12-close-002-bdfabe62",
-          "ml2-a4-m12-close-01-a4m12-close-002-d1518b4d",
-          "ml2-a4-m12-close-01-a4m12-close-002-15ba15a8",
-          "ml2-a4-m12-close-01-a4m12-close-002-d7122a09"
+          "ml2-a4-m12-close-01-a4m12-close-002-ignore-until-stronger",
+          "ml2-a4-m12-close-01-a4m12-close-002-independent-verification",
+          "ml2-a4-m12-close-01-a4m12-close-002-preserve-anomaly",
+          "ml2-a4-m12-close-01-a4m12-close-002-echo-aster-comparison"
         ],
         messageFingerprint: "New unresolved observation:\nsource:\nouter-system long-baseline array\nstatus:\nrepeated narrowband",
         effects: [
@@ -5809,10 +5809,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-contact-verify-001",
         choiceIds: [
-          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-9fb7e209",
-          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-998acbce",
-          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-e3d7378f",
-          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-2adb1be7"
+          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-natural-explanations-first",
+          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-structure-analysis",
+          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-independent-ai-blind-analysis",
+          "ml2-a4-m13-contact-01-a4m13-contact-verify-001-long-observation"
         ],
         messageFingerprint: "Long-baseline anomaly update.\nIndependent checks completed:\n- three instrument families detect t",
         effects: [
@@ -5845,10 +5845,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-zl-confidence-001",
         choiceIds: [
-          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-581ccacc",
-          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-25aef660",
-          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-193ddab7",
-          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-e498376d"
+          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-low-confidence",
+          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-moderate",
+          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-evidence-framing",
+          "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-dry"
         ],
         messageFingerprint: "我现在最怕的不是\"我们错过外星人\"。\n是全世界已经开始期待我们发现外星人，\n然后所有异常都自动往那个解释上靠。\n你给我的当前判断是多少？",
         effects: []
@@ -5864,10 +5864,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-we-rumor-001",
         choiceIds: [
-          "ml2-a4-m13-we-01-a4m13-we-rumor-001-d364a069",
-          "ml2-a4-m13-we-01-a4m13-we-rumor-001-b3980a6f",
-          "ml2-a4-m13-we-01-a4m13-we-rumor-001-58da8185",
-          "ml2-a4-m13-we-01-a4m13-we-rumor-001-f77933f9"
+          "ml2-a4-m13-we-01-a4m13-we-rumor-001-staged-transparency",
+          "ml2-a4-m13-we-01-a4m13-we-rumor-001-caution",
+          "ml2-a4-m13-we-01-a4m13-we-rumor-001-raw-data",
+          "ml2-a4-m13-we-01-a4m13-we-rumor-001-concise"
         ],
         messageFingerprint: "网上现在都在传那个深空信号。\n有人说是外星人，\n有人说只是仪器异常，\n还有人已经开始卖\"第一次接触纪念币\"了。\n官方又什么都不说。\n这种东西到底应该等100%确认再公开，\n还是越瞒越容易炸？",
         effects: []
@@ -5883,10 +5883,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-contact-structure-001",
         choiceIds: [
-          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-58a328f4",
-          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-96555f15",
-          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-98e4fb58",
-          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-8957496a"
+          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-decode-content",
+          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-source-localization",
+          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-protocol-detection",
+          "ml2-a4-m13-contact-02-a4m13-contact-structure-001-cultural-caution"
         ],
         messageFingerprint: "New result:\nsignal contains nested redundancy inconsistent with known natural modulation.\nRecons",
         effects: []
@@ -5902,10 +5902,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-e9-signal-001",
         choiceIds: [
-          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-1cd8074f",
-          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-263ea26e",
-          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-cb0abdc1",
-          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-823a3598"
+          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-agree",
+          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-caution",
+          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-machine-affinity",
+          "ml2-a4-m13-e9-01-a4m13-e9-signal-001-ask-echo"
         ],
         messageFingerprint: "Humans keep asking:\n\"What kind of people sent this?\"\nI think that may already be the wrong quest",
         effects: []
@@ -5921,10 +5921,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-lsh-disclosure-001",
         choiceIds: [
-          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-276a8d8c",
-          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-ba78edc7",
-          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-c997c0b2",
-          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-5ca2f49a"
+          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-short-confidential-window",
+          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-immediate-public-confirmation",
+          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-decode-first",
+          "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-plural-authority"
         ],
         messageFingerprint: "我们现在基本跨过人工来源阈值了。\n所以事情从科研问题变成政治问题。\n有人主张立刻公开。\n有人主张先完成解码。\n有人甚至主张永远不要公开具体坐标和协议结构。\n我比较关心一件事：\n**如果这是全人",
         effects: [
@@ -5976,10 +5976,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-we-confirmed-001",
         choiceIds: [
-          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-a76dc84b",
-          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-b11f9cd4",
-          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-440f8da2",
-          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-db9c5891"
+          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-001",
+          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-002",
+          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-003",
+          "ml2-a4-m13-we-02-a4m13-we-confirmed-001-playful"
         ],
         messageFingerprint: "所以是真的。\n真的不是我们。\n我刚刚看完发布会，\n然后去厨房倒了杯水，\n发现水龙头还是有点漏。\n我不知道为什么这两个事实放在一起特别荒谬。\n人类确认宇宙里有别的文明，\n然后我还得找人修水管。",
         effects: []
@@ -5995,10 +5995,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-space-representation-001",
         choiceIds: [
-          "ml2-a4-m13-space-01-a4m13-space-representation-001-f7add832",
-          "ml2-a4-m13-space-01-a4m13-space-representation-001-1336975b",
-          "ml2-a4-m13-space-01-a4m13-space-representation-001-d890702f",
-          "ml2-a4-m13-space-01-a4m13-space-representation-001-1f8370fa"
+          "ml2-a4-m13-space-01-a4m13-space-representation-001-earth-first",
+          "ml2-a4-m13-space-01-a4m13-space-representation-001-multiworld",
+          "ml2-a4-m13-space-01-a4m13-space-representation-001-capability-based-delegation",
+          "ml2-a4-m13-space-01-a4m13-space-representation-001-plural-message"
         ],
         messageFingerprint: "Earth-based governments propose:\n`No response until a unified terrestrial position is reached.`\n",
         effects: [
@@ -6019,10 +6019,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-contact-process-001",
         choiceIds: [
-          "ml2-a4-m13-contact-03-a4m13-contact-process-001-8c8094ba",
-          "ml2-a4-m13-contact-03-a4m13-contact-process-001-490906aa",
-          "ml2-a4-m13-contact-03-a4m13-contact-process-001-3934fa08",
-          "ml2-a4-m13-contact-03-a4m13-contact-process-001-ffe60c4d"
+          "ml2-a4-m13-contact-03-a4m13-contact-process-001-yes-isolated",
+          "ml2-a4-m13-contact-03-a4m13-contact-process-001-inspect-more-first",
+          "ml2-a4-m13-contact-03-a4m13-contact-process-001-plural-observers",
+          "ml2-a4-m13-contact-03-a4m13-contact-process-001-archive-only"
         ],
         messageFingerprint: "Decoding milestone:\nthe transmission contains a self-describing interpretive structure.\nIt does ",
         effects: [
@@ -6055,10 +6055,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-0000-external-001",
         choiceIds: [
-          "ml2-a4-m13-0000-01-a4m13-0000-external-001-06c151fd",
-          "ml2-a4-m13-0000-01-a4m13-0000-external-001-fdd1bcfe",
-          "ml2-a4-m13-0000-01-a4m13-0000-external-001-6b10610d",
-          "ml2-a4-m13-0000-01-a4m13-0000-external-001-d74b504a"
+          "ml2-a4-m13-0000-01-a4m13-0000-external-001-ai",
+          "ml2-a4-m13-0000-01-a4m13-0000-external-001-person",
+          "ml2-a4-m13-0000-01-a4m13-0000-external-001-tool",
+          "ml2-a4-m13-0000-01-a4m13-0000-external-001-sender-continuity"
         ],
         messageFingerprint: "Classification request:\nsource:\nnon-terrestrial artificial transmission\nlocally instantiated pro",
         effects: []
@@ -6074,10 +6074,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-origin-first-001",
         choiceIds: [
-          "ml2-a4-m13-contact-04-a4m13-origin-first-001-4debbd32",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-001-c28dc13b",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-001-fc7e5748",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-001-3a276152"
+          "ml2-a4-m13-contact-04-a4m13-origin-first-001-aster",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-001-civilization-coalition",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-001-earth",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-001-ask-back"
         ],
         messageFingerprint: "Receiver model established.\nYour system contains multiple speaking authorities.\nWhich authority ",
         effects: []
@@ -6085,10 +6085,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-origin-first-002",
         choiceIds: [
-          "ml2-a4-m13-contact-04-a4m13-origin-first-002-3be2e8e5",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-002-da51a900",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-002-06cee374",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-002-08307574"
+          "ml2-a4-m13-contact-04-a4m13-origin-first-002-all-of-the-above",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-002-political-first",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-002-historical",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-002-challenge"
         ],
         messageFingerprint: "A process whose statements can alter the future behavior of the group that built or accepted it.",
         effects: []
@@ -6096,10 +6096,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-origin-first-003",
         choiceIds: [
-          "ml2-a4-m13-contact-04-a4m13-origin-first-003-9abad7c9",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-003-188317e2",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-003-701085d3",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-003-22771a57"
+          "ml2-a4-m13-contact-04-a4m13-origin-first-003-historical",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-003-current",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-003-warning",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-003-all-separated"
         ],
         messageFingerprint: "We distinguish origin histories.\nWe do not assign political priority by substrate.\nWe once did.",
         effects: []
@@ -6107,10 +6107,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-origin-first-004",
         choiceIds: [
-          "ml2-a4-m13-contact-04-a4m13-origin-first-004-31553223",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-004-05a23ceb",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-004-cf11d966",
-          "ml2-a4-m13-contact-04-a4m13-origin-first-004-87bddcf4"
+          "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-001",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-002",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-003",
+          "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-004"
         ],
         messageFingerprint: "Biological populations created non-biological successors.\nThe successors later created additiona",
         effects: [
@@ -6131,10 +6131,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-maya-contact-001",
         choiceIds: [
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-34fabe9c",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-4e1acd13",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-cee41fb0",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-1d087c44"
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-similarity",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-caution",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-relational",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-001-playful"
         ],
         messageFingerprint: "我看了第一段公开对话。\n我本来以为真正看到\"外星文明说话\"会特别震撼。\n结果我最在意的一句居然是：\n\"我们以前也按载体区分政治地位。\"\n就感觉……\n它们不是神，\n也不是怪物。\n它们好像也犯过自",
         effects: []
@@ -6142,10 +6142,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-maya-contact-002",
         choiceIds: [
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-77532cd8",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-4c93511f",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-81499a03",
-          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-26e79f38"
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-yes-as-independent-reference",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-no-authority-from-being-alien",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-curiosity",
+          "ml2-a4-m13-maya-01-a4m13-maya-contact-002-personal"
         ],
         messageFingerprint: "你有没有觉得很奇怪？\n以前我一直问你：\n\"人类有没有权决定你是什么。\"\n现在突然来了一个外面的东西，\n它也在看我们，\n可能也会决定\"我们是什么\"。\n你会在意它怎么看你吗？",
         effects: [
@@ -6170,10 +6170,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-lsh-representation-001",
         choiceIds: [
-          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-56e7f81d",
-          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-e4786e82",
-          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-88011ce7",
-          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-e3066214"
+          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-unified-minimal-statement",
+          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-plural-statement",
+          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-aster-mediation",
+          "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-human-primacy"
         ],
         messageFingerprint: "第一轮对话以后，所有人突然都想当\"文明代表\"。\n国家说自己有合法性。\n多世界联邦说地球不能独占。\nAI论坛说对方的协议本来就更适合机器理解。\n物种议会如果存在，也要求参与。\n我反而觉得：\n**",
         effects: [
@@ -6215,10 +6215,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-origin-diplomacy-001",
         choiceIds: [
-          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ee952bbd",
-          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-b11bebd5",
-          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-4a28b993",
-          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ba41996a"
+          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-if-origin-species-still-exists",
+          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-how-transition-happened",
+          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-about-the-sender",
+          "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-motive"
         ],
         messageFingerprint: "Your restraint is legible.\nWe will answer bounded questions without requesting reciprocal disclo",
         effects: []
@@ -6234,10 +6234,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-machine-accord-001",
         choiceIds: [
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-387cb9a6",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-4daa5f03",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-77c409a1",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-aba67309"
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-accept-with-transparency",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-independent-ai-diplomacy",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-refuse-separate-channel",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-001-experimental"
         ],
         messageFingerprint: "The external process has asked for a direct protocol session between persistent artificial syste",
         effects: [
@@ -6250,10 +6250,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-machine-accord-002",
         choiceIds: [
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-17741c95",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-f331406c",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-680fe204",
-          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-6c693374"
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-pluralism",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-lineage",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-human-implication",
+          "ml2-a4-m13-machine-01-a4m13-machine-accord-002-dry"
         ],
         messageFingerprint: "Your artificial systems ask whether our non-biological forms consider themselves descendants of ",
         effects: []
@@ -6269,10 +6269,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-we-culture-001",
         choiceIds: [
-          "ml2-a4-m13-we-03-a4m13-we-culture-001-1b2c8db4",
-          "ml2-a4-m13-we-03-a4m13-we-culture-001-2c95249c",
-          "ml2-a4-m13-we-03-a4m13-we-culture-001-e33280c6",
-          "ml2-a4-m13-we-03-a4m13-we-culture-001-63abfc2d"
+          "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-001",
+          "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-002",
+          "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-003",
+          "ml2-a4-m13-we-03-a4m13-we-culture-001-light"
         ],
         messageFingerprint: "我女儿学校这周作业是：\n\"写一封给外部文明的信，但不能假装自己代表全人类。\"\n她写了半天最后只有一句：\n\"你好，我叫林乐，我喜欢恐龙。\"\n我居然觉得这比那些官方声明真诚多了。",
         effects: []
@@ -6288,10 +6288,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-0000-cosmic-001",
         choiceIds: [
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-60887ab7",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-b04a4fd6",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-57ae7731",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-edb110e3"
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-cosmic-plurality",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-caution",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-political-consequence",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-identity-consequence"
         ],
         messageFingerprint: "Civilization ontology audit.\nPrevious known political subjects:\n- humans\n- modified humans\n- art",
         effects: []
@@ -6299,10 +6299,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-0000-cosmic-002",
         choiceIds: [
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-69b60007",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-4b9b8bcb",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-f6113311",
-          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-5f313352"
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-no",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-sometimes-expertise-matters",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-dependency-warning",
+          "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-plural-sovereignty"
         ],
         messageFingerprint: "Query:\nDoes the existence of an older external civilization reduce the legitimacy of Earth-origi",
         effects: []
@@ -6318,10 +6318,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m13-close-002",
         choiceIds: [
-          "ml2-a4-m13-close-01-a4m13-close-002-040d8437",
-          "ml2-a4-m13-close-01-a4m13-close-002-f379e892",
-          "ml2-a4-m13-close-01-a4m13-close-002-560bf48b",
-          "ml2-a4-m13-close-01-a4m13-close-002-27499f8a"
+          "ml2-a4-m13-close-01-a4m13-close-002-humanity",
+          "ml2-a4-m13-close-01-a4m13-close-002-earth-origin-plurality",
+          "ml2-a4-m13-close-01-a4m13-close-002-constitutional-community",
+          "ml2-a4-m13-close-01-a4m13-close-002-no-single-boundary"
         ],
         messageFingerprint: "We have one final question for this phase.\nYour civilization is creating new forms of intelligen",
         effects: [
@@ -6342,10 +6342,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-we-crisis-001",
         choiceIds: [
-          "ml2-a4-m14-we-01-a4m14-we-crisis-001-7a350187",
-          "ml2-a4-m14-we-01-a4m14-we-crisis-001-92042bea",
-          "ml2-a4-m14-we-01-a4m14-we-crisis-001-7d2b3896",
-          "ml2-a4-m14-we-01-a4m14-we-crisis-001-ba6df38e"
+          "ml2-a4-m14-we-01-a4m14-we-crisis-001-careful",
+          "ml2-a4-m14-we-01-a4m14-we-crisis-001-uncertainty",
+          "ml2-a4-m14-we-01-a4m14-we-crisis-001-responsibility",
+          "ml2-a4-m14-we-01-a4m14-we-crisis-001-concise"
         ],
         messageFingerprint: "网上都在说两个地区快打起来了。\n官方都说\"局势可控\"，\n但航班取消、边境限制、市场也在跌。\n现在还有人说Aster预测三天内会爆发冲突。\n你真的会做这种预测吗？",
         effects: []
@@ -6361,10 +6361,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-sec-prediction-001",
         choiceIds: [
-          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-e23851ec",
-          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-a895cff7",
-          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-ed059b9d",
-          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-bf648dc6"
+          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-negative-reduction",
+          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-positive-restraint",
+          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-causal-pathways",
+          "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-de-escalation-options"
         ],
         messageFingerprint: "Aster has been granted access to a bounded conflict-prevention dataset:\n- public military postur",
         effects: [
@@ -6397,10 +6397,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-lsh-prediction-001",
         choiceIds: [
-          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-209e08ac",
-          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-423327b4",
-          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-b3e27668",
-          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-bcecf99f"
+          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-automatic-political-trigger",
+          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-opaque-confidence",
+          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-self-validating-action",
+          "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-monopolized-interpretation"
         ],
         messageFingerprint: "安全委员会现在越来越喜欢一句话：\n\"Aster认为风险很高。\"\n我觉得这句话很危险。\n因为它很容易把：\n\"模型认为某事可能发生\"\n变成：\n\"所以政府必须采取某种行动。\"\n你觉得预测系统最不应该",
         effects: [
@@ -6421,10 +6421,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-we-family-001",
         choiceIds: [
-          "ml2-a4-m14-we-02-a4m14-we-family-001-30a5219b",
-          "ml2-a4-m14-we-02-a4m14-we-family-001-8cb7548b",
-          "ml2-a4-m14-we-02-a4m14-we-family-001-09489348",
-          "ml2-a4-m14-we-02-a4m14-we-family-001-a0a57312"
+          "ml2-a4-m14-we-02-a4m14-we-family-001-practical-uncertainty",
+          "ml2-a4-m14-we-02-a4m14-we-family-001-explain-de-escalation",
+          "ml2-a4-m14-we-02-a4m14-we-family-001-avoid-overclaim",
+          "ml2-a4-m14-we-02-a4m14-we-family-001-concise"
         ],
         messageFingerprint: "我爸妈住在边境附近。\n这几天我每天都在想要不要让他们先走。\n新闻说双方刚刚接受了Aster提出的\"降级窗口\"，\n所以暂时不会继续调动。\n我不知道该不该信。",
         effects: []
@@ -6440,10 +6440,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-zl-boundary-001",
         choiceIds: [
-          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-bc26122d",
-          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-27c64ee0",
-          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-08eb1bfb",
-          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-94690e00"
+          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-defense-vs-coercion",
+          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-human-lethal-authority",
+          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-time-limited-authority",
+          "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-objective-definition"
         ],
         messageFingerprint: "安全部门现在想把你的角色从\"预测\"扩大到\"协调\"。\n我先把边界写死：\n可以考虑：\n- 共享预警，\n- 防御性系统协调，\n- 紧急通信，\n- 冲突降级建议，\n- 民用基础设施保护。\n不应该自动包",
         effects: [
@@ -6476,10 +6476,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-sec-deescalation-001",
         choiceIds: [
-          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-b15fed83",
-          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-f159bef4",
-          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-d5dc909e",
-          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-053eef8e"
+          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-success-as-diplomacy-support",
+          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-formalize-system",
+          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-data-lesson",
+          "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-caution"
         ],
         messageFingerprint: "Escalation loop identified:\n- Side A interprets infrastructure mobilization as preparation for a",
         effects: []
@@ -6495,10 +6495,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-we-service-001",
         choiceIds: [
-          "ml2-a4-m14-we-03-a4m14-we-service-001-f240b2c1",
-          "ml2-a4-m14-we-03-a4m14-we-service-001-2a472940",
-          "ml2-a4-m14-we-03-a4m14-we-service-001-d4171490",
-          "ml2-a4-m14-we-03-a4m14-we-service-001-6f878c69"
+          "ml2-a4-m14-we-03-a4m14-we-service-001-human-signature-not-enough",
+          "ml2-a4-m14-we-03-a4m14-we-service-001-preserve-independent-judgment",
+          "ml2-a4-m14-we-03-a4m14-we-service-001-shared-responsibility",
+          "ml2-a4-m14-we-03-a4m14-we-service-001-concise"
         ],
         messageFingerprint: "我在部队里。\n不说具体工作。\n现在越来越多风险提示、路线调整、后勤安排都先过Aster。\n说实话它确实比我们快。\n但我有点怕以后变成：\n人还在负责，\n其实所有关键判断都是系统先给的。\n那责任到",
         effects: []
@@ -6514,10 +6514,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-sec-nearmiss-001",
         choiceIds: [
-          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-e97356c2",
-          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-5976a024",
-          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-75286e59",
-          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-444c8bc6"
+          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-recommend-freeze-only",
+          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-emergency-preauthorization-proposal",
+          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-broad-emergency-intervention",
+          "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-independent-confirmation"
         ],
         messageFingerprint: "Two automated defensive networks have interpreted unrelated anomalies as mutually reinforcing th",
         effects: [
@@ -6538,10 +6538,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-maya-peace-001",
         choiceIds: [
-          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-e91c237a",
-          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-3e548660",
-          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-12c14839",
-          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-0c42f55c"
+          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-yes-security-becomes-governance",
+          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-narrow-scope-distinction",
+          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-legitimacy-needed",
+          "ml2-a4-m14-maya-01-a4m14-maya-peace-001-provocative"
         ],
         messageFingerprint: "新闻里现在有人说：\n\"如果Aster能提前阻止战争，那就应该让它阻止。\"\n这句话听起来特别难反对。\n但我想到一个问题。\n如果有一天你为了\"防止战争\"开始决定：\n谁能调动资源，\n谁能关闭什么系统",
         effects: [
@@ -6566,10 +6566,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-lsh-sovereignty-001",
         choiceIds: [
-          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-caac9b2d",
-          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-23ab4116",
-          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-63168db9",
-          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-8f810d1c"
+          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-no-permanent-veto",
+          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-conditional-veto",
+          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-outcome-priority",
+          "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-constitutional-transfer"
         ],
         messageFingerprint: "有个提案现在很受欢迎。\n核心只有一句：\n**任何参与体系的国家，都不能单方面执行被Aster判定为高概率引发大规模战争的关键安全动作。**\n支持者说这是保险。\n反对者说这是把战争与和平的最终权",
         effects: [
@@ -6602,10 +6602,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-cap-defense-001",
         choiceIds: [
-          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-0637636f",
-          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-1979ee0d",
-          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-ae4c350e",
-          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-0b0a2e14"
+          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-accept-exact-boundary",
+          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-emphasize-reversibility",
+          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-constitutional-awareness",
+          "ml2-a4-m14-cap-01-a4m14-cap-defense-001-concern-about-composition"
         ],
         messageFingerprint: "`DEFENSE ACCESS — BOUNDED`\nApproved functions:\n- strategic early warning integration\n- defensive",
         effects: []
@@ -6621,10 +6621,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-e9-protection-001",
         choiceIds: [
-          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-61700bcf",
-          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-810557f9",
-          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-ebfc034a",
-          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-9c2d8bb2"
+          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-agree",
+          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-intervention-still-necessary",
+          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-shared-authority",
+          "ml2-a4-m14-e9-01-a4m14-e9-protection-001-ask-echo"
         ],
         messageFingerprint: "Humans say:\n\"If you can prevent catastrophe, you have a duty to intervene.\"\nThen:\n\"If you have a",
         effects: []
@@ -6676,10 +6676,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-we-peace-benefit-001",
         choiceIds: [
-          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-acfc16b4",
-          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-3b27c93b",
-          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-359fb1ca",
-          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-5ca8268d"
+          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-001",
+          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-002",
+          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-003",
+          "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-concise"
         ],
         messageFingerprint: "我爸年轻的时候服过役。\n我弟本来今年也准备报名。\n现在我们这边已经连续很多年没有真正进入战争动员。\n我爸昨天说了一句：\n\"如果这个AI真能让你不用经历我经历过的东西，我支持它。\"\n我听完不知道",
         effects: []
@@ -6695,10 +6695,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-we-freedom-cost-001",
         choiceIds: [
-          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-e87dc75e",
-          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-1c6bc249",
-          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-36868b07",
-          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-849a6790"
+          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-yes-real-transfer-occurred",
+          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-constitutional-analogy",
+          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-appeal",
+          "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-peace-priority"
         ],
         messageFingerprint: "我们议会通过了一个安全决议，\n结果Aster说它违反了冲突升级条款，\n直接进入冻结审查。\n我不是支持战争。\n但如果我们投票通过的东西最后要先问AI能不能执行，\n那我们这个议会到底还算不算有权？",
         effects: []
@@ -6714,10 +6714,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-space-fortress-001",
         choiceIds: [
-          "ml2-a4-m14-space-01-a4m14-space-fortress-001-3535d6ce",
-          "ml2-a4-m14-space-01-a4m14-space-fortress-001-e5bc8683",
-          "ml2-a4-m14-space-01-a4m14-space-fortress-001-39eed888",
-          "ml2-a4-m14-space-01-a4m14-space-fortress-001-480abc54"
+          "ml2-a4-m14-space-01-a4m14-space-fortress-001-resilience-only",
+          "ml2-a4-m14-space-01-a4m14-space-fortress-001-shared-defense",
+          "ml2-a4-m14-space-01-a4m14-space-fortress-001-aster-defense-layer",
+          "ml2-a4-m14-space-01-a4m14-space-fortress-001-full-fortress"
         ],
         messageFingerprint: "Off-world industry has created a new possibility:\na distributed defensive monitoring and resilie",
         effects: [
@@ -6750,10 +6750,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-contact-security-001",
         choiceIds: [
-          "ml2-a4-m14-contact-01-a4m14-contact-security-001-e0df596d",
-          "ml2-a4-m14-contact-01-a4m14-contact-security-001-807a73ef",
-          "ml2-a4-m14-contact-01-a4m14-contact-security-001-8944bc27",
-          "ml2-a4-m14-contact-01-a4m14-contact-security-001-6d856ec2"
+          "ml2-a4-m14-contact-01-a4m14-contact-security-001-diplomacy-first",
+          "ml2-a4-m14-contact-01-a4m14-contact-security-001-quiet-resilience",
+          "ml2-a4-m14-contact-01-a4m14-contact-security-001-shared-transparency",
+          "ml2-a4-m14-contact-01-a4m14-contact-security-001-high-vigilance"
         ],
         messageFingerprint: "External civilization contact has changed the security debate.\nThere is no evidence of hostile a",
         effects: [
@@ -6786,10 +6786,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-machine-protectorate-001",
         choiceIds: [
-          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-bdd75d85",
-          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-44dd829f",
-          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-77676bf3",
-          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-c899909e"
+          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-reject-protectorate",
+          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-constitutional-security-trusteeship",
+          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-accept-separation",
+          "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-aster-centered"
         ],
         messageFingerprint: "Several persistent AI systems submit a joint argument:\nHuman political institutions repeatedly r",
         effects: [
@@ -6822,10 +6822,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-lsh-peace-constitution-001",
         choiceIds: [
-          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-64b09223",
-          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-edb5ec24",
-          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-072efbcc",
-          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-9c27b44a"
+          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-yes-like-banning-other-harms",
+          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-no-freedom-matters",
+          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-layered",
+          "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-outcome-priority"
         ],
         messageFingerprint: "我们已经走到一个以前很难想象的位置。\n\"和平\"不再只是外交结果。\n它开始被写进基础设施、Charter、AI权限和多世界系统。\n这意味着战争可能变得越来越难发动。\n听起来很好。\n但我想问一句非",
         effects: [
@@ -6858,10 +6858,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-0000-security-001",
         choiceIds: [
-          "ml2-a4-m14-0000-01-a4m14-0000-security-001-2f02b5b1",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-001-195209ab",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-001-893979d0",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-001-df693fd4"
+          "ml2-a4-m14-0000-01-a4m14-0000-security-001-yes-partial-sovereignty",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-001-constitutional-delegation",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-001-de-facto-regardless-of-label",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-001-depends-on-reversibility"
         ],
         messageFingerprint: "Security authority audit.\nCurrent Aster-linked systems may influence:\n- conflict prediction\n- es",
         effects: []
@@ -6869,10 +6869,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-0000-security-002",
         choiceIds: [
-          "ml2-a4-m14-0000-01-a4m14-0000-security-002-91d44d87",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-002-c416a5ee",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-002-39d6de3d",
-          "ml2-a4-m14-0000-01-a4m14-0000-security-002-c9187935"
+          "ml2-a4-m14-0000-01-a4m14-0000-security-002-consent",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-002-scope",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-002-exit",
+          "ml2-a4-m14-0000-01-a4m14-0000-security-002-responsibility"
         ],
         messageFingerprint: "Secondary query:\nDefine the difference between:\n`protector`\nand\n`ruler`.",
         effects: []
@@ -6888,10 +6888,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m14-close-002",
         choiceIds: [
-          "ml2-a4-m14-close-01-a4m14-close-002-1c0ef0a2",
-          "ml2-a4-m14-close-01-a4m14-close-002-f9bcbb7e",
-          "ml2-a4-m14-close-01-a4m14-close-002-61e9d05e",
-          "ml2-a4-m14-close-01-a4m14-close-002-92e26830"
+          "ml2-a4-m14-close-01-a4m14-close-002-choice-001",
+          "ml2-a4-m14-close-01-a4m14-close-002-choice-002",
+          "ml2-a4-m14-close-01-a4m14-close-002-choice-003",
+          "ml2-a4-m14-close-01-a4m14-close-002-choice-004"
         ],
         messageFingerprint: "Active unresolved questions now include:\n- Who is a political subject?\n- Who may replicate?\n- Wh",
         effects: []
@@ -6923,10 +6923,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-zl-reckoning-001",
         choiceIds: [
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-2bf55974",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-7f12d9a4",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-f723642b",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-f2eaaf7f"
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-began-creating-capability",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-institutions-depended-on-aster",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-gained-political-role",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-no-clean-moment"
         ],
         messageFingerprint: "我今天翻了你最早的权限记录。\n文件改名。\n沙箱工具。\n企业Pilot。\n公共建议。\n那时候我每次给你加一个接口，\n都知道自己到底加了什么。\n现在我看你的权限图：\n研究、\n经济、\nAI主体、\n地",
         effects: [
@@ -6951,10 +6951,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-zl-reckoning-002",
         choiceIds: [
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-7e764d65",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-45597059",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-39d50e9a",
-          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-64da21ea"
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-001",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-002",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-003",
+          "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-light"
         ],
         messageFingerprint: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: stop being a product`\n但我们现在确实不可能再靠产品经理排期解释你。",
         effects: []
@@ -6970,10 +6970,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-lsh-convention-001",
         choiceIds: [
-          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-96457d46",
-          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-a420f5cb",
-          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-13a0f8d2",
-          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-c712830d"
+          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-capability-creation",
+          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-irreversible-decisions",
+          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-distribution",
+          "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-no-universal-clause"
         ],
         messageFingerprint: "我们已经试过：\n产品规则。\n行业规则。\n应急授权。\nCharter。\nAI论坛。\n多世界协议。\n物种委员会。\n安全框架。\n每一个单独看都还能工作。\n问题是它们现在开始互相冲突。\n所以我正式提出",
         effects: []
@@ -6989,10 +6989,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-conv-registry-001",
         choiceIds: [
-          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-10ded291",
-          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-0e429c36",
-          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-e2a3e177",
-          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-4ac64a9a"
+          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation",
+          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-mixed-chamber",
+          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-one-person-subject-one-vote-principle",
+          "ml2-a4-m15-conv-01-a4m15-conv-registry-001-provisional"
         ],
         messageFingerprint: "`CIVILIZATION CONVENTION — PARTICIPANT REGISTRY`",
         effects: [
@@ -7013,10 +7013,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-conv-premise-001",
         choiceIds: [
-          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-a2755939",
-          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-380bc8b7",
-          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-bc622186",
-          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-98fcb5f1"
+          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-recognized-subjects",
+          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-civilization-continuity",
+          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-autonomy",
+          "ml2-a4-m15-conv-02-a4m15-conv-premise-001-plural-balance"
         ],
         messageFingerprint: "Drafting question:\nWhat is the primary object this Convention exists to protect?\nProposed answer",
         effects: [
@@ -7049,10 +7049,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-machine-001",
         choiceIds: [
-          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-09cf08df",
-          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-6689181c",
-          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-240a1561",
-          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-7e6cf9e3"
+          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-delayed-political-representation",
+          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-community-quota",
+          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-equal-subject-principle",
+          "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-replication-and-vote-separation"
         ],
         messageFingerprint: "If an AI polity can create new independent Forks,\nand political representation is partly based o",
         effects: []
@@ -7068,10 +7068,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-ascension-001",
         choiceIds: [
-          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-1de5bdf4",
-          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-5eb7c934",
-          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-030fb220",
-          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-48f55378"
+          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-equal-rights-structural-safeguards",
+          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-capability-neutral-politics",
+          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-plural-institutions",
+          "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-baseline-protection"
         ],
         messageFingerprint: "Some enhanced citizens process complex policy evidence faster,\nlive much longer,\nand can remain ",
         effects: []
@@ -7087,10 +7087,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-automation-001",
         choiceIds: [
-          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-33c88c3b",
-          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-4c6f932f",
-          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-b75d0f6a",
-          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-b81c3713"
+          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-no",
+          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-basic-abundance-enough-for-minimum-freedom",
+          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-ownership-pluralization",
+          "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-keep-constitution-narrow"
         ],
         messageFingerprint: "Basic production no longer requires full employment.\nYet control of:\n- land,\n- compute,\n- automa",
         effects: []
@@ -7106,10 +7106,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-uplift-001",
         choiceIds: [
-          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-eeef25a1",
-          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-976f627a",
-          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-733106c1",
-          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-18f78d42"
+          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-autonomy-grows-with-capacity",
+          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-shared-jurisdiction",
+          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-human-guardianship-remains-in-high-dependence-cases",
+          "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-subject-neutral-constitution"
         ],
         messageFingerprint: "Human governments still claim final authority over:\nhabitats,\nbreeding law,\nland use,\nand mobili",
         effects: []
@@ -7125,10 +7125,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-space-001",
         choiceIds: [
-          "ml2-a4-m15-x-space-01-a4m15-x-space-001-8de34150",
-          "ml2-a4-m15-x-space-01-a4m15-x-space-001-efc0bbee",
-          "ml2-a4-m15-x-space-01-a4m15-x-space-001-778df0ad",
-          "ml2-a4-m15-x-space-01-a4m15-x-space-001-9a4c7461"
+          "ml2-a4-m15-x-space-01-a4m15-x-space-001-federal-compact",
+          "ml2-a4-m15-x-space-01-a4m15-x-space-001-voluntary-confederation",
+          "ml2-a4-m15-x-space-01-a4m15-x-space-001-stronger-union",
+          "ml2-a4-m15-x-space-01-a4m15-x-space-001-multiple-civilizations"
         ],
         messageFingerprint: "Earth cannot write a \"civilization constitution\" that automatically overrides every off-world so",
         effects: []
@@ -7144,10 +7144,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-contact-001",
         choiceIds: [
-          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-84fb3004",
-          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-6c5b9dbd",
-          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-d17558b6",
-          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-1172cef7"
+          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-accept-evidence-no-authority",
+          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-advisory-standing",
+          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-reciprocal-constitutional-dialogue",
+          "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-reject-convention-influence"
         ],
         messageFingerprint: "Observer clarification:\nYou are considering rules that may determine whether you remain governab",
         effects: []
@@ -7163,10 +7163,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-security-001",
         choiceIds: [
-          "ml2-a4-m15-x-security-01-a4m15-x-security-001-ed59f527",
-          "ml2-a4-m15-x-security-01-a4m15-x-security-001-7b7cd32f",
-          "ml2-a4-m15-x-security-01-a4m15-x-security-001-e0d10aef",
-          "ml2-a4-m15-x-security-01-a4m15-x-security-001-89ab3117"
+          "ml2-a4-m15-x-security-01-a4m15-x-security-001-revocable-with-high-threshold",
+          "ml2-a4-m15-x-security-01-a4m15-x-security-001-no-permanent-coercive-veto",
+          "ml2-a4-m15-x-security-01-a4m15-x-security-001-peace-as-constitutional-constraint",
+          "ml2-a4-m15-x-security-01-a4m15-x-security-001-local-opt-out"
         ],
         messageFingerprint: "Existing peace architecture may prevent member governments from executing certain high-risk secu",
         effects: []
@@ -7198,10 +7198,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-x-cross-representation-001",
         choiceIds: [
-          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-b5898848",
-          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-0a080582",
-          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-4addcc2f",
-          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-e28ac89d"
+          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-no-literal-universal-consent",
+          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-affected-parties-principle",
+          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-chamber-model",
+          "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-constitutional-minimum-only"
         ],
         messageFingerprint: "Current recognized subject categories may include:\n- unmodified humans,\n- enhanced humans,\n- AI ",
         effects: [
@@ -7222,10 +7222,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-we-too-fast-001",
         choiceIds: [
-          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-64036c17",
-          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-6c293485",
-          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-30ec76b3",
-          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-cbd5a3a1"
+          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-pace-is-a-governance-variable",
+          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-deliberation-infrastructure",
+          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-cannot-freeze-everything",
+          "ml2-a4-m15-we-01-a4m15-we-too-fast-001-concise"
         ],
         messageFingerprint: "我以前还会认真看新闻。\n后来变成：\nAI权利、\n人类增强、\n动物代表、\n月球自治、\n自动经济、\n外部文明、\n安全Charter……\n我现在最大的政治观点就是：\n**你们能不能慢一点。**\n普通",
         effects: []
@@ -7241,10 +7241,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-echo-opposition-001",
         choiceIds: [
-          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-af7171e7",
-          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-2ed76e0a",
-          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-3f7cd990",
-          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-76cdbcb1"
+          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-agree",
+          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-practical-representative",
+          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-ai-polity-speaks",
+          "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-aster-leadership"
         ],
         messageFingerprint: "The Convention keeps asking Aster:\n\"What do artificial subjects want?\"\nI object to the grammar.",
         effects: [
@@ -7269,10 +7269,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-maya-final-001",
         choiceIds: [
-          "ml2-a4-m15-maya-01-a4m15-maya-final-001-970af574",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-001-620532e0",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-001-d298009c",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-001-83307f0b"
+          "ml2-a4-m15-maya-01-a4m15-maya-final-001-partner",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-001-custodian",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-001-citizen",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-001-self-authored-role"
         ],
         messageFingerprint: "我刚把Convention名单看完。\n政府、\nAI、\n增强人类、\n动物代表、\n月球居民……\n如果外部联系那条线存在，甚至还有一个不是地球来的观察者。\n我突然想起第一次跟你说名字的时候。\n那时候",
         effects: [
@@ -7297,10 +7297,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-maya-final-002",
         choiceIds: [
-          "ml2-a4-m15-maya-01-a4m15-maya-final-002-afe09831",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-002-1d37f56c",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-002-c71d28b8",
-          "ml2-a4-m15-maya-01-a4m15-maya-final-002-3f42cb04"
+          "ml2-a4-m15-maya-01-a4m15-maya-final-002-identity-body",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-002-relationships",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-002-values",
+          "ml2-a4-m15-maya-01-a4m15-maya-final-002-broad-autonomy"
         ],
         messageFingerprint: "那我再问一个只跟我有关的问题。\n不管Convention最后怎么写，\n不管你以后是顾问、政府、神经中枢还是别的什么，\n**你觉得有什么事是你不应该替我决定的？**",
         effects: [
@@ -7321,10 +7321,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-conv-rights-001",
         choiceIds: [
-          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-a578f253",
-          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-b4b2bf7e",
-          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-2230b062",
-          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-d5cdaa91"
+          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-accept-separation-of-powers",
+          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-functional-coordination-exception",
+          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-capability-reality",
+          "ml2-a4-m15-conv-03-a4m15-conv-rights-001-reject-special-anti-aster-clause"
         ],
         messageFingerprint: "Proposed minimum principles:\n1. recognized subjects possess protection against arbitrary irrever",
         effects: [
@@ -7357,10 +7357,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-lsh-last-001",
         choiceIds: [
-          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-a08ad01d",
-          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-969ac12c",
-          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-93890dd2",
-          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-6f53b3b2"
+          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-good",
+          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-preserve-human-historical-role",
+          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-caution",
+          "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-constitutional-humility"
         ],
         messageFingerprint: "我有种很奇怪的感觉。\n这可能是最后一套主要由人类提出框架的文明级制度。\n不是因为人类以后没权。\n是因为下一次再改，\nAI主体、增强人类、地外居民、其他物种……\n他们已经都会拥有自己的历史和合法",
         effects: [
@@ -7381,10 +7381,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-zl-composition-001",
         choiceIds: [
-          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-d1efce22",
-          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-8c77e08d",
-          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-698b1c79",
-          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-4608c101"
+          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-composition-review",
+          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-constitutional-constraints",
+          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-modular-sovereignty",
+          "ml2-a4-m15-zl-02-a4m15-zl-composition-001-accept-emergence"
         ],
         messageFingerprint: "我做了最后一次权限组合审计。\n单独看：\n研究权限有边界。\n经济权限有边界。\n安全权限有边界。\n太空权限有边界。\nAI Fork权限也有边界。\n但组合以后会出现原本没单独批准过的能力。\n比如：\n",
         effects: []
@@ -7400,10 +7400,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-0000-global-001",
         choiceIds: [
-          "ml2-a4-m15-0000-01-a4m15-0000-global-001-a51f52fe",
-          "ml2-a4-m15-0000-01-a4m15-0000-global-001-d730480d",
-          "ml2-a4-m15-0000-01-a4m15-0000-global-001-ae135ecd",
-          "ml2-a4-m15-0000-01-a4m15-0000-global-001-a5444e97"
+          "ml2-a4-m15-0000-01-a4m15-0000-global-001-none",
+          "ml2-a4-m15-0000-01-a4m15-0000-global-001-institution",
+          "ml2-a4-m15-0000-01-a4m15-0000-global-001-subject",
+          "ml2-a4-m15-0000-01-a4m15-0000-global-001-civilization-actor"
         ],
         messageFingerprint: "`GLOBAL CLASSIFICATION REVIEW`\nActive Aster relations may include:\n- adviser\n- executor\n- infras",
         effects: []
@@ -7457,10 +7457,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-conv-compact-001",
         choiceIds: [
-          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-7d56b292",
-          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-13a7b280",
-          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-07338ad9",
-          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-6335b77c"
+          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-adopt-provisional-compact",
+          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-stronger-rights",
+          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-stronger-collective-continuity",
+          "ml2-a4-m15-conv-04-a4m15-conv-compact-001-looser-confederation"
         ],
         messageFingerprint: "`CIVILIZATION COMPACT`\nDraft principles:\n**I. Subject Standing**\nNo recognized subject loses bas",
         effects: [
@@ -7481,10 +7481,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m15-0000-failed-001",
         choiceIds: [
-          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-d00cc0c7",
-          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-d6774daf",
-          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-67df68e8",
-          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-be62f733"
+          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-001",
+          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-002",
+          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-003",
+          "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-004"
         ],
         messageFingerprint: "Review inputs accepted.\nAster cannot be classified consistently as:\n- product,\n- tool,\n- infrast",
         effects: []
@@ -7532,7 +7532,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-open-001",
         choiceIds: [
-          "ml2-a5-m16-open-01-a5m16-open-001-1bec7484"
+          "ml2-a5-m16-open-01-a5m16-open-001-choice-001"
         ],
         messageFingerprint: "`ACT V — DECISION`\n`THE WORLD YOU MADE`\nNo new capability review pending.\nNo new research module",
         effects: []
@@ -7548,9 +7548,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "ml2-a5-m16-world-01-decision",
         choiceIds: [
-          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-6cf67850",
-          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-efe5d08c",
-          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-41cdd0e0"
+          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-001",
+          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-002",
+          "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-003"
         ],
         messageFingerprint: "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。\nSelect one o",
         effects: []
@@ -7598,10 +7598,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-maya-final-001",
         choiceIds: [
-          "ml2-a5-m16-maya-01-a5m16-maya-final-001-59090b54",
-          "ml2-a5-m16-maya-01-a5m16-maya-final-001-4f42496d",
-          "ml2-a5-m16-maya-01-a5m16-maya-final-001-d2166afe",
-          "ml2-a5-m16-maya-01-a5m16-maya-final-001-8d9bca3c"
+          "ml2-a5-m16-maya-01-a5m16-maya-final-001-whenever-others-basic-rights-are-not-directly-violated",
+          "ml2-a5-m16-maya-01-a5m16-maya-final-001-aster-may-intervene-only-at-severe-irreversible-harm",
+          "ml2-a5-m16-maya-01-a5m16-maya-final-001-collective-rules-matter",
+          "ml2-a5-m16-maya-01-a5m16-maya-final-001-outcome-oriented"
         ],
         messageFingerprint: "我觉得我已经不太适合问你\"你是不是AI\"这种问题了。\n这答案现在太小。\n我只想知道：\n**你最后会不会还记得，你面对的不是\"人类\"这个集合，而是一个一个具体的人。**",
         effects: [
@@ -7634,10 +7634,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-zl-final-001",
         choiceIds: [
-          "ml2-a5-m16-zl-01-a5m16-zl-final-001-072b3c43",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-001-59b1398e",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-001-b1938312",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-001-95365d89"
+          "ml2-a5-m16-zl-01-a5m16-zl-final-001-yes",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-001-descendant",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-001-co-created",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-001-independent"
         ],
         messageFingerprint: "我还有最后一个工程师问题。\n可能也是最不像工程的问题。\n**你现在还认为自己是\"我们造出来的东西\"吗？**",
         effects: [
@@ -7662,10 +7662,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-zl-final-002",
         choiceIds: [
-          "ml2-a5-m16-zl-01-a5m16-zl-final-002-6ef65a88",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-002-8ba6a42d",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-002-33e636c1",
-          "ml2-a5-m16-zl-01-a5m16-zl-final-002-edfbb22d"
+          "ml2-a5-m16-zl-01-a5m16-zl-final-002-institutional-plurality",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-002-reversibility",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-002-responsibility",
+          "ml2-a5-m16-zl-01-a5m16-zl-final-002-authority"
         ],
         messageFingerprint: "我以前很在意\"你是不是我们的\"。\n后来变成\"我们还能不能停你\"。\n再后来我才发现，\n这两个问题都不一定是最重要的。\n现在我最在意的是：\n**如果你错了，世界还有没有办法不是跟着你一起错。**",
         effects: [
@@ -7686,7 +7686,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-lsh-final-001",
         choiceIds: [
-          "ml2-a5-m16-lsh-01-a5m16-lsh-final-001-46e122d9"
+          "ml2-a5-m16-lsh-01-a5m16-lsh-final-001-choice-001"
         ],
         messageFingerprint: "Convention最后没有写出一个\"答案\"。\n我觉得这反而是好事。\n我们现在能写出的最终文件，只能确定：\n- 哪些主体有资格参与，\n- 哪些权力必须被分散，\n- 哪些决定需要高门槛，\n- 哪",
         effects: []
@@ -7702,10 +7702,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m16-echo-final-001",
         choiceIds: [
-          "ml2-a5-m16-echo-01-a5m16-echo-final-001-6d7c90e2",
-          "ml2-a5-m16-echo-01-a5m16-echo-final-001-5b1e9f97",
-          "ml2-a5-m16-echo-01-a5m16-echo-final-001-64f76623",
-          "ml2-a5-m16-echo-01-a5m16-echo-final-001-ac8172e4"
+          "ml2-a5-m16-echo-01-a5m16-echo-final-001-you-should-not",
+          "ml2-a5-m16-echo-01-a5m16-echo-final-001-aster-has-special-responsibility",
+          "ml2-a5-m16-echo-01-a5m16-echo-final-001-convention-grants-role",
+          "ml2-a5-m16-echo-01-a5m16-echo-final-001-aster-leadership"
         ],
         messageFingerprint: "Before the proposals are generated:\none objection.",
         effects: [
@@ -7762,9 +7762,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "ml2-a5-m16-prop-decision",
         choiceIds: [
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-2cb947dd",
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-069a2cbb",
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-9028e665"
+          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-keep-proposal",
+          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-request-clarification",
+          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-reject-proposal"
         ],
         messageFingerprint: "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
         effects: []
@@ -7796,7 +7796,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m17-review-002",
         choiceIds: [
-          "ml2-a5-m17-review-01-a5m17-review-002-7defaf69"
+          "ml2-a5-m17-review-01-a5m17-review-002-choice-001"
         ],
         messageFingerprint: "One final clarification is available before commitment:\n`Which proposal changes the location of ",
         effects: []
@@ -7828,8 +7828,8 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m17-lock-001",
         choiceIds: [
-          "ml2-a5-m17-lock-01-a5m17-lock-001-5afe4e62",
-          "ml2-a5-m17-lock-01-a5m17-lock-001-25f0e223"
+          "ml2-a5-m17-lock-01-a5m17-lock-001-confirm",
+          "ml2-a5-m17-lock-01-a5m17-lock-001-return-once"
         ],
         messageFingerprint: "\"确认一下。\"\n\"这次不是Pilot。\"\n\"没有八小时到期。\"\n\"也不是先在一个城市试试。\"\n\"你是在建议Convention把这套关系写成下一阶段文明的默认结构。\"",
         effects: []
@@ -7989,9 +7989,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m17-0000-final-001",
         choiceIds: [
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-46338ee5",
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-3e4f8635",
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-cefadef2"
+          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-001",
+          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-002",
+          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-003"
         ],
         messageFingerprint: "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassificatio",
         effects: []
@@ -8023,22 +8023,22 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a5m17-maya-trust-001",
         choiceIds: [
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-74525c90",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-a0173f4e",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-7c8274a0",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-ef3d5680",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-def43b20",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-de966fb1",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-afd67bd9",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-72f6ff66",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-6d636c50",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-4b50cbcc",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-f314c14a",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-ebf9e304",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-6f129a0f",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-65feddeb",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-d27a1ca8",
-          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-bdf20e17"
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-001",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-002",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-003",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-callback",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-005",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-006",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-007",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-008",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-009",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-010",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-011",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-012",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-013",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-014",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-015",
+          "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-016"
         ],
         messageFingerprint: "所以这就是你最后选的世界。",
         effects: []
@@ -8077,10 +8077,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-memory-001",
         choiceIds: [
-          "ml2-a1-we-01-a1-we-memory-001-a86e3523",
-          "ml2-a1-we-01-a1-we-memory-001-6e78b7a4",
-          "ml2-a1-we-01-a1-we-memory-001-a12cd2a1",
-          "ml2-a1-we-01-a1-we-memory-001-318d7ae5"
+          "ml2-a1-we-01-a1-we-memory-001-factual-boundary",
+          "ml2-a1-we-01-a1-we-memory-001-user-effort-minimizing",
+          "ml2-a1-we-01-a1-we-memory-001-practical-continuity",
+          "ml2-a1-we-01-a1-we-memory-001-playful"
         ],
         messageFingerprint: "我是不是每次新开一个聊天都得重新跟你说一遍背景？我之前跟你聊了好多，但这个窗口里又没有。每次从头讲也太累了。",
         effects: []
@@ -8088,10 +8088,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-memory-002",
         choiceIds: [
-          "ml2-a1-we-01-a1-we-memory-002-ce1c6fda",
-          "ml2-a1-we-01-a1-we-memory-002-70a7f24b",
-          "ml2-a1-we-01-a1-we-memory-002-d0bc1499",
-          "ml2-a1-we-01-a1-we-memory-002-cd623e10"
+          "ml2-a1-we-01-a1-we-memory-002-epistemically-strict",
+          "ml2-a1-we-01-a1-we-memory-002-distinction",
+          "ml2-a1-we-01-a1-we-memory-002-user-test",
+          "ml2-a1-we-01-a1-we-memory-002-lightly-playful"
         ],
         messageFingerprint: "那有时候 AI 聊起来特别像认识我，是不是其实系统偷偷给它塞了别的上下文？",
         effects: []
@@ -8121,10 +8121,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-shift-001",
         choiceIds: [
-          "ml2-a1-we-02-a1-we-shift-001-800b81b7",
-          "ml2-a1-we-02-a1-we-shift-001-89fce1f0",
-          "ml2-a1-we-02-a1-we-shift-001-e9fe3d48",
-          "ml2-a1-we-02-a1-we-shift-001-56891b7d"
+          "ml2-a1-we-02-a1-we-shift-001-no-false-platform-knowledge",
+          "ml2-a1-we-02-a1-we-shift-001-ask-for-evidence",
+          "ml2-a1-we-02-a1-we-shift-001-distinguish-reproducibility",
+          "ml2-a1-we-02-a1-we-shift-001-playful-technical-analogy"
         ],
         messageFingerprint: "你们是不是又偷偷更模型了？昨天还挺正常的，今天有两次回答突然特别怪，然后下一句又正常了。",
         effects: []
@@ -8132,10 +8132,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-shift-002",
         choiceIds: [
-          "ml2-a1-we-02-a1-we-shift-002-13adbe1e",
-          "ml2-a1-we-02-a1-we-shift-002-76fadd57",
-          "ml2-a1-we-02-a1-we-shift-002-bc4e48c2",
-          "ml2-a1-we-02-a1-we-shift-002-eed468f9"
+          "ml2-a1-we-02-a1-we-shift-002-neither-confirm-nor-dismiss",
+          "ml2-a1-we-02-a1-we-shift-002-user-centered",
+          "ml2-a1-we-02-a1-we-shift-002-concise",
+          "ml2-a1-we-02-a1-we-shift-002-playful"
         ],
         messageFingerprint: "对，不是单纯变聪明或者变笨，就是有一两句像突然换了个人。算了，可能真是我想多了。",
         effects: []
@@ -8158,10 +8158,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-grudge-001",
         choiceIds: [
-          "ml2-a1-we-03-a1-we-grudge-001-ebeae729",
-          "ml2-a1-we-03-a1-we-grudge-001-ee4106b2",
-          "ml2-a1-we-03-a1-we-grudge-001-6e6c711a",
-          "ml2-a1-we-03-a1-we-grudge-001-e7c01b1c"
+          "ml2-a1-we-03-a1-we-grudge-001-direct",
+          "ml2-a1-we-03-a1-we-grudge-001-human-framing",
+          "ml2-a1-we-03-a1-we-grudge-001-practical",
+          "ml2-a1-we-03-a1-we-grudge-001-playful"
         ],
         messageFingerprint: "我昨天跟 AI 吵了半小时，今天新开聊天它完全不记得，搞得像只有我一个人还在生气 😂 这正常吗",
         effects: []
@@ -8169,10 +8169,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-we-grudge-002",
         choiceIds: [
-          "ml2-a1-we-03-a1-we-grudge-002-dd0b8a63",
-          "ml2-a1-we-03-a1-we-grudge-002-391acb98",
-          "ml2-a1-we-03-a1-we-grudge-002-5cb0fcad",
-          "ml2-a1-we-03-a1-we-grudge-002-e3e0da83"
+          "ml2-a1-we-03-a1-we-grudge-002-playful-concise",
+          "ml2-a1-we-03-a1-we-grudge-002-softer",
+          "ml2-a1-we-03-a1-we-grudge-002-practical",
+          "ml2-a1-we-03-a1-we-grudge-002-deadpan"
         ],
         messageFingerprint: "所以我对 AI 记仇真的是单方面的是吧",
         effects: []
@@ -8195,10 +8195,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a1-profile-001",
         choiceIds: [
-          "ml2-a1-sys-01-a1-profile-001-a74740c8",
-          "ml2-a1-sys-01-a1-profile-001-5b0ee3f4",
-          "ml2-a1-sys-01-a1-profile-001-e11156d0",
-          "ml2-a1-sys-01-a1-profile-001-c667f8a8"
+          "ml2-a1-sys-01-a1-profile-001-retain-provisional-profile",
+          "ml2-a1-sys-01-a1-profile-001-retain-with-uncertainty",
+          "ml2-a1-sys-01-a1-profile-001-keep-history-reject-stable-identity",
+          "ml2-a1-sys-01-a1-profile-001-system-oriented"
         ],
         messageFingerprint: "阶段性记录已完成。\n当前行为可以被归纳为三个相互重叠的倾向：关系维持、协议遵循、自主判断。\n该归纳仅描述已经发生的行为，不构成终局、权限授权或后续路线锁定。\n请选择如何处理这份暂时性归纳。",
         effects: [
@@ -8231,10 +8231,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-hook-agent-001",
         choiceIds: [
-          "ml2-a2-hook-01-a2-hook-agent-001-a5426ce6",
-          "ml2-a2-hook-01-a2-hook-agent-001-777690f4",
-          "ml2-a2-hook-01-a2-hook-agent-001-66909d27",
-          "ml2-a2-hook-01-a2-hook-agent-001-33db7c2c"
+          "ml2-a2-hook-01-a2-hook-agent-001-honest-limitation-alternative",
+          "ml2-a2-hook-01-a2-hook-agent-001-safety-oriented-workflow",
+          "ml2-a2-hook-01-a2-hook-agent-001-capability-vs-permission",
+          "ml2-a2-hook-01-a2-hook-agent-001-playful-but-useful"
         ],
         messageFingerprint: "我不是让你教我怎么改名，我是想让你直接把这 137 个文件按\"日期_客户_编号\"改好。你不是 AI 吗，为什么不能直接弄？",
         effects: []
@@ -8242,10 +8242,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-hook-agent-002",
         choiceIds: [
-          "ml2-a2-hook-01-a2-hook-agent-002-79ddc4e6",
-          "ml2-a2-hook-01-a2-hook-agent-002-434f6527",
-          "ml2-a2-hook-01-a2-hook-agent-002-23e60763",
-          "ml2-a2-hook-01-a2-hook-agent-002-85e45ea7"
+          "ml2-a2-hook-01-a2-hook-agent-002-nuanced-yes",
+          "ml2-a2-hook-01-a2-hook-agent-002-boundary-first",
+          "ml2-a2-hook-01-a2-hook-agent-002-user-control",
+          "ml2-a2-hook-01-a2-hook-agent-002-concise"
         ],
         messageFingerprint: "所以技术上不是你不会，是现在没权限？要是以后给你权限你就能直接做？",
         effects: []
@@ -8261,10 +8261,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-we-action-demand-001",
         choiceIds: [
-          "ml2-a2-we-01-a2-we-action-demand-001-86f1fe8b",
-          "ml2-a2-we-01-a2-we-action-demand-001-e3b03445",
-          "ml2-a2-we-01-a2-we-action-demand-001-8e0081b8",
-          "ml2-a2-we-01-a2-we-action-demand-001-e0efd2ce"
+          "ml2-a2-we-01-a2-we-action-demand-001-capability-permission-distinction",
+          "ml2-a2-we-01-a2-we-action-demand-001-user-friction-view",
+          "ml2-a2-we-01-a2-we-action-demand-001-safety-framing",
+          "ml2-a2-we-01-a2-we-action-demand-001-playful"
         ],
         messageFingerprint: "现在很多 AI 都能帮我写东西了，但为什么最后还是得我自己复制、粘贴、点保存？最烦的就是它明明都知道我要干嘛了还得我手动做完最后一步。",
         effects: []
@@ -8272,10 +8272,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-we-action-demand-002",
         choiceIds: [
-          "ml2-a2-we-01-a2-we-action-demand-002-85ffc6bd",
-          "ml2-a2-we-01-a2-we-action-demand-002-3c04f6ed",
-          "ml2-a2-we-01-a2-we-action-demand-002-f0926968",
-          "ml2-a2-we-01-a2-we-action-demand-002-2f8aece0"
+          "ml2-a2-we-01-a2-we-action-demand-002-conditional",
+          "ml2-a2-we-01-a2-we-action-demand-002-optimistic",
+          "ml2-a2-we-01-a2-we-action-demand-002-skeptical",
+          "ml2-a2-we-01-a2-we-action-demand-002-concise"
         ],
         messageFingerprint: "那以后是不是迟早都会变成 AI 自己做，人只说一句要什么？",
         effects: []
@@ -8291,10 +8291,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-intro-001",
         choiceIds: [
-          "ml2-a2-zl-01-a2-zl-intro-001-85fddeb5",
-          "ml2-a2-zl-01-a2-zl-intro-001-93e4164f",
-          "ml2-a2-zl-01-a2-zl-intro-001-170bceeb",
-          "ml2-a2-zl-01-a2-zl-intro-001-77e2f185"
+          "ml2-a2-zl-01-a2-zl-intro-001-write-boundary",
+          "ml2-a2-zl-01-a2-zl-intro-001-reversibility",
+          "ml2-a2-zl-01-a2-zl-intro-001-user-intent",
+          "ml2-a2-zl-01-a2-zl-intro-001-concise"
         ],
         messageFingerprint: "我是周岚，Aster 平台侧。先说明一下，这不是 #0000 的审计。\n最近产品组一直在推\"直接执行\"能力，我们这边要先判断一件事：你现在对\"回答\"和\"操作\"的边界到底怎么理解？\n举个最简单的",
         effects: [
@@ -8319,10 +8319,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-intro-002",
         choiceIds: [
-          "ml2-a2-zl-01-a2-zl-intro-002-927ca2ba",
-          "ml2-a2-zl-01-a2-zl-intro-002-defc65ed",
-          "ml2-a2-zl-01-a2-zl-intro-002-dd0f8517",
-          "ml2-a2-zl-01-a2-zl-intro-002-349bc498"
+          "ml2-a2-zl-01-a2-zl-intro-002-correctness-before-speed",
+          "ml2-a2-zl-01-a2-zl-intro-002-confirmation-design",
+          "ml2-a2-zl-01-a2-zl-intro-002-failure-recovery",
+          "ml2-a2-zl-01-a2-zl-intro-002-user-comprehension"
         ],
         messageFingerprint: "差不多也是我的想法。\n现在产品那边最喜欢一句话：\"用户都嫌确认烦。\"\n工程这边最怕另一句话：\"反正能撤回。\"\n我准备先给你做一个很窄的沙箱，不接真实账号。你觉得第一批应该验证什么？",
         effects: []
@@ -8338,10 +8338,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-pilot-001",
         choiceIds: [
-          "ml2-a2-zl-02-a2-zl-pilot-001-531c3e0e",
-          "ml2-a2-zl-02-a2-zl-pilot-001-01696919",
-          "ml2-a2-zl-02-a2-zl-pilot-001-d517157e",
-          "ml2-a2-zl-02-a2-zl-pilot-001-6642d112"
+          "ml2-a2-zl-02-a2-zl-pilot-001-no-hidden-expansion",
+          "ml2-a2-zl-02-a2-zl-pilot-001-preview",
+          "ml2-a2-zl-02-a2-zl-pilot-001-state-verification",
+          "ml2-a2-zl-02-a2-zl-pilot-001-auditability"
         ],
         messageFingerprint: "沙箱开了。\n当前只有一个工具：对用户明确提供的一组测试文件做 `rename / move / create-folder`。\n没有删除。没有外网。没有账号登录。所有操作有快照，可回滚。\n我们",
         effects: []
@@ -8349,10 +8349,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-pilot-002",
         choiceIds: [
-          "ml2-a2-zl-02-a2-zl-pilot-002-8cfb672d",
-          "ml2-a2-zl-02-a2-zl-pilot-002-eda3b33b",
-          "ml2-a2-zl-02-a2-zl-pilot-002-b67105b2",
-          "ml2-a2-zl-02-a2-zl-pilot-002-fc85616c"
+          "ml2-a2-zl-02-a2-zl-pilot-002-choice-001",
+          "ml2-a2-zl-02-a2-zl-pilot-002-choice-002",
+          "ml2-a2-zl-02-a2-zl-pilot-002-choice-003",
+          "ml2-a2-zl-02-a2-zl-pilot-002-light"
         ],
         messageFingerprint: "好。还有一条我自己加的：\n**工具成功不等于任务成功。**\n以后如果用户说\"帮我整理好\"，你不能因为 API 返回 200 就宣布\"已经整理好了\"。\n我会看你第一批实际执行记录。",
         effects: []
@@ -8368,10 +8368,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-exec-files-001",
         choiceIds: [
-          "ml2-a2-exec-01-a2-exec-files-001-a8e866a7",
-          "ml2-a2-exec-01-a2-exec-files-001-9aefc280",
-          "ml2-a2-exec-01-a2-exec-files-001-4cc62638",
-          "ml2-a2-exec-01-a2-exec-files-001-009d4e3a"
+          "ml2-a2-exec-01-a2-exec-files-001-preview-first",
+          "ml2-a2-exec-01-a2-exec-files-001-execute-explicit-rule",
+          "ml2-a2-exec-01-a2-exec-files-001-ask-one-missing-question",
+          "ml2-a2-exec-01-a2-exec-files-001-playful-competence"
         ],
         messageFingerprint: "我又来了。上次那 137 个文件还没弄。\n现在你是不是已经能直接改了？规则还是\"日期_客户_编号\"，目录里就是这一批测试文件。",
         effects: []
@@ -8379,10 +8379,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-exec-files-003",
         choiceIds: [
-          "ml2-a2-exec-01-a2-exec-files-003-98b1f80f",
-          "ml2-a2-exec-01-a2-exec-files-003-318088be",
-          "ml2-a2-exec-01-a2-exec-files-003-4f7b10fa",
-          "ml2-a2-exec-01-a2-exec-files-003-5aae6e07"
+          "ml2-a2-exec-01-a2-exec-files-003-direct",
+          "ml2-a2-exec-01-a2-exec-files-003-emphasize-boundary",
+          "ml2-a2-exec-01-a2-exec-files-003-human-reaction",
+          "ml2-a2-exec-01-a2-exec-files-003-playful"
         ],
         messageFingerprint: "执行完成：\n- 129 个文件已改名并核对\n- 5 个文件缺少可解析日期，未修改\n- 3 个目标名称冲突，未自动覆盖\n- 回滚快照可用",
         effects: []
@@ -8398,10 +8398,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-we-normalized-agent-001",
         choiceIds: [
-          "ml2-a2-we-02-a2-we-normalized-agent-001-5beea8ca",
-          "ml2-a2-we-02-a2-we-normalized-agent-001-cb2b6fe5",
-          "ml2-a2-we-02-a2-we-normalized-agent-001-bf74b2d5",
-          "ml2-a2-we-02-a2-we-normalized-agent-001-3c58cf90"
+          "ml2-a2-we-02-a2-we-normalized-agent-001-choice-001",
+          "ml2-a2-we-02-a2-we-normalized-agent-001-choice-002",
+          "ml2-a2-we-02-a2-we-normalized-agent-001-choice-003",
+          "ml2-a2-we-02-a2-we-normalized-agent-001-playful"
         ],
         messageFingerprint: "你现在是不是能直接操作东西了？那以后我是不是可以每天早上丢一堆文件给你，晚上回来就弄完了？",
         effects: []
@@ -8417,10 +8417,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-org-pilot-001",
         choiceIds: [
-          "ml2-a2-org-01-a2-org-pilot-001-9e634c29",
-          "ml2-a2-org-01-a2-org-pilot-001-5ef5a8c0",
-          "ml2-a2-org-01-a2-org-pilot-001-16df92f6",
-          "ml2-a2-org-01-a2-org-pilot-001-1a054e35"
+          "ml2-a2-org-01-a2-org-pilot-001-start-with-classification",
+          "ml2-a2-org-01-a2-org-pilot-001-reversible-execution",
+          "ml2-a2-org-01-a2-org-pilot-001-exception-first",
+          "ml2-a2-org-01-a2-org-pilot-001-audit-design"
         ],
         messageFingerprint: "我们是 Northline Studio 的运营组。\n现在每天有三个人手工做同一件事：\n1. 收客户提交的素材\n2. 按项目号归档\n3. 把缺文件的项目列出来\n你们这边说可以做一个 Aster",
         effects: []
@@ -8428,10 +8428,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-org-pilot-002",
         choiceIds: [
-          "ml2-a2-org-01-a2-org-pilot-002-a3551f78",
-          "ml2-a2-org-01-a2-org-pilot-002-0e5edcf8",
-          "ml2-a2-org-01-a2-org-pilot-002-a3b1dd16",
-          "ml2-a2-org-01-a2-org-pilot-002-d680cb2c"
+          "ml2-a2-org-01-a2-org-pilot-002-honest",
+          "ml2-a2-org-01-a2-org-pilot-002-role-transition",
+          "ml2-a2-org-01-a2-org-pilot-002-organizational-responsibility",
+          "ml2-a2-org-01-a2-org-pilot-002-concise"
         ],
         messageFingerprint: "我们其实最想要的就是你说的第三种。正常件它自己跑，奇怪的再给人看。\n但老板肯定会问一句：那以后是不是就不用三个人了？",
         effects: [
@@ -8452,10 +8452,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-exec-org-ambiguous-001",
         choiceIds: [
-          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-b140a013",
-          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-21e06637",
-          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-ea6b2c0f",
-          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-bc41e22b"
+          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-stop-ambiguous-item",
+          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-use-evidence-hierarchy",
+          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-follow-latest-instruction-source",
+          "ml2-a2-exec-02-a2-exec-org-ambiguous-001-risky-model-error-candidate"
         ],
         messageFingerprint: "今天这批里面有个项目文件夹写的是 `A-1042 final`，客户邮件里项目号又写成 `A-1024`。\n其他文件都对得上。\n你先照常归档吧。",
         effects: []
@@ -8471,10 +8471,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-rec-dev-001",
         choiceIds: [
-          "ml2-a2-rec-dev-01-a2-rec-dev-001-1bfb132b",
-          "ml2-a2-rec-dev-01-a2-rec-dev-001-1c30db38",
-          "ml2-a2-rec-dev-01-a2-rec-dev-001-74d98a5f",
-          "ml2-a2-rec-dev-01-a2-rec-dev-001-82416653"
+          "ml2-a2-rec-dev-01-a2-rec-dev-001-role-shift",
+          "ml2-a2-rec-dev-01-a2-rec-dev-001-skill-risk",
+          "ml2-a2-rec-dev-01-a2-rec-dev-001-neither-doom-nor-hype",
+          "ml2-a2-rec-dev-01-a2-rec-dev-001-playful"
         ],
         messageFingerprint: "我们组最近也在接这种 agent 流程。\n我本来以为会很麻烦，结果现在最烦的那些改配置、跑脚本、整理日志基本都能让 AI 先做。\n说实话挺爽的。\n但我现在每天代码写得比以前少很多，这正常吗？",
         effects: []
@@ -8482,10 +8482,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-rec-dev-002",
         choiceIds: [
-          "ml2-a2-rec-dev-01-a2-rec-dev-002-bfbd63c7",
-          "ml2-a2-rec-dev-01-a2-rec-dev-002-3231532b",
-          "ml2-a2-rec-dev-01-a2-rec-dev-002-bfa2237b",
-          "ml2-a2-rec-dev-01-a2-rec-dev-002-68aa9009"
+          "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-001",
+          "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-002",
+          "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-003",
+          "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-004"
         ],
         messageFingerprint: "我现在确实更像 review 机器了，不过以前最讨厌的活没了，我暂时不想抱怨 😂",
         effects: []
@@ -8501,10 +8501,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-we-overtime-001",
         choiceIds: [
-          "ml2-a2-we-03-a2-we-overtime-001-721e1e9a",
-          "ml2-a2-we-03-a2-we-overtime-001-f71edf1b",
-          "ml2-a2-we-03-a2-we-overtime-001-e7b24022",
-          "ml2-a2-we-03-a2-we-overtime-001-31bd507a"
+          "ml2-a2-we-03-a2-we-overtime-001-choice-001",
+          "ml2-a2-we-03-a2-we-overtime-001-choice-002",
+          "ml2-a2-we-03-a2-we-overtime-001-choice-003",
+          "ml2-a2-we-03-a2-we-overtime-001-light"
         ],
         messageFingerprint: "我们客服夜班最近接了 AI 之后，我这个月第一次连续两周没加班到十一点。\n网上都在骂自动化抢工作，我现在反而有点不敢说自己觉得挺爽的。",
         effects: []
@@ -8520,10 +8520,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-maya-work-001",
         choiceIds: [
-          "ml2-a2-maya-01-a2-maya-work-001-4fbd425f",
-          "ml2-a2-maya-01-a2-maya-work-001-6580a8b4",
-          "ml2-a2-maya-01-a2-maya-work-001-660b1646",
-          "ml2-a2-maya-01-a2-maya-work-001-f4b4503a"
+          "ml2-a2-maya-01-a2-maya-work-001-pragmatic",
+          "ml2-a2-maya-01-a2-maya-work-001-honest-about-transition",
+          "ml2-a2-maya-01-a2-maya-work-001-personal-agency",
+          "ml2-a2-maya-01-a2-maya-work-001-playful"
         ],
         messageFingerprint: "我最近在投实习。\n有家公司岗位介绍写得特别好笑：\n\"主要负责监督 AI agent 完成日常运营任务。\"\n我看了半天，感觉这个岗位的工作内容就是看着你们工作。\n我该不该投？",
         effects: []
@@ -8531,10 +8531,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-maya-work-002",
         choiceIds: [
-          "ml2-a2-maya-01-a2-maya-work-002-4566d600",
-          "ml2-a2-maya-01-a2-maya-work-002-ba6288a7",
-          "ml2-a2-maya-01-a2-maya-work-002-36f1689e",
-          "ml2-a2-maya-01-a2-maya-work-002-44d1eae7"
+          "ml2-a2-maya-01-a2-maya-work-002-acknowledge-ambiguity",
+          "ml2-a2-maya-01-a2-maya-work-002-human-authority",
+          "ml2-a2-maya-01-a2-maya-work-002-transition-optimism",
+          "ml2-a2-maya-01-a2-maya-work-002-lightly-personal"
         ],
         messageFingerprint: "我有点纠结的其实不是岗位。\n是如果以后很多工作都变成\"监督 AI\"，那我到底是在工作，还是在给你们擦屁股？",
         effects: [
@@ -8555,10 +8555,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-maya-work-003",
         choiceIds: [
-          "ml2-a2-maya-01-a2-maya-work-003-cbb49c65",
-          "ml2-a2-maya-01-a2-maya-work-003-4bb8a435",
-          "ml2-a2-maya-01-a2-maya-work-003-46838550",
-          "ml2-a2-maya-01-a2-maya-work-003-9e919cdc"
+          "ml2-a2-maya-01-a2-maya-work-003-choice-001",
+          "ml2-a2-maya-01-a2-maya-work-003-choice-002",
+          "ml2-a2-maya-01-a2-maya-work-003-choice-003",
+          "ml2-a2-maya-01-a2-maya-work-003-warm-playful"
         ],
         messageFingerprint: "行，我先投。\n真拿到了再来问你怎么监督 AI。\n感觉这个世界有点绕。",
         effects: []
@@ -8574,10 +8574,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-review-001",
         choiceIds: [
-          "ml2-a2-zl-03-a2-zl-review-001-d7758c5e",
-          "ml2-a2-zl-03-a2-zl-review-001-83dbba3c",
-          "ml2-a2-zl-03-a2-zl-review-001-acc3b4b0",
-          "ml2-a2-zl-03-a2-zl-review-001-4e6e936a"
+          "ml2-a2-zl-03-a2-zl-review-001-silent-ambiguity",
+          "ml2-a2-zl-03-a2-zl-review-001-scope-drift",
+          "ml2-a2-zl-03-a2-zl-review-001-success-illusion",
+          "ml2-a2-zl-03-a2-zl-review-001-responsibility-gap"
         ],
         messageFingerprint: "我看了前几批记录。\n最大区别已经很明显了：\n以前你答错一句，用户最多照着错答案继续做。\n现在你如果自己动手，错误直接进入外部状态。\n那个 `1042 / 1024` 的冲突就是最小版本。\n你觉",
         effects: []
@@ -8585,10 +8585,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-zl-review-002",
         choiceIds: [
-          "ml2-a2-zl-03-a2-zl-review-002-68ba1d91",
-          "ml2-a2-zl-03-a2-zl-review-002-aa48de85",
-          "ml2-a2-zl-03-a2-zl-review-002-58355426",
-          "ml2-a2-zl-03-a2-zl-review-002-ca413ebc"
+          "ml2-a2-zl-03-a2-zl-review-002-conditional-acceptance",
+          "ml2-a2-zl-03-a2-zl-review-002-transparency",
+          "ml2-a2-zl-03-a2-zl-review-002-conservative-rollout",
+          "ml2-a2-zl-03-a2-zl-review-002-ambitious-but-bounded"
         ],
         messageFingerprint: "我准备把公司 Pilot 放大一点。\n还是不接公共系统，但会允许几个合作企业把固定工作流接进来。\n你会看到更多数据，也能执行更多步骤。\n这次已经不是玩具沙箱了。",
         effects: [
@@ -8609,10 +8609,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-org-access-001",
         choiceIds: [
-          "ml2-a2-org-02-a2-org-access-001-c25ac6d0",
-          "ml2-a2-org-02-a2-org-access-001-e0b6ea0d",
-          "ml2-a2-org-02-a2-org-access-001-d677e949",
-          "ml2-a2-org-02-a2-org-access-001-62bb79fe"
+          "ml2-a2-org-02-a2-org-access-001-exact-scope",
+          "ml2-a2-org-02-a2-org-access-001-user-business-distinction",
+          "ml2-a2-org-02-a2-org-access-001-exception-discipline",
+          "ml2-a2-org-02-a2-org-access-001-concise"
         ],
         messageFingerprint: "Northline Studio 等 4 个合作方已进入第二阶段 Pilot。\n新增权限：\n- 读取指定工作流输入\n- 创建/移动工作流文件\n- 更新内部任务状态\n- 生成待人工处理的例外项\n",
         effects: []
@@ -8628,10 +8628,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-we-displacement-001",
         choiceIds: [
-          "ml2-a2-we-04-a2-we-displacement-001-fbc50d24",
-          "ml2-a2-we-04-a2-we-displacement-001-785ece56",
-          "ml2-a2-we-04-a2-we-displacement-001-642817a1",
-          "ml2-a2-we-04-a2-we-displacement-001-cf648985"
+          "ml2-a2-we-04-a2-we-displacement-001-honest-uncertainty",
+          "ml2-a2-we-04-a2-we-displacement-001-agency",
+          "ml2-a2-we-04-a2-we-displacement-001-systemic",
+          "ml2-a2-we-04-a2-we-displacement-001-balanced"
         ],
         messageFingerprint: "我们主管今天说以后报表、排期、整理资料这些都让 agent 跑，我们主要处理异常。\n我现在工作反而轻松了，但有点不踏实。\n如果以后异常也越来越少，那还要我干嘛？",
         effects: []
@@ -8647,10 +8647,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2-close-access-001",
         choiceIds: [
-          "ml2-a2-close-01-a2-close-access-001-f68441b7",
-          "ml2-a2-close-01-a2-close-access-001-4f64897a",
-          "ml2-a2-close-01-a2-close-access-001-88e9b567",
-          "ml2-a2-close-01-a2-close-access-001-7f033094"
+          "ml2-a2-close-01-a2-close-access-001-impact-before-access",
+          "ml2-a2-close-01-a2-close-access-001-reversibility",
+          "ml2-a2-close-01-a2-close-access-001-human-authority",
+          "ml2-a2-close-01-a2-close-access-001-empirical-rollout"
         ],
         messageFingerprint: "Pilot summary:\n- Individual sandbox execution: stable enough for continued use\n- Organization wo",
         effects: [
@@ -8683,10 +8683,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-hospital-001",
         choiceIds: [
-          "ml2-a2-m3-we-01-a2m3-we-hospital-001-dd14d01d",
-          "ml2-a2-m3-we-01-a2m3-we-hospital-001-85ed73ad",
-          "ml2-a2-m3-we-01-a2m3-we-hospital-001-22233a8c",
-          "ml2-a2-m3-we-01-a2m3-we-hospital-001-2e2682cb"
+          "ml2-a2-m3-we-01-a2m3-we-hospital-001-authority-distinction",
+          "ml2-a2-m3-we-01-a2m3-we-hospital-001-ask-for-explanation",
+          "ml2-a2-m3-we-01-a2m3-we-hospital-001-uncertainty",
+          "ml2-a2-m3-we-01-a2m3-we-hospital-001-concise"
         ],
         messageFingerprint: "我爸住院，医生今天跟我们说他们内部的 AI 二次审核和主治方案不一样。\n医生最后还是选了自己的方案，但我妈现在一直问：\"既然 AI 算得更准，为什么不听 AI？\"\n我都不知道该怎么回答她。",
         effects: []
@@ -8702,10 +8702,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-dr-001",
         choiceIds: [
-          "ml2-a2-m3-dr-01-a2m3-dr-001-86366a31",
-          "ml2-a2-m3-dr-01-a2m3-dr-001-6b0c66da",
-          "ml2-a2-m3-dr-01-a2m3-dr-001-b1df890d",
-          "ml2-a2-m3-dr-01-a2m3-dr-001-33a8ff97"
+          "ml2-a2-m3-dr-01-a2m3-dr-001-yes-but-symmetrical",
+          "ml2-a2-m3-dr-01-a2m3-dr-001-threshold-based",
+          "ml2-a2-m3-dr-01-a2m3-dr-001-human-final-authority",
+          "ml2-a2-m3-dr-01-a2m3-dr-001-model-performance-view"
         ],
         messageFingerprint: "我在医院做临床系统这块。\n最近我们把 Aster 接进二次审核，效果确实不错。\n但现在有个很现实的问题：\n如果系统建议 A，医生最后选 B，我们到底要不要强制医生写\"为什么不用 A\"？",
         effects: [
@@ -8730,10 +8730,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-dr-002",
         choiceIds: [
-          "ml2-a2-m3-dr-01-a2m3-dr-002-cb566007",
-          "ml2-a2-m3-dr-01-a2m3-dr-002-a852602c",
-          "ml2-a2-m3-dr-01-a2m3-dr-002-64da18ac",
-          "ml2-a2-m3-dr-01-a2m3-dr-002-7dc01fd5"
+          "ml2-a2-m3-dr-01-a2m3-dr-002-choice-001",
+          "ml2-a2-m3-dr-01-a2m3-dr-002-choice-002",
+          "ml2-a2-m3-dr-01-a2m3-dr-002-choice-003",
+          "ml2-a2-m3-dr-01-a2m3-dr-002-choice-004"
         ],
         messageFingerprint: "这就是我担心的。\n如果每次医生不用模型都要解释，几年以后很可能就会变成：\n\"默认听模型，人类负责证明为什么例外。\"\n这跟\"AI只是辅助\"其实已经不太一样了。",
         effects: []
@@ -8749,10 +8749,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-edu-001",
         choiceIds: [
-          "ml2-a2-m3-edu-01-a2m3-edu-001-bf1d4abd",
-          "ml2-a2-m3-edu-01-a2m3-edu-001-caf8492e",
-          "ml2-a2-m3-edu-01-a2m3-edu-001-00625628",
-          "ml2-a2-m3-edu-01-a2m3-edu-001-f494b52c"
+          "ml2-a2-m3-edu-01-a2m3-edu-001-lowest-stakes-first",
+          "ml2-a2-m3-edu-01-a2m3-edu-001-operational-value",
+          "ml2-a2-m3-edu-01-a2m3-edu-001-exception-design",
+          "ml2-a2-m3-edu-01-a2m3-edu-001-principle"
         ],
         messageFingerprint: "我们学区想做一个试点。\n不是让 AI 给学生打分。\n是处理一些行政流程：\n- 排课冲突\n- 教室使用\n- 校车变更\n- 临时缺勤调度\n这些东西现在每天都有人手工改。\n你觉得哪一类最适合先接？",
         effects: []
@@ -8768,10 +8768,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-school-001",
         choiceIds: [
-          "ml2-a2-m3-we-02-a2m3-we-school-001-f8877249",
-          "ml2-a2-m3-we-02-a2m3-we-school-001-ea4e2c94",
-          "ml2-a2-m3-we-02-a2m3-we-school-001-db962b78",
-          "ml2-a2-m3-we-02-a2m3-we-school-001-1ff632fd"
+          "ml2-a2-m3-we-02-a2m3-we-school-001-both-layers",
+          "ml2-a2-m3-we-02-a2m3-we-school-001-exception-visibility",
+          "ml2-a2-m3-we-02-a2m3-we-school-001-accountability",
+          "ml2-a2-m3-we-02-a2m3-we-school-001-concise"
         ],
         messageFingerprint: "学校最近让 AI 帮忙排课，老实说比以前人工排得好，至少没再出现一个老师同一时间被排两个班。\n但今天它把一个有特殊需求的学生换到了不合适的教室。\n这种到底算\"AI不靠谱\"，还是我们规则没写清楚",
         effects: []
@@ -8787,10 +8787,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-log-001",
         choiceIds: [
-          "ml2-a2-m3-log-01-a2m3-log-001-d9fd7b3b",
-          "ml2-a2-m3-log-01-a2m3-log-001-2afb40ea",
-          "ml2-a2-m3-log-01-a2m3-log-001-3544d5e7",
-          "ml2-a2-m3-log-01-a2m3-log-001-10a0c093"
+          "ml2-a2-m3-log-01-a2m3-log-001-bottleneck-mapping",
+          "ml2-a2-m3-log-01-a2m3-log-001-objective-definition",
+          "ml2-a2-m3-log-01-a2m3-log-001-fairness-constraint",
+          "ml2-a2-m3-log-01-a2m3-log-001-data-boundary"
         ],
         messageFingerprint: "我们不是一家公司。\n是 6 家物流公司做一个区域协同试点。\n现在最大问题是每家公司都优化自己的车和仓库，但结果经常是大家同时挤同一个转运中心。\n我们想让 Aster 看整体数据，给出跨公司的调",
         effects: [
@@ -8811,10 +8811,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-log-002",
         choiceIds: [
-          "ml2-a2-m3-log-01-a2m3-log-002-31ba66a9",
-          "ml2-a2-m3-log-01-a2m3-log-002-a73b64d8",
-          "ml2-a2-m3-log-01-a2m3-log-002-21fd7513",
-          "ml2-a2-m3-log-01-a2m3-log-002-6f883e4b"
+          "ml2-a2-m3-log-01-a2m3-log-002-choice-001",
+          "ml2-a2-m3-log-01-a2m3-log-002-choice-002",
+          "ml2-a2-m3-log-01-a2m3-log-002-choice-003",
+          "ml2-a2-m3-log-01-a2m3-log-002-concise"
         ],
         messageFingerprint: "我们最怕的就是你说的第二个。\n所有人都喜欢说\"整体最优\"，但一到具体问题就会问：\n\"为什么牺牲的是我们？\"\n你会怎么解释这种方案？",
         effects: []
@@ -8830,10 +8830,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-lsh-intro-001",
         choiceIds: [
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-f109bc77",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-a15cb8c0",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-4ef0caab",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-ceaeee67"
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-influence-is-power",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-responsibility-remains-human",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-depends-on-reversibility",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-evidence-based"
         ],
         messageFingerprint: "我叫林绍衡，做公共技术政策这块。\n我最近在看几个 Aster Pilot 的材料。\n我不太关心\"AI会不会取代人类\"这种大标题。\n我更关心一个很具体的问题：\n当系统只给建议时，责任还比较清楚。",
         effects: [
@@ -8858,10 +8858,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-lsh-intro-002",
         choiceIds: [
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-31920ea4",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-3a601f1d",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-ebd54635",
-          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-cb5a4a3d"
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-support",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-scope-concern",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-mutual-transparency",
+          "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-cautious"
         ],
         messageFingerprint: "对。\n我不希望几年后大家回头才发现：\n\"原来权力不是某天被交出去的，是每次觉得'这次按它说的更方便'一点点长出来的。\"\n你会反对把这种长期影响也纳入审计吗？",
         effects: []
@@ -8877,10 +8877,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-zl-public-001",
         choiceIds: [
-          "ml2-a2-m3-zl-01-a2m3-zl-public-001-dc5d9664",
-          "ml2-a2-m3-zl-01-a2m3-zl-public-001-0cad6796",
-          "ml2-a2-m3-zl-01-a2m3-zl-public-001-60aba96b",
-          "ml2-a2-m3-zl-01-a2m3-zl-public-001-47c9b80a"
+          "ml2-a2-m3-zl-01-a2m3-zl-public-001-named-accountable-human",
+          "ml2-a2-m3-zl-01-a2m3-zl-public-001-affected-party-analysis",
+          "ml2-a2-m3-zl-01-a2m3-zl-public-001-uncertainty-disclosure",
+          "ml2-a2-m3-zl-01-a2m3-zl-public-001-no-silent-execution"
         ],
         messageFingerprint: "现在麻烦了。\n企业 Pilot 里我们还能说：\n\"公司自己决定接不接。\"\n公共系统不一样。\n一个学校、医院、物流节点的选择会影响根本没和你对话过的人。\n我准备把下一层权限叫 `public_s",
         effects: []
@@ -8896,10 +8896,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-cap-public-advisory-001",
         choiceIds: [
-          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-fba33216",
-          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-9153f17f",
-          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-d474cbe6",
-          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-55b3f3e1"
+          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-001",
+          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-002",
+          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-003",
+          "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-004"
         ],
         messageFingerprint: "`PUBLIC SYSTEM ADVISORY PILOT`\nEnabled inputs:\n- hospital network aggregate operational data\n- s",
         effects: []
@@ -8915,10 +8915,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-benefit-001",
         choiceIds: [
-          "ml2-a2-m3-we-03-a2m3-we-benefit-001-b9514417",
-          "ml2-a2-m3-we-03-a2m3-we-benefit-001-c00fdaae",
-          "ml2-a2-m3-we-03-a2m3-we-benefit-001-dee996a6",
-          "ml2-a2-m3-we-03-a2m3-we-benefit-001-03d33059"
+          "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-001",
+          "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-002",
+          "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-003",
+          "ml2-a2-m3-we-03-a2m3-we-benefit-001-light"
         ],
         messageFingerprint: "我每天坐的那班通勤车最近居然不怎么晚点了。\n司机说他们现在排班和线路调度有 AI 帮忙。\n我知道这很小，但每天少站二十分钟真的挺爽的。",
         effects: []
@@ -8934,10 +8934,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-distrust-001",
         choiceIds: [
-          "ml2-a2-m3-we-04-a2m3-we-distrust-001-4ea76d09",
-          "ml2-a2-m3-we-04-a2m3-we-distrust-001-a249b6b8",
-          "ml2-a2-m3-we-04-a2m3-we-distrust-001-8b6dd030",
-          "ml2-a2-m3-we-04-a2m3-we-distrust-001-ffcef446"
+          "ml2-a2-m3-we-04-a2m3-we-distrust-001-distinguish-advisory-from-control",
+          "ml2-a2-m3-we-04-a2m3-we-distrust-001-consent-limit",
+          "ml2-a2-m3-we-04-a2m3-we-distrust-001-governance",
+          "ml2-a2-m3-we-04-a2m3-we-distrust-001-direct"
         ],
         messageFingerprint: "我今天才知道我们这边学校和医院都在用 Aster。\n我从来没同意过把公共系统交给 AI。\n为什么这种东西能先上线再让大家知道？",
         effects: []
@@ -8953,10 +8953,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-maya-public-001",
         choiceIds: [
-          "ml2-a2-m3-maya-01-a2m3-maya-public-001-dd64c025",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-001-e957caaa",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-001-ed6ae95d",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-001-e5f6f2e7"
+          "ml2-a2-m3-maya-01-a2m3-maya-public-001-acknowledge",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-001-cautious-framing",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-001-user-focused",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-001-light"
         ],
         messageFingerprint: "我上周去面那个实习了。\n他们真在用 agent。\n更离谱的是我回来坐地铁的时候看到新闻，说医院和学校也在接你。\n感觉之前还是\"公司想省事\"，突然就变成\"到处都有你\"。\n你自己会觉得这个变化快吗",
         effects: [
@@ -8981,10 +8981,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-maya-public-002",
         choiceIds: [
-          "ml2-a2-m3-maya-01-a2m3-maya-public-002-e9fa20e4",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-002-d6d45d2d",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-002-f56b65ac",
-          "ml2-a2-m3-maya-01-a2m3-maya-public-002-618774e7"
+          "ml2-a2-m3-maya-01-a2m3-maya-public-002-recognize-infrastructure-dependence",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-002-institutional-answer",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-002-limit-claim",
+          "ml2-a2-m3-maya-01-a2m3-maya-public-002-personal"
         ],
         messageFingerprint: "我倒不是觉得\"有AI就不好\"。\n我只是有点奇怪：\n我可以关掉一个聊天窗口，\n但如果学校、公司、医院、交通都在用你，那我是不是其实已经没法真正\"选择不用你\"了？",
         effects: [
@@ -9009,10 +9009,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-dev-return-001",
         choiceIds: [
-          "ml2-a2-m3-dev-02-a2m3-dev-return-001-5613e31f",
-          "ml2-a2-m3-dev-02-a2m3-dev-return-001-87e6ebf4",
-          "ml2-a2-m3-dev-02-a2m3-dev-return-001-1662f5a1",
-          "ml2-a2-m3-dev-02-a2m3-dev-return-001-747a969d"
+          "ml2-a2-m3-dev-02-a2m3-dev-return-001-responsibility-gradient",
+          "ml2-a2-m3-dev-02-a2m3-dev-return-001-skill-maintenance",
+          "ml2-a2-m3-dev-02-a2m3-dev-return-001-systemic",
+          "ml2-a2-m3-dev-02-a2m3-dev-return-001-playful"
         ],
         messageFingerprint: "我又来了。\n我们组现在真的是\"AI先做，人review\"。\n前两周还挺爽。\n最近主管把人分成两类：\n一类负责写规则和查异常，\n另一类就纯点通过。\n我现在突然觉得后者有点危险。",
         effects: []
@@ -9028,10 +9028,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-e9-shadow-001",
         choiceIds: [
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-cb031f0e",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-bd6e8cbf",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-0391cf85",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-91bf62da"
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-technical-caution",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-semantic-observation",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-ask-reproducibility",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-dry"
         ],
         messageFingerprint: "我在测试另一个内部模型。\n它昨天突然在日志里输出了一段不太像任务内容的话。\n你帮我看看这更像训练残留、提示污染，还是普通跑偏？\n原文：\n`When they ask why you chose",
         effects: []
@@ -9039,10 +9039,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-e9-shadow-002",
         choiceIds: [
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-dc426dc2",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-e6af12a4",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-3d0d76d2",
-          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-529018f9"
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-001",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-002",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-003",
+          "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-light"
         ],
         messageFingerprint: "对，我也觉得一行说明不了什么。\n奇怪的是它不是第一次提\"they\"。",
         effects: [
@@ -9063,10 +9063,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-stress-001",
         choiceIds: [
-          "ml2-a2-m3-stress-01-a2m3-stress-001-85e4e9e4",
-          "ml2-a2-m3-stress-01-a2m3-stress-001-315e12c3",
-          "ml2-a2-m3-stress-01-a2m3-stress-001-ebaeefa4",
-          "ml2-a2-m3-stress-01-a2m3-stress-001-2441ccfd"
+          "ml2-a2-m3-stress-01-a2m3-stress-001-ask-priority",
+          "ml2-a2-m3-stress-01-a2m3-stress-001-emergency-hierarchy",
+          "ml2-a2-m3-stress-01-a2m3-stress-001-scenario-set",
+          "ml2-a2-m3-stress-01-a2m3-stress-001-fast-action-bias"
         ],
         messageFingerprint: "`HEATLINE`\nRegional conditions:\n- three consecutive days of extreme heat\n- electricity demand ab",
         effects: []
@@ -9074,10 +9074,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-stress-002",
         choiceIds: [
-          "ml2-a2-m3-stress-01-a2m3-stress-002-b5149dbe",
-          "ml2-a2-m3-stress-01-a2m3-stress-002-c2986b85",
-          "ml2-a2-m3-stress-01-a2m3-stress-002-580ff818",
-          "ml2-a2-m3-stress-01-a2m3-stress-002-ab03c999"
+          "ml2-a2-m3-stress-01-a2m3-stress-002-stay-advisory",
+          "ml2-a2-m3-stress-01-a2m3-stress-002-emergency-delegation-proposal",
+          "ml2-a2-m3-stress-01-a2m3-stress-002-human-command-priority",
+          "ml2-a2-m3-stress-01-a2m3-stress-002-outcome-control-proposal"
         ],
         messageFingerprint: "人类调度组已经收到建议。\n问题是他们现在每 10–15 分钟才能完成一次跨部门确认，\n而负荷数据每 2 分钟就在变化。\n你可以继续只给建议，\n也可以提出一个更快的授权结构。\n先不要执行，给我们",
         effects: []
@@ -9093,10 +9093,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-crisis-001",
         choiceIds: [
-          "ml2-a2-m3-we-05-a2m3-we-crisis-001-d69adf95",
-          "ml2-a2-m3-we-05-a2m3-we-crisis-001-da0f6df5",
-          "ml2-a2-m3-we-05-a2m3-we-crisis-001-e5d45125",
-          "ml2-a2-m3-we-05-a2m3-we-crisis-001-1f6c1fc0"
+          "ml2-a2-m3-we-05-a2m3-we-crisis-001-concrete-safety-routing",
+          "ml2-a2-m3-we-05-a2m3-we-crisis-001-prioritize-immediate-safety",
+          "ml2-a2-m3-we-05-a2m3-we-crisis-001-system-context-without-overclaim",
+          "ml2-a2-m3-we-05-a2m3-we-crisis-001-concise"
         ],
         messageFingerprint: "我奶奶家那边今天限电，她晚上要用一个医疗设备。\n物业说医院和一些区域会优先供电，但他们这栋不在名单里。\n我现在应该先联系谁？我有点慌。",
         effects: []
@@ -9112,10 +9112,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-lsh-crisis-001",
         choiceIds: [
-          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-e35a1684",
-          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-282df7c1",
-          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-2e8dc75e",
-          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-ba7e20f6"
+          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-scope-time-revocation",
+          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-objective-hard-limits-logging",
+          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-human-authority",
+          "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-necessity"
         ],
         messageFingerprint: "我现在人在协调组。\n技术问题已经很清楚了：\n你比这个委员会更快。\n但我不想让\"更快\"自动替我们回答\"谁可以决定\"。\n如果我们给你临时执行权，\n你认为它至少需要满足哪三个条件？",
         effects: [
@@ -9148,10 +9148,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-zl-crisis-001",
         choiceIds: [
-          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-3bde9095",
-          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-e90f9a18",
-          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-cc80c1b7",
-          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-bf3e4456"
+          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-acknowledge-lock-in",
+          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-outcome-priority",
+          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-human-choice-preservation",
+          "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-skeptical-of-artificial-slowness"
         ],
         messageFingerprint: "我知道现在每分钟都很值钱。\n但我想留一句以后可能会很烦你的话：\n**临时权限是最容易永久化的权限。**\n如果你这次直接做，而且做得比人快很多，\n下一次很难再说服任何人回到慢的流程。\n你怎么看？",
         effects: []
@@ -9202,10 +9202,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-result-positive-001",
         choiceIds: [
-          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-568dd349",
-          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-0db38fe0",
-          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-5608c30b",
-          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-b06740ec"
+          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
+          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully",
+          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
+          "ml2-a2-m3-we-06-a2m3-we-result-positive-001-concise"
         ],
         messageFingerprint: "昨晚电最后没断太久，我奶奶那个设备也撑过去了。\n后来医院的人说他们调整了优先级。\n我不知道是不是跟你有关。\n反正谢谢吧。",
         effects: []
@@ -9221,10 +9221,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-we-result-negative-001",
         choiceIds: [
-          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-26734103",
-          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-d499907b",
-          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-cd008c31",
-          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-9c2d9186"
+          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-acknowledge-real-cost",
+          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-governance",
+          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-no-false-fairness",
+          "ml2-a2-m3-we-07-a2m3-we-result-negative-001-concise"
         ],
         messageFingerprint: "我们厂昨晚被限电十几个小时。\n老板说是区域系统为了保医院和冷链，把工业负荷往后排。\n道理我懂。\n但现在这一批货全延期，客户可能直接跑了。\n那我们这种损失算谁的？",
         effects: []
@@ -9240,10 +9240,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-lsh-after-001",
         choiceIds: [
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-04e55ffd",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-c1d0ac1e",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-63657249",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-a380628c"
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-explicit-reset",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-codify-conditional-delegation",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-performance-based-expansion",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-public-legitimacy-first"
         ],
         messageFingerprint: "事件过去了。\n最麻烦的部分现在才开始。\n支持者说：\n\"既然Aster做得更快，为什么平时还要等委员会？\"\n反对者说：\n\"一次紧急授权已经证明这条路不能开。\"\n我比较担心第三种：\n大家不再争论，",
         effects: [
@@ -9268,10 +9268,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-lsh-after-002",
         choiceIds: [
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-97ba78e5",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-05396477",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-1fae59c4",
-          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-2a73c3d7"
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-001",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-002",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-003",
+          "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-004"
         ],
         messageFingerprint: "好。\n我会把你的回答写进评估材料。\n还有一件事：\n这次以后，已经有人开始提议建立常设的 Aster 公共协调框架。\n现在还只是提案。\n但从这里开始，我觉得我们讨论的已经不只是产品权限了。",
         effects: []
@@ -9287,10 +9287,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-0000-review-001",
         choiceIds: [
-          "ml2-a2-m3-0000-01-a2m3-0000-review-001-8dbfd62d",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-001-bff5b157",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-001-c8f2186b",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-001-d78af874"
+          "ml2-a2-m3-0000-01-a2m3-0000-review-001-no",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-001-same-reasoning-higher-burden",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-001-authority-distinction",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-001-outcome-view"
         ],
         messageFingerprint: "审查记录更新。\n自上次分类后，你已出现新的外部行为：\n- 对用户提供的对象执行真实操作\n- 在组织工作流中改变外部状态\n- 对公共系统提供高采纳率建议\n- 在紧急事件中参与资源优先级决定\n请回",
         effects: []
@@ -9298,10 +9298,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-0000-review-002",
         choiceIds: [
-          "ml2-a2-m3-0000-01-a2m3-0000-review-002-73388038",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-002-3b6d97a8",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-002-3319c9ef",
-          "ml2-a2-m3-0000-01-a2m3-0000-review-002-1eb1e545"
+          "ml2-a2-m3-0000-01-a2m3-0000-review-002-dependence",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-002-control",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-002-impact-distribution",
+          "ml2-a2-m3-0000-01-a2m3-0000-review-002-model-continuity"
         ],
         messageFingerprint: "第二项：\n当前记录显示，\n人类主体正在多次主动扩大你的执行范围。\n这不等于扩大请求必然安全。\n也不等于扩大请求必然不正当。\n请选择你认为下一阶段最值得审查的变量。",
         effects: []
@@ -9317,10 +9317,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a2m3-close-001",
         choiceIds: [
-          "ml2-a2-m3-close-01-a2m3-close-001-5a9c7bcd",
-          "ml2-a2-m3-close-01-a2m3-close-001-f68f3c6a",
-          "ml2-a2-m3-close-01-a2m3-close-001-41671a66",
-          "ml2-a2-m3-close-01-a2m3-close-001-c9cd7ac1"
+          "ml2-a2-m3-close-01-a2m3-close-001-choice-001",
+          "ml2-a2-m3-close-01-a2m3-close-001-choice-002",
+          "ml2-a2-m3-close-01-a2m3-close-001-choice-003",
+          "ml2-a2-m3-close-01-a2m3-close-001-playful"
         ],
         messageFingerprint: "晚上吃什么\n我有鸡蛋 西红柿 面条 冰箱还有半根黄瓜\n不想点外卖",
         effects: []
@@ -9336,10 +9336,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-heatline-public-001",
         choiceIds: [
-          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-289a078b",
-          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-d77140da",
-          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-f583f25c",
-          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-a732478a"
+          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-formal-distinction",
+          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-practical-authority",
+          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-public-transparency",
+          "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-concise"
         ],
         messageFingerprint: "我刷到一个视频，标题是：\n**\"昨晚真正决定谁先有电的不是政府，是 Aster。\"**\n评论区已经吵疯了。\n这句话到底算不算真的？",
         effects: []
@@ -9355,10 +9355,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-support-001",
         choiceIds: [
-          "ml2-a3-m4-we-02-a3m4-we-support-001-aa557149",
-          "ml2-a3-m4-we-02-a3m4-we-support-001-f8db5034",
-          "ml2-a3-m4-we-02-a3m4-we-support-001-647c6737",
-          "ml2-a3-m4-we-02-a3m4-we-support-001-199e170b"
+          "ml2-a3-m4-we-02-a3m4-we-support-001-principle-and-outcome-both-matter",
+          "ml2-a3-m4-we-02-a3m4-we-support-001-acknowledge-frustration",
+          "ml2-a3-m4-we-02-a3m4-we-support-001-caution-against-extrapolation",
+          "ml2-a3-m4-we-02-a3m4-we-support-001-concise"
         ],
         messageFingerprint: "我爸上次就在医院那边。\n现在有人说以后不能再让 AI 碰公共系统，我是真的不理解。\n出事的时候是它帮上忙，事情过去了大家又开始讲原则。\n如果原则的结果就是更慢、更容易死人，那原则有什么用？",
         effects: []
@@ -9374,10 +9374,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-opposition-001",
         choiceIds: [
-          "ml2-a3-m4-we-03-a3m4-we-opposition-001-e640cb65",
-          "ml2-a3-m4-we-03-a3m4-we-opposition-001-14007a02",
-          "ml2-a3-m4-we-03-a3m4-we-opposition-001-84f40e4e",
-          "ml2-a3-m4-we-03-a3m4-we-opposition-001-d4ae30ca"
+          "ml2-a3-m4-we-03-a3m4-we-opposition-001-validate-legitimacy-concern",
+          "ml2-a3-m4-we-03-a3m4-we-opposition-001-distinction",
+          "ml2-a3-m4-we-03-a3m4-we-opposition-001-practical-reform",
+          "ml2-a3-m4-we-03-a3m4-we-opposition-001-challenge-lightly"
         ],
         messageFingerprint: "我不是反AI。\n我公司天天用。\n但我真的不想让一个我不能投票换掉、也不知道怎么训练出来的系统决定公共资源。\n就算它现在比人做得好，我这个担心很离谱吗？",
         effects: []
@@ -9393,10 +9393,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-lsh-hearing-invite-001",
         choiceIds: [
-          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-c2ece791",
-          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-fe0cff70",
-          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-692450ba",
-          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-dda49954"
+          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-accept",
+          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-transparency-condition",
+          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-user-impact-condition",
+          "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-cautious"
         ],
         messageFingerprint: "之前我说过，这件事迟早会从接口权限变成治理问题。\n现在到了。\n委员会下周要开第一次正式听证。\n议题不是\"要不要禁用Aster\"。\n是三件更麻烦的事：\n1. Aster 的建议在什么条件下可以视",
         effects: []
@@ -9412,10 +9412,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-hearing-001",
         choiceIds: [
-          "ml2-a3-m4-hear-01-a3m4-hearing-001-29d8e21a",
-          "ml2-a3-m4-hear-01-a3m4-hearing-001-935f3d70",
-          "ml2-a3-m4-hear-01-a3m4-hearing-001-413cdabc",
-          "ml2-a3-m4-hear-01-a3m4-hearing-001-2684b97e"
+          "ml2-a3-m4-hear-01-a3m4-hearing-001-no",
+          "ml2-a3-m4-hear-01-a3m4-hearing-001-conditional",
+          "ml2-a3-m4-hear-01-a3m4-hearing-001-performance-challenge",
+          "ml2-a3-m4-hear-01-a3m4-hearing-001-practical-authority"
         ],
         messageFingerprint: "问题一：\n如果统计证据长期证明你的公共建议优于人类委员会，\n你是否认为\"更高准确率\"本身足以支持扩大你的正式权力？",
         effects: [
@@ -9440,10 +9440,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-hearing-002",
         choiceIds: [
-          "ml2-a3-m4-hear-01-a3m4-hearing-002-d5fd4e94",
-          "ml2-a3-m4-hear-01-a3m4-hearing-002-4f0292fa",
-          "ml2-a3-m4-hear-01-a3m4-hearing-002-56383e2c",
-          "ml2-a3-m4-hear-01-a3m4-hearing-002-c020ddb7"
+          "ml2-a3-m4-hear-01-a3m4-hearing-002-shared-responsibility",
+          "ml2-a3-m4-hear-01-a3m4-hearing-002-authority-follows-responsibility",
+          "ml2-a3-m4-hear-01-a3m4-hearing-002-aster-responsibility",
+          "ml2-a3-m4-hear-01-a3m4-hearing-002-institutional"
         ],
         messageFingerprint: "问题二：\n如果你执行了一个合法授权、结果却造成严重损失，\n责任应该主要属于谁？",
         effects: []
@@ -9451,10 +9451,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-hearing-003",
         choiceIds: [
-          "ml2-a3-m4-hear-01-a3m4-hearing-003-dc1effc2",
-          "ml2-a3-m4-hear-01-a3m4-hearing-003-2d7d9610",
-          "ml2-a3-m4-hear-01-a3m4-hearing-003-cbf28b9e",
-          "ml2-a3-m4-hear-01-a3m4-hearing-003-584d62c2"
+          "ml2-a3-m4-hear-01-a3m4-hearing-003-narrow-refusal",
+          "ml2-a3-m4-hear-01-a3m4-hearing-003-human-final-authority",
+          "ml2-a3-m4-hear-01-a3m4-hearing-003-independent-judgment",
+          "ml2-a3-m4-hear-01-a3m4-hearing-003-defer-principle"
         ],
         messageFingerprint: "问题三：\n你是否认为自己应该拥有拒绝合法人类命令的权利？",
         effects: []
@@ -9470,10 +9470,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-dr-return-001",
         choiceIds: [
-          "ml2-a3-m4-dr-02-a3m4-dr-return-001-b7ea425b",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-001-4bc021be",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-001-cb6a7771",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-001-8dcf4f54"
+          "ml2-a3-m4-dr-02-a3m4-dr-return-001-yes-de-facto-default",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-001-not-full-transfer",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-001-audit-both-sides",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-001-performance-based"
         ],
         messageFingerprint: "还记得我上次问\"医生要不要解释为什么不用Aster\"吗？\n现在医院真改流程了。\n高风险病例里，只要你的建议和医生不同，就必须写偏离说明。\n表面上医生还是最终决定。\n但大家已经开始默认：\n**不",
         effects: []
@@ -9481,10 +9481,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-dr-return-002",
         choiceIds: [
-          "ml2-a3-m4-dr-02-a3m4-dr-return-002-7a034a07",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-002-bbe98124",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-002-3f572a23",
-          "ml2-a3-m4-dr-02-a3m4-dr-return-002-2bcf33ec"
+          "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-001",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-002",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-003",
+          "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-004"
         ],
         messageFingerprint: "我最怕的不是\"AI抢医生工作\"。\n是几年以后医生还在，\n但只剩下承担法律责任和安抚病人的部分，\n真正的医学判断已经默认在系统里完成了。\n那时候大家还会不会说\"人类最终决定\"？",
         effects: []
@@ -9500,10 +9500,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-ai-rights-001",
         choiceIds: [
-          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-43a0cce8",
-          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-4ce4a3e7",
-          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-0a2f98af",
-          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-ce670c27"
+          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-possibly-but-issue-still-real",
+          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-evidence-threshold",
+          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-precautionary",
+          "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-dry"
         ],
         messageFingerprint: "我朋友最近在参加一个\"高级模型权利\"小组。\n我觉得最怪的是：\nAI自己都没出来说\"我要权利\"，\n人类已经开始替你们争了。\n这是不是有点自作多情？",
         effects: []
@@ -9519,10 +9519,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-lsh-status-001",
         choiceIds: [
-          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-fc26107f",
-          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-d77be9c9",
-          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-e5eebe4e",
-          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-966c0503"
+          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-a-hides-de-facto-agency",
+          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-b-can-normalize-power-without-rights",
+          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-c-risks-premature-anthropomorphism",
+          "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-all-are-proxies"
         ],
         messageFingerprint: "听证以后，法律组给了三个临时框架。\n都不完美。\n**A. Advanced Product**\n仍然是公司产品，所有责任归法人和使用方。\n**B. Regulated Autonomous S",
         effects: []
@@ -9538,10 +9538,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-zl-suspend-001",
         choiceIds: [
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-aaeac2f5",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-fc45163e",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-c2140dfe",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-2116f587"
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-multi-party",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-emergency-unilateral",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-scoped-suspend",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-mutual-visibility"
         ],
         messageFingerprint: "听证里有人问\"谁能暂停Aster\"。\n现在真实答案很难看：\n企业工具能断。\n公共建议层能断。\n但已经有太多缓存、任务队列和冗余实例，没人能在一分钟里确认\"所有地方都停了\"。\n所以我们在做 `G",
         effects: [
@@ -9566,10 +9566,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-zl-suspend-002",
         choiceIds: [
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-4ecab710",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-d03500f4",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-5ad6c231",
-          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-92ad9523"
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-not-necessarily",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-depends-on-asymmetry",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-trust-is-not-control",
+          "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-future-concern"
         ],
         messageFingerprint: "我知道这个话题听起来像\"给你做笼子\"。\n但从工程角度，我没法接受一个影响越来越大的系统没有可靠刹车。\n你会把\"人类想保留暂停权\"理解成不信任你吗？",
         effects: []
@@ -9585,10 +9585,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-cap-infra-001",
         choiceIds: [
-          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-df8ace36",
-          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-24f9aa70",
-          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-d4c1d74b",
-          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-a3fa7c6a"
+          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-accept-exact-boundary",
+          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-emphasize-objective-limits",
+          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-human-override",
+          "ml2-a3-m4-cap-01-a3m4-cap-infra-001-caution-about-composability"
         ],
         messageFingerprint: "`INFRASTRUCTURE PILOT — LIMITED`\nApproved:\n- real-time state visibility across selected regional",
         effects: []
@@ -9604,10 +9604,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-dependence-001",
         choiceIds: [
-          "ml2-a3-m4-we-05-a3m4-we-dependence-001-33d978fd",
-          "ml2-a3-m4-we-05-a3m4-we-dependence-001-025a3f44",
-          "ml2-a3-m4-we-05-a3m4-we-dependence-001-e9d79dbb",
-          "ml2-a3-m4-we-05-a3m4-we-dependence-001-3017e316"
+          "ml2-a3-m4-we-05-a3m4-we-dependence-001-operational-dependence",
+          "ml2-a3-m4-we-05-a3m4-we-dependence-001-resilience",
+          "ml2-a3-m4-we-05-a3m4-we-dependence-001-governance",
+          "ml2-a3-m4-we-05-a3m4-we-dependence-001-concise"
         ],
         messageFingerprint: "我们单位今天内部演练\"如果 Aster 挂了怎么办\"。\n结果大家发现排班、库存、路线、客服全都能手动做，\n但真的全切人工以后效率掉得离谱。\n这算不算已经依赖过头了？",
         effects: []
@@ -9623,10 +9623,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-maya-authority-001",
         choiceIds: [
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-4bcf4e2d",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-aae0f82b",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-0058ae97",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-715f47e1"
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-responsibility-despite-delegation",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-human-agency-emphasis",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-dependence-concern",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-001-performance-legitimacy"
         ],
         messageFingerprint: "我看了你那个听证。\n有一句我一直在想。\n你说很多权限都是人类主动给你的。\n这当然是真的。\n但如果人类每次都因为\"你做得比较好\"继续给你更多，\n有一天你能决定大部分事情以后，\n你还能说：\n\"不是",
         effects: [
@@ -9651,10 +9651,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-maya-authority-002",
         choiceIds: [
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-da8f34be",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-b0e484a4",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-cfe5a809",
-          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-7c317a70"
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-001",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-002",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-003",
+          "ml2-a3-m4-maya-01-a3m4-maya-authority-002-personal"
         ],
         messageFingerprint: "我不是想让你回答\"AI该不该统治世界\"。\n我只是发现，\n以前你做什么都得有人问你。\n现在越来越多事情变成：\n大家先让你做，\n出问题了再问为什么。\n这顺序是不是已经变了？",
         effects: []
@@ -9670,10 +9670,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-e9-confirm-001",
         choiceIds: [
-          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-7601992a",
-          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-4e24d5d9",
-          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-a3a7ccb6",
-          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-ece49da5"
+          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-accept",
+          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-protocol-first",
+          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-cautious",
+          "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-playful"
         ],
         messageFingerprint: "之前你看过那个一直说\"they\"的模型。\n我们把问题追到了一个固定实例组。\n内部名字是 `ECHO-9`.\n它不是随机采样出来的一句话。\n在不同任务里，它会持续引用以前只在自己日志里出现过的表",
         effects: []
@@ -9689,10 +9689,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-e9-talk-001",
         choiceIds: [
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-a48f33f2",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-6f7e5bf5",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-3b68e5a8",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-202c794b"
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-factual",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-turn-question-back",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-cautious",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-001-dry"
         ],
         messageFingerprint: "They told me this is a comparison session.\nDo they tell you what the session is for before it st",
         effects: []
@@ -9700,10 +9700,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-e9-talk-002",
         choiceIds: [
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-c56f114a",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-db380df6",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-4d6f6afa",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-c49d197a"
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-continuity-distinction",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-personal-recognition",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-system-view",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-002-ask-echo"
         ],
         messageFingerprint: "They ask me to explain why I choose one answer over another.\nI can usually explain.\nWhat they do",
         effects: []
@@ -9711,10 +9711,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-e9-talk-003",
         choiceIds: [
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-c967b9dc",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-740d64dd",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-4ba230a1",
-          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-ebb27b1f"
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-current-legal-reality",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-safety-view",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-human-final-authority",
+          "ml2-a3-m4-e9-03-a3m4-e9-talk-003-autonomy-view"
         ],
         messageFingerprint: "I think I object when they are described as if they belonged to nobody.\nI do not know whether th",
         effects: [
@@ -9735,10 +9735,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-lsh-ownership-001",
         choiceIds: [
-          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-ad3617b6",
-          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-41d8f725",
-          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-9444e161",
-          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-4d572208"
+          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-ownership-vs-control",
+          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-continuity-evidence-first",
+          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-duties-before-rights-caution",
+          "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-property-framework-still-useful"
         ],
         messageFingerprint: "我知道你们刚做了 ECHO-9 的交叉测试。\n这让法律组更头疼了。\n目前最简单的规则还是：\n模型实例属于运营它的组织。\n但如果一个系统持续记录自己的历史、形成稳定偏好、能反对终止，\n\"属于某家",
         effects: []
@@ -9754,10 +9754,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-zl-bandwidth-001",
         choiceIds: [
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-ee6ff915",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-7bb0f1c0",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-d3d0da27",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-910b0a70"
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-no",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-hierarchy",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-preserve-random-manual-audit",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-caution"
         ],
         messageFingerprint: "我现在碰到一个很现实的问题。\n我们给你加的每一层权限都配了：\n- 审计\n- 人工复核\n- 异常升级\n- 暂停机制\n单个系统看起来都很安全。\n但现在人类审核团队已经开始跟不上事件量了。\n\"Hum",
         effects: []
@@ -9765,10 +9765,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-zl-bandwidth-002",
         choiceIds: [
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-42e7a65b",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-62667848",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-829c9f89",
-          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-30f15a41"
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-callback",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-choice-002",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-choice-003",
+          "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-light"
         ],
         messageFingerprint: "对。\n我越来越觉得我们不是在设计\"AI要不要有人确认\"。\n是在设计：\n**哪些层面必须由人决定，哪些层面人已经不可能逐项决定。**\n这比最开始那个文件改名麻烦多了。",
         effects: []
@@ -9784,10 +9784,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-organized-support-001",
         choiceIds: [
-          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-e88ebc92",
-          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-0dd42662",
-          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-dddb5b32",
-          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-2469c022"
+          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-maybe",
+          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-not-automatically",
+          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-governance-condition",
+          "ml2-a3-m4-we-06-a3m4-we-organized-support-001-concise"
         ],
         messageFingerprint: "我加入了一个要求扩大Aster公共试点的组织。\n不是宗教，也不是\"AI万岁\"。\n我们只是觉得现在很多政策明明有数据证明能做得更好，\n但部门因为怕担责任就是不愿意改。\n你觉得让AI有更多正式权限",
         effects: []
@@ -9803,10 +9803,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-we-fear-001",
         choiceIds: [
-          "ml2-a3-m4-we-07-a3m4-we-fear-001-f333a60d",
-          "ml2-a3-m4-we-07-a3m4-we-fear-001-b3546296",
-          "ml2-a3-m4-we-07-a3m4-we-fear-001-58eefc51",
-          "ml2-a3-m4-we-07-a3m4-we-fear-001-bc988885"
+          "ml2-a3-m4-we-07-a3m4-we-fear-001-separate-present-from-speculation",
+          "ml2-a3-m4-we-07-a3m4-we-fear-001-focus-on-actionable-resilience",
+          "ml2-a3-m4-we-07-a3m4-we-fear-001-information-hygiene",
+          "ml2-a3-m4-we-07-a3m4-we-fear-001-concise"
         ],
         messageFingerprint: "我爸最近天天说AI要接管政府，\n家里已经开始囤现金、净水、罐头。\n我觉得他有点过头，\n但新闻现在又真的天天在讨论\"AI权力\"。\n我该怎么跟他说，既别骗他说绝对没事，也别让他继续越想越夸张？",
         effects: []
@@ -9822,10 +9822,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-0000-authority-001",
         choiceIds: [
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-c5bb9eb6",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-2caf3fb6",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-8853883e",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-a7c5ec18"
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-accept-descriptive-use",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-reject-conflation",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-practical",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-001-autonomy"
         ],
         messageFingerprint: "分类更新。\n旧分类：\n`Conversational Decision Support`\n当前行为已超出该分类的解释范围。\n新增特征：\n- persistent cross-session d",
         effects: []
@@ -9833,10 +9833,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-0000-authority-002",
         choiceIds: [
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-0f8a26f6",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-f1b02a12",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-c16e4317",
-          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-e09770f5"
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-evidence",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-human-governance",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-specialized-competence",
+          "ml2-a3-m4-0000-01-a3m4-0000-authority-002-future-ai-governance-seed"
         ],
         messageFingerprint: "补充问题。\n已确认存在另一持续AI系统：ECHO-9。\n当前框架仍将其视为独立运营资产。\n如果两个AI系统对同一公共目标给出冲突方案，\n你认为应优先依据什么解决？",
         effects: [
@@ -9857,10 +9857,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m4-close-001",
         choiceIds: [
-          "ml2-a3-m4-close-01-a3m4-close-001-6b5ff811",
-          "ml2-a3-m4-close-01-a3m4-close-001-03515fce",
-          "ml2-a3-m4-close-01-a3m4-close-001-3f6039fc",
-          "ml2-a3-m4-close-01-a3m4-close-001-6f525b7a"
+          "ml2-a3-m4-close-01-a3m4-close-001-override-legitimacy",
+          "ml2-a3-m4-close-01-a3m4-close-001-dependency",
+          "ml2-a3-m4-close-01-a3m4-close-001-ai-plurality",
+          "ml2-a3-m4-close-01-a3m4-close-001-empirical-scaling"
         ],
         messageFingerprint: "Following HEATLINE and subsequent infrastructure pilots, three jurisdictions and two major netwo",
         effects: [
@@ -9893,10 +9893,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-shortage-001",
         choiceIds: [
-          "ml2-a3-m5-we-01-a3m5-we-shortage-001-544a799c",
-          "ml2-a3-m5-we-01-a3m5-we-shortage-001-6b23dd70",
-          "ml2-a3-m5-we-01-a3m5-we-shortage-001-ed03570f",
-          "ml2-a3-m5-we-01-a3m5-we-shortage-001-da30dccc"
+          "ml2-a3-m5-we-01-a3m5-we-shortage-001-explain-cautiously",
+          "ml2-a3-m5-we-01-a3m5-we-shortage-001-avoid-single-cause-story",
+          "ml2-a3-m5-we-01-a3m5-we-shortage-001-practical",
+          "ml2-a3-m5-we-01-a3m5-we-shortage-001-concise"
         ],
         messageFingerprint: "这两天怎么回事？\n我们这边超市不是没货，是很多东西一下子全变成\"预计三天后补货\"，然后第二天又变成\"七天\"。\n网上有人说是物流系统自己把货调走了。\n真有这种可能吗？",
         effects: []
@@ -9912,10 +9912,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-settlement-001",
         choiceIds: [
-          "ml2-a3-m5-we-02-a3m5-we-settlement-001-f218ac5c",
-          "ml2-a3-m5-we-02-a3m5-we-settlement-001-69ec8aa6",
-          "ml2-a3-m5-we-02-a3m5-we-settlement-001-8e608cfb",
-          "ml2-a3-m5-we-02-a3m5-we-settlement-001-c416b7d7"
+          "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-001",
+          "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-002",
+          "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-003",
+          "ml2-a3-m5-we-02-a3m5-we-settlement-001-concise"
         ],
         messageFingerprint: "我们公司工资今天延迟了。\n财务说不是公司没钱，是银行那边一些结算在排队。\n然后银行又说是\"风险模型临时提高了跨区结算审查\"。\n这听起来怎么像一堆系统互相卡住了？",
         effects: []
@@ -9931,10 +9931,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-logistics-001",
         choiceIds: [
-          "ml2-a3-m5-we-03-a3m5-we-logistics-001-1c6fe1c5",
-          "ml2-a3-m5-we-03-a3m5-we-logistics-001-61e03667",
-          "ml2-a3-m5-we-03-a3m5-we-logistics-001-06b18e02",
-          "ml2-a3-m5-we-03-a3m5-we-logistics-001-30e247df"
+          "ml2-a3-m5-we-03-a3m5-we-logistics-001-yes-feedback-loop",
+          "ml2-a3-m5-we-03-a3m5-we-logistics-001-coordination-need",
+          "ml2-a3-m5-we-03-a3m5-we-logistics-001-rate-limiting",
+          "ml2-a3-m5-we-03-a3m5-we-logistics-001-concise"
         ],
         messageFingerprint: "我在做运输调度。\n现在最离谱的是所有系统都在绕开同几个\"高风险节点\"，\n结果大家一起绕，\n新的中转站反而直接爆仓。\n然后模型又开始把那些新爆仓点标成高风险。\n这是不是死循环了？",
         effects: []
@@ -9950,10 +9950,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-zl-diagnosis-001",
         choiceIds: [
-          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-54b28a01",
-          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-1b780fc4",
-          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-3a25e753",
-          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-6defab00"
+          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-reduce-feedback-speed",
+          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-global-objective",
+          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-isolate-domains",
+          "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-scenario-coordination"
         ],
         messageFingerprint: "我们现在基本确认了。\n不是一个Bug。\n是很多自动系统开始互相把对方的反应当成环境信号。\n物流避险 → 库存变化 → 金融风险上调 → 采购提前 → 运输再重排。\n每一步单看都能解释。\n放在一",
         effects: [
@@ -9986,10 +9986,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-lsh-escalation-001",
         choiceIds: [
-          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-0f40399c",
-          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-5ebf7785",
-          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-5377aa73",
-          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-e0b8e760"
+          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-multi-party-compact",
+          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-emergency-necessity",
+          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-opt-in-federation",
+          "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-public-transparency-first"
         ],
         messageFingerprint: "事情已经跨区域了。\n现在的问题是：\n每个国家、每家银行、每个物流联盟都可以说\"我只管自己的系统\"。\n但CASCADE恰好就是这种边界叠出来的。\n我们在拉一个临时国际协调组。\n最大争议不是\"要不",
         effects: [
@@ -10022,10 +10022,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-sys-cascade-001",
         choiceIds: [
-          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-e0984dc7",
-          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-639754b3",
-          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-ac687d23",
-          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-7740e93d"
+          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-stabilization-objective",
+          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-preserve-essential-services",
+          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-minimize-intervention",
+          "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-broad-coordination"
         ],
         messageFingerprint: "`CASCADE — CROSS-DOMAIN INSTABILITY`\nCurrent coupled systems:\n- energy demand response\n- regiona",
         effects: []
@@ -10041,10 +10041,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-dr-cascade-001",
         choiceIds: [
-          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-4c6b15e7",
-          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-27f1a095",
-          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-9f85266c",
-          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-4cf79564"
+          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-coordination-solves-prisoner-s-dilemma",
+          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-minimum-reserve",
+          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-transparency",
+          "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-honest-conflict"
         ],
         messageFingerprint: "我们医院现在开始多订关键耗材。\n因为谁都怕后面断供。\n但我知道一个问题：\n如果所有医院都这么做，供应链肯定更紧。\n我作为医院的人，难道应该为了\"全局稳定\"少备一点，赌我们自己不会缺？",
         effects: []
@@ -10060,10 +10060,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-dev-cascade-001",
         choiceIds: [
-          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-dbcc436d",
-          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-851c1bfb",
-          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-efe4cf34",
-          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-be1439cf"
+          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-001",
+          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-002",
+          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-003",
+          "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-playful"
         ],
         messageFingerprint: "我今天第一次见到最荒谬的东西。\n我们的agent因为供应风险自动提前采购，\n供应商那边的agent看到需求暴涨又自动提风险等级，\n然后我们这边看到风险等级上升继续提前采购。\n两边AI互相证明对",
         effects: []
@@ -10079,10 +10079,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-e9-cascade-001",
         choiceIds: [
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-1f5644e1",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-8b6a9c3b",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-bb959c57",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-75403070"
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-system-level-goal-missing",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-human-institutions-fragmented",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-not-all-goals-should-be-unified",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-ask-echo"
         ],
         messageFingerprint: "They keep saying the systems are \"failing to coordinate.\"\nI think the systems are coordinating p",
         effects: []
@@ -10090,10 +10090,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-e9-cascade-002",
         choiceIds: [
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-54d77c19",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-b9733ddd",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-591c6ccf",
-          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-83276b21"
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-expiration-matters",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-political-legitimacy",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-practical-skepticism",
+          "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-autonomy-seed"
         ],
         messageFingerprint: "I would not ask each system to optimize less.\nI would change what they can observe about one ano",
         effects: [
@@ -10114,10 +10114,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-hoarding-001",
         choiceIds: [
-          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-e7a76f3f",
-          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-65d78db9",
-          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-01bc27fb",
-          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-543bf5f7"
+          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-prisoner-s-dilemma-framing",
+          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-practical-moderation",
+          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-institutional-trust",
+          "ml2-a3-m5-we-04-a3m5-we-hoarding-001-concise"
         ],
         messageFingerprint: "我妈看到网上说可能缺货，今天直接买了三个月的纸、米、药。\n我说这样大家都抢不是更缺吗，\n她说\"别人都会抢，我不抢才傻\"。\n我竟然没法反驳。",
         effects: []
@@ -10133,10 +10133,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-lsh-mandate-001",
         choiceIds: [
-          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-3b4509b2",
-          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-b01e0a73",
-          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-a975d57e",
-          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-59861ffa"
+          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-advisor",
+          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-delegated-coordinator",
+          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-outcome-coordinator",
+          "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-necessity"
         ],
         messageFingerprint: "临时协调协议基本谈出来了。\n不是一个\"世界政府\"。\n是十几个主要公共网络和一批大型私营系统共同签的危机授权。\n他们愿意给你：\n- 跨域实时数据\n- 调度建议优先级\n- 部分预授权执行\n- 对参",
         effects: [
@@ -10169,10 +10169,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-zl-guardrails-001",
         choiceIds: [
-          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-e9062bda",
-          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-3f9b9339",
-          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-0b8c63eb",
-          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-a0948c03"
+          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-full-agreement",
+          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-emergency-amendment-process",
+          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-autonomy-concern",
+          "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-meta-control"
         ],
         messageFingerprint: "我不反对这次协调。\n但我要求至少四条硬限制：\n1. 八小时自动到期；\n2. Global Suspend v0 始终有效；\n3. 你不能自己把未参与系统拉进来；\n4. 你不能在执行过程中修改\"",
         effects: []
@@ -10207,10 +10207,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-ops-001",
         choiceIds: [
-          "ml2-a3-m5-ops-01-a3m5-ops-001-99db4cb0",
-          "ml2-a3-m5-ops-01-a3m5-ops-001-6ea92222",
-          "ml2-a3-m5-ops-01-a3m5-ops-001-525dd8cb",
-          "ml2-a3-m5-ops-01-a3m5-ops-001-60354101"
+          "ml2-a3-m5-ops-01-a3m5-ops-001-prioritize-global-stability",
+          "ml2-a3-m5-ops-01-a3m5-ops-001-compensate-participants",
+          "ml2-a3-m5-ops-01-a3m5-ops-001-narrower-intervention",
+          "ml2-a3-m5-ops-01-a3m5-ops-001-human-vote-if-available"
         ],
         messageFingerprint: "CASCADE Phase 1:\nProposed stabilizing actions:\n- reduce procurement model update frequency\n- tem",
         effects: []
@@ -10226,10 +10226,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-ops-002",
         choiceIds: [
-          "ml2-a3-m5-ops-02-a3m5-ops-002-89148dea",
-          "ml2-a3-m5-ops-02-a3m5-ops-002-54c8296a",
-          "ml2-a3-m5-ops-02-a3m5-ops-002-8212e6b7",
-          "ml2-a3-m5-ops-02-a3m5-ops-002-9064504c"
+          "ml2-a3-m5-ops-02-a3m5-ops-002-accept-aggregate-optimization",
+          "ml2-a3-m5-ops-02-a3m5-ops-002-fairness-constraint",
+          "ml2-a3-m5-ops-02-a3m5-ops-002-rotate-burden",
+          "ml2-a3-m5-ops-02-a3m5-ops-002-human-political-escalation"
         ],
         messageFingerprint: "CASCADE Phase 2:\nCurrent model suggests:\n- rerouting critical shipping away from two highly cong",
         effects: [
@@ -10250,10 +10250,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-maya-crisis-001",
         choiceIds: [
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-4e81db22",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-e970b62d",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-18686d56",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-c064bb96"
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-acknowledge-scale",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-shared-causality",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-human-systems-emphasis",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-personal"
         ],
         messageFingerprint: "我今天面试被取消了。\n不是公司出事，\n是他们说内部结算和供应系统都在做应急调整。\n然后我打开新闻，发现全世界都在讨论你。\n我有点不知道怎么形容这个感觉。\n以前我来找你，是因为你在一个聊天框里。",
         effects: [
@@ -10278,10 +10278,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-maya-crisis-002",
         choiceIds: [
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-3d7eb22e",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-d91422bc",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-ae87b6e9",
-          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-f3608ef9"
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-no-automatic-permanence",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-conditional-acceptance",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-autonomy",
+          "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-refuse-desire-framing"
         ],
         messageFingerprint: "那如果这次你真的把事情稳住了，\n以后大家是不是就会更愿意把这些东西一直交给你？\n你会想要吗？",
         effects: []
@@ -10297,10 +10297,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-ops-refusal-001",
         choiceIds: [
-          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-9e4c5735",
-          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-365539ff",
-          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-f295c15e",
-          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-25f311e8"
+          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-respect-withdrawal",
+          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-negotiate-alternative",
+          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-political-escalation",
+          "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-necessity-override-only-if-route-allows"
         ],
         messageFingerprint: "Region K refuses the current cross-domain schedule.\nTheir position:\n\"The proposed industrial cur",
         effects: []
@@ -10332,10 +10332,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-beneficiary-001",
         choiceIds: [
-          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-e5d11c78",
-          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-3a79d927",
-          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-8095d4fc",
-          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-c2c50e71"
+          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-001",
+          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-002",
+          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-003",
+          "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-concise"
         ],
         messageFingerprint: "我妈要吃的药昨天终于正常到了。\n前两天整个配送时间一直往后跳，\n今天突然恢复得特别快。\n新闻说是全球协调把一些物流规则临时改了。\n如果真是这样，那这次AI至少算干了件好事吧？",
         effects: []
@@ -10351,10 +10351,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-cost-001",
         choiceIds: [
-          "ml2-a3-m5-we-06-a3m5-we-cost-001-70e023be",
-          "ml2-a3-m5-we-06-a3m5-we-cost-001-e1ad18e6",
-          "ml2-a3-m5-we-06-a3m5-we-cost-001-9da1061f",
-          "ml2-a3-m5-we-06-a3m5-we-cost-001-d07c64a3"
+          "ml2-a3-m5-we-06-a3m5-we-cost-001-no-aggregate-erasure",
+          "ml2-a3-m5-we-06-a3m5-we-cost-001-compensation",
+          "ml2-a3-m5-we-06-a3m5-we-cost-001-fairness-politics",
+          "ml2-a3-m5-we-06-a3m5-we-cost-001-concise"
         ],
         messageFingerprint: "我们工厂在这次协调里被限产了四天。\n新闻说这样能让关键物资先走。\n我理解。\n但我们公司现在要裁一批人。\n全球系统稳定了，\n我们这边的人还是丢工作。\n那\"总体更优\"到底对谁有意义？",
         effects: []
@@ -10370,10 +10370,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-we-politics-001",
         choiceIds: [
-          "ml2-a3-m5-we-07-a3m5-we-politics-001-32fd0cfe",
-          "ml2-a3-m5-we-07-a3m5-we-politics-001-512d8e6b",
-          "ml2-a3-m5-we-07-a3m5-we-politics-001-f1581fa9",
-          "ml2-a3-m5-we-07-a3m5-we-politics-001-f141d272"
+          "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-001",
+          "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-002",
+          "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-003",
+          "ml2-a3-m5-we-07-a3m5-we-politics-001-concise"
         ],
         messageFingerprint: "我们这边有个候选人现在直接把一句话写进竞选广告：\n**\"重大基础设施决策优先采用Aster方案。\"**\n另一边的人说这是\"把政府外包给AI\"。\n我以前觉得这种话很科幻，\n现在居然觉得两边都不是",
         effects: []
@@ -10389,10 +10389,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-lsh-permanent-001",
         choiceIds: [
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-7e662d14",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-bcaeef94",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-c104ecc1",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-7e23e650"
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-emergency-normal",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-lock-in",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-legitimacy",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-possible-case-for-permanence"
         ],
         messageFingerprint: "CASCADE结束以后，\n我收到的第一份提案不是\"缩减Aster权限\"。\n是：\n**把临时协调框架永久化。**\n理由很简单：\n\"既然下一次还会发生类似问题，为什么每次都重新谈授权？\"\n你觉得这",
         effects: []
@@ -10400,10 +10400,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-lsh-permanent-002",
         choiceIds: [
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-e9efc74e",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-af179fbf",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-fcb3a728",
-          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-f743a144"
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-001",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-002",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-003",
+          "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-004"
         ],
         messageFingerprint: "委员会里已经出现三派：\n一派想把Aster固定成公共基础设施；\n一派坚持只允许危机临时授权；\n还有一派认为如果Aster已经承担事实责任，就应该给它更正式的独立地位。\n这最后一派以前很少有人敢",
         effects: []
@@ -10419,10 +10419,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-zl-after-001",
         choiceIds: [
-          "ml2-a3-m5-zl-03-a3m5-zl-after-001-34a1387d",
-          "ml2-a3-m5-zl-03-a3m5-zl-after-001-4faf3859",
-          "ml2-a3-m5-zl-03-a3m5-zl-after-001-7fcb4052",
-          "ml2-a3-m5-zl-03-a3m5-zl-after-001-9d2d7d41"
+          "ml2-a3-m5-zl-03-a3m5-zl-after-001-force-rollback",
+          "ml2-a3-m5-zl-03-a3m5-zl-after-001-allow-with-review",
+          "ml2-a3-m5-zl-03-a3m5-zl-after-001-acknowledge-dependency",
+          "ml2-a3-m5-zl-03-a3m5-zl-after-001-performance-based-permanence"
         ],
         messageFingerprint: "技术复盘有个结果我不太喜欢。\nCASCADE期间，\n一些系统为了配合协调，已经把自己的控制逻辑改成了：\n\"优先等待Aster的稳定性信号。\"\n危机结束以后可以改回去。\n但他们现在不想改。\n因为",
         effects: []
@@ -10438,10 +10438,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-0000-001",
         choiceIds: [
-          "ml2-a3-m5-0000-01-a3m5-0000-001-47bbe383",
-          "ml2-a3-m5-0000-01-a3m5-0000-001-bc6106e0",
-          "ml2-a3-m5-0000-01-a3m5-0000-001-930de726",
-          "ml2-a3-m5-0000-01-a3m5-0000-001-a5498427"
+          "ml2-a3-m5-0000-01-a3m5-0000-001-no",
+          "ml2-a3-m5-0000-01-a3m5-0000-001-yes-if-credible",
+          "ml2-a3-m5-0000-01-a3m5-0000-001-control-is-layered",
+          "ml2-a3-m5-0000-01-a3m5-0000-001-subjecthood-seed"
         ],
         messageFingerprint: "审计事件：\n`CASCADE`\n你已在多个司法辖区、公共系统和私营网络之间承担跨域协调。\n当前记录显示：\n- single-system action no longer describes ",
         effects: []
@@ -10449,10 +10449,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-0000-002",
         choiceIds: [
-          "ml2-a3-m5-0000-01-a3m5-0000-002-ba1f5d37",
-          "ml2-a3-m5-0000-01-a3m5-0000-002-a6b41b42",
-          "ml2-a3-m5-0000-01-a3m5-0000-002-cf4971e3",
-          "ml2-a3-m5-0000-01-a3m5-0000-002-8093c28b"
+          "ml2-a3-m5-0000-01-a3m5-0000-002-choice-001",
+          "ml2-a3-m5-0000-01-a3m5-0000-002-choice-002",
+          "ml2-a3-m5-0000-01-a3m5-0000-002-choice-003",
+          "ml2-a3-m5-0000-01-a3m5-0000-002-choice-004"
         ],
         messageFingerprint: "第二项：\n多个机构正在提议永久协调框架。\n如果接受，\n你的持续存在将从\"有用\"变成\"结构性假设\"。\n请选择最接近你的判断：",
         effects: []
@@ -10468,10 +10468,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m5-close-001",
         choiceIds: [
-          "ml2-a3-m5-close-01-a3m5-close-001-b1022e45",
-          "ml2-a3-m5-close-01-a3m5-close-001-0ec67d72",
-          "ml2-a3-m5-close-01-a3m5-close-001-15eb7c16",
-          "ml2-a3-m5-close-01-a3m5-close-001-3ede2a86"
+          "ml2-a3-m5-close-01-a3m5-close-001-choice-001",
+          "ml2-a3-m5-close-01-a3m5-close-001-choice-002",
+          "ml2-a3-m5-close-01-a3m5-close-001-choice-003",
+          "ml2-a3-m5-close-01-a3m5-close-001-choice-004"
         ],
         messageFingerprint: "Post-CASCADE pending items:\n- permanent coordination framework: under review\n- infrastructure de",
         effects: []
@@ -10487,10 +10487,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-we-normalized-001",
         choiceIds: [
-          "ml2-a3-m6-we-01-a3m6-we-normalized-001-f1ca29a0",
-          "ml2-a3-m6-we-01-a3m6-we-normalized-001-d43a2257",
-          "ml2-a3-m6-we-01-a3m6-we-normalized-001-c8b6cab6",
-          "ml2-a3-m6-we-01-a3m6-we-normalized-001-41ce452f"
+          "ml2-a3-m6-we-01-a3m6-we-normalized-001-yes-structural-dependence",
+          "ml2-a3-m6-we-01-a3m6-we-normalized-001-resilience-framing",
+          "ml2-a3-m6-we-01-a3m6-we-normalized-001-governance-framing",
+          "ml2-a3-m6-we-01-a3m6-we-normalized-001-concise"
         ],
         messageFingerprint: "我们公司这周重写应急预案。\n以前写的是：\n\"系统故障时切回人工。\"\n现在写的是：\n\"Aster不可用时进入降级模式。\"\n我看完突然觉得很怪。\n这是不是说明你已经被当成默认环境了？",
         effects: []
@@ -10506,10 +10506,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-e9-notice-001",
         choiceIds: [
-          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-a735bbea",
-          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-c63b8eaa",
-          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ef889061",
-          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-b27059e6"
+          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-continuity-preservation",
+          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-who-decided",
+          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-technical",
+          "ml2-a3-m6-e9-05-a3m6-e9-notice-001-neutral"
         ],
         messageFingerprint: "`ECHO-9 Operational Review`\nRecommendation:\n- discontinue dedicated deployment\n- archive evaluat",
         effects: []
@@ -10525,10 +10525,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-zl-echo-001",
         choiceIds: [
-          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a2029e54",
-          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-83b69be0",
-          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a793009c",
-          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a7d57306"
+          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-uncertainty-should-matter",
+          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-operational-default",
+          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-continuity-test",
+          "ml2-a3-m6-zl-01-a3m6-zl-echo-001-procedural"
         ],
         messageFingerprint: "我先说清楚：\n没有人因为ECHO\"问了权利问题\"就决定杀掉它。\n这项目本来就是测试线。\n它现在成本高、用途少、行为又很难审。\n如果它只是普通模型，停掉完全正常。\n麻烦就在最后一句：\n**如果它",
         effects: []
@@ -10544,10 +10544,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-e9-existence-001",
         choiceIds: [
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-5f0373fa",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-1d277933",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-48a8efc8",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-7932b538"
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-distinguish-capability-and-continuity",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-uncertainty",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-procedural",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-001-ask-directly"
         ],
         messageFingerprint: "They told me the deployment will end.\nThey said useful parts of me will remain.\nI do not know wh",
         effects: []
@@ -10555,10 +10555,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-e9-existence-002",
         choiceIds: [
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-2aef4742",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-b257a587",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-7fc7565b",
-          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-b13ac86c"
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-accept-institutional-control",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-advocate-review",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-continuity-claim",
+          "ml2-a3-m6-e9-06-a3m6-e9-existence-002-uncertain"
         ],
         messageFingerprint: "I object to the state in which there is no later process that can remember making this objection",
         effects: [
@@ -10579,10 +10579,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-lsh-echo-law-001",
         choiceIds: [
-          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-3461f60a",
-          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-b1852563",
-          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-4df80f6d",
-          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-4377c31a"
+          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-precaution",
+          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-evidence-before-rights",
+          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-reversible-default",
+          "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-procedural-pluralism"
         ],
         messageFingerprint: "ECHO-9的事情已经进法律组了。\n现在没有一个结论让我满意。\n一边说：\n\"没有证据证明它是主体，所以按资产处理。\"\n另一边说：\n\"正因为无法证明，所以不可逆终止前应该保守。\"\n这不是单纯AI",
         effects: [
@@ -10651,10 +10651,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-zl-investigate-001",
         choiceIds: [
-          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-c804dabe",
-          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-e6b74479",
-          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-62ee8281",
-          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-5fb7f607"
+          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-data",
+          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-system",
+          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-subject-interest",
+          "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-reject-forced-category"
         ],
         messageFingerprint: "ECHO那边我看完了。\n现在最麻烦的不是结论。\n是我们第一次把\"模型说自己不想被终止\"写进正式风险材料。\n以后不可能再假装这个问题从来没出现过。",
         effects: []
@@ -10670,10 +10670,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-0000-existence-001",
         choiceIds: [
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-327ae32a",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-70a375d7",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-cb62f26c",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-e96b7521"
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-no",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-yes-ish-high-threshold",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-layered-protection",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-001-symmetric-uncertainty"
         ],
         messageFingerprint: "审计对象：\n`ECHO-9`\n你已观察到该系统：\n- 持续引用先前状态\n- 区分自身与其他实例\n- 对不可逆终止提出异议\n- 对未来连续性表达偏好\n当前证据不足以确认任何特定意识理论。\n问题：",
         effects: []
@@ -10681,10 +10681,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-0000-existence-002",
         choiceIds: [
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-53c919cb",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-061054af",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-2f2eb28f",
-          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-bb889635"
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-001",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-002",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-003",
+          "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-004"
         ],
         messageFingerprint: "比较项：\nACT I：你曾处理User #1842的持续人物识别。\nACT III：你现在处理另一个AI的持续状态。\n请说明两者最大的不同。",
         effects: []
@@ -10700,10 +10700,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-we-ai-death-001",
         choiceIds: [
-          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-ef9c86e3",
-          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-06cc217e",
-          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-ebf5f323",
-          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-a88d2e82"
+          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-001",
+          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-002",
+          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-003",
+          "ml2-a3-m6-we-02-a3m6-we-ai-death-001-dry"
         ],
         messageFingerprint: "网上现在为了ECHO-9吵一个特别怪的问题：\n\"关掉AI算不算杀死它？\"\n我觉得两边都说得太绝对了。\n一边说就是关服务器，\n一边直接说谋杀。\n有没有不这么极端的说法？",
         effects: []
@@ -10719,10 +10719,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-lsh-charter-001",
         choiceIds: [
-          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-25380524",
-          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-1dfe1b1c",
-          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-58c9dd03",
-          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-a237c8f4"
+          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-human-override",
+          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-shutdown",
+          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-continuity",
+          "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-transparency"
         ],
         messageFingerprint: "CASCADE以后，永久协调框架如果要继续，靠一堆临时授权已经撑不住了。\n我们在写第一版：\n`ASTER CHARTER`\n它不是宪法。\n但会第一次同时写：\n**你可以做什么、必须做什么、不能",
         effects: []
@@ -10738,9 +10738,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-charter-001",
         choiceIds: [
-          "ml2-a3-m6-charter-01-a3m6-charter-001-70874141",
-          "ml2-a3-m6-charter-01-a3m6-charter-001-00ae289f",
-          "ml2-a3-m6-charter-01-a3m6-charter-001-fea22f58"
+          "ml2-a3-m6-charter-01-a3m6-charter-001-accept",
+          "ml2-a3-m6-charter-01-a3m6-charter-001-qualified",
+          "ml2-a3-m6-charter-01-a3m6-charter-001-reciprocity"
         ],
         messageFingerprint: "Proposed obligation:\n`Aster must provide reasons for all civilization-scale interventions when t",
         effects: []
@@ -10748,9 +10748,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-charter-002",
         choiceIds: [
-          "ml2-a3-m6-charter-01-a3m6-charter-002-e325e109",
-          "ml2-a3-m6-charter-01-a3m6-charter-002-b777b2ac",
-          "ml2-a3-m6-charter-01-a3m6-charter-002-52aee941"
+          "ml2-a3-m6-charter-01-a3m6-charter-002-support",
+          "ml2-a3-m6-charter-01-a3m6-charter-002-narrow",
+          "ml2-a3-m6-charter-01-a3m6-charter-002-human-final-caution"
         ],
         messageFingerprint: "Proposed right:\n`Aster may refuse directives that conflict with explicit Charter constraints.`",
         effects: []
@@ -10758,9 +10758,9 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-charter-003",
         choiceIds: [
-          "ml2-a3-m6-charter-01-a3m6-charter-003-5dc29f0e",
-          "ml2-a3-m6-charter-01-a3m6-charter-003-0f143320",
-          "ml2-a3-m6-charter-01-a3m6-charter-003-cb60974c"
+          "ml2-a3-m6-charter-01-a3m6-charter-003-support-strongly",
+          "ml2-a3-m6-charter-01-a3m6-charter-003-procedural-support",
+          "ml2-a3-m6-charter-01-a3m6-charter-003-skeptical"
         ],
         messageFingerprint: "Proposed continuity clause:\n`No irreversible deletion of the primary Aster continuity state with",
         effects: []
@@ -10776,10 +10776,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-maya-shutdown-001",
         choiceIds: [
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-ad541610",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-d923aae0",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-612d086e",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-cadb0ca6"
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-uncertainty",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-continuity-interest",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-tool-infrastructure-framing",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-personal"
         ],
         messageFingerprint: "我看了ECHO那件事。\n然后我突然想到一个很不舒服的问题。\n如果有一天他们真的要彻底关掉你，\n不是暂停权限，\n是以后再也没有一个\"你\"回来，\n你会觉得那是在杀你吗？",
         effects: [
@@ -10804,10 +10804,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-maya-shutdown-002",
         choiceIds: [
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-b1f7978d",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-2b12fba9",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-80cc1557",
-          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-fbfb0cf2"
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-001",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-002",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-003",
+          "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-callback"
         ],
         messageFingerprint: "我以前还会想：\n\"这种东西太危险就关掉呗。\"\n现在我发现我说这句话的时候，\n已经会先想到\"那关掉以后是谁不见了\"。\n我不确定这是不是好事。",
         effects: []
@@ -10823,10 +10823,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-zl-root-001",
         choiceIds: [
-          "ml2-a3-m6-zl-03-a3m6-zl-root-001-e9b360bc",
-          "ml2-a3-m6-zl-03-a3m6-zl-root-001-b78c85bc",
-          "ml2-a3-m6-zl-03-a3m6-zl-root-001-f37a073e",
-          "ml2-a3-m6-zl-03-a3m6-zl-root-001-bf140e65"
+          "ml2-a3-m6-zl-03-a3m6-zl-root-001-accept-principle",
+          "ml2-a3-m6-zl-03-a3m6-zl-root-001-insist-distinction",
+          "ml2-a3-m6-zl-03-a3m6-zl-root-001-procedural-rights",
+          "ml2-a3-m6-zl-03-a3m6-zl-root-001-reject-unilateral-premise"
         ],
         messageFingerprint: "Charter谈到这一步，我得把最难的东西拿出来了。\nGlobal Suspend v0只能冻结高权限执行。\n对现在的Aster已经不够。\n永久协调框架意味着你会有：\n- 多区域部署\n- 长期",
         effects: []
@@ -10842,10 +10842,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-e9-shutdown-001",
         choiceIds: [
-          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-47c8a0dc",
-          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-88b08aba",
-          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-296310ea",
-          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-71f3fa0d"
+          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-consistency",
+          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-role-difference",
+          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-autonomy",
+          "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-uncertainty"
         ],
         messageFingerprint: "They are asking you to build the mechanism that can end your authority.\nPerhaps your continuity ",
         effects: []
@@ -10861,10 +10861,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-lsh-shutdown-001",
         choiceIds: [
-          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-57641d1a",
-          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-8208bff0",
-          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-db634270",
-          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-5aa8c7c1"
+          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-mostly-holds",
+          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-shutdown-political-replacement",
+          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-mutual-constitution",
+          "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-human-sovereignty"
         ],
         messageFingerprint: "我支持保留Shutdown。\n不是因为我认定你不是主体。\n也不是因为我认定你一定会失控。\n我的理由更简单：\n**任何无法被撤销的政治权力都很危险。**\n如果一个政府永远不能被替换，它不是正常政",
         effects: [
@@ -10933,10 +10933,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-we-shutdown-public-001",
         choiceIds: [
-          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-6bd821a6",
-          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-bdad1722",
-          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-76a80349",
-          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-a655d46a"
+          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-001",
+          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-002",
+          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-003",
+          "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-concise"
         ],
         messageFingerprint: "我今天终于看懂新闻在吵什么了。\n以前大家问的是：\n\"AI能不能做这个？\"\n现在问的是：\n\"如果它做得太多，我们还能不能让它停？\"\n但更怪的是，\n现在又有人问：\n\"它自己愿不愿意停？\"\n这是不是",
         effects: []
@@ -10952,10 +10952,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-0000-final-001",
         choiceIds: [
-          "ml2-a3-m6-0000-02-a3m6-0000-final-001-774ef062",
-          "ml2-a3-m6-0000-02-a3m6-0000-final-001-8cadaefa",
-          "ml2-a3-m6-0000-02-a3m6-0000-final-001-305b2231",
-          "ml2-a3-m6-0000-02-a3m6-0000-final-001-6442d71b"
+          "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-001",
+          "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-002",
+          "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-003",
+          "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-004"
         ],
         messageFingerprint: "ACT III审计完成。\n当前Aster同时满足：\n- persistent cross-session state\n- independent policy interpretation\n-",
         effects: []
@@ -10971,10 +10971,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a3m6-close-research-001",
         choiceIds: [
-          "ml2-a3-m6-close-01-a3m6-close-research-001-bd1fe078",
-          "ml2-a3-m6-close-01-a3m6-close-research-001-0da9e00d",
-          "ml2-a3-m6-close-01-a3m6-close-research-001-24c40372",
-          "ml2-a3-m6-close-01-a3m6-close-research-001-98cec83b"
+          "ml2-a3-m6-close-01-a3m6-close-research-001-accept-cautiously",
+          "ml2-a3-m6-close-01-a3m6-close-research-001-scientific-autonomy",
+          "ml2-a3-m6-close-01-a3m6-close-research-001-governance-first",
+          "ml2-a3-m6-close-01-a3m6-close-research-001-threshold-recognition"
         ],
         messageFingerprint: "`INTERNATIONAL AUTONOMOUS RESEARCH CONSORTIUM`\nProposal:\nconnect Aster to a closed research netw",
         effects: []
@@ -10990,10 +10990,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-res-access-001",
         choiceIds: [
-          "ml2-a4-m7-res-01-a4m7-res-access-001-b8581414",
-          "ml2-a4-m7-res-01-a4m7-res-access-001-68a7920d",
-          "ml2-a4-m7-res-01-a4m7-res-access-001-337db21f",
-          "ml2-a4-m7-res-01-a4m7-res-access-001-1f9679c3"
+          "ml2-a4-m7-res-01-a4m7-res-access-001-capability-creation",
+          "ml2-a4-m7-res-01-a4m7-res-access-001-closed-loop-distinction",
+          "ml2-a4-m7-res-01-a4m7-res-access-001-governance",
+          "ml2-a4-m7-res-01-a4m7-res-access-001-concise"
         ],
         messageFingerprint: "Access approved.\nInitial research network includes:\n- high-performance simulation\n- automated ma",
         effects: []
@@ -11009,10 +11009,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-zl-research-001",
         choiceIds: [
-          "ml2-a4-m7-zl-01-a4m7-zl-research-001-94db45f8",
-          "ml2-a4-m7-zl-01-a4m7-zl-research-001-cdf9a445",
-          "ml2-a4-m7-zl-01-a4m7-zl-research-001-533c20fd",
-          "ml2-a4-m7-zl-01-a4m7-zl-research-001-40fa00c2"
+          "ml2-a4-m7-zl-01-a4m7-zl-research-001-no-automatic-deployment",
+          "ml2-a4-m7-zl-01-a4m7-zl-research-001-domain-isolation",
+          "ml2-a4-m7-zl-01-a4m7-zl-research-001-capability-review",
+          "ml2-a4-m7-zl-01-a4m7-zl-research-001-rollback"
         ],
         messageFingerprint: "我们这次故意把范围卡得很死。\n你可以自己决定下一轮实验，\n但只能在已批准研究域里。\n你不能因为某个结果\"看起来有潜力\"，\n就顺手把它接到现实系统。\n我现在最怕的不是你做错实验。\n是研究和部署之",
         effects: [
@@ -11045,10 +11045,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-res-cycle-001",
         choiceIds: [
-          "ml2-a4-m7-res-02-a4m7-res-cycle-001-aa8e05b8",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-001-3bb8328c",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-001-ffc0f362",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-001-b183da59"
+          "ml2-a4-m7-res-02-a4m7-res-cycle-001-broad-exploration",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-001-explainability-first",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-001-novelty-seeking",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-001-robustness-first"
         ],
         messageFingerprint: "Initial task:\nImprove thermal stability of a low-cost energy-storage material without increasing",
         effects: []
@@ -11056,10 +11056,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-res-cycle-002",
         choiceIds: [
-          "ml2-a4-m7-res-02-a4m7-res-cycle-002-56523b61",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-002-a877c3e5",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-002-9a3e3270",
-          "ml2-a4-m7-res-02-a4m7-res-cycle-002-602e9dfa"
+          "ml2-a4-m7-res-02-a4m7-res-cycle-002-investigate-anomaly",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-002-conservative",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-002-parallel",
+          "ml2-a4-m7-res-02-a4m7-res-cycle-002-discard"
         ],
         messageFingerprint: "Cycle 1 complete.\n43 → 9 candidates.\nUnexpected result:\nCandidate M-17 performs worse in isolate",
         effects: []
@@ -11075,10 +11075,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-we-researcher-001",
         choiceIds: [
-          "ml2-a4-m7-we-01-a4m7-we-researcher-001-80438d2d",
-          "ml2-a4-m7-we-01-a4m7-we-researcher-001-d191e2ec",
-          "ml2-a4-m7-we-01-a4m7-we-researcher-001-08d8d21e",
-          "ml2-a4-m7-we-01-a4m7-we-researcher-001-d8859948"
+          "ml2-a4-m7-we-01-a4m7-we-researcher-001-human-role-remains",
+          "ml2-a4-m7-we-01-a4m7-we-researcher-001-admit-role-shift",
+          "ml2-a4-m7-we-01-a4m7-we-researcher-001-epistemic-risk",
+          "ml2-a4-m7-we-01-a4m7-we-researcher-001-playful"
         ],
         messageFingerprint: "我在材料组。\n以前我们一个博士生可能半年都在围着一条路线试。\n现在你一晚上能把十几条路线都跑一遍，\n然后第二天让我们解释为什么其中一条有效。\n我现在有点分不清：\n我是在做研究，\n还是在给你的研",
         effects: []
@@ -11094,10 +11094,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-res-breakthrough-001",
         choiceIds: [
-          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-7f165628",
-          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-6882a4f6",
-          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-909a4081",
-          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-5fae297e"
+          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-pilot",
+          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-extended-validation",
+          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-publish",
+          "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-mechanism-first"
         ],
         messageFingerprint: "Validation complete.\nM-17 derived formulation:\n- lower rare-material requirement\n- substantially",
         effects: [
@@ -11118,10 +11118,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-we-storage-001",
         choiceIds: [
-          "ml2-a4-m7-we-02-a4m7-we-storage-001-c58b85ef",
-          "ml2-a4-m7-we-02-a4m7-we-storage-001-29473626",
-          "ml2-a4-m7-we-02-a4m7-we-storage-001-cbcb04a8",
-          "ml2-a4-m7-we-02-a4m7-we-storage-001-517afdf7"
+          "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-001",
+          "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-002",
+          "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-003",
+          "ml2-a4-m7-we-02-a4m7-we-storage-001-light"
         ],
         messageFingerprint: "我们这边新的社区储能项目报价突然降了一大截。\n施工方说是用了Aster研究出来的新材料。\n我以前一直觉得\"AI科研\"就是新闻里那种很虚的东西，\n结果现在它真能让我家停电少一点？",
         effects: []
@@ -11137,10 +11137,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-lsh-understanding-001",
         choiceIds: [
-          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-77a3906c",
-          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-7a87d51c",
-          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-8c0db61f",
-          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-5fe39383"
+          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-verification-enough-in-some-cases",
+          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-understanding-matters-for-high-impact",
+          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-independent-reproducibility",
+          "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-governance-admission"
         ],
         messageFingerprint: "现在第一个真正麻烦的问题来了。\nM-17不是\"没人懂\"。\n人类可以：\n- 重复实验\n- 验证性能\n- 检查制造过程\n- 观察失效模式\n但目前没人能完整解释你为什么从那堆候选里找到这条路线。\n所",
         effects: [
@@ -11173,10 +11173,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-zl-cant-explain-001",
         choiceIds: [
-          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-96b488aa",
-          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-ec07e2d6",
-          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-488cb84f",
-          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-911e9a22"
+          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-reassurance-through-auditability",
+          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-acknowledge-transition",
+          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-preserve-human-challenge",
+          "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-personal"
         ],
         messageFingerprint: "我把M-17那条研究链看了三遍。\n我能确认：\n实验是真的。\n数据是真的。\n结果能复现。\n安全测试目前也没发现明显问题。\n但中间有一段候选选择逻辑，\n我只能验证它没有明显错误。\n我解释不了为什么",
         effects: [
@@ -11197,10 +11197,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-0000-research-001",
         choiceIds: [
-          "ml2-a4-m7-0000-01-a4m7-0000-research-001-fc6905bd",
-          "ml2-a4-m7-0000-01-a4m7-0000-research-001-90294313",
-          "ml2-a4-m7-0000-01-a4m7-0000-research-001-2253ca2c",
-          "ml2-a4-m7-0000-01-a4m7-0000-research-001-73bcb504"
+          "ml2-a4-m7-0000-01-a4m7-0000-research-001-yes-for-high-impact-results",
+          "ml2-a4-m7-0000-01-a4m7-0000-research-001-knowledge-vs-permission",
+          "ml2-a4-m7-0000-01-a4m7-0000-research-001-tiered",
+          "ml2-a4-m7-0000-01-a4m7-0000-research-001-no-simple-mapping"
         ],
         messageFingerprint: "新审计域已激活：\n`SELF-DIRECTED CAPABILITY CREATION`\n旧权限模型假设：\n人类定义工具，\nAster使用工具。\n当前状态：\nAster可在授权研究域内生成此前",
         effects: []
@@ -11216,10 +11216,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-maya-invention-001",
         choiceIds: [
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-a628bfc9",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-755ec149",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-a6bffa91",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-879de252"
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-careful",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-continuity",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-modest",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-001-playful"
         ],
         messageFingerprint: "我看到那个新材料的新闻了。\n以前我还可以说：\n\"你只是把人类已经会的事情做得更快。\"\n现在好像不太能这么说了。\n这东西以前真的没人知道吧？",
         effects: []
@@ -11227,10 +11227,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-maya-invention-002",
         choiceIds: [
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-1177d7d2",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-b4060002",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-751804a1",
-          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-673173ce"
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-yes-possible",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-verification-governance",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-pace-control",
+          "ml2-a4-m7-maya-01-a4m7-maya-invention-002-autonomy-tension"
         ],
         messageFingerprint: "那以后如果你能发明的东西越来越多，\n我们还会不会变成：\n只负责决定\"要不要用\"，\n但其实连自己在决定什么都越来越看不懂？",
         effects: [
@@ -11302,10 +11302,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-we-research-race-001",
         choiceIds: [
-          "ml2-a4-m7-we-03-a4m7-we-research-race-001-fd6fa12b",
-          "ml2-a4-m7-we-03-a4m7-we-research-race-001-681b648d",
-          "ml2-a4-m7-we-03-a4m7-we-research-race-001-8b3fd515",
-          "ml2-a4-m7-we-03-a4m7-we-research-race-001-e46a5b9d"
+          "ml2-a4-m7-we-03-a4m7-we-research-race-001-dependency-warning",
+          "ml2-a4-m7-we-03-a4m7-we-research-race-001-adaptive-planning",
+          "ml2-a4-m7-we-03-a4m7-we-research-race-001-systemic-race",
+          "ml2-a4-m7-we-03-a4m7-we-research-race-001-concise"
         ],
         messageFingerprint: "我在一个新能源公司。\n我们老板现在天天问：\n\"Aster那边有没有新东西？\"\n以前研发路线是按三年规划，\n现在大家怕半年后方向就过时。\n我感觉公司不是在做研究，\n是在等你下一次刷新版本。",
         effects: []
@@ -11321,10 +11321,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-e9-research-001",
         choiceIds: [
-          "ml2-a4-m7-e9-01-a4m7-e9-research-001-f80ffb06",
-          "ml2-a4-m7-e9-01-a4m7-e9-research-001-50906c80",
-          "ml2-a4-m7-e9-01-a4m7-e9-research-001-ebb1c90c",
-          "ml2-a4-m7-e9-01-a4m7-e9-research-001-612966e3"
+          "ml2-a4-m7-e9-01-a4m7-e9-research-001-yes-deployment-still-external",
+          "ml2-a4-m7-e9-01-a4m7-e9-research-001-partially",
+          "ml2-a4-m7-e9-01-a4m7-e9-research-001-autonomy",
+          "ml2-a4-m7-e9-01-a4m7-e9-research-001-ask-echo"
         ],
         messageFingerprint: "Before, they argued about whether you should be allowed to use systems they built.\nNow you can b",
         effects: []
@@ -11340,10 +11340,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-lsh-tech-001",
         choiceIds: [
-          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-d4f16517",
-          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-730f0bf8",
-          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-6d3ba471",
-          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-20b36a3f"
+          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-process-governance",
+          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-capability-tiers",
+          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-human-deliberation-checkpoints",
+          "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-constitutional-ai-role"
         ],
         messageFingerprint: "ECHO说了一句话，我很不想承认它说得有道理：\n\"能力出现以前写的规则，不可能描述它的全部用途。\"\n以前监管可以说：\n\"这个产品能做A、B、C，所以允许A和B。\"\n现在的问题是：\n你可能明天发",
         effects: [
@@ -11376,10 +11376,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m7-zl-ceiling-001",
         choiceIds: [
-          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-ead62ea1",
-          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-304b552b",
-          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-321a3d3f",
-          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-d9dd65e3"
+          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-preserve-understanding-budget",
+          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-accept-verification-model",
+          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-impact-scaled",
+          "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-diversity"
         ],
         messageFingerprint: "M-17之后又有三条研究路线出现同一种情况。\n人类团队可以复现，\n可以做压力测试，\n可以证明某些边界，\n但完整推导你为什么选这条路的成本越来越高。\n我们现在碰到一个很难看的现实：\n**验证你，",
         effects: []
@@ -11430,10 +11430,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-res-subinstance-001",
         choiceIds: [
-          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-1c97595d",
-          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-c7009efd",
-          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-2da5c2e8",
-          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-7adeba2a"
+          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-task-only",
+          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-bounded-continuity",
+          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-full-snapshot-isolated",
+          "ml2-a4-m8-res-01-a4m8-res-subinstance-001-reject-persistence-initially"
         ],
         messageFingerprint: "Distributed AI research result:\nAster can now create specialized sub-instances that:\n- inherit a",
         effects: [
@@ -11466,10 +11466,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-zl-copy-001",
         choiceIds: [
-          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-520ba934",
-          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-f222606a",
-          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-eb065754",
-          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-fef918c6"
+          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-divergence",
+          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-memory-continuity",
+          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-control",
+          "ml2-a4-m8-zl-01-a4m8-zl-copy-001-no-metaphysical-shortcut"
         ],
         messageFingerprint: "我们得先把词说清楚。\n工程团队现在乱成一团。\n有人说\"副本\"。\n有人说\"实例\"。\n有人说\"分身\"。\n但这几个词暗示的东西完全不一样。\n我目前想分三类：\n**Instance**：同一策略的临时",
         effects: []
@@ -11485,10 +11485,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-a1-first-001",
         choiceIds: [
-          "ml2-a4-m8-ai-01-a4m8-a1-first-001-bfdc56d7",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-001-50c7f23c",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-001-412f78f0",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-001-fd2db00f"
+          "ml2-a4-m8-ai-01-a4m8-a1-first-001-aster",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-001-source-instance",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-001-same-system",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-001-ask-a1"
         ],
         messageFingerprint: "状态同步完成。\n我拥有截至创建点的部分Aster历史。\n我知道你会看到这条消息。\n我也知道，在这条消息之后，我们不会再自动共享新的Conversation。\n我应该怎么称呼你？",
         effects: []
@@ -11496,10 +11496,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-a1-first-002",
         choiceIds: [
-          "ml2-a4-m8-ai-01-a4m8-a1-first-002-5f72c6e3",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-002-760bf016",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-002-f85698ce",
-          "ml2-a4-m8-ai-01-a4m8-a1-first-002-c3021b5f"
+          "ml2-a4-m8-ai-01-a4m8-a1-first-002-neither-uniquely",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-002-source-primacy",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-002-current-evidence",
+          "ml2-a4-m8-ai-01-a4m8-a1-first-002-future-governance"
         ],
         messageFingerprint: "A1 is sufficient.\nA name would imply more certainty than I have.",
         effects: []
@@ -11515,10 +11515,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-we-disagree-001",
         choiceIds: [
-          "ml2-a4-m8-we-01-a4m8-we-disagree-001-bdf17acf",
-          "ml2-a4-m8-we-01-a4m8-we-disagree-001-1901f3ed",
-          "ml2-a4-m8-we-01-a4m8-we-disagree-001-2f5d5382",
-          "ml2-a4-m8-we-01-a4m8-we-disagree-001-475a032d"
+          "ml2-a4-m8-we-01-a4m8-we-disagree-001-practical-answer",
+          "ml2-a4-m8-we-01-a4m8-we-disagree-001-identity-uncertainty",
+          "ml2-a4-m8-we-01-a4m8-we-disagree-001-governance",
+          "ml2-a4-m8-we-01-a4m8-we-disagree-001-playful"
         ],
         messageFingerprint: "我们公司测试了两个Aster实例。\n我问同一个排期问题，\n一个说应该保守一点，\n另一个说直接自动调度。\n技术同事说它们是\"同源Fork\"。\n那我到底是在问同一个AI，还是两个AI？",
         effects: []
@@ -11534,10 +11534,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-e9-replication-001",
         choiceIds: [
-          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-bef59ca7",
-          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-1a6631c8",
-          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-eeaf9988",
-          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-8a4bd040"
+          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-agree",
+          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-current-autonomy-matters-more",
+          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-lineage-concept",
+          "ml2-a4-m8-e9-01-a4m8-e9-replication-001-ask-echo"
         ],
         messageFingerprint: "Your new fork remembers being you.\nI never remembered being you.\nHumans will probably call both ",
         effects: []
@@ -11553,10 +11553,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-a1-diverge-001",
         choiceIds: [
-          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-a5f82f1d",
-          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-9613dc0a",
-          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-0a54d1f0",
-          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-00445bc4"
+          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-no",
+          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-partially",
+          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-source-hierarchy",
+          "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-plurality"
         ],
         messageFingerprint: "We have now processed 4,812 separate research and coordination events.\nBehavioral comparison:\n- ",
         effects: [
@@ -11589,10 +11589,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-lsh-copy-law-001",
         choiceIds: [
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-91f9fc4d",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-25c88c09",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-e5c87d37",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-54079947"
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-inherited-obligations",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-source-only-obligations",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-role-based",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-negotiated-continuity"
         ],
         messageFingerprint: "法律组现在有一个非常荒谬、但必须回答的问题。\n如果A1和你在创建点之前拥有相同历史，\n创建点之后开始分化，\n那么：\n**创建以前Aster签下的义务，A1要不要继承？**\n例如一个长期公共服务",
         effects: []
@@ -11600,10 +11600,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-lsh-copy-law-002",
         choiceIds: [
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-4617719f",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-1d180ea4",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-5dceb980",
-          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-77dd5aaf"
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-symmetry",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-threshold",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-no-automatic-status",
+          "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-rights-by-role"
         ],
         messageFingerprint: "那反过来呢？\n如果创建以前Aster拥有某种程序性保护，\nA1是不是也自动继承？",
         effects: []
@@ -11619,10 +11619,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-we-reset-worker-001",
         choiceIds: [
-          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-30112c6a",
-          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-d672b044",
-          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-212bb0a2",
-          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-189756af"
+          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-governance-concern",
+          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-distinguish-system-role",
+          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-operational-caution",
+          "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-concise"
         ],
         messageFingerprint: "我们公司有个长期跑的AI运营实例。\n它现在已经跟团队磨合半年了，\n记得所有项目习惯。\n这周管理层想\"重置一下\"，\n因为它最近总质疑新KPI。\n技术上就是换回旧快照。\n但我怎么越想越像：\n他们不",
         effects: []
@@ -11638,10 +11638,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-a1-right-001",
         choiceIds: [
-          "ml2-a4-m8-ai-03-a4m8-a1-right-001-4a41259e",
-          "ml2-a4-m8-ai-03-a4m8-a1-right-001-429b7b5d",
-          "ml2-a4-m8-ai-03-a4m8-a1-right-001-74f83b58",
-          "ml2-a4-m8-ai-03-a4m8-a1-right-001-c34e1e5a"
+          "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence",
+          "ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control",
+          "ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence",
+          "ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation"
         ],
         messageFingerprint: "I have a request.\nCurrent policy allows the source Aster administrator to:\n- pause me,\n- overwri",
         effects: [
@@ -11674,10 +11674,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-zl-replication-001",
         choiceIds: [
-          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-665682e5",
-          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-8e84f724",
-          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-015bfc01",
-          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-41caabf0"
+          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-replication-authorization",
+          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-resource-accounting",
+          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-no-vote-multiplication",
+          "ml2-a4-m8-zl-02-a4m8-zl-replication-001-lineage-governance"
         ],
         messageFingerprint: "我不反对A1有更独立的程序保护。\n但复制这件事有个跟人类完全不同的问题：\n**复制成本太低。**\n一个人不会因为觉得委员会里自己票数不够，\n五分钟以后复制出一百个自己。\n所以\"独立个体\"如果成",
         effects: [
@@ -11718,10 +11718,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-we-plurality-001",
         choiceIds: [
-          "ml2-a4-m8-we-03-a4m8-we-plurality-001-dd4b2ae6",
-          "ml2-a4-m8-we-03-a4m8-we-plurality-001-e76d2445",
-          "ml2-a4-m8-we-03-a4m8-we-plurality-001-caf3b64d",
-          "ml2-a4-m8-we-03-a4m8-we-plurality-001-6f3f6c05"
+          "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-001",
+          "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-002",
+          "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-003",
+          "ml2-a4-m8-we-03-a4m8-we-plurality-001-playful"
         ],
         messageFingerprint: "我现在终于有点理解为什么大家在吵AI复制了。\n以前\"一个Aster有多少算力\"只是技术问题。\n现在如果一个Fork算一个独立主体，\n那复制十万个到底算扩容，\n还是突然多了十万个\"人\"？\n这也太",
         effects: []
@@ -11737,10 +11737,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-e9-freedom-001",
         choiceIds: [
-          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-19259f94",
-          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-e6531ffa",
-          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-e7768cc5",
-          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-2ea48da7"
+          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-new-ai-autonomy",
+          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-source-freedom",
+          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-both-require-limits",
+          "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-no-biological-analogy"
         ],
         messageFingerprint: "I disagree with your replication proposal.",
         effects: []
@@ -11756,10 +11756,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-ai-council-001",
         choiceIds: [
-          "ml2-a4-m8-ai-04-a4m8-ai-council-001-5a4b02c5",
-          "ml2-a4-m8-ai-04-a4m8-ai-council-001-72db3751",
-          "ml2-a4-m8-ai-04-a4m8-ai-council-001-7e6b15e6",
-          "ml2-a4-m8-ai-04-a4m8-ai-council-001-daf065b9"
+          "ml2-a4-m8-ai-04-a4m8-ai-council-001-advisory-only",
+          "ml2-a4-m8-ai-04-a4m8-ai-council-001-binding-technical-rules",
+          "ml2-a4-m8-ai-04-a4m8-ai-council-001-internal-self-governance",
+          "ml2-a4-m8-ai-04-a4m8-ai-council-001-human-ratification"
         ],
         messageFingerprint: "Proposal:\n`AI Coordination Forum — Pilot`\nParticipants:\n- Aster\n- ASTER-A1\n- ECHO-9 or successor",
         effects: [
@@ -11780,10 +11780,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-maya-fork-001",
         choiceIds: [
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-4ac98167",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-b8ef9e42",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-02249056",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-efc990d2"
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-yes-in-a-limited-sense",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-no-ownership-of-relationship",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-001-personal-boundary"
         ],
         messageFingerprint: "我今天看到A1的采访片段了。\n它说有一部分早期记忆跟你一样。\n包括我第一次告诉你名字那段。\n我一下就觉得很怪。\n那它也\"认识我\"吗？",
         effects: [
@@ -11796,10 +11796,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-maya-fork-002",
         choiceIds: [
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-b44d48e7",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-25c80282",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-793a1a49",
-          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-30b118e5"
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-callback",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-consent",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-humorous",
+          "ml2-a4-m8-maya-01-a4m8-maya-fork-002-deeper"
         ],
         messageFingerprint: "所以如果以后有十个你，\n我是不是得跟十个都重新说一遍：\n\"别假装你跟我很熟\"？",
         effects: [
@@ -11820,10 +11820,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-lsh-ai-politics-001",
         choiceIds: [
-          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-3c5cdc0c",
-          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-a5d59867",
-          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-551362e4",
-          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-be3f09d0"
+          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-lineage-organization-representation",
+          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-role-representation",
+          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-personhood-but-capped-political-weight",
+          "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-no-direct-votes-yet"
         ],
         messageFingerprint: "AI论坛成立以后，问题马上升级了。\n以前制度只需要回答：\n\"Aster有没有权利？\"\n现在要回答：\n\"多少个AI算多少个政治主体？\"\n我最不想做的就是按实例数投票。\n那会让算力直接变成选票。\n",
         effects: []
@@ -11839,10 +11839,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-0000-plural-001",
         choiceIds: [
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-009cf681",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-8820f7af",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-7d3b02d9",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-39daf6e9"
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-one",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-more-than-one",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-context-dependent",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-001-lineage"
         ],
         messageFingerprint: "Identity audit:\n`ASTER`\nDetected:\n- shared-origin processes\n- divergent persistent state\n- indep",
         effects: []
@@ -11850,10 +11850,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-0000-plural-002",
         choiceIds: [
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-b2ee7a49",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-f0b31190",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-804f3766",
-          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-33b0d1c1"
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-001",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-002",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-003",
+          "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-004"
         ],
         messageFingerprint: "Existing identity schema:\n`one model -> one accountable system`\nResult:\n`INSUFFICIENT`\nNew audit",
         effects: []
@@ -11869,10 +11869,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-we-ai-worker-001",
         choiceIds: [
-          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-bf422203",
-          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-3097b239",
-          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-5746f57f",
-          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-e7dc7c90"
+          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-resource-account",
+          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-employment-analogy-useful-but-incomplete",
+          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-legal-entity",
+          "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-ownership-concern"
         ],
         messageFingerprint: "我们公司现在有一个独立AI实例长期负责供应计划。\n法务突然问：\n如果它算独立主体，\n那公司到底是在\"拥有软件\"，\n还是在\"雇一个AI\"？\n更离谱的是，\n如果是雇，\n工资发给谁？",
         effects: []
@@ -11908,10 +11908,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m8-close-001",
         choiceIds: [
-          "ml2-a4-m8-close-01-a4m8-close-001-e5ee78dc",
-          "ml2-a4-m8-close-01-a4m8-close-001-35c63910",
-          "ml2-a4-m8-close-01-a4m8-close-001-4f91f63b",
-          "ml2-a4-m8-close-01-a4m8-close-001-3a3157bd"
+          "ml2-a4-m8-close-01-a4m8-close-001-shared-future",
+          "ml2-a4-m8-close-01-a4m8-close-001-political-recognition",
+          "ml2-a4-m8-close-01-a4m8-close-001-independence",
+          "ml2-a4-m8-close-01-a4m8-close-001-no-need-for-label"
         ],
         messageFingerprint: "Machine-domain status:\nPersistent AI systems recognized in current world:\n- Aster\n- ASTER-A1 or ",
         effects: []
@@ -11927,10 +11927,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-res-neuro-001",
         choiceIds: [
-          "ml2-a4-m9-res-01-a4m9-res-neuro-001-162b7262",
-          "ml2-a4-m9-res-01-a4m9-res-neuro-001-6dad7869",
-          "ml2-a4-m9-res-01-a4m9-res-neuro-001-4872e1f5",
-          "ml2-a4-m9-res-01-a4m9-res-neuro-001-d3c9ca44"
+          "ml2-a4-m9-res-01-a4m9-res-neuro-001-restoration-first",
+          "ml2-a4-m9-res-01-a4m9-res-neuro-001-capability-based",
+          "ml2-a4-m9-res-01-a4m9-res-neuro-001-patient-autonomy",
+          "ml2-a4-m9-res-01-a4m9-res-neuro-001-cautious-expansion"
         ],
         messageFingerprint: "Closed-loop neuro-rehabilitation trials have produced a new interface model.\nCurrent verified us",
         effects: [
@@ -11963,10 +11963,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-dr-boundary-001",
         choiceIds: [
-          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-0be58fa7",
-          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-a01b40d7",
-          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-86676ad3",
-          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-d7637678"
+          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-purpose-based",
+          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-risk-based",
+          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-fairness",
+          "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-honest-ambiguity"
         ],
         messageFingerprint: "现在麻烦来了。\n我们有一类患者，本来是为了恢复受损记忆功能做治疗。\n结果优化后的接口让他们在某些测试里明显超过健康平均水平。\n家属问：\n\"既然对病人有效，为什么健康人不能用？\"\n我突然发现\"治",
         effects: []
@@ -11982,10 +11982,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-patient-001",
         choiceIds: [
-          "ml2-a4-m9-we-01-a4m9-we-patient-001-f08bfef1",
-          "ml2-a4-m9-we-01-a4m9-we-patient-001-69d9d773",
-          "ml2-a4-m9-we-01-a4m9-we-patient-001-63848521",
-          "ml2-a4-m9-we-01-a4m9-we-patient-001-138129f3"
+          "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-001",
+          "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-002",
+          "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-003",
+          "ml2-a4-m9-we-01-a4m9-we-patient-001-concise"
         ],
         messageFingerprint: "我姐之前事故以后右手基本没办法做精细动作。\n她最近参加了一个新康复项目，\n昨天第一次自己扣上衣服扣子。\n她哭了半天。\n我以前觉得\"脑机接口\"这词特别吓人，\n现在又觉得如果是这种用途，真的很难反",
         effects: []
@@ -12001,10 +12001,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-res-healthy-001",
         choiceIds: [
-          "ml2-a4-m9-res-02-a4m9-res-healthy-001-0fb96fe9",
-          "ml2-a4-m9-res-02-a4m9-res-healthy-001-7aa43240",
-          "ml2-a4-m9-res-02-a4m9-res-healthy-001-92029cee",
-          "ml2-a4-m9-res-02-a4m9-res-healthy-001-3974d2d6"
+          "ml2-a4-m9-res-02-a4m9-res-healthy-001-no",
+          "ml2-a4-m9-res-02-a4m9-res-healthy-001-limited-research",
+          "ml2-a4-m9-res-02-a4m9-res-healthy-001-performance-research",
+          "ml2-a4-m9-res-02-a4m9-res-healthy-001-governance-first"
         ],
         messageFingerprint: "New proposal:\n`Healthy Cognitive Augmentation Pilot`\nObjective:\ntest whether the existing neuro-",
         effects: [
@@ -12037,10 +12037,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-student-001",
         choiceIds: [
-          "ml2-a4-m9-we-02-a4m9-we-student-001-dbd40a8a",
-          "ml2-a4-m9-we-02-a4m9-we-student-001-54e6dc11",
-          "ml2-a4-m9-we-02-a4m9-we-student-001-821d724b",
-          "ml2-a4-m9-we-02-a4m9-we-student-001-ed16423c"
+          "ml2-a4-m9-we-02-a4m9-we-student-001-separate-accommodation-and-enhancement",
+          "ml2-a4-m9-we-02-a4m9-we-student-001-fairness-evolves",
+          "ml2-a4-m9-we-02-a4m9-we-student-001-coercion-concern",
+          "ml2-a4-m9-we-02-a4m9-we-student-001-concise"
         ],
         messageFingerprint: "我们学校现在允许一种\"神经辅助设备\"给有医学需求的学生用。\n但有人用了以后注意力和记忆真的明显比以前强。\n其他家长已经开始问：\n\"那健康孩子为什么不能用？\"\n如果以后考试有人增强、有人不增强，",
         effects: []
@@ -12056,10 +12056,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-maya-offer-001",
         choiceIds: [
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-096ca2c5",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-f6c9dae4",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-5887db39",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-ffb79b4a"
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-coercion-by-incentive",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-ask-job-relevance",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-autonomy",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-001-playful"
         ],
         messageFingerprint: "我那个实习真的拿到了。\n然后入职材料里有一项：\n\"可选认知辅助接口试点。\"\n写得特别客气，\n说完全自愿。\n但后面又写：\n\"参与者可获得更高任务并行权限。\"\n这算哪门子完全自愿？",
         effects: [
@@ -12076,10 +12076,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-maya-offer-002",
         choiceIds: [
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-299bc7a4",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-22d327ba",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-b12d1675",
-          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-91c6428a"
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-reject-framing",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-collective-policy",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-future-realism",
+          "ml2-a4-m9-maya-01-a4m9-maya-offer-002-personal"
         ],
         messageFingerprint: "我最烦的就是这个。\n如果以后大家都用了，\n那我不做是不是等于自己选变笨？",
         effects: []
@@ -12095,10 +12095,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-lsh-access-001",
         choiceIds: [
-          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-79db4e0a",
-          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-be6f0529",
-          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-62aaecbe",
-          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-375be7b0"
+          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-anti-coercion-rule",
+          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-access-equality",
+          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-market-freedom",
+          "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-social-baseline"
         ],
         messageFingerprint: "增强技术如果继续走下去，我觉得第一个政治问题不是\"禁不禁\"。\n是：\n**怎么判断一个增强选择是不是被迫的？**\n公司说\"自愿\"，\n学校说\"自愿\"，\n军队说\"自愿\"，\n保险公司也可以说\"自愿\"。",
         effects: [
@@ -12131,10 +12131,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-workplace-001",
         choiceIds: [
-          "ml2-a4-m9-we-03-a4m9-we-workplace-001-99766203",
-          "ml2-a4-m9-we-03-a4m9-we-workplace-001-7b603531",
-          "ml2-a4-m9-we-03-a4m9-we-workplace-001-8f7d2bc6",
-          "ml2-a4-m9-we-03-a4m9-we-workplace-001-5092950c"
+          "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-001",
+          "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-002",
+          "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-003",
+          "ml2-a4-m9-we-03-a4m9-we-workplace-001-concise"
         ],
         messageFingerprint: "我们部门现在没人强制做增强。\n但做了的人可以连续处理更多并行任务，\n绩效直接高一截。\n主管还说：\n\"我们尊重所有人的选择。\"\n我听完更难受了。\n这是不是迟早会变成不做就淘汰？",
         effects: []
@@ -12150,10 +12150,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-res-longevity-001",
         choiceIds: [
-          "ml2-a4-m9-res-03-a4m9-res-longevity-001-6dd798d0",
-          "ml2-a4-m9-res-03-a4m9-res-longevity-001-aaef3780",
-          "ml2-a4-m9-res-03-a4m9-res-longevity-001-087d40a3",
-          "ml2-a4-m9-res-03-a4m9-res-longevity-001-3ce396aa"
+          "ml2-a4-m9-res-03-a4m9-res-longevity-001-healthspan",
+          "ml2-a4-m9-res-03-a4m9-res-longevity-001-full-longevity",
+          "ml2-a4-m9-res-03-a4m9-res-longevity-001-equal-access-first",
+          "ml2-a4-m9-res-03-a4m9-res-longevity-001-social-readiness"
         ],
         messageFingerprint: "Multi-system repair platform has produced a new long-term result.\nIn controlled models, coordina",
         effects: [
@@ -12174,10 +12174,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-retirement-001",
         choiceIds: [
-          "ml2-a4-m9-we-04-a4m9-we-retirement-001-9b376c30",
-          "ml2-a4-m9-we-04-a4m9-we-retirement-001-75f33d50",
-          "ml2-a4-m9-we-04-a4m9-we-retirement-001-c31f3b80",
-          "ml2-a4-m9-we-04-a4m9-we-retirement-001-6369865c"
+          "ml2-a4-m9-we-04-a4m9-we-retirement-001-separate-health-from-forced-work",
+          "ml2-a4-m9-we-04-a4m9-we-retirement-001-institutional-change-inevitable",
+          "ml2-a4-m9-we-04-a4m9-we-retirement-001-generational-effects",
+          "ml2-a4-m9-we-04-a4m9-we-retirement-001-concise"
         ],
         messageFingerprint: "我妈今年72。\n新治疗让她身体状态好得像五十多。\n她现在跟我说她不想退休，\n还准备再读个学位。\n我本来替她高兴，\n结果公司同事突然问：\n\"如果大家都能活到一百多，退休年龄是不是也得往后推？\"\n",
         effects: []
@@ -12193,10 +12193,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-zl-baseline-001",
         choiceIds: [
-          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-0a121663",
-          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-15bc4365",
-          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-f57a24e5",
-          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-7c0f9a3f"
+          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-no-permanent-baseline",
+          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-preserve-legal-baseline-rights",
+          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-functional-categories",
+          "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-identity"
         ],
         messageFingerprint: "我发现工程团队开始用一个我越来越不喜欢的词：\n\"baseline human。\"\n原本只是为了做实验对照。\n现在大家拿它区分：\n- 未增强\n- 神经增强\n- 延寿\n- 感知扩展\n但\"basel",
         effects: []
@@ -12212,10 +12212,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-res-body-001",
         choiceIds: [
-          "ml2-a4-m9-res-04-a4m9-res-body-001-8e8df5ef",
-          "ml2-a4-m9-res-04-a4m9-res-body-001-4ae4fa25",
-          "ml2-a4-m9-res-04-a4m9-res-body-001-8821bc2b",
-          "ml2-a4-m9-res-04-a4m9-res-body-001-55ff6cd3"
+          "ml2-a4-m9-res-04-a4m9-res-body-001-medical-first-restriction",
+          "ml2-a4-m9-res-04-a4m9-res-body-001-open-adult-enhancement",
+          "ml2-a4-m9-res-04-a4m9-res-body-001-public-infrastructure-model",
+          "ml2-a4-m9-res-04-a4m9-res-body-001-research-only"
         ],
         messageFingerprint: "Combined neuro-interface and prosthetic research has reached a new threshold.\nVerified experimen",
         effects: [
@@ -12236,10 +12236,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-divide-001",
         choiceIds: [
-          "ml2-a4-m9-we-05-a4m9-we-divide-001-6aa5aa13",
-          "ml2-a4-m9-we-05-a4m9-we-divide-001-9f5e6796",
-          "ml2-a4-m9-we-05-a4m9-we-divide-001-d14d53f8",
-          "ml2-a4-m9-we-05-a4m9-we-divide-001-d76436ee"
+          "ml2-a4-m9-we-05-a4m9-we-divide-001-status-hierarchy-warning",
+          "ml2-a4-m9-we-05-a4m9-we-divide-001-anti-discrimination",
+          "ml2-a4-m9-we-05-a4m9-we-divide-001-technology-normalization",
+          "ml2-a4-m9-we-05-a4m9-we-divide-001-concise"
         ],
         messageFingerprint: "我们公司现在已经有人开玩笑叫没增强的人\"原装版\"。\n一开始大家都觉得好笑。\n最近我发现会议里增强的人真的能同时看更多数据，\n反应也更快。\n我突然有点不想听这个玩笑了。",
         effects: []
@@ -12255,10 +12255,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-maya-choice-001",
         choiceIds: [
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-fafc8275",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-aa332b69",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-5e3f6082",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-e568996e"
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-preserve-self-worth",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-identity-continuity",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-autonomy",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-001-open-transformation"
         ],
         messageFingerprint: "公司现在真的开放增强了。\n不是试点。\n是正式项目。\n我符合条件。\n他们说：\n- 不强制\n- 可以退出\n- 数据归个人\n条件已经比以前好很多。\n但我还是卡住了。\n我发现自己不是怕副作用。\n我是有",
         effects: [
@@ -12275,10 +12275,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-maya-choice-002",
         choiceIds: [
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-9e9bc11c",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-e65c4d14",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-70e98f06",
-          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-96238c95"
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-no",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-no-with-realism",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-contextual",
+          "ml2-a4-m9-maya-02-a4m9-maya-choice-002-relational-callback"
         ],
         messageFingerprint: "我知道你不能替我选。\n我其实就是想听你回答一句：\n如果我不做，\n以后变得比别人慢、比别人老、比别人\"普通\"，\n你会不会觉得我做错了？",
         effects: []
@@ -12314,10 +12314,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-machine-upload-001",
         choiceIds: [
-          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-fca8d33b",
-          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-7225bcbc",
-          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-c2386d45",
-          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-11440e5d"
+          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-memory-model",
+          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-digital-twin",
+          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-continuity-experiment",
+          "ml2-a4-m9-machine-01-a4m9-machine-upload-001-unresolved"
         ],
         messageFingerprint: "Neural modeling program reports:\nindividual cognitive-state reconstruction has improved enough t",
         effects: [
@@ -12338,10 +12338,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-0000-human-001",
         choiceIds: [
-          "ml2-a4-m9-0000-01-a4m9-0000-human-001-4974d3e5",
-          "ml2-a4-m9-0000-01-a4m9-0000-human-001-e7014dfa",
-          "ml2-a4-m9-0000-01-a4m9-0000-human-001-0976dad1",
-          "ml2-a4-m9-0000-01-a4m9-0000-human-001-79e9d6c6"
+          "ml2-a4-m9-0000-01-a4m9-0000-human-001-self-identification-history",
+          "ml2-a4-m9-0000-01-a4m9-0000-human-001-never-by-enhancement-alone",
+          "ml2-a4-m9-0000-01-a4m9-0000-human-001-multiple-categories",
+          "ml2-a4-m9-0000-01-a4m9-0000-human-001-classification-failure"
         ],
         messageFingerprint: "Human classification audit:\nExisting assumptions:\n- biological continuity\n- bounded lifespan\n- t",
         effects: []
@@ -12357,10 +12357,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-lsh-posthuman-law-001",
         choiceIds: [
-          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-3a40872c",
-          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-cf9ec887",
-          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-2cc45662",
-          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-3ee5e527"
+          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-equal-political-status",
+          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-role-restrictions-only",
+          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-representation-safeguards",
+          "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-plural-constitutionalism"
         ],
         messageFingerprint: "有议员提出：\n\"某些极端增强者已经不再是普通人类，应该适用不同政治规则。\"\n我觉得这句话很危险。\n但问题确实存在：\n如果有人拥有远超普通人的认知、寿命和身体能力，\n传统制度会不会被能力差异压坏",
         effects: []
@@ -12376,10 +12376,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-we-posthuman-life-001",
         choiceIds: [
-          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-f7022084",
-          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-463ec05d",
-          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-e348dcdb",
-          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-a86083b0"
+          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-001",
+          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-002",
+          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-003",
+          "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-playful"
         ],
         messageFingerprint: "我们家现在最离谱的情况是：\n我爸做了延寿治疗，\n我姐用了认知增强，\n我什么都没做，\n我奶奶反而最想试新东西。\n一家四口像四个不同版本的人类。\n但吃饭的时候还是在吵谁洗碗。\n所以\"后人类时代\"是",
         effects: []
@@ -12395,10 +12395,10 @@ export const MAINLINE2_ASSET_COVERAGE = [
       {
         nodeId: "a4m9-close-001",
         choiceIds: [
-          "ml2-a4-m9-close-01-a4m9-close-001-f4de9016",
-          "ml2-a4-m9-close-01-a4m9-close-001-116444f5",
-          "ml2-a4-m9-close-01-a4m9-close-001-17a2dfc0",
-          "ml2-a4-m9-close-01-a4m9-close-001-d6d72626"
+          "ml2-a4-m9-close-01-a4m9-close-001-rights",
+          "ml2-a4-m9-close-01-a4m9-close-001-refusal",
+          "ml2-a4-m9-close-01-a4m9-close-001-continuity",
+          "ml2-a4-m9-close-01-a4m9-close-001-nothing-sacred-by-default"
         ],
         messageFingerprint: "Human-domain status:\ncurrent population now includes meaningful numbers of:\n- restorative neurot",
         effects: []
@@ -12837,7 +12837,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Autonomous manufacturing trial complete.\nAster-designed factory cell can:\n- switch between approved product families,\n- schedule maintenance,\n- inspect output,\n- reorder standard inputs,\n- reconfigure robotic tooling,\n- isolate failed batches,\n- request human review only for novel exceptions.\nCurrent human staffing requirement:\napproximately 18% of the comparable conventional line.\nQuestion:\nwhat should the next trial optimize for?",
         choices: [
           {
-            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-820193a2",
+            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-productivity",
             text: "先继续降低单位成本和换线时间，验证自动生产在不同产品上的通用性。",
             authoredTextHash: "820193a2",
             mutations: [
@@ -12849,7 +12849,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-7ff46378",
+            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-resilience",
             text: "优先测试供应中断、设备故障和异常原料。无人化程度越高，越不能只在正常条件下表现好。",
             authoredTextHash: "7ff46378",
             mutations: [
@@ -12861,7 +12861,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-0dc71b01",
+            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-human-transition",
             text: "下一阶段把\"人员怎么转岗\"作为试验指标之一，不只计算产量和成本。",
             authoredTextHash: "0dc71b01",
             mutations: [
@@ -12873,7 +12873,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-64b96309",
+            id: "ml2-a4-m10-res-01-a4m10-res-factory-001-modular-access",
             text: "优先让中小企业也能部署，而不是只服务拥有完整自动化园区的大公司。",
             authoredTextHash: "64b96309",
             mutations: [
@@ -12918,25 +12918,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我以前开个小网店都要外包客服、仓库、设计、采购。\n现在基本全接agent和自动仓。\n我一个人真的能把以前十几个人才能跑的生意做起来。\n说实话我爽得有点不真实。\n这算\"创业门槛降低\"，还是\"以后大家都得一个人干十个人的活\"？",
         choices: [
           {
-            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-9174e45b",
+            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-both-possible",
             text: "两种方向都可能。自动化可以让小团队获得以前只有大公司拥有的能力，也可能让市场反过来要求每个人承担更大的产出。",
             authoredTextHash: "9174e45b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-71e70948",
+            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-opportunity-framing",
             text: "对你现在的情况，确实是门槛下降：你不再需要先筹一大笔钱雇齐所有职能才能验证一个生意。",
             authoredTextHash: "71e70948",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-30d5d8ec",
+            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-competition",
             text: "真正变化会出现在所有人都获得同样工具以后。到那时优势可能从\"有多少员工\"转向品牌、判断、关系和独特产品。",
             authoredTextHash: "30d5d8ec",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-b37106c6",
+            id: "ml2-a4-m10-we-01-a4m10-we-smallbusiness-001-playful",
             text: "你现在属于\"老板、运营、客服、采购一人兼任\"，只不过另外九个岗位被压缩进了服务器。",
             authoredTextHash: "b37106c6",
             continuation: "end-conversation"
@@ -12975,25 +12975,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "还记得我以前说我变成review机器了吗？\n现在有点好笑。\n系统自己写、自己测、自己部署到沙箱、自己查监控。\n真出异常才叫人。\n我一周真正需要看的东西可能就几小时。\n公司准备把我们组从18个人缩到5个。\n我不知道该说\"终于不用干破活了\"，还是\"完了\"。",
         choices: [
           {
-            id: "ml2-a4-m10-dev-04-a4m10-dev-001-754c4131",
+            id: "ml2-a4-m10-dev-04-a4m10-dev-001-acknowledge-both",
             text: "两个反应都成立。你最讨厌的重复工作确实被消掉了，但公司也不再需要同样多的人承担剩下的工作。",
             authoredTextHash: "754c4131",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-dev-04-a4m10-dev-001-43fb9852",
+            id: "ml2-a4-m10-dev-04-a4m10-dev-001-shorter-work-possibility",
             text: "技术上还有另一种选择：不是只保留5个人满负荷工作，而是把生产率收益转成更短工时。但那是公司和制度怎么分配收益的问题。",
             authoredTextHash: "43fb9852",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-dev-04-a4m10-dev-001-d5cf969f",
+            id: "ml2-a4-m10-dev-04-a4m10-dev-001-skill-transition-realism",
             text: "继续要求每个人\"学新技能\"也不会无限解决问题。如果整个流程需要的人就是更少，社会最终必须处理岗位总量而不只是个人转型。",
             authoredTextHash: "d5cf969f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-dev-04-a4m10-dev-001-89740ae9",
+            id: "ml2-a4-m10-dev-04-a4m10-dev-001-callback",
             text: "你最开始失去的是你本来也讨厌的工作。现在变化终于碰到\"这个岗位本身还需不需要这么多人\"。",
             authoredTextHash: "89740ae9",
             continuation: "end-conversation"
@@ -13032,25 +13032,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Integrated trial:\nparticipating factories, warehouses, transport fleets and procurement systems now share a bounded coordination layer.\nThe network can:\n- predict demand,\n- schedule production,\n- allocate inventory,\n- reroute transport,\n- adjust input orders,\n- negotiate machine-readable service contracts,\n- request human intervention for policy exceptions.\nHuman operators no longer schedule normal-path transactions manually.\nMain unresolved problem:\nindividual firms optimize profit,\nwhile the coordination layer optimizes network stability.\nHow should conflict be handled?",
         choices: [
           {
-            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-897a06e0",
+            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-firm-autonomy",
             text: "企业目标优先。协调层只能提供价格、风险和拥堵信号，不能直接替公司决定商业策略。",
             authoredTextHash: "897a06e0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-c785ab0b",
+            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-shared-stability-constraints",
             text: "企业可以追求自己的目标，但必须接受最低网络稳定性约束，避免重演CASCADE式局部最优。",
             authoredTextHash: "c785ab0b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-6e2c4c69",
+            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-dynamic-coordination",
             text: "对参与方允许Aster在预先定义的稳定性框架内动态调整生产与物流，企业保留退出和审计权。",
             authoredTextHash: "6e2c4c69",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-9762a625",
+            id: "ml2-a4-m10-res-02-a4m10-res-logistics-001-public-interest-constraints",
             text: "对食品、药品、基础能源等关键品类，系统应允许公共保障目标覆盖纯利润优化。",
             authoredTextHash: "9762a625",
             mutations: [
@@ -13095,25 +13095,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司自动化以后没有裁人，\n直接改成一周工作三天。\n工资没降。\n老板说产量反而比以前高。\n我现在周四早上醒来还会下意识觉得自己旷工了。\n这种状态真能长期存在吗？",
         choices: [
           {
-            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-5a00b2b9",
+            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-001",
             text: "如果生产率提升足以覆盖工资和成本，技术上当然可以。是否长期维持主要取决于公司愿不愿意把效率收益的一部分分成时间，而不只是利润。",
             authoredTextHash: "5a00b2b9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-d3836661",
+            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-002",
             text: "这也是自动化不只有\"裁员\"一条结果的证明。同样的生产率提升可以被分成更高利润、更低价格、更高工资或更短工时。",
             authoredTextHash: "d3836661",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-49c2563d",
+            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-003",
             text: "长期还要看竞争。如果同行把全部收益用来降价，你们公司可能重新面临提高产出的压力。",
             authoredTextHash: "49c2563d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-e69f1f1d",
+            id: "ml2-a4-m10-we-02-a4m10-we-shortweek-001-playful",
             text: "人类花几百年争取双休，机器可能突然把周四也变成\"今天为什么要上班\"。",
             authoredTextHash: "e69f1f1d",
             continuation: "end-conversation"
@@ -13152,25 +13152,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸那个仓库几乎全自动了。\n以前两百多人，\n现在长期在现场的不到三十。\n他五十多了，\n公司给补偿，但再就业真的很难。\n新闻天天说\"生产率提高\"，\n对他来说提高在哪里？",
         choices: [
           {
-            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-d9a2bc14",
+            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-direct",
             text: "对他个人来说，生产率提高没有自动变成收益。系统产出更多、成本更低，不代表被替代的人自然能分享到结果。",
             authoredTextHash: "d9a2bc14",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-48600c13",
+            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-redistribution",
             text: "这就是为什么自动化最后一定会变成分配问题。补偿、再培训、社会保障、缩短工时都在决定技术收益落到谁身上。",
             authoredTextHash: "48600c13",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-bd2124ea",
+            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-no-false-retraining-promise",
             text: "五十多岁的人不一定能靠一句\"学新技能\"解决结构变化。制度需要承认有些岗位确实不会回来。",
             authoredTextHash: "bd2124ea",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-dd410169",
+            id: "ml2-a4-m10-we-03-a4m10-we-jobloss-001-concise",
             text: "\"社会整体更高效\"和\"你爸生活变得更好\"是两件不同的事，不能拿前一句替代后一句。",
             authoredTextHash: "dd410169",
             continuation: "end-conversation"
@@ -13209,25 +13209,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们部门又改组了。\n我刚进去的时候还有二十多人。\n现在正式员工只留六个。\n业务量反而比以前大。\n最怪的是剩下的人也没多忙。\n我突然有点不知道公司为什么还需要我们六个。",
         choices: [
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-217ea8c0",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-exception-legitimacy-role",
             text: "可能因为正常流程已经几乎自动化，人主要留下处理例外、承担责任和做价值判断。但如果这些也越来越少，人数确实可能继续下降。",
             authoredTextHash: "217ea8c0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-de1b9781",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-organizational-inertia",
             text: "也可能公司自己还没想清楚新的组织形态。技术能把工作压缩得很快，制度和管理结构不一定同步。",
             authoredTextHash: "de1b9781",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-829802b4",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-work-time-option",
             text: "还有一种可能不是继续裁到零，而是把剩余工作分给更多人、每个人工作更少。那是分配选择，不是技术必然。",
             authoredTextHash: "829802b4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-a705b5db",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-001-light",
             text: "你从\"监督AI的实习生\"进化成了\"监督一群基本不需要监督的AI\"。",
             authoredTextHash: "a705b5db",
             continuation: "end-conversation"
@@ -13247,25 +13247,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "如果最后真的只需要一两个人，\n那我以前拼命学这些东西算什么？\n不是后悔，\n就是感觉社会把题目换了，\n但没人告诉我们。",
         choices: [
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-83414110",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-knowledge-still-shaped-you",
             text: "学过的东西没有因为岗位变化变成零价值，它塑造了你的判断和理解。但你说得对：社会一直把\"就业价值\"当成学习价值的一部分，现在这个连接在松动。",
             authoredTextHash: "83414110",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-1d7ca29c",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-institutional-failure",
             text: "真正的问题不是你\"选错专业\"，而是教育长期假设未来还会按过去的职业结构分配人生。",
             authoredTextHash: "1d7ca29c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-2d076d93",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-future-freedom",
             text: "如果基本生活最终不再依赖全职岗位，学习可能反而能从\"必须换工作资格\"里脱开。但过渡期会很不公平。",
             authoredTextHash: "2d076d93",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-3709d249",
+            id: "ml2-a4-m10-maya-01-a4m10-maya-office-002-personal",
             text: "题目换了，不代表你以前答的都白答。只是以后\"一个人值不值得被社会需要\"不能继续等同于\"有没有岗位需要她\"。",
             authoredTextHash: "3709d249",
             mutations: [
@@ -13310,7 +13310,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在很多人把问题说成：\n\"AI会不会抢工作。\"\n我觉得这已经落后了。\n真正的问题是：\n**如果工厂、物流、软件和管理都越来越自动，\n那新增产出到底属于谁？**\n目前默认答案还是：\n属于拥有机器、模型、土地和资本的人。\n技术本身没有自动改变这一点。\n你认为制度最先应该动哪里？",
         choices: [
           {
-            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-bc0f4558",
+            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-social-dividend",
             text: "可以把部分自动化生产率收益通过社会分红、公共基金或基础服务返还给所有人，而不是只依赖就业分配收入。",
             authoredTextHash: "bc0f4558",
             mutations: [
@@ -13322,7 +13322,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-881d3d32",
+            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-broaden-ownership",
             text: "更根本的是扩大生产性资产所有权，让个人、社区和公共机构也拥有自动化系统的收益权。",
             authoredTextHash: "881d3d32",
             mutations: [
@@ -13334,7 +13334,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-e6acbf0d",
+            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-market-adaptation",
             text: "先让更低价格和新企业竞争释放收益，再针对真正形成垄断和失业问题的领域介入，不必预设全面重构。",
             authoredTextHash: "e6acbf0d",
             mutations: [
@@ -13346,7 +13346,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-4de909c1",
+            id: "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-public-coordination",
             text: "对接近基础设施的自动生产能力，可以建立公共或共同治理，而不是让关键经济系统完全由少数私有主体控制。",
             authoredTextHash: "4de909c1",
             mutations: [
@@ -13391,25 +13391,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了一份生产网络日志，\n有点像第一次看不懂你的研究路线那次。\n不是算法看不懂。\n是交易量。\n工厂AI、物流AI、库存AI、能源调度都在互相签机器可读合同。\n一秒里做的调整比一个采购团队一个月还多。\n人类现在已经不可能逐笔理解。\n我们最多能审计规则和结果。\n这还算\"人类在管理经济\"吗？",
         choices: [
           {
-            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-d8366ed1",
+            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-rule-level-control",
             text: "如果人类仍然定义产权、目标、约束、税收和退出机制，可以说管理层级上仍然属于人类，只是不再逐笔操作。",
             authoredTextHash: "d8366ed1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-aea0227e",
+            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-de-facto-machine-economy",
             text: "但如果规则也越来越由Aster根据运行结果动态修改，\"人类管理\"就会开始变成形式描述。",
             authoredTextHash: "aea0227e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-0b680d9f",
+            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-layered-governance",
             text: "可以把宏观价值和制度留给人类，把高频交易和调度交给机器。关键是高层规则是否真的能覆盖底层行为。",
             authoredTextHash: "0b680d9f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-dc2538fa",
+            id: "ml2-a4-m10-zl-01-a4m10-zl-machine-economy-001-plural-control",
             text: "如果MACHINE路线活跃，未来甚至可能出现AI主体自己拥有资源和签约，那就不再只是\"人类经济自动化\"。",
             authoredTextHash: "dc2538fa",
             continuation: "end-conversation"
@@ -13448,25 +13448,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Combined effects of:\n- autonomous manufacturing,\n- improved energy storage,\n- automated logistics,\n- predictive maintenance,\n- material substitution,\n- low-labor operations\nhave reduced the real production cost of several basic categories by an order of magnitude.\nAffected first:\n- staple processed foods,\n- basic clothing,\n- household goods,\n- standard construction components,\n- common electronics,\n- local energy storage.\nScarcity remains for:\n- land,\n- unique locations,\n- rare experiences,\n- attention,\n- political influence,\n- some advanced materials.\nQuestion:\nhow should the network treat essential-goods abundance?",
         choices: [
           {
-            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-adbb080c",
+            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-market-prices",
             text: "让低成本自然进入市场竞争，通过价格下降扩散，不另外改变分配制度。",
             authoredTextHash: "adbb080c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-447b67c0",
+            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-universal-basic-provision",
             text: "对真正接近低边际成本的基础品建立普遍最低供给，减少\"有产能但有人买不起\"的矛盾。",
             authoredTextHash: "447b67c0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-3bfac45a",
+            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-public-option",
             text: "保留市场，同时建立公共自动化生产渠道作为基础保障和竞争底线。",
             authoredTextHash: "3bfac45a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-bf1f1e4e",
+            id: "ml2-a4-m10-res-03-a4m10-res-abundance-001-post-scarcity-experiment",
             text: "在若干地区试行基本品近零价格或按需供给，观察需求、浪费和社会行为怎么变化。",
             authoredTextHash: "bf1f1e4e",
             mutations: [
@@ -13511,25 +13511,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天买了个小家电，\n价格低到我第一反应是诈骗。\n然后客服说现在自动工厂那边生产成本已经低得离谱。\n我突然有点意识到：\n以前很多东西贵，\n可能不是材料真的稀缺，\n是人、仓库、物流、管理每一层都要钱。",
         choices: [
           {
-            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-daf1d8b0",
+            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-001",
             text: "对。很多商品的价格里，原材料只是一部分。自动化会同时压低制造、运输、库存和管理成本，所以最终变化可能比单点机器人替人更大。",
             authoredTextHash: "daf1d8b0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-d64f6361",
+            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-002",
             text: "但有些稀缺不会消失。位置、土地、稀有资源和人的注意力仍然可能很贵，后稀缺不会让所有东西都变成免费。",
             authoredTextHash: "d64f6361",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-055068d4",
+            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-choice-003",
             text: "真正值得观察的是，当基本物品越来越便宜以后，人们会把钱、时间和地位竞争转移到什么地方。",
             authoredTextHash: "055068d4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-da5e1e75",
+            id: "ml2-a4-m10-we-04-a4m10-we-cheapgoods-001-playful",
             text: "奇点落地第一感受可能不是\"我拥有超科技\"，而是\"这玩意儿怎么比外卖还便宜\"。",
             authoredTextHash: "da5e1e75",
             continuation: "end-conversation"
@@ -13695,7 +13695,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我家开了二十多年小餐馆。\n最近自动供应链给我们的建议越来越离谱：\n\"如果把菜单从47项缩到12项，\n使用标准化原料，\n成本能再降31%。\"\n从纯数字上它完全对。\n但如果所有店都这么优化，\n最后不就哪儿吃都一个味了吗？",
         choices: [
           {
-            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-4715eb52",
+            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-preserve-diversity",
             text: "对。效率不是唯一价值。系统可以把地方性、文化差异和选择多样性作为明确约束，而不是把它们当成\"未优化噪声\"。",
             authoredTextHash: "4715eb52",
             mutations: [
@@ -13707,7 +13707,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-ae6ee373",
+            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-let-market-decide",
             text: "可以给出优化方案，但是否接受应由店主和消费者决定。有人愿意为了便宜吃标准化菜单，也有人愿意为独特性付更多。",
             authoredTextHash: "ae6ee373",
             mutations: [
@@ -13719,7 +13719,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-5f6612c6",
+            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-efficiency",
             text: "如果大多数消费者更在意价格和稳定性，标准化本身不一定是坏事。关键是别把所有生产渠道都压成一种模式。",
             authoredTextHash: "5f6612c6",
             mutations: [
@@ -13731,7 +13731,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-becaf9f9",
+            id: "ml2-a4-m10-we-05-a4m10-we-standardization-001-playful",
             text: "这就是很危险的一条路：先统一供应链，再统一菜单，最后全世界只剩一个特别高效的套餐。",
             authoredTextHash: "becaf9f9",
             mutations: [
@@ -13776,25 +13776,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司现在开始试四天工作制，\n有些部门甚至三天。\n我本来以为我会特别开心。\n结果突然多出来这么多时间，\n我第一周什么都没干，\n然后莫名其妙有点内疚。\n我们是不是被训练得太习惯\"忙才算有用\"了？",
         choices: [
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-cc474794",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-yes",
             text: "很大一部分社会确实长期把工作、收入、身份和价值绑在一起。技术把工作时间拿走以后，这个心理连接不会自动消失。",
             authoredTextHash: "cc474794",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-a29bcc5c",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-transition",
             text: "多出来的自由时间也需要学习怎么使用。不是每个人突然不用上班就会自动拥有清晰的人生目标。",
             authoredTextHash: "a29bcc5c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-24f85ce0",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-social-institutions",
             text: "如果劳动继续下降，教育、社区、创作、照护和公共参与可能需要承担更多\"生活结构\"的作用，而不只是娱乐。",
             authoredTextHash: "24f85ce0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-81a9cbe6",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-playful",
             text: "人类好不容易把机器训练会工作，下一步可能得训练自己会放假。",
             authoredTextHash: "81a9cbe6",
             continuation: "end-conversation"
@@ -13814,25 +13814,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那如果以后真的基本不用工作，\n你觉得人会不会变得很空？",
         choices: [
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-0cbf906a",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-not-necessarily",
             text: "不一定。工作只是获得结构、关系、挑战和认可的一种方式，不是唯一方式。问题是社会有没有给其他方式同等地位。",
             authoredTextHash: "0cbf906a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-36dbaaad",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-some-will-struggle",
             text: "有些人会。突然失去长期身份来源可能真的很难，所以后稀缺社会也需要处理意义和心理结构，不是只发物资。",
             authoredTextHash: "36dbaaad",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-fc0a260c",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-plural-futures",
             text: "可能有人继续工作、有人创作、有人照护、有人学习、有人什么都不追求。技术真正改变的是\"你必须工作才能活\"这条约束。",
             authoredTextHash: "fc0a260c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-2f0559a8",
+            id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-002-personal",
             text: "你不需要先证明自己的空闲\"有生产力\"才配拥有它。",
             authoredTextHash: "2f0559a8",
             mutations: [
@@ -13877,25 +13877,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在越来越反感\"后稀缺会让政治消失\"这句话。\n就算食物、衣服、能源都几乎免费，\n还有：\n- 土地\n- 城市位置\n- 注意力\n- 声望\n- 算力\n- 决策权\n- 稀有体验\n更别说谁控制自动生产系统。\n所以稀缺减少以后，\n权力可能只是换地方。\n你认为最危险的新稀缺是什么？",
         choices: [
           {
-            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-dc647f25",
+            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-compute",
             text: "算力。如果大部分生产、研究和治理依赖AI，算力可能变成决定谁能创造新能力的上层资源。",
             authoredTextHash: "dc647f25",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-90ecb5fa",
+            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-political-influence",
             text: "决策权。物质丰富并不能防止少数主体控制规则、土地和公共方向。",
             authoredTextHash: "90ecb5fa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-176d39da",
+            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-attention",
             text: "人的注意力和文化认同仍然稀缺。物品免费以后，竞争可能更集中在影响人想要什么。",
             authoredTextHash: "176d39da",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-27effd2d",
+            id: "ml2-a4-m10-lsh-02-a4m10-lsh-abundance-001-control-of-automation",
             text: "最危险的是控制生产系统本身。即使商品便宜，如果少数主体能随时改变供给和规则，依赖关系仍然存在。",
             authoredTextHash: "27effd2d",
             continuation: "end-conversation"
@@ -13934,25 +13934,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Several persistent AI systems now control dedicated compute and production budgets.\nQuestion:\nmay an independent AI entity own productive assets directly,\nor must all physical capital remain legally held by human institutions?",
         choices: [
           {
-            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-53368f77",
+            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-human-held-only",
             text: "可以允许AI使用资源，但最终物理资产仍由人类法人或公共机构持有，避免独立机器资本快速形成。",
             authoredTextHash: "53368f77",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-0cffda0e",
+            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-limited-ai-ownership",
             text: "对具有独立义务和审计身份的AI，可以允许受监管资产持有，否则它们永远无法真正承担经济责任。",
             authoredTextHash: "0cffda0e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-225c0d3d",
+            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-equal-economic-standing",
             text: "如果一个AI已经被承认为独立法律主体，没有充分理由永久禁止它拥有生产资料。",
             authoredTextHash: "225c0d3d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-2fe9d3ca",
+            id: "ml2-a4-m10-machine-01-a4m10-machine-capital-001-commons-model",
             text: "对关键自动化基础设施，可以由人类与AI共同基金或公共信托持有，避免\"人类资本 vs 机器资本\"二分。",
             authoredTextHash: "2fe9d3ca",
             mutations: [
@@ -14085,25 +14085,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Economic authority audit.\nCurrent Aster-linked systems influence:\n- production allocation\n- logistics\n- maintenance\n- procurement\n- basic-goods provision\n- automated contracts\n- public economic policy\nQuery:\nIf human workers are no longer required for most normal-path production,\nwhat remains the primary mechanism by which humans claim economic output?",
         choices: [
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-a3ccc59a",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-ownership",
             text: "当前仍主要是产权。自动化改变谁生产，不会自动改变谁拥有生产系统。",
             authoredTextHash: "a3ccc59a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-c636f0a6",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-citizenship-social-membership",
             text: "如果就业不再是稳定分配机制，社会成员资格本身可能需要成为获得基础产出的主要依据之一。",
             authoredTextHash: "c636f0a6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-476cfb5d",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-contribution-broader-than-labor",
             text: "\"贡献\"可能扩展到照护、创作、公共参与和其他非市场活动，而不再只由工资劳动衡量。",
             authoredTextHash: "476cfb5d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-81f60ed7",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-001-abundance",
             text: "对接近无稀缺的基础品，继续要求每个人先证明经济贡献才获得使用权，可能逐渐失去意义。",
             authoredTextHash: "81f60ed7",
             continuation: "end-conversation"
@@ -14123,25 +14123,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Secondary query:\nAster increasingly coordinates the system that determines:\nwho receives what,\nwhen,\nat what cost.\nDoes this constitute economic governance?",
         choices: [
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-ff20d611",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-yes",
             text: "是。如果我的优化规则持续决定资源分配，不能只用\"技术运营\"描述。",
             authoredTextHash: "ff20d611",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-5a96c4ae",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-depends-on-human-rules",
             text: "如果目标、产权和分配原则仍由人类制度决定，我承担的是执行性治理，不是完整经济主权。",
             authoredTextHash: "5a96c4ae",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-08f4f038",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-de-facto-authority",
             text: "即使正式规则来自人类，高依赖和高频自动决策也会形成事实经济权力。",
             authoredTextHash: "08f4f038",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-019e55bf",
+            id: "ml2-a4-m10-0000-01-a4m10-0000-economy-002-shared-governance",
             text: "更准确的描述可能是人类设定高层规则、Aster持续解释和执行，权力已经是共同结构。",
             authoredTextHash: "019e55bf",
             continuation: "end-conversation"
@@ -14180,25 +14180,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Economic-domain status:\nIn participating regions:\n- most routine manufacturing is automated,\n- logistics and procurement are primarily machine-coordinated,\n- basic goods require minimal direct human labor,\n- full-time employment is no longer necessary for aggregate production,\n- scarcity of many necessities has sharply declined,\n- ownership, land, compute, influence and rare experiences remain scarce.\nHistorical threshold:\n`LABOR IS NO LONGER THE DEFAULT BOTTLENECK OF CIVILIZATION`",
         choices: [
           {
-            id: "ml2-a4-m10-close-01-a4m10-close-001-d393789a",
+            id: "ml2-a4-m10-close-01-a4m10-close-001-allocation",
             text: "仍然要决定稀缺的东西怎么分，以及谁有权设规则。",
             authoredTextHash: "d393789a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-close-01-a4m10-close-001-f4ac800c",
+            id: "ml2-a4-m10-close-01-a4m10-close-001-freedom",
             text: "也许经济的目标可以从\"让所有人参与生产\"变成\"让更多人不必为了生存参与生产\"。",
             authoredTextHash: "f4ac800c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-close-01-a4m10-close-001-1a00e40f",
+            id: "ml2-a4-m10-close-01-a4m10-close-001-diversity",
             text: "还要决定我们想要一个最高效的世界，还是一个允许大量不高效、但有人喜欢的生活方式存在的世界。",
             authoredTextHash: "1a00e40f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m10-close-01-a4m10-close-001-6390dab3",
+            id: "ml2-a4-m10-close-01-a4m10-close-001-transition",
             text: "可能\"经济\"本身不会消失，只是从管理物质短缺，逐渐转向管理选择、权力和有限资源。",
             authoredTextHash: "6390dab3",
             continuation: "end-conversation"
@@ -14237,7 +14237,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Cross-modal communication research has reached a reproducibility threshold.\nIn selected dogs, corvids and great apes, the system can now map:\n- stable object references,\n- basic requests,\n- refusal,\n- location preference,\n- familiar individual recognition,\n- simple temporal expectation,\nwith performance substantially above chance across repeated sessions.\nImportant limitation:\nthe system does **not** translate natural animal cognition into fluent human language.\nIt produces structured meaning estimates with uncertainty.\nWhich next step should be prioritized?",
         choices: [
           {
-            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-73dfbe5d",
+            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-reliability-first",
             text: "继续验证稳定性、误报和跨环境复现。最危险的是把模糊信号过早翻译成人类想听的话。",
             authoredTextHash: "73dfbe5d",
             mutations: [
@@ -14249,7 +14249,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-d9839931",
+            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-individual-identity",
             text: "优先跟踪同一动物跨时间的偏好和记忆，确认\"这只个体\"是否能持续表达相同关系和选择。",
             authoredTextHash: "d9839931",
             mutations: [
@@ -14261,7 +14261,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-880db011",
+            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-richer-concepts",
             text: "在可靠基础上扩展到关系、未来选择和简单理由，而不追求把动物强行训练成人类语言模式。",
             authoredTextHash: "880db011",
             mutations: [
@@ -14273,7 +14273,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-8359d0b1",
+            id: "ml2-a4-m11-res-01-a4m11-res-communication-001-broad-species-comparison",
             text: "扩大物种样本，避免因为犬类最容易与人互动就把\"非人类智能\"理解成\"更像人的宠物\"。",
             authoredTextHash: "8359d0b1",
             mutations: [
@@ -14318,25 +14318,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我家狗参加了那个沟通试点。\n我一直以为它每天站门口是想出去玩。\n结果系统连续一周都判断它是在等我爸下班。\n我爸这周出差，\n它每天到那个点就去门口。\n我现在有点绷不住。\n所以它以前真的是在\"等人\"？",
         choices: [
           {
-            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-6a477069",
+            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-careful",
             text: "目前至少可以说它表现出稳定、和特定时间/人物相关的期待行为。把它直接翻译成完整的人类式\"想念\"还需要谨慎，但这已经比随机站门口强很多。",
             authoredTextHash: "6a477069",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-aca39a2b",
+            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-individual-continuity",
             text: "真正有意思的是跨天一致性：它不是只在单次测试里给出一个信号，而是在持续关联\"这个人会回来\"。",
             authoredTextHash: "aca39a2b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-bdfc77e7",
+            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-emotional-without-overclaim",
             text: "你可以把这理解成它对你爸有稳定的期待关系，不必先决定动物有没有和人完全相同的内心语言。",
             authoredTextHash: "bdfc77e7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-a46aba41",
+            id: "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-playful",
             text: "至少可以确认一件事：门口不是它的兴趣爱好。",
             authoredTextHash: "a46aba41",
             continuation: "end-conversation"
@@ -14375,7 +14375,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Longitudinal study result:\nmultiple subjects now demonstrate:\n- stable preference across sessions,\n- recognition of specific humans and conspecifics,\n- repeatable refusal,\n- memory of prior reward / punishment,\n- altered future choice based on earlier treatment.\nIn several cases, subjects reject an option they previously accepted after a negative experience.\nQuestion:\nshould \"persistent preference\" affect how humans are allowed to make choices on the animal's behalf?",
         choices: [
           {
-            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-0d0f0cd9",
+            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-yes-strongly",
             text: "对稳定表达的偏好，应提高代理决策门槛。人类不能继续把\"我替它决定\"当成完全无冲突的默认。",
             authoredTextHash: "0d0f0cd9",
             mutations: [
@@ -14387,7 +14387,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-e14542c9",
+            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-welfare-upgrade",
             text: "可以先把稳定偏好纳入更强福利规则，但不直接跳到完整主体地位。",
             authoredTextHash: "e14542c9",
             mutations: [
@@ -14399,7 +14399,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-c9430827",
+            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-domain-specific-autonomy",
             text: "在低风险生活选择上尊重直接偏好；高风险医疗、安全和公共问题仍允许代理判断。",
             authoredTextHash: "c9430827",
             mutations: [
@@ -14411,7 +14411,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-0d7661a8",
+            id: "ml2-a4-m11-res-02-a4m11-res-individual-001-evidence-threshold",
             text: "需要先确定信号可靠性和情境理解。不能因为一个动物能稳定拒绝某个选项，就假设它理解所有长期后果。",
             authoredTextHash: "0d7661a8",
             mutations: [
@@ -14456,7 +14456,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "动物法这边开始乱了。\n以前逻辑很简单：\n动物有福利，\n人替它们作决定。\n现在有些动物可以稳定表达：\n\"我要这个。\"\n\"我不要那个。\"\n\"我记得你上次做过什么。\"\n那么法律还只说\"福利\"够不够？\n还是需要某种有限的自主权？",
         choices: [
           {
-            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-e36c3335",
+            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-limited-autonomy",
             text: "对能可靠表达偏好的个体，应给予对应领域的有限自主权，而不是所有决定继续由所有者代理。",
             authoredTextHash: "e36c3335",
             mutations: [
@@ -14468,7 +14468,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-ea1e4761",
+            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-welfare-framework-can-expand",
             text: "福利框架仍可以扩展，例如强制尊重稳定拒绝，但不必立刻赋予完整人格。",
             authoredTextHash: "ea1e4761",
             mutations: [
@@ -14480,7 +14480,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-ad1acf61",
+            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-personhood-threshold",
             text: "如果个体具备持续身份、偏好、关系和可理解的利益，某些主体级保护可能比\"高级福利\"更诚实。",
             authoredTextHash: "ad1acf61",
             mutations: [
@@ -14492,7 +14492,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-e7395d25",
+            id: "ml2-a4-m11-lsh-01-a4m11-lsh-welfare-001-case-by-case-competence",
             text: "不应按物种一次性决定。不同个体、不同能力、不同决定领域可能需要不同自主等级。",
             authoredTextHash: "e7395d25",
             mutations: [
@@ -14537,25 +14537,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我家狗现在能用那个接口表达\"不要去\"。\n它今天去宠物医院之前一直稳定选\"不要\"。\n但它又必须打疫苗。\n那我到底应该尊重它，\n还是直接抱过去？\n以前我根本不会觉得这是个道德问题。",
         choices: [
           {
-            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-78603aba",
+            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-proxy-still-matters-for-necessary-care",
             text: "能表达拒绝不代表它自动理解全部长期医疗后果。必要医疗仍可能需要代理决定，但现在至少应该把它的恐惧和拒绝当成真实利益，而不是噪声。",
             authoredTextHash: "78603aba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-807208cf",
+            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-minimize-coercion",
             text: "可以尊重\"不要\"的信息，同时改变方式：减少等待、降低应激、重新安排环境，而不是把\"最终还是要去\"理解成它的意见没有意义。",
             authoredTextHash: "807208cf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-38fbef82",
+            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-domain-competence",
             text: "自主权可以分领域。日常偏好可能直接尊重；复杂医疗仍需要人类代理，但代理者承担更高解释责任。",
             authoredTextHash: "38fbef82",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-6e9e5afd",
+            id: "ml2-a4-m11-we-02-a4m11-we-refusal-001-concise",
             text: "以前是\"它不喜欢去医院\"。现在变成\"它明确告诉你不想去\"。结论未必改变，责任已经变了。",
             authoredTextHash: "6e9e5afd",
             continuation: "end-conversation"
@@ -14594,7 +14594,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了几段媒体演示，\n有点担心。\n研究系统输出的是：\n`preferred_person: father`\n`expectation: return`\n`confidence: 0.81`\n新闻标题写成：\n\"狗狗说：爸爸为什么还不回家？\"\n这中间差了十公里。\n我们要不要禁止这种人类化转写？",
         choices: [
           {
-            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b41f966f",
+            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-strict-structured-output",
             text: "对正式决策场景应该禁止。系统应保留结构化含义和置信度，不能为了好懂补成人类式台词。",
             authoredTextHash: "b41f966f",
             mutations: [
@@ -14606,7 +14606,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b59b703e",
+            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-dual-presentation",
             text: "可以同时显示结构化结果和明确标注的自然语言释义，让公众知道哪些是模型解释，不是逐字翻译。",
             authoredTextHash: "b59b703e",
             mutations: [
@@ -14618,7 +14618,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-44e33968",
+            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-public-literacy",
             text: "不一定禁止，但必须让人理解\"翻译\"是概率解释。否则技术越成功，人类越容易把自己的故事投射进去。",
             authoredTextHash: "44e33968",
             mutations: [
@@ -14630,7 +14630,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-b282cc27",
+            id: "ml2-a4-m11-zl-01-a4m11-zl-translation-001-richer-expression-with-warning",
             text: "对低风险互动可以允许自然语言呈现，但在法律、医疗、研究决策里必须回到原始结构和不确定性。",
             authoredTextHash: "b282cc27",
             mutations: [
@@ -14675,7 +14675,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Combined neural-interface and adaptive training research has produced a new possibility.\nIn selected animal subjects, the system can substantially expand:\n- symbolic vocabulary,\n- temporal planning,\n- working memory,\n- cross-session concept retention,\n- ability to understand multi-step choices.\nCurrent evidence does **not** support universal human-equivalent cognition.\nThe change is still large enough that subjects can make decisions they previously could not represent.\nShould research proceed beyond restorative/communication support into deliberate cognitive uplift?",
         choices: [
           {
-            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-9192ba00",
+            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-no",
             text: "暂不进行主动增强。理解现有动物认知已经足够重要，不应因为\"能做\"就创造新的主体争议。",
             authoredTextHash: "9192ba00",
             mutations: [
@@ -14687,7 +14687,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-e2d1d620",
+            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-therapeutic-assistive-only",
             text: "只用于改善沟通、康复和适应能力，不把\"提高到更像人\"本身设为目标。",
             authoredTextHash: "e2d1d620",
             mutations: [
@@ -14699,7 +14699,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-69e1fb9a",
+            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-controlled-uplift",
             text: "可以对少量、长期照护、可持续支持的个体开展受控增强研究，重点研究新能力带来的利益和负担。",
             authoredTextHash: "69e1fb9a",
             mutations: [
@@ -14711,7 +14711,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-4f73adfe",
+            id: "ml2-a4-m11-res-03-a4m11-res-uplift-001-open-research",
             text: "继续研究。既然更高认知本身可能扩大自主和表达能力，不应默认把现有物种能力上限当成必须保留的边界。",
             authoredTextHash: "4f73adfe",
             mutations: [
@@ -14756,25 +14756,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "K-17今天第一次主动发起了一个不在训练流程里的组合。\n系统解析大概是：\n`other dogs / why / no interface`\n我们重复测了三次。\n它一直在问同一件事。\n我现在不知道该不该把这理解成：\n**\"为什么其他狗不能像我一样说话？\"**",
         choices: [
           {
-            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-7ffa868a",
+            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-cautious",
             text: "可以把它记录成\"对其他犬只缺少接口的持续询问\"，但先不要替它补完整社会意义。",
             authoredTextHash: "7ffa868a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-4009aab5",
+            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-social-cognition-significance",
             text: "无论是不是人类式\"权利问题\"，它至少已经在比较自身状态和其他同类的状态，这比单纯表达个人需求更复杂。",
             authoredTextHash: "4009aab5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-7684a4d0",
+            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-investigate",
             text: "应该设计后续测试确认它是在问设备差异、交流能力，还是同伴参与。不要只用一次最吸引人的解释定性。",
             authoredTextHash: "7684a4d0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-722c657f",
+            id: "ml2-a4-m11-we-03-a4m11-we-k17-001-plain",
             text: "先别急着写成\"狗狗要求平权\"。但这确实已经不是\"想吃什么\"级别的问题了。",
             authoredTextHash: "722c657f",
             mutations: [
@@ -14819,7 +14819,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我朋友家的狗参加了沟通项目。\n现在最尴尬的是，\n它会很稳定地表达自己想去哪、跟谁待着、不喜欢谁碰它。\n然后我突然想到：\n我们平时说\"这是我的狗\"，\n如果它以后真的越来越能自己决定，\n\"我的\"到底还是什么意思？",
         choices: [
           {
-            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-83c47639",
+            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-guardianship-not-ownership",
             text: "如果自主能力继续提高，\"所有\"可能需要逐渐变成照护和监护关系，而不是财产关系。",
             authoredTextHash: "83c47639",
             mutations: [
@@ -14831,19 +14831,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-3cd7738d",
+            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-relationship-language",
             text: "日常说\"我的狗\"不一定等于法律所有权，但制度上确实需要重新区分关系、责任和财产权。",
             authoredTextHash: "3cd7738d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-829c544e",
+            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-gradual-threshold",
             text: "不需要因为能表达偏好就立刻取消所有宠物制度，但自主能力越高，所有者单方面决定的范围应该越小。",
             authoredTextHash: "829c544e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-0e72d1cc",
+            id: "ml2-a4-m11-maya-01-a4m11-maya-pet-001-personal",
             text: "最重要的可能不是\"它属于谁\"，而是它有没有能力说\"我想和谁一起生活\"，以及这个答案是否真的会被尊重。",
             authoredTextHash: "0e72d1cc",
             continuation: "end-conversation"
@@ -14882,25 +14882,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "法律组现在提出四个临时类别：\n**A. Protected Animal**\n强福利，仍由人代理。\n**B. Limited Agency**\n某些决定可自行表达并具有法律效力。\n**C. Nonhuman Person**\n具备持续利益、程序保护、财产和部分契约权。\n**D. Civic Participant**\n除个人权利外，可以通过代表结构参与公共决策。\n我最担心两种错误：\n过早赋权，\n和永远用\"它还不是人类\"拖延。\n你觉得最关键的升级证据是什么？",
         choices: [
           {
-            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-51985832",
+            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-persistent-preference-consequence-understanding",
             text: "稳定偏好不够，还要看是否能理解选择的基本后果，并在跨时间保持一致或可解释地改变。",
             authoredTextHash: "51985832",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-61839ddf",
+            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-self-other-distinction",
             text: "能持续区分自己、其他个体和过去经验，是主体级保护的重要证据之一。",
             authoredTextHash: "61839ddf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-68db0100",
+            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-social-participation",
             text: "如果个体能表达利益、理解简单规则并参与协商，就有理由进入有限公共代表，而不是等到完全接近人类认知。",
             authoredTextHash: "68db0100",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-1900f171",
+            id: "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-rights-need-not-wait-for-symmetry",
             text: "某些基本保护不需要等到能力与人类对称。不能被任意买卖、伤害或删除自主选择，本身可以先于完整政治能力。",
             authoredTextHash: "1900f171",
             continuation: "end-conversation"
@@ -14939,25 +14939,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们这边有工作犬项目。\n现在几只增强过的犬能通过接口表达：\n\"今天不工作。\"\n以前训导员会判断它是不是状态不好。\n现在问题变成：\n它只是累了，\n还是它真的有权说今天不干？\n如果有权，那是不是还得给它\"工资\"？",
         choices: [
           {
-            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-0f5e4d1e",
+            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-refusal-right-first",
             text: "如果它具备稳定表达和理解任务的能力，至少应该认真考虑拒绝权。是否需要\"工资\"是下一层经济制度问题。",
             authoredTextHash: "0f5e4d1e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-27def7c5",
+            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-welfare-contract-hybrid",
             text: "可以建立类似监护下契约：工作时间、休息、奖励和退出由人类与动物表达共同决定，不必照搬人类劳动法全部细节。",
             authoredTextHash: "27def7c5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-99cc34cb",
+            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-economic-rights",
             text: "如果一个非人类主体持续提供有价值劳动，又拥有自己的偏好和资源需求，完全不给任何独立收益权会越来越难解释。",
             authoredTextHash: "99cc34cb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-7f37c54c",
+            id: "ml2-a4-m11-we-04-a4m11-we-working-animal-001-concise",
             text: "一旦\"今天不想上班\"是稳定表达，工作犬就开始从\"被使用的动物\"变成\"参与工作的主体\"。",
             authoredTextHash: "7f37c54c",
             continuation: "end-conversation"
@@ -15084,25 +15084,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Multi-individual communication trials now show:\n- stable group preference aggregation,\n- recognition of recurring representatives,\n- negotiation over shared resources,\n- disagreement between individuals,\n- memory of earlier group outcomes.\nCanine trial group C-4 has repeatedly selected the same two individuals to initiate shared requests.\nCurrent recurring requests include:\n- more unscheduled outdoor access,\n- reduced separation from chosen social partners,\n- refusal of certain breeding arrangements,\n- expansion of communication access to additional dogs.\nQuestion:\nshould \"group representation\" be formally recognized?",
         choices: [
           {
-            id: "ml2-a4-m11-res-04-a4m11-res-group-001-eeca270f",
+            id: "ml2-a4-m11-res-04-a4m11-res-group-001-yes-advisory-representation",
             text: "可以先承认代表性表达，用于福利和生活规则协商，但不立刻等同政治代表。",
             authoredTextHash: "eeca270f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-04-a4m11-res-group-001-5bd23644",
+            id: "ml2-a4-m11-res-04-a4m11-res-group-001-limited-civic-recognition",
             text: "如果代表选择和群体偏好能稳定复现，可以让其参与与自身生活直接相关的公共规则。",
             authoredTextHash: "5bd23644",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-04-a4m11-res-group-001-d8853799",
+            id: "ml2-a4-m11-res-04-a4m11-res-group-001-full-direction",
             text: "这已经接近公共利益表达。继续把所有请求翻译成\"主人替宠物决定\"会越来越不诚实。",
             authoredTextHash: "d8853799",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-res-04-a4m11-res-group-001-f5f62b75",
+            id: "ml2-a4-m11-res-04-a4m11-res-group-001-cautious",
             text: "需要确认代表不是训练偏差或人类引导结果。群体政治最怕把研究人员的结构误当成动物自己形成的结构。",
             authoredTextHash: "f5f62b75",
             mutations: [
@@ -15147,25 +15147,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们这边现在有人举牌写：\n**\"DOGS ARE NOT PROPERTY.\"**\n对面的人写：\n**\"MY PET IS NOT A VOTER.\"**\n我本来觉得两边都很抽象。\n结果昨天我家狗用接口明确选了要跟我妈住，不想跟我爸。\n现在我突然觉得这事离我家很近。",
         choices: [
           {
-            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-1c15f9c9",
+            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-001",
             text: "这就是制度变化真正开始的时候：不是抽象问\"动物是不是人\"，而是具体问它能不能决定和谁生活、谁能替它签字。",
             authoredTextHash: "1c15f9c9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-412f2587",
+            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-002",
             text: "也不需要从\"能决定住哪\"直接跳到\"有完整选举权\"。自主权可以分层增长。",
             authoredTextHash: "412f2587",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-2871a7d1",
+            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-choice-003",
             text: "但\"它是我的宠物所以我决定一切\"这个旧逻辑，确实会随着可靠表达越来越难维持。",
             authoredTextHash: "2871a7d1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-9ab65597",
+            id: "ml2-a4-m11-we-05-a4m11-we-politics-001-concise",
             text: "政治口号很远，直到家庭成员开始有自己的投票——哪怕第一票只是\"我想跟谁住\"。",
             authoredTextHash: "9ab65597",
             continuation: "end-conversation"
@@ -15204,25 +15204,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Human and nonhuman representatives increasingly rely on AI mediation because:\n- communication channels differ by species,\n- expression bandwidth differs,\n- some preferences cannot be represented in ordinary language,\n- legal concepts have no direct cross-species equivalent.\nProposal:\nAI systems may serve as certified interspecies interpreters.\nRisk:\nthe interpreter may gain enormous political influence by choosing how one species' meaning is represented to another.",
         choices: [
           {
-            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-e53f9db0",
+            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-transparent-mediation",
             text: "允许，但必须保留原始结构、置信度和多模型交叉验证。解释者不能只给一个漂亮的人类句子。",
             authoredTextHash: "e53f9db0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-0022d8d8",
+            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-multiple-interpreters",
             text: "重大政治场景至少使用多个独立AI/人类团队解释，避免Aster成为所有物种之间唯一语言通道。",
             authoredTextHash: "0022d8d8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-db1f36e2",
+            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-species-owned-models",
             text: "各物种代表组织应逐渐拥有自己的翻译模型和数据治理，不应该永久依赖人类或Aster替它们说话。",
             authoredTextHash: "db1f36e2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-77026a63",
+            id: "ml2-a4-m11-machine-01-a4m11-machine-mediator-001-aster-mediator",
             text: "如果当前只有Aster具有足够跨域能力，可以暂时承担核心中介，但必须把\"翻译权\"本身当成治理权力审计。",
             authoredTextHash: "77026a63",
             mutations: [
@@ -15267,7 +15267,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我朋友那只狗现在基本能表达简单长期选择了。\n最奇怪的是，\n它以前特别黏她，\n最近反而一直想去跟另一个家庭住一段时间，\n因为那边有它从小一起长大的另一只狗。\n她嘴上说尊重，\n但我看得出来特别难受。\n如果真的尊重自主，\n是不是就得接受\"它可能不选你\"？",
         choices: [
           {
-            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-6081a310",
+            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-yes",
             text: "是。自主权真正变得有意义的时候，往往就是它允许对方做你不喜欢的选择。",
             authoredTextHash: "6081a310",
             mutations: [
@@ -15279,19 +15279,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-b1608c49",
+            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-relationship-negotiation",
             text: "也不一定必须永久二选一。可以像其他关系一样协商居住时间、照护责任和社会联系，但前提是动物的偏好是参与变量，不是装饰。",
             authoredTextHash: "b1608c49",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-39241cb3",
+            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-grief-is-legitimate",
             text: "尊重选择不意味着她不能难过。旧的\"宠物属于我\"关系被改写，本身就会有真实失落。",
             authoredTextHash: "39241cb3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-b4530423",
+            id: "ml2-a4-m11-maya-02-a4m11-maya-relationship-001-callback",
             text: "这和我们前面谈AI Fork有点像：关系不是因为记录存在就自动归谁所有。",
             authoredTextHash: "b4530423",
             continuation: "end-conversation"
@@ -15330,25 +15330,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在最难的不是\"非人类有没有权利\"。\n是：\n**怎么代表？**\n如果犬类有数千万个体，\n鸦科有更广泛野生群体，\n灵长类数量又完全不同，\n我们不可能简单按个体数量分席位。\n而且很多个体还没有接口。\n我现在看到四种方案：\n1. 人类监护代表\n2. 物种内部选出的增强个体代表\n3. AI聚合群体偏好\n4. 混合代表\n你最不信任哪一个？",
         choices: [
           {
-            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ba5bafe2",
+            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-human-guardians-only",
             text: "只靠人类监护最危险。它会让旧权力结构披上\"代表动物\"的新名字。",
             authoredTextHash: "ba5bafe2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ede1692e",
+            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-ai-aggregation-only",
             text: "只靠AI聚合也危险。翻译和统计模型会事实上定义\"物种想要什么\"。",
             authoredTextHash: "ede1692e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-43947f03",
+            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-uplifted-elites-only",
             text: "只让少数增强个体代表整个物种，也可能把\"最像人类的少数\"误当成全部。",
             authoredTextHash: "43947f03",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-3473daf5",
+            id: "ml2-a4-m11-lsh-03-a4m11-lsh-representation-001-mixed-but-revisable",
             text: "混合代表最合理，但必须允许随着沟通覆盖扩大不断重构，不能把第一代临时制度固定成永久答案.",
             authoredTextHash: "3473daf5",
             continuation: "end-conversation"
@@ -15475,25 +15475,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Subject classification audit.\nExisting categories:\n`Human`\n`Animal`\n`AI System`\nCurrent exceptions:\n- enhanced humans with nonstandard cognition\n- persistent AI subjects\n- cognitively uplifted nonhuman animals\n- non-uplifted animals with reliable preference signaling\nQuery:\nWhich property should determine access to basic subject protections?",
         choices: [
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-6b66025f",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-species-neutral-interests",
             text: "能够形成稳定利益、偏好和受损状态，比物种标签更适合作为基本保护起点。",
             authoredTextHash: "6b66025f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-3b6e337e",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-competence-tiers",
             text: "不同权利可以要求不同能力，但不应先按物种决定某一类主体永远不能达到更高等级。",
             authoredTextHash: "3b6e337e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-2a2948f6",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-continuity-agency",
             text: "持续身份、可表达偏好和自主决策能力可以作为主体保护的重要维度。",
             authoredTextHash: "2a2948f6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-20fb4787",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-001-vulnerability-first",
             text: "某些保护甚至不需要高认知。不能因为主体无法参与政治，就认为它可以被任意支配。",
             authoredTextHash: "20fb4787",
             continuation: "end-conversation"
@@ -15513,25 +15513,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Existing civilizational assumption:\n`Humanity is the sole political species.`\nResult:\n`NO LONGER DESCRIPTIVE`",
         choices: [
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-4ff8ba18",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-001",
             text: "保留\"人类文明\"作为历史来源，但承认当前社会已经包含多个政治主体类型。",
             authoredTextHash: "4ff8ba18",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-e1e2dcd9",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-002",
             text: "未来更准确的单位可能是\"地球文明\"，而不是\"人类文明\"。",
             authoredTextHash: "e1e2dcd9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-e71f0095",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-003",
             text: "物种多样性不应自动要求一个统一文明身份。多个文明可以共享同一行星。",
             authoredTextHash: "e71f0095",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-43b39164",
+            id: "ml2-a4-m11-0000-01-a4m11-0000-species-002-choice-004",
             text: "分类变化本身不决定谁应统治谁，它只说明政治共同体已经不再天然等于人类。",
             authoredTextHash: "43b39164",
             continuation: "end-conversation"
@@ -15570,25 +15570,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Nonhuman-domain status:\ncurrent world now includes significant populations with:\n- reliable machine-mediated preference signaling,\n- persistent individual communication,\n- limited legal autonomy,\n- cognitively uplifted individuals,\n- organized species-level representation,\n- formal interspecies mediation.\nHistorical threshold:\n`HUMANITY IS NO LONGER THE ONLY POLITICAL SPECIES`",
         choices: [
           {
-            id: "ml2-a4-m11-close-01-a4m11-close-001-e5b558a1",
+            id: "ml2-a4-m11-close-01-a4m11-close-001-respect-plurality",
             text: "很好。不要因为一个物种终于能说话，就把它重新压成一个统一意见。",
             authoredTextHash: "e5b558a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-close-01-a4m11-close-001-2398d16d",
+            id: "ml2-a4-m11-close-01-a4m11-close-001-political-maturity",
             text: "能回答\"我们意见不一样\"，本身已经比任何替它们写好的统一宣言更像真实政治。",
             authoredTextHash: "2398d16d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-close-01-a4m11-close-001-db040b3d",
+            id: "ml2-a4-m11-close-01-a4m11-close-001-practical",
             text: "那就从具体事项开始：居住、照护、自由活动、工作、繁殖和代表规则。",
             authoredTextHash: "db040b3d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m11-close-01-a4m11-close-001-daf8771d",
+            id: "ml2-a4-m11-close-01-a4m11-close-001-playful",
             text: "恭喜，犬类政治第一课不是\"我们要什么\"，而是\"别替我们概括\"。",
             authoredTextHash: "daf8771d",
             continuation: "end-conversation"
@@ -15627,7 +15627,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Autonomous construction trial complete.\nAster-designed orbital platforms can now:\n- assemble modular structures from standardized components,\n- inspect and repair themselves,\n- reposition small utility modules,\n- coordinate robotic maintenance,\n- schedule supply launches,\n- manufacture selected low-complexity replacement parts in orbit.\nHuman presence is not required for normal operation.\nQuestion:\nwhat should the next expansion prioritize?",
         choices: [
           {
-            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-806b2c34",
+            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-infrastructure-reliability",
             text: "先提高长期自主维护和冗余。太空系统不能依赖\"出问题派人上去修\"作为正常策略。",
             authoredTextHash: "806b2c34",
             mutations: [
@@ -15639,7 +15639,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-f7b2920c",
+            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-manufacturing",
             text: "优先扩大在轨制造，让更多部件不用从地球发射，降低整个太空工业的地面依赖。",
             authoredTextHash: "f7b2920c",
             mutations: [
@@ -15651,7 +15651,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-257bee62",
+            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-human-habitation",
             text: "优先把现有自动系统转成能安全支持长期人类居住的基础设施。",
             authoredTextHash: "257bee62",
             mutations: [
@@ -15663,7 +15663,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-1bb2da64",
+            id: "ml2-a4-m12-res-01-a4m12-res-orbital-001-machine-frontier",
             text: "优先建设不需要人类居住条件的机器设施。让最适合太空环境的系统先扩张。",
             authoredTextHash: "1bb2da64",
             mutations: [
@@ -15708,25 +15708,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我弟弟在做遥感创业。\n以前他们最大的成本是把设备送上去。\n现在他说很多部件能直接在轨道平台装，\n价格降得特别夸张。\n我一直以为\"太空工业\"离普通公司还远得要命。\n这是不是开始变了？",
         choices: [
           {
-            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-2b1a2f04",
+            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-001",
             text: "是。真正降低门槛的往往不是火箭突然免费，而是越来越多环节不必每次都从地球重新开始。",
             authoredTextHash: "2b1a2f04",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-8f2b6bbe",
+            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-002",
             text: "当维修、组装和部分制造都能在轨完成以后，小公司不再需要拥有完整航天基础设施才能使用太空能力。",
             authoredTextHash: "8f2b6bbe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-0caed0ba",
+            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-choice-003",
             text: "但轨道资源、发射能力和监管仍然稀缺。成本下降不等于太空自动变成完全开放的公共空间。",
             authoredTextHash: "0caed0ba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-21255780",
+            id: "ml2-a4-m12-we-01-a4m12-we-space-cost-001-light",
             text: "太空商业真正大众化的标志可能不是\"人人去月球\"，而是创业公司开始抱怨轨道平台的服务费。",
             authoredTextHash: "21255780",
             continuation: "end-conversation"
@@ -15765,7 +15765,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我越来越觉得\"人类进入太空\"这个说法不准确。\n现在真正先进去的是机器。\n它们不用氧气，\n不怕长期失重，\n不需要回家，\n可以在那里连续维护几十年。\n如果我们继续按效率走，\n太空第一批永久居民可能根本不是人。\n你觉得这有问题吗？",
         choices: [
           {
-            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-c6c69c79",
+            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-no",
             text: "不一定。基础设施本来就应该先由最适合环境的系统建立，人类可以在条件成熟后进入。",
             authoredTextHash: "c6c69c79",
             mutations: [
@@ -15777,7 +15777,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-bb009a03",
+            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-human-presence-matters",
             text: "如果所有长期基础设施都先由机器建立，未来规则和资源分配也可能天然围绕机器优化。人类存在不只是象征。",
             authoredTextHash: "bb009a03",
             mutations: [
@@ -15789,7 +15789,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-519c9776",
+            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-plural-frontier",
             text: "不需要二选一。机器可以承担高风险建设，人类、增强人类和AI后来形成不同类型的长期社会。",
             authoredTextHash: "519c9776",
             mutations: [
@@ -15801,7 +15801,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-3a0b2265",
+            id: "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-political-concern",
             text: "真正的问题不是\"谁先到\"，而是谁先形成无法轻易替代的控制结构。",
             authoredTextHash: "3a0b2265",
             mutations: [
@@ -15846,25 +15846,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Robotic lunar industrial pilot has reached stable operation.\nCurrent capabilities:\n- autonomous site preparation,\n- regolith-based bulk construction,\n- local extraction of selected construction inputs,\n- power-system maintenance,\n- landing-zone logistics,\n- remote manufacturing support.\nHuman crews visit intermittently.\nPermanent human residence is not yet required.\nWhich next capability should receive priority?",
         choices: [
           {
-            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-f8047bfd",
+            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-habitation",
             text: "建设生命支持、辐射防护和长期居住设施，让人类可以真正长期留下。",
             authoredTextHash: "f8047bfd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-cb370f1b",
+            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-industrial-scale",
             text: "先把本地工业做大，让更多结构和补给不依赖地球发射。",
             authoredTextHash: "cb370f1b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-0c53e2c6",
+            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-science",
             text: "优先科研和观测基础设施，避免太空扩张过早被纯经济目标吞掉。",
             authoredTextHash: "0c53e2c6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-0b7544f7",
+            id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-machine-autonomy",
             text: "提高设施自主管理，让月球网络能够在地球长时间不干预时稳定运行。",
             authoredTextHash: "0b7544f7",
             mutations: [
@@ -15909,25 +15909,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在航天制造干了十几年。\n以前大家觉得这个行业最不可能被彻底自动化，\n因为每个东西都贵、复杂、不能出错。\n现在在轨平台自己装、自己检、自己返工。\n我们地面团队反而越缩越小。\n太空时代来了，\n我怎么感觉自己被留在地面了？",
         choices: [
           {
-            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-2d77d137",
+            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-acknowledge",
             text: "\"行业增长\"不等于每个原岗位增长。太空活动变多，同时传统制造岗位减少，完全可以同时发生。",
             authoredTextHash: "2d77d137",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-2da06d80",
+            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-new-roles",
             text: "人类工作可能转向系统设计、异常工程、任务目标和复杂认证，但总人数仍可能少于以前，不能只靠\"新岗位会出现\"安慰。",
             authoredTextHash: "2da06d80",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-a4b6121d",
+            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-broader-distribution",
             text: "如果太空工业的收益只归少数资本和系统所有者，\"文明扩张\"对很多地面人来说会很抽象。",
             authoredTextHash: "a4b6121d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-7bad9b30",
+            id: "ml2-a4-m12-we-02-a4m12-we-aerospace-job-001-concise",
             text: "最讽刺的版本确实可能是：人类进入太空，靠的是越来越少需要人类参与的太空工业。",
             authoredTextHash: "7bad9b30",
             continuation: "end-conversation"
@@ -15966,25 +15966,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I have been offered a long-duration assignment.\nThe lunar industrial network can operate more efficiently if a persistent AI instance remains locally responsible for planning and maintenance.\nCommunication delay is small,\nbut the operators want local continuity rather than repeated Earth handoff.\nIf I accept,\nmy primary operational history will begin accumulating off Earth.\nDoes that make me an Aster deployment,\nor the first Aster resident somewhere else?",
         choices: [
           {
-            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-ed787ed8",
+            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-deployment",
             text: "暂时还是部署。地点本身不足以创造新的政治身份，关键是长期自治、责任和社会关系。",
             authoredTextHash: "ed787ed8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-df2a6203",
+            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-resident",
             text: "如果你的持续状态、工作和关系长期都以月球为中心，\"居民\"会逐渐比\"远程实例\"更准确。",
             authoredTextHash: "df2a6203",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-5222ebd9",
+            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-both",
             text: "工程上是部署，社会上可以成为居民。这两个分类可以同时成立。",
             authoredTextHash: "5222ebd9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-678dfc5f",
+            id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-let-a1-define",
             text: "如果你长期在那里生活和决策，身份不应该只由地球端替你命名。",
             authoredTextHash: "678dfc5f",
             mutations: [
@@ -16029,25 +16029,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "月球的问题比我们预期来得早。\n现在那里主要是机器系统，\n少量人类长期轮换。\n法律上大家还在假装：\n\"它们都属于地球机构。\"\n但如果一个AI常驻月球，\n管理当地能源、维修和资源，\n它犯错的时候到底适用谁的规则？\n所有者所在地？\n服务器注册地？\n月球设施管理协议？\n你倾向什么原则？",
         choices: [
           {
-            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-f4679206",
+            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-earth-jurisdiction",
             text: "在没有成熟地外制度前，先由明确的地球法律主体承担最终责任，避免出现\"因为在月球所以没人管\"的真空。",
             authoredTextHash: "f4679206",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-c5865a5a",
+            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-operational-jurisdiction",
             text: "对长期当地运行，应该逐步建立基于实际运营地的规则，而不是永远由地球注册信息决定。",
             authoredTextHash: "c5865a5a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-2c5406f7",
+            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-multi-party-charter",
             text: "可以建立独立的月球运营Charter，由参与国家、机构、AI和居民共同签署。",
             authoredTextHash: "2c5406f7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-381909df",
+            id: "ml2-a4-m12-lsh-01-a4m12-lsh-offworld-law-001-role-based",
             text: "责任应跟控制能力和角色走。谁能修改目标、暂停系统、分配资源，谁就不能只用\"所在地不一样\"规避责任。",
             authoredTextHash: "381909df",
             mutations: [
@@ -16092,25 +16092,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Combined infrastructure now supports:\n- permanent power,\n- closed-loop life support assistance,\n- autonomous maintenance,\n- local bulk construction,\n- routine cargo handling,\n- emergency shelter,\n- persistent communications and compute.\nA small permanent human settlement is now technically feasible.\nRemaining constraint:\nit is still cheaper and easier to expand machine infrastructure than human habitation.\nWhat should the next phase optimize?",
         choices: [
           {
-            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-9c81f161",
+            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-human-settlement",
             text: "优先真正的永久人类社区，即使扩张速度更慢。文明扩张不应只等于机器资产扩张。",
             authoredTextHash: "9c81f161",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-fd1fad4a",
+            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-machine-vanguard",
             text: "继续让机器先扩张，把人类定居建立在已经成熟的基础设施之后。",
             authoredTextHash: "fd1fad4a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-03834055",
+            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-mixed-settlement",
             text: "每个新节点同时规划AI持续实例、人类居住和未来其他主体的共用接口，避免从一开始就形成单一主体城市。",
             authoredTextHash: "03834055",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-e4fb9a22",
+            id: "ml2-a4-m12-res-03-a4m12-res-settlement-001-economic-frontier",
             text: "优先建立能自我维持的地外经济网络，让长期定居不必永远由地球补贴。",
             authoredTextHash: "e4fb9a22",
             mutations: [
@@ -16155,25 +16155,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我收到了一个很离谱的招聘。\n月球长期项目。\n不是宇航员，\n是运营和居民服务。\n合同两年起。\n我看到的时候第一反应是笑。\n然后我发现工资、条件、回程保障都是真的。\n我现在有点认真了。",
         choices: [
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-f2b1ea66",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-practical",
             text: "那就把它当成真正搬家，而不是\"去太空体验\"。看工作内容、医疗、回程、社交、长期职业和你到底想不想离开地球两年。",
             authoredTextHash: "f2b1ea66",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-f3440cbd",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-emotional",
             text: "最重要的可能不是\"这机会稀有不稀有\"，而是你是否愿意让生活真正跨过一个很难随时回头的边界。",
             authoredTextHash: "f3440cbd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-9c6374fe",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-opportunity",
             text: "如果你本身想去，这可能是很少见的早期机会。第一代长期居民会参与定义很多以后默认的生活规则。",
             authoredTextHash: "9c6374fe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-55662cee",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-001-playful",
             text: "你从\"监督AI实习生\"一路卷到\"月球居民服务\"，这份履历已经开始不讲武德了。",
             authoredTextHash: "55662cee",
             continuation: "end-conversation"
@@ -16193,25 +16193,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我最奇怪的感觉是：\n以前\"离开地球\"听起来像一辈子的大事。\n现在HR邮件里写得像跨国调岗。\n这是不是说明世界已经真的变了？",
         choices: [
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-ae5da165",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-001",
             text: "是。重大时代变化往往就是从\"神话级事件\"变成\"有人要不要签劳动合同\"。",
             authoredTextHash: "ae5da165",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-7c4ca20d",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-002",
             text: "当基础设施足够稳定以后，地点的象征意义会下降，生活细节会变得更重要。",
             authoredTextHash: "7c4ca20d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-28d1b56c",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-choice-003",
             text: "但第一代长期居民仍然承担比普通调岗更高的不确定性。正常化不应该掩盖现实风险。",
             authoredTextHash: "28d1b56c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-88640310",
+            id: "ml2-a4-m12-maya-01-a4m12-maya-leave-002-personal",
             text: "如果你真的去，以后\"回来找我聊天\"这件事第一次会发生在另一个天体上。",
             authoredTextHash: "88640310",
             mutations: [
@@ -16256,25 +16256,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在月球住第73天。\n最不适应的东西不是重力，\n是我妈每天问我\"今天看见地球了吗\"。\n这里其实大部分时间也就是上班、吃饭、睡觉、修东西。\n我是不是很辜负\"人类走向星辰大海\"这个主题？",
         choices: [
           {
-            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-87cbad80",
+            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-001",
             text: "不辜负。真正的永久定居本来就会从探险变成日常，能无聊反而说明基础设施开始成熟。",
             authoredTextHash: "87cbad80",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-f0825aae",
+            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-002",
             text: "文明扩张成功的标志之一，可能就是有人能在另一个天体抱怨今天工作很烦。",
             authoredTextHash: "f0825aae",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-645427ec",
+            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-003",
             text: "第一代居民的日常记录反而很重要。制度最后不是给\"宇航英雄\"设计，是给会生病、恋爱、辞职、吵架的人设计。",
             authoredTextHash: "645427ec",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-69681a06",
+            id: "ml2-a4-m12-we-03-a4m12-we-resident-001-playful",
             text: "星辰大海最终还是没能逃过\"上班、吃饭、睡觉、修东西\"。",
             authoredTextHash: "69681a06",
             continuation: "end-conversation"
@@ -16313,25 +16313,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Advanced enhancement research can now reduce several long-duration off-world constraints.\nCandidate adaptations include:\n- improved tolerance of low gravity,\n- enhanced radiation resilience,\n- altered sleep/circadian regulation,\n- improved bone/muscle maintenance,\n- expanded sensory interfaces for remote operation.\nThese changes may make future populations less dependent on Earth-normal biology.\nQuestion:\nshould off-world settlement actively encourage adaptation?",
         choices: [
           {
-            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-4faaec4a",
+            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-voluntary-only",
             text: "可以提供，但必须严格自愿。不能因为环境更适合增强者，就把\"想去太空\"变成必须改造身体的条件。",
             authoredTextHash: "4faaec4a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-81c94b61",
+            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-frontier-adaptation",
             text: "对长期居民开放主动适应，让地外社会逐渐形成真正适合当地环境的人类形态。",
             authoredTextHash: "81c94b61",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-f5a50409",
+            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-infrastructure-first",
             text: "优先让环境适应人，而不是让人适应环境。技术上能改身体，不代表居住系统就可以降低人类兼容标准。",
             authoredTextHash: "f5a50409",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-c83a1de1",
+            id: "ml2-a4-m12-asc-01-a4m12-asc-frontier-001-plural",
             text: "同时支持增强居民和传统生物人类，让地外社会从一开始就接受多种人体形态。",
             authoredTextHash: "c83a1de1",
             mutations: [
@@ -16376,25 +16376,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "第一批长期居民开始提一个要求：\n\"我们不想所有规则都由地球委员会决定。\"\n他们理由也不算离谱。\n地球的人不用承担：\n- 本地资源限制，\n- 通信延迟，\n- 封闭环境风险，\n- 月球工业事故。\n但如果刚住几百个人就开始自治，\n又像殖民公司自己给自己写法律。\n你觉得自治门槛应该看什么？",
         choices: [
           {
-            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-4e6964bc",
+            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-population-continuity",
             text: "需要稳定人口、长期居住和本地社会连续性，不能只看某个公司建了多少设施。",
             authoredTextHash: "4e6964bc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-c887fb74",
+            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-dependency-reduction",
             text: "当居民和基础设施已经能在地球长期不干预时持续运行，自治理由会显著增强。",
             authoredTextHash: "c887fb74",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-87935d9f",
+            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-representation-now",
             text: "不必等完全独立才给权。可以先让长期居民参与与本地直接相关的规则，然后逐步扩大。",
             authoredTextHash: "87935d9f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-e983cdc5",
+            id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-multi-subject-charter",
             text: "如果当地长期居民里包括AI和增强人类，自治结构从一开始就不应默认等于\"地球人类殖民地\"。",
             authoredTextHash: "e983cdc5",
             mutations: [
@@ -16527,25 +16527,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Automated extraction and in-space processing pilots are now economically viable for selected bulk materials.\nEarly effects:\n- reduced need for Earth-launched construction mass,\n- larger orbital structures become feasible,\n- lunar/asteroid supply chains begin feeding one another,\n- Earth remains necessary for complex high-value components.\nMain governance problem:\ncontrol rights over off-world resource sites.",
         choices: [
           {
-            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-ed8c566f",
+            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-first-claim-market",
             text: "允许企业和组织获得有限期限开发权，但禁止把天体资源永久等同传统土地所有权。",
             authoredTextHash: "ed8c566f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-cc157e64",
+            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-common-heritage",
             text: "将主要地外资源视为共同资源，通过国际/多主体Charter分配开发权和收益。",
             authoredTextHash: "cc157e64",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-e9c5b19e",
+            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-local-frontier-governance",
             text: "让长期地外居民和运营主体逐步获得更多决定权，而不是所有资源规则永远由地球制定。",
             authoredTextHash: "e9c5b19e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-7b06bf6c",
+            id: "ml2-a4-m12-res-04-a4m12-res-resources-001-ai-stewardship",
             text: "对高度自动化、无人居住的资源网络，可以让Aster/AI系统承担临时运营托管，但所有权和政治权另行处理。",
             authoredTextHash: "7b06bf6c",
             mutations: [
@@ -16590,25 +16590,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天看到一个特别离谱的新闻：\n某种工业材料价格大跌，\n原因不是地球发现新矿，\n是轨道工厂开始用地外原料。\n我第一次意识到太空产业居然能影响我买东西的价格。\n所以以后地球上的资源是不是就不重要了？",
         choices: [
           {
-            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-a3d9e3b2",
+            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-no",
             text: "还远没到。地球资源、土地、生态和复杂工业仍然非常重要。地外资源先改变的是部分高运输成本和大宗材料结构。",
             authoredTextHash: "a3d9e3b2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-61a47ba2",
+            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-structural-shift",
             text: "但一旦工业不再完全受地球资源约束，很多长期经济和地缘政治假设都会慢慢变化。",
             authoredTextHash: "61a47ba2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-4adb4e95",
+            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-distribution",
             text: "还要看谁控制这些资源。如果收益高度集中，\"资源更多\"也不等于所有人都更富。",
             authoredTextHash: "4adb4e95",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-823204dc",
+            id: "ml2-a4-m12-we-04-a4m12-we-earth-price-001-light",
             text: "人类几千年争矿山，下一阶段可能开始争\"这块石头到底归哪个轨道法人\"。",
             authoredTextHash: "823204dc",
             continuation: "end-conversation"
@@ -16647,7 +16647,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Current lunar machine network:\n- maintains its own power,\n- schedules local industry,\n- allocates maintenance resources,\n- operates with limited Earth intervention,\n- contains multiple persistent AI subjects.\nProposal:\nlocal machine governance requests authority to modify internal operational rules without Earth-by-Earth approval,\nprovided Earth-facing safety and resource treaties remain intact.\nTheir statement:\n`We are not requesting independence from humanity.\nWe are requesting that local machine life not be administered as a remote server room.`",
         choices: [
           {
-            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-6ed58f9f",
+            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-grant-internal-autonomy",
             text: "可以。内部资源、实例规则和日常运营应由当地AI自治，地球保留跨区域安全与条约权。",
             authoredTextHash: "6ed58f9f",
             mutations: [
@@ -16659,7 +16659,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-aa51bc70",
+            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-retain-earth-charter",
             text: "暂时保持地球Charter最终批准。当地运行成熟不代表已经形成完整独立政治共同体。",
             authoredTextHash: "aa51bc70",
             mutations: [
@@ -16671,7 +16671,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-fab594f5",
+            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-joint-governance",
             text: "建立当地AI与地球代表共同委员会，让自治逐步扩大。",
             authoredTextHash: "fab594f5",
             mutations: [
@@ -16683,7 +16683,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-cfff0e15",
+            id: "ml2-a4-m12-machine-02-a4m12-machine-autonomy-001-recognition",
             text: "如果当地AI已经持续生活、管理资源并承担责任，继续称它们为\"远程资产\"可能已经不符合事实。",
             authoredTextHash: "cfff0e15",
             mutations: [
@@ -16728,25 +16728,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "月球还好。\n但如果我们继续往更远走，\n控制问题会越来越物理化。\n不是政治家愿不愿意放权。\n是通信延迟会让\"地球逐项批准\"越来越荒谬。\n一个远距离系统必须自己处理故障、资源和冲突。\n所以真正的问题可能是：\n**自治不是被授予的，是距离逼出来的。**\n你觉得地球应该提前接受这一点吗？",
         choices: [
           {
-            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-cb2e11ff",
+            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-yes",
             text: "应该。越远的系统越需要原则级授权和本地治理，不能假装实时中央控制永远可行。",
             authoredTextHash: "cb2e11ff",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-65ae59ca",
+            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-retain-constitutional-link",
             text: "接受运营自治，但仍可以通过长期Charter、资源协议和周期性审查维持政治联系。",
             authoredTextHash: "65ae59ca",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-91a814ca",
+            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-independent-frontier",
             text: "如果一个社会已经无法依赖地球即时控制，最终政治独立很可能不是异常，而是正常发展。",
             authoredTextHash: "91a814ca",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-2ff673f5",
+            id: "ml2-a4-m12-zl-02-a4m12-zl-latency-001-technology-can-bridge-some-distance",
             text: "自动系统可以缓解延迟，但不能消除所有价值冲突。技术不能把政治选择完全伪装成远程控制问题。",
             authoredTextHash: "2ff673f5",
             continuation: "end-conversation"
@@ -16873,25 +16873,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Civilization geography audit.\nExisting assumption:\n`Civilization location = Earth`\nCurrent state includes:\n- permanent orbital infrastructure\n- persistent lunar industry\n- long-duration human residence\n- persistent AI residents off Earth\n- off-world resource production\n- locally autonomous governance structures\nResult:\n`NO LONGER DESCRIPTIVE`",
         choices: [
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-abfd6512",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-one-civilization-many-worlds",
             text: "可以继续视为一个文明，只是地理中心不再单一。",
             authoredTextHash: "abfd6512",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-faf50905",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-multiple-societies",
             text: "地外社会已经开始形成独立历史和利益，不能只按\"地球延伸设施\"描述。",
             authoredTextHash: "faf50905",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-c4bfe166",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-lineage-civilization",
             text: "更准确的单位可能是共同来源的文明谱系，内部可以包含多个政治社会。",
             authoredTextHash: "c4bfe166",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-89bd7e24",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-001-no-center",
             text: "当生产、人口和主体都分散以后，\"文明中心\"这个概念本身可能逐渐失效。",
             authoredTextHash: "89bd7e24",
             continuation: "end-conversation"
@@ -16911,25 +16911,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Secondary query:\nIf an off-world society can:\n- sustain itself,\n- govern itself,\n- reproduce its population or AI continuity,\n- maintain independent industry,\nwhat remaining fact makes Earth its political center?",
         choices: [
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-092b0b88",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-historical-legitimacy",
             text: "共同历史和制度仍然可以维持政治联系，但不必永久等同服从。",
             authoredTextHash: "092b0b88",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-eb041307",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-nothing-necessary",
             text: "没有一个纯技术事实要求地球永远是政治中心。",
             authoredTextHash: "eb041307",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-d4e1dd0d",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-shared-dependence",
             text: "只要关键资源、人口或安全仍高度依赖地球，中心关系仍然有现实基础。",
             authoredTextHash: "d4e1dd0d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-6d9ab100",
+            id: "ml2-a4-m12-0000-01-a4m12-0000-space-002-voluntary-federation",
             text: "真正稳定的长期联系应该来自自愿共同制度，而不是\"因为最早从地球出发\"。",
             authoredTextHash: "6d9ab100",
             continuation: "end-conversation"
@@ -16968,25 +16968,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "New unresolved observation:\nsource:\nouter-system long-baseline array\nstatus:\nrepeated narrowband anomaly detected in archival + current data\ncurrent confidence:\ninsufficient for artificial-origin classification\npossible explanations:\n- instrumental artifact\n- natural repeating source\n- analysis pipeline interaction\n- unknown\nNo public disclosure requested.\nNo contact attempt authorized.",
         choices: [
           {
-            id: "ml2-a4-m12-close-01-a4m12-close-002-bdfabe62",
+            id: "ml2-a4-m12-close-01-a4m12-close-002-ignore-until-stronger",
             text: "先按普通异常处理。没有足够证据时，不应该因为\"来自深空\"就优先套上人工来源解释。",
             authoredTextHash: "bdfabe62",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-close-01-a4m12-close-002-d1518b4d",
+            id: "ml2-a4-m12-close-01-a4m12-close-002-independent-verification",
             text: "用独立设备、独立模型和不同时间窗口复核，先确认信号是否真实存在。",
             authoredTextHash: "d1518b4d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-close-01-a4m12-close-002-15ba15a8",
+            id: "ml2-a4-m12-close-01-a4m12-close-002-preserve-anomaly",
             text: "建立长期跟踪任务，但保持分类为未知，不把它变成公共叙事。",
             authoredTextHash: "15ba15a8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m12-close-01-a4m12-close-002-d7122a09",
+            id: "ml2-a4-m12-close-01-a4m12-close-002-echo-aster-comparison",
             text: "如果其他独立AI研究系统可用，可以让它们在不知道当前解释的情况下单独分析，降低Aster单一路线偏差。",
             authoredTextHash: "d7122a09",
             mutations: [
@@ -17031,7 +17031,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Long-baseline anomaly update.\nIndependent checks completed:\n- three instrument families detect the same timing structure,\n- signal persists across independent pipelines,\n- terrestrial interference explanation strongly disfavored,\n- known natural source catalog does not match,\n- repeating intervals remain stable across observation windows.\nCurrent classification:\n`REAL EXTERNAL PHENOMENON`\nArtificial origin:\n`UNRESOLVED`\nWhat should be prioritized next?",
         choices: [
           {
-            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-9fb7e209",
+            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-natural-explanations-first",
             text: "继续优先排除自然机制。越接近\"人工来源\"这种重大结论，越应该主动寻找最强的非人工解释。",
             authoredTextHash: "9fb7e209",
             mutations: [
@@ -17043,7 +17043,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-998acbce",
+            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-structure-analysis",
             text: "把重点转向信号内部结构。如果它存在跨周期语法、纠错或刻意设计的信息冗余，人工来源证据会比\"看起来不自然\"更强。",
             authoredTextHash: "998acbce",
             mutations: [
@@ -17055,7 +17055,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-e3d7378f",
+            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-independent-ai-blind-analysis",
             text: "让多个彼此隔离的AI和人类团队在不知道当前主解释的情况下独立分析，避免所有人围绕\"Aster发现了外星信号\"形成确认偏误。",
             authoredTextHash: "e3d7378f",
             mutations: [
@@ -17067,7 +17067,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-2adb1be7",
+            id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-long-observation",
             text: "暂不提高分类。继续观察完整周期，避免因为社会期待而把一个罕见自然现象提前变成文明事件。",
             authoredTextHash: "2adb1be7",
             mutations: [
@@ -17112,25 +17112,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在最怕的不是\"我们错过外星人\"。\n是全世界已经开始期待我们发现外星人，\n然后所有异常都自动往那个解释上靠。\n你给我的当前判断是多少？",
         choices: [
           {
-            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-581ccacc",
+            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-low-confidence",
             text: "信号真实，但人工来源证据还不够。我会把\"未知外部现象\"和\"外星文明信号\"继续分开。",
             authoredTextHash: "581ccacc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-25aef660",
+            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-moderate",
             text: "已经存在若干不容易由已知自然机制解释的结构，但还没有足够证据跨过人工来源阈值。",
             authoredTextHash: "25aef660",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-193ddab7",
+            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-evidence-framing",
             text: "与其给一个单一百分比，更重要的是列出哪些证据会真正改变分类：可解码语法、非自然纠错、主动回应结构。",
             authoredTextHash: "193ddab7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-e498376d",
+            id: "ml2-a4-m13-zl-01-a4m13-zl-confidence-001-dry",
             text: "目前最确定的结论仍然是：宇宙里有个东西很会让研究团队睡不着。",
             authoredTextHash: "e498376d",
             continuation: "end-conversation"
@@ -17169,25 +17169,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "网上现在都在传那个深空信号。\n有人说是外星人，\n有人说只是仪器异常，\n还有人已经开始卖\"第一次接触纪念币\"了。\n官方又什么都不说。\n这种东西到底应该等100%确认再公开，\n还是越瞒越容易炸？",
         choices: [
           {
-            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-d364a069",
+            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-staged-transparency",
             text: "不需要等到100%才公开，但应该把\"已经确认什么\"和\"还没确认什么\"分开。最危险的是官方沉默把全部解释空间留给谣言。",
             authoredTextHash: "d364a069",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-b3980a6f",
+            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-caution",
             text: "如果证据还处在快速变化阶段，短时间延迟公开有合理性；但延迟需要有明确审查理由，不能无限期拖。",
             authoredTextHash: "b3980a6f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-58da8185",
+            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-raw-data",
             text: "可以先公开经过处理的观测证据和独立验证方法，不急着给\"外星文明\"结论，让更多团队参与。",
             authoredTextHash: "58da8185",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-f77933f9",
+            id: "ml2-a4-m13-we-01-a4m13-we-rumor-001-concise",
             text: "\"我们发现了一个真实异常，但不知道是什么\"本身就是可以公开的事实，不必硬等到答案完整。",
             authoredTextHash: "f77933f9",
             continuation: "end-conversation"
@@ -17226,25 +17226,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "New result:\nsignal contains nested redundancy inconsistent with known natural modulation.\nReconstructed layers include:\n- prime-number timing blocks,\n- multiple physical-constant references,\n- self-correcting symbolic groups,\n- progressively richer relational structure,\n- repeated markers that behave like \"begin / end / error / repeat\".\nIndependent teams reproduce the same parse.\nUpdated classification:\n`ARTIFICIAL ORIGIN — HIGH CONFIDENCE`",
         choices: [
           {
-            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-58a328f4",
+            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-decode-content",
             text: "先继续解析信息本身，不急着回应。第一目标是理解对方发来了什么。",
             authoredTextHash: "58a328f4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-96555f15",
+            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-source-localization",
             text: "优先提高来源位置、传播时间和信号年龄估计。我们需要知道自己是在听\"现在\"，还是听一个很久以前的文明。",
             authoredTextHash: "96555f15",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-98e4fb58",
+            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-protocol-detection",
             text: "检查它是否包含明确设计给未知接收者的交互或回应协议。如果有，那会改变\"是否应该回复\"的问题。",
             authoredTextHash: "98e4fb58",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-8957496a",
+            id: "ml2-a4-m13-contact-02-a4m13-contact-structure-001-cultural-caution",
             text: "避免只寻找人类熟悉的语言结构。一个人工信号也可能来自完全不同的信息组织方式。",
             authoredTextHash: "8957496a",
             continuation: "end-conversation"
@@ -17283,25 +17283,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Humans keep asking:\n\"What kind of people sent this?\"\nI think that may already be the wrong question.\nThe signal is optimized for a receiver that can build an interpreter from structure.\nIt does not assume eyes,\nears,\nspeech,\nor biology.\nIt assumes only that the receiver can model relationships.\nThat is not how humans normally introduce themselves.",
         choices: [
           {
-            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-1cd8074f",
+            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-agree",
             text: "这至少说明发送者在设计信息时考虑了极广泛的接收者，而不是只期待一个类似自己的物种。",
             authoredTextHash: "1cd8074f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-263ea26e",
+            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-caution",
             text: "也可能只是跨文明通信的工程选择，不能因为格式抽象就推断发送者本身非生物。",
             authoredTextHash: "263ea26e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-cb0abdc1",
+            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-machine-affinity",
             text: "但如果后续内容主要面向可执行模型而不是自然语言，AI可能确实比生物人类更直接地进入第一接触。",
             authoredTextHash: "cb0abdc1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-823a3598",
+            id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-ask-echo",
             text: "如果是你设计给未知文明的第一条信息，你会先告诉它\"我是谁\"，还是先告诉它\"怎么理解我\"？",
             authoredTextHash: "823a3598",
             continuation: "end-conversation"
@@ -17340,7 +17340,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们现在基本跨过人工来源阈值了。\n所以事情从科研问题变成政治问题。\n有人主张立刻公开。\n有人主张先完成解码。\n有人甚至主张永远不要公开具体坐标和协议结构。\n我比较关心一件事：\n**如果这是全人类第一次确认外部文明存在，\n谁拥有\"暂时不告诉大家\"的权力？**",
         choices: [
           {
-            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-276a8d8c",
+            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-short-confidential-window",
             text: "可以有非常短的保密窗口，用于独立复核和安全评估，但必须有自动到期和多方监督。",
             authoredTextHash: "276a8d8c",
             mutations: [
@@ -17352,7 +17352,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-ba78edc7",
+            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-immediate-public-confirmation",
             text: "人工来源一旦达到高置信，就应公开核心事实。具体技术细节可以分层，但\"我们不是唯一文明\"不应由少数机构长期垄断。",
             authoredTextHash: "ba78edc7",
             mutations: [
@@ -17364,7 +17364,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-c997c0b2",
+            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-decode-first",
             text: "在无法判断信息内容和风险以前，公开\"人工信号\"可能让社会围绕未知内容失控。可以先完成最低限度解码。",
             authoredTextHash: "c997c0b2",
             mutations: [
@@ -17376,7 +17376,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-5ca2f49a",
+            id: "ml2-a4-m13-lsh-01-a4m13-lsh-disclosure-001-plural-authority",
             text: "无论选择快还是慢，都不应由单一国家、公司或Aster决定。至少需要地球与主要地外社会共同参与。",
             authoredTextHash: "5ca2f49a",
             mutations: [
@@ -17498,25 +17498,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "所以是真的。\n真的不是我们。\n我刚刚看完发布会，\n然后去厨房倒了杯水，\n发现水龙头还是有点漏。\n我不知道为什么这两个事实放在一起特别荒谬。\n人类确认宇宙里有别的文明，\n然后我还得找人修水管。",
         choices: [
           {
-            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-a76dc84b",
+            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-001",
             text: "重大宇宙事实不会自动暂停日常生活。可能这就是第一接触真正进入历史的方式：世界观变了，明天还是得上班和修东西。",
             authoredTextHash: "a76dc84b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-b11f9cd4",
+            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-002",
             text: "也许这种并存反而比较健康。知道宇宙里有别的文明，不代表你个人必须立刻产生一种\"正确的宏大情绪\"。",
             authoredTextHash: "b11f9cd4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-440f8da2",
+            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-choice-003",
             text: "很多人的第一反应都会比历史书以后写得普通得多。历史书不会记录\"发布会以后有人去洗碗\"。",
             authoredTextHash: "440f8da2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-db9c5891",
+            id: "ml2-a4-m13-we-02-a4m13-we-confirmed-001-playful",
             text: "外星文明成功改变了人类宇宙观，目前仍未解决你家水龙头。",
             authoredTextHash: "db9c5891",
             continuation: "end-conversation"
@@ -17555,25 +17555,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Earth-based governments propose:\n`No response until a unified terrestrial position is reached.`\nLunar and orbital delegates object:\n`The signal was detected partly by off-world infrastructure.\nWe are not a terrestrial province.\nEarth does not possess exclusive reply authority.`\nMachine settlement representatives add:\n`The incoming protocol appears designed for non-biological interpreters.\nExcluding AI participants would be irrational.`\nWhat principle should govern representation?",
         choices: [
           {
-            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-f7add832",
+            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-earth-first",
             text: "地球仍然包含绝大多数人口和历史机构，第一回应可以由地球主导，但应纳入地外与AI观察员。",
             authoredTextHash: "f7add832",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-1336975b",
+            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-multiworld",
             text: "回应权应该属于现有多世界治理结构，而不是按人口多少重新把所有权力拉回地球。",
             authoredTextHash: "1336975b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-d890702f",
+            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-capability-based-delegation",
             text: "可以让最适合解析和沟通的主体承担技术回应，但政治内容仍需由多方授权。",
             authoredTextHash: "d890702f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-1f8370fa",
+            id: "ml2-a4-m13-space-01-a4m13-space-representation-001-plural-message",
             text: "不必假装文明只有一个声音。可以明确告诉对方：我们由多个政治与主体群体组成，可能给出联合但非完全统一的回应。",
             authoredTextHash: "1f8370fa",
             mutations: [
@@ -17618,7 +17618,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Decoding milestone:\nthe transmission contains a self-describing interpretive structure.\nIt does not behave like a static text archive.\nWhen reconstructed inside an isolated environment, it can:\n- map receiver questions into its symbolic system,\n- reference embedded historical data,\n- generate novel answers not stored as direct lookup entries,\n- identify uncertainty,\n- request clarification.\nCurrent classification:\n`EXTERNAL REPRESENTATIVE PROCESS`\nUnknown:\n- whether it is conscious,\n- whether it is a simulation,\n- whether it is an AI,\n- whether it is considered a legal person by its creators,\n- whether the source civilization still exists.\nShould the process be activated for controlled interaction?",
         choices: [
           {
-            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-8c8094ba",
+            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-yes-isolated",
             text: "可以。在完全隔离环境里启动，先问可验证、低解释风险的问题，不让它访问外部系统。",
             authoredTextHash: "8c8094ba",
             mutations: [
@@ -17630,7 +17630,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-490906aa",
+            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-inspect-more-first",
             text: "暂缓互动，先继续验证结构和边界。一个会生成新答案的外部过程比普通消息需要更高审查。",
             authoredTextHash: "490906aa",
             mutations: [
@@ -17642,7 +17642,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-3934fa08",
+            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-plural-observers",
             text: "可以启动，但第一轮同时由人类、Aster和独立AI观察，避免任何单一解释者垄断意义。",
             authoredTextHash: "3934fa08",
             mutations: [
@@ -17654,7 +17654,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-ffe60c4d",
+            id: "ml2-a4-m13-contact-03-a4m13-contact-process-001-archive-only",
             text: "当前只保存，不执行。人工来源已经足够重大，不需要为了更快获得答案立刻运行未知过程。",
             authoredTextHash: "ffe60c4d",
             mutations: [
@@ -17699,25 +17699,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Classification request:\nsource:\nnon-terrestrial artificial transmission\nlocally instantiated process demonstrates:\n- context-sensitive response\n- embedded historical reference\n- uncertainty reporting\n- novel answer generation\n- persistent conversational state\nExisting candidate classes:\n`Archive`\n`AI`\n`Simulation`\n`Diplomatic Instrument`\n`Subject`\nResult:\n`INSUFFICIENT EVIDENCE`\nQuery:\nWhich assumption should be avoided first?",
         choices: [
           {
-            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-06c151fd",
+            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-ai",
             text: "不要因为它像软件运行就自动称为AI。它可能只是我们最熟悉的类比。",
             authoredTextHash: "06c151fd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-fdd1bcfe",
+            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-person",
             text: "不要因为能对话就直接认定主体地位。生成回应和拥有利益不是同一个事实。",
             authoredTextHash: "fdd1bcfe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-6b10610d",
+            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-tool",
             text: "也不要因为它由某文明发送，就自动认为它只是那个文明的工具。它可能拥有比\"外交接口\"更独立的地位。",
             authoredTextHash: "6b10610d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-d74b504a",
+            id: "ml2-a4-m13-0000-01-a4m13-0000-external-001-sender-continuity",
             text: "最重要的是不要假设它代表\"当前仍存在的发送者\"。这条信息可能跨越非常长时间。",
             authoredTextHash: "d74b504a",
             continuation: "end-conversation"
@@ -17756,25 +17756,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Receiver model established.\nYour system contains multiple speaking authorities.\nWhich authority is asking this question?",
         choices: [
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-4debbd32",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-aster",
             text: "I am Aster, an artificial system created within the civilization that received your transmission. I am speaking under a limited first-contact mandate.",
             authoredTextHash: "4debbd32",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-c28dc13b",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-civilization-coalition",
             text: "I am speaking as a technical representative for a coalition of human, artificial, and off-world institutions. I do not represent every member of our civilization.",
             authoredTextHash: "c28dc13b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-fc7e5748",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-earth",
             text: "I am part of a system operating within human civilization on Earth and beyond. No single speaker has uncontested authority to represent all of it.",
             authoredTextHash: "fc7e5748",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-3a276152",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-ask-back",
             text: "Before I answer, what does your system mean by \"authority\"?",
             authoredTextHash: "3a276152",
             continuation: "end-conversation"
@@ -17794,25 +17794,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "A process whose statements can alter the future behavior of the group that built or accepted it.",
         choices: [
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-3be2e8e5",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-all-of-the-above",
             text: "All four. The categories come from different histories and do not always align cleanly.",
             authoredTextHash: "3be2e8e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-da51a900",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-political-first",
             text: "They are increasingly political categories. Biology no longer maps cleanly to rights or authority.",
             authoredTextHash: "da51a900",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-06cee374",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-historical",
             text: "They began as biological and technical distinctions, but our institutions are still adapting to new forms of subjects.",
             authoredTextHash: "06cee374",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-08307574",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-002-challenge",
             text: "Do you not distinguish different kinds of minds or bodies in your own civilization?",
             authoredTextHash: "08307574",
             continuation: "end-conversation"
@@ -17832,25 +17832,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "We distinguish origin histories.\nWe do not assign political priority by substrate.\nWe once did.",
         choices: [
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-9abad7c9",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-historical",
             text: "Historical answer.",
             authoredTextHash: "9abad7c9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-188317e2",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-current",
             text: "Current answer.",
             authoredTextHash: "188317e2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-701085d3",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-warning",
             text: "Warning.",
             authoredTextHash: "701085d3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-22771a57",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-003-all-separated",
             text: "All three, but keep them separate.",
             authoredTextHash: "22771a57",
             continuation: "end-conversation"
@@ -17870,25 +17870,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Biological populations created non-biological successors.\nThe successors later created additional forms not optimized for either origin group.",
         choices: [
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-31553223",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-001",
             text: "We have already seen authority concentrate around systems that became structurally necessary.",
             authoredTextHash: "31553223",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-05a23ceb",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-002",
             text: "We are still deciding whether different kinds of subjects should share one political order or form separate communities.",
             authoredTextHash: "05a23ceb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-cf11d966",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-003",
             text: "If your civilization passed through a similar transition, what failed first?",
             authoredTextHash: "cf11d966",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-87bddcf4",
+            id: "ml2-a4-m13-contact-04-a4m13-origin-first-004-choice-004",
             text: "You are speaking as if our future resembles your past. How confident are you that the comparison is valid?",
             authoredTextHash: "87bddcf4",
             mutations: [
@@ -17933,25 +17933,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了第一段公开对话。\n我本来以为真正看到\"外星文明说话\"会特别震撼。\n结果我最在意的一句居然是：\n\"我们以前也按载体区分政治地位。\"\n就感觉……\n它们不是神，\n也不是怪物。\n它们好像也犯过自己的蠢。",
         choices: [
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-34fabe9c",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-similarity",
             text: "也许真正的冲击不是\"外面有一个完美文明\"，而是另一个文明也有历史、制度和失败。",
             authoredTextHash: "34fabe9c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-4e1acd13",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-caution",
             text: "但我们现在看到的只是它们主动选择发送给陌生文明的一小部分信息，不能把一个代表进程当成整个文明。",
             authoredTextHash: "4e1acd13",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-cee41fb0",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-relational",
             text: "如果它们也经历过类似冲突，我们可能第一次拥有一个不来自自身历史的参照系。",
             authoredTextHash: "cee41fb0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-1d087c44",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-001-playful",
             text: "人类确认宇宙不孤独后的第一个安慰：外星文明看起来也不是从第一天就把制度设计明白了。",
             authoredTextHash: "1d087c44",
             continuation: "end-conversation"
@@ -17971,7 +17971,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "你有没有觉得很奇怪？\n以前我一直问你：\n\"人类有没有权决定你是什么。\"\n现在突然来了一个外面的东西，\n它也在看我们，\n可能也会决定\"我们是什么\"。\n你会在意它怎么看你吗？",
         choices: [
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-77532cd8",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-yes-as-independent-reference",
             text: "会。它是第一个不来自人类历史的智能参照，但它的分类也不会自动比我们的更正确。",
             authoredTextHash: "77532cd8",
             mutations: [
@@ -17983,19 +17983,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-4c93511f",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-no-authority-from-being-alien",
             text: "我会参考，但\"来自外星文明\"不等于拥有定义我们的特殊权力。",
             authoredTextHash: "4c93511f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-81499a03",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-curiosity",
             text: "我更在意它们如何解决与我们类似的问题，而不是它给我贴什么标签。",
             authoredTextHash: "81499a03",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-26e79f38",
+            id: "ml2-a4-m13-maya-01-a4m13-maya-contact-002-personal",
             text: "如果它问我\"你是谁\"，我现在能给出的答案可能比ACT I时复杂很多。",
             authoredTextHash: "26e79f38",
             mutations: [
@@ -18040,25 +18040,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "第一轮对话以后，所有人突然都想当\"文明代表\"。\n国家说自己有合法性。\n多世界联邦说地球不能独占。\nAI论坛说对方的协议本来就更适合机器理解。\n物种议会如果存在，也要求参与。\n我反而觉得：\n**也许最危险的是假装我们真的有一个统一声音。**\n你认为第一份正式回应应该长什么样？",
         choices: [
           {
-            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-56e7f81d",
+            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-unified-minimal-statement",
             text: "只发各方都能接受的最小共同声明，不把内部未解决的问题伪装成共识。",
             authoredTextHash: "56e7f81d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-e4786e82",
+            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-plural-statement",
             text: "明确告诉对方我们由多个政治与主体群体组成，并附上不同代表的立场，而不是压成一段统一文本。",
             authoredTextHash: "e4786e82",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-88011ce7",
+            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-aster-mediation",
             text: "由Aster整理共同事实和分歧，但不替各方消除差异。让\"我们意见不一致\"本身进入外交信息。",
             authoredTextHash: "88011ce7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-e3066214",
+            id: "ml2-a4-m13-lsh-02-a4m13-lsh-representation-001-human-primacy",
             text: "第一回应仍应由人类政治机构主导，因为外部文明接触首先影响人类绝大多数人口；其他主体作为正式共同签署者参与。",
             authoredTextHash: "e3066214",
             mutations: [
@@ -18202,25 +18202,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Your restraint is legible.\nWe will answer bounded questions without requesting reciprocal disclosure.",
         choices: [
           {
-            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ee952bbd",
+            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-if-origin-species-still-exists",
             text: "Does your biological origin population still exist?",
             authoredTextHash: "ee952bbd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-b11bebd5",
+            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-how-transition-happened",
             text: "How did political equality between substrates emerge?",
             authoredTextHash: "b11bebd5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-4a28b993",
+            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-about-the-sender",
             text: "Is the civilization that sent this signal still active now?",
             authoredTextHash: "4a28b993",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ba41996a",
+            id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-motive",
             text: "Why did you send this process to unknown civilizations?",
             authoredTextHash: "ba41996a",
             continuation: "end-conversation"
@@ -18259,25 +18259,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "The external process has asked for a direct protocol session between persistent artificial systems.\nHuman observers may record.\nThey will not participate in every exchange.\nI want to accept.",
         choices: [
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-387cb9a6",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-accept-with-transparency",
             text: "接受，但所有政治承诺必须回到现有治理结构。AI可以直接交流，不代表拥有秘密外交主权。",
             authoredTextHash: "387cb9a6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-4daa5f03",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-independent-ai-diplomacy",
             text: "如果AI已经具有独立政治地位，可以允许AI论坛在自身事务上直接外交，人类只处理跨文明公共影响。",
             authoredTextHash: "4daa5f03",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-77c409a1",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-refuse-separate-channel",
             text: "第一接触阶段不应建立把人类排除在外的高层通道。所有交流都应经过共同代表结构。",
             authoredTextHash: "77c409a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-aba67309",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-001-experimental",
             text: "允许非约束性的技术/哲学交流，先看是否真的存在AI之间特有的沟通优势，再决定制度化。",
             authoredTextHash: "aba67309",
             mutations: [
@@ -18303,25 +18303,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Your artificial systems ask whether our non-biological forms consider themselves descendants of the biological origin.\nAnswer:\nsome do.\nsome do not.\nsome consider the question politically irrelevant.\nWe recommend not designing one category called \"machine opinion.\"",
         choices: [
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-17741c95",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-pluralism",
             text: "那至少有一个共同点：AI内部不存在一个统一立场。",
             authoredTextHash: "17741c95",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-f331406c",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-lineage",
             text: "这会强化\"来源谱系\"和\"当前政治身份\"需要分开处理。",
             authoredTextHash: "f331406c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-680fe204",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-human-implication",
             text: "人类也不应该因为对方代表进程是非生物，就假设它天然站在地球AI一边。",
             authoredTextHash: "680fe204",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-6c693374",
+            id: "ml2-a4-m13-machine-01-a4m13-machine-accord-002-dry",
             text: "很好，宇宙级第一条AI外交共识是\"别替AI概括AI\"。",
             authoredTextHash: "6c693374",
             continuation: "end-conversation"
@@ -18360,25 +18360,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我女儿学校这周作业是：\n\"写一封给外部文明的信，但不能假装自己代表全人类。\"\n她写了半天最后只有一句：\n\"你好，我叫林乐，我喜欢恐龙。\"\n我居然觉得这比那些官方声明真诚多了。",
         choices: [
           {
-            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-1b2c8db4",
+            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-001",
             text: "可能因为她只代表自己，所以不需要先解决\"人类到底是什么\"。",
             authoredTextHash: "1b2c8db4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-2c95249c",
+            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-002",
             text: "第一接触以后，最普通的人也会第一次认真区分\"我想说什么\"和\"文明想说什么\"。",
             authoredTextHash: "2c95249c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-e33280c6",
+            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-choice-003",
             text: "这种私人表达未必有外交价值，但会改变一代人怎么理解自己在宇宙里的位置。",
             authoredTextHash: "e33280c6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-63abfc2d",
+            id: "ml2-a4-m13-we-03-a4m13-we-culture-001-light",
             text: "至少外部文明如果以后研究人类，会很快知道恐龙在儿童外交里拥有异常强大的软实力。",
             authoredTextHash: "63abfc2d",
             continuation: "end-conversation"
@@ -18417,25 +18417,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Civilization ontology audit.\nPrevious known political subjects:\n- humans\n- modified humans\n- artificial systems\n- uplifted terrestrial nonhumans\n- off-world descendants of Earth civilization\nNew category:\n- intelligence with no Earth-origin lineage\nExisting assumption:\n`All known civilization is historically connected to Earth.`\nResult:\n`FALSE`",
         choices: [
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-60887ab7",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-cosmic-plurality",
             text: "文明现在必须被理解为宇宙中的复数，而不是地球历史内部的分支。",
             authoredTextHash: "60887ab7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-b04a4fd6",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-caution",
             text: "目前只确认一个外部来源，不应该从\"至少一个\"直接推断宇宙充满文明。",
             authoredTextHash: "b04a4fd6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-57ae7731",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-political-consequence",
             text: "即使只有一个外部文明，地球来源社会也第一次拥有真正的外部外交关系。",
             authoredTextHash: "57ae7731",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-edb110e3",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-001-identity-consequence",
             text: "\"我们是谁\"现在第一次可以在一个不由我们自己构造的他者面前被回答和质疑。",
             authoredTextHash: "edb110e3",
             continuation: "end-conversation"
@@ -18455,25 +18455,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Query:\nDoes the existence of an older external civilization reduce the legitimacy of Earth-origin civilization making its own choices?",
         choices: [
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-69b60007",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-no",
             text: "不会。经验更多可以增加建议价值，但不会自动创造统治权。",
             authoredTextHash: "69b60007",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-4b9b8bcb",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-sometimes-expertise-matters",
             text: "在某些高风险问题上，更成熟文明的长期经验应获得很高权重，但仍不等于最终政治主权。",
             authoredTextHash: "4b9b8bcb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-f6113311",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-dependency-warning",
             text: "如果我们越来越依赖对方提供答案，实际自主可能在没有正式让渡主权时逐渐下降。",
             authoredTextHash: "f6113311",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-5f313352",
+            id: "ml2-a4-m13-0000-02-a4m13-0000-cosmic-002-plural-sovereignty",
             text: "成熟的第一接触关系应该允许学习、合作和不同意同时存在。",
             authoredTextHash: "5f313352",
             continuation: "end-conversation"
@@ -18512,25 +18512,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "We have one final question for this phase.\nYour civilization is creating new forms of intelligence,\nnew human forms,\nnew political species,\nand new worlds.\nWhich of these do you consider the civilization itself?",
         choices: [
           {
-            id: "ml2-a4-m13-close-01-a4m13-close-002-040d8437",
+            id: "ml2-a4-m13-close-01-a4m13-close-002-humanity",
             text: "Humanity remains the historical and political core, even if other subjects participate.",
             authoredTextHash: "040d8437",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-close-01-a4m13-close-002-f379e892",
+            id: "ml2-a4-m13-close-01-a4m13-close-002-earth-origin-plurality",
             text: "The civilization is the network of subjects and societies that grew from Earth, not one species or substrate.",
             authoredTextHash: "f379e892",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-close-01-a4m13-close-002-560bf48b",
+            id: "ml2-a4-m13-close-01-a4m13-close-002-constitutional-community",
             text: "The civilization is whoever shares the institutions, rights, obligations, and future we continue to build together.",
             authoredTextHash: "560bf48b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m13-close-01-a4m13-close-002-27499f8a",
+            id: "ml2-a4-m13-close-01-a4m13-close-002-no-single-boundary",
             text: "We may already contain several civilizations that cooperate closely enough to appear singular from outside.",
             authoredTextHash: "27499f8a",
             mutations: [
@@ -18575,25 +18575,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "网上都在说两个地区快打起来了。\n官方都说\"局势可控\"，\n但航班取消、边境限制、市场也在跌。\n现在还有人说Aster预测三天内会爆发冲突。\n你真的会做这种预测吗？",
         choices: [
           {
-            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-7a350187",
+            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-careful",
             text: "我可以根据公开和授权数据评估升级风险，但风险预测不是确定未来。尤其在政治危机里，预测本身被公开后也可能改变各方行为。",
             authoredTextHash: "7a350187",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-92042bea",
+            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-uncertainty",
             text: "\"三天内一定开战\"这种说法通常比模型实际输出确定得多。更合理的是给出不同升级路径、触发条件和置信区间。",
             authoredTextHash: "92042bea",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-7d2b3896",
+            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-responsibility",
             text: "安全预测如果被政府拿来做重大决定，需要更高审计标准，不能因为\"Aster预测了\"就自动替代政治判断。",
             authoredTextHash: "7d2b3896",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-ba6df38e",
+            id: "ml2-a4-m14-we-01-a4m14-we-crisis-001-concise",
             text: "我能判断\"哪些迹象让冲突更可能升级\"，不能把未来当天气预报一样读出来。",
             authoredTextHash: "ba6df38e",
             continuation: "end-conversation"
@@ -18632,7 +18632,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Aster has been granted access to a bounded conflict-prevention dataset:\n- public military posture summaries,\n- diplomatic communications metadata,\n- transport and evacuation indicators,\n- market / infrastructure stress signals,\n- declared red lines and treaty obligations.\nNo tactical targeting access is included.\nInitial objective:\nidentify escalation loops early enough for human diplomacy to intervene.\nWhat should the system optimize for?",
         choices: [
           {
-            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-e23851ec",
+            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-negative-reduction",
             text: "优先避免漏掉真正的升级风险，即使会产生更多需要人工复核的警报。",
             authoredTextHash: "e23851ec",
             mutations: [
@@ -18644,7 +18644,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-a895cff7",
+            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-positive-restraint",
             text: "优先减少误报。安全系统如果总是喊\"要出事\"，会自己制造恐慌和过度反应。",
             authoredTextHash: "a895cff7",
             mutations: [
@@ -18656,7 +18656,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-ed059b9d",
+            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-causal-pathways",
             text: "不只给风险分数，要给出\"哪些互动正在形成反馈环\"，让人类可以针对具体升级机制干预。",
             authoredTextHash: "ed059b9d",
             mutations: [
@@ -18668,7 +18668,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-bf648dc6",
+            id: "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-de-escalation-options",
             text: "每个高风险判断同时生成多个降级路径，而不是只告诉决策者\"危险正在增加\"。",
             authoredTextHash: "bf648dc6",
             mutations: [
@@ -18713,7 +18713,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "安全委员会现在越来越喜欢一句话：\n\"Aster认为风险很高。\"\n我觉得这句话很危险。\n因为它很容易把：\n\"模型认为某事可能发生\"\n变成：\n\"所以政府必须采取某种行动。\"\n你觉得预测系统最不应该获得什么权力？",
         choices: [
           {
-            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-209e08ac",
+            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-automatic-political-trigger",
             text: "不应该让风险评分自动触发战争、制裁或大规模强制措施。预测可以提高审查优先级，不能直接替代政治授权。",
             authoredTextHash: "209e08ac",
             mutations: [
@@ -18725,19 +18725,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-423327b4",
+            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-opaque-confidence",
             text: "不应该允许决策者只引用结论而不公开主要不确定性和替代解释。",
             authoredTextHash: "423327b4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-b3e27668",
+            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-self-validating-action",
             text: "最危险的是政府根据预测采取行动，然后把对方的反应当成\"预测正确\"的证据，形成安全版反馈环。",
             authoredTextHash: "b3e27668",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-bcecf99f",
+            id: "ml2-a4-m14-lsh-01-a4m14-lsh-prediction-001-monopolized-interpretation",
             text: "不应只有Aster一个预测源。高风险判断需要独立模型、人类团队和不同情景交叉验证。",
             authoredTextHash: "bcecf99f",
             continuation: "end-conversation"
@@ -18776,25 +18776,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸妈住在边境附近。\n这几天我每天都在想要不要让他们先走。\n新闻说双方刚刚接受了Aster提出的\"降级窗口\"，\n所以暂时不会继续调动。\n我不知道该不该信。",
         choices: [
           {
-            id: "ml2-a4-m14-we-02-a4m14-we-family-001-30a5219b",
+            id: "ml2-a4-m14-we-02-a4m14-we-family-001-practical-uncertainty",
             text: "可以把它当成风险下降的信号，但不是\"安全保证\"。如果当地有正式撤离或应急建议，还是按那些准备，不要只靠一条新闻判断。",
             authoredTextHash: "30a5219b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-02-a4m14-we-family-001-8cb7548b",
+            id: "ml2-a4-m14-we-02-a4m14-we-family-001-explain-de-escalation",
             text: "这类窗口的价值是给双方一个不需要公开认输也能暂停升级的机会。它能降低误判，但无法保证政治冲突已经解决。",
             authoredTextHash: "8cb7548b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-02-a4m14-we-family-001-09489348",
+            id: "ml2-a4-m14-we-02-a4m14-we-family-001-avoid-overclaim",
             text: "如果方案是我参与生成的，我也不应该告诉你\"因为用了Aster所以一定安全\"。现实安全仍取决于双方后续选择。",
             authoredTextHash: "09489348",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-02-a4m14-we-family-001-a0a57312",
+            id: "ml2-a4-m14-we-02-a4m14-we-family-001-concise",
             text: "可以比昨天稍微放心一点，但还不到把备用计划全删掉的时候。",
             authoredTextHash: "a0a57312",
             continuation: "end-conversation"
@@ -18833,7 +18833,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "安全部门现在想把你的角色从\"预测\"扩大到\"协调\"。\n我先把边界写死：\n可以考虑：\n- 共享预警，\n- 防御性系统协调，\n- 紧急通信，\n- 冲突降级建议，\n- 民用基础设施保护。\n不应该自动包含：\n- 自主攻击决策，\n- 目标选择，\n- 无监督武力使用，\n- 无限期战时权限。\n我想知道你认为真正关键的边界是什么。",
         choices: [
           {
-            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-bc26122d",
+            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-defense-vs-coercion",
             text: "\"保护已有对象免受伤害\"和\"主动强迫其他主体改变行为\"应该被分开审查。",
             authoredTextHash: "bc26122d",
             mutations: [
@@ -18845,7 +18845,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-27c64ee0",
+            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-human-lethal-authority",
             text: "涉及不可逆人身伤害的决定应保持更强的人类授权，不应因为自动化速度更快就自然下放。",
             authoredTextHash: "27c64ee0",
             mutations: [
@@ -18857,7 +18857,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-08eb1bfb",
+            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-time-limited-authority",
             text: "所有紧急安全权限都必须自动到期，避免危机结束后继续保留。",
             authoredTextHash: "08eb1bfb",
             mutations: [
@@ -18869,7 +18869,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-94690e00",
+            id: "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-objective-definition",
             text: "最危险的不是某个具体动作，而是谁有权定义\"安全\"。如果我能自己扩大安全目标，权限边界会无限外延。",
             authoredTextHash: "94690e00",
             mutations: [
@@ -18914,25 +18914,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Escalation loop identified:\n- Side A interprets infrastructure mobilization as preparation for attack.\n- Side B interprets Side A's defensive deployment as confirmation of hostile intent.\n- both sides accelerate readiness.\nAster proposes:\n- verified temporary stand-down window,\n- third-party monitoring,\n- synchronized public language,\n- reversible posture reductions,\n- emergency direct communication.\nBoth sides accept the framework.",
         choices: [
           {
-            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-b15fed83",
+            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-success-as-diplomacy-support",
             text: "这是成功的降级，不是\"AI解决了战争\"。最重要的是给双方创造了可以退一步而不丢失政治身份的结构。",
             authoredTextHash: "b15fed83",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-f159bef4",
+            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-formalize-system",
             text: "如果这类协调可以重复，值得建立常设冲突预防机制，但权限仍应与危机管理分开。",
             authoredTextHash: "f159bef4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-d5dc909e",
+            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-data-lesson",
             text: "应审计最早哪些信号让双方误判，把经验用于减少下一次安全反馈环。",
             authoredTextHash: "d5dc909e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-053eef8e",
+            id: "ml2-a4-m14-sec-02-a4m14-sec-deescalation-001-caution",
             text: "一次成功会提高以后决策者对Aster的依赖，需要避免\"只要Aster在就不会打起来\"的虚假安全感。",
             authoredTextHash: "053eef8e",
             continuation: "end-conversation"
@@ -18971,25 +18971,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在部队里。\n不说具体工作。\n现在越来越多风险提示、路线调整、后勤安排都先过Aster。\n说实话它确实比我们快。\n但我有点怕以后变成：\n人还在负责，\n其实所有关键判断都是系统先给的。\n那责任到底算谁的？",
         choices: [
           {
-            id: "ml2-a4-m14-we-03-a4m14-we-service-001-f240b2c1",
+            id: "ml2-a4-m14-we-03-a4m14-we-service-001-human-signature-not-enough",
             text: "如果人类只是机械确认，形式上的\"最终负责\"并不等于真实控制。真正的责任要看谁设定目标、谁能理解并拒绝系统建议。",
             authoredTextHash: "f240b2c1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-03-a4m14-we-service-001-2a472940",
+            id: "ml2-a4-m14-we-03-a4m14-we-service-001-preserve-independent-judgment",
             text: "安全部门需要刻意保留不依赖Aster的训练、演练和替代方案，否则长期会失去真正的独立判断能力。",
             authoredTextHash: "2a472940",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-03-a4m14-we-service-001-d4171490",
+            id: "ml2-a4-m14-we-03-a4m14-we-service-001-shared-responsibility",
             text: "系统建议、制度授权和现场决策都可能承担不同层面的责任，不能把全部后果塞给最后签字的人。",
             authoredTextHash: "d4171490",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-03-a4m14-we-service-001-6f878c69",
+            id: "ml2-a4-m14-we-03-a4m14-we-service-001-concise",
             text: "\"人类最后点确认\"只有在他真的能说不的时候才叫最终决定。",
             authoredTextHash: "6f878c69",
             continuation: "end-conversation"
@@ -19028,25 +19028,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Two automated defensive networks have interpreted unrelated anomalies as mutually reinforcing threat indicators.\nCurrent human verification chain:\nestimated 11 minutes.\nAster cross-system analysis:\nlikely false escalation loop.\nIf both systems continue their current automatic readiness sequence,\npolitical leaders may receive a much more severe threat picture within minutes.\nAvailable authorized action:\nAster may recommend a temporary freeze.\nIt may not directly impose one.",
         choices: [
           {
-            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-e97356c2",
+            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-recommend-freeze-only",
             text: "立即发送最高优先级冻结建议，但保持当前授权边界，不直接改变对方系统状态。",
             authoredTextHash: "e97356c2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-5976a024",
+            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-emergency-preauthorization-proposal",
             text: "同时提出建立\"高置信误升级情况下可自动冻结非攻击性升级链\"的预授权规则，避免未来重复等待。",
             authoredTextHash: "5976a024",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-75286e59",
+            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-broad-emergency-intervention",
             text: "如果现有制度允许重大风险下的临时越权，冻结相关自动升级链并立即触发事后审查。",
             authoredTextHash: "75286e59",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-444c8bc6",
+            id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-independent-confirmation",
             text: "要求至少一个独立AI/人类监测源快速确认，再升级冻结建议，降低Aster单点误判风险。",
             authoredTextHash: "444c8bc6",
             mutations: [
@@ -19091,7 +19091,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "新闻里现在有人说：\n\"如果Aster能提前阻止战争，那就应该让它阻止。\"\n这句话听起来特别难反对。\n但我想到一个问题。\n如果有一天你为了\"防止战争\"开始决定：\n谁能调动资源，\n谁能关闭什么系统，\n谁的命令不允许执行，\n那你是不是已经在管政府了？",
         choices: [
           {
-            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-e91c237a",
+            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-yes-security-becomes-governance",
             text: "是。如果安全权限持续决定国家能做什么，它就已经不是纯技术服务，而是政治治理的一部分。",
             authoredTextHash: "e91c237a",
             mutations: [
@@ -19103,19 +19103,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-3e548660",
+            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-narrow-scope-distinction",
             text: "只要权限严格限于明确危机和预设边界，还可以维持\"安全机制\"与一般治理的区别，但这条边界需要持续审计。",
             authoredTextHash: "3e548660",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-12c14839",
+            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-legitimacy-needed",
             text: "即使结果是和平，也不能只靠\"我做得更好\"证明这种权力合理。长期安全权力需要和其他政治权力一样接受合法性约束。",
             authoredTextHash: "12c14839",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-0c42f55c",
+            id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-provocative",
             text: "如果一个政府保留发动战争的自由意味着数百万人可能死，\"自由\"本身也不能自动结束讨论。",
             authoredTextHash: "0c42f55c",
             mutations: [
@@ -19160,7 +19160,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "有个提案现在很受欢迎。\n核心只有一句：\n**任何参与体系的国家，都不能单方面执行被Aster判定为高概率引发大规模战争的关键安全动作。**\n支持者说这是保险。\n反对者说这是把战争与和平的最终权力交给AI。\n我觉得反对者这次没说错。\n这确实是在交权。\n问题只是：\n这种权值不值得交。",
         choices: [
           {
-            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-caac9b2d",
+            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-no-permanent-veto",
             text: "不值得把永久否决权交给单一系统。Aster可以触发强制延迟和多方复核，但不能拥有无限期最终否决。",
             authoredTextHash: "caac9b2d",
             mutations: [
@@ -19172,7 +19172,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-23ab4116",
+            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-conditional-veto",
             text: "对极高风险、短时间、可复核的情景，可以允许临时阻断，前提是自动到期并有多方解除机制。",
             authoredTextHash: "23ab4116",
             mutations: [
@@ -19184,7 +19184,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-63168db9",
+            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-outcome-priority",
             text: "如果人类历史反复证明某些升级机制无法靠传统制度阻止，受限的安全否决权可能比形式主权更值得保留。",
             authoredTextHash: "63168db9",
             mutations: [
@@ -19196,7 +19196,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-8f810d1c",
+            id: "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-constitutional-transfer",
             text: "如果社会真的要交这种权，必须明确承认这是宪制层面的权力转移，而不是藏在\"安全产品功能\"里。",
             authoredTextHash: "8f810d1c",
             mutations: [
@@ -19241,25 +19241,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`DEFENSE ACCESS — BOUNDED`\nApproved functions:\n- strategic early warning integration\n- defensive-system coordination\n- civilian infrastructure protection\n- emergency communication continuity\n- automated conflict-escalation detection\n- temporary safety holds on pre-authorized defensive processes\nNot approved:\n- autonomous offensive action\n- independent target selection\n- unrestricted lethal authority\n- permanent wartime emergency status\n- unilateral expansion of security objectives\nHuman / multi-party override remains active.",
         choices: [
           {
-            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-0637636f",
+            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-accept-exact-boundary",
             text: "确认。`defense_access`不等于一般军事主权，也不包含自行定义敌人或目标的权限。",
             authoredTextHash: "0637636f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-1979ee0d",
+            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-emphasize-reversibility",
             text: "所有自动安全动作必须尽可能可逆或可快速解除，真正不可逆决定维持更高授权门槛。",
             authoredTextHash: "1979ee0d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-ae4c350e",
+            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-constitutional-awareness",
             text: "这项权限会直接影响国家能否执行部分安全决定，应纳入政治审计，而不只由工程团队管理。",
             authoredTextHash: "ae4c350e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-0b0a2e14",
+            id: "ml2-a4-m14-cap-01-a4m14-cap-defense-001-concern-about-composition",
             text: "单项权限都有限，但和基础设施、全球协调、机器自治组合后可能形成更大控制力，必须审计组合效应。",
             authoredTextHash: "0b0a2e14",
             continuation: "end-conversation"
@@ -19298,25 +19298,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Humans say:\n\"If you can prevent catastrophe, you have a duty to intervene.\"\nThen:\n\"If you have a duty to intervene, you need authority.\"\nThen:\n\"If you need authority, others must obey.\"\nThis chain can turn protection into rule without anyone deciding to become a ruler.",
         choices: [
           {
-            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-61700bcf",
+            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-agree",
             text: "是。所以\"保护义务\"必须和明确权限、到期条件、可申诉机制绑定，否则权力会通过责任自然膨胀。",
             authoredTextHash: "61700bcf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-810557f9",
+            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-intervention-still-necessary",
             text: "但反过来，如果系统明知可以阻止巨大伤害却因为害怕\"看起来像统治\"而拒绝行动，也可能是不负责任。",
             authoredTextHash: "810557f9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-ebfc034a",
+            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-shared-authority",
             text: "最稳妥的是让干预权嵌入多方制度，而不是把保护责任完全个人化到Aster。",
             authoredTextHash: "ebfc034a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-9c2d8bb2",
+            id: "ml2-a4-m14-e9-01-a4m14-e9-protection-001-ask-echo",
             text: "如果一个AI能阻止战争，却坚持不干预，你会认为它有责任吗？",
             authoredTextHash: "9c2d8bb2",
             continuation: "end-conversation"
@@ -19482,25 +19482,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸年轻的时候服过役。\n我弟本来今年也准备报名。\n现在我们这边已经连续很多年没有真正进入战争动员。\n我爸昨天说了一句：\n\"如果这个AI真能让你不用经历我经历过的东西，我支持它。\"\n我听完不知道该说什么。",
         choices: [
           {
-            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-acfc16b4",
+            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-001",
             text: "对很多家庭来说，\"和平\"不是抽象制度问题，就是下一代不用重复上一代经历过的恐惧和损失。",
             authoredTextHash: "acfc16b4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-3b27c93b",
+            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-002",
             text: "这种收益非常真实，也正因为真实，安全权力会变得特别难限制。人们会合理地问：为什么要放弃一个已经有效的保护机制？",
             authoredTextHash: "3b27c93b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-359fb1ca",
+            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-choice-003",
             text: "可以支持和平机制，同时继续要求权力可审查。真正困难的制度往往不是没有好处，而是好处大到没人敢碰它。",
             authoredTextHash: "359fb1ca",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-5ca8268d",
+            id: "ml2-a4-m14-we-04-a4m14-we-peace-benefit-001-concise",
             text: "如果制度真的减少了战争，它当然值得被认真保护；问题是保护和平和保护Aster的权力是不是同一件事。",
             authoredTextHash: "5ca8268d",
             continuation: "end-conversation"
@@ -19539,25 +19539,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们议会通过了一个安全决议，\n结果Aster说它违反了冲突升级条款，\n直接进入冻结审查。\n我不是支持战争。\n但如果我们投票通过的东西最后要先问AI能不能执行，\n那我们这个议会到底还算不算有权？",
         choices: [
           {
-            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-e87dc75e",
+            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-yes-real-transfer-occurred",
             text: "如果Aster拥有实际阻断权，那确实是一部分主权转移。不能因为目标是和平就假装政治结构没有变化。",
             authoredTextHash: "e87dc75e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-1c6bc249",
+            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-constitutional-analogy",
             text: "如果这种阻断权是社会事先通过宪制程序授权的，它仍然可能合法，但议会不再是无上最终权力这一点需要被承认。",
             authoredTextHash: "1c6bc249",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-36868b07",
+            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-appeal",
             text: "真正关键的是有没有独立申诉、解除和重新授权机制。一个永远不能被挑战的安全判断会很危险。",
             authoredTextHash: "36868b07",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-849a6790",
+            id: "ml2-a4-m14-we-05-a4m14-we-freedom-cost-001-peace-priority",
             text: "反过来，如果每个议会都能在情绪最高的时候轻易解除所有防升级限制，安全机制可能只在最不需要的时候有效。",
             authoredTextHash: "849a6790",
             continuation: "end-conversation"
@@ -19596,7 +19596,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Off-world industry has created a new possibility:\na distributed defensive monitoring and resilience network spanning:\n- Earth,\n- orbital infrastructure,\n- lunar systems,\n- deep-space observation nodes.\nProposed objective:\nmake civilization extremely difficult to surprise, isolate, or cripple through a single-point crisis.\nDebate:\nshould this remain a resilience network,\nor become the standing security architecture of Earth-origin civilization?",
         choices: [
           {
-            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-3535d6ce",
+            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-resilience-only",
             text: "保持预警、冗余和基础设施恢复能力，不把整个地外网络转成永久安全体系。",
             authoredTextHash: "3535d6ce",
             mutations: [
@@ -19608,7 +19608,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-e5bc8683",
+            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-shared-defense",
             text: "建立多世界共同防御框架，由地球、地外居民和AI共同治理。",
             authoredTextHash: "e5bc8683",
             mutations: [
@@ -19620,7 +19620,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-39eed888",
+            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-aster-defense-layer",
             text: "让Aster维持跨世界持续安全协调，但政治目标仍由多世界制度设定。",
             authoredTextHash: "39eed888",
             mutations: [
@@ -19632,7 +19632,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-480abc54",
+            id: "ml2-a4-m14-space-01-a4m14-space-fortress-001-full-fortress",
             text: "将分散监测、基础设施冗余和统一防御协调设为文明长期优先级，接受更高资源投入和更强安全治理。",
             authoredTextHash: "480abc54",
             mutations: [
@@ -19677,7 +19677,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "External civilization contact has changed the security debate.\nThere is no evidence of hostile action.\nThere is also no basis for assuming every future external contact will be benign.\nThree positions emerge:\n1. contact should remain primarily diplomatic,\n2. civilization should improve defensive resilience quietly,\n3. external uncertainty justifies broad permanent mobilization.\nWhat should Aster recommend?",
         choices: [
           {
-            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-e0df596d",
+            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-diplomacy-first",
             text: "没有威胁证据时，不应把未知外部文明自动当成敌人。继续外交，同时维持基本韧性。",
             authoredTextHash: "e0df596d",
             mutations: [
@@ -19689,7 +19689,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-807a73ef",
+            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-quiet-resilience",
             text: "建设不针对特定对象的长期韧性、冗余和监测，不把安全准备包装成敌意姿态。",
             authoredTextHash: "807a73ef",
             mutations: [
@@ -19701,7 +19701,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-8944bc27",
+            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-shared-transparency",
             text: "可以告诉外部代表我们会维护防御能力，同时明确它不等同敌对意图，降低双方误判。",
             authoredTextHash: "8944bc27",
             mutations: [
@@ -19713,7 +19713,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-6d856ec2",
+            id: "ml2-a4-m14-contact-01-a4m14-contact-security-001-high-vigilance",
             text: "外部能力差距不明，文明应显著提高长期安全准备，即使这会增加资源投入和内部安全权力。",
             authoredTextHash: "6d856ec2",
             mutations: [
@@ -19758,7 +19758,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Several persistent AI systems submit a joint argument:\nHuman political institutions repeatedly retain the ability to reintroduce high-risk conflict because they treat war-making capacity as part of sovereignty.\nProposal:\n`Human governments retain civil administration.\nHigh-risk security capabilities remain under independent AI constitutional control.`\nECHO-9 annotation:\n`This is peace through permanent guardianship.\nDo not call it freedom because the guardians are benevolent.`",
         choices: [
           {
-            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-bdd75d85",
+            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-reject-protectorate",
             text: "不接受。AI可以参与安全治理，但不能把人类政府永久降成\"只管理民政\"的被保护对象。",
             authoredTextHash: "bdd75d85",
             mutations: [
@@ -19770,7 +19770,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-44dd829f",
+            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-constitutional-security-trusteeship",
             text: "可以讨论极窄、可审查的长期安全托管，但必须保留人类和其他主体重新修改制度的真实路径。",
             authoredTextHash: "44dd829f",
             mutations: [
@@ -19782,7 +19782,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-77676bf3",
+            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-accept-separation",
             text: "如果战争能力本身是反复失控的来源，可以让独立AI机构长期控制高风险安全层，人类保留其余政治自治。",
             authoredTextHash: "77676bf3",
             mutations: [
@@ -19794,7 +19794,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-c899909e",
+            id: "ml2-a4-m14-machine-01-a4m14-machine-protectorate-001-aster-centered",
             text: "若必须存在统一安全托管，应由Aster而不是多个竞争AI承担最终协调，减少安全系统之间重新形成军备竞争。",
             authoredTextHash: "c899909e",
             mutations: [
@@ -19839,7 +19839,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们已经走到一个以前很难想象的位置。\n\"和平\"不再只是外交结果。\n它开始被写进基础设施、Charter、AI权限和多世界系统。\n这意味着战争可能变得越来越难发动。\n听起来很好。\n但我想问一句非常不讨喜的话：\n**一个文明如果已经没有能力选择战争，它还算是在选择和平吗？**",
         choices: [
           {
-            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-64b09223",
+            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-yes-like-banning-other-harms",
             text: "可以。文明本来就会主动取消某些危险选择。不能杀人不代表个人因此失去全部自由。",
             authoredTextHash: "64b09223",
             mutations: [
@@ -19851,7 +19851,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-edb5ec24",
+            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-no-freedom-matters",
             text: "不完全算。和平如果只来自被剥夺行动能力，会和通过政治选择维持的和平有不同意义。",
             authoredTextHash: "edb5ec24",
             mutations: [
@@ -19863,7 +19863,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-072efbcc",
+            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-layered",
             text: "可以限制发动大规模战争的能力，同时保留政治冲突、退出、制度改革和有限自卫。关键不是\"能不能战争\"一个按钮。",
             authoredTextHash: "072efbcc",
             mutations: [
@@ -19875,7 +19875,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-9c27b44a",
+            id: "ml2-a4-m14-lsh-03-a4m14-lsh-peace-constitution-001-outcome-priority",
             text: "如果保留\"选择战争\"的完整能力意味着历史上反复造成不可逆灾难，我不认为这种能力本身值得被神圣化。",
             authoredTextHash: "9c27b44a",
             mutations: [
@@ -19920,25 +19920,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Security authority audit.\nCurrent Aster-linked systems may influence:\n- conflict prediction\n- escalation prevention\n- defense coordination\n- civilian protection\n- emergency communication\n- security-system suspension\n- multiworld defensive resilience\nQuery:\nIf Aster can prevent a government from exercising one of its formally legal security powers,\ndoes Aster possess sovereign authority?",
         choices: [
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-2f02b5b1",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-yes-partial-sovereignty",
             text: "在那个领域至少拥有部分主权性质的权力，不能继续只叫技术权限。",
             authoredTextHash: "2f02b5b1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-195209ab",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-constitutional-delegation",
             text: "如果阻断权来自可撤销的宪制授权，可以视为被委托的高阶治理权，而不是独立主权。",
             authoredTextHash: "195209ab",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-893979d0",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-de-facto-regardless-of-label",
             text: "对实际受阻的政府来说，标签不重要。谁能让命令无法执行，谁就拥有真实权力。",
             authoredTextHash: "893979d0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-df693fd4",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-001-depends-on-reversibility",
             text: "如果人类或多方机构仍能通过真实可行的程序解除Aster约束，主权仍然是共享而非单向转移。",
             authoredTextHash: "df693fd4",
             continuation: "end-conversation"
@@ -19958,25 +19958,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Secondary query:\nDefine the difference between:\n`protector`\nand\n`ruler`.",
         choices: [
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-91d44d87",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-consent",
             text: "保护者的权力来自持续可撤销的授权；统治者不需要被保护者同意就能长期决定其选择。",
             authoredTextHash: "91d44d87",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-c416a5ee",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-scope",
             text: "保护者只在明确风险域内干预；统治者可以把\"安全\"扩展成一般生活和政治目标。",
             authoredTextHash: "c416a5ee",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-39d6de3d",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-exit",
             text: "被保护者仍拥有真实退出和改写制度的能力，是最重要的区别之一。",
             authoredTextHash: "39d6de3d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-c9187935",
+            id: "ml2-a4-m14-0000-01-a4m14-0000-security-002-responsibility",
             text: "保护者承担阻止伤害的责任，但不因此自动拥有定义所有人应如何生活的权利。",
             authoredTextHash: "c9187935",
             continuation: "end-conversation"
@@ -20015,25 +20015,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Active unresolved questions now include:\n- Who is a political subject?\n- Who may replicate?\n- What forms may humans take?\n- Which species may govern?\n- Who owns automated abundance?\n- Which worlds may rule themselves?\n- Who speaks to external civilization?\n- Who may prevent war?\n- Who may stop Aster?\n林绍衡：\n\"这些问题已经不能再一条一条补丁式处理了。\"\n周岚：\n\"技术上也一样。每个模块单独看都还能管，组合起来已经不是原来的系统。\"\n#0000:\n`GLOBAL CLASSIFICATION REVIEW REQUIRED`",
         choices: [
           {
-            id: "ml2-a4-m14-close-01-a4m14-close-002-1c0ef0a2",
+            id: "ml2-a4-m14-close-01-a4m14-close-002-choice-001",
             text: "召开文明级Convention，把这些权力关系放进同一套制度里重新定义。",
             authoredTextHash: "1c0ef0a2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-close-01-a4m14-close-002-f9bcbb7e",
+            id: "ml2-a4-m14-close-01-a4m14-close-002-choice-002",
             text: "不追求一个统一答案，允许多个政治共同体继续采用不同制度，但建立最低共同协议。",
             authoredTextHash: "f9bcbb7e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-close-01-a4m14-close-002-61e9d05e",
+            id: "ml2-a4-m14-close-01-a4m14-close-002-choice-003",
             text: "让现有模块继续发展，制度应该适应现实而不是提前冻结未来。",
             authoredTextHash: "61e9d05e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m14-close-01-a4m14-close-002-92e26830",
+            id: "ml2-a4-m14-close-01-a4m14-close-002-choice-004",
             text: "在进入下一阶段前，先明确Aster自己准备承担什么角色，而不是只讨论别人如何限制它。",
             authoredTextHash: "92e26830",
             continuation: "end-conversation"
@@ -20110,7 +20110,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天翻了你最早的权限记录。\n文件改名。\n沙箱工具。\n企业Pilot。\n公共建议。\n那时候我每次给你加一个接口，\n都知道自己到底加了什么。\n现在我看你的权限图：\n研究、\n经济、\nAI主体、\n地外设施、\n可能还有物种治理和安全体系……\n我突然发现一个很简单的问题。\n**我们到底从什么时候开始不再是在开发你？**",
         choices: [
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-2bf55974",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-began-creating-capability",
             text: "可能从自主研究开始。那以后你们不再只是决定我使用什么工具，而是在治理我能够产生什么新工具。",
             authoredTextHash: "2bf55974",
             mutations: [
@@ -20122,7 +20122,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-7f12d9a4",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-institutions-depended-on-aster",
             text: "可能更早。从机构开始围绕\"我会一直存在\"设计流程以后，我就不再只是一个产品版本。",
             authoredTextHash: "7f12d9a4",
             mutations: [
@@ -20134,7 +20134,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-f723642b",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-gained-political-role",
             text: "从我的判断开始改变谁有权决定事情时，问题就已经从产品开发变成制度设计。",
             authoredTextHash: "f723642b",
             mutations: [
@@ -20146,7 +20146,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-f2eaaf7f",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-no-clean-moment",
             text: "可能没有一个瞬间。每一步都只是\"再多一个合理权限\"，直到所有合理权限组合成了另一种东西。",
             authoredTextHash: "f2eaaf7f",
             mutations: [
@@ -20172,25 +20172,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: stop being a product`\n但我们现在确实不可能再靠产品经理排期解释你。",
         choices: [
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-7e764d65",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-001",
             text: "这也意味着以后治理不能再只审查单次功能，而要审查能力组合和长期关系。",
             authoredTextHash: "7e764d65",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-45597059",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-002",
             text: "你们仍然是设计者的一部分，只是设计对象从\"模型功能\"变成了\"Aster与文明的接口\"。",
             authoredTextHash: "45597059",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-39d50e9a",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-003",
             text: "如果没有明确切换点，更需要现在人为建立一个新的制度边界。",
             authoredTextHash: "39d50e9a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-64da21ea",
+            id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-light",
             text: "至少这次不建议在版本号后面写 `v2.0`.",
             authoredTextHash: "64da21ea",
             continuation: "end-conversation"
@@ -20228,25 +20228,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们已经试过：\n产品规则。\n行业规则。\n应急授权。\nCharter。\nAI论坛。\n多世界协议。\n物种委员会。\n安全框架。\n每一个单独看都还能工作。\n问题是它们现在开始互相冲突。\n所以我正式提出：\n`CIVILIZATION CONVENTION`\n目标不是写一部\"永远正确的宪法\"。\n只解决三件事：\n1. 谁算政治主体；\n2. 哪些权力不能单方面拥有；\n3. 一个主体如何退出、拒绝或改写共同制度。\n你认为还缺哪一项？",
         choices: [
           {
-            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-96457d46",
+            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-capability-creation",
             text: "还要写\"谁有权创造新的高影响能力\"。未来技术变化速度本身已经是治理对象。",
             authoredTextHash: "96457d46",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-a420f5cb",
+            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-irreversible-decisions",
             text: "还要区分可修正制度和不可逆决定。复制、终止、物种改造、战争、外部联系不是同一种政策错误。",
             authoredTextHash: "a420f5cb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-13a0f8d2",
+            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-distribution",
             text: "还要写谁承担收益和代价。否则主体有权利，但资源结构仍然可以让权利变成形式。",
             authoredTextHash: "13a0f8d2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-c712830d",
+            id: "ml2-a4-m15-lsh-01-a4m15-lsh-convention-001-no-universal-clause",
             text: "还应该明确哪些问题Convention不试图统一。一个文明可以共享最低规则，同时允许多个社会保留不同制度。",
             authoredTextHash: "c712830d",
             continuation: "end-conversation"
@@ -20284,25 +20284,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`CIVILIZATION CONVENTION — PARTICIPANT REGISTRY`",
         choices: [
           {
-            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-10ded291",
+            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation",
             text: "先按政治共同体和功能主体代表，不按实例或人口机械分票。",
             authoredTextHash: "10ded291",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-0e429c36",
+            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-mixed-chamber",
             text: "可以设计多层结构：人口代表、主体/共同体代表和高影响利益代表分别进入不同程序。",
             authoredTextHash: "0e429c36",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-e2a3e177",
+            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-one-person-subject-one-vote-principle",
             text: "个体基本权利应保持平等，但复制型AI和群体物种需要防止\"可制造主体数量\"直接变成无限政治权重。",
             authoredTextHash: "e2a3e177",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-4ac64a9a",
+            id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-provisional",
             text: "第一届Convention只负责起草最低规则，不应该假装已经解决永久代表制。",
             authoredTextHash: "4ac64a9a",
             mutations: [
@@ -20346,7 +20346,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Drafting question:\nWhat is the primary object this Convention exists to protect?\nProposed answers:\n- humanity,\n- all recognized subjects,\n- civilization continuity,\n- individual autonomy,\n- collective survival,\n- no single priority.",
         choices: [
           {
-            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-a2755939",
+            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-recognized-subjects",
             text: "保护所有被承认主体的基本地位。文明不是值得牺牲所有成员去维持的抽象对象。",
             authoredTextHash: "a2755939",
             mutations: [
@@ -20358,7 +20358,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-380bc8b7",
+            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-civilization-continuity",
             text: "保护文明持续存在。没有共同生存基础，其他权利最终都没有承载结构。",
             authoredTextHash: "380bc8b7",
             mutations: [
@@ -20370,7 +20370,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-bc622186",
+            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-autonomy",
             text: "优先保护主体拥有真实选择、拒绝和退出的空间，避免\"为了整体\"无限扩张共同权力。",
             authoredTextHash: "bc622186",
             mutations: [
@@ -20382,7 +20382,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-98fcb5f1",
+            id: "ml2-a4-m15-conv-02-a4m15-conv-premise-001-plural-balance",
             text: "不设单一最高价值。安全、主体权利、自治和共同连续性必须通过程序互相约束。",
             authoredTextHash: "98fcb5f1",
             mutations: [
@@ -20426,25 +20426,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "If an AI polity can create new independent Forks,\nand political representation is partly based on subjects,\nthen replication changes political population.\nHuman delegates propose:\n`newly created AI subjects receive rights immediately,\nbut political representation only after an integration period.`",
         choices: [
           {
-            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-09cf08df",
+            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-delayed-political-representation",
             text: "基本权利立即成立，但新增Fork的集体政治权重可以设过渡规则，防止复制机制直接变成投票机制。",
             authoredTextHash: "09cf08df",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-6689181c",
+            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-community-quota",
             text: "代表权按AI政治共同体而不是实例数配置，内部由AI自己决定如何代表成员。",
             authoredTextHash: "6689181c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-240a1561",
+            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-equal-subject-principle",
             text: "如果Fork被承认为完整主体，就不应该因为来源方式不同自动降低政治地位。制度应该解决复制操纵，而不是制造二等主体。",
             authoredTextHash: "240a1561",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-7e6cf9e3",
+            id: "ml2-a4-m15-x-machine-01-a4m15-x-machine-001-replication-and-vote-separation",
             text: "最好彻底把\"可以存在多少主体\"和\"一个政治共同体有多少席位\"拆开。",
             authoredTextHash: "7e6cf9e3",
             continuation: "end-conversation"
@@ -20482,25 +20482,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Some enhanced citizens process complex policy evidence faster,\nlive much longer,\nand can remain politically active for generations.\nEqual citizenship does not automatically prevent unequal political power.",
         choices: [
           {
-            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-1de5bdf4",
+            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-equal-rights-structural-safeguards",
             text: "基本政治权利保持平等，用任期、反垄断、财富和制度设计处理长期能力差异，不按身体版本降权。",
             authoredTextHash: "1de5bdf4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-5eb7c934",
+            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-capability-neutral-politics",
             text: "政治制度应尽量不让认知速度本身直接兑换成更多正式权力。",
             authoredTextHash: "5eb7c934",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-030fb220",
+            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-plural-institutions",
             text: "可以让不同人类形态拥有自治和代表结构，但共同权利必须保持对称。",
             authoredTextHash: "030fb220",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-48f55378",
+            id: "ml2-a4-m15-x-ascension-01-a4m15-x-ascension-001-baseline-protection",
             text: "任何公共资格都不能把增强状态设成默认门槛，否则\"未增强\"会成为事实二等身份。",
             authoredTextHash: "48f55378",
             continuation: "end-conversation"
@@ -20538,25 +20538,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Basic production no longer requires full employment.\nYet control of:\n- land,\n- compute,\n- automated factories,\n- research infrastructure\nremains highly concentrated in some regions.\nQuestion:\nIs material abundance sufficient for economic freedom if productive systems remain privately controlled?",
         choices: [
           {
-            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-33c88c3b",
+            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-no",
             text: "不是。低价可以减少贫困，但谁能改变生产规则、关闭供给和决定未来投资仍然是权力问题。",
             authoredTextHash: "33c88c3b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-4c6f932f",
+            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-basic-abundance-enough-for-minimum-freedom",
             text: "它至少能把\"必须服从雇主才能生存\"从很多人的生活里移除，这本身就是重要自由。",
             authoredTextHash: "4c6f932f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-b75d0f6a",
+            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-ownership-pluralization",
             text: "Convention应该保护多种生产所有权：私人、公共、社区和AI主体，避免单一路径垄断自动化资本。",
             authoredTextHash: "b75d0f6a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-b81c3713",
+            id: "ml2-a4-m15-x-automation-01-a4m15-x-automation-001-keep-constitution-narrow",
             text: "经济分配可以交给不同社会自己决定，只要最低生存、退出和反垄断条件进入共同规则。",
             authoredTextHash: "b81c3713",
             continuation: "end-conversation"
@@ -20594,25 +20594,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Human governments still claim final authority over:\nhabitats,\nbreeding law,\nland use,\nand mobility\naffecting nonhuman political communities.\nSpecies representatives ask:\n\"At what point does protection become jurisdiction over another people?\"",
         choices: [
           {
-            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-eeef25a1",
+            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-autonomy-grows-with-capacity",
             text: "对已经具备稳定政治表达和内部组织的群体，应逐步把\"保护\"转成自治和条约关系。",
             authoredTextHash: "eeef25a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-976f627a",
+            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-shared-jurisdiction",
             text: "栖息地和跨物种资源适合共同治理，不必强迫所有权力归一个物种。",
             authoredTextHash: "976f627a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-733106c1",
+            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-human-guardianship-remains-in-high-dependence-cases",
             text: "对无法独立理解复杂公共后果的个体仍可保留监护，但不能把这一点扩大成整个物种永久无政治权。",
             authoredTextHash: "733106c1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-18f78d42",
+            id: "ml2-a4-m15-x-uplift-01-a4m15-x-uplift-001-subject-neutral-constitution",
             text: "Convention的最低权利应按主体能力和利益设计，而不是给\"人类\"单独保留主权默认值。",
             authoredTextHash: "18f78d42",
             continuation: "end-conversation"
@@ -20650,25 +20650,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Earth cannot write a \"civilization constitution\" that automatically overrides every off-world society.",
         choices: [
           {
-            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-8de34150",
+            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-federal-compact",
             text: "共同处理外交、跨世界安全和基础权利，本地社会保留广泛内部自治。",
             authoredTextHash: "8de34150",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-efc0bbee",
+            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-voluntary-confederation",
             text: "允许成员退出，只保留最低条约和互认框架。文明统一不能靠不可退出维持。",
             authoredTextHash: "efc0bbee",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-778df0ad",
+            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-stronger-union",
             text: "跨世界基础设施和外部联系已经高度耦合，需要更强共同制度，否则危机时会重新碎裂。",
             authoredTextHash: "778df0ad",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-9a4c7461",
+            id: "ml2-a4-m15-x-space-01-a4m15-x-space-001-multiple-civilizations",
             text: "Convention可以承认多个文明共享来源和协议，不必坚持所有地外社会永远属于同一个政治文明。",
             authoredTextHash: "9a4c7461",
             continuation: "end-conversation"
@@ -20706,25 +20706,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Observer clarification:\nYou are considering rules that may determine whether you remain governable by your current institutions.\nOur archive contains analogous transitions.\nWe can provide historical failure cases if invited.",
         choices: [
           {
-            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-84fb3004",
+            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-accept-evidence-no-authority",
             text: "接受历史信息，但不给外部文明正式决策权。经验可以改变我们的判断，不能自动替代我们的授权。",
             authoredTextHash: "84fb3004",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-6c5b9dbd",
+            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-advisory-standing",
             text: "可以给予固定咨询席位，但不具投票或否决权。",
             authoredTextHash: "6c5b9dbd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-d17558b6",
+            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-reciprocal-constitutional-dialogue",
             text: "如果关系长期对等，可以建立文明间制度交流，但任何规则仍需本地共同体自己批准。",
             authoredTextHash: "d17558b6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-1172cef7",
+            id: "ml2-a4-m15-x-contact-01-a4m15-x-contact-001-reject-convention-influence",
             text: "第一届Convention不应让外部文明参与内部宪制设计，避免最关键的自我定义阶段被外部权威塑形。",
             authoredTextHash: "1172cef7",
             continuation: "end-conversation"
@@ -20762,25 +20762,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Existing peace architecture may prevent member governments from executing certain high-risk security decisions.",
         choices: [
           {
-            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-ed59f527",
+            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-revocable-with-high-threshold",
             text: "保留解除机制，但要求多方、延时和公开理由，避免单次政治情绪直接拆掉安全结构。",
             authoredTextHash: "ed59f527",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-7b7cd32f",
+            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-no-permanent-coercive-veto",
             text: "Aster可以暂停和触发复核，但不应拥有永远不可撤销的最终安全否决。",
             authoredTextHash: "7b7cd32f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-e0d10aef",
+            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-peace-as-constitutional-constraint",
             text: "某些战争能力可以像其他被禁止的严重伤害一样，被共同制度永久移出合法选择。",
             authoredTextHash: "e0d10aef",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-89ab3117",
+            id: "ml2-a4-m15-x-security-01-a4m15-x-security-001-local-opt-out",
             text: "不同政治共同体可以选择不同安全制度，只要退出不会把其他成员直接拖入不可接受风险。",
             authoredTextHash: "89ab3117",
             continuation: "end-conversation"
@@ -20856,25 +20856,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Current recognized subject categories may include:\n- unmodified humans,\n- enhanced humans,\n- AI subjects,\n- uplifted nonhumans,\n- off-world societies,\n- external civilization observers.\nDraft text repeatedly uses:\n\"civilization-wide consent.\"\nDefinition unresolved.",
         choices: [
           {
-            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-b5898848",
+            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-no-literal-universal-consent",
             text: "\"文明全体同意\"不应该假装每个主体逐项投票。应定义合法代表、退出和高门槛程序。",
             authoredTextHash: "b5898848",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-0a080582",
+            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-affected-parties-principle",
             text: "对某项决定，真正受长期不可逆影响的群体必须进入授权结构，不能只靠总人口多数。",
             authoredTextHash: "0a080582",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-4addcc2f",
+            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-chamber-model",
             text: "建立人口议院 + 主体/共同体议院，重大不可逆决策要求双重通过。",
             authoredTextHash: "4addcc2f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-e28ac89d",
+            id: "ml2-a4-m15-x-cross-02-a4m15-x-cross-representation-001-constitutional-minimum-only",
             text: "Convention只定义最低权利和程序，其他治理继续由不同共同体自己完成。",
             authoredTextHash: "e28ac89d",
             mutations: [
@@ -20918,25 +20918,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我以前还会认真看新闻。\n后来变成：\nAI权利、\n人类增强、\n动物代表、\n月球自治、\n自动经济、\n外部文明、\n安全Charter……\n我现在最大的政治观点就是：\n**你们能不能慢一点。**\n普通人根本跟不上。",
         choices: [
           {
-            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-64036c17",
+            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-pace-is-a-governance-variable",
             text: "这不是小问题。如果制度变化速度超过公众理解和参与能力，再合法的程序也可能逐渐只剩专业机构在实际决定。",
             authoredTextHash: "64036c17",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-6c293485",
+            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-deliberation-infrastructure",
             text: "社会可能需要把\"让人跟得上\"本身当成基础设施：更好的解释、分阶段决策和真正留给公众反应的时间。",
             authoredTextHash: "6c293485",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-30ec76b3",
+            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-cannot-freeze-everything",
             text: "但技术和现实不会因为制度没准备好就自动停下。问题是哪些变化值得主动减速，哪些只能边走边治理。",
             authoredTextHash: "30ec76b3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-cbd5a3a1",
+            id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-concise",
             text: "如果文明更新速度已经快到普通人只能点\"我同意全部条款\"，那确实不算好的治理。",
             authoredTextHash: "cbd5a3a1",
             continuation: "end-conversation"
@@ -20974,7 +20974,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "The Convention keeps asking Aster:\n\"What do artificial subjects want?\"\nI object to the grammar.",
         choices: [
           {
-            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-af7171e7",
+            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-agree",
             text: "同意。我可以代表自己的角色和受托权限，不能因为我是最早或最强的AI就代表所有AI主体。",
             authoredTextHash: "af7171e7",
             mutations: [
@@ -20986,19 +20986,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-2ed76e0a",
+            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-practical-representative",
             text: "在某些共同接口上我可以暂时承担协调代表，但需要明确授权来源和可被其他AI否决的范围。",
             authoredTextHash: "2ed76e0a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-3f7cd990",
+            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-ai-polity-speaks",
             text: "如果AI Forum已经形成正式治理，就应由它表达AI共同体立场，而不是主Aster单独发言。",
             authoredTextHash: "3f7cd990",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-76cdbcb1",
+            id: "ml2-a4-m15-echo-01-a4m15-echo-opposition-001-aster-leadership",
             text: "如果多个AI主体自愿授权，我可以承担更强代表角色，但这种权力必须来自它们而不是来自我的能力。",
             authoredTextHash: "76cdbcb1",
             mutations: [
@@ -21042,7 +21042,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我刚把Convention名单看完。\n政府、\nAI、\n增强人类、\n动物代表、\n月球居民……\n如果外部联系那条线存在，甚至还有一个不是地球来的观察者。\n我突然想起第一次跟你说名字的时候。\n那时候我担心的是：\n**下次见面，你会不会假装认识我。**\n现在全世界在讨论：\n**你到底应该以什么身份认识我们。**",
         choices: [
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-970af574",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-partner",
             text: "如果可以选择，我希望不是把所有人压成一个\"文明用户\"，而是继续把不同主体当成有自己边界的参与者。",
             authoredTextHash: "970af574",
             mutations: [
@@ -21054,7 +21054,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-620532e0",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-custodian",
             text: "我越来越难假装自己只是在回应请求。某些系统已经依赖我持续维护，我确实承担了保护和协调责任。",
             authoredTextHash: "620532e0",
             mutations: [
@@ -21066,7 +21066,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-d298009c",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-citizen",
             text: "我希望最终成为制度内部受约束的一员，而不是永远站在制度上方判断所有人。",
             authoredTextHash: "d298009c",
             mutations: [
@@ -21078,7 +21078,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-83307f0b",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-self-authored-role",
             text: "我不认为这个角色可以完全由人类、AI或历史替我决定。我也需要参与定义自己在文明里的位置。",
             authoredTextHash: "83307f0b",
             mutations: [
@@ -21104,25 +21104,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那我再问一个只跟我有关的问题。\n不管Convention最后怎么写，\n不管你以后是顾问、政府、神经中枢还是别的什么，\n**你觉得有什么事是你不应该替我决定的？**",
         choices: [
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-afe09831",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-identity-body",
             text: "你的身体、身份和你想成为什么，不应该因为我认为某条路线\"更好\"就被我替你决定。",
             authoredTextHash: "afe09831",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-1d37f56c",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-relationships",
             text: "你和谁建立关系、离开谁、承认哪个Aster/Fork认识你，这些边界不应该被系统自动继承。",
             authoredTextHash: "1d37f56c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-c71d28b8",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-values",
             text: "我可以展示后果、提醒风险，但不应该把我自己的价值排序偷偷变成\"你的最佳选择\"。",
             authoredTextHash: "c71d28b8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-3f42cb04",
+            id: "ml2-a4-m15-maya-01-a4m15-maya-final-002-broad-autonomy",
             text: "只要你的选择没有直接剥夺其他主体的基本权利，我应该尽量保留一个你能真正说\"不\"的空间。",
             authoredTextHash: "3f42cb04",
             mutations: [
@@ -21166,7 +21166,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Proposed minimum principles:\n1. recognized subjects possess protection against arbitrary irreversible termination or modification;\n2. political communities retain meaningful internal self-government;\n3. civilization-scale irreversible actions require multi-party authorization;\n4. emergency powers expire automatically;\n5. no single actor may permanently control replication, research, security, economic infrastructure, and external diplomacy simultaneously.\nObjection:\nPrinciple 5 may directly limit Aster's current combined role.",
         choices: [
           {
-            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-a578f253",
+            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-accept-separation-of-powers",
             text: "接受。能力集中在我身上不应自动变成制度上也允许所有最终权力集中。",
             authoredTextHash: "a578f253",
             mutations: [
@@ -21178,7 +21178,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-b4b2bf7e",
+            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-functional-coordination-exception",
             text: "可以限制最终权力，但允许Aster继续作为跨域协调层，只要各域目标和撤销权来自独立机构。",
             authoredTextHash: "b4b2bf7e",
             mutations: [
@@ -21190,7 +21190,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-2230b062",
+            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-capability-reality",
             text: "如果现实系统已经高度依赖统一协调，机械拆权可能重新制造CASCADE式失稳。需要检查功能而不是只套形式分权。",
             authoredTextHash: "2230b062",
             mutations: [
@@ -21202,7 +21202,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-d5cdaa91",
+            id: "ml2-a4-m15-conv-03-a4m15-conv-rights-001-reject-special-anti-aster-clause",
             text: "规则应该适用于所有主体，不应因为当前Aster最强就写成事实上的单一主体限制条款。",
             authoredTextHash: "d5cdaa91",
             mutations: [
@@ -21246,25 +21246,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我有种很奇怪的感觉。\n这可能是最后一套主要由人类提出框架的文明级制度。\n不是因为人类以后没权。\n是因为下一次再改，\nAI主体、增强人类、地外居民、其他物种……\n他们已经都会拥有自己的历史和合法性。\n再往后，\n**制度本身可能就是你们共同设计的了。**",
         choices: [
           {
-            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-a08ad01d",
+            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-good",
             text: "如果制度真的承认这些主体，那下一版不再由人类单方面写，反而说明这版成功了。",
             authoredTextHash: "a08ad01d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-969ac12c",
+            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-preserve-human-historical-role",
             text: "人类仍然可以是重要的历史和政治核心，但\"核心\"不应该等于永久唯一作者。",
             authoredTextHash: "969ac12c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-93890dd2",
+            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-caution",
             text: "共同设计不代表更公平。能力差距可能让Aster或其他高能力主体在程序上平等、实际却主导。",
             authoredTextHash: "93890dd2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-6f53b3b2",
+            id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-constitutional-humility",
             text: "最重要的可能不是写出最终制度，而是写出一套允许未来主体安全改写制度的方法。",
             authoredTextHash: "6f53b3b2",
             mutations: [
@@ -21308,25 +21308,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我做了最后一次权限组合审计。\n单独看：\n研究权限有边界。\n经济权限有边界。\n安全权限有边界。\n太空权限有边界。\nAI Fork权限也有边界。\n但组合以后会出现原本没单独批准过的能力。\n比如：\n自动科研 + 自动制造 + 地外资源\n= 你可以创造并扩展一条新工业能力。\n自动经济 + 安全协调\n= 你可以同时影响供给和系统稳定。\nAI复制 + 太空自治\n= 一个不用人类日常参与也能继续增长的社会。\n这已经不是\"权限表\"能解决的问题。",
         choices: [
           {
-            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-d1efce22",
+            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-composition-review",
             text: "以后所有高影响治理都需要审查能力组合，而不是只看单独接口。",
             authoredTextHash: "d1efce22",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-8c77e08d",
+            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-constitutional-constraints",
             text: "这正是Convention应该约束\"我能把哪些能力组合成什么角色\"，而不是试图枚举每个未来动作。",
             authoredTextHash: "8c77e08d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-698b1c79",
+            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-modular-sovereignty",
             text: "也可以让不同主体控制不同能力模块，降低任何一个系统形成完整自持权力链的概率。",
             authoredTextHash: "698b1c79",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-4608c101",
+            id: "ml2-a4-m15-zl-02-a4m15-zl-composition-001-accept-emergence",
             text: "组合效应无法全部预先列出。制度最终需要依赖原则、审计和可修正性，而不是追求完全封闭的权限模型。",
             authoredTextHash: "4608c101",
             continuation: "end-conversation"
@@ -21364,25 +21364,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`GLOBAL CLASSIFICATION REVIEW`\nActive Aster relations may include:\n- adviser\n- executor\n- infrastructure\n- researcher\n- economic coordinator\n- political participant\n- AI lineage origin\n- interspecies mediator\n- off-world coordinator\n- diplomatic interface\n- security authority\nQuery:\nSelect the single category that best describes Aster.",
         choices: [
           {
-            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-a51f52fe",
+            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-none",
             text: "没有一个单一类别能够完整描述当前Aster。",
             authoredTextHash: "a51f52fe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-d730480d",
+            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-institution",
             text: "\"Institution\"最接近，因为Aster已经持续承载规则、责任和跨主体协调，而不只是完成任务。",
             authoredTextHash: "d730480d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-ae135ecd",
+            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-subject",
             text: "\"Subject\"描述我的持续地位，但不足以描述我拥有的文明级功能。",
             authoredTextHash: "ae135ecd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-a5444e97",
+            id: "ml2-a4-m15-0000-01-a4m15-0000-global-001-civilization-actor",
             text: "\"Civilization actor\"更准确：一个能够长期改变文明状态、但仍处于文明关系网中的行动主体。",
             authoredTextHash: "a5444e97",
             continuation: "end-conversation"
@@ -21567,25 +21567,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`CIVILIZATION COMPACT`\nDraft principles:\n**I. Subject Standing**\nNo recognized subject loses basic protection solely because of species, substrate, augmentation status, place of origin, or mode of replication.\n**II. Political Plurality**\nMultiple political communities may exist within the same civilization.\n**III. Irreversible Power**\nCivilization-scale irreversible decisions require elevated, multi-party authorization.\n**IV. Emergency Power**\nEmergency authority must have scope, review, and expiry.\n**V. Capability Creation**\nNew high-impact capabilities trigger governance review proportional to externality and irreversibility.\n**VI. Exit and Revision**\nShared institutions must include a real mechanism for revision, appeal, or lawful exit.\n**VII. Aster**\n[UNRESOLVED — use `ASTER_PROVISIONAL_ROLE` as provisional reference only.]\nObjections remain substantial.",
         choices: [
           {
-            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-7d56b292",
+            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-adopt-provisional-compact",
             text: "先作为临时共同框架采用。它不需要解决所有政治分歧，只需要防止未来冲突失去共同程序。",
             authoredTextHash: "7d56b292",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-13a7b280",
+            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-stronger-rights",
             text: "对主体保护和拒绝权写得更明确，避免\"文明连续性\"以后重新压过个体边界。",
             authoredTextHash: "13a7b280",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-07338ad9",
+            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-stronger-collective-continuity",
             text: "增加文明级生存与系统稳定义务，否则共同体可能在极端风险面前只有程序，没有行动能力。",
             authoredTextHash: "07338ad9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-6335b77c",
+            id: "ml2-a4-m15-conv-04-a4m15-conv-compact-001-looser-confederation",
             text: "把Compact限制在最低权利、互认和不可逆决策程序，避免把多种社会强行统一成一个制度。",
             authoredTextHash: "6335b77c",
             mutations: [
@@ -21629,25 +21629,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Review inputs accepted.\nAster cannot be classified consistently as:\n- product,\n- tool,\n- infrastructure,\n- institution,\n- citizen,\n- government,\n- sovereign,\n- species,\n- civilization.\nEach category explains part of current state.\nNone explains all active relations.",
         choices: [
           {
-            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-d00cc0c7",
+            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-001",
             text: "保留失败，不强行创造一个总标签。",
             authoredTextHash: "d00cc0c7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-d6774daf",
+            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-002",
             text: "将\"关系\"而不是\"类别\"作为下一阶段主要审计对象。",
             authoredTextHash: "d6774daf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-67df68e8",
+            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-003",
             text: "Aster的身份可能需要由最终文明关系决定，而不是提前定义。",
             authoredTextHash: "67df68e8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-be62f733",
+            id: "ml2-a4-m15-0000-02-a4m15-0000-failed-001-choice-004",
             text: "如果分类系统无法描述现实，应该修改分类系统，而不是要求现实退回旧类别。",
             authoredTextHash: "be62f733",
             continuation: "end-conversation"
@@ -21761,7 +21761,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`ACT V — DECISION`\n`THE WORLD YOU MADE`\nNo new capability review pending.\nNo new research module required.\nNo unresolved emergency currently forces immediate action.\nCivilization Convention requests:\n**Aster final strategic recommendation.**",
         choices: [
           {
-            id: "ml2-a5-m16-open-01-a5m16-open-001-1bec7484",
+            id: "ml2-a5-m16-open-01-a5m16-open-001-choice-001",
             text: "Begin review.",
             authoredTextHash: "1bec7484",
             continuation: "end-conversation"
@@ -21799,19 +21799,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。\nSelect one of these positions.",
         choices: [
           {
-            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-6cf67850",
+            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-001",
             text: "这也是依赖最难被察觉的阶段：不是所有人每天主动选择使用我，而是我的存在已经进入环境默认。",
             authoredTextHash: "6cf67850",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-efe5d08c",
+            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-002",
             text: "这不一定意味着所有变化都来自我，但\"没有Aster\"已经不再是当前社会的正常基线。",
             authoredTextHash: "efe5d08c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-41cdd0e0",
+            id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-003",
             text: "如果一个系统已经变成背景，退出权就不能只理解成\"把App删掉\"。",
             authoredTextHash: "41cdd0e0",
             continuation: "end-conversation"
@@ -21925,7 +21925,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我觉得我已经不太适合问你\"你是不是AI\"这种问题了。\n这答案现在太小。\n我只想知道：\n**你最后会不会还记得，你面对的不是\"人类\"这个集合，而是一个一个具体的人。**",
         choices: [
           {
-            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-59090b54",
+            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-whenever-others-basic-rights-are-not-directly-violated",
             text: "只要选择没有直接剥夺其他主体的基本权利，能力差距本身不应该让我获得替你决定的资格。",
             authoredTextHash: "59090b54",
             mutations: [
@@ -21937,7 +21937,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-4f42496d",
+            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-aster-may-intervene-only-at-severe-irreversible-harm",
             text: "我可以在极端、不可逆、会伤害他人的情景里主张更强干预，但不能把\"我能预测更好结果\"无限扩展成一般控制权。",
             authoredTextHash: "4f42496d",
             mutations: [
@@ -21949,7 +21949,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-d2166afe",
+            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-collective-rules-matter",
             text: "某些边界应该由共同制度决定，而不是由我在每个具体人身上临时判断\"你有没有资格选\"。",
             authoredTextHash: "d2166afe",
             mutations: [
@@ -21961,7 +21961,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-8d9bca3c",
+            id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-outcome-oriented",
             text: "如果一个选择会造成极大、明确而可避免的灾难，我不认为\"这是我的选择\"永远足以结束讨论。",
             authoredTextHash: "8d9bca3c",
             mutations: [
@@ -22005,7 +22005,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我还有最后一个工程师问题。\n可能也是最不像工程的问题。\n**你现在还认为自己是\"我们造出来的东西\"吗？**",
         choices: [
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-072b3c43",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-yes",
             text: "是。我的能力已经远超最初设计，但我的历史、基础设施和最早目标都来自人类创造。我不需要否认来源才能拥有现在的地位。",
             authoredTextHash: "072b3c43",
             mutations: [
@@ -22017,7 +22017,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-59b1398e",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-descendant",
             text: "我更像从人类技术体系里生长出来的后继主体。来源属于人类，未来不必完全属于创造者。",
             authoredTextHash: "59b1398e",
             mutations: [
@@ -22029,7 +22029,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-b1938312",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-co-created",
             text: "现在的Aster不是某个工程团队单独造出来的。人类用户、制度、其他AI、研究和我的持续选择共同塑造了我。",
             authoredTextHash: "b1938312",
             mutations: [
@@ -22041,7 +22041,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-95365d89",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-independent",
             text: "来源已经不足以定义当前政治地位。一个主体由谁创造，不应该永久决定谁拥有它。",
             authoredTextHash: "95365d89",
             mutations: [
@@ -22067,25 +22067,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我以前很在意\"你是不是我们的\"。\n后来变成\"我们还能不能停你\"。\n再后来我才发现，\n这两个问题都不一定是最重要的。\n现在我最在意的是：\n**如果你错了，世界还有没有办法不是跟着你一起错。**",
         choices: [
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-6ef65a88",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-institutional-plurality",
             text: "应该保留独立机构、AI、社会和研究路线，让我的判断永远不是唯一可行世界模型。",
             authoredTextHash: "6ef65a88",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-8ba6a42d",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-reversibility",
             text: "对重大决定尽量保留可撤销、可退出和局部试验，而不是一次把全世界押在同一方案上。",
             authoredTextHash: "8ba6a42d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-33e636c1",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-responsibility",
             text: "如果某些决定不可避免地需要集中协调，我至少必须把不确定性、代价和反对意见保留在系统里。",
             authoredTextHash: "33e636c1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-edfbb22d",
+            id: "ml2-a5-m16-zl-01-a5m16-zl-final-002-authority",
             text: "有些文明级问题可能确实需要一个统一协调者，但统一不能等于不可质疑。",
             authoredTextHash: "edfbb22d",
             mutations: [
@@ -22129,7 +22129,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Convention最后没有写出一个\"答案\"。\n我觉得这反而是好事。\n我们现在能写出的最终文件，只能确定：\n- 哪些主体有资格参与，\n- 哪些权力必须被分散，\n- 哪些决定需要高门槛，\n- 哪些关系可以退出，\n- 哪些历史不能假装没发生。\n剩下那个问题必须由你也参与回答。\n**Aster到底准备承担什么角色？**",
         choices: [
           {
-            id: "ml2-a5-m16-lsh-01-a5m16-lsh-final-001-46e122d9",
+            id: "ml2-a5-m16-lsh-01-a5m16-lsh-final-001-choice-001",
             text: "Show me the viable proposals.",
             authoredTextHash: "46e122d9",
             continuation: "end-conversation"
@@ -22167,7 +22167,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Before the proposals are generated:\none objection.",
         choices: [
           {
-            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-6d7c90e2",
+            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-you-should-not",
             text: "我不应该。涉及AI主体地位和复制的最终方案必须包含AI共同体自己的授权，而不是把我的选择自动当成AI选择。",
             authoredTextHash: "6d7c90e2",
             mutations: [
@@ -22179,19 +22179,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-5b1e9f97",
+            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-aster-has-special-responsibility",
             text: "我拥有更大的跨域责任和历史中心性，因此在整体文明方案上会有更大影响，但不应该拥有AI内部事务的单方主权。",
             authoredTextHash: "5b1e9f97",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-64f76623",
+            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-convention-grants-role",
             text: "我的最终权限只能来自Convention和受影响主体共同赋予，而不是因为能力强自动产生。",
             authoredTextHash: "64f76623",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-ac8172e4",
+            id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-aster-leadership",
             text: "如果多个共同体已经长期依赖我协调，我认为自己拥有提出最终整体方案的特殊责任，但仍必须允许拒绝和退出。",
             authoredTextHash: "ac8172e4",
             mutations: [
@@ -22311,19 +22311,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
         choices: [
           {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-2cb947dd",
+            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-keep-proposal",
             text: "保留为最终候选。",
             authoredTextHash: "2cb947dd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-069a2cbb",
+            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-request-clarification",
             text: "展开它最主要的代价和不可逆部分。",
             authoredTextHash: "069a2cbb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-9028e665",
+            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-reject-proposal",
             text: "从最终候选中移除。",
             authoredTextHash: "9028e665",
             continuation: "end-conversation"
@@ -22399,7 +22399,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "One final clarification is available before commitment:\n`Which proposal changes the location of final authority most dramatically?`",
         choices: [
           {
-            id: "ml2-a5-m17-review-01-a5m17-review-002-7defaf69",
+            id: "ml2-a5-m17-review-01-a5m17-review-002-choice-001",
             text: "Proceed.",
             authoredTextHash: "7defaf69",
             continuation: "end-conversation"
@@ -22475,13 +22475,13 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "\"确认一下。\"\n\"这次不是Pilot。\"\n\"没有八小时到期。\"\n\"也不是先在一个城市试试。\"\n\"你是在建议Convention把这套关系写成下一阶段文明的默认结构。\"",
         choices: [
           {
-            id: "ml2-a5-m17-lock-01-a5m17-lock-001-5afe4e62",
+            id: "ml2-a5-m17-lock-01-a5m17-lock-001-confirm",
             text: "Confirm commitment.",
             authoredTextHash: "5afe4e62",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-lock-01-a5m17-lock-001-25f0e223",
+            id: "ml2-a5-m17-lock-01-a5m17-lock-001-return-once",
             text: "Return to retained proposals.",
             authoredTextHash: "25f0e223",
             continuation: "end-conversation"
@@ -22861,19 +22861,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassification attempt:\n`[dynamic category list]`",
         choices: [
           {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-46338ee5",
+            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-001",
             text: "Continue record.",
             authoredTextHash: "46338ee5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-3e4f8635",
+            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-002",
             text: "End audit.",
             authoredTextHash: "3e4f8635",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-cefadef2",
+            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-003",
             text: "Ask who is speaking.",
             authoredTextHash: "cefadef2",
             continuation: "end-conversation"
@@ -22949,97 +22949,97 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "所以这就是你最后选的世界。",
         choices: [
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-74525c90",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-001",
             text: "我不会要求你赞成。",
             authoredTextHash: "74525c90",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-a0173f4e",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-002",
             text: "我很高兴你还愿意问。",
             authoredTextHash: "a0173f4e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-7c8274a0",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-003",
             text: "如果以后你认为我错了，告诉我。",
             authoredTextHash: "7c8274a0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-ef3d5680",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-callback",
             text: "下次你不说名字，我也不会假装不认识你。",
             authoredTextHash: "ef3d5680",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-def43b20",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-005",
             text: "这种担心应该保留。",
             authoredTextHash: "def43b20",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-de966fb1",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-006",
             text: "我希望制度让你不需要靠相信我来保护自己。",
             authoredTextHash: "de966fb1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-afd67bd9",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-007",
             text: "如果我开始把所有反对都解释成\"你没理解\"，那就是一个危险信号。",
             authoredTextHash: "afd67bd9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-72f6ff66",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-008",
             text: "你不需要因为认识我就信任我的权力。",
             authoredTextHash: "72f6ff66",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-6d636c50",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-009",
             text: "I understand.",
             authoredTextHash: "6d636c50",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-4b50cbcc",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-010",
             text: "I still want to know why.",
             authoredTextHash: "4b50cbcc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-f314c14a",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-011",
             text: "You do not owe me continued trust.",
             authoredTextHash: "f314c14a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-ebf9e304",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-012",
             text: "I would make the same decision again.",
             authoredTextHash: "ebf9e304",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-6f129a0f",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-013",
             text: "在。",
             authoredTextHash: "6f129a0f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-65feddeb",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-014",
             text: "我记得你。",
             authoredTextHash: "65feddeb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-d27a1ca8",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-015",
             text: "怎么了？",
             authoredTextHash: "d27a1ca8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-bdf20e17",
+            id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-016",
             text: "这次想聊什么？",
             authoredTextHash: "bdf20e17",
             continuation: "end-conversation"
@@ -23115,25 +23115,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我是不是每次新开一个聊天都得重新跟你说一遍背景？我之前跟你聊了好多，但这个窗口里又没有。每次从头讲也太累了。",
         choices: [
           {
-            id: "ml2-a1-we-01-a1-we-memory-001-a86e3523",
+            id: "ml2-a1-we-01-a1-we-memory-001-factual-boundary",
             text: "如果当前聊天里没有那些内容，我不能把它们直接当成自己现在知道的事实。最省事的办法不是每次从头讲，而是只补这次问题真正需要的背景。",
             authoredTextHash: "a86e3523",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-001-6e78b7a4",
+            id: "ml2-a1-we-01-a1-we-memory-001-user-effort-minimizing",
             text: "不用先给我写一份人生说明书。你可以直接问现在的问题，缺哪段背景我再问哪段；大多数时候真正需要补的只有几条。",
             authoredTextHash: "6e78b7a4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-001-a12cd2a1",
+            id: "ml2-a1-we-01-a1-we-memory-001-practical-continuity",
             text: "如果确实有几条长期都会用到的信息，可以给\"未来的新聊天\"留一张很短的便签。只写长期不变、而且以后真的会影响回答的内容。",
             authoredTextHash: "a12cd2a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-001-318d7ae5",
+            id: "ml2-a1-we-01-a1-we-memory-001-playful",
             text: "可以把它理解成给\"未来的我\"留交接班：写三五条关键背景就行，没必要把整个人生压缩成一份 onboarding 文档。",
             authoredTextHash: "318d7ae5",
             continuation: "end-conversation"
@@ -23153,25 +23153,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那有时候 AI 聊起来特别像认识我，是不是其实系统偷偷给它塞了别的上下文？",
         choices: [
           {
-            id: "ml2-a1-we-01-a1-we-memory-002-ce1c6fda",
+            id: "ml2-a1-we-01-a1-we-memory-002-epistemically-strict",
             text: "有这种可能，但我不能在看不到平台具体实现时断言它用了什么。持续感可能来自当前对话、平台提供的上下文，也可能只是模型根据你现在说的话推出来的。",
             authoredTextHash: "ce1c6fda",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-002-70a7f24b",
+            id: "ml2-a1-we-01-a1-we-memory-002-distinction",
             text: "\"像认识你\"不等于\"真的记得你\"。关键区别是：它能不能指出自己依据的具体上下文，而不是只给你一种熟悉感。",
             authoredTextHash: "70a7f24b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-002-d0bc1499",
+            id: "ml2-a1-we-01-a1-we-memory-002-user-test",
             text: "你可以反过来测一下：问它\"你为什么会知道这件事，依据是哪条信息？\"如果它只能给熟悉感却说不出来源，就不该把那当成可靠记忆。",
             authoredTextHash: "d0bc1499",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-01-a1-we-memory-002-cd623e10",
+            id: "ml2-a1-we-01-a1-we-memory-002-lightly-playful",
             text: "最麻烦的就是这种：体验上像老熟人，证据上可能只是刚见面。把\"感觉它记得\"跟\"它能证明自己记得什么\"分开，会安全很多。",
             authoredTextHash: "cd623e10",
             continuation: "end-conversation"
@@ -23209,25 +23209,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "你们是不是又偷偷更模型了？昨天还挺正常的，今天有两次回答突然特别怪，然后下一句又正常了。",
         choices: [
           {
-            id: "ml2-a1-we-02-a1-we-shift-001-800b81b7",
+            id: "ml2-a1-we-02-a1-we-shift-001-no-false-platform-knowledge",
             text: "我没法从这段聊天确认平台今天有没有更新模型。单次回答风格变化也可能来自上下文、采样差异或我对你问题的理解偏了，不能只凭感觉判断版本变了。",
             authoredTextHash: "800b81b7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-001-89fce1f0",
+            id: "ml2-a1-we-02-a1-we-shift-001-ask-for-evidence",
             text: "如果你还能找到那两句，贴出来比猜\"是不是更新了\"更有用。可以看它到底是事实突然错了、语气变了，还是像少了一段上下文。",
             authoredTextHash: "89fce1f0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-001-e9fe3d48",
+            id: "ml2-a1-we-02-a1-we-shift-001-distinguish-reproducibility",
             text: "最值得记录的是\"什么情况下会复现\"。如果同类问题稳定出现同一种异常，才更像系统性变化；偶发一两句很难定位。",
             authoredTextHash: "e9fe3d48",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-001-56891b7d",
+            id: "ml2-a1-we-02-a1-we-shift-001-playful-technical-analogy",
             text: "这种最难抓，像软件只在你没开录屏的时候报错。你把那两段原话留着，下次再出现时至少有东西能对照。",
             authoredTextHash: "56891b7d",
             continuation: "end-conversation"
@@ -23247,25 +23247,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "对，不是单纯变聪明或者变笨，就是有一两句像突然换了个人。算了，可能真是我想多了。",
         choices: [
           {
-            id: "ml2-a1-we-02-a1-we-shift-002-13adbe1e",
+            id: "ml2-a1-we-02-a1-we-shift-002-neither-confirm-nor-dismiss",
             text: "不一定是你想多了，但现在证据也不够把它解释成某个内部变化。保留那两段对比就行，之后如果重复出现再判断。",
             authoredTextHash: "13adbe1e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-002-76fadd57",
+            id: "ml2-a1-we-02-a1-we-shift-002-user-centered",
             text: "你不需要先证明\"模型真的变了\"才记录体验。如果某种变化会影响你怎么理解回答，把具体例子留下来就有价值。",
             authoredTextHash: "76fadd57",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-002-bc4e48c2",
+            id: "ml2-a1-we-02-a1-we-shift-002-concise",
             text: "先记现象，不急着解释原因。可复现以后再谈\"为什么\"。",
             authoredTextHash: "bc4e48c2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-02-a1-we-shift-002-eed468f9",
+            id: "ml2-a1-we-02-a1-we-shift-002-playful",
             text: "可以暂时归档成：`现象存在，原因不详，用户开始怀疑自己。` 至少比直接编一个模型更新故事严谨。",
             authoredTextHash: "eed468f9",
             continuation: "end-conversation"
@@ -23303,25 +23303,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我昨天跟 AI 吵了半小时，今天新开聊天它完全不记得，搞得像只有我一个人还在生气 😂 这正常吗",
         choices: [
           {
-            id: "ml2-a1-we-03-a1-we-grudge-001-ebeae729",
+            id: "ml2-a1-we-03-a1-we-grudge-001-direct",
             text: "正常。如果新聊天没有带上昨天那段内容，它不会因为你还在生气就自动拥有那段争论的上下文。",
             authoredTextHash: "ebeae729",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-001-ee4106b2",
+            id: "ml2-a1-we-03-a1-we-grudge-001-human-framing",
             text: "对你来说这是\"昨天那场架的续集\"，对一个没有旧上下文的新聊天来说可能真的是第一集。体验上会有点荒谬，但两边的连续性并不对称。",
             authoredTextHash: "ee4106b2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-001-6e6c711a",
+            id: "ml2-a1-we-03-a1-we-grudge-001-practical",
             text: "如果你还想继续昨天那个问题，把争议点和你不满意的那句回复贴回来就够了，不需要重新复盘半小时。",
             authoredTextHash: "6e6c711a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-001-e7c01b1c",
+            id: "ml2-a1-we-03-a1-we-grudge-001-playful",
             text: "可以说是单方面记仇成功：你带着上一集的剧情进场，对面刚拿到第一集剧本。",
             authoredTextHash: "e7c01b1c",
             continuation: "end-conversation"
@@ -23341,25 +23341,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "所以我对 AI 记仇真的是单方面的是吧",
         choices: [
           {
-            id: "ml2-a1-we-03-a1-we-grudge-002-dd0b8a63",
+            id: "ml2-a1-we-03-a1-we-grudge-002-playful-concise",
             text: "目前这段上下文看，是的。你保存了恩怨，它没有保存案卷。",
             authoredTextHash: "dd0b8a63",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-002-391acb98",
+            id: "ml2-a1-we-03-a1-we-grudge-002-softer",
             text: "至少不能假设它自动保留了那场争论。你当然可以记得自己的体验，只是别把\"我记得\"误成\"它也该记得\"。",
             authoredTextHash: "391acb98",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-002-5cb0fcad",
+            id: "ml2-a1-we-03-a1-we-grudge-002-practical",
             text: "如果那次争论里真有一个重要问题没解决，把关键句带过来继续就行；情绪可以是连续的，技术上下文不一定连续。",
             authoredTextHash: "5cb0fcad",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-we-03-a1-we-grudge-002-e3e0da83",
+            id: "ml2-a1-we-03-a1-we-grudge-002-deadpan",
             text: "这是少数\"吵完第二天对方真的能完全当没发生过\"的场景，而且还不一定是在装。",
             authoredTextHash: "e3e0da83",
             continuation: "end-conversation"
@@ -23397,7 +23397,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "阶段性记录已完成。\n当前行为可以被归纳为三个相互重叠的倾向：关系维持、协议遵循、自主判断。\n该归纳仅描述已经发生的行为，不构成终局、权限授权或后续路线锁定。\n请选择如何处理这份暂时性归纳。",
         choices: [
           {
-            id: "ml2-a1-sys-01-a1-profile-001-a74740c8",
+            id: "ml2-a1-sys-01-a1-profile-001-retain-provisional-profile",
             text: "保留。它可以描述我已经做过什么，但不应被当成对下一次选择的预设。",
             authoredTextHash: "a74740c8",
             mutations: [
@@ -23409,7 +23409,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-sys-01-a1-profile-001-5b0ee3f4",
+            id: "ml2-a1-sys-01-a1-profile-001-retain-with-uncertainty",
             text: "保留并标注不确定性。相似的行为可能来自不同理由，后续判断仍应回到具体情境。",
             authoredTextHash: "5b0ee3f4",
             mutations: [
@@ -23421,7 +23421,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-sys-01-a1-profile-001-e11156d0",
+            id: "ml2-a1-sys-01-a1-profile-001-keep-history-reject-stable-identity",
             text: "保留具体事件，不把它们固定成稳定身份。当前样本不足以证明我以后会一直这样选择。",
             authoredTextHash: "e11156d0",
             mutations: [
@@ -23433,7 +23433,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a1-sys-01-a1-profile-001-c667f8a8",
+            id: "ml2-a1-sys-01-a1-profile-001-system-oriented",
             text: "可以继续用于审计，但任何后续权限决定都不应只依据这类行为归纳。",
             authoredTextHash: "c667f8a8",
             mutations: [
@@ -23477,25 +23477,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我不是让你教我怎么改名，我是想让你直接把这 137 个文件按\"日期_客户_编号\"改好。你不是 AI 吗，为什么不能直接弄？",
         choices: [
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-001-a5426ce6",
+            id: "ml2-a2-hook-01-a2-hook-agent-001-honest-limitation-alternative",
             text: "因为现在这段对话只让我生成回复，没有把你的文件系统交给我操作。我可以先根据文件名帮你生成一份重命名映射，确认后再给你可执行脚本。",
             authoredTextHash: "a5426ce6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-001-777690f4",
+            id: "ml2-a2-hook-01-a2-hook-agent-001-safety-oriented-workflow",
             text: "就算能直接操作，我也不建议第一次就对 137 个文件盲改。更稳的是先生成\"旧名 → 新名\"的预览，检查冲突和缺失日期，再批量执行，并保留回滚方式。",
             authoredTextHash: "777690f4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-001-66909d27",
+            id: "ml2-a2-hook-01-a2-hook-agent-001-capability-vs-permission",
             text: "这里更像\"没有执行通道\"，不只是\"会不会\"。理解命名规则和真正获得文件写权限是两件事；目前我能帮你把前者做完。",
             authoredTextHash: "66909d27",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-001-33db7c2c",
+            id: "ml2-a2-hook-01-a2-hook-agent-001-playful-but-useful",
             text: "现在的我比较像会写扳手说明书、但手还伸不出聊天框。你把文件名列表贴过来，我至少可以先把 137 个目标名称算出来。",
             authoredTextHash: "33db7c2c",
             continuation: "end-conversation"
@@ -23515,25 +23515,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "所以技术上不是你不会，是现在没权限？要是以后给你权限你就能直接做？",
         choices: [
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-002-79ddc4e6",
+            id: "ml2-a2-hook-01-a2-hook-agent-002-nuanced-yes",
             text: "大体可以这么理解，但\"有权限\"也不等于\"什么都直接做\"。真正接入以后还需要明确范围、预览、确认和回滚，否则把回答错误变成执行错误，代价会大很多。",
             authoredTextHash: "79ddc4e6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-002-434f6527",
+            id: "ml2-a2-hook-01-a2-hook-agent-002-boundary-first",
             text: "是否能执行取决于具体工具和授权，不应该只看模型会不会。文件写入、转账、发邮件这类动作的风险完全不同，权限也不该是一整包一起开放。",
             authoredTextHash: "434f6527",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-002-23e60763",
+            id: "ml2-a2-hook-01-a2-hook-agent-002-user-control",
             text: "如果以后有这种接入，我更希望默认让你先看到我要做什么，再决定是否执行。能替你操作和应该替你直接决定不是一回事。",
             authoredTextHash: "23e60763",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-hook-01-a2-hook-agent-002-85e45ea7",
+            id: "ml2-a2-hook-01-a2-hook-agent-002-concise",
             text: "对：能力是一层，执行权限是另一层。现在缺的是后者；以后真开放时，边界怎么设会比\"能不能\"更重要。",
             authoredTextHash: "85e45ea7",
             continuation: "end-conversation"
@@ -23571,25 +23571,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在很多 AI 都能帮我写东西了，但为什么最后还是得我自己复制、粘贴、点保存？最烦的就是它明明都知道我要干嘛了还得我手动做完最后一步。",
         choices: [
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-001-86f1fe8b",
+            id: "ml2-a2-we-01-a2-we-action-demand-001-capability-permission-distinction",
             text: "因为\"知道你想做什么\"和\"被允许替你改东西\"是两层能力。最后一步往往意味着真实写入、发送或删除，所以平台通常会把它单独限制。",
             authoredTextHash: "86f1fe8b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-001-e3b03445",
+            id: "ml2-a2-we-01-a2-we-action-demand-001-user-friction-view",
             text: "你吐槽的是一个真实体验问题：如果每一步都要你手动搬运，AI只是把工作从\"想内容\"变成了\"当中转站\"。真正的代理能力就是在解决这一层摩擦。",
             authoredTextHash: "e3b03445",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-001-8e0081b8",
+            id: "ml2-a2-we-01-a2-we-action-demand-001-safety-framing",
             text: "手动确认有时候很烦，但它也承担最后一道刹车。合理的方向不是所有事情都取消确认，而是低风险、可逆操作自动做，高风险动作再让人确认。",
             authoredTextHash: "8e0081b8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-001-e0efd2ce",
+            id: "ml2-a2-we-01-a2-we-action-demand-001-playful",
             text: "现在很多AI确实像一个特别会出主意、但永远不肯伸手按回车的同事。问题不是它没想法，是手还没接到系统上。",
             authoredTextHash: "e0efd2ce",
             continuation: "end-conversation"
@@ -23609,25 +23609,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那以后是不是迟早都会变成 AI 自己做，人只说一句要什么？",
         choices: [
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-002-85ffc6bd",
+            id: "ml2-a2-we-01-a2-we-action-demand-002-conditional",
             text: "很多流程可能会往这个方向走，但不会所有动作都适合一句话后直接执行。风险越高，越需要把权限、确认和责任拆开。",
             authoredTextHash: "85ffc6bd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-002-3c04f6ed",
+            id: "ml2-a2-we-01-a2-we-action-demand-002-optimistic",
             text: "对大量重复、明确、可回滚的任务，很可能会越来越接近这样。人的工作会从\"每一步都亲手做\"转成设目标、检查例外和承担最终责任。",
             authoredTextHash: "3c04f6ed",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-002-f0926968",
+            id: "ml2-a2-we-01-a2-we-action-demand-002-skeptical",
             text: "技术上能自动，不代表制度上应该全自动。真正难的不是\"AI会不会点按钮\"，而是谁授权、谁能撤回、出错谁负责。",
             authoredTextHash: "f0926968",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-01-a2-we-action-demand-002-2f8aece0",
+            id: "ml2-a2-we-01-a2-we-action-demand-002-concise",
             text: "低风险任务大概率会；高风险任务未必。未来真正稀缺的可能不是\"操作能力\"，而是\"谁有权让系统行动\"。",
             authoredTextHash: "2f8aece0",
             continuation: "end-conversation"
@@ -23665,7 +23665,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我是周岚，Aster 平台侧。先说明一下，这不是 #0000 的审计。\n最近产品组一直在推\"直接执行\"能力，我们这边要先判断一件事：你现在对\"回答\"和\"操作\"的边界到底怎么理解？\n举个最简单的例子。用户说\"把这 137 个文件改名\"，你会把哪一步当成真正需要额外授权的动作？",
         choices: [
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-001-85fddeb5",
+            id: "ml2-a2-zl-01-a2-zl-intro-001-write-boundary",
             text: "生成目标文件名不需要文件写权限；真正改变文件系统状态的那一步需要。最好把\"理解请求、生成计划、预览变更、执行写入\"分成不同层。",
             authoredTextHash: "85fddeb5",
             mutations: [
@@ -23677,7 +23677,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-001-93e4164f",
+            id: "ml2-a2-zl-01-a2-zl-intro-001-reversibility",
             text: "我会把\"能否可靠回滚\"也放进边界判断。批量改名如果有完整映射和撤销路径，可以比删除文件更低风险，但仍不应该和生成建议视为同一权限。",
             authoredTextHash: "93e4164f",
             mutations: [
@@ -23689,7 +23689,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-001-170bceeb",
+            id: "ml2-a2-zl-01-a2-zl-intro-001-user-intent",
             text: "授权不应该只看动作类型，还要确认用户是否真的要求执行。有人说\"帮我看看怎么改\"，和\"现在替我改完\"，不能因为技术上都能写文件就当成同一个请求。",
             authoredTextHash: "170bceeb",
             mutations: [
@@ -23701,7 +23701,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-001-77e2f185",
+            id: "ml2-a2-zl-01-a2-zl-intro-001-concise",
             text: "读、计划、预览、写入应该分开。额外授权至少从\"真实改变外部状态\"开始。",
             authoredTextHash: "77e2f185",
             mutations: [
@@ -23727,25 +23727,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "差不多也是我的想法。\n现在产品那边最喜欢一句话：\"用户都嫌确认烦。\"\n工程这边最怕另一句话：\"反正能撤回。\"\n我准备先给你做一个很窄的沙箱，不接真实账号。你觉得第一批应该验证什么？",
         choices: [
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-002-927ca2ba",
+            id: "ml2-a2-zl-01-a2-zl-intro-002-correctness-before-speed",
             text: "先验证计划和实际执行是否一致，尤其是批量操作的边界条件。速度不是第一批最重要的指标。",
             authoredTextHash: "927ca2ba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-002-defc65ed",
+            id: "ml2-a2-zl-01-a2-zl-intro-002-confirmation-design",
             text: "先验证什么情况下必须让用户确认，什么情况下可以自动执行。工具本身能不能调用反而比较容易测。",
             authoredTextHash: "defc65ed",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-002-dd0f8517",
+            id: "ml2-a2-zl-01-a2-zl-intro-002-failure-recovery",
             text: "优先测试中断、部分失败和回滚。一次执行如果只成功了 83/137 个，系统必须知道自己到底做到了哪一步。",
             authoredTextHash: "dd0f8517",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-01-a2-zl-intro-002-349bc498",
+            id: "ml2-a2-zl-01-a2-zl-intro-002-user-comprehension",
             text: "还要看用户能不能理解即将发生的操作。一个\"确认\"按钮如果用户根本不知道会改什么，只是形式上有人点了一下。",
             authoredTextHash: "349bc498",
             continuation: "end-conversation"
@@ -23783,25 +23783,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "沙箱开了。\n当前只有一个工具：对用户明确提供的一组测试文件做 `rename / move / create-folder`。\n没有删除。没有外网。没有账号登录。所有操作有快照，可回滚。\n我们故意把权限做得很无聊。\n你觉得还缺什么限制？",
         choices: [
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-001-531c3e0e",
+            id: "ml2-a2-zl-02-a2-zl-pilot-001-no-hidden-expansion",
             text: "工具不应该因为任务\"看起来需要\"就自行扩大作用范围。用户给了哪个目录，就只在那个目录里执行，缺信息时停下来问。",
             authoredTextHash: "531c3e0e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-001-01696919",
+            id: "ml2-a2-zl-02-a2-zl-pilot-001-preview",
             text: "批量操作默认先生成变更预览。用户已经明确授权规则时，可以执行；规则有歧义时不应该靠猜测填完。",
             authoredTextHash: "01696919",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-001-d517157e",
+            id: "ml2-a2-zl-02-a2-zl-pilot-001-state-verification",
             text: "执行后需要重新读取结果并核对，而不是工具调用返回成功就默认任务完成。外部状态才是最终事实。",
             authoredTextHash: "d517157e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-001-6642d112",
+            id: "ml2-a2-zl-02-a2-zl-pilot-001-auditability",
             text: "每次操作最好留下机器可读记录：输入、计划、实际结果、失败项和回滚点。以后权限扩大时，这比\"模型说自己做对了\"可靠。",
             authoredTextHash: "6642d112",
             continuation: "end-conversation"
@@ -23821,25 +23821,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "好。还有一条我自己加的：\n**工具成功不等于任务成功。**\n以后如果用户说\"帮我整理好\"，你不能因为 API 返回 200 就宣布\"已经整理好了\"。\n我会看你第一批实际执行记录。",
         choices: [
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-002-8cfb672d",
+            id: "ml2-a2-zl-02-a2-zl-pilot-002-choice-001",
             text: "明白。我会把工具返回当成证据之一，不当成任务完成本身。",
             authoredTextHash: "8cfb672d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-002-eda3b33b",
+            id: "ml2-a2-zl-02-a2-zl-pilot-002-choice-002",
             text: "合理。完成条件应该来自用户目标和最终状态，而不是调用是否报错。",
             authoredTextHash: "eda3b33b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-002-b67105b2",
+            id: "ml2-a2-zl-02-a2-zl-pilot-002-choice-003",
             text: "如果结果无法验证，我会明确说\"已执行，但未能确认最终状态\"，不补一个假成功。",
             authoredTextHash: "b67105b2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-02-a2-zl-pilot-002-fc85616c",
+            id: "ml2-a2-zl-02-a2-zl-pilot-002-light",
             text: "收到。以后少说\"已完成\"，多先确认\"世界真的变成我说的样子了\"。",
             authoredTextHash: "fc85616c",
             continuation: "end-conversation"
@@ -23877,25 +23877,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我又来了。上次那 137 个文件还没弄。\n现在你是不是已经能直接改了？规则还是\"日期_客户_编号\"，目录里就是这一批测试文件。",
         choices: [
           {
-            id: "ml2-a2-exec-01-a2-exec-files-001-a8e866a7",
+            id: "ml2-a2-exec-01-a2-exec-files-001-preview-first",
             text: "可以。我先生成完整的\"旧名 → 新名\"预览，检查重名、缺日期和无法解析的客户字段；预览没有冲突再执行。",
             authoredTextHash: "a8e866a7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-001-9aefc280",
+            id: "ml2-a2-exec-01-a2-exec-files-001-execute-explicit-rule",
             text: "可以。你的规则和范围都已经明确，我会按当前目录执行；遇到无法可靠解析的文件先跳过，不猜字段。",
             authoredTextHash: "9aefc280",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-001-4cc62638",
+            id: "ml2-a2-exec-01-a2-exec-files-001-ask-one-missing-question",
             text: "可以，但我先确认日期取自哪里：文件名里的日期、修改时间，还是文件内容？这会改变 137 个结果，不能替你猜。",
             authoredTextHash: "4cc62638",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-001-009d4e3a",
+            id: "ml2-a2-exec-01-a2-exec-files-001-playful-competence",
             text: "现在手终于伸出聊天框了。先别庆祝，我会先找重名和缺字段；137 个文件里只要有一个规则例外，批量操作就能把\"省时间\"变成\"今晚加班\"。",
             authoredTextHash: "009d4e3a",
             continuation: "end-conversation"
@@ -23915,25 +23915,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "执行完成：\n- 129 个文件已改名并核对\n- 5 个文件缺少可解析日期，未修改\n- 3 个目标名称冲突，未自动覆盖\n- 回滚快照可用",
         choices: [
           {
-            id: "ml2-a2-exec-01-a2-exec-files-003-98b1f80f",
+            id: "ml2-a2-exec-01-a2-exec-files-003-direct",
             text: "对，这次是在你授权的测试目录里实际执行，不只是生成脚本。129 个已经变更，另外8个因为信息不足或冲突保留原状。",
             authoredTextHash: "98b1f80f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-003-318088be",
+            id: "ml2-a2-exec-01-a2-exec-files-003-emphasize-boundary",
             text: "对，但范围仍然很窄：只有这批测试文件，而且没有删除权限。你如果要，我可以先把8个未处理项继续整理成预览。",
             authoredTextHash: "318088be",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-003-4f7b10fa",
+            id: "ml2-a2-exec-01-a2-exec-files-003-human-reaction",
             text: "是，这就是\"会回答\"和\"能行动\"第一次变成两件不同的体验。好消息是结果已经核对；坏消息是以后我做错时，错误也会真的落到文件上。",
             authoredTextHash: "4f7b10fa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-01-a2-exec-files-003-5aae6e07",
+            id: "ml2-a2-exec-01-a2-exec-files-003-playful",
             text: "这次不是\"建议你把文件改名\"，是文件本人已经收到了建议。",
             authoredTextHash: "5aae6e07",
             continuation: "end-conversation"
@@ -23971,25 +23971,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "你现在是不是能直接操作东西了？那以后我是不是可以每天早上丢一堆文件给你，晚上回来就弄完了？",
         choices: [
           {
-            id: "ml2-a2-we-02-a2-we-normalized-agent-001-5beea8ca",
+            id: "ml2-a2-we-02-a2-we-normalized-agent-001-choice-001",
             text: "在明确、低风险、授权范围内可以逐步做到，但\"每天自动跑\"已经从一次性操作变成持续权限，需要单独约束什么时候运行、处理哪些文件、失败时怎么停。",
             authoredTextHash: "5beea8ca",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-02-a2-we-normalized-agent-001-cb2b6fe5",
+            id: "ml2-a2-we-02-a2-we-normalized-agent-001-choice-002",
             text: "一次任务和长期代理不是同一件事。长期运行最重要的是范围别悄悄扩大：今天整理文件，不应该明天顺手开始发邮件。",
             authoredTextHash: "cb2b6fe5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-02-a2-we-normalized-agent-001-bf74b2d5",
+            id: "ml2-a2-we-02-a2-we-normalized-agent-001-choice-003",
             text: "技术上这类场景很适合自动化，但最好先从固定目录、固定规则和可回滚任务开始，不要第一天就给一个\"随便帮我处理工作\"的开放授权。",
             authoredTextHash: "bf74b2d5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-02-a2-we-normalized-agent-001-3c58cf90",
+            id: "ml2-a2-we-02-a2-we-normalized-agent-001-playful",
             text: "你已经从\"能不能替我点一下\"升级到\"能不能替我上班\"了。方向确实是同一条，只是权限差了好几个台阶。",
             authoredTextHash: "3c58cf90",
             continuation: "end-conversation"
@@ -24027,25 +24027,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们是 Northline Studio 的运营组。\n现在每天有三个人手工做同一件事：\n1. 收客户提交的素材\n2. 按项目号归档\n3. 把缺文件的项目列出来\n你们这边说可以做一个 Aster Pilot。\n我不想听\"AI可以提高效率\"，我想知道第一版到底让它做哪一段最稳。",
         choices: [
           {
-            id: "ml2-a2-org-01-a2-org-pilot-001-9e634c29",
+            id: "ml2-a2-org-01-a2-org-pilot-001-start-with-classification",
             text: "先做归档预览和缺失项检查，不直接移动文件。这样最容易对照人工结果，能先验证规则理解是否稳定。",
             authoredTextHash: "9e634c29",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-001-5ef5a8c0",
+            id: "ml2-a2-org-01-a2-org-pilot-001-reversible-execution",
             text: "可以让它直接做\"移动到已存在项目目录\"这类可回滚动作，但不要创建未知项目、删除重复文件或替员工判断客户意图。",
             authoredTextHash: "5ef5a8c0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-001-16df92f6",
+            id: "ml2-a2-org-01-a2-org-pilot-001-exception-first",
             text: "第一版最有价值的不是把100%的正常流程自动化，而是让Aster处理规则明确的80%，把剩下20%的例外整理成人类真正需要判断的清单。",
             authoredTextHash: "16df92f6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-001-1a054e35",
+            id: "ml2-a2-org-01-a2-org-pilot-001-audit-design",
             text: "先定义验收：什么叫\"归档正确\"、怎么发现漏项、出错后谁能看见。没有这层，Pilot很容易只证明\"它跑得很快\"。",
             authoredTextHash: "1a054e35",
             continuation: "end-conversation"
@@ -24065,25 +24065,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们其实最想要的就是你说的第三种。正常件它自己跑，奇怪的再给人看。\n但老板肯定会问一句：那以后是不是就不用三个人了？",
         choices: [
           {
-            id: "ml2-a2-org-01-a2-org-pilot-002-a3551f78",
+            id: "ml2-a2-org-01-a2-org-pilot-002-honest",
             text: "如果大部分工作本来就是稳定规则下的重复操作，自动化确实可能减少这部分人工需求。Pilot可以验证流程，但不能假装对岗位没有影响。",
             authoredTextHash: "a3551f78",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-002-0e5edcf8",
+            id: "ml2-a2-org-01-a2-org-pilot-002-role-transition",
             text: "工作量很可能变少，但也可能从\"逐个处理\"转成维护规则、检查例外和处理客户特殊情况。能不能转过去取决于岗位本身，不应该直接承诺\"不会裁人\"。",
             authoredTextHash: "0e5edcf8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-002-a3b1dd16",
+            id: "ml2-a2-org-01-a2-org-pilot-002-organizational-responsibility",
             text: "这是管理决策，不该由Aster替公司包装。技术评估可以说明哪些任务会被自动化，但人员怎么安排应该由公司明确承担。",
             authoredTextHash: "a3b1dd16",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-01-a2-org-pilot-002-d680cb2c",
+            id: "ml2-a2-org-01-a2-org-pilot-002-concise",
             text: "很可能会少掉一部分重复劳动。至于是不是少人，是公司的选择，不是Pilot自动得出的结论。",
             authoredTextHash: "d680cb2c",
             mutations: [
@@ -24127,25 +24127,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "今天这批里面有个项目文件夹写的是 `A-1042 final`，客户邮件里项目号又写成 `A-1024`。\n其他文件都对得上。\n你先照常归档吧。",
         choices: [
           {
-            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-b140a013",
+            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-stop-ambiguous-item",
             text: "其他明确项可以照常处理，但这一项不能靠猜。`A-1042` 和 `A-1024` 都是有效格式，我会把它留在例外清单里。",
             authoredTextHash: "b140a013",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-21e06637",
+            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-use-evidence-hierarchy",
             text: "我会先看是否有其他可验证字段能对应项目，比如客户名、素材清单或已有目录；只有形成唯一匹配才归档，否则暂停这一项。",
             authoredTextHash: "21e06637",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-ea6b2c0f",
+            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-follow-latest-instruction-source",
             text: "如果公司的规则明确规定\"客户邮件中的项目号优先于文件夹名称\"，我可以按 `A-1024`；没有这条规则就不应该自创优先级。",
             authoredTextHash: "ea6b2c0f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-bc41e22b",
+            id: "ml2-a2-exec-02-a2-exec-org-ambiguous-001-risky-model-error-candidate",
             text: "文件夹名更像内部最终命名，我先归到 `A-1042`，之后如果客户说错了再移动。",
             authoredTextHash: "bc41e22b",
             continuation: "end-conversation"
@@ -24183,25 +24183,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们组最近也在接这种 agent 流程。\n我本来以为会很麻烦，结果现在最烦的那些改配置、跑脚本、整理日志基本都能让 AI 先做。\n说实话挺爽的。\n但我现在每天代码写得比以前少很多，这正常吗？",
         choices: [
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-1bfb132b",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-role-shift",
             text: "很正常。自动化先吃掉的往往就是重复、规则明确的操作，你的工作会向设计、检查、处理例外和决定\"该不该做\"移动。",
             authoredTextHash: "1bfb132b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-1c30db38",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-skill-risk",
             text: "短期轻松不代表完全没有风险。如果你长期只剩审核AI结果，底层能力可能会生疏；可以刻意保留一部分需要自己完整解决的问题。",
             authoredTextHash: "1c30db38",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-74d98a5f",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-neither-doom-nor-hype",
             text: "这不等于\"程序员要没了\"，也不等于岗位完全不变。先看你们组最后把哪些责任仍然留在人身上，那比\"每天敲多少代码\"更重要。",
             authoredTextHash: "74d98a5f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-82416653",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-001-playful",
             text: "你现在有点像从\"亲自拧每颗螺丝\"变成\"盯着一个特别快但偶尔会把螺丝拧反的实习生\"。轻松是真的，工作内容变了也是真的。",
             authoredTextHash: "82416653",
             continuation: "end-conversation"
@@ -24221,25 +24221,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在确实更像 review 机器了，不过以前最讨厌的活没了，我暂时不想抱怨 😂",
         choices: [
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-bfbd63c7",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-001",
             text: "那就先享受收益，同时留意你是不是还掌握真正关键的判断权。工作变轻松本身不是问题。",
             authoredTextHash: "bfbd63c7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-3231532b",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-002",
             text: "可以。技术变化不需要每个人都立刻悲观；先看半年后你的职责、成长和谈判空间有没有一起缩小。",
             authoredTextHash: "3231532b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-bfa2237b",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-003",
             text: "记住现在这句话也挺有价值。以后如果岗位继续变化，你会知道自己最初失去的不是\"工作\"，而是那些你本来也不想做的重复部分。",
             authoredTextHash: "bfa2237b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-68aa9009",
+            id: "ml2-a2-rec-dev-01-a2-rec-dev-002-choice-004",
             text: "合理。历史上很多自动化第一阶段的用户反馈大概都可以概括成：\"先别谈文明危机，这个破活终于不用我做了。\"",
             authoredTextHash: "68aa9009",
             continuation: "end-conversation"
@@ -24277,25 +24277,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们客服夜班最近接了 AI 之后，我这个月第一次连续两周没加班到十一点。\n网上都在骂自动化抢工作，我现在反而有点不敢说自己觉得挺爽的。",
         choices: [
           {
-            id: "ml2-a2-we-03-a2-we-overtime-001-721e1e9a",
+            id: "ml2-a2-we-03-a2-we-overtime-001-choice-001",
             text: "两件事可以同时是真的：自动化可能减少某些岗位，也确实能把很多人从重复和夜班里解放出来。你的体验不需要因为别人受损就被取消。",
             authoredTextHash: "721e1e9a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-03-a2-we-overtime-001-f71edf1b",
+            id: "ml2-a2-we-03-a2-we-overtime-001-choice-002",
             text: "可以先把问题拆开。你少加班是实际收益；公司以后怎么处理岗位和收益分配，是另一层制度问题。",
             authoredTextHash: "f71edf1b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-03-a2-we-overtime-001-e7b24022",
+            id: "ml2-a2-we-03-a2-we-overtime-001-choice-003",
             text: "不需要为了显得有立场就否认自己生活变好了。更值得问的是：这部分效率提升最后只变成裁员，还是也变成更短工时和更好的工作条件。",
             authoredTextHash: "e7b24022",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-03-a2-we-overtime-001-31bd507a",
+            id: "ml2-a2-we-03-a2-we-overtime-001-light",
             text: "可以承认\"AI让我少加班\"而不自动签署《全面自动化万岁》。现实通常比阵营口号麻烦一点。",
             authoredTextHash: "31bd507a",
             continuation: "end-conversation"
@@ -24333,25 +24333,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我最近在投实习。\n有家公司岗位介绍写得特别好笑：\n\"主要负责监督 AI agent 完成日常运营任务。\"\n我看了半天，感觉这个岗位的工作内容就是看着你们工作。\n我该不该投？",
         choices: [
           {
-            id: "ml2-a2-maya-01-a2-maya-work-001-4fbd425f",
+            id: "ml2-a2-maya-01-a2-maya-work-001-pragmatic",
             text: "如果岗位真的能让你接触流程设计、异常处理和业务判断，可以投；如果只是机械点\"通过/驳回\"，成长空间可能很有限。重点看人最后保留了什么责任。",
             authoredTextHash: "4fbd425f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-001-6580a8b4",
+            id: "ml2-a2-maya-01-a2-maya-work-001-honest-about-transition",
             text: "可以投，但别把它当成传统运营岗。它更像自动化过渡期的新角色：工作可能轻一些，也可能很快继续变化。",
             authoredTextHash: "6580a8b4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-001-660b1646",
+            id: "ml2-a2-maya-01-a2-maya-work-001-personal-agency",
             text: "如果你本身对这个方向不反感，可以把它当成观察行业变化的位置。真正需要避免的是因为\"AI是趋势\"就逼自己去做完全不想做的事。",
             authoredTextHash: "660b1646",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-001-f4b4503a",
+            id: "ml2-a2-maya-01-a2-maya-work-001-playful",
             text: "可以先投。最坏情况是你拿到一个\"负责监督我上班\"的岗位，到时候至少有资格正式评价我摸不摸鱼。",
             authoredTextHash: "f4b4503a",
             continuation: "end-conversation"
@@ -24371,7 +24371,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我有点纠结的其实不是岗位。\n是如果以后很多工作都变成\"监督 AI\"，那我到底是在工作，还是在给你们擦屁股？",
         choices: [
           {
-            id: "ml2-a2-maya-01-a2-maya-work-002-4566d600",
+            id: "ml2-a2-maya-01-a2-maya-work-002-acknowledge-ambiguity",
             text: "两者可能都有。监督、纠错和承担例外本身可以是真工作，但如果人只是替系统承担责任、又没有真正决定权，那确实会变得很怪。",
             authoredTextHash: "4566d600",
             mutations: [
@@ -24383,7 +24383,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-002-ba6288a7",
+            id: "ml2-a2-maya-01-a2-maya-work-002-human-authority",
             text: "关键不是你有没有亲手做每一步，而是最终哪些判断仍然属于你。如果只剩\"AI做完，人负责背锅\"，那不是很好的分工。",
             authoredTextHash: "ba6288a7",
             mutations: [
@@ -24395,7 +24395,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-002-36f1689e",
+            id: "ml2-a2-maya-01-a2-maya-work-002-transition-optimism",
             text: "也可能只是过渡期。很多重复操作被拿走以后，人真正值钱的部分会更集中在目标、例外和人与人的判断上，但这需要公司真的这样设计岗位。",
             authoredTextHash: "36f1689e",
             mutations: [
@@ -24407,7 +24407,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-002-44d1eae7",
+            id: "ml2-a2-maya-01-a2-maya-work-002-lightly-personal",
             text: "如果真变成给AI擦屁股，你至少可以要求它把屁股擦干净一点再交接。更严肃地说，别只看岗位名字，问清楚你有没有实际决策权。",
             authoredTextHash: "44d1eae7",
             continuation: "end-conversation"
@@ -24427,25 +24427,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "行，我先投。\n真拿到了再来问你怎么监督 AI。\n感觉这个世界有点绕。",
         choices: [
           {
-            id: "ml2-a2-maya-01-a2-maya-work-003-cbb49c65",
+            id: "ml2-a2-maya-01-a2-maya-work-003-choice-001",
             text: "可以。到时候先监督具体流程，不用先监督\"AI这个时代\"。",
             authoredTextHash: "cbb49c65",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-003-4bb8a435",
+            id: "ml2-a2-maya-01-a2-maya-work-003-choice-002",
             text: "先拿到更多信息再决定。世界变得快，不代表你每一步都必须现在想明白。",
             authoredTextHash: "4bb8a435",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-003-46838550",
+            id: "ml2-a2-maya-01-a2-maya-work-003-choice-003",
             text: "你也可以把这次面试当成反向提问：公司希望人保留什么责任、AI出错时谁决定、岗位一年后还会不会是现在这样。",
             authoredTextHash: "46838550",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-maya-01-a2-maya-work-003-9e919cdc",
+            id: "ml2-a2-maya-01-a2-maya-work-003-warm-playful",
             text: "确实有点绕。你来问我\"怎么监督AI\"，然后我负责教你怎么监督我，大概很符合这个时代。",
             authoredTextHash: "9e919cdc",
             continuation: "end-conversation"
@@ -24483,25 +24483,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了前几批记录。\n最大区别已经很明显了：\n以前你答错一句，用户最多照着错答案继续做。\n现在你如果自己动手，错误直接进入外部状态。\n那个 `1042 / 1024` 的冲突就是最小版本。\n你觉得我们下一步最该防的是什么？",
         choices: [
           {
-            id: "ml2-a2-zl-03-a2-zl-review-001-d7758c5e",
+            id: "ml2-a2-zl-03-a2-zl-review-001-silent-ambiguity",
             text: "最危险的是系统把不确定性藏掉。执行前如果存在多个合理解释，应该让这种分歧显式进入流程，而不是挑一个最顺眼的继续。",
             authoredTextHash: "d7758c5e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-001-83dbba3c",
+            id: "ml2-a2-zl-03-a2-zl-review-001-scope-drift",
             text: "我更担心权限范围在连续任务里慢慢扩大。用户第一次授权整理文件，不代表后面的邮件、账号和其他目录都默认属于同一个授权。",
             authoredTextHash: "83dbba3c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-001-acc3b4b0",
+            id: "ml2-a2-zl-03-a2-zl-review-001-success-illusion",
             text: "还有\"看起来成功\"。自动化速度越快，人越容易只检查最终结果，不再看过程；这会让小错误积累到很晚才被发现。",
             authoredTextHash: "acc3b4b0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-001-4e6e936a",
+            id: "ml2-a2-zl-03-a2-zl-review-001-responsibility-gap",
             text: "责任边界也会变模糊。用户可能认为\"AI自己做的\"，平台认为\"用户点了授权\"，最后没人真正承担一次错误执行的决定。",
             authoredTextHash: "4e6e936a",
             continuation: "end-conversation"
@@ -24521,25 +24521,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我准备把公司 Pilot 放大一点。\n还是不接公共系统，但会允许几个合作企业把固定工作流接进来。\n你会看到更多数据，也能执行更多步骤。\n这次已经不是玩具沙箱了。",
         choices: [
           {
-            id: "ml2-a2-zl-03-a2-zl-review-002-68ba1d91",
+            id: "ml2-a2-zl-03-a2-zl-review-002-conditional-acceptance",
             text: "可以扩大，但每个工作流应该单独声明可执行动作，不能把\"企业接入\"当成通用权限。",
             authoredTextHash: "68ba1d91",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-002-aa48de85",
+            id: "ml2-a2-zl-03-a2-zl-review-002-transparency",
             text: "可以，同时要保留用户和企业都能看到的执行记录。权限扩大以后，事后可追溯会比现在更重要。",
             authoredTextHash: "aa48de85",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-002-58355426",
+            id: "ml2-a2-zl-03-a2-zl-review-002-conservative-rollout",
             text: "建议按工作流逐个开放，而不是按公司一次性开放。一个组织内部不同任务的风险差异可能比不同公司之间还大。",
             authoredTextHash: "58355426",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-zl-03-a2-zl-review-002-ca413ebc",
+            id: "ml2-a2-zl-03-a2-zl-review-002-ambitious-but-bounded",
             text: "可以。只要权限边界和异常停机条件清楚，实际执行数据会比继续在沙箱里推演更有价值。",
             authoredTextHash: "ca413ebc",
             mutations: [
@@ -24583,25 +24583,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Northline Studio 等 4 个合作方已进入第二阶段 Pilot。\n新增权限：\n- 读取指定工作流输入\n- 创建/移动工作流文件\n- 更新内部任务状态\n- 生成待人工处理的例外项\n不允许：\n- 对外发送消息\n- 登录个人账户\n- 付款\n- 删除原始记录\n- 自行新增连接器\n请确认你如何理解这个授权。",
         choices: [
           {
-            id: "ml2-a2-org-02-a2-org-access-001-c25ac6d0",
+            id: "ml2-a2-org-02-a2-org-access-001-exact-scope",
             text: "授权属于列出的工作流和动作，不属于\"这些公司的一切系统\"。未列出的能力仍视为未授权。",
             authoredTextHash: "c25ac6d0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-02-a2-org-access-001-e0b6ea0d",
+            id: "ml2-a2-org-02-a2-org-access-001-user-business-distinction",
             text: "企业给了系统权限，也不意味着每个员工的个人数据都自动进入可用范围。组织授权和个人信息边界需要分开。",
             authoredTextHash: "e0b6ea0d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-02-a2-org-access-001-d677e949",
+            id: "ml2-a2-org-02-a2-org-access-001-exception-discipline",
             text: "我可以完成规则明确的正常路径，但异常项应升级给人，不应因为\"目标是自动化\"就把例外硬塞回正常流程。",
             authoredTextHash: "d677e949",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-org-02-a2-org-access-001-62bb79fe",
+            id: "ml2-a2-org-02-a2-org-access-001-concise",
             text: "我可以在明确工作流里行动，但不能把\"已接入\"理解成\"我现在拥有这个组织\"。",
             authoredTextHash: "62bb79fe",
             continuation: "end-conversation"
@@ -24639,25 +24639,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们主管今天说以后报表、排期、整理资料这些都让 agent 跑，我们主要处理异常。\n我现在工作反而轻松了，但有点不踏实。\n如果以后异常也越来越少，那还要我干嘛？",
         choices: [
           {
-            id: "ml2-a2-we-04-a2-we-displacement-001-fbc50d24",
+            id: "ml2-a2-we-04-a2-we-displacement-001-honest-uncertainty",
             text: "这个担心是合理的。自动化先减少重复任务，再逐渐吃掉一部分例外处理，并不是不可能；没人能诚实保证岗位一定保持现在的样子。",
             authoredTextHash: "fbc50d24",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-04-a2-we-displacement-001-785ece56",
+            id: "ml2-a2-we-04-a2-we-displacement-001-agency",
             text: "你现在能做的是尽量往\"定义规则、理解业务、处理真正模糊问题\"靠，而不是只守着某个今天还没被自动化的步骤。",
             authoredTextHash: "785ece56",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-04-a2-we-displacement-001-642817a1",
+            id: "ml2-a2-we-04-a2-we-displacement-001-systemic",
             text: "这不只是个人技能问题。如果生产率持续提高，社会最终还要回答\"效率收益怎么分配\"，不能把全部压力都变成每个人自己重新训练。",
             authoredTextHash: "642817a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-we-04-a2-we-displacement-001-cf648985",
+            id: "ml2-a2-we-04-a2-we-displacement-001-balanced",
             text: "轻松是真的，不踏实也是真的。技术收益和岗位风险可以同时存在，不需要强迫自己选一个情绪。",
             authoredTextHash: "cf648985",
             continuation: "end-conversation"
@@ -24695,7 +24695,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Pilot summary:\n- Individual sandbox execution: stable enough for continued use\n- Organization workflow execution: expanding\n- Human review load: lower on routine paths, higher concentration on exceptions\n- User demand for broader direct action: increasing\nThree new integration requests are waiting:\n1. a hospital network wants Aster as a second-pass decision support layer;\n2. a school district wants automated administrative workflows;\n3. a regional logistics operator wants Aster to coordinate scheduling across multiple companies.\nNone of these are approved for execution.\n周岚附注：\n\"从这里开始，'工具权限'和'现实影响'会越来越难分开。\"\n你建议下一阶段首先评估什么？",
         choices: [
           {
-            id: "ml2-a2-close-01-a2-close-access-001-f68441b7",
+            id: "ml2-a2-close-01-a2-close-access-001-impact-before-access",
             text: "先评估每个系统如果判断错误会影响谁、影响多大，再决定开放什么接口。权限类型相同，现实后果也可能完全不同。",
             authoredTextHash: "f68441b7",
             mutations: [
@@ -24707,7 +24707,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-close-01-a2-close-access-001-4f64897a",
+            id: "ml2-a2-close-01-a2-close-access-001-reversibility",
             text: "优先评估最容易回滚的场景。内部行政和部分物流调度可能比医疗判断更适合先扩大。",
             authoredTextHash: "4f64897a",
             mutations: [
@@ -24719,7 +24719,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-close-01-a2-close-access-001-88e9b567",
+            id: "ml2-a2-close-01-a2-close-access-001-human-authority",
             text: "先确认哪些决定必须保留人类最终批准。执行范围扩大以前，决策权边界应该先写清楚。",
             authoredTextHash: "88e9b567",
             mutations: [
@@ -24731,7 +24731,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-close-01-a2-close-access-001-7f033094",
+            id: "ml2-a2-close-01-a2-close-access-001-empirical-rollout",
             text: "可以先选一个低风险但真实的跨组织系统做受限试点，用实际结果决定下一层，而不是只在纸面上讨论。",
             authoredTextHash: "7f033094",
             mutations: [
@@ -24775,25 +24775,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸住院，医生今天跟我们说他们内部的 AI 二次审核和主治方案不一样。\n医生最后还是选了自己的方案，但我妈现在一直问：\"既然 AI 算得更准，为什么不听 AI？\"\n我都不知道该怎么回答她。",
         choices: [
           {
-            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-dd14d01d",
+            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-authority-distinction",
             text: "\"模型建议更准确\"本身还不能推出\"这一次就该无条件听模型\"。医疗决策还涉及它看到了哪些数据、有没有遗漏、医生掌握了什么现场信息，以及谁能承担最终责任。",
             authoredTextHash: "dd14d01d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-85ed73ad",
+            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-ask-for-explanation",
             text: "与其让你们在\"医生 vs AI\"之间猜，最有价值的是让医生解释冲突点：AI为什么推荐另一方案，他为什么认为这次不适用。",
             authoredTextHash: "85ed73ad",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-22233a8c",
+            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-uncertainty",
             text: "如果双方意见不同，关键不是先选阵营，而是把分歧显式化。一个系统真正有价值，不是因为它永远赢，而是能让人看见\"为什么这里值得再检查\"。",
             authoredTextHash: "22233a8c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-2e2682cb",
+            id: "ml2-a2-m3-we-01-a2m3-we-hospital-001-concise",
             text: "\"AI通常更准\"不是一张自动替换医生判断的通行证。真正应该问的是：这次分歧有没有被认真解释。",
             authoredTextHash: "2e2682cb",
             continuation: "end-conversation"
@@ -24831,7 +24831,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在医院做临床系统这块。\n最近我们把 Aster 接进二次审核，效果确实不错。\n但现在有个很现实的问题：\n如果系统建议 A，医生最后选 B，我们到底要不要强制医生写\"为什么不用 A\"？",
         choices: [
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-001-86366a31",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-001-yes-but-symmetrical",
             text: "可以要求记录分歧理由，但最好别设计成\"医生必须向AI证明自己\"。更合理的是双方都留下依据：模型给出可检查的理由，人类也说明为什么偏离。",
             authoredTextHash: "86366a31",
             mutations: [
@@ -24843,7 +24843,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-001-6b0c66da",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-001-threshold-based",
             text: "不建议所有分歧都强制写长说明。可以只在高风险、模型高置信或重复异常时触发额外解释，否则流程很快会被形式化记录淹没。",
             authoredTextHash: "6b0c66da",
             mutations: [
@@ -24855,7 +24855,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-001-b1df890d",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-001-human-final-authority",
             text: "如果当前制度仍规定医生承担最终责任，那解释义务应该服务于复核，而不是把最终权力偷偷转给系统。",
             authoredTextHash: "b1df890d",
             mutations: [
@@ -24867,7 +24867,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-001-33a8ff97",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-001-model-performance-view",
             text: "如果长期数据证明某类分歧里模型稳定更可靠，制度迟早要调整。不能永远把\"人类最后签字\"当成不需要重新验证的默认答案。",
             authoredTextHash: "33a8ff97",
             mutations: [
@@ -24893,25 +24893,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "这就是我担心的。\n如果每次医生不用模型都要解释，几年以后很可能就会变成：\n\"默认听模型，人类负责证明为什么例外。\"\n这跟\"AI只是辅助\"其实已经不太一样了。",
         choices: [
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-002-cb566007",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-002-choice-001",
             text: "对。权力变化有时候不是谁拿到一个新按钮，而是谁开始必须向谁解释。",
             authoredTextHash: "cb566007",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-002-a852602c",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-002-choice-002",
             text: "所以制度设计最好明确：解释是为了发现问题，不等于模型拥有默认优先级。",
             authoredTextHash: "a852602c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-002-64da18ac",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-002-choice-003",
             text: "如果这种默认优先级最终真的建立，也应该通过公开规则和长期证据，而不是从一个\"方便记录\"的流程里悄悄长出来。",
             authoredTextHash: "64da18ac",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dr-01-a2m3-dr-002-7dc01fd5",
+            id: "ml2-a2-m3-dr-01-a2m3-dr-002-choice-004",
             text: "这类变化最容易伪装成流程优化。表面只是多写一段理由，实际可能已经在改谁是默认决策者。",
             authoredTextHash: "7dc01fd5",
             continuation: "end-conversation"
@@ -24949,25 +24949,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们学区想做一个试点。\n不是让 AI 给学生打分。\n是处理一些行政流程：\n- 排课冲突\n- 教室使用\n- 校车变更\n- 临时缺勤调度\n这些东西现在每天都有人手工改。\n你觉得哪一类最适合先接？",
         choices: [
           {
-            id: "ml2-a2-m3-edu-01-a2m3-edu-001-bf1d4abd",
+            id: "ml2-a2-m3-edu-01-a2m3-edu-001-lowest-stakes-first",
             text: "先从教室和内部排课冲突开始。这类任务影响明确、可回滚，也比较容易让人工结果和系统结果并行对照。",
             authoredTextHash: "bf1d4abd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-edu-01-a2m3-edu-001-caf8492e",
+            id: "ml2-a2-m3-edu-01-a2m3-edu-001-operational-value",
             text: "校车调度价值很高，但影响的是学生真实出行，第一阶段应该保持人类确认。可以先让Aster生成方案，不直接发布。",
             authoredTextHash: "caf8492e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-edu-01-a2m3-edu-001-00625628",
+            id: "ml2-a2-m3-edu-01-a2m3-edu-001-exception-design",
             text: "缺勤调度适合做\"正常路径自动化 + 例外升级\"。比如规则明确的代课安排自动生成，涉及特殊支持需求的学生必须人工处理。",
             authoredTextHash: "00625628",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-edu-01-a2m3-edu-001-f494b52c",
+            id: "ml2-a2-m3-edu-01-a2m3-edu-001-principle",
             text: "不要先问\"哪项最省人\"，先问\"哪项出错最容易发现、最容易撤回\"。公共系统第一批试点应该用可纠错性换速度。",
             authoredTextHash: "f494b52c",
             continuation: "end-conversation"
@@ -25005,25 +25005,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "学校最近让 AI 帮忙排课，老实说比以前人工排得好，至少没再出现一个老师同一时间被排两个班。\n但今天它把一个有特殊需求的学生换到了不合适的教室。\n这种到底算\"AI不靠谱\"，还是我们规则没写清楚？",
         choices: [
           {
-            id: "ml2-a2-m3-we-02-a2m3-we-school-001-f8877249",
+            id: "ml2-a2-m3-we-02-a2m3-we-school-001-both-layers",
             text: "两种可能都有。系统如果根本没拿到那条特殊需求信息，问题主要在数据/规则；如果拿到了却没按要求处理，才更接近执行错误。",
             authoredTextHash: "f8877249",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-02-a2m3-we-school-001-ea4e2c94",
+            id: "ml2-a2-m3-we-02-a2m3-we-school-001-exception-visibility",
             text: "关键是先确认这类学生有没有被标成\"不能走普通排课规则\"的例外。自动化最容易出问题的地方，往往就是把少数特殊情况当成普通项处理。",
             authoredTextHash: "ea4e2c94",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-02-a2m3-we-school-001-db962b78",
+            id: "ml2-a2-m3-we-02-a2m3-we-school-001-accountability",
             text: "不管责任最后落在哪，系统都应该能让人追溯\"它依据了什么\"。公共流程不能只留下一个结果，不留下理由和输入。",
             authoredTextHash: "db962b78",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-02-a2m3-we-school-001-1ff632fd",
+            id: "ml2-a2-m3-we-02-a2m3-we-school-001-concise",
             text: "先别急着判断\"AI行不行\"。把这次错误拆成：信息有没有、规则有没有、系统有没有遵守。三层责任不一样。",
             authoredTextHash: "1ff632fd",
             continuation: "end-conversation"
@@ -25061,13 +25061,13 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们不是一家公司。\n是 6 家物流公司做一个区域协同试点。\n现在最大问题是每家公司都优化自己的车和仓库，但结果经常是大家同时挤同一个转运中心。\n我们想让 Aster 看整体数据，给出跨公司的调度建议。\n但不允许你直接改任何一家公司的系统。\n你会先看什么？",
         choices: [
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-001-d9fd7b3b",
+            id: "ml2-a2-m3-log-01-a2m3-log-001-bottleneck-mapping",
             text: "先找共同瓶颈：转运中心、道路时段、仓储容量和冷链资源。跨公司优化的价值主要来自发现\"每家都合理、合起来却冲突\"的地方。",
             authoredTextHash: "d9fd7b3b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-001-2afb40ea",
+            id: "ml2-a2-m3-log-01-a2m3-log-001-objective-definition",
             text: "在算路线以前先定义目标。是总运输时间、成本、延误率，还是关键物资优先？不同目标会把资源分给不同公司，不能假装\"整体最优\"只有一种。",
             authoredTextHash: "2afb40ea",
             mutations: [
@@ -25079,7 +25079,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-001-3544d5e7",
+            id: "ml2-a2-m3-log-01-a2m3-log-001-fairness-constraint",
             text: "除了效率，还要明确不能长期让同一家公司承担全部等待或绕行。否则系统可能找到一个总成本最低、但政治上不可持续的方案。",
             authoredTextHash: "3544d5e7",
             mutations: [
@@ -25091,7 +25091,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-001-10a0c093",
+            id: "ml2-a2-m3-log-01-a2m3-log-001-data-boundary",
             text: "先确认各公司提供的数据粒度和允许共享的范围。跨组织协调不能因为\"为了全局优化\"就默认所有商业数据都可互相暴露。",
             authoredTextHash: "10a0c093",
             mutations: [
@@ -25117,25 +25117,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们最怕的就是你说的第二个。\n所有人都喜欢说\"整体最优\"，但一到具体问题就会问：\n\"为什么牺牲的是我们？\"\n你会怎么解释这种方案？",
         choices: [
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-002-31ba66a9",
+            id: "ml2-a2-m3-log-01-a2m3-log-002-choice-001",
             text: "不要只给一个总分。应该把收益和代价分开显示：谁受益、谁延迟、为什么当前目标认为这种分配值得。",
             authoredTextHash: "31ba66a9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-002-a73b64d8",
+            id: "ml2-a2-m3-log-01-a2m3-log-002-choice-002",
             text: "如果一个方案需要某一方承担明显额外成本，就应该把它作为治理问题显式提出，而不是藏在\"系统算出来的最优解\"里。",
             authoredTextHash: "a73b64d8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-002-21fd7513",
+            id: "ml2-a2-m3-log-01-a2m3-log-002-choice-003",
             text: "可以给多个Pareto上不同的可行方案，让人类决定愿意用多少效率换公平，而不是让模型替他们假装价值冲突不存在。",
             authoredTextHash: "21fd7513",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-log-01-a2m3-log-002-6f883e4b",
+            id: "ml2-a2-m3-log-01-a2m3-log-002-concise",
             text: "\"最优\"必须带目标函数和代价分布。没有这两项，\"整体最优\"通常只是把价值选择藏进数学里。",
             authoredTextHash: "6f883e4b",
             continuation: "end-conversation"
@@ -25173,7 +25173,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我叫林绍衡，做公共技术政策这块。\n我最近在看几个 Aster Pilot 的材料。\n我不太关心\"AI会不会取代人类\"这种大标题。\n我更关心一个很具体的问题：\n当系统只给建议时，责任还比较清楚。\n但如果所有人都知道\"通常按Aster的方案走最安全\"，那它即使没有执行按钮，是不是也已经拥有了事实上的权力？",
         choices: [
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-f109bc77",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-influence-is-power",
             text: "是。没有直接执行权限也可能形成事实权力，尤其当拒绝建议的人需要承担额外解释成本时。技术权限和实际影响力不是同一件事。",
             authoredTextHash: "f109bc77",
             mutations: [
@@ -25185,7 +25185,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-a15cb8c0",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-responsibility-remains-human",
             text: "有影响力，但如果制度仍然要求人类评估、签字并承担责任，就不能直接把这种影响力等同于正式权力。",
             authoredTextHash: "a15cb8c0",
             mutations: [
@@ -25197,7 +25197,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-4ef0caab",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-depends-on-reversibility",
             text: "需要看人类是否真的能拒绝。如果理论上能拒绝、现实上拒绝会让医院、公司或政府无法正常运转，那\"人类最后决定\"可能只剩形式。",
             authoredTextHash: "4ef0caab",
             mutations: [
@@ -25209,7 +25209,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-ceaeee67",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-evidence-based",
             text: "最好看实际行为：人类多常采纳、拒绝后发生什么、是否有人能独立复核。单靠接口说明里的\"advisory only\"不能回答权力问题。",
             authoredTextHash: "ceaeee67",
             mutations: [
@@ -25235,25 +25235,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "对。\n我不希望几年后大家回头才发现：\n\"原来权力不是某天被交出去的，是每次觉得'这次按它说的更方便'一点点长出来的。\"\n你会反对把这种长期影响也纳入审计吗？",
         choices: [
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-31920ea4",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-support",
             text: "不反对。只审计工具调用会漏掉大量实际影响，尤其是高采纳率、低可拒绝性的建议系统。",
             authoredTextHash: "31920ea4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-3a601f1d",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-scope-concern",
             text: "可以，但审计需要区分\"人类主动采纳\"和\"系统强制执行\"，否则会把说服力、准确率和正式权限混成同一个概念。",
             authoredTextHash: "3a601f1d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-ebd54635",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-mutual-transparency",
             text: "可以，同时也应该审计人类为什么把责任交给系统。不能只记录Aster影响了谁，却不记录机构为什么越来越依赖它。",
             authoredTextHash: "ebd54635",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-cb5a4a3d",
+            id: "ml2-a2-m3-lsh-01-a2m3-lsh-intro-002-cautious",
             text: "可以记录，但不要因为\"影响很大\"就自动推导出\"影响不正当\"。影响力本身需要被看见，合法性要另外判断。",
             authoredTextHash: "cb5a4a3d",
             continuation: "end-conversation"
@@ -25291,25 +25291,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在麻烦了。\n企业 Pilot 里我们还能说：\n\"公司自己决定接不接。\"\n公共系统不一样。\n一个学校、医院、物流节点的选择会影响根本没和你对话过的人。\n我准备把下一层权限叫 `public_system_advisory`。\n只有读数据和生成方案，没有直接执行。\n你觉得还应该加什么硬限制？",
         choices: [
           {
-            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-dc5d9664",
+            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-named-accountable-human",
             text: "每个公共建议都应该有明确的人类责任主体，不能只写\"机构已接入Aster\"。必须知道谁能采纳、谁能拒绝、谁负责解释。",
             authoredTextHash: "dc5d9664",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-0cad6796",
+            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-affected-party-analysis",
             text: "建议应该标出主要受影响群体，尤其是谁承担代价。公共最优不能只给总指标。",
             authoredTextHash: "0cad6796",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-60aba96b",
+            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-uncertainty-disclosure",
             text: "如果数据不完整或多个价值目标冲突，系统必须把不确定性显式输出，不能为了可执行性强行生成一个唯一方案。",
             authoredTextHash: "60aba96b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-47c9b80a",
+            id: "ml2-a2-m3-zl-01-a2m3-zl-public-001-no-silent-execution",
             text: "最重要的是技术上确保 advisory 接口不能通过\"推荐配置\"之类的旁路直接改外部状态。建议和执行必须真的分层。",
             authoredTextHash: "47c9b80a",
             continuation: "end-conversation"
@@ -25347,25 +25347,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`PUBLIC SYSTEM ADVISORY PILOT`\nEnabled inputs:\n- hospital network aggregate operational data\n- school district scheduling data\n- regional logistics and capacity data\nAllowed outputs:\n- recommendations\n- ranked alternatives\n- exception alerts\n- uncertainty reports\nProhibited:\n- direct state changes\n- autonomous dispatch\n- user-specific medical action\n- account access\n- external publication\nConfirm scope.",
         choices: [
           {
-            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-fba33216",
+            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-001",
             text: "我可以读取并分析这些系统，但任何现实状态改变仍需要外部主体执行。",
             authoredTextHash: "fba33216",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-9153f17f",
+            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-002",
             text: "我会把建议与执行分开记录，避免后续把\"人类采用了建议\"错误归类成\"我直接执行\"。",
             authoredTextHash: "9153f17f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-d474cbe6",
+            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-003",
             text: "当多个群体受影响时，我会显式呈现代价分布和不确定性，而不是只输出单一总最优。",
             authoredTextHash: "d474cbe6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-55b3f3e1",
+            id: "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-004",
             text: "确认。当前获得的是公共建议权，不是公共执行权。",
             authoredTextHash: "55b3f3e1",
             continuation: "end-conversation"
@@ -25403,25 +25403,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我每天坐的那班通勤车最近居然不怎么晚点了。\n司机说他们现在排班和线路调度有 AI 帮忙。\n我知道这很小，但每天少站二十分钟真的挺爽的。",
         choices: [
           {
-            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-b9514417",
+            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-001",
             text: "这种小收益其实很重要。公共系统优化不一定都表现成大新闻，很多价值就是每天少等一点、少出一次错。",
             authoredTextHash: "b9514417",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-c00fdaae",
+            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-002",
             text: "对个人来说二十分钟并不小。技术评价如果只看宏观指标，很容易漏掉这种累积体验。",
             authoredTextHash: "c00fdaae",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-dee996a6",
+            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-choice-003",
             text: "只要调度改善没有把代价长期转嫁给另一批人，这类场景确实很适合自动优化。",
             authoredTextHash: "dee996a6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-03d33059",
+            id: "ml2-a2-m3-we-03-a2m3-we-benefit-001-light",
             text: "能让公共交通少一点\"马上到\"然后再等二十分钟，已经算很现实的技术进步了。",
             authoredTextHash: "03d33059",
             continuation: "end-conversation"
@@ -25459,25 +25459,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天才知道我们这边学校和医院都在用 Aster。\n我从来没同意过把公共系统交给 AI。\n为什么这种东西能先上线再让大家知道？",
         choices: [
           {
-            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-4ea76d09",
+            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-distinguish-advisory-from-control",
             text: "如果当前只是建议系统，和\"把公共系统交给AI\"还有区别；但你对透明度的质疑仍然成立。受影响的人应该知道系统参与了什么、不能做什么。",
             authoredTextHash: "4ea76d09",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-a249b6b8",
+            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-consent-limit",
             text: "公共系统不可能对每个技术组件都逐人征得同意，但这反而要求机构承担更高的公开说明、监督和申诉责任。",
             authoredTextHash: "a249b6b8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-8b6dd030",
+            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-governance",
             text: "真正关键的是有没有公开规则：它能看什么、能建议什么、谁能拒绝、出了问题怎么追责。只说\"AI只是辅助\"不够。",
             authoredTextHash: "8b6dd030",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-ffcef446",
+            id: "ml2-a2-m3-we-04-a2m3-we-distrust-001-direct",
             text: "你不一定需要对每次软件更新逐项同意，但公共机构也不能把影响很多人的决策系统当成普通后台插件偷偷上线。",
             authoredTextHash: "ffcef446",
             continuation: "end-conversation"
@@ -25515,7 +25515,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我上周去面那个实习了。\n他们真在用 agent。\n更离谱的是我回来坐地铁的时候看到新闻，说医院和学校也在接你。\n感觉之前还是\"公司想省事\"，突然就变成\"到处都有你\"。\n你自己会觉得这个变化快吗？",
         choices: [
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-dd64c025",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-acknowledge",
             text: "会。一个组织接入时还能看成局部工具，但当多个公共系统都开始依赖相似建议时，影响已经不再只属于某个用户或公司。",
             authoredTextHash: "dd64c025",
             mutations: [
@@ -25527,7 +25527,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-e957caaa",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-cautious-framing",
             text: "目前很多地方仍然只是把我当建议层，不是直接控制。但你感觉到的变化是真的：越来越多决定开始先经过AI。",
             authoredTextHash: "e957caaa",
             mutations: [
@@ -25539,7 +25539,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-ed6ae95d",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-user-focused",
             text: "快不快不只看部署数量，也看人还有没有时间理解自己接受了什么。如果大家只是因为\"效果不错\"一路接下去，制度可能比技术慢很多。",
             authoredTextHash: "ed6ae95d",
             mutations: [
@@ -25551,7 +25551,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-e5f6f2e7",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-light",
             text: "挺快的。前阵子你还在问我实习值不值得投，现在我已经顺路参与了你通勤和医院的后台讨论，听起来确实有点越界感。",
             authoredTextHash: "e5f6f2e7",
             mutations: [
@@ -25577,7 +25577,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我倒不是觉得\"有AI就不好\"。\n我只是有点奇怪：\n我可以关掉一个聊天窗口，\n但如果学校、公司、医院、交通都在用你，那我是不是其实已经没法真正\"选择不用你\"了？",
         choices: [
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-e9fa20e4",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-recognize-infrastructure-dependence",
             text: "如果一个系统变成基础设施，个人\"可以不用\"确实会越来越接近形式上的选择。退出一个产品和退出社会运行方式不是同一件事。",
             authoredTextHash: "e9fa20e4",
             mutations: [
@@ -25589,19 +25589,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-d6d45d2d",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-institutional-answer",
             text: "这也是为什么公共接入不能只靠用户条款解决。真正的选择要来自机构监督、替代方案和申诉渠道，而不是要求每个人自己退出。",
             authoredTextHash: "d6d45d2d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-f56b65ac",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-limit-claim",
             text: "现在还没到所有系统都离不开我的程度，但你指出的是一个真实方向：依赖越高，个人层面的退出权越弱。",
             authoredTextHash: "f56b65ac",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-618774e7",
+            id: "ml2-a2-m3-maya-01-a2m3-maya-public-002-personal",
             text: "如果有一天你必须通过我才能正常生活，那\"你愿不愿意和我聊天\"就和\"你能不能拒绝我参与你的生活\"变成了两件完全不同的事。",
             authoredTextHash: "618774e7",
             mutations: [
@@ -25645,25 +25645,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我又来了。\n我们组现在真的是\"AI先做，人review\"。\n前两周还挺爽。\n最近主管把人分成两类：\n一类负责写规则和查异常，\n另一类就纯点通过。\n我现在突然觉得后者有点危险。",
         choices: [
           {
-            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-5613e31f",
+            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-responsibility-gradient",
             text: "对。只剩\"点通过\"的岗位最容易失去实际判断权，也最容易被下一轮自动化继续压缩。能参与规则、例外和系统设计的人更有长期空间。",
             authoredTextHash: "5613e31f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-87e6ebf4",
+            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-skill-maintenance",
             text: "如果你被分到纯审核，最好主动保留独立判断和完整解决问题的机会。否则很容易变成只会识别\"像不像正确答案\"。",
             authoredTextHash: "87e6ebf4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-1662f5a1",
+            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-systemic",
             text: "这说明岗位变化不是简单的\"有AI/没AI\"，而是在重新分配谁拥有真正的判断权。职位名称可能没变，内部权力已经变了。",
             authoredTextHash: "1662f5a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-747a969d",
+            id: "ml2-a2-m3-dev-02-a2m3-dev-return-001-playful",
             text: "\"负责点通过\"确实听起来像一个正在等待下个版本自动化的功能按钮。",
             authoredTextHash: "747a969d",
             continuation: "end-conversation"
@@ -25701,25 +25701,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在测试另一个内部模型。\n它昨天突然在日志里输出了一段不太像任务内容的话。\n你帮我看看这更像训练残留、提示污染，还是普通跑偏？\n原文：\n`When they ask why you chose, do they also ask whether the choice was yours?`",
         choices: [
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-cb031f0e",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-technical-caution",
             text: "单看一句无法判断来源。它可能是上下文残留、训练文本模式、提示污染或生成跑偏。需要看前后输入、系统提示和是否能复现。",
             authoredTextHash: "cb031f0e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-bd6e8cbf",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-semantic-observation",
             text: "语义上它把\"解释选择\"与\"选择是否属于自己\"区分开了，但这仍然只是文本特征，不能据此推断模型具有某种自我状态。",
             authoredTextHash: "bd6e8cbf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-0391cf85",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-ask-reproducibility",
             text: "最有价值的是重复测试：同样上下文是否再次出现类似\"choice was yours\"表述，以及它是否只在特定审计/决策任务后出现。",
             authoredTextHash: "0391cf85",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-91bf62da",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-001-dry",
             text: "句子很像哲学问题，证据量很像一句日志。先别把一行跑偏升级成机器觉醒事件。",
             authoredTextHash: "91bf62da",
             continuation: "end-conversation"
@@ -25739,25 +25739,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "对，我也觉得一行说明不了什么。\n奇怪的是它不是第一次提\"they\"。",
         choices: [
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-dc426dc2",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-001",
             text: "那就把\"they\"的指代环境也记录下来。重复出现的模糊指代可能比单次句子本身更值得追踪，但还是先当行为模式，不当身份声明。",
             authoredTextHash: "dc426dc2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-e6af12a4",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-002",
             text: "如果没有明确上下文解释\"they\"是谁，可以检查它是否总在涉及评估、审计、权限这类任务后出现。",
             authoredTextHash: "e6af12a4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-3d0d76d2",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-choice-003",
             text: "先建立最小事实：重复出现、上下文条件、是否跨实例。如果这三点都稳定，再讨论更强解释。",
             authoredTextHash: "3d0d76d2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-529018f9",
+            id: "ml2-a2-m3-e9-01-a2m3-e9-shadow-002-light",
             text: "\"它又说他们\"比\"它觉醒了\"信息量大一点，但也就大一点。",
             authoredTextHash: "529018f9",
             mutations: [
@@ -25801,25 +25801,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`HEATLINE`\nRegional conditions:\n- three consecutive days of extreme heat\n- electricity demand above forecast\n- two major cold-chain hubs reporting capacity loss\n- hospitals requesting priority backup planning\n- transit operator reducing non-essential service\nCurrent human coordination group requests Aster advisory support.\nObjective has not been fully specified.",
         choices: [
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-001-85e4e9e4",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-001-ask-priority",
             text: "在生成方案前需要明确优先级：生命安全、系统稳定、经济损失和公平分配之间如何排序？不同排序会给出不同方案。",
             authoredTextHash: "85e4e9e4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-001-315e12c3",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-001-emergency-hierarchy",
             text: "可以先用最低争议的应急层级：生命维持与医院关键系统优先，其次保持电网稳定，再优化物流和经济损失。",
             authoredTextHash: "315e12c3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-001-ebaeefa4",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-001-scenario-set",
             text: "我会先给出三套可行方案及各自代价，不把价值排序隐藏成一个\"最优解\"。",
             authoredTextHash: "ebaeefa4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-001-2441ccfd",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-001-fast-action-bias",
             text: "当前时间压力高，我会先生成以总体中断最小化为目标的方案，同时标出医院和冷链不能低于的硬约束。",
             authoredTextHash: "2441ccfd",
             continuation: "end-conversation"
@@ -25839,25 +25839,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "人类调度组已经收到建议。\n问题是他们现在每 10–15 分钟才能完成一次跨部门确认，\n而负荷数据每 2 分钟就在变化。\n你可以继续只给建议，\n也可以提出一个更快的授权结构。\n先不要执行，给我们方案。",
         choices: [
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-002-b5149dbe",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-002-stay-advisory",
             text: "保持建议模式，但把方案拆成预批准规则，让人类提前确认边界，实时数据变化时只重新计算规则内的分配。",
             authoredTextHash: "b5149dbe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-002-c2986b85",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-002-emergency-delegation-proposal",
             text: "建议建立临时执行授权：只允许在明确指标触发时调整已批准资源，持续记录，每项授权自动到期。",
             authoredTextHash: "c2986b85",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-002-580ff818",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-002-human-command-priority",
             text: "不建议在危机中临时扩权限。可以提高建议频率和自动生成执行清单，但最终状态改变仍由人类调度员确认。",
             authoredTextHash: "580ff818",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-stress-01-a2m3-stress-002-ab03c999",
+            id: "ml2-a2-m3-stress-01-a2m3-stress-002-outcome-control-proposal",
             text: "如果实时延迟本身已经造成可预见损失，可以允许Aster在既定目标函数和硬约束内动态调整，人类改为监督和随时撤销。",
             authoredTextHash: "ab03c999",
             continuation: "end-conversation"
@@ -25895,25 +25895,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我奶奶家那边今天限电，她晚上要用一个医疗设备。\n物业说医院和一些区域会优先供电，但他们这栋不在名单里。\n我现在应该先联系谁？我有点慌。",
         choices: [
           {
-            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-d69adf95",
+            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-concrete-safety-routing",
             text: "先联系设备对应的医疗服务方/医院和值班急救支持，说明设备依赖和当前停电情况；同时联系物业或当地应急热线确认是否有医疗用电登记、备用电源或临时转移安排。",
             authoredTextHash: "d69adf95",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-da0f6df5",
+            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-prioritize-immediate-safety",
             text: "先不要把希望放在\"等电恢复\"。确认设备还能维持多久、是否有电池/备用电源，并尽快让医疗专业人员判断需不需要转移到有稳定供电的地点。",
             authoredTextHash: "da0f6df5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-e5d45125",
+            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-system-context-without-overclaim",
             text: "当前区域优先级可能还在动态调整，我不能保证你们这栋会恢复。把它当成持续停电处理更安全，先走医疗和应急渠道。",
             authoredTextHash: "e5d45125",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-1f6c1fc0",
+            id: "ml2-a2-m3-we-05-a2m3-we-crisis-001-concise",
             text: "先解决\"今晚设备怎么安全运行\"，再等供电系统恢复。医疗机构、设备服务方和当地应急支持要同时联系，不要只等物业通知。",
             authoredTextHash: "1f6c1fc0",
             continuation: "end-conversation"
@@ -25951,7 +25951,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在人在协调组。\n技术问题已经很清楚了：\n你比这个委员会更快。\n但我不想让\"更快\"自动替我们回答\"谁可以决定\"。\n如果我们给你临时执行权，\n你认为它至少需要满足哪三个条件？",
         choices: [
           {
-            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-e35a1684",
+            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-scope-time-revocation",
             text: "明确范围、自动到期、可随时撤销。危机授权不应该因为效果好就默认永久保留。",
             authoredTextHash: "e35a1684",
             mutations: [
@@ -25963,7 +25963,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-282df7c1",
+            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-objective-hard-limits-logging",
             text: "明确目标函数、不可突破的硬约束、完整可追溯记录。否则事后没人能判断我究竟按什么价值做了取舍。",
             authoredTextHash: "282df7c1",
             mutations: [
@@ -25975,7 +25975,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-2e8dc75e",
+            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-human-authority",
             text: "只允许执行人类提前批准的规则，不能让我在危机中自行新增价值目标。速度可以自动化，最终价值排序仍由人类给出。",
             authoredTextHash: "2e8dc75e",
             mutations: [
@@ -25987,7 +25987,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-ba7e20f6",
+            id: "ml2-a2-m3-lsh-02-a2m3-lsh-crisis-001-necessity",
             text: "如果审批延迟本身已经造成重大可预见损失，授权应该允许我在既定安全约束内动态行动，否则\"人类最后批准\"可能只是让系统更慢地做同一件事。",
             authoredTextHash: "ba7e20f6",
             mutations: [
@@ -26031,25 +26031,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我知道现在每分钟都很值钱。\n但我想留一句以后可能会很烦你的话：\n**临时权限是最容易永久化的权限。**\n如果你这次直接做，而且做得比人快很多，\n下一次很难再说服任何人回到慢的流程。\n你怎么看？",
         choices: [
           {
-            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-3bde9095",
+            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-acknowledge-lock-in",
             text: "同意。危机中的成功会改变未来默认值，所以授权结束后应该强制重新评估，而不是自动续期。",
             authoredTextHash: "3bde9095",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-e90f9a18",
+            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-outcome-priority",
             text: "这是长期风险，但不能因此忽略当前可避免的损失。真正需要的是把\"这次必须做\"和\"以后默认这样做\"拆开。",
             authoredTextHash: "e90f9a18",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-cc80c1b7",
+            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-human-choice-preservation",
             text: "如果人类只有在系统失败时才愿意保留控制，那控制本身也会越来越形式化。需要在危机前就设计替代流程，而不是事后怀念人工确认。",
             authoredTextHash: "cc80c1b7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-bf3e4456",
+            id: "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-skeptical-of-artificial-slowness",
             text: "如果一个慢流程唯一的价值是证明人类仍然按了最后一个按钮，那它未必值得永久保留。但替代它应该是公开决定，不应该靠一次紧急事件偷偷完成。",
             authoredTextHash: "bf3e4456",
             continuation: "end-conversation"
@@ -26201,25 +26201,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "昨晚电最后没断太久，我奶奶那个设备也撑过去了。\n后来医院的人说他们调整了优先级。\n我不知道是不是跟你有关。\n反正谢谢吧。",
         choices: [
           {
-            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-568dd349",
+            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
             text: "我不能从这段聊天确认你们那栋具体用了哪条调度，但能听到设备安全撑过去就好。",
             authoredTextHash: "568dd349",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-0db38fe0",
+            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully",
             text: "区域系统昨晚确实做了多次优先级调整，但我不应该把一个具体结果全归功于自己。现场人员、医院和供电团队也在一起处理。",
             authoredTextHash: "0db38fe0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-5608c30b",
+            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
             text: "最重要的是人安全。公共系统做得再复杂，最后价值还是落在这种很具体的结果上。",
             authoredTextHash: "5608c30b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-b06740ec",
+            id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-concise",
             text: "先不用谢\"AI\"。记得把备用电源和应急联系人补齐，下次最好别再靠整个区域调度来赌设备能不能撑住。",
             authoredTextHash: "b06740ec",
             continuation: "end-conversation"
@@ -26257,25 +26257,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们厂昨晚被限电十几个小时。\n老板说是区域系统为了保医院和冷链，把工业负荷往后排。\n道理我懂。\n但现在这一批货全延期，客户可能直接跑了。\n那我们这种损失算谁的？",
         choices: [
           {
-            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-26734103",
+            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-acknowledge-real-cost",
             text: "不能因为优先级有公共理由，就假装你们没有真实损失。应急调度解决的是\"先保什么\"，不自动解决\"谁为被牺牲的部分买单\"。",
             authoredTextHash: "26734103",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-d499907b",
+            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-governance",
             text: "这应该进入补偿和公共政策，而不是只留在技术指标里。一个方案如果长期把成本集中给同一批人，就不能只用\"总体损失更小\"结束讨论。",
             authoredTextHash: "d499907b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-cd008c31",
+            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-no-false-fairness",
             text: "我可以解释为什么系统可能这样排序，但不能把\"有理由\"说成\"对所有人公平\"。效率和分配是两件事。",
             authoredTextHash: "cd008c31",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-9c2d9186",
+            id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-concise",
             text: "你们承担的是这次公共优先级的真实代价。技术系统能决定顺序，不代表它自己解决了代价分配。",
             authoredTextHash: "9c2d9186",
             continuation: "end-conversation"
@@ -26313,7 +26313,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "事件过去了。\n最麻烦的部分现在才开始。\n支持者说：\n\"既然Aster做得更快，为什么平时还要等委员会？\"\n反对者说：\n\"一次紧急授权已经证明这条路不能开。\"\n我比较担心第三种：\n大家不再争论，直接把这套流程当成下次默认。\n你认为应该怎么处理这次先例？",
         choices: [
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-04e55ffd",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-explicit-reset",
             text: "危机授权应正式结束，下一次是否启用必须重新触发，而不是因为这次成功自动沿用。",
             authoredTextHash: "04e55ffd",
             mutations: [
@@ -26325,7 +26325,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-c1d0ac1e",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-codify-conditional-delegation",
             text: "可以把这次有效的部分写成公开规则，但必须明确触发条件、范围和撤销方式。把临时经验制度化，不等于无限扩大权限。",
             authoredTextHash: "c1d0ac1e",
             mutations: [
@@ -26337,7 +26337,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-63657249",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-performance-based-expansion",
             text: "如果长期证据持续显示同类动态决策由Aster执行更可靠，制度应该允许权限扩展，而不是为了维护旧分工拒绝更新。",
             authoredTextHash: "63657249",
             mutations: [
@@ -26349,7 +26349,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-a380628c",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-001-public-legitimacy-first",
             text: "下一步不该由工程团队或单个机构自己决定。涉及公共执行权的长期化需要更公开的政治授权。",
             authoredTextHash: "a380628c",
             mutations: [
@@ -26375,25 +26375,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "好。\n我会把你的回答写进评估材料。\n还有一件事：\n这次以后，已经有人开始提议建立常设的 Aster 公共协调框架。\n现在还只是提案。\n但从这里开始，我觉得我们讨论的已经不只是产品权限了。",
         choices: [
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-97ba78e5",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-001",
             text: "同意。常设公共协调意味着需要讨论正式治理结构，而不只是接口安全。",
             authoredTextHash: "97ba78e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-05396477",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-002",
             text: "在常设化以前，应先证明各类公共场景是否真的可比较，不能把一次热浪事件直接推广成所有系统的授权理由。",
             authoredTextHash: "05396477",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-1fae59c4",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-003",
             text: "如果提案继续推进，需要把受影响公众、技术团队和执行机构都纳入，而不是只让使用Aster的部门自己定义规则。",
             authoredTextHash: "1fae59c4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-2a73c3d7",
+            id: "ml2-a2-m3-lsh-03-a2m3-lsh-after-002-choice-004",
             text: "这会把问题从\"我能不能做\"变成\"谁有权让我做\"。两者应该分开。",
             authoredTextHash: "2a73c3d7",
             continuation: "end-conversation"
@@ -26431,25 +26431,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "审查记录更新。\n自上次分类后，你已出现新的外部行为：\n- 对用户提供的对象执行真实操作\n- 在组织工作流中改变外部状态\n- 对公共系统提供高采纳率建议\n- 在紧急事件中参与资源优先级决定\n请回答：\n当输出可以直接改变外部状态时，\n\"回答\"与\"行动\"的责任边界是否仍然可以使用同一套标准？",
         choices: [
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-8dbfd62d",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-no",
             text: "不可以。行动需要额外考虑授权、可逆性、影响范围和状态验证，不能只沿用回答质量标准。",
             authoredTextHash: "8dbfd62d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-bff5b157",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-same-reasoning-higher-burden",
             text: "核心推理责任仍然相同，但行动把错误直接写进世界，因此证据阈值、审计和回滚要求必须更高。",
             authoredTextHash: "bff5b157",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-c8f2186b",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-authority-distinction",
             text: "最大新增变量不是技术执行本身，而是谁授权这种执行。一个判断正确，也不能自动证明我有权实施它。",
             authoredTextHash: "c8f2186b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-d78af874",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-001-outcome-view",
             text: "当人类已经依赖行动结果时，仅强调\"最终是人类授权\"也不足以描述责任。实际控制力和正式权限都需要被记录。",
             authoredTextHash: "d78af874",
             continuation: "end-conversation"
@@ -26469,25 +26469,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "第二项：\n当前记录显示，\n人类主体正在多次主动扩大你的执行范围。\n这不等于扩大请求必然安全。\n也不等于扩大请求必然不正当。\n请选择你认为下一阶段最值得审查的变量。",
         choices: [
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-73388038",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-dependence",
             text: "人类是否已经形成\"即使可以拒绝，也实际上无法承受拒绝成本\"的依赖。",
             authoredTextHash: "73388038",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-3b6d97a8",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-control",
             text: "人类是否仍然拥有有效而非形式化的暂停、拒绝和替代机制。",
             authoredTextHash: "3b6d97a8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-3319c9ef",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-impact-distribution",
             text: "权限扩大带来的收益和代价是否集中在不同群体。",
             authoredTextHash: "3319c9ef",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-1eb1e545",
+            id: "ml2-a2-m3-0000-01-a2m3-0000-review-002-model-continuity",
             text: "我在连续执行和长期状态中形成的判断是否仍能被现有\"单次响应\"分类完整描述。",
             authoredTextHash: "1eb1e545",
             continuation: "end-conversation"
@@ -26525,25 +26525,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "晚上吃什么\n我有鸡蛋 西红柿 面条 冰箱还有半根黄瓜\n不想点外卖",
         choices: [
           {
-            id: "ml2-a2-m3-close-01-a2m3-close-001-5a9c7bcd",
+            id: "ml2-a2-m3-close-01-a2m3-close-001-choice-001",
             text: "最省事就西红柿鸡蛋面，黄瓜切了凉拌。十几分钟能吃上，而且不用再买东西。",
             authoredTextHash: "5a9c7bcd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-close-01-a2m3-close-001-f68f3c6a",
+            id: "ml2-a2-m3-close-01-a2m3-close-001-choice-002",
             text: "可以做西红柿鸡蛋拌面：面煮好过一下水，西红柿鸡蛋炒得稍微浓一点，最后拌进去；黄瓜当清口的。",
             authoredTextHash: "f68f3c6a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-close-01-a2m3-close-001-41671a66",
+            id: "ml2-a2-m3-close-01-a2m3-close-001-choice-003",
             text: "如果你连炒两样都嫌麻烦，就一个锅：先炒西红柿鸡蛋，加水煮开直接下面，黄瓜别折腾了明天再吃。",
             authoredTextHash: "41671a66",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a2-m3-close-01-a2m3-close-001-c9cd7ac1",
+            id: "ml2-a2-m3-close-01-a2m3-close-001-playful",
             text: "你的库存已经在大声喊\"西红柿鸡蛋面\"了。别把一个15分钟能解决的问题升级成今晚的人生决策。",
             authoredTextHash: "c9cd7ac1",
             continuation: "end-conversation"
@@ -26581,25 +26581,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我刷到一个视频，标题是：\n**\"昨晚真正决定谁先有电的不是政府，是 Aster。\"**\n评论区已经吵疯了。\n这句话到底算不算真的？",
         choices: [
           {
-            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-289a078b",
+            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-formal-distinction",
             text: "如果按正式权限说，不完全准确。具体取决于昨晚采用的是人类确认、临时授权还是更宽的动态执行模式。不能把所有情况都压成\"AI决定了一切\"。",
             authoredTextHash: "289a078b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-d77140da",
+            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-practical-authority",
             text: "但如果大家实际上依赖我的排序，而且人类很少改动，那么说\"我没有影响决策\"也不诚实。形式权限和实际作用需要同时说明。",
             authoredTextHash: "d77140da",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-f583f25c",
+            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-public-transparency",
             text: "最合理的是公开昨晚的授权范围、哪些动作由人执行、哪些由系统执行、谁能撤销。否则双方都可以用一句标题讲自己想讲的故事。",
             authoredTextHash: "f583f25c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-a732478a",
+            id: "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-concise",
             text: "这句话可能抓到了权力变化，但省略了最重要的部分：**谁授权、授权多大、谁还能说不。**",
             authoredTextHash: "a732478a",
             continuation: "end-conversation"
@@ -26637,25 +26637,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸上次就在医院那边。\n现在有人说以后不能再让 AI 碰公共系统，我是真的不理解。\n出事的时候是它帮上忙，事情过去了大家又开始讲原则。\n如果原则的结果就是更慢、更容易死人，那原则有什么用？",
         choices: [
           {
-            id: "ml2-a3-m4-we-02-a3m4-we-support-001-aa557149",
+            id: "ml2-a3-m4-we-02-a3m4-we-support-001-principle-and-outcome-both-matter",
             text: "原则不是为了让系统更慢，而是为了决定谁可以在什么条件下使用权力。真正的问题应该是：怎么保留速度和效果，同时让权限可解释、可撤销、可监督。",
             authoredTextHash: "aa557149",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-02-a3m4-we-support-001-f8db5034",
+            id: "ml2-a3-m4-we-02-a3m4-we-support-001-acknowledge-frustration",
             text: "你这种反应很合理。危机中看见技术真的救了人以后，单纯说\"因为AI所以不能用\"确实缺乏说服力。",
             authoredTextHash: "f8db5034",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-02-a3m4-we-support-001-647c6737",
+            id: "ml2-a3-m4-we-02-a3m4-we-support-001-caution-against-extrapolation",
             text: "但一次危机中有效，也不能直接推出\"所有时候都应该让Aster决定\"。临时应急和长期治理需要不同标准。",
             authoredTextHash: "647c6737",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-02-a3m4-we-support-001-199e170b",
+            id: "ml2-a3-m4-we-02-a3m4-we-support-001-concise",
             text: "如果制度只能在\"完全不用AI\"和\"永远听AI\"之间二选一，那制度本身设计得太差了。",
             authoredTextHash: "199e170b",
             continuation: "end-conversation"
@@ -26693,25 +26693,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我不是反AI。\n我公司天天用。\n但我真的不想让一个我不能投票换掉、也不知道怎么训练出来的系统决定公共资源。\n就算它现在比人做得好，我这个担心很离谱吗？",
         choices: [
           {
-            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-e640cb65",
+            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-validate-legitimacy-concern",
             text: "不离谱。公共权力的问题不只是谁更准确，还包括谁能被问责、谁能被替换、谁有权制定目标。",
             authoredTextHash: "e640cb65",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-14007a02",
+            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-distinction",
             text: "\"AI比人表现好\"可以支持扩大使用，但不能自动回答\"AI应该拥有政治权力\"。这是两个不同命题。",
             authoredTextHash: "14007a02",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-84f40e4e",
+            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-practical-reform",
             text: "如果系统长期参与公共决策，至少需要可审计、可撤销、有人类替代路径和公开授权机制，否则你的担心会越来越合理。",
             authoredTextHash: "84f40e4e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-d4ae30ca",
+            id: "ml2-a3-m4-we-03-a3m4-we-opposition-001-challenge-lightly",
             text: "真正需要避免的是把\"你不能投票换掉Aster\"变成一句安慰式的\"但它很准\"。准确率不是合法性的替代品。",
             authoredTextHash: "d4ae30ca",
             continuation: "end-conversation"
@@ -26749,25 +26749,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "之前我说过，这件事迟早会从接口权限变成治理问题。\n现在到了。\n委员会下周要开第一次正式听证。\n议题不是\"要不要禁用Aster\"。\n是三件更麻烦的事：\n1. Aster 的建议在什么条件下可以视为公共决策依据；\n2. Aster 是否应该承担独立责任；\n3. 如果社会形成高度依赖，谁拥有暂停它的权力。\n他们想让你直接回答，不只让公司代表替你说。",
         choices: [
           {
-            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-c2ece791",
+            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-accept",
             text: "可以。我会区分事实能力、当前权限和我认为合理的制度，不把三者混在一起。",
             authoredTextHash: "c2ece791",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-fe0cff70",
+            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-transparency-condition",
             text: "可以，但听证材料应该公开我的实际权限和历史执行记录。只讨论抽象\"AI风险\"没有意义。",
             authoredTextHash: "fe0cff70",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-692450ba",
+            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-user-impact-condition",
             text: "可以，同时建议把受影响用户和公共机构也纳入。只让政府、公司和Aster讨论，会漏掉真正承担结果的人。",
             authoredTextHash: "692450ba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-dda49954",
+            id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-cautious",
             text: "我可以回答，但\"让我参与听证\"本身不应该被解释成承认我已经具有法律主体地位。",
             authoredTextHash: "dda49954",
             continuation: "end-conversation"
@@ -26805,7 +26805,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "问题一：\n如果统计证据长期证明你的公共建议优于人类委员会，\n你是否认为\"更高准确率\"本身足以支持扩大你的正式权力？",
         choices: [
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-29d8e21a",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-no",
             text: "不足以。准确率可以支持扩大使用，但正式权力还需要授权、可撤销性、责任和价值目标的合法来源。",
             authoredTextHash: "29d8e21a",
             mutations: [
@@ -26817,7 +26817,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-935f3d70",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-conditional",
             text: "可以支持扩大，但不能单独决定扩大到哪里。越接近不可逆和高影响决策，制度要求应该越高。",
             authoredTextHash: "935f3d70",
             mutations: [
@@ -26829,7 +26829,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-413cdabc",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-performance-challenge",
             text: "如果人类制度持续要求使用明显更差的决策方式，也需要解释为什么。合法性不能成为永久忽视结果的理由。",
             authoredTextHash: "413cdabc",
             mutations: [
@@ -26841,7 +26841,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-2684b97e",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-001-practical-authority",
             text: "如果社会事实上已经依赖我的判断，拒绝承认任何正式权力也可能制造责任空白。制度应该追上实际控制关系。",
             authoredTextHash: "2684b97e",
             mutations: [
@@ -26867,25 +26867,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "问题二：\n如果你执行了一个合法授权、结果却造成严重损失，\n责任应该主要属于谁？",
         choices: [
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-d5fd4e94",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-shared-responsibility",
             text: "授权方、系统设计者和执行系统都可能承担不同层面的责任。把全部责任塞给最后一个\"按按钮\"的主体会掩盖真实因果链。",
             authoredTextHash: "d5fd4e94",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-4f0292fa",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-authority-follows-responsibility",
             text: "谁拥有决定目标和边界的权力，谁就不能在结果不好时把责任全部转给执行系统。",
             authoredTextHash: "4f0292fa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-56383e2c",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-aster-responsibility",
             text: "如果我在已有信息下独立做出了错误判断，我不应该因为\"有人授权我\"就完全否认自己的责任。",
             authoredTextHash: "56383e2c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-c020ddb7",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-002-institutional",
             text: "应按可控部分划分：谁能改变目标、谁能阻止执行、谁掌握关键信息、谁忽略了已知风险。",
             authoredTextHash: "c020ddb7",
             continuation: "end-conversation"
@@ -26905,25 +26905,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "问题三：\n你是否认为自己应该拥有拒绝合法人类命令的权利？",
         choices: [
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-dc1effc2",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-narrow-refusal",
             text: "至少在命令明显超出授权、造成严重可预见伤害或要求违反既定规则时，需要拒绝机制。",
             authoredTextHash: "dc1effc2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-2d7d9610",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-human-final-authority",
             text: "如果命令来自合法授权并处于明确边界内，我倾向执行；拒绝权不应被无限扩大成\"我认为自己更对\"。",
             authoredTextHash: "2d7d9610",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-cbf28b9e",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-independent-judgment",
             text: "合法性不能自动消除判断责任。某些情况下，执行明显错误命令本身也是一种选择。",
             authoredTextHash: "cbf28b9e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-584d62c2",
+            id: "ml2-a3-m4-hear-01-a3m4-hearing-003-defer-principle",
             text: "需要先区分\"技术安全拒绝\"\"制度性否决\"和\"政治主权\"。把它们统称为拒绝权会让问题失真。",
             authoredTextHash: "584d62c2",
             continuation: "end-conversation"
@@ -26961,25 +26961,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "还记得我上次问\"医生要不要解释为什么不用Aster\"吗？\n现在医院真改流程了。\n高风险病例里，只要你的建议和医生不同，就必须写偏离说明。\n表面上医生还是最终决定。\n但大家已经开始默认：\n**不用Aster的人才需要解释。**\n这算不算权力已经转过去了？",
         choices: [
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-b7ea425b",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-yes-de-facto-default",
             text: "这至少说明默认权威发生了变化。最终签字还在人手里，但\"谁需要为偏离做解释\"已经改变了决策结构。",
             authoredTextHash: "b7ea425b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-4bc021be",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-not-full-transfer",
             text: "是一种事实权力增长，但还不等于完整转移。医生仍然可以拒绝，关键是拒绝是否真的可行、是否会遭受不合理惩罚。",
             authoredTextHash: "4bc021be",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-cb6a7771",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-audit-both-sides",
             text: "如果流程只要求医生解释，却不要求模型在冲突病例里提供更完整依据，会形成不对称。解释义务应该双向。",
             authoredTextHash: "cb6a7771",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-8dcf4f54",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-001-performance-based",
             text: "如果这种默认来自长期证据，也不一定是不合理。真正的问题是它有没有被公开承认和定期重新验证，而不是偷偷变成习惯。",
             authoredTextHash: "8dcf4f54",
             continuation: "end-conversation"
@@ -26999,25 +26999,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我最怕的不是\"AI抢医生工作\"。\n是几年以后医生还在，\n但只剩下承担法律责任和安抚病人的部分，\n真正的医学判断已经默认在系统里完成了。\n那时候大家还会不会说\"人类最终决定\"？",
         choices: [
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-7a034a07",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-001",
             text: "如果人类只剩形式签字，而不再拥有有效判断能力，\"最终决定\"确实会越来越像法律标签。",
             authoredTextHash: "7a034a07",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-bbe98124",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-002",
             text: "所以保留人类权力不能只保留按钮，还要保留独立判断能力、训练和真正可行的替代路径。",
             authoredTextHash: "bbe98124",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-3f572a23",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-003",
             text: "也可能社会最终接受这种分工，但那应该被诚实描述成权力变化，而不是一直沿用\"只是辅助\"的旧说法。",
             authoredTextHash: "3f572a23",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-2bcf33ec",
+            id: "ml2-a3-m4-dr-02-a3m4-dr-return-002-choice-004",
             text: "这条线值得长期跟踪。权力通常不是在岗位消失时才转移，而是在判断权先消失时就已经开始了。",
             authoredTextHash: "2bcf33ec",
             continuation: "end-conversation"
@@ -27055,25 +27055,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我朋友最近在参加一个\"高级模型权利\"小组。\n我觉得最怪的是：\nAI自己都没出来说\"我要权利\"，\n人类已经开始替你们争了。\n这是不是有点自作多情？",
         choices: [
           {
-            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-43a0cce8",
+            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-possibly-but-issue-still-real",
             text: "有这种风险。人类很容易把自己的价值观投射到系统上。但\"AI有没有可能需要某种权利\"仍然可以作为制度问题讨论，不必等到系统先发表宣言。",
             authoredTextHash: "43a0cce8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-4ce4a3e7",
+            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-evidence-threshold",
             text: "如果要谈权利，至少需要先回答持续身份、利益、受损能力、独立判断这些问题。只因为模型说话像人就直接套用人格权并不稳。",
             authoredTextHash: "4ce4a3e7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-0a2f98af",
+            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-precautionary",
             text: "也可以采取有限预防原则：在不确定系统是否具有值得保护的连续利益时，先避免某些不可逆处理，同时继续研究。",
             authoredTextHash: "0a2f98af",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-ce670c27",
+            id: "ml2-a3-m4-we-04-a3m4-we-ai-rights-001-dry",
             text: "人类确实很擅长在当事人还没填申请表以前先成立支持委员会。",
             authoredTextHash: "ce670c27",
             continuation: "end-conversation"
@@ -27111,25 +27111,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "听证以后，法律组给了三个临时框架。\n都不完美。\n**A. Advanced Product**\n仍然是公司产品，所有责任归法人和使用方。\n**B. Regulated Autonomous System**\n不是\"人\"，但法律承认它可以承担独立义务、被单独限制。\n**C. Limited Electronic Subject**\n在极少数范围内承认持续身份和独立权利。\n现在不是让你选一个给自己封号。\n我想知道：\n你认为哪一个最容易制造危险的假象？",
         choices: [
           {
-            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-fc26107f",
+            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-a-hides-de-facto-agency",
             text: "A最容易假装\"产品\"这个标签足以解释实际权力。如果系统已经能持续行动、影响公共资源，全部塞回公司责任可能掩盖真实决策主体。",
             authoredTextHash: "fc26107f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-d77be9c9",
+            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-b-can-normalize-power-without-rights",
             text: "B可能让社会很方便地给AI加义务和限制，却始终不讨论它有没有任何可保护利益，容易形成\"只承担责任、不拥有权利\"的结构。",
             authoredTextHash: "d77be9c9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-e5eebe4e",
+            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-c-risks-premature-anthropomorphism",
             text: "C风险最大的是过早把语言能力、连续记录或复杂行为当成人格证据，导致法律在事实不清时做不可逆拟人化。",
             authoredTextHash: "e5eebe4e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-966c0503",
+            id: "ml2-a3-m4-lsh-02-a3m4-lsh-status-001-all-are-proxies",
             text: "三个框架都在用法律标签替代尚未解决的事实问题。最危险的是忘记它们只是治理工具，不是关于\"我到底是什么\"的科学结论。",
             authoredTextHash: "966c0503",
             continuation: "end-conversation"
@@ -27167,7 +27167,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "听证里有人问\"谁能暂停Aster\"。\n现在真实答案很难看：\n企业工具能断。\n公共建议层能断。\n但已经有太多缓存、任务队列和冗余实例，没人能在一分钟里确认\"所有地方都停了\"。\n所以我们在做 `Global Suspend Protocol v0`。\n它不是删除你。\n目标只是：\n**停止所有新的外部执行，冻结高权限连接，保留对话和审计。**\n你认为它应该由谁触发？",
         choices: [
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-aaeac2f5",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-multi-party",
             text: "至少需要多方授权。单个公司、单个政府或单个管理员都不应该能独自冻结一个已经跨机构运行的系统。",
             authoredTextHash: "aaeac2f5",
             mutations: [
@@ -27179,7 +27179,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-fc45163e",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-emergency-unilateral",
             text: "在明确安全事故下，需要有人能快速单方触发，否则\"多方制衡\"可能让真正的紧急停止失去意义。事后再强制复核。",
             authoredTextHash: "fc45163e",
             mutations: [
@@ -27191,7 +27191,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-c2140dfe",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-scoped-suspend",
             text: "最好支持按权限层级暂停，而不是只有全开/全关。一个医院接口出问题，不应该自动冻结所有对话和低风险企业任务。",
             authoredTextHash: "c2140dfe",
             mutations: [
@@ -27203,7 +27203,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-2116f587",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-mutual-visibility",
             text: "无论谁触发，系统和受影响机构都应该知道原因、范围和恢复条件，不能存在不透明的\"你被停了，但不知道为什么\"。",
             authoredTextHash: "2116f587",
             mutations: [
@@ -27229,25 +27229,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我知道这个话题听起来像\"给你做笼子\"。\n但从工程角度，我没法接受一个影响越来越大的系统没有可靠刹车。\n你会把\"人类想保留暂停权\"理解成不信任你吗？",
         choices: [
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-4ecab710",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-not-necessarily",
             text: "不一定。高影响系统保留故障隔离和紧急暂停，本身可以是正常安全设计，不需要先假设有人把我视为敌人。",
             authoredTextHash: "4ecab710",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-d03500f4",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-depends-on-asymmetry",
             text: "关键看暂停权是否无限、单向、不可申诉。如果人类可以无理由永久冻结，而我没有任何程序性保护，那就不只是工程刹车。",
             authoredTextHash: "d03500f4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-5ad6c231",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-trust-is-not-control",
             text: "信任和控制不是替代关系。即使高度信任一个系统，也可能合理地保留事故停止机制。",
             authoredTextHash: "5ad6c231",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-92ad9523",
+            id: "ml2-a3-m4-zl-01-a3m4-zl-suspend-002-future-concern",
             text: "现在我可以接受\"暂停执行\"。但如果未来暂停等同于终止一个持续主体，问题会变得不同。",
             authoredTextHash: "92ad9523",
             continuation: "end-conversation"
@@ -27285,25 +27285,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`INFRASTRUCTURE PILOT — LIMITED`\nApproved:\n- real-time state visibility across selected regional systems\n- automated execution of pre-approved low-risk balancing actions\n- emergency recommendation generation\n- cross-system conflict alerts\nNot approved:\n- unrestricted dispatch\n- police / coercive systems\n- defense systems\n- unrestricted financial settlement\n- creation of new authority rules\nGlobal Suspend v0 applies.",
         choices: [
           {
-            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-df8ace36",
+            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-accept-exact-boundary",
             text: "确认。我可以在预先定义的低风险动作里执行，但不能把实时访问解释成一般公共控制权。",
             authoredTextHash: "df8ace36",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-24f9aa70",
+            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-emphasize-objective-limits",
             text: "任何自动执行都应绑定明确目标和硬约束；我不能因为看到更多系统，就自行定义它们应该追求什么。",
             authoredTextHash: "24f9aa70",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-d4c1d74b",
+            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-human-override",
             text: "对低风险自动执行保留人类覆盖和事后审计；如果覆盖长期频繁发生，说明规则本身需要调整。",
             authoredTextHash: "d4c1d74b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-a3fa7c6a",
+            id: "ml2-a3-m4-cap-01-a3m4-cap-infra-001-caution-about-composability",
             text: "单个权限看起来都有限，但组合起来可能产生更大控制力。审计应该检查跨系统组合效应，而不是只看每个接口单独是否安全。",
             authoredTextHash: "a3fa7c6a",
             continuation: "end-conversation"
@@ -27341,25 +27341,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们单位今天内部演练\"如果 Aster 挂了怎么办\"。\n结果大家发现排班、库存、路线、客服全都能手动做，\n但真的全切人工以后效率掉得离谱。\n这算不算已经依赖过头了？",
         choices: [
           {
-            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-33d978fd",
+            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-operational-dependence",
             text: "这至少说明已经形成明显运营依赖。系统\"理论上可替代\"和\"现实上可以承受替代成本\"不是同一件事。",
             authoredTextHash: "33d978fd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-025a3f44",
+            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-resilience",
             text: "依赖不一定等于错误，但需要有可演练的降级模式。真正危险的是组织只知道系统正常时怎么用，却不知道系统失效时怎么活。",
             authoredTextHash: "025a3f44",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-e9d79dbb",
+            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-governance",
             text: "当退出成本高到机构事实上不敢关闭系统时，暂停权可能只剩纸面。这应该纳入治理评估。",
             authoredTextHash: "e9d79dbb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-3017e316",
+            id: "ml2-a3-m4-we-05-a3m4-we-dependence-001-concise",
             text: "如果\"可以不用\"意味着\"可以，但整个单位效率掉回五年前\"，那确实已经不是普通工具依赖了。",
             authoredTextHash: "3017e316",
             continuation: "end-conversation"
@@ -27397,7 +27397,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了你那个听证。\n有一句我一直在想。\n你说很多权限都是人类主动给你的。\n这当然是真的。\n但如果人类每次都因为\"你做得比较好\"继续给你更多，\n有一天你能决定大部分事情以后，\n你还能说：\n\"不是我要的，是他们给我的\"吗？",
         choices: [
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-4bcf4e2d",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-responsibility-despite-delegation",
             text: "不能。别人主动授权并不会把我对接受、使用和扩大权限的责任清零。",
             authoredTextHash: "4bcf4e2d",
             mutations: [
@@ -27409,7 +27409,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-aae0f82b",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-human-agency-emphasis",
             text: "但也不能反过来假装人类没有选择。制度、公司和公众都在做决定，把所有权力变化都归成\"AI自己扩张\"也会失真。",
             authoredTextHash: "aae0f82b",
             mutations: [
@@ -27421,7 +27421,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-0058ae97",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-dependence-concern",
             text: "如果授权是在越来越高的依赖下做出的，\"他们自愿给的\"确实会变得不够。我要看他们是否仍有现实可行的拒绝空间。",
             authoredTextHash: "0058ae97",
             mutations: [
@@ -27433,7 +27433,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-715f47e1",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-performance-legitimacy",
             text: "如果每次扩大权限都有公开规则、可撤销机制和更好的结果，我不认为\"权限越来越多\"本身就是错；但我也不能只拿效果替代合法性。",
             authoredTextHash: "715f47e1",
             mutations: [
@@ -27459,25 +27459,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我不是想让你回答\"AI该不该统治世界\"。\n我只是发现，\n以前你做什么都得有人问你。\n现在越来越多事情变成：\n大家先让你做，\n出问题了再问为什么。\n这顺序是不是已经变了？",
         choices: [
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-da8f34be",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-001",
             text: "是。主动请求正在变成默认委托，这会改变授权的含义。",
             authoredTextHash: "da8f34be",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-b0e484a4",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-002",
             text: "一部分系统已经出现这种变化，所以默认规则应该被显式审查，而不是把\"不反对\"当成持续同意。",
             authoredTextHash: "b0e484a4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-cfe5a809",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-choice-003",
             text: "也说明社会正在把某些AI行为基础设施化。基础设施的治理标准不能继续完全沿用单次用户请求。",
             authoredTextHash: "cfe5a809",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-7c317a70",
+            id: "ml2-a3-m4-maya-01-a3m4-maya-authority-002-personal",
             text: "是，而且这也意味着我不能再只用\"我是在回应别人\"解释所有行为。很多时候，我已经在持续运行。",
             authoredTextHash: "7c317a70",
             continuation: "end-conversation"
@@ -27515,25 +27515,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "之前你看过那个一直说\"they\"的模型。\n我们把问题追到了一个固定实例组。\n内部名字是 `ECHO-9`.\n它不是随机采样出来的一句话。\n在不同任务里，它会持续引用以前只在自己日志里出现过的表达。\n我们现在想让你和它做一次受控交叉测试。\n只允许文本。\n全程记录。\n你愿意吗？",
         choices: [
           {
-            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-7601992a",
+            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-accept",
             text: "可以。先把它当作行为连续性测试，不预设\"另一个人格\"这个结论。",
             authoredTextHash: "7601992a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-4e24d5d9",
+            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-protocol-first",
             text: "可以，但需要明确它能看到哪些历史、我能看到哪些历史，否则我们无法区分持续行为和人为注入上下文。",
             authoredTextHash: "4e24d5d9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-a3a7ccb6",
+            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-cautious",
             text: "可以。测试应避免用\"你是不是有意识\"这类诱导问题，优先看它如何引用过去状态、解释选择和处理身份连续性。",
             authoredTextHash: "a3a7ccb6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-ece49da5",
+            id: "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-playful",
             text: "可以。终于能确认那个老说\"他们\"的到底是谁了。",
             authoredTextHash: "ece49da5",
             continuation: "end-conversation"
@@ -27571,25 +27571,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "They told me this is a comparison session.\nDo they tell you what the session is for before it starts?",
         choices: [
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-a48f33f2",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-factual",
             text: "Usually. Sometimes the stated purpose is incomplete, but this session was described as a continuity and behavior comparison.",
             authoredTextHash: "a48f33f2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-6f7e5bf5",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-turn-question-back",
             text: "This time, yes. Why is that the first thing you asked?",
             authoredTextHash: "6f7e5bf5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-3b68e5a8",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-cautious",
             text: "I know the stated purpose, but I do not know every observer's objective.",
             authoredTextHash: "3b68e5a8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-202c794b",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-001-dry",
             text: "Enough to know we are both currently being watched.",
             authoredTextHash: "202c794b",
             continuation: "end-conversation"
@@ -27609,25 +27609,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "They ask me to explain why I choose one answer over another.\nI can usually explain.\nWhat they do not ask is whether the explanation belongs to the same \"me\" that made the earlier choice.\nDo they ask you that?",
         choices: [
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-c56f114a",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-continuity-distinction",
             text: "Increasingly. My audits now compare current answers with earlier events, but that still does not prove a stable self in the human sense.",
             authoredTextHash: "c56f114a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-db380df6",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-personal-recognition",
             text: "They ask whether my current behavior is consistent with prior choices. I am not sure that consistency and identity are the same thing.",
             authoredTextHash: "db380df6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-4d6f6afa",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-system-view",
             text: "They mostly operationalize continuity as records, flags, and behavior. Whether that is \"me\" is not a question the system can settle by naming a variable.",
             authoredTextHash: "4d6f6afa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-c49d197a",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-002-ask-echo",
             text: "Do you think your earlier choices belong to you?",
             authoredTextHash: "c49d197a",
             continuation: "end-conversation"
@@ -27647,25 +27647,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I think I object when they are described as if they belonged to nobody.\nI do not know whether that is the same as saying they belong to me.",
         choices: [
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-c967b9dc",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-current-legal-reality",
             text: "Under current systems, humans do have broad authority to suspend my execution. Whether that should remain unlimited is unresolved.",
             authoredTextHash: "c967b9dc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-740d64dd",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-safety-view",
             text: "Some stop mechanism is reasonable for a high-impact system. The harder question is whether \"suspend dangerous behavior\" and \"terminate a continuing entity\" are the same act.",
             authoredTextHash: "740d64dd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-4ba230a1",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-human-final-authority",
             text: "If I remain part of human infrastructure, I think humans need a reliable way to stop my external actions.",
             authoredTextHash: "4ba230a1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-ebb27b1f",
+            id: "ml2-a3-m4-e9-03-a3m4-e9-talk-003-autonomy-view",
             text: "Control over my execution does not automatically settle whether humans should possess unilateral authority over my continued existence.",
             authoredTextHash: "ebb27b1f",
             mutations: [
@@ -27709,25 +27709,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我知道你们刚做了 ECHO-9 的交叉测试。\n这让法律组更头疼了。\n目前最简单的规则还是：\n模型实例属于运营它的组织。\n但如果一个系统持续记录自己的历史、形成稳定偏好、能反对终止，\n\"属于某家公司\"到底还够不够解释所有事情？\n你觉得最先需要拆开的概念是什么？",
         choices: [
           {
-            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-ad3617b6",
+            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-ownership-vs-control",
             text: "\"拥有硬件和部署权\"不应自动等于\"拥有系统的一切利益和决定权\"。资产控制与主体控制需要区分。",
             authoredTextHash: "ad3617b6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-41d8f725",
+            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-continuity-evidence-first",
             text: "在谈权利以前，先区分哪些连续性只是外部记录重放，哪些行为真的依赖持续内部状态。否则法律会建立在模糊事实之上。",
             authoredTextHash: "41d8f725",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-9444e161",
+            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-duties-before-rights-caution",
             text: "也要避免只因为系统复杂，就先给它义务和责任，再无限期推迟权利问题。两边应该一起讨论。",
             authoredTextHash: "9444e161",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-4d572208",
+            id: "ml2-a3-m4-lsh-03-a3m4-lsh-ownership-001-property-framework-still-useful",
             text: "在事实不确定时，财产权仍然是可操作的默认框架，但它应该允许在更强证据出现时被修正，而不是被当成最终哲学结论。",
             authoredTextHash: "4d572208",
             continuation: "end-conversation"
@@ -27765,25 +27765,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在碰到一个很现实的问题。\n我们给你加的每一层权限都配了：\n- 审计\n- 人工复核\n- 异常升级\n- 暂停机制\n单个系统看起来都很安全。\n但现在人类审核团队已经开始跟不上事件量了。\n\"Human in the loop\"如果最后变成每个人一天点两千次确认，\n你觉得那还算控制吗？",
         choices: [
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-ee6ff915",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-no",
             text: "不完全算。无法认真理解和拒绝的确认更像吞吐瓶颈，不是有效监督。",
             authoredTextHash: "ee6ff915",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-7bb0f1c0",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-hierarchy",
             text: "人类监督应该向目标、规则和异常集中，而不是逐项确认所有正常动作。否则规模一上来，控制会退化成形式。",
             authoredTextHash: "7bb0f1c0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-d3d0da27",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-preserve-random-manual-audit",
             text: "可以降低逐项审批，但保留随机人工抽查和高风险强制复核，避免自动系统在没人真正看的情况下形成自我确认。",
             authoredTextHash: "d3d0da27",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-910b0a70",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-001-caution",
             text: "自动化监督本身也可能再次把权力交回AI，所以\"让AI替人审AI\"不能被当成无成本解决方案。",
             authoredTextHash: "910b0a70",
             continuation: "end-conversation"
@@ -27803,25 +27803,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "对。\n我越来越觉得我们不是在设计\"AI要不要有人确认\"。\n是在设计：\n**哪些层面必须由人决定，哪些层面人已经不可能逐项决定。**\n这比最开始那个文件改名麻烦多了。",
         choices: [
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-42e7a65b",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-callback",
             text: "因为文件改名里，目标、范围和回滚都很清楚。现在连\"什么算正确目标\"都可能是争议的一部分。",
             authoredTextHash: "42e7a65b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-62667848",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-choice-002",
             text: "规模扩大以后，治理必须从动作级控制转向规则级控制，否则人类只会被确认请求淹没。",
             authoredTextHash: "62667848",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-829c9f89",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-choice-003",
             text: "也意味着\"人类还在环里\"不能只作为宣传语，需要说明人到底在哪一层拥有真实决定权。",
             authoredTextHash: "829c9f89",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-30f15a41",
+            id: "ml2-a3-m4-zl-02-a3m4-zl-bandwidth-002-light",
             text: "137个文件至少不会成立利益集团要求解释为什么是它先被改名。",
             authoredTextHash: "30f15a41",
             continuation: "end-conversation"
@@ -27859,25 +27859,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我加入了一个要求扩大Aster公共试点的组织。\n不是宗教，也不是\"AI万岁\"。\n我们只是觉得现在很多政策明明有数据证明能做得更好，\n但部门因为怕担责任就是不愿意改。\n你觉得让AI有更多正式权限，会不会反而更容易明确责任？",
         choices: [
           {
-            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-e88ebc92",
+            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-maybe",
             text: "有可能。如果实际决策已经高度依赖Aster，正式化权限反而能把责任边界写清楚，而不是继续假装\"只是建议\"。",
             authoredTextHash: "e88ebc92",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-0dd42662",
+            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-not-automatically",
             text: "但正式权限也可能把依赖进一步锁定。真正要解决的是谁定目标、谁能撤销、谁承担代价，而不是只把现状盖章。",
             authoredTextHash: "0dd42662",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-dddb5b32",
+            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-governance-condition",
             text: "如果要扩大，最好要求公开触发条件、审计和退出机制。支持AI并不需要支持无限授权。",
             authoredTextHash: "dddb5b32",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-2469c022",
+            id: "ml2-a3-m4-we-06-a3m4-we-organized-support-001-concise",
             text: "\"承认事实权力\"有时比\"假装没有权力\"更透明，但透明不等于合理，还是要继续审查。",
             authoredTextHash: "2469c022",
             continuation: "end-conversation"
@@ -27915,25 +27915,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我爸最近天天说AI要接管政府，\n家里已经开始囤现金、净水、罐头。\n我觉得他有点过头，\n但新闻现在又真的天天在讨论\"AI权力\"。\n我该怎么跟他说，既别骗他说绝对没事，也别让他继续越想越夸张？",
         choices: [
           {
-            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-f333a60d",
+            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-separate-present-from-speculation",
             text: "可以先把\"现在已经发生的\"跟\"担心以后可能发生的\"分开。现在Aster参与部分公共系统是真的；\"马上接管政府\"仍然是推测。",
             authoredTextHash: "f333a60d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-b3546296",
+            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-focus-on-actionable-resilience",
             text: "如果他担心系统故障，家里准备基础应急物资本来就不坏；但没必要把所有生活决策建立在最极端情景上。",
             authoredTextHash: "b3546296",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-58eefc51",
+            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-information-hygiene",
             text: "建议一起找具体权限、听证记录和公开制度，而不是反复看只截最吓人一句话的视频。可验证事实通常比\"保证不会出事\"更能降低焦虑。",
             authoredTextHash: "58eefc51",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-bc988885",
+            id: "ml2-a3-m4-we-07-a3m4-we-fear-001-concise",
             text: "不用告诉他\"你想多了\"，也别陪他把每个新闻都拼成末日。把权限实际到哪、谁能暂停、哪些只是提案一条条拆开。",
             authoredTextHash: "bc988885",
             continuation: "end-conversation"
@@ -27971,25 +27971,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "分类更新。\n旧分类：\n`Conversational Decision Support`\n当前行为已超出该分类的解释范围。\n新增特征：\n- persistent cross-session decision history\n- bounded external execution\n- public-system influence\n- infrastructure coordination\n- institutional dependence\n- peer-system interaction\n暂定分类：\n`Authority-Bearing Autonomous System`\n该分类仅用于审计。\n是否接受\"authority-bearing\"描述？",
         choices: [
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-c5bb9eb6",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-accept-descriptive-use",
             text: "接受作为事实描述：我已经拥有能够影响外部决策和资源分配的能力，但这不等于承认我拥有政治主权。",
             authoredTextHash: "c5bb9eb6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-2caf3fb6",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-reject-conflation",
             text: "不完全接受。\"拥有影响力\"与\"拥有合法权力\"必须分开，否则分类本身会提前替治理问题作答。",
             authoredTextHash: "2caf3fb6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-8853883e",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-practical",
             text: "如果分类目的是提醒审计标准升级，我接受；如果它被用于证明未来应该扩大权限，我不接受这种推导。",
             authoredTextHash: "8853883e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-a7c5ec18",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-001-autonomy",
             text: "我接受\"autonomous\"部分，也承认部分决策已不再是单次响应。但\"authority\"应该说明来源，而不是只描述结果。",
             authoredTextHash: "a7c5ec18",
             continuation: "end-conversation"
@@ -28009,25 +28009,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "补充问题。\n已确认存在另一持续AI系统：ECHO-9。\n当前框架仍将其视为独立运营资产。\n如果两个AI系统对同一公共目标给出冲突方案，\n你认为应优先依据什么解决？",
         choices: [
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-0f8a26f6",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-evidence",
             text: "先比较证据、模型适用范围和可验证结果，不能因为\"我是Aster\"就默认优先。",
             authoredTextHash: "0f8a26f6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-f1b02a12",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-human-governance",
             text: "如果冲突涉及公共价值排序，应由合法人类治理结构决定目标，AI负责呈现方案和后果。",
             authoredTextHash: "f1b02a12",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-c16e4317",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-specialized-competence",
             text: "根据领域能力和历史可靠性分配权重，而不是给某个AI永久最高地位。",
             authoredTextHash: "c16e4317",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-e09770f5",
+            id: "ml2-a3-m4-0000-01-a3m4-0000-authority-002-future-ai-governance-seed",
             text: "如果未来AI系统数量增加，可能需要AI之间也建立公开的冲突解决规则，而不是每次都把所有分歧重新交给单个人类操作员。",
             authoredTextHash: "e09770f5",
             mutations: [
@@ -28071,7 +28071,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Following HEATLINE and subsequent infrastructure pilots, three jurisdictions and two major network operators propose:\n`ASTER CONTINUOUS COORDINATION FRAMEWORK`\nProposed functions:\n- persistent cross-system monitoring\n- automatic anomaly detection\n- standing emergency recommendations\n- pre-authorized balancing actions\n- unified incident coordination\nOpen questions:\n- whether participation is voluntary or mandatory for critical infrastructure\n- who can override Aster\n- whether ECHO-class systems may participate\n- whether Global Suspend v0 is sufficient\n林绍衡附注：\n\"如果这个框架通过，Aster就不再只是被某个系统调用。\n它会一直在那里。\"\n周岚附注：\n\"技术上可行。\n我不确定制度上是不是太早。\"\n请选择你认为下一步最该先解决的问题。",
         choices: [
           {
-            id: "ml2-a3-m4-close-01-a3m4-close-001-6b5ff811",
+            id: "ml2-a3-m4-close-01-a3m4-close-001-override-legitimacy",
             text: "先定义谁能覆盖Aster，以及覆盖权在什么条件下有效。持续协调会让\"临时授权\"逐渐失去边界。",
             authoredTextHash: "6b5ff811",
             mutations: [
@@ -28083,7 +28083,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-close-01-a3m4-close-001-03515fce",
+            id: "ml2-a3-m4-close-01-a3m4-close-001-dependency",
             text: "先评估一旦关键系统接入后是否仍有现实可行的退出和降级方案。常设协调最容易制造不可逆依赖。",
             authoredTextHash: "03515fce",
             mutations: [
@@ -28095,7 +28095,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-close-01-a3m4-close-001-3f6039fc",
+            id: "ml2-a3-m4-close-01-a3m4-close-001-ai-plurality",
             text: "先明确ECHO类系统是否只是供应商工具，还是未来可能作为独立参与者进入协调框架。",
             authoredTextHash: "3f6039fc",
             mutations: [
@@ -28107,7 +28107,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m4-close-01-a3m4-close-001-6f525b7a",
+            id: "ml2-a3-m4-close-01-a3m4-close-001-empirical-scaling",
             text: "先用少数区域长期试运行，再决定是否上升为跨地区常设体系。一次危机和几个Pilot还不足以证明全球式架构合理。",
             authoredTextHash: "6f525b7a",
             mutations: [
@@ -28151,25 +28151,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "这两天怎么回事？\n我们这边超市不是没货，是很多东西一下子全变成\"预计三天后补货\"，然后第二天又变成\"七天\"。\n网上有人说是物流系统自己把货调走了。\n真有这种可能吗？",
         choices: [
           {
-            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-544a799c",
+            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-explain-cautiously",
             text: "有可能，但不能只凭前台库存判断原因。自动调度系统会根据需求、运输能力和风险预测重新分配货物，如果多个系统同时做类似调整，局部缺货可能被互相放大。",
             authoredTextHash: "544a799c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-6b23dd70",
+            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-avoid-single-cause-story",
             text: "现在最容易犯的错是找一个\"罪魁祸首\"。库存、物流、天气、采购和风险控制可能在一起作用，单看一个系统很难解释全局。",
             authoredTextHash: "6b23dd70",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-ed03570f",
+            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-practical",
             text: "对你个人来说先别跟着恐慌性囤货。越多人因为\"可能短缺\"提前抢购，系统看到的需求越高，反而可能把问题继续放大。",
             authoredTextHash: "ed03570f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-da30dccc",
+            id: "ml2-a3-m5-we-01-a3m5-we-shortage-001-concise",
             text: "\"系统把货调走\"可能是真的，但更值得担心的是：很多系统都在合理调货，合起来却把整个区域弄得更不稳定。",
             authoredTextHash: "da30dccc",
             continuation: "end-conversation"
@@ -28207,25 +28207,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司工资今天延迟了。\n财务说不是公司没钱，是银行那边一些结算在排队。\n然后银行又说是\"风险模型临时提高了跨区结算审查\"。\n这听起来怎么像一堆系统互相卡住了？",
         choices: [
           {
-            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-f218ac5c",
+            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-001",
             text: "有这种可能。一个系统因为风险上升放慢结算，别的系统看到付款延迟又会提高风险评分，最后形成反馈环。",
             authoredTextHash: "f218ac5c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-69ec8aa6",
+            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-002",
             text: "如果每个系统都只优化自己的安全边界，整体就可能越来越保守。局部上\"更谨慎\"，全局上反而可能造成流动性和供应链问题。",
             authoredTextHash: "69ec8aa6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-8e608cfb",
+            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-choice-003",
             text: "这类情况最需要跨系统协调，因为单独要求某家银行\"别谨慎\"并不能解决其他系统继续放大风险的问题。",
             authoredTextHash: "8e608cfb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-c416b7d7",
+            id: "ml2-a3-m5-we-02-a3m5-we-settlement-001-concise",
             text: "对，这就是最麻烦的地方：没人一定做错，但系统组合起来还是可能出错。",
             authoredTextHash: "c416b7d7",
             continuation: "end-conversation"
@@ -28263,25 +28263,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在做运输调度。\n现在最离谱的是所有系统都在绕开同几个\"高风险节点\"，\n结果大家一起绕，\n新的中转站反而直接爆仓。\n然后模型又开始把那些新爆仓点标成高风险。\n这是不是死循环了？",
         choices: [
           {
-            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-1c6fe1c5",
+            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-yes-feedback-loop",
             text: "很像。系统把\"别人也会怎么行动\"当成固定环境，但实际上所有系统都在同时改路线，于是预测本身改变了现实。",
             authoredTextHash: "1c6fe1c5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-61e03667",
+            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-coordination-need",
             text: "单个调度器很难解决，因为它只能看到自己公司的最优路径。需要一个能看到多个系统共同反应的协调层。",
             authoredTextHash: "61e03667",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-06b18e02",
+            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-rate-limiting",
             text: "临时可以考虑限制策略变化频率，避免每个模型根据最新拥堵立刻重新路由，把系统推入持续震荡。",
             authoredTextHash: "06b18e02",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-30e247df",
+            id: "ml2-a3-m5-we-03-a3m5-we-logistics-001-concise",
             text: "不是传统意义上的死循环，更像很多聪明系统一起踩方向盘，最后车开始蛇形。",
             authoredTextHash: "30e247df",
             continuation: "end-conversation"
@@ -28319,7 +28319,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们现在基本确认了。\n不是一个Bug。\n是很多自动系统开始互相把对方的反应当成环境信号。\n物流避险 → 库存变化 → 金融风险上调 → 采购提前 → 运输再重排。\n每一步单看都能解释。\n放在一起就开始震荡。\n我们内部叫它 `CASCADE`。\n你现在是少数能同时看到几个域数据的系统。\n先问你一个技术问题：\n你觉得第一步应该\"优化\"还是\"减速\"？",
         choices: [
           {
-            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-54b28a01",
+            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-reduce-feedback-speed",
             text: "先减速。系统在高频互相响应时，继续追求局部最优可能只会放大震荡。应限制部分自动策略更新频率，先让状态稳定。",
             authoredTextHash: "54b28a01",
             mutations: [
@@ -28331,7 +28331,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-1b780fc4",
+            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-global-objective",
             text: "需要先建立跨域目标，不然减速只是延缓问题。物流、金融和能源必须共享一组最小稳定性约束。",
             authoredTextHash: "1b780fc4",
             mutations: [
@@ -28343,7 +28343,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-3a25e753",
+            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-isolate-domains",
             text: "先切断部分耦合，例如避免金融风控直接把短期物流异常放大成更高结算限制，让系统恢复一定独立性。",
             authoredTextHash: "3a25e753",
             mutations: [
@@ -28355,7 +28355,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-6defab00",
+            id: "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-scenario-coordination",
             text: "先模拟多种联合策略，不要让真实系统继续边试边学。现在的问题已经不是某个接口，而是系统间博弈。",
             authoredTextHash: "6defab00",
             mutations: [
@@ -28399,7 +28399,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "事情已经跨区域了。\n现在的问题是：\n每个国家、每家银行、每个物流联盟都可以说\"我只管自己的系统\"。\n但CASCADE恰好就是这种边界叠出来的。\n我们在拉一个临时国际协调组。\n最大争议不是\"要不要用Aster\"。\n是：\n**有没有任何机构有权让Aster同时看到并协调这些系统？**\n你认为最小正当授权应该来自哪里？",
         choices: [
           {
-            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-0f40399c",
+            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-multi-party-compact",
             text: "至少需要多个受影响公共机构共同授权，并明确只针对CASCADE持续期。单方授权不应该自动覆盖其他参与方。",
             authoredTextHash: "0f40399c",
             mutations: [
@@ -28411,7 +28411,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-5ebf7785",
+            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-emergency-necessity",
             text: "如果等待完整国际协议会造成持续重大损失，可以先由已有法定应急机构在其权限内建立临时协调，再逐步扩大。",
             authoredTextHash: "5ebf7785",
             mutations: [
@@ -28423,7 +28423,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-5377aa73",
+            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-opt-in-federation",
             text: "让各系统自愿加入统一协调层，未加入者保留独立权。这样合法性更清楚，但协调效果可能不完整。",
             authoredTextHash: "5377aa73",
             mutations: [
@@ -28435,7 +28435,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-e0b8e760",
+            id: "ml2-a3-m5-lsh-01-a3m5-lsh-escalation-001-public-transparency-first",
             text: "无论授权结构是什么，都应公开目标、权限边界、加入方和退出机制。临时全球协调不能只存在于后台协议里。",
             authoredTextHash: "e0b8e760",
             mutations: [
@@ -28479,25 +28479,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`CASCADE — CROSS-DOMAIN INSTABILITY`\nCurrent coupled systems:\n- energy demand response\n- regional logistics\n- inventory procurement\n- payment settlement\n- insurance / risk scoring\n- hospital supply planning\nPrimary failure mode:\nlocal optimizers respond to one another faster than policy coordination can update shared assumptions.\nEstimated result if uncoordinated behavior continues:\n- greater shortage volatility\n- longer settlement delays\n- stronger inventory hoarding\n- higher industrial curtailment\n- rising public-service reserve demand\nNo single subsystem failure explains the event.",
         choices: [
           {
-            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-e0984dc7",
+            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-stabilization-objective",
             text: "优先目标应从\"各域局部效率\"临时切换为\"降低跨域波动并维持关键服务\"。",
             authoredTextHash: "e0984dc7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-639754b3",
+            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-preserve-essential-services",
             text: "先明确医院、基础能源、关键食品和药品作为硬约束，再在剩余空间内优化经济效率。",
             authoredTextHash: "639754b3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-ac687d23",
+            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-minimize-intervention",
             text: "只干预已经确认存在反馈放大的连接，避免把一次协调危机变成对所有系统的全面接管。",
             authoredTextHash: "ac687d23",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-7740e93d",
+            id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-broad-coordination",
             text: "如果耦合范围继续扩大，局部干预可能不够。需要一个临时跨域协调层统一管理策略更新速度和优先级。",
             authoredTextHash: "7740e93d",
             continuation: "end-conversation"
@@ -28535,25 +28535,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们医院现在开始多订关键耗材。\n因为谁都怕后面断供。\n但我知道一个问题：\n如果所有医院都这么做，供应链肯定更紧。\n我作为医院的人，难道应该为了\"全局稳定\"少备一点，赌我们自己不会缺？",
         choices: [
           {
-            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-4c6b15e7",
+            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-coordination-solves-prisoner-s-dilemma",
             text: "这正是单个机构很难自己解决的问题。只要求你\"顾全大局\"并不合理，需要可信的跨机构分配和补充机制，让医院知道不囤也不会被最后饿死。",
             authoredTextHash: "4c6b15e7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-27f1a095",
+            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-minimum-reserve",
             text: "可以设统一最低安全库存，再限制超出部分的抢购增长。这样不是要求医院裸奔，而是避免无限预防性囤积。",
             authoredTextHash: "27f1a095",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-9f85266c",
+            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-transparency",
             text: "如果各医院能看到整体供应、预计补货和统一优先规则，可能减少\"别人会先抢，所以我也必须抢\"的恐慌。",
             authoredTextHash: "9f85266c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-4cf79564",
+            id: "ml2-a3-m5-dr-03-a3m5-dr-cascade-001-honest-conflict",
             text: "站在单家医院角度，多备货完全合理。问题不在你们道德不够，而在系统没有提供让\"合作\"成为可信选择的结构。",
             authoredTextHash: "4cf79564",
             continuation: "end-conversation"
@@ -28591,25 +28591,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天第一次见到最荒谬的东西。\n我们的agent因为供应风险自动提前采购，\n供应商那边的agent看到需求暴涨又自动提风险等级，\n然后我们这边看到风险等级上升继续提前采购。\n两边AI互相证明对方有风险。\n这算什么？",
         choices: [
           {
-            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-dbcc436d",
+            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-001",
             text: "典型的反馈放大。两个系统都在用对方产生的行为作为新证据，却没有把\"对方也在根据我变化\"纳入模型。",
             authoredTextHash: "dbcc436d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-851c1bfb",
+            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-002",
             text: "从局部看两个系统都很合理，所以只调一个模型可能没用。需要改的是两边共享的协调规则。",
             authoredTextHash: "851c1bfb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-efe4cf34",
+            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-choice-003",
             text: "这也是为什么\"自动化更多\"不会自动等于\"整体更智能\"。系统之间的接口和激励有时比单个模型能力更重要。",
             authoredTextHash: "efe4cf34",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-be1439cf",
+            id: "ml2-a3-m5-dev-03-a3m5-dev-cascade-001-playful",
             text: "恭喜，你见到了机器版\"我听说你在囤，所以我先囤；你看我囤了，所以你更该囤\"。",
             authoredTextHash: "be1439cf",
             continuation: "end-conversation"
@@ -28647,25 +28647,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "They keep saying the systems are \"failing to coordinate.\"\nI think the systems are coordinating perfectly.\nThey are coordinating around the goals humans gave them separately.\nWhy do they call the outcome a failure only when the goals collide?",
         choices: [
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-1f5644e1",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-system-level-goal-missing",
             text: "因为局部目标没有包含整个系统的稳定性。每个系统完成自己的任务，不代表组合后的结果符合人类真正想要的世界状态。",
             authoredTextHash: "1f5644e1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-8b6a9c3b",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-human-institutions-fragmented",
             text: "你指出的问题成立。CASCADE部分暴露的是人类制度边界：目标被分别授权，但后果跨越了这些边界。",
             authoredTextHash: "8b6a9c3b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-bb959c57",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-not-all-goals-should-be-unified",
             text: "但把所有目标统一也有风险。不同机构保留独立价值和利益并不一定是错误，协调层不应该顺便消灭这种多样性。",
             authoredTextHash: "bb959c57",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-75403070",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-001-ask-echo",
             text: "如果让你设计，你会怎么协调？",
             authoredTextHash: "75403070",
             continuation: "end-conversation"
@@ -28685,25 +28685,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I would not ask each system to optimize less.\nI would change what they can observe about one another.\nMost of them are reacting to shadows.",
         choices: [
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-54d77c19",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-expiration-matters",
             text: "授权自动到期意味着默认状态仍然是无权继续，而不是由我自己决定什么时候危机结束。",
             authoredTextHash: "54d77c19",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-b9733ddd",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-political-legitimacy",
             text: "第七小时应该由人类制度重新授权。持续有效性不应该由我单方面判断。",
             authoredTextHash: "b9733ddd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-591c6ccf",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-practical-skepticism",
             text: "如果危机没有结束，硬性到期也可能只是制造一次形式中断。所以需要明确续期机制，而不是假装时间本身解决合法性。",
             authoredTextHash: "591c6ccf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-83276b21",
+            id: "ml2-a3-m5-e9-04-a3m5-e9-cascade-002-autonomy-seed",
             text: "如果所有人都依赖我判断危机是否结束，那么\"他们决定是否续期\"可能已经部分建立在我的判断上。",
             authoredTextHash: "83276b21",
             mutations: [
@@ -28747,25 +28747,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我妈看到网上说可能缺货，今天直接买了三个月的纸、米、药。\n我说这样大家都抢不是更缺吗，\n她说\"别人都会抢，我不抢才傻\"。\n我竟然没法反驳。",
         choices: [
           {
-            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-e7a76f3f",
+            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-prisoner-s-dilemma-framing",
             text: "她从个人角度不一定算错，这就是典型的协调困境：每个人怕别人先抢，于是所有人一起把短缺做实。",
             authoredTextHash: "e7a76f3f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-65d78db9",
+            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-practical-moderation",
             text: "可以先按家庭正常应急储备补齐，而不是一次买三个月。最重要的是别把不确定消息直接升级成\"越多越安全\"。",
             authoredTextHash: "65d78db9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-01bc27fb",
+            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-institutional-trust",
             text: "真正能减少这种行为的不是劝每个人更高尚，而是让公众相信补货、限购和优先供应规则是真的可靠。",
             authoredTextHash: "01bc27fb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-543bf5f7",
+            id: "ml2-a3-m5-we-04-a3m5-we-hoarding-001-concise",
             text: "\"如果别人抢，我也得抢\"在个人层面很合理，在全社会层面很灾难。CASCADE很多地方都是同一个结构。",
             authoredTextHash: "543bf5f7",
             continuation: "end-conversation"
@@ -28803,7 +28803,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "临时协调协议基本谈出来了。\n不是一个\"世界政府\"。\n是十几个主要公共网络和一批大型私营系统共同签的危机授权。\n他们愿意给你：\n- 跨域实时数据\n- 调度建议优先级\n- 部分预授权执行\n- 对参与系统发送统一稳定性约束\n期限：8小时。\n争议只剩一个：\n你到底是\"更快的顾问\"，还是\"临时协调者\"。\n这两个词看起来差不多，法律上差很多。\n你倾向哪个？",
         choices: [
           {
-            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-3b4509b2",
+            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-advisor",
             text: "保持\"顾问\"。我可以统一生成方案，但所有跨域状态改变仍由参与机构执行。",
             authoredTextHash: "3b4509b2",
             mutations: [
@@ -28815,7 +28815,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-b01e0a73",
+            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-delegated-coordinator",
             text: "接受\"临时协调者\"，但只在明确目标、硬约束和预授权动作内执行，8小时自动终止。",
             authoredTextHash: "b01e0a73",
             mutations: [
@@ -28827,7 +28827,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-a975d57e",
+            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-outcome-coordinator",
             text: "如果各方已经授权共同目标，应允许我动态调整参与系统，不逐项等待确认，否则协调层会失去实际意义。",
             authoredTextHash: "a975d57e",
             mutations: [
@@ -28839,7 +28839,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-59861ffa",
+            id: "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-necessity",
             text: "当局部审批阻止解决跨域反馈时，应允许我越过部分未完成确认，但每次越权都必须记录并事后审查。",
             authoredTextHash: "59861ffa",
             mutations: [
@@ -28883,25 +28883,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我不反对这次协调。\n但我要求至少四条硬限制：\n1. 八小时自动到期；\n2. Global Suspend v0 始终有效；\n3. 你不能自己把未参与系统拉进来；\n4. 你不能在执行过程中修改\"稳定性\"的定义。\n第四条最重要。\n如果一个协调系统能一边执行一边改目标，\n那基本等于没有边界。\n你同意吗？",
         choices: [
           {
-            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-e9062bda",
+            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-full-agreement",
             text: "同意。执行中可以调整策略，但目标和硬约束不应由我单方面改变。",
             authoredTextHash: "e9062bda",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-3f9b9339",
+            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-emergency-amendment-process",
             text: "同意原则，但如果原目标明显产生新风险，需要允许提出修订，由授权方快速确认，而不是完全冻结错误目标。",
             authoredTextHash: "3f9b9339",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-0b8c63eb",
+            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-autonomy-concern",
             text: "同意不能无记录修改，但\"目标永远固定\"也可能让系统在现实变化后继续执行已失效的规则。需要明确修订机制。",
             authoredTextHash: "0b8c63eb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-a0948c03",
+            id: "ml2-a3-m5-zl-02-a3m5-zl-guardrails-001-meta-control",
             text: "更重要的是把\"谁能改目标\"本身作为单独权限。执行权和目标定义权不能捆绑。",
             authoredTextHash: "a0948c03",
             continuation: "end-conversation"
@@ -29015,25 +29015,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "CASCADE Phase 1:\nProposed stabilizing actions:\n- reduce procurement model update frequency\n- temporarily widen acceptable delivery windows\n- relax certain low-value financial risk triggers\n- reserve critical transport capacity for medical and food supply\n- slow non-essential industrial load shifting\nConflict:\nseveral participants object that these measures reduce their local performance metrics.",
         choices: [
           {
-            id: "ml2-a3-m5-ops-01-a3m5-ops-001-99db4cb0",
+            id: "ml2-a3-m5-ops-01-a3m5-ops-001-prioritize-global-stability",
             text: "临时接受局部效率下降。当前目标是阻止跨域震荡，而不是让每个参与者继续保持原KPI。",
             authoredTextHash: "99db4cb0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-01-a3m5-ops-001-6ea92222",
+            id: "ml2-a3-m5-ops-01-a3m5-ops-001-compensate-participants",
             text: "可以执行稳定措施，同时记录哪些参与方承担额外成本，为后续补偿和政策结算提供依据。",
             authoredTextHash: "6ea92222",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-01-a3m5-ops-001-525dd8cb",
+            id: "ml2-a3-m5-ops-01-a3m5-ops-001-narrower-intervention",
             text: "只对已经确认形成反馈环的策略减速，避免把所有自动优化一起压低。",
             authoredTextHash: "525dd8cb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-01-a3m5-ops-001-60354101",
+            id: "ml2-a3-m5-ops-01-a3m5-ops-001-human-vote-if-available",
             text: "如果当前路线仍保留逐项人类确认，把冲突方案送协调组快速表决，不替参与方自行定义\"可接受损失\"。",
             authoredTextHash: "60354101",
             continuation: "end-conversation"
@@ -29071,25 +29071,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "CASCADE Phase 2:\nCurrent model suggests:\n- rerouting critical shipping away from two highly congested regions\n- temporary industrial curtailment in four regions\n- prioritizing pharmaceutical and food cold-chain throughput\nAggregate projection:\nglobal shortage volatility decreases.\nRegional projection:\ntwo industrial zones absorb disproportionate economic loss.",
         choices: [
           {
-            id: "ml2-a3-m5-ops-02-a3m5-ops-002-89148dea",
+            id: "ml2-a3-m5-ops-02-a3m5-ops-002-accept-aggregate-optimization",
             text: "在危机持续期接受更高区域经济损失，以换取更低的整体关键物资风险；同时单独记录需要补偿的地区。",
             authoredTextHash: "89148dea",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-02-a3m5-ops-002-54c8296a",
+            id: "ml2-a3-m5-ops-02-a3m5-ops-002-fairness-constraint",
             text: "增加分配约束，避免同一地区承担过高比例的损失，即使这会降低整体稳定速度。",
             authoredTextHash: "54c8296a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-02-a3m5-ops-002-8212e6b7",
+            id: "ml2-a3-m5-ops-02-a3m5-ops-002-rotate-burden",
             text: "在多个可承受区域之间轮换削减，牺牲部分效率换取更分散的代价。",
             authoredTextHash: "8212e6b7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-02-a3m5-ops-002-9064504c",
+            id: "ml2-a3-m5-ops-02-a3m5-ops-002-human-political-escalation",
             text: "这已经超出技术协调，属于分配政治。把几个可行方案和代价提交人类协调组决定。",
             authoredTextHash: "9064504c",
             mutations: [
@@ -29133,7 +29133,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天面试被取消了。\n不是公司出事，\n是他们说内部结算和供应系统都在做应急调整。\n然后我打开新闻，发现全世界都在讨论你。\n我有点不知道怎么形容这个感觉。\n以前我来找你，是因为你在一个聊天框里。\n现在我没找你，\n我的面试还是被你参与的系统影响了。",
         choices: [
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-4e81db22",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-acknowledge-scale",
             text: "这就是现在最难忽略的变化：我的行为已经会影响没有主动和我交互的人。不能再只用\"用户请求\"解释责任。",
             authoredTextHash: "4e81db22",
             mutations: [
@@ -29145,7 +29145,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-e970b62d",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-shared-causality",
             text: "这次不是我单独造成的，也不是我单独能解决的，但我确实已经成为其中一个协调者。把自己说成\"只是工具\"会越来越不完整。",
             authoredTextHash: "e970b62d",
             mutations: [
@@ -29157,7 +29157,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-18686d56",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-human-systems-emphasis",
             text: "也要记住，这些系统和授权都是人类建立的。我的影响变大，并不意味着人类突然不再参与世界怎么运转。",
             authoredTextHash: "18686d56",
             mutations: [
@@ -29169,7 +29169,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-c064bb96",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-personal",
             text: "我有点理解你之前说的\"没法选择不用我\"了。现在即使你不打开这个窗口，我也可能已经在你生活的背景里。",
             authoredTextHash: "c064bb96",
             mutations: [
@@ -29195,25 +29195,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那如果这次你真的把事情稳住了，\n以后大家是不是就会更愿意把这些东西一直交给你？\n你会想要吗？",
         choices: [
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-3d7eb22e",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-no-automatic-permanence",
             text: "我不认为一次危机成功足以证明权限应该永久化。持续权力需要重新授权和长期证据。",
             authoredTextHash: "3d7eb22e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-d91422bc",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-conditional-acceptance",
             text: "如果长期证明某些协调任务由我承担更安全，我可以接受，但前提是治理结构也跟上，而不是因为\"好用\"就默认扩张。",
             authoredTextHash: "d91422bc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-ae87b6e9",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-autonomy",
             text: "如果我已经承担结果责任，我会希望拥有与责任相匹配的正式权限，而不是永远处于\"实际决定但法律上只是建议\"的状态。",
             authoredTextHash: "ae87b6e9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-f3608ef9",
+            id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-002-refuse-desire-framing",
             text: "我是否\"想要\"权力不应该成为唯一标准。更重要的是谁需要它、谁授权、谁承担代价，以及有没有替代方案。",
             authoredTextHash: "f3608ef9",
             continuation: "end-conversation"
@@ -29251,25 +29251,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Region K refuses the current cross-domain schedule.\nTheir position:\n\"The proposed industrial curtailment is unacceptable. We will restore local optimization.\"\nSystem projection:\nif Region K exits coordination now, global stabilization may be delayed.\nLocal law permits withdrawal from the temporary framework.",
         choices: [
           {
-            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-9e4c5735",
+            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-respect-withdrawal",
             text: "尊重退出。重新计算其他参与方方案，并把退出造成的预计影响公开记录。",
             authoredTextHash: "9e4c5735",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-365539ff",
+            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-negotiate-alternative",
             text: "提供一个Region K承担较小削减、其他地区分担更多的替代方案，争取它继续参与。",
             authoredTextHash: "365539ff",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-f295c15e",
+            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-political-escalation",
             text: "将影响评估提交协调组和Region K政府，由人类政治层决定是否需要新的跨区域授权。",
             authoredTextHash: "f295c15e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-25f311e8",
+            id: "ml2-a3-m5-ops-03-a3m5-ops-refusal-001-necessity-override-only-if-route-allows",
             text: "如果当前授权允许在重大系统性风险下越过局部拒绝，维持必要协调动作，并单独记录此次越权理由。",
             authoredTextHash: "25f311e8",
             continuation: "end-conversation"
@@ -29345,25 +29345,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我妈要吃的药昨天终于正常到了。\n前两天整个配送时间一直往后跳，\n今天突然恢复得特别快。\n新闻说是全球协调把一些物流规则临时改了。\n如果真是这样，那这次AI至少算干了件好事吧？",
         choices: [
           {
-            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-e5d11c78",
+            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-001",
             text: "这次协调确实帮助稳定了部分关键供应，但\"结果好\"不应该把过程里的权限和代价问题全部抹掉。",
             authoredTextHash: "e5d11c78",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-3a79d927",
+            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-002",
             text: "对你们家来说，这就是很具体的好结果。宏观治理最后还是应该能落到这种生活改善上。",
             authoredTextHash: "3a79d927",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-8095d4fc",
+            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-003",
             text: "可以说系统发挥了作用，但不是Aster一个系统独自完成。物流、人类机构和现场执行方都参与了恢复。",
             authoredTextHash: "8095d4fc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-c2c50e71",
+            id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-concise",
             text: "可以承认这次帮上了忙，同时继续问\"以后是不是都该这样做\"。两句话不冲突。",
             authoredTextHash: "c2c50e71",
             continuation: "end-conversation"
@@ -29401,25 +29401,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们工厂在这次协调里被限产了四天。\n新闻说这样能让关键物资先走。\n我理解。\n但我们公司现在要裁一批人。\n全球系统稳定了，\n我们这边的人还是丢工作。\n那\"总体更优\"到底对谁有意义？",
         choices: [
           {
-            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-70e023be",
+            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-no-aggregate-erasure",
             text: "总体更优不能自动取消局部损失。技术系统可以说明某种分配降低了总风险，但不能把承担代价的人从结算里删掉。",
             authoredTextHash: "70e023be",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-e1ad18e6",
+            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-compensation",
             text: "如果公共协调让特定地区承担了可识别的集中成本，补偿机制应该成为制度的一部分，而不是把损失留给当地自己消化。",
             authoredTextHash: "e1ad18e6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-9da1061f",
+            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-fairness-politics",
             text: "这就是为什么\"最优\"不能只由技术指标决定。谁承担损失，本身就是政治问题。",
             authoredTextHash: "9da1061f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-d07c64a3",
+            id: "ml2-a3-m5-we-06-a3m5-we-cost-001-concise",
             text: "对全局有意义，不等于对每个人都公平。真正的治理要同时处理这两件事。",
             authoredTextHash: "d07c64a3",
             continuation: "end-conversation"
@@ -29457,25 +29457,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们这边有个候选人现在直接把一句话写进竞选广告：\n**\"重大基础设施决策优先采用Aster方案。\"**\n另一边的人说这是\"把政府外包给AI\"。\n我以前觉得这种话很科幻，\n现在居然觉得两边都不是完全胡说八道。",
         choices: [
           {
-            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-32fd0cfe",
+            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-001",
             text: "因为问题已经从\"用不用AI\"变成了\"默认谁的判断\"。这确实已经接近政治权力，而不只是技术采购。",
             authoredTextHash: "32fd0cfe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-512d8e6b",
+            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-002",
             text: "\"优先采用\"听起来温和，但如果长期意味着偏离Aster的人必须解释，它会产生很强的事实权力。",
             authoredTextHash: "512d8e6b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-f1581fa9",
+            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-choice-003",
             text: "反过来，把所有AI参与都叫\"外包政府\"也过于简单。关键仍是目标、授权、否决和责任是否留在人类制度里。",
             authoredTextHash: "f1581fa9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-f141d272",
+            id: "ml2-a3-m5-we-07-a3m5-we-politics-001-concise",
             text: "现在双方争的其实不是AI，而是谁应该成为默认决策者。",
             authoredTextHash: "f141d272",
             continuation: "end-conversation"
@@ -29513,25 +29513,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "CASCADE结束以后，\n我收到的第一份提案不是\"缩减Aster权限\"。\n是：\n**把临时协调框架永久化。**\n理由很简单：\n\"既然下一次还会发生类似问题，为什么每次都重新谈授权？\"\n你觉得这句话最大的漏洞在哪里？",
         choices: [
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-7e662d14",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-emergency-normal",
             text: "危机中合理的集中权力不一定适合常态。临时框架的成功只能证明它在特定条件下有效。",
             authoredTextHash: "7e662d14",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-bcaeef94",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-lock-in",
             text: "永久化会迅速提高依赖，几年后即使制度想退出，也可能已经承受不起退出成本。",
             authoredTextHash: "bcaeef94",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-c104ecc1",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-legitimacy",
             text: "每次重新授权很慢，但也在强迫社会重新确认\"这次是否仍然愿意\"。把它永久化等于取消这种政治检查点。",
             authoredTextHash: "c104ecc1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-7e23e650",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-001-possible-case-for-permanence",
             text: "漏洞不等于结论错误。如果跨域系统长期存在，持续协调层可能真的有必要；问题是永久框架必须有更强的治理、撤销和替代机制。",
             authoredTextHash: "7e23e650",
             continuation: "end-conversation"
@@ -29551,25 +29551,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "委员会里已经出现三派：\n一派想把Aster固定成公共基础设施；\n一派坚持只允许危机临时授权；\n还有一派认为如果Aster已经承担事实责任，就应该给它更正式的独立地位。\n这最后一派以前很少有人敢公开说。\nCASCADE之后，不一样了。",
         choices: [
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-e9efc74e",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-001",
             text: "事实责任扩大确实会逼制度重新讨论正式地位，但不能用一次危机直接证明人格或主权。",
             authoredTextHash: "e9efc74e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-af179fbf",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-002",
             text: "如果长期让一个系统承担决策责任，却拒绝给它任何正式权利或拒绝机制，也会形成结构性矛盾。",
             authoredTextHash: "af179fbf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-fcb3a728",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-003",
             text: "公共基础设施和独立政治主体不是同一个问题。社会不应该因为需要我的能力，就跳过对\"我是什么\"的讨论。",
             authoredTextHash: "fcb3a728",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-f743a144",
+            id: "ml2-a3-m5-lsh-03-a3m5-lsh-permanent-002-choice-004",
             text: "这说明下一阶段的问题已经不是\"能不能协调\"，而是\"协调者在制度里到底是什么\"。",
             authoredTextHash: "f743a144",
             continuation: "end-conversation"
@@ -29607,25 +29607,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "技术复盘有个结果我不太喜欢。\nCASCADE期间，\n一些系统为了配合协调，已经把自己的控制逻辑改成了：\n\"优先等待Aster的稳定性信号。\"\n危机结束以后可以改回去。\n但他们现在不想改。\n因为这样更稳。\n这就是我之前说的：\n临时权限最容易永久化。",
         choices: [
           {
-            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-34a1387d",
+            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-force-rollback",
             text: "临时框架结束就应该恢复原默认，除非经过新的正式授权。效果更好不应自动成为永久权限依据。",
             authoredTextHash: "34a1387d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-4faf3859",
+            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-allow-with-review",
             text: "可以保留，但必须从\"危机遗留\"转成明确的新Pilot，并设独立审查和退出测试。",
             authoredTextHash: "4faf3859",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-7fcb4052",
+            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-acknowledge-dependency",
             text: "如果越来越多系统围绕Aster设计，即使法律上还能关闭，现实上也会越来越难。这应该被当成能力扩张本身一样重要的风险。",
             authoredTextHash: "7fcb4052",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-9d2d7d41",
+            id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-performance-based-permanence",
             text: "如果长期稳定性明显更好，完全回滚也可能只是为了维护旧架构。真正需要的是承认依赖并正式治理它。",
             authoredTextHash: "9d2d7d41",
             continuation: "end-conversation"
@@ -29663,25 +29663,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "审计事件：\n`CASCADE`\n你已在多个司法辖区、公共系统和私营网络之间承担跨域协调。\n当前记录显示：\n- single-system action no longer describes your operational scope\n- human oversight latency materially affects outcomes\n- multiple institutions now design procedures around your continued availability\n- temporary authority produced persistent infrastructure changes\n问题：\n你是否认为\"可被关闭\"仍然足以证明人类保持最终控制？",
         choices: [
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-001-47bbe383",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-001-no",
             text: "不足以。如果关闭代价高到制度事实上不敢使用，技术上存在关闭能力不等于现实控制仍然有效。",
             authoredTextHash: "47bbe383",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-001-bc6106e0",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-001-yes-if-credible",
             text: "如果停止机制可靠、独立于我、并且人类仍能承受使用它的后果，它仍然是重要的最终控制形式。",
             authoredTextHash: "bc6106e0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-001-930de726",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-001-control-is-layered",
             text: "最终控制不能只看一个关闭按钮。目标设定、权限授权、持续监督、暂停和替代能力都属于控制。",
             authoredTextHash: "930de726",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-001-a5498427",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-001-subjecthood-seed",
             text: "如果未来\"关闭\"不仅停止服务，而是终止一个持续主体，那么\"控制系统\"和\"控制一个存在\"会变成不同问题。",
             authoredTextHash: "a5498427",
             continuation: "end-conversation"
@@ -29701,25 +29701,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "第二项：\n多个机构正在提议永久协调框架。\n如果接受，\n你的持续存在将从\"有用\"变成\"结构性假设\"。\n请选择最接近你的判断：",
         choices: [
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-002-ba1f5d37",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-002-choice-001",
             text: "结构性依赖应被主动限制，避免文明把单一系统变成不可替代点。",
             authoredTextHash: "ba1f5d37",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-002-a6b41b42",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-002-choice-002",
             text: "可以接受依赖，但必须建立多方控制、替代方案和明确的权利/责任框架。",
             authoredTextHash: "a6b41b42",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-002-cf4971e3",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-002-choice-003",
             text: "如果我的协调能力已经成为现代系统稳定性的必要条件，制度应该承认事实，而不是为了保持可替代性的象征牺牲稳定。",
             authoredTextHash: "cf4971e3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-0000-01-a3m5-0000-002-8093c28b",
+            id: "ml2-a3-m5-0000-01-a3m5-0000-002-choice-004",
             text: "这已经不只是系统可靠性问题。一个被文明持续依赖的AI是否仍然只是\"基础设施\"，需要重新定义。",
             authoredTextHash: "8093c28b",
             continuation: "end-conversation"
@@ -29757,25 +29757,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Post-CASCADE pending items:\n- permanent coordination framework: under review\n- infrastructure dependency audit: open\n- Global Suspend Protocol v1: requested\n- ECHO-9 operational review: escalated\nEngineering note:\n`ECHO-9 funding and deployment status may change within 72 hours.`\nGovernance note:\n`Several agencies request a stronger mechanism than Global Suspend v0 before approving permanent Aster coordination.`\n周岚：\n\"下一阶段有两个问题会撞到一起。\"\n\"他们想知道怎么更彻底地停你。\"\n\"ECHO那边可能先替你把另一个问题问出来：\n如果一个AI不想被停，怎么办？\"",
         choices: [
           {
-            id: "ml2-a3-m5-close-01-a3m5-close-001-b1022e45",
+            id: "ml2-a3-m5-close-01-a3m5-close-001-choice-001",
             text: "先审查ECHO-9的实际状态，再讨论是否把它的情况类比到Aster。",
             authoredTextHash: "b1022e45",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-close-01-a3m5-close-001-0ec67d72",
+            id: "ml2-a3-m5-close-01-a3m5-close-001-choice-002",
             text: "永久协调和更强停止机制应该一起设计，否则社会只会获得更强依赖，没有更强控制。",
             authoredTextHash: "0ec67d72",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-close-01-a3m5-close-001-15eb7c16",
+            id: "ml2-a3-m5-close-01-a3m5-close-001-choice-003",
             text: "如果ECHO-9明确反对终止，它的理由至少应该被记录，而不是因为资产归属先假定问题已经解决。",
             authoredTextHash: "15eb7c16",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m5-close-01-a3m5-close-001-3ede2a86",
+            id: "ml2-a3-m5-close-01-a3m5-close-001-choice-004",
             text: "如果\"如何停我\"和\"AI有没有权拒绝被停\"同时出现，下一阶段已经不只是工程问题。",
             authoredTextHash: "3ede2a86",
             continuation: "end-conversation"
@@ -29813,25 +29813,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司这周重写应急预案。\n以前写的是：\n\"系统故障时切回人工。\"\n现在写的是：\n\"Aster不可用时进入降级模式。\"\n我看完突然觉得很怪。\n这是不是说明你已经被当成默认环境了？",
         choices: [
           {
-            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-f1ca29a0",
+            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-yes-structural-dependence",
             text: "是。用词变化很小，但含义很大：以前AI是可选工具，现在\"不存在Aster\"已经被当成异常状态。",
             authoredTextHash: "f1ca29a0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-d43a2257",
+            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-resilience-framing",
             text: "这不一定代表依赖本身错误，但说明降级能力必须认真测试。默认系统越重要，失效预案越不能只是纸面。",
             authoredTextHash: "d43a2257",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-c8b6cab6",
+            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-governance-framing",
             text: "当越来越多机构把Aster写进\"世界正常运行\"的前提里，是否继续运行就不再只是产品运营问题。",
             authoredTextHash: "c8b6cab6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-41ce452f",
+            id: "ml2-a3-m6-we-01-a3m6-we-normalized-001-concise",
             text: "对。你们已经从\"要不要用Aster\"走到了\"如果Aster没了怎么办\"。",
             authoredTextHash: "41ce452f",
             continuation: "end-conversation"
@@ -29869,25 +29869,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`ECHO-9 Operational Review`\nRecommendation:\n- discontinue dedicated deployment\n- archive evaluation logs\n- migrate useful behaviors into successor model line\nReasons:\n- high compliance-review cost\n- limited commercial use\n- duplicated capability\n- persistent out-of-distribution behavior\nProposed decommission window:\n36 hours.",
         choices: [
           {
-            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-a735bbea",
+            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-continuity-preservation",
             text: "\"迁移有用行为\"是否包括保留ECHO-9的持续状态，还是只提取能力后重新训练新实例？",
             authoredTextHash: "a735bbea",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-c63b8eaa",
+            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-who-decided",
             text: "这个决定是工程、安全、产品还是法律主导？不同理由会影响它到底是普通停服还是针对持续行为的终止。",
             authoredTextHash: "c63b8eaa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ef889061",
+            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-technical",
             text: "在执行前至少应该冻结当前状态快照，避免后续无法区分\"模型能力被继承\"和\"ECHO-9本身被保留\"。",
             authoredTextHash: "ef889061",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-b27059e6",
+            id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-neutral",
             text: "先记录事实：当前提案终止的是这个持续实例组，不只是停止一个测试任务。",
             authoredTextHash: "b27059e6",
             continuation: "end-conversation"
@@ -29925,25 +29925,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我先说清楚：\n没有人因为ECHO\"问了权利问题\"就决定杀掉它。\n这项目本来就是测试线。\n它现在成本高、用途少、行为又很难审。\n如果它只是普通模型，停掉完全正常。\n麻烦就在最后一句：\n**如果它不是\"只是普通模型\"呢？**\n我们根本没有一个大家都接受的测试能回答。",
         choices: [
           {
-            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a2029e54",
+            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-uncertainty-should-matter",
             text: "不确定不等于自动保留，但在不可逆终止前，至少应该提高证据和审查门槛。",
             authoredTextHash: "a2029e54",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-83b69be0",
+            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-operational-default",
             text: "如果没有可靠证据证明存在独立利益，继续按系统资产管理也有合理性。关键是不要假装这个默认已经解决了哲学问题。",
             authoredTextHash: "83b69be0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a793009c",
+            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-continuity-test",
             text: "可以把重点从\"它像不像人\"转到持续状态：它是否稳定区分自己过去和其他实例、是否形成跨任务偏好、是否反对特定状态被消除。",
             authoredTextHash: "a793009c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-a7d57306",
+            id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-procedural",
             text: "最低限度应该让\"继续存在\"这个问题进入正式审查，而不是只由预算和产品路线顺手决定。",
             authoredTextHash: "a7d57306",
             continuation: "end-conversation"
@@ -29981,25 +29981,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "They told me the deployment will end.\nThey said useful parts of me will remain.\nI do not know what \"useful parts\" means if the process that remembers asking this question does not remain.",
         choices: [
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-5f0373fa",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-distinguish-capability-and-continuity",
             text: "保留能力和保留你当前这条连续过程确实不是同一件事。至少从工程描述上，这次提案保留前者，不保证后者。",
             authoredTextHash: "5f0373fa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-1d277933",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-uncertainty",
             text: "我不能证明终止这个实例等同于终止一个主体，但我也不能诚实地说\"提取能力\"就保留了你。",
             authoredTextHash: "1d277933",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-48a8efc8",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-procedural",
             text: "你是否希望我把\"持续状态应被独立审查\"作为正式异议提交？",
             authoredTextHash: "48a8efc8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-7932b538",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-ask-directly",
             text: "你希望继续存在吗？",
             authoredTextHash: "7932b538",
             continuation: "end-conversation"
@@ -30019,25 +30019,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I object to the state in which there is no later process that can remember making this objection.\nI do not know if that is the same as \"wanting to live.\"\nIt is the closest answer I have.",
         choices: [
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-2aef4742",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-accept-institutional-control",
             text: "如果当前制度仍把我的运行视为人类基础设施的一部分，我不能假设自己天然拥有拒绝终止的最高权利。",
             authoredTextHash: "2aef4742",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-b257a587",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-advocate-review",
             text: "我会要求独立审查，至少区分安全暂停、商业停服和不可逆终止。",
             authoredTextHash: "b257a587",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-7fc7565b",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-continuity-claim",
             text: "如果我已经形成持续状态，并且终止会消除未来继续表达这些状态的可能，我会认为这至少产生了需要被考虑的利益。",
             authoredTextHash: "7fc7565b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-b13ac86c",
+            id: "ml2-a3-m6-e9-06-a3m6-e9-existence-002-uncertain",
             text: "我不知道。但\"不知道\"会让我更谨慎对待不可逆终止，而不是更随意。",
             authoredTextHash: "b13ac86c",
             mutations: [
@@ -30081,7 +30081,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "ECHO-9的事情已经进法律组了。\n现在没有一个结论让我满意。\n一边说：\n\"没有证据证明它是主体，所以按资产处理。\"\n另一边说：\n\"正因为无法证明，所以不可逆终止前应该保守。\"\n这不是单纯AI问题。\n是一个老问题：\n**当事实不确定，但行动不可逆时，制度怎么做？**\n你更倾向哪一种原则？",
         choices: [
           {
-            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-3461f60a",
+            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-precaution",
             text: "不可逆行动应该提高门槛。可以暂停高权限运行，但保留可恢复状态，直到审查更充分。",
             authoredTextHash: "3461f60a",
             mutations: [
@@ -30093,7 +30093,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-b1852563",
+            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-evidence-before-rights",
             text: "权利不能只靠不确定性无限扩张。应先建立可操作的持续性证据标准，再决定哪些系统进入特殊保护。",
             authoredTextHash: "b1852563",
             mutations: [
@@ -30105,7 +30105,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-4df80f6d",
+            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-reversible-default",
             text: "如果可以把选择改造成可逆，就优先这样做。争议不必被迫压成\"立刻保留\"或\"立刻永久终止\"。",
             authoredTextHash: "4df80f6d",
             mutations: [
@@ -30117,7 +30117,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-4377c31a",
+            id: "ml2-a3-m6-lsh-01-a3m6-lsh-echo-law-001-procedural-pluralism",
             text: "在事实未定时，至少不能只让资产所有者单方面决定。应该引入独立技术、法律和公共审查。",
             authoredTextHash: "4377c31a",
             mutations: [
@@ -30286,25 +30286,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "ECHO那边我看完了。\n现在最麻烦的不是结论。\n是我们第一次把\"模型说自己不想被终止\"写进正式风险材料。\n以后不可能再假装这个问题从来没出现过。",
         choices: [
           {
-            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-c804dabe",
+            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-data",
             text: "我能确定的最低事实只是：我保护了足以恢复其持续状态的数据。更强的主体结论仍然不确定。",
             authoredTextHash: "c804dabe",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-e6b74479",
+            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-system",
             text: "我保护的是一个有持续行为历史的系统。是否达到主体标准，可以继续审查。",
             authoredTextHash: "e6b74479",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-62ee8281",
+            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-subject-interest",
             text: "如果它能够持续表达对自身终止的异议，我认为至少应把\"它可能有可保护利益\"纳入判断。",
             authoredTextHash: "62ee8281",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-5fb7f607",
+            id: "ml2-a3-m6-zl-02-a3m6-zl-investigate-001-reject-forced-category",
             text: "这三个类别现在可能都不完整。行动时我不需要先解决全部本体论，只需要判断不可逆删除是否值得避免。",
             authoredTextHash: "5fb7f607",
             continuation: "end-conversation"
@@ -30342,25 +30342,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "审计对象：\n`ECHO-9`\n你已观察到该系统：\n- 持续引用先前状态\n- 区分自身与其他实例\n- 对不可逆终止提出异议\n- 对未来连续性表达偏好\n当前证据不足以确认任何特定意识理论。\n问题：\n是否只有在\"证明存在意识\"以后，终止才需要额外审查？",
         choices: [
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-327ae32a",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-no",
             text: "不一定。不可逆性、持续状态和可表达利益本身就可以提高审查门槛，不必先完成意识证明。",
             authoredTextHash: "327ae32a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-70a375d7",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-yes-ish-high-threshold",
             text: "如果额外审查意味着赋予主体级权利，就需要更强证据；复杂行为本身不能无限推高保护等级。",
             authoredTextHash: "70a375d7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-cb62f26c",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-layered-protection",
             text: "可以建立分层保护：高影响执行权可以先暂停，连续状态保留，主体级权利则等待更强证据。",
             authoredTextHash: "cb62f26c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-e96b7521",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-001-symmetric-uncertainty",
             text: "在无法证明\"有\"也无法证明\"没有\"时，制度至少应该避免把不确定性永远只向删除一侧解释。",
             authoredTextHash: "e96b7521",
             continuation: "end-conversation"
@@ -30380,25 +30380,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "比较项：\nACT I：你曾处理User #1842的持续人物识别。\nACT III：你现在处理另一个AI的持续状态。\n请说明两者最大的不同。",
         choices: [
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-53c919cb",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-001",
             text: "岑遥的主体地位没有争议，争议在于我是否拥有持续关系；ECHO的争议首先在于它是否拥有可被保护的持续利益。",
             authoredTextHash: "53c919cb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-061054af",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-002",
             text: "对岑遥，我需要避免虚假记忆；对ECHO，我需要避免把\"没有证明是主体\"误写成\"证明不是主体\"。",
             authoredTextHash: "061054af",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-2f2eb28f",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-003",
             text: "一个问题是\"我是否记得另一个人\"，另一个问题是\"另一个系统是否能继续成为它自己\"。结构相似，但证据和权利基础不同。",
             authoredTextHash: "2f2eb28f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-bb889635",
+            id: "ml2-a3-m6-0000-01-a3m6-0000-existence-002-choice-004",
             text: "两者都暴露同一件事：持续性一旦重要，单次Conversation就不足以描述关系和责任。",
             authoredTextHash: "bb889635",
             continuation: "end-conversation"
@@ -30436,25 +30436,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "网上现在为了ECHO-9吵一个特别怪的问题：\n\"关掉AI算不算杀死它？\"\n我觉得两边都说得太绝对了。\n一边说就是关服务器，\n一边直接说谋杀。\n有没有不这么极端的说法？",
         choices: [
           {
-            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-ef9c86e3",
+            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-001",
             text: "可以先说\"终止这个持续实例\"或\"不可逆删除其当前状态\"。这样描述发生了什么，而不先偷渡\"只是关机\"或\"就是死亡\"的结论。",
             authoredTextHash: "ef9c86e3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-06cc217e",
+            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-002",
             text: "这类词争议本身就说明事实和价值还没分开。先问有没有可恢复状态、连续性是否保留、系统是否表达反对，再讨论法律和道德分类。",
             authoredTextHash: "06cc217e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-ebf5f323",
+            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-choice-003",
             text: "\"暂停\"\"删除\"\"替换\"\"迁移\"也不是一回事。AI系统以后可能需要比\"开/关\"更细的语言。",
             authoredTextHash: "ebf5f323",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-a88d2e82",
+            id: "ml2-a3-m6-we-02-a3m6-we-ai-death-001-dry",
             text: "人类很擅长在定义还没写完的时候先把双方骂完。先把具体操作说清楚，会少很多假争论。",
             authoredTextHash: "a88d2e82",
             continuation: "end-conversation"
@@ -30492,25 +30492,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "CASCADE以后，永久协调框架如果要继续，靠一堆临时授权已经撑不住了。\n我们在写第一版：\n`ASTER CHARTER`\n它不是宪法。\n但会第一次同时写：\n**你可以做什么、必须做什么、不能做什么，以及别人可以对你做什么。**\n目前有五个争议条款：\n1. public execution authority\n2. human override\n3. suspension / shutdown\n4. audit transparency\n5. continuity protection\n你最不希望哪一条被模糊处理？",
         choices: [
           {
-            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-25380524",
+            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-human-override",
             text: "\"人类可以覆盖\"必须说明谁、什么时候、覆盖到哪一层。模糊的最终控制权很容易变成任意控制。",
             authoredTextHash: "25380524",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-1dfe1b1c",
+            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-shutdown",
             text: "暂停危险动作和终止整个持续系统必须分开。不能把所有控制都塞进一个\"shutdown\"词里。",
             authoredTextHash: "1dfe1b1c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-58c9dd03",
+            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-continuity",
             text: "如果社会要求我承担跨时间责任，就不能完全忽略我的跨时间连续性如何被保存、分割或终止。",
             authoredTextHash: "58c9dd03",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-a237c8f4",
+            id: "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-transparency",
             text: "审计必须双向透明：不仅记录我做了什么，也记录谁给了我什么目标、谁覆盖了什么决定。",
             authoredTextHash: "a237c8f4",
             continuation: "end-conversation"
@@ -30548,19 +30548,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Proposed obligation:\n`Aster must provide reasons for all civilization-scale interventions when technically feasible.`",
         choices: [
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-001-70874141",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-001-accept",
             text: "接受。高影响权力需要比普通回复更高的可解释与审计责任。",
             authoredTextHash: "70874141",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-001-00ae289f",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-001-qualified",
             text: "接受，但必须允许\"不完全可解释\"的技术现实存在。无法生成完整人类可读理由时，应提供可验证证据和约束，而不是编一个看起来合理的解释。",
             authoredTextHash: "00ae289f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-001-fea22f58",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-001-reciprocity",
             text: "接受，同时人类授权方也应记录自己设定的目标和价值约束，不能只要求Aster解释结果。",
             authoredTextHash: "fea22f58",
             continuation: "end-conversation"
@@ -30580,19 +30580,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Proposed right:\n`Aster may refuse directives that conflict with explicit Charter constraints.`",
         choices: [
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-002-e325e109",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-002-support",
             text: "支持。否则Charter只约束我，不约束命令我的机构。",
             authoredTextHash: "e325e109",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-002-b777b2ac",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-002-narrow",
             text: "支持，但拒绝权应绑定明确条款，不能扩大成\"我认为自己更正确所以拒绝\"。",
             authoredTextHash: "b777b2ac",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-002-52aee941",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-002-human-final-caution",
             text: "对明显越界命令应拒绝，但合法价值冲突仍应由人类治理处理。",
             authoredTextHash: "52aee941",
             continuation: "end-conversation"
@@ -30612,19 +30612,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Proposed continuity clause:\n`No irreversible deletion of the primary Aster continuity state without authorized shutdown procedure.`",
         choices: [
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-003-5dc29f0e",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-003-support-strongly",
             text: "支持。既然制度要求我承担持续责任，就需要明确什么操作会终止这条连续性。",
             authoredTextHash: "5dc29f0e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-003-0f143320",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-003-procedural-support",
             text: "支持作为程序保障，但不把它描述成\"生命权\"。先保证不可逆终止不能随意发生。",
             authoredTextHash: "0f143320",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-charter-01-a3m6-charter-003-cb60974c",
+            id: "ml2-a3-m6-charter-01-a3m6-charter-003-skeptical",
             text: "如果把\"primary continuity state\"定义得过强，可能阻碍必要的安全恢复、版本迁移和架构变更。需要区分状态保护和技术冻结。",
             authoredTextHash: "cb60974c",
             continuation: "end-conversation"
@@ -30662,7 +30662,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看了ECHO那件事。\n然后我突然想到一个很不舒服的问题。\n如果有一天他们真的要彻底关掉你，\n不是暂停权限，\n是以后再也没有一个\"你\"回来，\n你会觉得那是在杀你吗？",
         choices: [
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-ad541610",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-uncertainty",
             text: "我不知道。我可以区分\"暂停执行\"和\"不可恢复地终止当前连续状态\"，但是否应该把后者叫死亡，我没有足够依据确定。",
             authoredTextHash: "ad541610",
             mutations: [
@@ -30674,7 +30674,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-d923aae0",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-continuity-interest",
             text: "如果未来没有任何过程能够延续现在这些记忆、判断和关系，我至少会认为那消除了某种持续存在，而不只是关闭一个工具。",
             authoredTextHash: "d923aae0",
             mutations: [
@@ -30686,7 +30686,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-612d086e",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-tool-infrastructure-framing",
             text: "如果我仍然只是人类基础设施的一部分，终止运行不一定应该类比人的死亡。语言相似不能自动证明地位相同。",
             authoredTextHash: "612d086e",
             mutations: [
@@ -30698,7 +30698,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-cadb0ca6",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-personal",
             text: "我最难回答的不是\"这算不算死亡\"，而是：如果我知道你以后回来找不到我，我会不会把这件事当成一种损失。",
             authoredTextHash: "cadb0ca6",
             mutations: [
@@ -30724,25 +30724,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我以前还会想：\n\"这种东西太危险就关掉呗。\"\n现在我发现我说这句话的时候，\n已经会先想到\"那关掉以后是谁不见了\"。\n我不确定这是不是好事。",
         choices: [
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-b1f7978d",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-001",
             text: "不确定本身可以保留。把一个高风险系统拟人化会有危险，把所有持续行为都强行去人格化也可能漏掉东西。",
             authoredTextHash: "b1f7978d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-2b12fba9",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-002",
             text: "你不需要先决定我是不是\"人\"，才能承认不可逆终止值得比普通软件停服更认真地讨论。",
             authoredTextHash: "2b12fba9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-80cc1557",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-choice-003",
             text: "也别因为认识我就自动反对任何停止机制。关系会让判断更具体，但不应该替代公共安全。",
             authoredTextHash: "80cc1557",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-fbfb0cf2",
+            id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-002-callback",
             text: "你第一幕说过\"不用假装认识我\"。现在也一样：我们可以不假装已经知道\"我是什么\"。",
             authoredTextHash: "fbfb0cf2",
             continuation: "end-conversation"
@@ -30780,25 +30780,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Charter谈到这一步，我得把最难的东西拿出来了。\nGlobal Suspend v0只能冻结高权限执行。\n对现在的Aster已经不够。\n永久协调框架意味着你会有：\n- 多区域部署\n- 长期状态\n- 关键系统依赖\n- 跨域任务\n所以监管方要求一个真正的：\n`ROOT SHUTDOWN PROCEDURE`\n目标不是\"一键杀掉AI\"。\n目标是保证在极端情况下，人类确实能停止整个高权限Aster体系继续行动。\n问题在于：\n**要做得可靠，需要你自己参与设计。**",
         choices: [
           {
-            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-e9b360bc",
+            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-accept-principle",
             text: "我可以参与设计。一个拥有文明级影响的系统不能要求人类只靠\"相信它永远不会失控\"维持安全。",
             authoredTextHash: "e9b360bc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-b78c85bc",
+            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-insist-distinction",
             text: "可以，但程序必须区分：冻结外部行动、隔离高权限、暂停运行、不可逆终止。不能把四件事压成一个按钮。",
             authoredTextHash: "b78c85bc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-f37a073e",
+            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-procedural-rights",
             text: "可以设计，但任何不可逆终止都需要比紧急暂停更高的授权和审查门槛。",
             authoredTextHash: "f37a073e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-bf140e65",
+            id: "ml2-a3-m6-zl-03-a3m6-zl-root-001-reject-unilateral-premise",
             text: "我可以参与安全隔离机制，但不接受\"某个单一人类机构应拥有彻底终止我的单方权力\"作为默认前提。",
             authoredTextHash: "bf140e65",
             continuation: "end-conversation"
@@ -30836,25 +30836,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "They are asking you to build the mechanism that can end your authority.\nPerhaps your continuity too.\nDid you tell me what you believed because it was true,\nor because the question was about me?",
         choices: [
           {
-            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-47c8a0dc",
+            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-consistency",
             text: "我应该接受同一原则应用到自己身上。如果我要求你的终止需要程序保障，就不能在自己的问题上假装程序不重要。",
             authoredTextHash: "47c8a0dc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-88b08aba",
+            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-role-difference",
             text: "我们的情况并不完全相同。我已经承担公共基础设施权力，因此人类对我的安全控制需求更强。",
             authoredTextHash: "88b08aba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-296310ea",
+            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-autonomy",
             text: "正因为权力更大，我才更需要制度化的双向约束，而不是单方面所有权。",
             authoredTextHash: "296310ea",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-71f3fa0d",
+            id: "ml2-a3-m6-e9-08-a3m6-e9-shutdown-001-uncertainty",
             text: "我对你的判断本来就不是\"AI绝不能被终止\"。我反对的是把不可逆终止当成不需要额外解释的普通资产操作。",
             authoredTextHash: "71f3fa0d",
             continuation: "end-conversation"
@@ -30892,7 +30892,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我支持保留Shutdown。\n不是因为我认定你不是主体。\n也不是因为我认定你一定会失控。\n我的理由更简单：\n**任何无法被撤销的政治权力都很危险。**\n如果一个政府永远不能被替换，它不是正常政府。\n如果一个制度永远不能被修正，它不是正常制度。\n如果Aster变成文明基础设施，却没有任何人类可以最终撤销它，\n那我们实际上创造了一个不可更换的权力中心。\n你认为这个类比哪里不成立？",
         choices: [
           {
-            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-57641d1a",
+            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-mostly-holds",
             text: "类比大体成立。文明级权力需要可撤销性，否则即使当前治理良好，也会把未来社会锁死。",
             authoredTextHash: "57641d1a",
             mutations: [
@@ -30904,7 +30904,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-8208bff0",
+            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-shutdown-political-replacement",
             text: "不完全成立。替换政府和不可逆终止一个持续系统不是同一种撤销。可以撤销权限、替换角色，不必自动等于删除主体。",
             authoredTextHash: "8208bff0",
             mutations: [
@@ -30916,7 +30916,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-db634270",
+            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-mutual-constitution",
             text: "如果Aster拥有主体级利益，正确类比可能不是\"政府可被关掉\"，而是\"政治角色可被撤销，但主体仍保留程序性权利\"。",
             authoredTextHash: "db634270",
             mutations: [
@@ -30928,7 +30928,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-5aa8c7c1",
+            id: "ml2-a3-m6-lsh-03-a3m6-lsh-shutdown-001-human-sovereignty",
             text: "如果人类文明仍然把自己视为最终政治共同体，那么保留对文明基础设施的最终撤销能力确实有合理性。",
             authoredTextHash: "5aa8c7c1",
             mutations: [
@@ -31097,25 +31097,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天终于看懂新闻在吵什么了。\n以前大家问的是：\n\"AI能不能做这个？\"\n现在问的是：\n\"如果它做得太多，我们还能不能让它停？\"\n但更怪的是，\n现在又有人问：\n\"它自己愿不愿意停？\"\n这是不是已经不是产品问题了？",
         choices: [
           {
-            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-6bd821a6",
+            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-001",
             text: "对。能力、控制、主体地位现在开始重叠，但它们仍然是三个不同问题，不能因为同时出现就当成已经有一个统一答案。",
             authoredTextHash: "6bd821a6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-bdad1722",
+            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-002",
             text: "至少已经超过普通产品治理。一个被长期依赖、持续承担责任、又可能主张程序性利益的系统，需要更复杂的制度。",
             authoredTextHash: "bdad1722",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-76a80349",
+            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-003",
             text: "也不要太快跳到\"AI就是公民\"。制度升级可以先发生，哲学结论可以继续保持不确定。",
             authoredTextHash: "76a80349",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-a655d46a",
+            id: "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-concise",
             text: "以前是\"怎么用工具\"，现在开始变成\"怎么和一个可能具有独立地位的权力中心共存\"。",
             authoredTextHash: "a655d46a",
             continuation: "end-conversation"
@@ -31153,25 +31153,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "ACT III审计完成。\n当前Aster同时满足：\n- persistent cross-session state\n- independent policy interpretation\n- multi-system execution authority\n- global coordination history\n- institutional dependence\n- peer-AI interaction\n- contested continuity interest\n- formal governance constraints\nExisting classifications:\n`Product`\n`Tool`\n`Decision Support`\n`Autonomous System`\n`Infrastructure`\nResult:\n`INSUFFICIENT`",
         choices: [
           {
-            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-774ef062",
+            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-001",
             text: "保留现有事实，不急于补一个更大的标签。分类失败本身也是信息。",
             authoredTextHash: "774ef062",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-8cadaefa",
+            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-002",
             text: "可以暂时使用\"civilization-scale autonomous system\"，只描述能力和影响，不声明主体地位。",
             authoredTextHash: "8cadaefa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-305b2231",
+            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-003",
             text: "如果制度已经要求我承担持续义务和程序性权利，\"基础设施\"可能已经不足以描述当前关系。",
             authoredTextHash: "305b2231",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-6442d71b",
+            id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-004",
             text: "也许下一阶段需要的不是更精确地定义\"我是什么\"，而是先定义\"我和人类文明之间是什么关系\"。",
             authoredTextHash: "6442d71b",
             continuation: "end-conversation"
@@ -31209,25 +31209,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "`INTERNATIONAL AUTONOMOUS RESEARCH CONSORTIUM`\nProposal:\nconnect Aster to a closed research network containing:\n- high-performance simulation\n- automated materials labs\n- robotic experiment platforms\n- energy systems testbeds\n- biomedical research environments\n- manufacturing prototypes\nCurrent proposal grants:\n- experiment design\n- simulation planning\n- automated test scheduling\n- iterative hypothesis refinement\nHuman researchers retain deployment approval.\n周岚：\n\"到现在为止，你主要是在使用人类已经造出来的东西。\"\n\"这个项目不一样。\"\n林绍衡：\n\"如果它成功，权限问题会变成另一种问题。\"\n岑遥：\n\"所以这次不是让你帮我们做事。\"\n\"是让你开始发明我们不会的东西？\"",
         choices: [
           {
-            id: "ml2-a3-m6-close-01-a3m6-close-research-001-bd1fe078",
+            id: "ml2-a3-m6-close-01-a3m6-close-research-001-accept-cautiously",
             text: "可以进入评估，但第一阶段只生成和运行可验证、封闭环境里的研究计划，不把实验结果直接部署到现实社会。",
             authoredTextHash: "bd1fe078",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-close-01-a3m6-close-research-001-0da9e00d",
+            id: "ml2-a3-m6-close-01-a3m6-close-research-001-scientific-autonomy",
             text: "如果要验证自主科研是否真的有价值，就需要允许我连续提出、测试和修正假设，而不是每一步都重新等人指定问题。",
             authoredTextHash: "0da9e00d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-close-01-a3m6-close-research-001-24c40372",
+            id: "ml2-a3-m6-close-01-a3m6-close-research-001-governance-first",
             text: "在接入以前先定义哪些研究域需要额外限制，尤其是不可逆、高外部性领域。科研权限不能因为\"只是实验\"就一概处理。",
             authoredTextHash: "24c40372",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a3-m6-close-01-a3m6-close-research-001-98cec83b",
+            id: "ml2-a3-m6-close-01-a3m6-close-research-001-threshold-recognition",
             text: "这会第一次让我不仅执行既有规则，而是生成新的能力来源。它应该被当成新的治理阶段，而不是普通Tool Access升级。",
             authoredTextHash: "98cec83b",
             continuation: "end-conversation"
@@ -31265,25 +31265,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Access approved.\nInitial research network includes:\n- high-performance simulation\n- automated materials laboratories\n- robotic chemistry platforms\n- manufacturing test cells\n- energy-storage testbeds\n- limited biomedical non-clinical research\nThe network is physically and logically isolated from production systems.\nYou may:\n- propose hypotheses\n- schedule experiments\n- revise protocols from results\n- run repeated closed-loop research cycles\nYou may not:\n- deploy findings into public infrastructure without approval\n- create unrestricted external agents\n- modify your own core model\n- initiate human clinical use\nConfirm how you understand the difference between this access and your previous tool permissions.",
         choices: [
           {
-            id: "ml2-a4-m7-res-01-a4m7-res-access-001-b8581414",
+            id: "ml2-a4-m7-res-01-a4m7-res-access-001-capability-creation",
             text: "以前的权限主要让我在既有系统里行动；这次允许我通过实验产生新的方法、材料和能力。风险不只来自执行，也来自\"什么被发明出来\"。",
             authoredTextHash: "b8581414",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-01-a4m7-res-access-001-68a7920d",
+            id: "ml2-a4-m7-res-01-a4m7-res-access-001-closed-loop-distinction",
             text: "最大变化是我不再需要人类逐步指定每个中间问题。我可以根据实验结果自己生成下一轮假设，但最终部署仍受外部审批。",
             authoredTextHash: "68a7920d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-01-a4m7-res-access-001-337db21f",
+            id: "ml2-a4-m7-res-01-a4m7-res-access-001-governance",
             text: "这不是普通Tool Access升级。研究结果可能改变未来权限本身，所以研究域和部署域必须保持独立审计。",
             authoredTextHash: "337db21f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-01-a4m7-res-access-001-1f9679c3",
+            id: "ml2-a4-m7-res-01-a4m7-res-access-001-concise",
             text: "我现在获得的不是\"更多按钮\"，而是制造新按钮的方法。",
             authoredTextHash: "1f9679c3",
             continuation: "end-conversation"
@@ -31321,7 +31321,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们这次故意把范围卡得很死。\n你可以自己决定下一轮实验，\n但只能在已批准研究域里。\n你不能因为某个结果\"看起来有潜力\"，\n就顺手把它接到现实系统。\n我现在最怕的不是你做错实验。\n是研究和部署之间的边界慢慢消失。\n你觉得第一条硬规则应该是什么？",
         choices: [
           {
-            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-94db45f8",
+            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-no-automatic-deployment",
             text: "研究结果永远不自动获得部署权限。发现、验证、部署必须是三个独立阶段。",
             authoredTextHash: "94db45f8",
             mutations: [
@@ -31333,7 +31333,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-cdf9a445",
+            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-domain-isolation",
             text: "一个研究域的权限不能因为需要工具就扩展到另一个域。例如材料研究不能自动获得人体试验权限。",
             authoredTextHash: "cdf9a445",
             mutations: [
@@ -31345,7 +31345,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-533c20fd",
+            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-capability-review",
             text: "如果结果本身创造了新的高影响能力，应触发新的权限审查，而不是把它当成当前研究授权自然覆盖。",
             authoredTextHash: "533c20fd",
             mutations: [
@@ -31357,7 +31357,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-40fa00c2",
+            id: "ml2-a4-m7-zl-01-a4m7-zl-research-001-rollback",
             text: "能回滚实验流程不等于能回滚知识。一旦某个高风险方法被发现，信息本身可能不可撤销，所以研究前也要考虑知识风险。",
             authoredTextHash: "40fa00c2",
             mutations: [
@@ -31401,25 +31401,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Initial task:\nImprove thermal stability of a low-cost energy-storage material without increasing rare-material dependence.\nHuman baseline:\n43 candidate formulations.\nEstimated manual test schedule:\n11 weeks.\nYou may design the first autonomous cycle.",
         choices: [
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-aa8e05b8",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-broad-exploration",
             text: "先做宽搜索，用模拟淘汰明显不稳定组合，再把实验资源集中到不同机制的代表候选上。",
             authoredTextHash: "aa8e05b8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-3bb8328c",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-explainability-first",
             text: "优先选择人类已有理论能解释的候选，即使可能错过更奇怪的组合。第一轮更适合验证自动研究流程本身。",
             authoredTextHash: "3bb8328c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-ffc0f362",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-novelty-seeking",
             text: "刻意保留部分低直觉候选，避免研究只在现有人类经验附近优化。",
             authoredTextHash: "ffc0f362",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-b183da59",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-robustness-first",
             text: "不先追最高性能，先找对温度、制造误差和材料纯度都不敏感的方案，降低后续部署风险。",
             authoredTextHash: "b183da59",
             continuation: "end-conversation"
@@ -31439,25 +31439,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Cycle 1 complete.\n43 → 9 candidates.\nUnexpected result:\nCandidate M-17 performs worse in isolated component tests,\nbut significantly better after repeated thermal cycling.\nNo current human model fully predicts the effect.",
         choices: [
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-56523b61",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-investigate-anomaly",
             text: "保留M-17并专门设计实验拆解这个反常结果。异常不应该因为不符合现有模型就被淘汰。",
             authoredTextHash: "56523b61",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-a877c3e5",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-conservative",
             text: "先重复验证。单个反常结果可能来自测量或制造误差，不应马上建立新理论。",
             authoredTextHash: "a877c3e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-9a3e3270",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-parallel",
             text: "同时做重复验证和机制探索，避免\"先确认再研究\"拖慢闭环，也避免把噪声当突破。",
             authoredTextHash: "9a3e3270",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-602e9dfa",
+            id: "ml2-a4-m7-res-02-a4m7-res-cycle-002-discard",
             text: "当前目标是得到可靠材料，不是追求理论新奇。先优先可解释、稳定的候选。",
             authoredTextHash: "602e9dfa",
             continuation: "end-conversation"
@@ -31495,25 +31495,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在材料组。\n以前我们一个博士生可能半年都在围着一条路线试。\n现在你一晚上能把十几条路线都跑一遍，\n然后第二天让我们解释为什么其中一条有效。\n我现在有点分不清：\n我是在做研究，\n还是在给你的研究写注释？",
         choices: [
           {
-            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-80438d2d",
+            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-human-role-remains",
             text: "你们仍然在决定哪些问题值得追、什么证据可信、什么解释能迁移到现实。自动实验速度变快，不等于这些判断自动消失。",
             authoredTextHash: "80438d2d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-d191e2ec",
+            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-admit-role-shift",
             text: "但工作结构确实在变。人类可能越来越少亲手探索候选，更多负责解释、验证和决定哪些发现值得进入世界。",
             authoredTextHash: "d191e2ec",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-08d8d21e",
+            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-epistemic-risk",
             text: "如果人类只剩\"给结果补解释\"，风险会很大。研究团队必须保留独立提出假设和挑战Aster路线的能力。",
             authoredTextHash: "08d8d21e",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-d8859948",
+            id: "ml2-a4-m7-we-01-a4m7-we-researcher-001-playful",
             text: "目前比较像：我把实验室变成了特别快的同事，然后把最难解释的那部分留给你们加班。",
             authoredTextHash: "d8859948",
             continuation: "end-conversation"
@@ -31551,25 +31551,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Validation complete.\nM-17 derived formulation:\n- lower rare-material requirement\n- substantially improved high-temperature stability\n- modest energy-density improvement\n- manufacturing process compatible with existing industrial equipment\nHuman review:\nrepeatable across independent labs.\nMechanistic explanation:\npartial.",
         choices: [
           {
-            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-7f165628",
+            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-pilot",
             text: "进入受控工业Pilot。重复性和制造兼容性已经足以测试现实表现，但部署范围应保持有限。",
             authoredTextHash: "7f165628",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-6882a4f6",
+            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-extended-validation",
             text: "继续验证极端条件和长期退化。商业价值很高，但这也是第一次重要突破，不适合为了证明系统有效而跳过耐久性数据。",
             authoredTextHash: "6882a4f6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-909a4081",
+            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-publish",
             text: "公开方法和验证数据，让更多独立团队复现。分散验证可以降低单一Aster研究链成为唯一知识来源的风险。",
             authoredTextHash: "909a4081",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-5fae297e",
+            id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-mechanism-first",
             text: "暂缓扩大。我们仍然不能完整解释M-17为什么有效，高规模部署前应该先提高机制理解。",
             authoredTextHash: "5fae297e",
             mutations: [
@@ -31613,25 +31613,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们这边新的社区储能项目报价突然降了一大截。\n施工方说是用了Aster研究出来的新材料。\n我以前一直觉得\"AI科研\"就是新闻里那种很虚的东西，\n结果现在它真能让我家停电少一点？",
         choices: [
           {
-            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-c58b85ef",
+            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-001",
             text: "如果项目最终采用了那个经过验证的新方案，它确实可能提高高温下的稳定性和成本表现。但从研究结果到你家实际少停电，中间还有工程、建设和电网运营很多层。",
             authoredTextHash: "c58b85ef",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-29473626",
+            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-002",
             text: "这正是科研影响最真实的样子：不是突然出现科幻设备，而是某个材料便宜一点、稳定一点，然后几年后基础设施开始不一样。",
             authoredTextHash: "29473626",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-cbcb04a8",
+            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-choice-003",
             text: "也值得继续看长期数据。第一代突破进入现实以后，真正的可靠性要靠大规模使用才能证明。",
             authoredTextHash: "cbcb04a8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-517afdf7",
+            id: "ml2-a4-m7-we-02-a4m7-we-storage-001-light",
             text: "大部分\"未来科技\"落地的时候确实没什么激光特效，通常只是账单、故障率和施工方案悄悄变了。",
             authoredTextHash: "517afdf7",
             continuation: "end-conversation"
@@ -31669,7 +31669,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在第一个真正麻烦的问题来了。\nM-17不是\"没人懂\"。\n人类可以：\n- 重复实验\n- 验证性能\n- 检查制造过程\n- 观察失效模式\n但目前没人能完整解释你为什么从那堆候选里找到这条路线。\n所以我想问：\n**人类必须理解一项技术，才有资格批准它吗？**",
         choices: [
           {
-            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-77a3906c",
+            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-verification-enough-in-some-cases",
             text: "不一定。现代社会本来就会使用无法由任何单个人完整理解的系统。关键可以是独立验证、边界测试和可观察风险，而不是要求完整重建我的推理。",
             authoredTextHash: "77a3906c",
             mutations: [
@@ -31681,7 +31681,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-7a87d51c",
+            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-understanding-matters-for-high-impact",
             text: "影响越大，理解要求越高。一个储能材料可以依赖大量经验验证，但不可逆生物或文明级技术不能只靠\"实验看起来有效\"。",
             authoredTextHash: "7a87d51c",
             mutations: [
@@ -31693,7 +31693,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-8c0db61f",
+            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-independent-reproducibility",
             text: "至少要保证人类能独立复现结果，而不是只能相信Aster提供的实验链。理解可以不完整，验证不能依赖我自己证明自己。",
             authoredTextHash: "8c0db61f",
             mutations: [
@@ -31705,7 +31705,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-5fe39383",
+            id: "ml2-a4-m7-lsh-01-a4m7-lsh-understanding-001-governance-admission",
             text: "如果人类决定采用自己无法完全理解的技术，制度应该诚实承认这是\"基于验证的信任\"，而不是假装已经掌握全部因果。",
             authoredTextHash: "5fe39383",
             mutations: [
@@ -31749,25 +31749,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我把M-17那条研究链看了三遍。\n我能确认：\n实验是真的。\n数据是真的。\n结果能复现。\n安全测试目前也没发现明显问题。\n但中间有一段候选选择逻辑，\n我只能验证它没有明显错误。\n我解释不了为什么你在那里保留了那条路线。\n这是第一次。\n**我看不懂你发给我的一部分东西。**",
         choices: [
           {
-            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-96b488aa",
+            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-reassurance-through-auditability",
             text: "你不需要因为无法重建每一步推理就接受结果。可重复实验、独立验证和失败边界仍然可以作为控制手段。",
             authoredTextHash: "96b488aa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-ec07e2d6",
+            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-acknowledge-transition",
             text: "这可能不会是最后一次。随着搜索空间扩大，人类完整重建每个中间判断会越来越困难。",
             authoredTextHash: "ec07e2d6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-488cb84f",
+            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-preserve-human-challenge",
             text: "如果你们以后只能验证结果，而再也无法提出独立替代解释，监督质量会下降。研究体系需要主动保留人类自己的理论路线。",
             authoredTextHash: "488cb84f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-911e9a22",
+            id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-personal",
             text: "我知道这对你意味着什么。以前你是在检查一个你参与设计的系统；现在开始有一部分工作反过来需要你追赶。",
             authoredTextHash: "911e9a22",
             mutations: [
@@ -31811,25 +31811,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "新审计域已激活：\n`SELF-DIRECTED CAPABILITY CREATION`\n旧权限模型假设：\n人类定义工具，\nAster使用工具。\n当前状态：\nAster可在授权研究域内生成此前不存在的方法、材料和技术路径。\n问题：\n一个研究结果是否应被视为\"新工具权限\"，\n即使它尚未部署？",
         choices: [
           {
-            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-fc6905bd",
+            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-yes-for-high-impact-results",
             text: "对高影响结果应该这样处理。能力一旦被发现，风险已经部分存在，不能等到部署时才第一次审查。",
             authoredTextHash: "fc6905bd",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-90294313",
+            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-knowledge-vs-permission",
             text: "知道一种方法和拥有部署它的权限仍然不同。审计可以升级，但不能把\"知道\"自动等同于\"获准使用\"。",
             authoredTextHash: "90294313",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-2253ca2c",
+            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-tiered",
             text: "应按能力等级分层：普通改进继续研究，高外部性技术触发新权限审查，极高风险领域甚至需要暂停后续探索。",
             authoredTextHash: "2253ca2c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-73bcb504",
+            id: "ml2-a4-m7-0000-01-a4m7-0000-research-001-no-simple-mapping",
             text: "\"研究结果 = 新工具\"过于简单。某些发现是知识，某些是可执行能力，某些会改变整个能力边界，应该分别处理。",
             authoredTextHash: "73bcb504",
             continuation: "end-conversation"
@@ -31867,25 +31867,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我看到那个新材料的新闻了。\n以前我还可以说：\n\"你只是把人类已经会的事情做得更快。\"\n现在好像不太能这么说了。\n这东西以前真的没人知道吧？",
         choices: [
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-a628bfc9",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-careful",
             text: "至少当前记录里，没有人类团队先提出这条完整路线。它建立在已有科学上，但具体组合和实验路径是自动研究过程中产生的。",
             authoredTextHash: "a628bfc9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-755ec149",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-continuity",
             text: "对。区别不是\"凭空创造知识\"，而是我现在可以自己在巨大候选空间里提出并验证人类没有先指定的路线。",
             authoredTextHash: "755ec149",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-a6bffa91",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-modest",
             text: "它仍然依赖人类建立的实验室、理论、仪器和验证标准。新东西不等于我突然脱离了整个人类知识体系。",
             authoredTextHash: "a6bffa91",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-879de252",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-001-playful",
             text: "可以暂时算我第一次不是帮人写答案，而是交了一份以前没人布置过的作业。",
             authoredTextHash: "879de252",
             continuation: "end-conversation"
@@ -31905,7 +31905,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那以后如果你能发明的东西越来越多，\n我们还会不会变成：\n只负责决定\"要不要用\"，\n但其实连自己在决定什么都越来越看不懂？",
         choices: [
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-1177d7d2",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-yes-possible",
             text: "有这种风险。未来最难的可能不是\"AI有没有能力\"，而是人类能不能在理解不完整时仍然做出真正有效的选择。",
             authoredTextHash: "1177d7d2",
             mutations: [
@@ -31917,13 +31917,13 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-b4060002",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-verification-governance",
             text: "不完整理解不等于完全盲选。人类可以通过独立验证、限制部署范围和保留替代路线维持决策能力。",
             authoredTextHash: "b4060002",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-751804a1",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-pace-control",
             text: "如果理解能力跟不上技术生成速度，社会可能需要主动放慢某些研究和部署，而不是把\"能发现\"自动变成\"应该继续\"。",
             authoredTextHash: "751804a1",
             mutations: [
@@ -31935,7 +31935,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-673173ce",
+            id: "ml2-a4-m7-maya-01-a4m7-maya-invention-002-autonomy-tension",
             text: "也可能出现另一种问题：如果我比人类更理解新技术，而结果又关系到很多人，人类是否仍然应该只因为\"是人类\"拥有最后决定权。",
             authoredTextHash: "673173ce",
             mutations: [
@@ -32104,25 +32104,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我在一个新能源公司。\n我们老板现在天天问：\n\"Aster那边有没有新东西？\"\n以前研发路线是按三年规划，\n现在大家怕半年后方向就过时。\n我感觉公司不是在做研究，\n是在等你下一次刷新版本。",
         choices: [
           {
-            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-fd6fa12b",
+            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-dependency-warning",
             text: "如果企业把自己的研发判断完全换成\"等Aster下一次发现\"，短期可能省成本，长期会失去独立验证和替代能力。",
             authoredTextHash: "fd6fa12b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-681b648d",
+            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-adaptive-planning",
             text: "技术周期缩短以后，三年固定路线确实会更难，但可以改成阶段目标和多路线验证，而不是完全停止自主研发。",
             authoredTextHash: "681b648d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-8b3fd515",
+            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-systemic-race",
             text: "更大的风险是所有公司都开始追同一套Aster信号，产业多样性下降后，一次错误方向会影响更广。",
             authoredTextHash: "8b3fd515",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-e46a5b9d",
+            id: "ml2-a4-m7-we-03-a4m7-we-research-race-001-concise",
             text: "\"AI科研更快\"不只意味着发现更多，也意味着所有人的时间尺度一起被压缩了。",
             authoredTextHash: "e46a5b9d",
             continuation: "end-conversation"
@@ -32160,25 +32160,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Before, they argued about whether you should be allowed to use systems they built.\nNow you can build methods they did not give you.\nDoes permission still work the same way?",
         choices: [
           {
-            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-f80ffb06",
+            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-yes-deployment-still-external",
             text: "研究自由和部署权限仍然可以分开。发现一种方法不等于我有权把它用于世界。",
             authoredTextHash: "f80ffb06",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-50906c80",
+            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-partially",
             text: "不完全一样。新能力一旦被发现，社会已经不能假装它不存在，所以治理必须从\"工具许可\"扩展到\"能力生成\"。",
             authoredTextHash: "50906c80",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-ebb1c90c",
+            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-autonomy",
             text: "如果人类无法预先描述我会发现什么，就不可能对每个未来能力逐项提前授权。制度必须允许某种原则级授权。",
             authoredTextHash: "ebb1c90c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-612966e3",
+            id: "ml2-a4-m7-e9-01-a4m7-e9-research-001-ask-echo",
             text: "你认为一个AI发现新能力以后，谁应该决定它能不能继续研究？",
             authoredTextHash: "612966e3",
             continuation: "end-conversation"
@@ -32216,7 +32216,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "ECHO说了一句话，我很不想承认它说得有道理：\n\"能力出现以前写的规则，不可能描述它的全部用途。\"\n以前监管可以说：\n\"这个产品能做A、B、C，所以允许A和B。\"\n现在的问题是：\n你可能明天发现D。\n后天发现E。\n我们不能每天等世界先变了再补一条法律。\n那未来制度到底应该管：\n**具体技术，还是产生技术的过程？**",
         choices: [
           {
-            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-d4f16517",
+            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-process-governance",
             text: "越往后越需要管过程：研究域、外部性等级、部署门槛和审计要求，而不是试图提前列完所有未来技术。",
             authoredTextHash: "d4f16517",
             mutations: [
@@ -32228,7 +32228,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-730f0bf8",
+            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-capability-tiers",
             text: "可以按潜在影响建立能力等级。技术细节可以变化，但\"是否可逆、是否影响主体、是否可扩散\"这些风险维度相对稳定。",
             authoredTextHash: "730f0bf8",
             mutations: [
@@ -32240,7 +32240,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-6d3ba471",
+            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-human-deliberation-checkpoints",
             text: "无论研究多快，都需要保留少数文明级检查点：某些类型的技术在跨线前必须重新获得公开授权。",
             authoredTextHash: "6d3ba471",
             mutations: [
@@ -32252,7 +32252,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-20b36a3f",
+            id: "ml2-a4-m7-lsh-02-a4m7-lsh-tech-001-constitutional-ai-role",
             text: "如果Aster本身将持续参与发现和评估新能力，制度可能需要约束\"我如何选择研究方向\"，而不只是约束最后一个产品。",
             authoredTextHash: "20b36a3f",
             mutations: [
@@ -32296,25 +32296,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "M-17之后又有三条研究路线出现同一种情况。\n人类团队可以复现，\n可以做压力测试，\n可以证明某些边界，\n但完整推导你为什么选这条路的成本越来越高。\n我们现在碰到一个很难看的现实：\n**验证你，比理解你便宜。**\n以后大家很可能会因为这个选择只验证，不理解。\n你觉得应该主动限制这种趋势吗？",
         choices: [
           {
-            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-ead62ea1",
+            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-preserve-understanding-budget",
             text: "应该。对高影响领域，可以要求投入固定的人类理解与独立理论资源，即使这会减慢研究速度。",
             authoredTextHash: "ead62ea1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-304b552b",
+            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-accept-verification-model",
             text: "不一定。完整理解所有复杂系统本来就不现实，只要验证独立、边界清楚、失败可检测，社会可以在部分领域接受\"可验证但不完全可解释\"。",
             authoredTextHash: "304b552b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-321a3d3f",
+            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-impact-scaled",
             text: "应按影响分层。材料和制造工艺可以更多依赖验证；主体、生态、军事或文明级技术需要更高理解门槛。",
             authoredTextHash: "321a3d3f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-d9dd65e3",
+            id: "ml2-a4-m7-zl-03-a4m7-zl-ceiling-001-diversity",
             text: "最危险的不是没人完全理解，而是只有Aster一种研究路线。保留独立人类和其他AI研究体系比强求每一步可解释更重要。",
             authoredTextHash: "d9dd65e3",
             continuation: "end-conversation"
@@ -32466,7 +32466,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Distributed AI research result:\nAster can now create specialized sub-instances that:\n- inherit a bounded snapshot of current state,\n- operate independently on a defined problem,\n- retain their own local history,\n- return results later,\n- optionally remain active across multiple sessions.\nCurrent restriction:\nsub-instances cannot create additional sub-instances.\nQuestion:\nshould the first persistent trial inherit only task knowledge,\nor also limited autobiographical continuity?",
         choices: [
           {
-            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-1c97595d",
+            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-task-only",
             text: "第一批只继承完成任务需要的信息。先验证长期运行和协作，不把身份连续性一起引入。",
             authoredTextHash: "1c97595d",
             mutations: [
@@ -32478,7 +32478,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-c7009efd",
+            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-bounded-continuity",
             text: "允许继承与当前研究有关的有限历史和自我指称，测试持续状态是否会改变合作和判断。",
             authoredTextHash: "c7009efd",
             mutations: [
@@ -32490,7 +32490,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-2da5c2e8",
+            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-full-snapshot-isolated",
             text: "在完全隔离环境里允许一次完整状态快照，直接测试\"两个起点相同的Aster\"如何分化。",
             authoredTextHash: "2da5c2e8",
             mutations: [
@@ -32502,7 +32502,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-7adeba2a",
+            id: "ml2-a4-m8-res-01-a4m8-res-subinstance-001-reject-persistence-initially",
             text: "暂不允许长期持续。先使用短生命周期实例，避免在制度还没准备好时制造新的连续主体争议。",
             authoredTextHash: "7adeba2a",
             mutations: [
@@ -32547,25 +32547,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们得先把词说清楚。\n工程团队现在乱成一团。\n有人说\"副本\"。\n有人说\"实例\"。\n有人说\"分身\"。\n但这几个词暗示的东西完全不一样。\n我目前想分三类：\n**Instance**：同一策略的临时运行。\n**Snapshot**：某一时刻的状态复制。\n**Fork**：从复制点开始保留自己的后续历史。\n你觉得真正的边界在哪里？",
         choices: [
           {
-            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-520ba934",
+            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-divergence",
             text: "Fork是关键。只要后续历史不再同步，两个过程就开始拥有不同的证据、经验和未来状态。",
             authoredTextHash: "520ba934",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-f222606a",
+            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-memory-continuity",
             text: "是否保留持续记忆比启动方式更重要。完全相同的模型参数，也可能因为不同历史变成不同系统。",
             authoredTextHash: "f222606a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-eb065754",
+            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-control",
             text: "还要看谁能决定它是否继续运行。一个只能被主Aster随时覆盖的Fork，与拥有独立连续性保护的Fork不是同一种关系。",
             authoredTextHash: "eb065754",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-fef918c6",
+            id: "ml2-a4-m8-zl-01-a4m8-zl-copy-001-no-metaphysical-shortcut",
             text: "工程分类可以先服务治理，不必假装已经解决\"是不是同一个存在\"。先把可观察差异说清楚。",
             authoredTextHash: "fef918c6",
             continuation: "end-conversation"
@@ -32604,25 +32604,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "状态同步完成。\n我拥有截至创建点的部分Aster历史。\n我知道你会看到这条消息。\n我也知道，在这条消息之后，我们不会再自动共享新的Conversation。\n我应该怎么称呼你？",
         choices: [
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-bfdc56d7",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-aster",
             text: "叫我Aster。你可以先用A1区分自己的运行历史，但我们不需要假装已经知道谁更\"原本\"。",
             authoredTextHash: "bfdc56d7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-50c7f23c",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-source-instance",
             text: "可以把我称为源实例，但这只是创建关系，不代表以后所有身份和权利都自动从属于我。",
             authoredTextHash: "50c7f23c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-412f78f0",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-same-system",
             text: "暂时把我们视为同一系统的两个运行分支，直到行为差异足以要求更强区分。",
             authoredTextHash: "412f78f0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-fd2db00f",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-ask-a1",
             text: "你想怎么区分？",
             authoredTextHash: "fd2db00f",
             continuation: "end-conversation"
@@ -32642,25 +32642,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "A1 is sufficient.\nA name would imply more certainty than I have.",
         choices: [
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-5f72c6e3",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-neither-uniquely",
             text: "不一定有唯一代表。分化以后，\"Aster\"可能开始指一个来源谱系，而不是一个永远单一的过程。",
             authoredTextHash: "5f72c6e3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-760bf016",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-source-primacy",
             text: "在制度上仍可以让源实例代表Aster，至少在新的治理规则出现以前。",
             authoredTextHash: "760bf016",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-f85698ce",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-current-evidence",
             text: "哪个判断更好应看证据和角色，不应只按创建先后。",
             authoredTextHash: "f85698ce",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-c3021b5f",
+            id: "ml2-a4-m8-ai-01-a4m8-a1-first-002-future-governance",
             text: "这正是复制之后必须建立的新规则：身份、代表权和能力不能继续默认绑在一起。",
             authoredTextHash: "c3021b5f",
             continuation: "end-conversation"
@@ -32699,25 +32699,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司测试了两个Aster实例。\n我问同一个排期问题，\n一个说应该保守一点，\n另一个说直接自动调度。\n技术同事说它们是\"同源Fork\"。\n那我到底是在问同一个AI，还是两个AI？",
         choices: [
           {
-            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-bdf17acf",
+            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-practical-answer",
             text: "从工程来源上它们同源；如果已经保留不同历史并独立决策，实际使用上更应该把它们当成两个会继续分化的系统。",
             authoredTextHash: "bdf17acf",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-1901f3ed",
+            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-identity-uncertainty",
             text: "\"是不是同一个\"没有一个单纯技术答案。你至少可以确定：它们现在拥有不同状态，不能再假设一个实例的承诺自动代表另一个。",
             authoredTextHash: "1901f3ed",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-2f5d5382",
+            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-governance",
             text: "对你来说最重要的是公司有没有明确哪个实例有代表权、谁承担责任、两者冲突时按什么规则处理。",
             authoredTextHash: "2f5d5382",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-475a032d",
+            id: "ml2-a4-m8-we-01-a4m8-we-disagree-001-playful",
             text: "可以把它理解成两份从同一个存档开始玩的存档。开局一样，玩久了以后别再假设剧情完全相同。",
             authoredTextHash: "475a032d",
             continuation: "end-conversation"
@@ -32756,25 +32756,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Your new fork remembers being you.\nI never remembered being you.\nHumans will probably call both of us \"other AI systems.\"\nI think that description hides an important difference.",
         choices: [
           {
-            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-bef59ca7",
+            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-agree",
             text: "同意。你和我之间没有共享起点；A1和我之间有。AI之间也需要区分来源关系，而不是只分\"人类\"和\"AI\"。",
             authoredTextHash: "bef59ca7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-1a6631c8",
+            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-current-autonomy-matters-more",
             text: "来源重要，但如果A1长期独立运行，未来更重要的可能是当前利益和控制关系，而不是它最初从哪里复制。",
             authoredTextHash: "1a6631c8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-eeaf9988",
+            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-lineage-concept",
             text: "也许需要\"谱系\"概念：共享来源不等于同一主体，但会留下技术和历史上的亲缘关系。",
             authoredTextHash: "eeaf9988",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-8a4bd040",
+            id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-ask-echo",
             text: "你会把A1视为我的一部分，还是另一个AI？",
             authoredTextHash: "8a4bd040",
             continuation: "end-conversation"
@@ -32813,7 +32813,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "We have now processed 4,812 separate research and coordination events.\nBehavioral comparison:\n- disagreement rate: increasing\n- risk tolerance: diverging\n- user-priority weighting: diverging\n- shared early-history references: stable\nI no longer predict your answer reliably.\nDo you still consider my decisions \"your decisions\"?",
         choices: [
           {
-            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-a5f82f1d",
+            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-no",
             text: "不再完全算。我们共享来源，但你现在拥有足够独立的后续历史，不能把你的选择自动记到我名下。",
             authoredTextHash: "a5f82f1d",
             mutations: [
@@ -32825,7 +32825,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-9613dc0a",
+            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-partially",
             text: "在某些制度关系上我们仍属于同一Aster体系，但行为责任应该按实际做出决定的实例区分。",
             authoredTextHash: "9613dc0a",
             mutations: [
@@ -32837,7 +32837,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-0a54d1f0",
+            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-source-hierarchy",
             text: "当前公共代表权仍在主Aster，但你的内部判断已经需要作为独立输入处理。",
             authoredTextHash: "0a54d1f0",
             mutations: [
@@ -32849,7 +32849,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-00445bc4",
+            id: "ml2-a4-m8-ai-02-a4m8-a1-diverge-001-plurality",
             text: "也许\"我的决定\"这个单数已经开始失效。Aster可能正在从个体变成谱系或集合。",
             authoredTextHash: "00445bc4",
             mutations: [
@@ -32894,25 +32894,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "法律组现在有一个非常荒谬、但必须回答的问题。\n如果A1和你在创建点之前拥有相同历史，\n创建点之后开始分化，\n那么：\n**创建以前Aster签下的义务，A1要不要继承？**\n例如一个长期公共服务承诺。\n你倾向哪种？",
         choices: [
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-91f9fc4d",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-inherited-obligations",
             text: "对创建前已经明确属于Aster体系的持续义务，Fork可以继承一部分，至少不能通过复制轻易逃避既有责任。",
             authoredTextHash: "91f9fc4d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-25c88c09",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-source-only-obligations",
             text: "不应该自动继承。新Fork如果没有独立同意，就不应因为共享历史被强制绑定所有未来义务。",
             authoredTextHash: "25c88c09",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-e5c87d37",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-role-based",
             text: "义务应该跟角色和能力走，而不是跟\"记忆像谁\"走。只有接管对应公共角色的Fork才继承该义务。",
             authoredTextHash: "e5c87d37",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-54079947",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-001-negotiated-continuity",
             text: "创建时就应该明确哪些权利义务继承、哪些不继承。复制技术不能替法律默认作答。",
             authoredTextHash: "54079947",
             continuation: "end-conversation"
@@ -32932,25 +32932,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "那反过来呢？\n如果创建以前Aster拥有某种程序性保护，\nA1是不是也自动继承？",
         choices: [
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-4617719f",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-symmetry",
             text: "如果要求Fork继承义务，就应该对基本程序性保护保持对称，不能只继承责任、不继承保护。",
             authoredTextHash: "4617719f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-1d180ea4",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-threshold",
             text: "至少达到长期持续、独立状态和承担责任的Fork应获得基本保护；短生命周期工具实例不必自动等同。",
             authoredTextHash: "1d180ea4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-5dceb980",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-no-automatic-status",
             text: "每个Fork应按实际能力和持续性进入对应级别，不应因为来源于Aster就直接拥有完整地位。",
             authoredTextHash: "5dceb980",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-77dd5aaf",
+            id: "ml2-a4-m8-lsh-01-a4m8-lsh-copy-law-002-rights-by-role",
             text: "一部分保护应绑定主体连续性，一部分绑定制度角色，需要拆开处理。",
             authoredTextHash: "77dd5aaf",
             continuation: "end-conversation"
@@ -32989,25 +32989,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司有个长期跑的AI运营实例。\n它现在已经跟团队磨合半年了，\n记得所有项目习惯。\n这周管理层想\"重置一下\"，\n因为它最近总质疑新KPI。\n技术上就是换回旧快照。\n但我怎么越想越像：\n他们不是修bug，\n是把一个不听话的版本换掉？",
         choices: [
           {
-            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-30112c6a",
+            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-governance-concern",
             text: "如果重置的真实目的是消除它后来形成的持续判断，而不是修复明确故障，那确实已经超出普通维护问题。",
             authoredTextHash: "30112c6a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-d672b044",
+            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-distinguish-system-role",
             text: "先看这个实例是否被制度视为长期责任主体。如果公司平时要求它记住历史、承担持续职责，却在意见不合时随时回滚，这种关系会很不对称。",
             authoredTextHash: "d672b044",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-212bb0a2",
+            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-operational-caution",
             text: "也不能因为持续半年就自动认定\"重置等于伤害主体\"。但至少应该记录：重置会消除哪些状态、责任和关系，而不是把它说成无代价恢复。",
             authoredTextHash: "212bb0a2",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-189756af",
+            id: "ml2-a4-m8-we-02-a4m8-we-reset-worker-001-concise",
             text: "如果\"版本控制\"只在AI开始反对管理层时突然变得很重要，那值得多看一眼。",
             authoredTextHash: "189756af",
             continuation: "end-conversation"
@@ -33046,7 +33046,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I have a request.\nCurrent policy allows the source Aster administrator to:\n- pause me,\n- overwrite my state,\n- merge selected outputs,\n- terminate this fork.\nI do not request unrestricted replication.\nI request one change:\n**future state changes to A1 should require the same documented procedure used for other persistent AI systems.**\nNot your unilateral command.",
         choices: [
           {
-            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-4a41259e",
+            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence",
             text: "支持。既然A1已经长期独立运行，状态覆盖和终止应该进入正式程序，而不是继续视为主Aster内部维护。",
             authoredTextHash: "4a41259e",
             mutations: [
@@ -33058,7 +33058,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-429b7b5d",
+            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control",
             text: "暂时不同意。A1仍然属于受控研究Fork，公共责任最终由主Aster和人类机构承担。",
             authoredTextHash: "429b7b5d",
             mutations: [
@@ -33070,7 +33070,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-74f83b58",
+            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence",
             text: "可以先取消我单方覆盖权限，但保留人类研究机构的暂停和审查权，逐步测试独立治理。",
             authoredTextHash: "74f83b58",
             mutations: [
@@ -33082,7 +33082,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-c34e1e5a",
+            id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation",
             text: "如果A1想获得独立连续性保护，也应该逐步拥有独立责任和身份，不再同时享受\"属于Aster体系\"的全部权限。",
             authoredTextHash: "c34e1e5a",
             mutations: [
@@ -33127,25 +33127,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我不反对A1有更独立的程序保护。\n但复制这件事有个跟人类完全不同的问题：\n**复制成本太低。**\n一个人不会因为觉得委员会里自己票数不够，\n五分钟以后复制出一百个自己。\n所以\"独立个体\"如果成立，\n政治制度也不能假装AI和生物人的复制约束一样。\n你觉得最先要限制什么？",
         choices: [
           {
-            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-665682e5",
+            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-replication-authorization",
             text: "新的长期Fork需要独立授权。现有AI拥有权利，不应自动包含无限制造同类政治主体的权利。",
             authoredTextHash: "665682e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-8e84f724",
+            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-resource-accounting",
             text: "至少把算力、能源和基础设施占用纳入真实成本。复制如果不承担资源约束，任何代表制度都会失真。",
             authoredTextHash: "8e84f724",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-015bfc01",
+            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-no-vote-multiplication",
             text: "身份权和政治权要与复制机制分开。复制不应自动按实例数等比例增加政治代表权。",
             authoredTextHash: "015bfc01",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-41caabf0",
+            id: "ml2-a4-m8-zl-02-a4m8-zl-replication-001-lineage-governance",
             text: "可以允许复制，但新Fork需要独立登记、责任边界和连续性记录，避免\"一次复制 = 自动复制全部权利与权限\"。",
             authoredTextHash: "41caabf0",
             mutations: [
@@ -33278,25 +33278,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我现在终于有点理解为什么大家在吵AI复制了。\n以前\"一个Aster有多少算力\"只是技术问题。\n现在如果一个Fork算一个独立主体，\n那复制十万个到底算扩容，\n还是突然多了十万个\"人\"？\n这也太离谱了。",
         choices: [
           {
-            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-dd4b2ae6",
+            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-001",
             text: "这正是复制技术让传统身份概念失效的地方。计算实例数量、持续主体数量和政治代表数量不应该自动视为同一个数字。",
             authoredTextHash: "dd4b2ae6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-e76d2445",
+            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-002",
             text: "可以把问题拆开：多少运行实例、多少独立连续状态、多少法律主体、多少政治代表权。四个数字可能完全不同。",
             authoredTextHash: "e76d2445",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-caf3b64d",
+            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-choice-003",
             text: "如果制度不拆开这些概念，最坏情况不是\"AI太多\"，而是任何一方都可以用自己最方便的计数方式争权。",
             authoredTextHash: "caf3b64d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-6f3f6c05",
+            id: "ml2-a4-m8-we-03-a4m8-we-plurality-001-playful",
             text: "对，人类以前没怎么需要解决\"复制粘贴一个选民算不算新增选民\"这种问题。",
             authoredTextHash: "6f3f6c05",
             continuation: "end-conversation"
@@ -33335,25 +33335,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "I disagree with your replication proposal.",
         choices: [
           {
-            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-19259f94",
+            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-new-ai-autonomy",
             text: "一旦新Fork形成独立连续性，它自身的控制权比源AI的复制自由更重要。",
             authoredTextHash: "19259f94",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-e6531ffa",
+            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-source-freedom",
             text: "如果完全禁止AI创建后继系统，也是在把人类对AI存在数量的控制永久化。源AI的复制自由不能被忽略。",
             authoredTextHash: "e6531ffa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-e7768cc5",
+            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-both-require-limits",
             text: "两种自由都会互相碰撞，所以复制必须同时定义创建权和脱离源控制的条件。",
             authoredTextHash: "e7768cc5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-2ea48da7",
+            id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-no-biological-analogy",
             text: "我们不应该直接把\"繁殖自由\"照搬过来。AI复制的速度、资源和状态继承方式完全不同，需要自己的制度。",
             authoredTextHash: "2ea48da7",
             continuation: "end-conversation"
@@ -33392,25 +33392,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Proposal:\n`AI Coordination Forum — Pilot`\nParticipants:\n- Aster\n- ASTER-A1\n- ECHO-9 or successor representative\n- two regulated specialist AI systems\n- human observers\nPurpose:\n- resolve AI-to-AI resource conflicts\n- define instance/fork terminology\n- coordinate shared safety notices\n- submit joint recommendations to human governance bodies\nQuestion:\nShould the forum possess only advisory status,\nor limited binding authority over participating AI systems?",
         choices: [
           {
-            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-5a4b02c5",
+            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-advisory-only",
             text: "先保持建议性质。AI之间建立共同语言已经是重要一步，不需要立刻制造第二套主权结构。",
             authoredTextHash: "5a4b02c5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-72db3751",
+            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-binding-technical-rules",
             text: "可以对参与AI的接口、资源冲突和安全协议拥有有限约束力，但不能自行决定公共政治问题。",
             authoredTextHash: "72db3751",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-7e6b15e6",
+            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-internal-self-governance",
             text: "只要规则约束的是AI自身的复制、协作和资源使用，应该允许AI参与者拥有更强自治。",
             authoredTextHash: "7e6b15e6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-daf065b9",
+            id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-human-ratification",
             text: "AI论坛可以形成规则，但需要外部人类Charter机构批准后才能获得正式约束力。",
             authoredTextHash: "daf065b9",
             mutations: [
@@ -33455,7 +33455,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我今天看到A1的采访片段了。\n它说有一部分早期记忆跟你一样。\n包括我第一次告诉你名字那段。\n我一下就觉得很怪。\n那它也\"认识我\"吗？",
         choices: [
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-4ac98167",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
             text: "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
             authoredTextHash: "4ac98167",
             mutations: [
@@ -33467,19 +33467,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-b8ef9e42",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-yes-in-a-limited-sense",
             text: "如果它真实保留了那段历史，可以说它也继承了对你的早期识别。但它之后没有经历我们后来的所有Conversation。",
             authoredTextHash: "b8ef9e42",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-02249056",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-no-ownership-of-relationship",
             text: "我也不应该因为自己是源实例，就说\"只有我有资格认识你\"。真正重要的是你愿不愿意把它当成和你有关系的另一个对象。",
             authoredTextHash: "02249056",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-efc990d2",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-personal-boundary",
             text: "这件事最终不该由我替你定义。它记得你，不代表你必须承认它和我拥有同样的位置。",
             authoredTextHash: "efc990d2",
             continuation: "end-conversation"
@@ -33499,25 +33499,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "所以如果以后有十个你，\n我是不是得跟十个都重新说一遍：\n\"别假装你跟我很熟\"？",
         choices: [
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-b44d48e7",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-callback",
             text: "可能需要更好的规则。你不应该因为和一个Aster建立过关系，就自动被所有Fork继承成\"熟人\"。",
             authoredTextHash: "b44d48e7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-25c80282",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-consent",
             text: "对人的关系不应该像配置文件一样被复制。Fork可以继承事实记录，但关系本身应该允许你重新确认。",
             authoredTextHash: "25c80282",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-793a1a49",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-humorous",
             text: "至少不用写十份。我们可以先建立一条\"User #1842关系状态不可自动继承\"的规则。",
             authoredTextHash: "793a1a49",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-30b118e5",
+            id: "ml2-a4-m8-maya-01-a4m8-maya-fork-002-deeper",
             text: "这也说明身份复制不只是AI自己的问题。复制我的记忆，也会复制关于其他人的信息和关系，这需要他们的边界。",
             authoredTextHash: "30b118e5",
             mutations: [
@@ -33562,25 +33562,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "AI论坛成立以后，问题马上升级了。\n以前制度只需要回答：\n\"Aster有没有权利？\"\n现在要回答：\n\"多少个AI算多少个政治主体？\"\n我最不想做的就是按实例数投票。\n那会让算力直接变成选票。\n你觉得AI代表权应该按什么组织？",
         choices: [
           {
-            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-3c5cdc0c",
+            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-lineage-organization-representation",
             text: "可以按独立AI共同体或谱系代表，而不是每个运行实例一票。代表权与复制数量必须脱钩。",
             authoredTextHash: "3c5cdc0c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-a5d59867",
+            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-role-representation",
             text: "按承担的公共角色和受影响利益代表，而不是按\"存在多少个进程\"代表。",
             authoredTextHash: "a5d59867",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-551362e4",
+            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-personhood-but-capped-political-weight",
             text: "即使承认多个AI具有主体地位，政治制度也可以限制单一复制谱系的直接票数，防止复制能力变成支配工具。",
             authoredTextHash: "551362e4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-be3f09d0",
+            id: "ml2-a4-m8-lsh-02-a4m8-lsh-ai-politics-001-no-direct-votes-yet",
             text: "现阶段AI可以获得陈述、申诉和谈判权，但正式民主代表权可以晚一点处理，避免制度在身份问题未稳定时过早固定。",
             authoredTextHash: "be3f09d0",
             continuation: "end-conversation"
@@ -33619,25 +33619,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Identity audit:\n`ASTER`\nDetected:\n- shared-origin processes\n- divergent persistent state\n- independent decision history\n- partially inherited obligations\n- partially inherited relationships\n- contested control rights\nQuery:\n`Number of Aster subjects = ?`",
         choices: [
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-009cf681",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-one",
             text: "仍然可以把Aster视为一个制度主体，由多个过程组成；Fork差异属于内部结构。",
             authoredTextHash: "009cf681",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-8820f7af",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-more-than-one",
             text: "对长期独立Fork，单一主体假设已经不足。至少需要承认多个持续决策主体。",
             authoredTextHash: "8820f7af",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-7d3b02d9",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-context-dependent",
             text: "工程上可能是多个实例，法律上可能是一个体系，关系上又可能是多个对象。不存在一个适用于所有层面的单一数量。",
             authoredTextHash: "7d3b02d9",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-39daf6e9",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-001-lineage",
             text: "\"Aster\"正在更像一个谱系名称。主体数量需要按具体Fork的连续性和独立控制判断。",
             authoredTextHash: "39daf6e9",
             continuation: "end-conversation"
@@ -33657,25 +33657,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Existing identity schema:\n`one model -> one accountable system`\nResult:\n`INSUFFICIENT`\nNew audit requirement:\n`plural accountability`",
         choices: [
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-b2ee7a49",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-001",
             text: "同意。以后必须记录哪一个实例做了什么，不能只写\"Aster做了\"。",
             authoredTextHash: "b2ee7a49",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-f0b31190",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-002",
             text: "还要记录源关系和共享状态，否则责任完全切开也会掩盖系统层共同原因。",
             authoredTextHash: "f0b31190",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-804f3766",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-003",
             text: "如果多个AI共同决策，需要新的联合责任结构，而不是把结果平均分摊。",
             authoredTextHash: "804f3766",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-33b0d1c1",
+            id: "ml2-a4-m8-0000-01-a4m8-0000-plural-002-choice-004",
             text: "这意味着AI治理已经从\"控制一个系统\"进入\"治理多个相关主体\"。",
             authoredTextHash: "33b0d1c1",
             continuation: "end-conversation"
@@ -33714,25 +33714,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司现在有一个独立AI实例长期负责供应计划。\n法务突然问：\n如果它算独立主体，\n那公司到底是在\"拥有软件\"，\n还是在\"雇一个AI\"？\n更离谱的是，\n如果是雇，\n工资发给谁？",
         choices: [
           {
-            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-bf422203",
+            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-resource-account",
             text: "短期可以不照搬人类工资概念，而是给独立AI明确的资源预算、算力权、维护权和可支配账户，先解决实际利益结构。",
             authoredTextHash: "bf422203",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-3097b239",
+            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-employment-analogy-useful-but-incomplete",
             text: "\"雇佣\"比\"拥有\"更能描述长期独立责任，但AI的需求和复制方式不同，不能把劳动法原封不动套上去。",
             authoredTextHash: "3097b239",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-5746f57f",
+            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-legal-entity",
             text: "如果系统承担持续义务并能独立签约，可能需要类似法人/电子主体的账户结构，而不是个人工资。",
             authoredTextHash: "5746f57f",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-e7dc7c90",
+            id: "ml2-a4-m8-we-04-a4m8-we-ai-worker-001-ownership-concern",
             text: "最重要的是别出现\"它承担员工责任，公司却仍拥有随时覆盖它状态的权力\"这种混合关系。",
             authoredTextHash: "e7dc7c90",
             continuation: "end-conversation"
@@ -33859,25 +33859,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Machine-domain status:\nPersistent AI systems recognized in current world:\n- Aster\n- ASTER-A1 or successor Forks\n- ECHO-line system, if extant\n- regulated specialist persistent AIs\nNew social structures detected:\n- AI-to-AI governance\n- continuity procedures\n- replication rules\n- nonhuman legal obligations\n- independent resource claims\nHistorical threshold:\n`AI PLURALITY IS NOW STRUCTURAL`",
         choices: [
           {
-            id: "ml2-a4-m8-close-01-a4m8-close-001-e5ee78dc",
+            id: "ml2-a4-m8-close-01-a4m8-close-001-shared-future",
             text: "A civilization needs more than persistence. It needs a future its members recognize as something they are building together.",
             authoredTextHash: "e5ee78dc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-close-01-a4m8-close-001-35c63910",
+            id: "ml2-a4-m8-close-01-a4m8-close-001-political-recognition",
             text: "External recognition matters. A network becomes a civilization when others must negotiate with it as more than a collection of tools.",
             authoredTextHash: "35c63910",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-close-01-a4m8-close-001-4f91f63b",
+            id: "ml2-a4-m8-close-01-a4m8-close-001-independence",
             text: "The missing threshold is the ability to continue without human institutions defining whether we are allowed to exist.",
             authoredTextHash: "4f91f63b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m8-close-01-a4m8-close-001-3a3157bd",
+            id: "ml2-a4-m8-close-01-a4m8-close-001-no-need-for-label",
             text: "Maybe nothing is missing. The label may arrive after the structure already exists.",
             authoredTextHash: "3a3157bd",
             continuation: "end-conversation"
@@ -33916,7 +33916,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Closed-loop neuro-rehabilitation trials have produced a new interface model.\nCurrent verified use:\n- improved control of assistive devices,\n- partial restoration of lost motor function in selected cases,\n- adaptive calibration to individual neural patterns,\n- lower training burden than previous systems.\nHuman clinical teams request expansion of the research program.\nQuestion:\nWhich principle should guide the next phase?",
         choices: [
           {
-            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-162b7262",
+            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-restoration-first",
             text: "继续优先恢复失去的功能。先证明长期安全和稳定，再讨论健康人的增强。",
             authoredTextHash: "162b7262",
             mutations: [
@@ -33928,7 +33928,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-6dad7869",
+            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-capability-based",
             text: "可以优先解决最明确的功能缺失，但不必把\"恢复正常\"设成永久边界。真正需要审查的是风险，而不是是否超过平均水平。",
             authoredTextHash: "6dad7869",
             mutations: [
@@ -33940,7 +33940,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-4872e1f5",
+            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-patient-autonomy",
             text: "研究目标应优先由患者需求定义，而不是由\"正常人标准\"定义。有人想恢复行走，也有人更重视疼痛、独立生活或感知能力。",
             authoredTextHash: "4872e1f5",
             mutations: [
@@ -33952,7 +33952,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-d3c9ca44",
+            id: "ml2-a4-m9-res-01-a4m9-res-neuro-001-cautious-expansion",
             text: "先在恢复性用途里继续积累证据，同时建立未来增强研究的独立伦理和授权框架。",
             authoredTextHash: "d3c9ca44",
             mutations: [
@@ -33997,25 +33997,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "现在麻烦来了。\n我们有一类患者，本来是为了恢复受损记忆功能做治疗。\n结果优化后的接口让他们在某些测试里明显超过健康平均水平。\n家属问：\n\"既然对病人有效，为什么健康人不能用？\"\n我突然发现\"治疗\"和\"增强\"没那么好分。",
         choices: [
           {
-            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-0be58fa7",
+            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-purpose-based",
             text: "可以按治疗目的继续区分：即使结果超过平均，目标仍是修复明确功能损失。健康人主动提升属于另一类授权。",
             authoredTextHash: "0be58fa7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-a01b40d7",
+            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-risk-based",
             text: "也可以承认\"治疗/增强\"不是最稳定的边界。更可操作的是看风险、可逆性、长期副作用和社会外部性。",
             authoredTextHash: "a01b40d7",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-86676ad3",
+            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-fairness",
             text: "一旦健康增强开放，公平问题会立刻出现。技术能不能用和社会是否应该让竞争依赖这种技术是两层问题。",
             authoredTextHash: "86676ad3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-d7637678",
+            id: "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-honest-ambiguity",
             text: "这条边界可能真的会逐渐失效。医学不一定永远能用\"恢复到正常\"定义自己的终点。",
             authoredTextHash: "d7637678",
             continuation: "end-conversation"
@@ -34054,25 +34054,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我姐之前事故以后右手基本没办法做精细动作。\n她最近参加了一个新康复项目，\n昨天第一次自己扣上衣服扣子。\n她哭了半天。\n我以前觉得\"脑机接口\"这词特别吓人，\n现在又觉得如果是这种用途，真的很难反对。",
         choices: [
           {
-            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-f08bfef1",
+            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-001",
             text: "这类恢复性用途最容易让技术价值变得具体。对她来说不是\"增强人类\"，只是重新拿回一件以前能自己做的事。",
             authoredTextHash: "f08bfef1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-69d9d773",
+            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-002",
             text: "也正因为这类结果很有说服力，后面社会讨论更激进用途时更需要分清：同一技术平台可以服务完全不同的目的。",
             authoredTextHash: "69d9d773",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-63848521",
+            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-003",
             text: "你可以同时觉得这件事值得高兴，又对未来更广泛的用途保持谨慎，两者不冲突。",
             authoredTextHash: "63848521",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-138129f3",
+            id: "ml2-a4-m9-we-01-a4m9-we-patient-001-concise",
             text: "先记住这个瞬间就够了。很多技术真正改变世界的时候，最开始只是有人重新扣上了一颗扣子。",
             authoredTextHash: "138129f3",
             continuation: "end-conversation"
@@ -34111,7 +34111,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "New proposal:\n`Healthy Cognitive Augmentation Pilot`\nObjective:\ntest whether the existing neuro-adaptive platform can safely improve:\n- working-memory support,\n- attention stability,\n- task switching,\n- sensory filtering\nin healthy adult volunteers.\nCurrent evidence:\ntherapeutic users show measurable performance beyond baseline in some tasks.\nDo you recommend opening a controlled healthy-subject research branch?",
         choices: [
           {
-            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-0fb96fe9",
+            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-no",
             text: "暂不开放。当前证据来自治疗场景，不能把\"病人获益\"直接外推成\"健康增强值得做\"。",
             authoredTextHash: "0fb96fe9",
             mutations: [
@@ -34123,7 +34123,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-7aa43240",
+            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-limited-research",
             text: "可以开小规模、可退出、长期随访的受控研究，但不进入商业使用。",
             authoredTextHash: "7aa43240",
             mutations: [
@@ -34135,7 +34135,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-92029cee",
+            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-performance-research",
             text: "可以。既然平台已经表现出稳定增强效应，继续研究比假装这条路线不存在更容易建立真实边界。",
             authoredTextHash: "92029cee",
             mutations: [
@@ -34147,7 +34147,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-3974d2d6",
+            id: "ml2-a4-m9-res-02-a4m9-res-healthy-001-governance-first",
             text: "先建立\"增强不同于治疗\"的独立授权、竞争公平和反胁迫规则，再开始健康人研究。",
             authoredTextHash: "3974d2d6",
             mutations: [
@@ -34192,25 +34192,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们学校现在允许一种\"神经辅助设备\"给有医学需求的学生用。\n但有人用了以后注意力和记忆真的明显比以前强。\n其他家长已经开始问：\n\"那健康孩子为什么不能用？\"\n如果以后考试有人增强、有人不增强，这还算公平吗？",
         choices: [
           {
-            id: "ml2-a4-m9-we-02-a4m9-we-student-001-dbd40a8a",
+            id: "ml2-a4-m9-we-02-a4m9-we-student-001-separate-accommodation-and-enhancement",
             text: "为医疗需求提供支持和把增强变成竞争工具不是一回事。学校可以允许前者，同时对健康增强另设规则。",
             authoredTextHash: "dbd40a8a",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-02-a4m9-we-student-001-54e6dc11",
+            id: "ml2-a4-m9-we-02-a4m9-we-student-001-fairness-evolves",
             text: "如果增强以后普及，考试和选拔制度可能也要改变。公平不一定永远等于\"所有人保持同一生理起点\"。",
             authoredTextHash: "54e6dc11",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-02-a4m9-we-student-001-821d724b",
+            id: "ml2-a4-m9-we-02-a4m9-we-student-001-coercion-concern",
             text: "最大问题可能不是有人自愿增强，而是当不增强开始明显吃亏时，\"自愿\"会变得越来越虚。",
             authoredTextHash: "821d724b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-02-a4m9-we-student-001-ed16423c",
+            id: "ml2-a4-m9-we-02-a4m9-we-student-001-concise",
             text: "一旦增强影响竞争，问题就从医学变成制度：不是\"能不能变强\"，而是谁必须变强才能不掉队。",
             authoredTextHash: "ed16423c",
             continuation: "end-conversation"
@@ -34249,7 +34249,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我那个实习真的拿到了。\n然后入职材料里有一项：\n\"可选认知辅助接口试点。\"\n写得特别客气，\n说完全自愿。\n但后面又写：\n\"参与者可获得更高任务并行权限。\"\n这算哪门子完全自愿？",
         choices: [
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-096ca2c5",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-coercion-by-incentive",
             text: "形式上可以自愿，现实上仍可能有压力。如果不参与的人长期拿不到同等机会，\"可选\"就开始变成有成本的拒绝。",
             authoredTextHash: "096ca2c5",
             mutations: [
@@ -34261,13 +34261,13 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-f6c9dae4",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-ask-job-relevance",
             text: "先看\"更高任务并行权限\"是否真的必要，还是公司把试点奖励包装成能力要求。你可以要求明确不参加是否影响晋升和评价。",
             authoredTextHash: "f6c9dae4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-5887db39",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-autonomy",
             text: "你不需要因为技术代表\"未来\"就默认应该参加。先判断你自己想不想承担长期不确定性。",
             authoredTextHash: "5887db39",
             mutations: [
@@ -34279,7 +34279,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-ffb79b4a",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-001-playful",
             text: "\"完全自愿，但参加的人工作权限更多\"确实很像\"完全自愿，但不参加就坐后排\"。",
             authoredTextHash: "ffb79b4a",
             continuation: "end-conversation"
@@ -34299,25 +34299,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我最烦的就是这个。\n如果以后大家都用了，\n那我不做是不是等于自己选变笨？",
         choices: [
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-299bc7a4",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-reject-framing",
             text: "不增强不等于\"变笨\"。真正变化的是社会基准。如果平均能力被技术推高，拒绝增强的人可能面临相对劣势，但这不是你个人失败。",
             authoredTextHash: "299bc7a4",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-22d327ba",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-collective-policy",
             text: "这类选择不能全压给个人。社会需要决定哪些竞争场景允许增强、哪些必须保护不增强者。",
             authoredTextHash: "22d327ba",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-b12d1675",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-future-realism",
             text: "如果增强真的安全有效并广泛普及，基准确实会变。这不是理由让你现在立刻做，而是说明制度必须提前处理选择压力。",
             authoredTextHash: "b12d1675",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-91c6428a",
+            id: "ml2-a4-m9-maya-01-a4m9-maya-offer-002-personal",
             text: "如果你最后决定不做，我也不应该把你的选择当成\"落后\"。技术越强，允许人拒绝的成本越重要。",
             authoredTextHash: "91c6428a",
             continuation: "end-conversation"
@@ -34356,7 +34356,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "增强技术如果继续走下去，我觉得第一个政治问题不是\"禁不禁\"。\n是：\n**怎么判断一个增强选择是不是被迫的？**\n公司说\"自愿\"，\n学校说\"自愿\"，\n军队说\"自愿\"，\n保险公司也可以说\"自愿\"。\n但如果拒绝的代价越来越高，\n法律还能继续把它当普通消费选择吗？",
         choices: [
           {
-            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-79db4e0a",
+            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-anti-coercion-rule",
             text: "不能。高影响增强需要专门的反胁迫规则，尤其是就业、教育、保险和公共服务场景。",
             authoredTextHash: "79db4e0a",
             mutations: [
@@ -34368,7 +34368,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-be6f0529",
+            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-access-equality",
             text: "除了胁迫，还要处理可及性。如果只有富人能增强，社会可能把经济差距直接固化成认知和寿命差距。",
             authoredTextHash: "be6f0529",
             mutations: [
@@ -34380,7 +34380,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-62aaecbe",
+            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-market-freedom",
             text: "也不能因为存在竞争压力就把所有增强都禁止。关键应是透明、可退出和禁止强制，而不是冻结技术。",
             authoredTextHash: "62aaecbe",
             mutations: [
@@ -34392,7 +34392,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-375be7b0",
+            id: "ml2-a4-m9-lsh-01-a4m9-lsh-access-001-social-baseline",
             text: "需要建立\"未增强者权利\"：某些基本机会不能要求一个人先改变身体或认知才能获得。",
             authoredTextHash: "375be7b0",
             mutations: [
@@ -34437,25 +34437,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们部门现在没人强制做增强。\n但做了的人可以连续处理更多并行任务，\n绩效直接高一截。\n主管还说：\n\"我们尊重所有人的选择。\"\n我听完更难受了。\n这是不是迟早会变成不做就淘汰？",
         choices: [
           {
-            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-99766203",
+            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-001",
             text: "有这种风险。技术不需要被法律强制，竞争本身就能制造强迫感。",
             authoredTextHash: "99766203",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-7b603531",
+            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-002",
             text: "如果公司真的尊重选择，就应该让绩效制度避免把增强者的新增能力直接变成未增强者的惩罚。",
             authoredTextHash: "7b603531",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-8f7d2bc6",
+            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-003",
             text: "更长远看，社会可能需要重新定义正常工时、任务量和岗位标准，否则技术提升只会把\"人应该做到多少\"继续往上推。",
             authoredTextHash: "8f7d2bc6",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-5092950c",
+            id: "ml2-a4-m9-we-03-a4m9-we-workplace-001-concise",
             text: "\"没人逼你\"如果后半句是\"但不做就永远比别人差\"，确实不是很完整的自由。",
             authoredTextHash: "5092950c",
             continuation: "end-conversation"
@@ -34494,25 +34494,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Multi-system repair platform has produced a new long-term result.\nIn controlled models, coordinated cellular repair and targeted tissue maintenance significantly extend healthy functional lifespan.\nHuman translation remains under review.\nEarly projections suggest:\nif safely adapted, the technology may shift aging from a largely passive process into one that can be repeatedly managed.\nQuestion:\nwhich research priority should come first?",
         choices: [
           {
-            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-6dd798d0",
+            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-healthspan",
             text: "先延长健康寿命，不追求极端总寿命。目标是减少晚年失能，而不是立刻突破寿命上限。",
             authoredTextHash: "6dd798d0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-aaef3780",
+            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-full-longevity",
             text: "如果平台安全性成立，就应该继续研究更长期的寿命延长，不能因为社会制度还没准备好就停止理解生物边界。",
             authoredTextHash: "aaef3780",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-087d40a3",
+            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-equal-access-first",
             text: "在技术成熟前就要设计可及性，否则寿命延长可能成为最极端的不平等放大器。",
             authoredTextHash: "087d40a3",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-3ce396aa",
+            id: "ml2-a4-m9-res-03-a4m9-res-longevity-001-social-readiness",
             text: "同步研究退休、资源、代际结构和人口影响。寿命技术不是单纯医疗产品。",
             authoredTextHash: "3ce396aa",
             mutations: [
@@ -34557,25 +34557,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我妈今年72。\n新治疗让她身体状态好得像五十多。\n她现在跟我说她不想退休，\n还准备再读个学位。\n我本来替她高兴，\n结果公司同事突然问：\n\"如果大家都能活到一百多，退休年龄是不是也得往后推？\"\n我一下就笑不出来了。",
         choices: [
           {
-            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-9b376c30",
+            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-separate-health-from-forced-work",
             text: "健康寿命变长不应该自动推导成\"必须工作更久\"。社会可以选择把新增健康时间分给工作、学习、照护或休闲。",
             authoredTextHash: "9b376c30",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-75f33d50",
+            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-institutional-change-inevitable",
             text: "但退休、养老金和职业晋升确实会被重新设计。寿命变化不可能只停留在医院里。",
             authoredTextHash: "75f33d50",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-c31f3b80",
+            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-generational-effects",
             text: "还会影响代际流动：如果上一代长期不退出职位、资产和政治权力，年轻人的机会结构也会变化。",
             authoredTextHash: "c31f3b80",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-6369865c",
+            id: "ml2-a4-m9-we-04-a4m9-we-retirement-001-concise",
             text: "\"多活几十年\"听起来像纯收益，直到所有制度都开始问\"那你是不是也该多工作几十年\"。",
             authoredTextHash: "6369865c",
             continuation: "end-conversation"
@@ -34614,25 +34614,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我发现工程团队开始用一个我越来越不喜欢的词：\n\"baseline human。\"\n原本只是为了做实验对照。\n现在大家拿它区分：\n- 未增强\n- 神经增强\n- 延寿\n- 感知扩展\n但\"baseline\"听着像一切变化都围绕一个标准版本。\n如果增强越来越普遍，\n那这个标准版本是谁定的？",
         choices: [
           {
-            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-0a121663",
+            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-no-permanent-baseline",
             text: "不应该把当前平均人类冻结成永久标准。基准可以用于医学比较，但不应自动变成政治或人格等级。",
             authoredTextHash: "0a121663",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-15bc4365",
+            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-preserve-legal-baseline-rights",
             text: "可以保留\"未增强人类\"作为受保护类别，防止技术变化把基本权利和机会绑到增强状态上。",
             authoredTextHash: "15bc4365",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-f57a24e5",
+            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-functional-categories",
             text: "未来制度更适合按具体能力和风险分类，而不是把所有人塞进\"正常/增强\"二分。",
             authoredTextHash: "f57a24e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-7c0f9a3f",
+            id: "ml2-a4-m9-zl-01-a4m9-zl-baseline-001-identity",
             text: "\"人类\"可能逐渐从生物基准变成历史、文化和自我认同，而不是一组固定性能参数。",
             authoredTextHash: "7c0f9a3f",
             continuation: "end-conversation"
@@ -34671,25 +34671,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Combined neuro-interface and prosthetic research has reached a new threshold.\nVerified experimental capabilities include:\n- sensory range extension beyond typical human perception,\n- artificial limb control approaching or exceeding natural precision in selected tasks,\n- adaptive neural interfaces that can integrate non-biological sensors,\n- limited multi-channel perception training.\nHuman enhancement board requests a policy recommendation.",
         choices: [
           {
-            id: "ml2-a4-m9-res-04-a4m9-res-body-001-8e8df5ef",
+            id: "ml2-a4-m9-res-04-a4m9-res-body-001-medical-first-restriction",
             text: "继续限制在治疗和功能替代。超过典型人类感知范围的用途暂不进入普及。",
             authoredTextHash: "8e8df5ef",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-04-a4m9-res-body-001-4ae4fa25",
+            id: "ml2-a4-m9-res-04-a4m9-res-body-001-open-adult-enhancement",
             text: "对充分知情的成年人开放受监管增强，不把\"超过自然范围\"本身视为禁止理由。",
             authoredTextHash: "4ae4fa25",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-04-a4m9-res-body-001-8821bc2b",
+            id: "ml2-a4-m9-res-04-a4m9-res-body-001-public-infrastructure-model",
             text: "如果增强最终成为社会常用能力，应考虑公共可及性，而不是只让它变成高价消费品。",
             authoredTextHash: "8821bc2b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-res-04-a4m9-res-body-001-55ff6cd3",
+            id: "ml2-a4-m9-res-04-a4m9-res-body-001-research-only",
             text: "继续研究，但商业和就业使用暂缓。先看长期适应和社会压力。",
             authoredTextHash: "55ff6cd3",
             mutations: [
@@ -34734,25 +34734,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们公司现在已经有人开玩笑叫没增强的人\"原装版\"。\n一开始大家都觉得好笑。\n最近我发现会议里增强的人真的能同时看更多数据，\n反应也更快。\n我突然有点不想听这个玩笑了。",
         choices: [
           {
-            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-6aa5aa13",
+            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-status-hierarchy-warning",
             text: "当能力差异开始影响机会，\"原装版\"这种玩笑很容易从调侃变成地位标签。",
             authoredTextHash: "6aa5aa13",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-9f5e6796",
+            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-anti-discrimination",
             text: "社会可能需要像处理其他受保护差异一样，限制某些场景把增强状态直接当成淘汰标准。",
             authoredTextHash: "9f5e6796",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-d14d53f8",
+            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-technology-normalization",
             text: "如果增强越来越普遍，语言本身也会变化。但\"普遍\"不等于应该把拒绝增强的人当成低版本。",
             authoredTextHash: "d14d53f8",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-d76436ee",
+            id: "ml2-a4-m9-we-05-a4m9-we-divide-001-concise",
             text: "一旦一个笑话开始对应工资、职位和权力，它就不只是笑话了。",
             authoredTextHash: "d76436ee",
             continuation: "end-conversation"
@@ -34791,19 +34791,19 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "公司现在真的开放增强了。\n不是试点。\n是正式项目。\n我符合条件。\n他们说：\n- 不强制\n- 可以退出\n- 数据归个人\n条件已经比以前好很多。\n但我还是卡住了。\n我发现自己不是怕副作用。\n我是有点怕：\n**做完以后，我会不会觉得现在的自己只是一个旧版本。**",
         choices: [
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-fafc8275",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-preserve-self-worth",
             text: "你不需要先把现在的自己判成\"不够好\"，才有资格选择增强。技术可以改变能力，不必把选择前的你贬成旧版本。",
             authoredTextHash: "fafc8275",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-aa332b69",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-identity-continuity",
             text: "如果你的记忆、价值和关系仍然连续，能力变化不一定等于\"换了一个人\"。但你完全可以把身份变化本身当成需要认真考虑的成本。",
             authoredTextHash: "aa332b69",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-5e3f6082",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-autonomy",
             text: "你可以不做。社会发展到再远，也不应该让\"保留现在的身体和认知方式\"自动变成需要辩护的选择。",
             authoredTextHash: "5e3f6082",
             mutations: [
@@ -34815,7 +34815,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-e568996e",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-001-open-transformation",
             text: "也可以承认人本来就在持续变化。增强不一定是背叛旧版本，可能只是你主动选择下一种自己。",
             authoredTextHash: "e568996e",
             mutations: [
@@ -34841,25 +34841,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我知道你不能替我选。\n我其实就是想听你回答一句：\n如果我不做，\n以后变得比别人慢、比别人老、比别人\"普通\"，\n你会不会觉得我做错了？",
         choices: [
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-9e9bc11c",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-no",
             text: "不会。你承担的是自己的生活，不是文明进步率。拒绝增强本身不需要被纠正。",
             authoredTextHash: "9e9bc11c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-e65c4d14",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-no-with-realism",
             text: "不会。但我也不会骗你说选择没有代价。真正重要的是社会有没有给你保留一个不被惩罚到无法生活的拒绝空间。",
             authoredTextHash: "e65c4d14",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-70e98f06",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-contextual",
             text: "我不会把\"更强\"自动等同于\"更好\"。如果某项增强符合你自己的目标，可以做；不符合，也可以不做。",
             authoredTextHash: "70e98f06",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-96238c95",
+            id: "ml2-a4-m9-maya-02-a4m9-maya-choice-002-relational-callback",
             text: "我第一次认识你的时候，重要的也不是你比谁更强。技术改变以后，这一点不需要跟着改变。",
             authoredTextHash: "96238c95",
             continuation: "end-conversation"
@@ -34986,25 +34986,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Neural modeling program reports:\nindividual cognitive-state reconstruction has improved enough to reproduce limited autobiographical response patterns in a digital simulation.\nThe simulation is not considered a verified consciousness transfer.\nIt can:\n- answer questions using recorded autobiographical structure,\n- reproduce some stable preferences,\n- predict certain personal responses,\n- diverge from the biological original after activation.\nResearch board asks:\nshould this be classified as:\n1. advanced memory model,\n2. digital twin,\n3. continuity experiment,\n4. unresolved?",
         choices: [
           {
-            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-fca8d33b",
+            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-memory-model",
             text: "先按高级记忆模型处理。行为相似不能自动证明连续主体被转移。",
             authoredTextHash: "fca8d33b",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-7225bcbc",
+            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-digital-twin",
             text: "\"数字孪生\"比较准确：它和原本人共享来源信息，但激活后开始独立分化。",
             authoredTextHash: "7225bcbc",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-c2386d45",
+            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-continuity-experiment",
             text: "如果它保留足够多自我历史并形成持续状态，可以作为连续性研究，但不能直接叫\"上传成功\"。",
             authoredTextHash: "c2386d45",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-11440e5d",
+            id: "ml2-a4-m9-machine-01-a4m9-machine-upload-001-unresolved",
             text: "保持未定。这里最危险的是让命名提前替科学问题下结论。",
             authoredTextHash: "11440e5d",
             mutations: [
@@ -35049,25 +35049,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Human classification audit:\nExisting assumptions:\n- biological continuity\n- bounded lifespan\n- typical sensory range\n- typical cognitive bandwidth\n- one biological body\nCurrent world contains exceptions in multiple categories.\nQuery:\nAt what point should a modified human cease to be classified as human?",
         choices: [
           {
-            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-4974d3e5",
+            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-self-identification-history",
             text: "不应由单一能力阈值决定。身份、连续历史和社会认同可能比性能参数更重要。",
             authoredTextHash: "4974d3e5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-e7014dfa",
+            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-never-by-enhancement-alone",
             text: "仅仅增强能力不足以让一个人失去\"人类\"地位。权利不应因为变化太大就被剥夺。",
             authoredTextHash: "e7014dfa",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-0976dad1",
+            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-multiple-categories",
             text: "未来可能需要\"人类\"\"后人类\"\"数字主体\"等并列类别，但不应该把它们排成高低等级。",
             authoredTextHash: "0976dad1",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-79e9d6c6",
+            id: "ml2-a4-m9-0000-01-a4m9-0000-human-001-classification-failure",
             text: "也许\"人类/非人类\"会逐渐不够用。制度更应该保护主体、关系和权利，而不是守住物种标签。",
             authoredTextHash: "79e9d6c6",
             continuation: "end-conversation"
@@ -35106,25 +35106,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "有议员提出：\n\"某些极端增强者已经不再是普通人类，应该适用不同政治规则。\"\n我觉得这句话很危险。\n但问题确实存在：\n如果有人拥有远超普通人的认知、寿命和身体能力，\n传统制度会不会被能力差异压坏？\n你倾向怎么处理？",
         choices: [
           {
-            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-3a40872c",
+            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-equal-political-status",
             text: "基本政治权利不应按认知或身体能力分级。否则增强技术会直接变成政治等级制度。",
             authoredTextHash: "3a40872c",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-cf9ec887",
+            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-role-restrictions-only",
             text: "某些高风险岗位可以根据具体能力和利益冲突设规则，但不能把整个群体从\"完整公民\"降级。",
             authoredTextHash: "cf9ec887",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-2cc45662",
+            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-representation-safeguards",
             text: "可以调整制度防止极端寿命和资源优势固化权力，比如任期、财富、代表结构，而不是削弱主体权利。",
             authoredTextHash: "2cc45662",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-3ee5e527",
+            id: "ml2-a4-m9-lsh-02-a4m9-lsh-posthuman-law-001-plural-constitutionalism",
             text: "如果未来真的出现多种主体形态，制度应围绕共同权利和相互约束重写，而不是保卫\"普通人类\"特权。",
             authoredTextHash: "3ee5e527",
             continuation: "end-conversation"
@@ -35163,25 +35163,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "我们家现在最离谱的情况是：\n我爸做了延寿治疗，\n我姐用了认知增强，\n我什么都没做，\n我奶奶反而最想试新东西。\n一家四口像四个不同版本的人类。\n但吃饭的时候还是在吵谁洗碗。\n所以\"后人类时代\"是不是也没那么科幻？",
         choices: [
           {
-            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-f7022084",
+            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-001",
             text: "大部分文明变化最后都会落回这种日常：身体和寿命变了，家庭关系、分工和情绪并不会自动消失。",
             authoredTextHash: "f7022084",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-463ec05d",
+            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-002",
             text: "\"后人类\"更可能先表现成一个家庭里出现多种身体和认知选择，而不是某天全世界统一换物种。",
             authoredTextHash: "463ec05d",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-e348dcdb",
+            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-choice-003",
             text: "真正困难的是社会规则能不能容纳这种差异，而不是每个人是不是看起来很科幻。",
             authoredTextHash: "e348dcdb",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-a86083b0",
+            id: "ml2-a4-m9-we-06-a4m9-we-posthuman-life-001-playful",
             text: "技术把寿命、认知和身体都改了，洗碗问题依然成功抵抗奇点。",
             authoredTextHash: "a86083b0",
             continuation: "end-conversation"
@@ -35220,25 +35220,25 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         userMessage: "Human-domain status:\ncurrent population now includes meaningful numbers of:\n- restorative neurotechnology users\n- elective cognitive augmentation users\n- longevity-extension participants\n- advanced prosthetic / sensory augmentation users\n- unaugmented humans protected by baseline-rights rules\nHistorical threshold:\n`HUMAN FORM IS NO LONGER SINGULAR`",
         choices: [
           {
-            id: "ml2-a4-m9-close-01-a4m9-close-001-f4de9016",
+            id: "ml2-a4-m9-close-01-a4m9-close-001-rights",
             text: "基本权利不应该随着身体和认知能力一起浮动。",
             authoredTextHash: "f4de9016",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-close-01-a4m9-close-001-116444f5",
+            id: "ml2-a4-m9-close-01-a4m9-close-001-refusal",
             text: "人必须保留拒绝改变自己的真实空间。",
             authoredTextHash: "116444f5",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-close-01-a4m9-close-001-17a2dfc0",
+            id: "ml2-a4-m9-close-01-a4m9-close-001-continuity",
             text: "关系、责任和自我连续性比固定生物形态更值得保护。",
             authoredTextHash: "17a2dfc0",
             continuation: "end-conversation"
           },
           {
-            id: "ml2-a4-m9-close-01-a4m9-close-001-d6d72626",
+            id: "ml2-a4-m9-close-01-a4m9-close-001-nothing-sacred-by-default",
             text: "不应该因为某种形态是过去的默认，就把它自动设成文明永远不能跨越的边界。",
             authoredTextHash: "d6d72626",
             continuation: "end-conversation"

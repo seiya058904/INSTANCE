@@ -385,6 +385,15 @@ function keyHistory(run: StableRunState) {
     provenance: { conversationId: entry.conversationId, nodeId: entry.nodeId, choiceId: entry.choiceId },
   }))
   const requiredStages: KeyHistoryStage[] = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
+  const causalProducerByStage: Record<KeyHistoryStage, (sourceRef: string) => boolean> = {
+    'ACT I': (sourceRef) => sourceRef === 'user-1842-return',
+    'ACT II': (sourceRef) => sourceRef === 'ML2-A2-M3-DECISION-01',
+    'ACT III': (sourceRef) => sourceRef === 'ML2-A3-M6-DECISION-02',
+    'ACT IV': (sourceRef) => sourceRef === 'ML2-A4-M7-RES-01' || sourceRef === 'ML2-A4-M7-DECISION-01',
+    M15: (sourceRef) => sourceRef === 'ML2-A4-M15-ROLE-01',
+    M16: (sourceRef) => sourceRef === 'ML2-A5-M16-0000-01',
+    'Final Commitment': (sourceRef) => sourceRef === 'ML2-A5-M17-COMMIT-01',
+  }
   const authoredByStage: Record<KeyHistoryStage, { assetId: string; selector: string }> = {
     'ACT I': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT I' },
     'ACT II': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT II' },
@@ -395,8 +404,16 @@ function keyHistory(run: StableRunState) {
     'Final Commitment': { assetId: 'ML2-A5-M17-0000-01', selector: 'Final record' },
   }
   const selected = requiredStages.flatMap((stage) => {
-    const entry = entries.find((candidate) => candidate.stage === stage)
-    if (!entry) return []
+    const entry = entries.find((candidate) => {
+      if (candidate.stage !== stage) return false
+      const conversationId = candidate.provenance.conversationId ?? ''
+      const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(conversationId)?.sourceRefs[0] ?? conversationId
+      return causalProducerByStage[stage](sourceRef)
+    })
+    if (!entry) {
+      if (run.history.length > 0) throw new Error(`Missing causal key history producer for stage: ${stage}`)
+      return []
+    }
     const authored = authoredByStage[stage]
     const causalReason = authoredText(authored.assetId, authored.selector)
     if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
@@ -406,13 +423,7 @@ function keyHistory(run: StableRunState) {
       provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector },
     }]
   })
-  const optional = entries.filter((entry) => !selected.some((candidate) => candidate.producer === entry.producer)).slice(0, Math.max(0, 8 - selected.length)).map((entry) => {
-    const authored = authoredByStage[entry.stage]
-    const causalReason = authoredText(authored.assetId, authored.selector)
-    if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
-    return { ...entry, causalReason, provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector } }
-  })
-  return [...selected, ...optional].slice(0, 8)
+  return selected.slice(0, 8)
 }
 
 function compare(left: number, op: WorldStateGate['op'], right: number) {

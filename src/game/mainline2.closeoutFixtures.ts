@@ -11,6 +11,8 @@ export interface Mainline2RouteTarget {
   proposalId: string
   decisions?: Record<string, string>
   secretEndingId?: string
+  choicesBySourceRef?: Record<string, string>
+  choicesByNodeId?: Record<string, string>
   initialProposalId?: string
   rejectProposalId?: string
   expectResolutionFailure?: boolean
@@ -43,8 +45,11 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
   while (run.phase === 'playing' && guard < 260) {
     const scene = resolveScene(run)
     const ref = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+    const forcedChoiceId = target.choicesByNodeId?.[scene.id] ?? (ref ? target.choicesBySourceRef?.[ref] : undefined)
+    const forcedChoice = forcedChoiceId ? scene.choices.find((candidate) => candidate.id === forcedChoiceId) : undefined
+    if (forcedChoiceId && !forcedChoice) throw new Error(`Route ${target.routeId} cannot find forced choice ${forcedChoiceId} at ${ref}`)
     const desiredDecision = scene.choices.find((choice) => choice.decisionBinding && target.decisions?.[choice.decisionBinding.decisionId] === choice.decisionBinding.canonicalValue)
-    let choice = desiredDecision
+    let choice = forcedChoice ?? desiredDecision
     if (ref === 'ML2-A5-M16-0000-01') {
       const intendedRole = target.secretEndingId === 'out_of_office' ? 'departure' : 'advisor'
       choice = scene.choices.find((candidate) => candidate.decisionBinding?.decisionId === 'aster_intended_role' && candidate.decisionBinding.canonicalValue === intendedRole)

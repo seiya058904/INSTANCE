@@ -26,7 +26,7 @@ Do not redesign narrative content, resume the paused Narrative Engine work, add 
 
 ## Verification
 
-Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The current baseline is 24 test files / 133 tests; the build may retain the known Vite large-chunk warning.
+Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The current baseline is 37 test files / 212 tests; the build may retain the known Vite large-chunk warning.
 
 ## Knowledge and closeout
 

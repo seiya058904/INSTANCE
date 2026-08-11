@@ -1,35 +1,70 @@
-import { readdir, readFile, writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 
 const root = new URL('../', import.meta.url)
-const [library, plan, files] = await Promise.all([
-  readFile(new URL('src/content/mainline2/authoredLibrary.generated.ts', root), 'utf8'),
-  readFile(new URL('src/content/mainline2/storyPlan.ts', root), 'utf8'),
-  readdir(new URL('docs/narrative-libraries/mainline2/', root)),
-])
-const canonical = (await Promise.all(files.filter((file) => file.endsWith('.md')).map((file) => readFile(new URL(`docs/narrative-libraries/mainline2/${file}`, root), 'utf8')))).join('\n')
-const assets = [...new Set([...library.matchAll(/assetId:\s*"([^"]+)"/g)].map((match) => match[1]))].sort()
-const scheduledPurposes = new Map([...plan.matchAll(/authored\('([^']+)',\s*'[^']+',\s*'([^']+)'/g)].map((match) => [match[1], match[2]]))
-const scheduled = new Set(scheduledPurposes.keys())
-const conditional = new Set([...plan.matchAll(/authored\('ML2-A4-M13-([^']+)'[\s\S]{0,280}?requires:/g)].map((match) => `ML2-A4-M13-${match[1]}`))
-const excerpt = (id) => { const at = canonical.indexOf(id); return at < 0 ? '' : canonical.slice(at, at + 4500) }
-const semanticClass = (id) => {
-  const text = excerpt(id)
-  if (conditional.has(id)) return ['CONDITIONAL CORE', 'Contact 前提成立时的固定章节；前提不足时不以普通池替代。']
-  if (scheduled.has(id)) {
-    const purpose = scheduledPurposes.get(id) ?? ''
-    if (/回声|收益|代价|压力|普通人/.test(purpose)) return ['MAINLINE WORLD ECHO', '已编排的世界回声：把既有决定落回具体生活。']
-    if (/能力|后果|起点|事实基础|成熟|可验证|提供.*前提/.test(purpose)) return ['MAINLINE CONSEQUENCE', '已编排的能力或决定后果，提供下一章的事实前提。']
-    return ['CORE', '固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。']
-  }
-  if (/世界回声|World Echo/i.test(text)) return ['OPTIONAL', '可选世界回声；不承担主线推进。']
-  if (/后果|Consequence|附录|Epilogue|支持/i.test(text)) return ['OPTIONAL', '作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。']
-  return ['ORDINARY', '作者保留的普通内容；不改变 Mainline 因果。']
-}
-const rows = assets.map((assetId) => ({ assetId, classification: semanticClass(assetId)[0], responsibility: semanticClass(assetId)[1] }))
 const classes = ['CORE', 'CONDITIONAL CORE', 'MAINLINE CONSEQUENCE', 'MAINLINE WORLD ECHO', 'OPTIONAL', 'ORDINARY', 'CUT']
-const counts = Object.fromEntries(classes.map((kind) => [kind, rows.filter((row) => row.classification === kind).length]))
-const markdown = `# Mainline 2.0 Asset Classification Audit\n\nGenerated from canonical narrative Markdown plus the explicit Story Plan. Classification is semantic: authored layer/function and scheduled narrative responsibility; it never infers a role from an asset filename.\n\n| Class | Count |\n| --- | ---: |\n${classes.map((kind) => `| ${kind} | ${counts[kind]} |`).join('\n')}\n\nCUT is zero because no canonical asset met the documented duplicate/contradiction threshold; that is an audit result, not a target.\n\n| Asset | Classification | Narrative responsibility |\n| --- | --- | --- |\n${rows.map((row) => `| ${row.assetId} | ${row.classification} | ${row.responsibility} |`).join('\n')}\n`
+const requiredFields = [
+  'assetId',
+  'classification',
+  'narrativePurpose',
+  'character',
+  'prerequisite',
+  'payoff',
+  'usedByStoryPlan',
+  'routeFamilies',
+  'dispositionRationale',
+].sort()
+
+const [librarySource, registrySource] = await Promise.all([
+  readFile(new URL('src/content/mainline2/authoredLibrary.generated.ts', root), 'utf8'),
+  readFile(new URL('src/content/mainline2/editorialClassification.registry.json', root), 'utf8'),
+])
+const registry = JSON.parse(registrySource)
+const inventoryBlock = librarySource.match(/export const HANDOFF_AUTHORED_ASSET_INVENTORY = \[([\s\S]*?)\n\] as const/)
+if (!inventoryBlock) throw new Error('Cannot find canonical HANDOFF_AUTHORED_ASSET_INVENTORY')
+const canonicalIds = [...inventoryBlock[1].matchAll(/assetId:\s*"([^"]+)"/g)].map((match) => match[1]).sort()
+const registeredIds = registry.map((asset) => asset.assetId).sort()
+
+if (registry.length !== 330 || new Set(registeredIds).size !== 330 || JSON.stringify(registeredIds) !== JSON.stringify(canonicalIds)) {
+  throw new Error(`Editorial registry inventory mismatch: canonical=${canonicalIds.length}, registry=${registry.length}, unique=${new Set(registeredIds).size}`)
+}
+for (const asset of registry) {
+  const fields = Object.keys(asset).sort()
+  if (JSON.stringify(fields) !== JSON.stringify(requiredFields)) throw new Error(`Editorial registry fields mismatch: ${asset.assetId}`)
+  if (!classes.includes(asset.classification)) throw new Error(`Unknown editorial classification: ${asset.assetId}=${asset.classification}`)
+  for (const field of ['narrativePurpose', 'character', 'prerequisite', 'payoff', 'dispositionRationale']) {
+    if (typeof asset[field] !== 'string' || !asset[field].trim()) throw new Error(`Empty ${field}: ${asset.assetId}`)
+  }
+  if (typeof asset.usedByStoryPlan !== 'boolean') throw new Error(`Invalid usedByStoryPlan: ${asset.assetId}`)
+  if (!Array.isArray(asset.routeFamilies) || !asset.routeFamilies.length || asset.routeFamilies.some((route) => typeof route !== 'string' || !route.trim())) {
+    throw new Error(`Invalid routeFamilies: ${asset.assetId}`)
+  }
+}
+
+const counts = Object.fromEntries(classes.map((kind) => [kind, registry.filter((row) => row.classification === kind).length]))
+const cell = (value) => String(value).replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>')
+const markdown = `# Mainline 2.0 Editorial Classification Registry Audit
+
+This audit is rendered verbatim from the explicit editorial registry. The generator validates the canonical 330-asset inventory and fields, but does not infer classification, character, purpose, prerequisite, payoff, route family, or disposition from filenames or keywords.
+
+| Class | Count |
+| --- | ---: |
+${classes.map((kind) => `| ${kind} | ${counts[kind]} |`).join('\n')}
+
+Zero-count classes remain listed because the editorial review found no asset that should be ordinary-only or cut from the canonical library; zero is an outcome, not a target.
+
+| Asset | Classification | Narrative purpose | Character | Prerequisite | Payoff | Story Plan | Route families | Disposition rationale |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+${registry.map((row) => `| ${cell(row.assetId)} | ${cell(row.classification)} | ${cell(row.narrativePurpose)} | ${cell(row.character)} | ${cell(row.prerequisite)} | ${cell(row.payoff)} | ${row.usedByStoryPlan ? 'yes' : 'no'} | ${cell(row.routeFamilies.join(', '))} | ${cell(row.dispositionRationale)} |`).join('\n')}
+`
+
 await Promise.all([
   writeFile(new URL('docs/audits/mainline2-asset-classification.md', root), markdown, 'utf8'),
-  writeFile(new URL('docs/audits/mainline2-asset-classification.json', root), `${JSON.stringify({ generatedFrom: ['canonical Markdown', 'storyPlan.ts'], counts, assets: rows }, null, 2)}\n`, 'utf8'),
+  writeFile(new URL('docs/audits/mainline2-asset-classification.json', root), `${JSON.stringify({
+    generatedFrom: [
+      'src/content/mainline2/editorialClassification.registry.json',
+      'HANDOFF_AUTHORED_ASSET_INVENTORY',
+    ],
+    counts,
+    assets: registry,
+  }, null, 2)}\n`, 'utf8'),
 ])

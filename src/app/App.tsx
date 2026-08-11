@@ -43,6 +43,14 @@ interface TransitionState {
   assistantStreamKey: string
 }
 
+export function shouldRenderEndingScreen(
+  phase: StableRunState['phase'],
+  hasTransition: boolean,
+  stage?: ConversationFlowStep['stage'],
+) {
+  return phase === 'ending' && (!hasTransition || stage === 'ready')
+}
+
 const emptyMetrics = (): QAPacingMetrics => ({
   choiceReadingMs: 0,
   humanWaitMs: 0,
@@ -387,7 +395,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     exposeMetrics()
   }
 
-  if (run.phase === 'ending' && !transition) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
+  if (shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
   if (run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} />
 
   const stage = initialStreaming ? 'human-streaming' : currentStep?.stage ?? 'ready'

@@ -93,7 +93,21 @@ function localizeCausalReason(value: string) {
   return localize('causalReason', value)
 }
 
+function resolutionFailureCopy(): EndingPlayerFacingCopy {
+  return {
+    title: '结局结算异常',
+    status: '结局数据无法完成一致性校验',
+    humanLine: '这次结算没有得到可确认的结果。',
+    assistantLine: '我不会把一次无法验证的结算伪装成正常结局。你可以开始新一局。',
+    summary: '这局的最终承诺与既有历史没有解析出可用的公开结局。原始选择记录仍被保留，但本次不会被映射成虚假的默认结局。',
+    hybridLabel: '未完成结算',
+    keyHistory: [],
+    epilogues: [],
+  }
+}
+
 export function localizeEndingForPlayer(ending: EndingResult): EndingPlayerFacingCopy {
+  if (ending.id === 'resolution-failure' || ending.resolution?.status === 'failure') return resolutionFailureCopy()
   const overlay = ending.secretOverlay
   const localizedOverlay = overlay ? { copy: localize(`secret:${overlay.endingId}`, overlay.copy), overlayMode: overlay.overlayMode } : undefined
   const base = {

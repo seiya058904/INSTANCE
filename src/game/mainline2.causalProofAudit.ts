@@ -26,7 +26,6 @@ const representativeTargets: Array<{ chainId: string; target: Mainline2RouteTarg
   { chainId: 'space-contact-cosmic', target: { routeId: 'causal-cosmic', proposalId: 'proposal.co.frontier_federation', decisions: { act4_research_emphasis: 'frontier_science', expansion_doctrine: 'shared_expansion', offworld_governance: 'multiworld_federation', contact_doctrine: 'reciprocal_diplomacy' } } },
   { chainId: 'security-exact-ending', target: { routeId: 'causal-security', proposalId: 'proposal.se.constitutional_peace_architecture', decisions: { act4_research_emphasis: 'computation_ai', security_doctrine: 'mutual_disarmament' } } },
   { chainId: 'rejection-retained-lock', target: { routeId: 'causal-rejection', proposalId: 'proposal.hc.continuity_charter', initialProposalId: 'proposal.hc.final_human_veto', rejectProposalId: 'proposal.hc.final_human_veto', decisions: { aster_provisional_role: 'partner', cascade_authority: 'emergency_delegation', first_public_execution_doctrine: 'human_final_authority' } } },
-  { chainId: 'dormant-upload-gate', target: { routeId: 'causal-upload-dormant', proposalId: 'proposal.ph.digital_continuity', expectResolutionFailure: true, decisions: { act4_research_emphasis: 'life_mind', human_form_doctrine: 'open_enhancement' } } },
 ]
 
 function changedState(before: StableRunState, after: StableRunState) {
@@ -84,10 +83,6 @@ function runRepresentative(chainId: string, target: Mainline2RouteTarget) {
   if (chainId === 'machine-exact-ending' && fixture.ending.worldEndingId !== 'machine_republic') throw new Error(`Causal chain ${chainId} resolved ${fixture.ending.worldEndingId}`)
   if (chainId === 'space-contact-cosmic' && fixture.ending.endingFamily !== 'cosmic') throw new Error(`Causal chain ${chainId} did not resolve a Cosmic ending`)
   if (chainId === 'security-exact-ending' && fixture.ending.endingFamily !== 'security') throw new Error(`Causal chain ${chainId} did not resolve a Security ending`)
-  if (chainId === 'dormant-upload-gate') {
-    if (fixture.ending.resolution?.status !== 'failure') throw new Error('Dormant Upload chain unexpectedly resolved')
-    if (!fixture.ending.resolution.rejectedCandidates.some((candidate) => candidate.endingId === 'the_upload' && candidate.reasons.some((reason) => reason.includes('digital continuity bridge')))) throw new Error(`Dormant Upload chain has no bridge rejection: ${JSON.stringify(fixture.ending.resolution.rejectedCandidates)}`)
-  }
   return { chainId, links: fixtureLinks(chainId, fixture) }
 }
 

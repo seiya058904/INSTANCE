@@ -463,6 +463,10 @@ function exactCandidate(run: StableRunState, proposalId?: string) {
   return { proposal, definition: winner, resolution: { status: 'resolved', proposalId: proposal.id, endingId: winner.id, family: winner.family, rejectedCandidates } satisfies EndingResolution }
 }
 
+export function isFinalCommitmentResolvable(run: StableRunState, proposalId: string) {
+  return exactCandidate(run, proposalId).resolution.status === 'resolved'
+}
+
 function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinition | undefined) {
   const selected: string[] = []
   const provenance: Array<{ assetId: string; moduleId?: 'machine' | 'ascension' | 'automation' | 'uplift' | 'space' | 'contact' | 'security'; selector: string }> = []

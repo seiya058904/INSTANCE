@@ -10,7 +10,7 @@ import {
 } from '../content/runManifest'
 import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
-import { resolveMainline2Ending } from '../content/mainline2/endings'
+import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { generateFutureProposals, getFutureProposalById } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
@@ -146,7 +146,10 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
     ]
   }
   if (run.finalCommitmentLocked) return []
-  return proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id)).map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+  return proposals
+    .filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
+    .filter((proposal) => isFinalCommitmentResolvable(run, proposal.id))
+    .map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
 }
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {

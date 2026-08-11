@@ -52,7 +52,7 @@ function requiredCapabilities(slot: StoryPlanSlot, run: StableRunState) {
 
 const CHINESE_CHOICE_OVERRIDES = new Map([
   ['Yes.', '是。'],
-  ['1. winter  2. lights  3. cold  4. them  5. me  6. western  7. brought  8. shop  9. Mrs.  10. funny', '英文单词列表：1. winter  2. lights  3. cold  4. them  5. me  6. western  7. brought  8. shop  9. Mrs.  10. funny'],
+  ['1. winter  2. lights  3. cold  4. them  5. me  6. western  7. brought  8. shop  9. Mrs.  10. funny', '答案依次为：1. winter（冬天） 2. lights（灯光） 3. cold（寒冷） 4. them（他们） 5. me（我） 6. western（西方的） 7. brought（带来） 8. shop（商店） 9. Mrs.（夫人） 10. funny（有趣的）。'],
   ['Yes. The second sentence makes it sound much more sincere: you are not only admitting that they were right, but also taking responsibility for ignoring the advice earlier.', '是的。第二句听起来真诚得多：你不只承认对方是对的，也承担了自己先前没有听取建议的责任。'],
   ['In this context, “I guess” still adds a little hesitation, but “I should have listened earlier” removes most of the sarcastic reading because it clearly admits a mistake.', '在这个语境里，“I guess”仍带一点犹豫，但“I should have listened earlier”明确承认了错误，因此基本消除了讽刺的读法。'],
   ['It sounds closer to reluctant but genuine agreement than sarcasm. If you want it completely direct, say: “You were right about the deadline. I should have listened earlier.”', '这听起来更像勉强但真诚的认同，而不是讽刺。如果想表达得完全直接，可以说：“你对截止日期的判断是对的。我早该听你的。”'],
@@ -60,11 +60,13 @@ const CHINESE_CHOICE_OVERRIDES = new Map([
 
 function chineseChoiceText(text: string) {
   if (/[\u3400-\u9fff]/u.test(text)) return text
-  return CHINESE_CHOICE_OVERRIDES.get(text) ?? `英文原文：${text}`
+  const localized = CHINESE_CHOICE_OVERRIDES.get(text)
+  if (!localized) throw new Error(`Missing authored Chinese localization for player-facing choice: ${text}`)
+  return localized
 }
 
 function concreteDestination(next: Record<string, unknown>) {
-  return next.kind === 'node' ? { kind: 'node', conversationId: next.conversationId, nodeId: next.nodeId } : { kind: 'ending-resolution' }
+  return next.kind === 'node' ? { kind: 'node', slot: next.slot, conversationId: next.conversationId, nodeId: next.nodeId } : { kind: 'ending-resolution' }
 }
 
 function appendDestination(destinations: Array<Record<string, unknown>>, next: Record<string, unknown>) {

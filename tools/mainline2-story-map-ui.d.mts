@@ -32,4 +32,5 @@ export interface StoryMapRouteComparison {
 }
 
 export function compareRoutes(left?: StoryMapRoute, right?: StoryMapRoute): StoryMapRouteComparison
+export function formatNext(next?: { kind: 'node'; slot: number; conversationId: string; nodeId: string } | { kind: 'ending-resolution' }): string
 export function mountStoryMap(): Promise<void>

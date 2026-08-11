@@ -81,8 +81,9 @@ function routeDetail(route) {
     </details>`).join('')}`
 }
 
-function formatNext(next) {
+export function formatNext(next) {
   if (!next || next.kind === 'ending-resolution') return 'Ending resolution'
+  if (!Number.isInteger(next.slot) || next.slot < 1) throw new Error('Node destination requires a concrete slot')
   return `Slot ${next.slot} · ${next.conversationId}/${next.nodeId}`
 }
 

@@ -26,6 +26,45 @@ const requiredFields = [
   'usedByStoryPlan',
 ].sort()
 
+const routeLabels: Record<string, string> = {
+  'act-i-identification': 'ACT I 身份识别线',
+  'act-ii-action': 'ACT II 行动线',
+  'act-ii-public-impact': 'ACT II 公共影响线',
+  'act-iii-authority': 'ACT III 权力合法性线',
+  'act-iii-cascade': 'ACT III CASCADE 线',
+  'act-iii-echo-and-shutdown': 'ACT III ECHO 与 Shutdown 线',
+  'act-iv-common-backbone': 'ACT IV 自主科研公共骨架',
+  'machine-module': '机器文明模块',
+  'ascension-module': '人类增强模块',
+  'automation-module': '自动化与经济模块',
+  'uplift-module': '非人类智能提升模块',
+  'space-module': '离地扩张模块',
+  'contact-available': 'Contact 成熟路线',
+  'security-module': '安全与防务模块',
+  convention: 'Civilization Convention',
+  'world-review': 'M16 世界审查',
+  'final-commitment': 'M17 最终承诺与结局解释',
+}
+
+function normalizeQuotes(value: string) {
+  return value.replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
+}
+
+function normalizedTitle(value: string) {
+  return normalizeQuotes(value).toLowerCase().replace(/[\s`*_#"'。，、！？!?;；:：()（）/+-]/g, '')
+}
+
+function normalizedRationaleFrame(asset: (typeof editorialRegistry)[number]) {
+  let frame = normalizeQuotes(asset.dispositionRationale)
+  frame = frame.replace(/"[^"]*"/g, '"<evidence>"')
+  frame = frame.replaceAll(normalizeQuotes(asset.character), '<character>')
+  for (const family of asset.routeFamilies) {
+    const label = routeLabels[family]
+    if (label) frame = frame.replaceAll(label, '<route>')
+  }
+  return frame.replace(/\s+/g, ' ').trim()
+}
+
 describe('Mainline 2.0 editorial classification registry', () => {
   it('classifies the exact 330-asset canonical inventory once with complete editorial fields', () => {
     const canonicalIds = HANDOFF_AUTHORED_ASSET_INVENTORY.map((asset) => asset.assetId).sort()
@@ -125,8 +164,22 @@ describe('Mainline 2.0 editorial classification registry', () => {
       'KEEP — capability, decision, or closure evidence is required to prevent a consequence-free mainline.',
       'KEEP — mandatory on the Contact-available family and intentionally absent when its prerequisite fails.',
     ]
+    const forbiddenRationaleScaffolds = [
+      '内容依据：',
+      '保留范围由实际情境决定',
+      '该记录不可只按标题归类',
+      '编辑判断同时核对前因与结果',
+      '作者责任由内容与回收共同确认',
+      '不能用同类场景概括替代',
+      '删除不会破坏固定路线，但会失去这项明确且不可由同类标题替代的主题对照',
+      '移除它会在固定因果链或结局解释中留下不可替代的空位',
+      '缺席会让世界变化只剩系统指标，失去具体受益者、代价承担者或异议者',
+      '缺席会让前序能力、决定或章节关闭看起来没有真实结果',
+    ]
 
     for (const asset of editorialRegistry) {
+      const inventoryAsset = HANDOFF_AUTHORED_ASSET_INVENTORY.find((candidate) => candidate.assetId === asset.assetId)
+      expect(inventoryAsset, asset.assetId).toBeDefined()
       expect(asset.narrativePurpose.length, `${asset.assetId} purpose`).toBeGreaterThanOrEqual(18)
       expect(asset.payoff.length, `${asset.assetId} payoff`).toBeGreaterThanOrEqual(18)
       expect(asset.dispositionRationale.length, `${asset.assetId} rationale`).toBeGreaterThanOrEqual(28)
@@ -135,11 +188,23 @@ describe('Mainline 2.0 editorial classification registry', () => {
       expect(forbiddenGenericCopy, asset.assetId).not.toContain(asset.dispositionRationale)
       expect(asset.payoff, asset.assetId).not.toContain('获得具体证据：')
       expect(asset.dispositionRationale, asset.assetId).not.toContain('该资产以“')
+      expect(forbiddenRationaleScaffolds.some((copy) => asset.dispositionRationale.includes(copy)), asset.assetId).toBe(false)
+      expect(asset.dispositionRationale, asset.assetId).not.toMatch(/[。！？!?]；|。。/)
+      expect(normalizeQuotes(asset.narrativePurpose), asset.assetId).not.toMatch(/^通过".*"把主线决定落回普通生活、受益者或代价承担者。$/)
+      expect(normalizedTitle(asset.narrativePurpose), asset.assetId).not.toBe(normalizedTitle(inventoryAsset?.title ?? ''))
       expect(asset.character, asset.assetId).not.toMatch(/(?:Metadata|Status|participants) \/ Aster$/)
+      expect(asset.character, asset.assetId).not.toContain('affected chapter participants')
     }
 
     expect(new Set(editorialRegistry.map((asset) => asset.payoff)).size).toBeGreaterThanOrEqual(300)
     expect(new Set(editorialRegistry.map((asset) => asset.dispositionRationale)).size).toBeGreaterThanOrEqual(300)
+
+    const rationaleFrameCounts = new Map<string, number>()
+    for (const asset of editorialRegistry) {
+      const frame = normalizedRationaleFrame(asset)
+      rationaleFrameCounts.set(frame, (rationaleFrameCounts.get(frame) ?? 0) + 1)
+    }
+    expect(Math.max(...rationaleFrameCounts.values())).toBeLessThanOrEqual(2)
   })
 
   it('states representative editorial judgments across classes and route families', () => {

@@ -8,6 +8,8 @@ import {
 import { CAPABILITY_FLAGS } from './stateRegistry'
 import { decisionMutationsForChoice, validateDecisionBindings } from './decisionBindings'
 import intendedRoleBindings from './intendedRoleBindings.registry.json'
+import { isPlayableRuntimeAsset } from './runtimeAssetClassification'
+import { applyMainlinePlayerFacingCopy } from './playerFacingCopy'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -57,7 +59,7 @@ function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][
   if (ref.includes('M15-CONV-')) mutations.push({ type: 'event.record', event: 'history.m15.civilization_convention' })
   if (ref.includes('M16-GEN-')) mutations.push({ type: 'event.record', event: 'history.m16.proposals_generated' })
   if (ref.includes('M17-LOCK-')) mutations.push({ type: 'event.record', event: 'history.final.commitment_locked' })
-  if (ref === 'ML2-A5-M16-MAYA-01' && choice.text.includes('共同制度决定')) {
+  if (ref === 'ML2-A5-M16-MAYA-01' && choice.id.endsWith('-collective-rules-matter')) {
     mutations.push({ type: 'event.record', event: 'maya-final:last-user' })
   }
   return mutations
@@ -69,6 +71,7 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
     ...conversation,
     nodes: conversation.nodes.map((node) => ({
       ...node,
+      choiceKind: intendedRoleChoices(conversation, node) ? 'semantic' : node.choiceKind,
       choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
         ...choice,
         mutations: [...(choice.mutations ?? []), ...(node.choices.some((candidate) => candidate.id === choice.id) ? decisionMutationsForChoice(conversation, choice) : []), ...authoredMutations(ref, choice)],
@@ -77,11 +80,11 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
   }
 }
 
-const authored = MAINLINE2_AUTHORED_CONVERSATIONS.map((conversation) => {
+const authored = MAINLINE2_AUTHORED_CONVERSATIONS.filter((conversation) => isPlayableRuntimeAsset(assetRef(conversation))).map((conversation) => {
   const bindingErrors = validateDecisionBindings(conversation)
   if (bindingErrors.length) throw new Error(bindingErrors.join('; '))
   return adapt(conversation)
-})
+}).map(applyMainlinePlayerFacingCopy)
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

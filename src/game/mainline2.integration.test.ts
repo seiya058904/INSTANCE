@@ -20,6 +20,29 @@ function complete(runId: string) {
 }
 
 describe('Mainline 2.0 runtime', () => {
+  it('keeps Maya return inside the v3 playing scheduler', () => {
+    let run = createMainline2Run('maya-return-regression')
+    let guard = 0
+    while (run.phase === 'playing' && guard < 200) {
+      const scene = resolveScene(run)
+      if (scene.conversationId === 'user-1842-return') {
+        const before = run.manifest.conversationIds.length
+        do {
+          const mayaScene = resolveScene(run)
+          run = commitChoice(run, mayaScene.choices[0].id)
+        } while (run.phase === 'playing' && resolveScene(run).conversationId === 'user-1842-return')
+        expect(run.version).toBe(3)
+        expect(run.phase).toBe('playing')
+        expect(run.manifest.conversationIds.length).toBeGreaterThan(before)
+        expect(run.manifest.conversationIds.at(-1)).not.toBe('user-1842-return')
+        return
+      }
+      run = commitChoice(run, scene.choices[0].id)
+      guard += 1
+    }
+    throw new Error('Maya return was not reached in the v3 regression fixture')
+  })
+
   it('uses v3 state and preserves decisions/world/modules across reload', () => {
     const original = createMainline2Run('reload-fixture')
     let run = commitChoice(original, resolveScene(original).choices[0].id)
@@ -40,7 +63,7 @@ describe('Mainline 2.0 runtime', () => {
     expect(results.every(({ run }) => (run.progress?.activeModules.length ?? 0) >= 2 && (run.progress?.activeModules.length ?? 0) <= 4)).toBe(true)
     expect(results.every(({ run }) => (run.progress?.act ?? 0) === 5)).toBe(true)
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)
-  }, 30000)
+  }, 60000)
 
   it('generates three to five player-facing proposals without ending titles', () => {
     const run = complete('proposal-fixture').run

@@ -93,4 +93,19 @@ describe('conversation timing scheduler', () => {
     const humanStream = timeline.find((step) => step.stage === 'human-streaming')
     expect(humanStream?.durationMs).toBeGreaterThanOrEqual(960)
   })
+
+  it('keeps the permission warning readable for about one second', () => {
+    const timeline = buildConversationTimeline({
+      assistantText: '已记录。',
+      assistantSeed: 'permission-warning',
+      humanText: '系统审查开始。',
+      humanSeed: 'permission-warning-human',
+      sameConversation: false,
+      timing: { responsePace: 'considered', typingPattern: 'steady' },
+      handoffProfile: 'sensitive',
+      effect: 'level-2-memory-sync',
+    })
+
+    expect(timeline.find((step) => step.effectDetail === 'permission')?.durationMs).toBeGreaterThanOrEqual(900)
+  })
 })

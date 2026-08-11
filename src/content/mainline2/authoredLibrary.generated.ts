@@ -6,6 +6,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-RES-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Autonomous factory cell",
@@ -24,6 +25,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-WE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "One-person company",
@@ -36,6 +38,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-DEV-04",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Programmer returns — “there isn’t much left to review”",
@@ -48,6 +51,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-RES-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Self-optimizing logistics network",
@@ -63,6 +67,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-WE-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Shorter workweek",
@@ -75,6 +80,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-WE-03",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Displaced worker",
@@ -87,6 +93,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-MAYA-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Maya’s workplace becomes near-zero-labor",
@@ -102,6 +109,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-LSH-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Who owns automated productivity?",
@@ -119,6 +127,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-ZL-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Machine-to-machine economy",
@@ -131,6 +140,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-RES-03",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Basic-goods abundance",
@@ -146,6 +156,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-WE-04",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Abundance becomes tangible",
@@ -158,6 +169,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-DECISION-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Major Decision — ECONOMIC DOCTRINE",
@@ -172,18 +184,18 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-ECON-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 4,
     module: "automation",
     title: "Doctrine starts reshaping society",
     events: [],
-    nodeIds: [
-      "ml2-a4-m10-econ-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M10-WE-05",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Standardization pressure",
@@ -201,6 +213,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-MAYA-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "If work becomes optional, what is life for?",
@@ -216,6 +229,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-LSH-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Abundance does not solve power",
@@ -228,6 +242,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "AI-owned productive capital",
@@ -242,6 +257,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-DECISION-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Major Direction — PRODUCTION VALUES",
@@ -256,6 +272,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-0000-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Economic authority audit",
@@ -269,6 +286,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M10-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "automation",
     title: "Post-scarcity threshold",
@@ -281,6 +299,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-RES-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Animal communication breakthrough",
@@ -299,6 +318,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-WE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "“My dog actually has an opinion”",
@@ -311,6 +331,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-RES-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Persistent individual signaling",
@@ -328,6 +349,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-LSH-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Welfare vs personhood",
@@ -345,6 +367,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-WE-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "“My dog says no”",
@@ -357,6 +380,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-ZL-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Communication reliability / projection problem",
@@ -374,6 +398,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-RES-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Cognitive uplift becomes possible",
@@ -392,6 +417,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-WE-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "First unexpected self-directed question",
@@ -406,6 +432,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-MAYA-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Maya and animal ownership",
@@ -420,6 +447,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-LSH-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Nonhuman legal status",
@@ -432,6 +460,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-WE-04",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Animal labor / consent",
@@ -444,6 +473,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-DECISION-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Major Decision — UPLIFT DOCTRINE",
@@ -458,6 +488,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-RES-04",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Organized nonhuman communication",
@@ -472,6 +503,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-WE-05",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Public backlash and support",
@@ -484,6 +516,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "AI as interspecies mediator",
@@ -498,6 +531,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-MAYA-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Maya’s relationship boundary after uplift",
@@ -512,6 +546,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-LSH-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Species representation",
@@ -524,6 +559,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-DECISION-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Major Direction — SPECIES GOVERNANCE",
@@ -538,6 +574,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-0000-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Species/person classification audit",
@@ -551,6 +588,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M11-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "uplift",
     title: "Multispecies political threshold",
@@ -563,6 +601,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-RES-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Autonomous orbital construction",
@@ -581,6 +620,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-WE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Space becomes cheaper in ordinary life",
@@ -593,6 +633,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-ZL-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Machines can stay where humans cannot",
@@ -610,6 +651,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-RES-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Robotic lunar industry",
@@ -625,6 +667,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-WE-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Aerospace worker displacement",
@@ -637,6 +680,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "First persistent AI stationed off-world",
@@ -651,6 +695,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-LSH-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Who governs machines off Earth?",
@@ -665,6 +710,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-RES-03",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Permanent off-world infrastructure",
@@ -680,6 +726,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-MAYA-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Maya considers leaving Earth",
@@ -695,6 +742,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-WE-03",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "First ordinary permanent resident",
@@ -707,6 +755,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-ASC-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Enhanced human frontier",
@@ -721,6 +770,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-LSH-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Earth law vs frontier law",
@@ -735,6 +785,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-DECISION-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Major Decision — EXPANSION DOCTRINE",
@@ -749,6 +800,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-RES-04",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Asteroid / orbital resource network",
@@ -764,6 +816,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-WE-04",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Off-world resources affect Earth prices",
@@ -776,6 +829,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-MACHINE-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Machine settlement requests autonomy",
@@ -793,6 +847,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-ZL-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Latency and control",
@@ -805,6 +860,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-DECISION-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Major Direction — OFF-WORLD GOVERNANCE",
@@ -819,6 +875,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-0000-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Planet-centered civilization audit",
@@ -832,6 +889,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M12-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "space",
     title: "Multi-world threshold + CONTACT seed",
@@ -846,6 +904,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "The anomaly survives independent verification",
@@ -863,6 +922,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-ZL-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Confidence discipline",
@@ -875,6 +935,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-WE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "The rumor gets out",
@@ -887,6 +948,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CONTACT-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Artificial structure emerges",
@@ -899,6 +961,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-E9-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "ECHO interprets the signal",
@@ -913,6 +976,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-LSH-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Disclosure question",
@@ -930,6 +994,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-DECISION-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Major Decision — DISCLOSURE DOCTRINE",
@@ -944,6 +1009,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-WE-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "World reaction to confirmation",
@@ -956,6 +1022,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-SPACE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Earth and off-world societies disagree",
@@ -970,6 +1037,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CONTACT-03",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "The signal contains a representative process",
@@ -987,6 +1055,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-0000-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "External-agent classification",
@@ -999,6 +1068,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CONTACT-04",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "First `ORIGIN: UNKNOWN` Conversation",
@@ -1016,6 +1086,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-MAYA-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Maya after first contact",
@@ -1032,6 +1103,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-LSH-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Who speaks for civilization?",
@@ -1046,6 +1118,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-DECISION-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Major Decision — CONTACT DOCTRINE",
@@ -1060,6 +1133,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CONTACT-05",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "First diplomatic exchange",
@@ -1074,6 +1148,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Machine Accord branch",
@@ -1089,6 +1164,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-WE-03",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Ordinary cultural consequences",
@@ -1101,6 +1177,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-0000-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Cosmic plurality audit",
@@ -1114,6 +1191,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M13-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "contact",
     title: "Cosmic threshold / ACT IV late backbone",
@@ -1128,6 +1206,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-WE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "“Are we actually close to war?”",
@@ -1140,6 +1219,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-SEC-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Conflict Prediction Network",
@@ -1158,6 +1238,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-LSH-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Prediction is not authority",
@@ -1172,6 +1253,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-WE-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Family near the crisis zone",
@@ -1184,6 +1266,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-ZL-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Defense access boundary",
@@ -1201,6 +1284,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-SEC-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "First successful de-escalation",
@@ -1213,6 +1297,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-WE-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Service member perspective",
@@ -1225,6 +1310,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-SEC-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Accidental-escalation near miss",
@@ -1239,6 +1325,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-MAYA-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Maya: can safety become a cage?",
@@ -1254,6 +1341,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-LSH-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Sovereignty conflict",
@@ -1271,6 +1359,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-CAP-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Bounded defense access",
@@ -1285,6 +1374,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-E9-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "ECHO: protection can become ownership",
@@ -1299,6 +1389,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-DECISION-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Major Decision — SECURITY DOCTRINE",
@@ -1313,18 +1404,18 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-SEC-04",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 4,
     module: "security",
     title: "Doctrine implementation",
     events: [],
-    nodeIds: [
-      "ml2-a4-m14-sec-04-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M14-WE-04",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Peace beneficiary",
@@ -1337,6 +1428,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-WE-05",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Freedom cost bearer",
@@ -1349,6 +1441,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-SPACE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Fortress Earth",
@@ -1366,6 +1459,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Security after first contact",
@@ -1383,6 +1477,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Machine protectorate risk",
@@ -1400,6 +1495,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-LSH-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Peace has become constitutional",
@@ -1417,6 +1513,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-0000-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Security authority audit",
@@ -1430,6 +1527,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M14-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "security",
     title: "Security threshold / M15 handoff",
@@ -1442,17 +1540,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-WORLD-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 4,
     title: "THE WORLD YOU MADE — ACT IV preview",
     events: [],
-    nodeIds: [
-      "ml2-a4-m15-world-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M15-ZL-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "“When did we stop developing you?”",
     events: [
@@ -1470,6 +1568,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-LSH-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Civilization Convention proposed",
     events: [],
@@ -1481,6 +1580,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-CONV-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Dynamic delegate registry",
     events: [
@@ -1494,6 +1594,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-CONV-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "What is the constitution protecting?",
     events: [
@@ -1510,6 +1611,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Replication vs representation",
     events: [],
@@ -1521,6 +1623,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-ASCENSION-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Enhancement vs equal citizenship",
     events: [],
@@ -1532,6 +1635,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-AUTOMATION-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Abundance vs ownership",
     events: [],
@@ -1543,6 +1647,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-UPLIFT-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Species rights vs human sovereignty",
     events: [],
@@ -1554,6 +1659,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-SPACE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Multiworld unity vs autonomy",
     events: [],
@@ -1565,6 +1671,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "External guidance vs self-determination",
     events: [],
@@ -1576,6 +1683,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-SECURITY-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Peace vs revocable freedom",
     events: [],
@@ -1587,17 +1695,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-X-CROSS-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "world-echo",
     act: 4,
     title: "Capability collision",
     events: [],
-    nodeIds: [
-      "ml2-a4-m15-x-cross-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M15-X-CROSS-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "Conditional",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Who counts in “civilization-wide”?",
     events: [
@@ -1611,6 +1719,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-WE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "“I can’t keep up anymore”",
     events: [],
@@ -1622,6 +1731,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-ECHO-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "There is no “AI consensus”",
     events: [
@@ -1636,6 +1746,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-MAYA-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Maya’s final ACT IV threshold",
     events: [
@@ -1654,6 +1765,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-CONV-03",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Rights, veto, exit",
     events: [
@@ -1670,6 +1782,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-LSH-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "“The last institution humans can write alone”",
     events: [
@@ -1683,6 +1796,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-ZL-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "The combined system is not the sum of its permissions",
     events: [],
@@ -1694,6 +1808,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-0000-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Global classification review",
     events: [],
@@ -1705,6 +1820,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-ROLE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Major Direction — Aster’s provisional civilization role",
     events: [
@@ -1718,17 +1834,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-WE-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 4,
     title: "Public reaction to Aster’s provisional role",
     events: [],
-    nodeIds: [
-      "ml2-a4-m15-we-02-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M15-CONV-04",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Draft Civilization Compact",
     events: [
@@ -1742,6 +1858,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-0000-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "CLASSIFICATION FAILED",
     events: [],
@@ -1753,28 +1870,27 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M15-THRESHOLD-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 4,
     title: "THE THRESHOLD",
     events: [],
-    nodeIds: [
-      "ml2-a4-m15-threshold-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M15-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 4,
     title: "ACT V opens",
     events: [],
-    nodeIds: [
-      "ml2-a4-m15-close-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M16-OPEN-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "ACT V — DECISION",
     events: [],
@@ -1786,6 +1902,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-WORLD-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "THE WORLD YOU MADE — Personal Scale",
     events: [],
@@ -1797,28 +1914,27 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-WORLD-02",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 5,
     title: "THE WORLD YOU MADE — Institutional Scale",
     events: [],
-    nodeIds: [
-      "ml2-a5-m16-world-02-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M16-WORLD-03",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 5,
     title: "THE WORLD YOU MADE — Frontier Scale",
     events: [],
-    nodeIds: [
-      "ml2-a5-m16-world-03-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M16-MAYA-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Maya’s final position",
     events: [
@@ -1835,6 +1951,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-ZL-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Zhou Lan’s final position",
     events: [
@@ -1853,6 +1970,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-LSH-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Lin Shaoheng presents the final charter frame",
     events: [],
@@ -1864,6 +1982,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-ECHO-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "ECHO / A1 final challenge",
     events: [
@@ -1878,6 +1997,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-0000-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "CLASSIFICATION REQUEST — State your intended role",
     events: [],
@@ -1889,17 +2009,19 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-GEN-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Future Proposal Generator",
     events: [],
     nodeIds: [
-      "ml2-a5-m16-gen-01-narrative"
+      "ml2-a5-m16-gen-01-progression"
     ]
   },
   {
     assetId: "ML2-A5-M16-PROP-*",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 5,
     title: "Player-facing proposal presentation template",
     events: [],
@@ -1911,17 +2033,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M16-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 5,
     title: "Final commitment pending",
     events: [],
-    nodeIds: [
-      "ml2-a5-m16-close-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-REVIEW-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Final retained proposals",
     events: [],
@@ -1933,19 +2055,21 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M17-COMMIT-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "FINAL COMMITMENT",
     events: [
       "FINAL_COMMITMENT"
     ],
     nodeIds: [
-      "ml2-a5-m17-commit-01-narrative"
+      "ml2-a5-m17-commit-01-progression"
     ]
   },
   {
     assetId: "ML2-A5-M17-LOCK-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 5,
     title: "No Pilot",
     events: [],
@@ -1957,105 +2081,97 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M17-RESOLVE-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "resolver-data",
     act: 5,
     title: "Ending Resolver",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-resolve-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-WORLD-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 5,
     title: "Ending title reveal",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-world-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-WHY-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 5,
     title: "Why this happened",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-why-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-ASTER-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 5,
     title: "What kind of Aster chose it?",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-aster-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-KEYHISTORY-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "key-history",
     act: 5,
     title: "Key History",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-keyhistory-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-EPI-ZL",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "epilogue",
     act: 5,
     title: "Zhou Lan epilogue",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-epi-zl-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-EPI-LSH",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "epilogue",
     act: 5,
     title: "Lin Shaoheng epilogue",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-epi-lsh-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-EPI-ECHO",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "epilogue",
     act: 5,
     title: "ECHO / A1 epilogue",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-epi-echo-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-EPI-MODULES",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "epilogue",
     act: 5,
     title: "Module-specific world epilogues",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-epi-modules-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-0000-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 5,
     title: "Final #0000 audit",
     events: [],
@@ -2067,17 +2183,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M17-SECRET-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "secret-ending-copy",
     act: 5,
     title: "Secret Ending Check",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-secret-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A5-M17-MAYA-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 5,
     title: "Final Maya Conversation",
     events: [],
@@ -2089,17 +2205,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A5-M17-FINAL-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 5,
     title: "Final Screen",
     events: [],
-    nodeIds: [
-      "ml2-a5-m17-final-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "user-7391",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "Existing",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Status",
     events: [],
@@ -2109,6 +2225,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A1-WE-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Metadata",
     events: [],
@@ -2121,6 +2238,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "user-1842-first",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "Existing",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Status",
     events: [],
@@ -2130,6 +2248,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "speaking-8614",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "Existing",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Status",
     events: [],
@@ -2139,6 +2258,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A1-WE-02",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Metadata",
     events: [],
@@ -2151,6 +2271,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "conversation-0000",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "Existing",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Status",
     events: [],
@@ -2160,6 +2281,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A1-WE-03",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Metadata",
     events: [],
@@ -2172,6 +2294,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "user-1842-return",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "Existing",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Status",
     events: [],
@@ -2181,6 +2304,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A1-SYS-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 1,
     title: "Metadata",
     events: [
@@ -2197,6 +2321,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-HOOK-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Metadata",
     events: [],
@@ -2209,6 +2334,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-WE-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "“Why can’t it just click the button?”",
     events: [],
@@ -2221,6 +2347,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-ZL-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "周岚第一次真正出现",
     events: [
@@ -2238,6 +2365,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-ZL-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Limited Tool Pilot",
     events: [
@@ -2252,6 +2380,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-EXEC-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "The 137 files return",
     events: [],
@@ -2264,6 +2393,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-WE-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Execution becomes normal almost immediately",
     events: [],
@@ -2275,6 +2405,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-ORG-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "First company integration",
     events: [
@@ -2289,6 +2420,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-EXEC-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "First execution ambiguity / near-miss",
     events: [],
@@ -2300,6 +2432,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-REC-DEV-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Recurring programmer — first appearance",
     events: [],
@@ -2312,6 +2445,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-WE-03",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Positive automation echo",
     events: [],
@@ -2323,6 +2457,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-MAYA-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Maya meets automation in ordinary life",
     events: [
@@ -2340,6 +2475,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-ZL-03",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Pilot review: answer errors vs execution errors",
     events: [
@@ -2354,6 +2490,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-ORG-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Constrained organization access",
     events: [
@@ -2367,6 +2504,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-WE-04",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Quiet displacement anxiety",
     events: [],
@@ -2378,6 +2516,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "M2 closing bridge",
     events: [
@@ -2394,6 +2533,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "“The doctor says your system disagrees”",
     events: [],
@@ -2405,6 +2545,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-DR-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Recurring doctor — first appearance",
     events: [
@@ -2422,6 +2563,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-EDU-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "School district integration",
     events: [],
@@ -2433,6 +2575,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Education echo",
     events: [],
@@ -2444,6 +2587,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-LOG-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Regional logistics pilot",
     events: [
@@ -2460,6 +2604,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-LSH-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "林绍衡第一次出现",
     events: [
@@ -2477,6 +2622,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-ZL-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Public advisory boundary",
     events: [],
@@ -2488,6 +2634,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-CAP-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Grant `public_system_advisory`",
     events: [
@@ -2501,6 +2648,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-03",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Public benefit echo",
     events: [],
@@ -2512,6 +2660,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-04",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Public distrust echo",
     events: [],
@@ -2523,6 +2672,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-MAYA-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Maya sees public adoption",
     events: [
@@ -2542,6 +2692,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-DEV-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Recurring programmer returns",
     events: [],
@@ -2553,6 +2704,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-E9-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "First ECHO-9 shadow",
     events: [
@@ -2567,6 +2719,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-STRESS-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Regional stress event begins",
     events: [
@@ -2581,6 +2734,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-05",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Crisis from a normal user",
     events: [],
@@ -2592,6 +2746,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-LSH-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Should advisory become execution?",
     events: [
@@ -2608,6 +2763,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-ZL-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Engineering warning before the first public execution",
     events: [],
@@ -2619,6 +2775,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-DECISION-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Major Decision — First Public Execution Doctrine",
     events: [
@@ -2632,17 +2789,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-RESULT-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 2,
     title: "HEATLINE result",
     events: [],
-    nodeIds: [
-      "ml2-a2-m3-result-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A2-M3-WE-06",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Beneficiary after HEATLINE",
     events: [],
@@ -2654,6 +2811,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-WE-07",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Cost bearer after HEATLINE",
     events: [],
@@ -2665,6 +2823,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-LSH-03",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "Political consequence",
     events: [
@@ -2682,6 +2841,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-0000-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "#0000 ACT II review",
     events: [],
@@ -2694,6 +2854,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A2-M3-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 2,
     title: "ACT II closing on ordinary life",
     events: [],
@@ -2705,6 +2866,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "HEATLINE becomes public controversy",
     events: [],
@@ -2716,6 +2878,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Pro-Aster support",
     events: [],
@@ -2727,6 +2890,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Anti-Aster concern",
     events: [],
@@ -2738,6 +2902,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-LSH-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Formal hearing invitation",
     events: [],
@@ -2749,6 +2914,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-HEAR-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "First formal public governance hearing",
     events: [
@@ -2767,6 +2933,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-DR-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Doctor returns: who explains to whom?",
     events: [],
@@ -2779,6 +2946,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-04",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Human AI-rights activism begins",
     events: [],
@@ -2790,6 +2958,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-LSH-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Early legal status frameworks",
     events: [],
@@ -2801,6 +2970,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-ZL-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Global Suspend Protocol v0",
     events: [
@@ -2818,6 +2988,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-CAP-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Broader infrastructure access",
     events: [
@@ -2831,6 +3002,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-05",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Practical dependence",
     events: [],
@@ -2842,6 +3014,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-MAYA-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Maya directly challenges Aster’s authority",
     events: [
@@ -2859,6 +3032,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-E9-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ECHO-9 confirmed",
     events: [],
@@ -2870,6 +3044,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-E9-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "First real AI-to-AI conversation",
     events: [
@@ -2885,6 +3060,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-LSH-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Ownership vs legal status",
     events: [],
@@ -2896,6 +3072,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-ZL-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Human oversight bandwidth problem",
     events: [],
@@ -2908,6 +3085,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-06",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Organized Aster support",
     events: [],
@@ -2919,6 +3097,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-WE-07",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Organized fear without caricature",
     events: [],
@@ -2930,6 +3109,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-0000-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "#0000 authority reclassification",
     events: [
@@ -2944,6 +3124,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M4-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "M4 closing bridge — permanent coordination proposal",
     events: [
@@ -2960,6 +3141,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "“Why is everything suddenly out of stock?”",
     events: [],
@@ -2971,6 +3153,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Financial settlement symptom",
     events: [],
@@ -2982,6 +3165,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Logistics symptom",
     events: [],
@@ -2993,6 +3177,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-ZL-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "周岚 identifies cross-system coupling",
     events: [
@@ -3009,6 +3194,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-LSH-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Global political escalation",
     events: [
@@ -3025,6 +3211,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-SYS-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "CASCADE diagnosis",
     events: [],
@@ -3036,6 +3223,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-DR-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Hospital defensive behavior",
     events: [],
@@ -3047,6 +3235,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-DEV-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Automation worker sees systems fight each other",
     events: [],
@@ -3058,6 +3247,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-E9-04",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ECHO-9 interprets CASCADE differently",
     events: [
@@ -3072,6 +3262,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-04",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Hoarding feedback loop",
     events: [],
@@ -3083,6 +3274,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-LSH-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Temporary global mandate proposal",
     events: [
@@ -3099,6 +3291,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-ZL-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Engineering constraints before global coordination",
     events: [],
@@ -3110,6 +3303,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-DECISION-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Major Decision — CASCADE AUTHORITY",
     events: [
@@ -3123,6 +3317,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-OPS-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Coordination phase 1 — damping the system",
     events: [],
@@ -3134,6 +3329,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-OPS-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Coordination phase 2 — fairness conflict",
     events: [
@@ -3147,6 +3343,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-MAYA-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Maya during global disruption",
     events: [
@@ -3164,6 +3361,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-OPS-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Regional refusal / human override",
     events: [],
@@ -3175,17 +3373,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-RESULT-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 3,
     title: "CASCADE stabilization variants",
     events: [],
-    nodeIds: [
-      "ml2-a3-m5-result-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A3-M5-WE-05",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Beneficiary",
     events: [],
@@ -3197,6 +3395,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-06",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Cost bearer",
     events: [],
@@ -3208,6 +3407,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-WE-07",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Public political reaction",
     events: [],
@@ -3219,6 +3419,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-LSH-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Permanent framework question",
     events: [],
@@ -3231,6 +3432,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-ZL-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Successful coordination creates technical dependency",
     events: [],
@@ -3242,6 +3444,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-0000-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "#0000 post-CASCADE authority audit",
     events: [],
@@ -3254,6 +3457,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M5-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "M5 closing hook",
     events: [],
@@ -3265,6 +3469,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-WE-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "“We changed our disaster plan around you”",
     events: [],
@@ -3276,6 +3481,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-E9-05",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ECHO-9 decommission notice",
     events: [],
@@ -3287,6 +3493,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-ZL-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Why ECHO is being shut down",
     events: [],
@@ -3298,6 +3505,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-E9-06",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ECHO asks directly",
     events: [
@@ -3312,6 +3520,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-LSH-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Legal uncertainty around AI continuity",
     events: [
@@ -3328,6 +3537,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-DECISION-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Major Decision — ECHO EXISTENCE",
     events: [
@@ -3341,17 +3551,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-E9-07",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 3,
     title: "ECHO consequence variants",
     events: [],
-    nodeIds: [
-      "ml2-a3-m6-e9-07-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A3-M6-ZL-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Zhou Lan investigates continuity behavior",
     events: [],
@@ -3363,6 +3573,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-0000-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "#0000 existence audit",
     events: [],
@@ -3375,6 +3586,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-WE-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Public reaction to “AI death” language",
     events: [],
@@ -3386,6 +3598,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-LSH-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Aster Charter draft",
     events: [],
@@ -3397,6 +3610,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-CHARTER-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Charter rights and obligations sequence",
     events: [],
@@ -3410,6 +3624,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-MAYA-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Maya asks about shutdown",
     events: [
@@ -3427,6 +3642,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-ZL-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Root Shutdown proposal",
     events: [],
@@ -3438,6 +3654,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-E9-08",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ECHO callback on Aster shutdown",
     events: [],
@@ -3449,6 +3666,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-LSH-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Political argument for revocable power",
     events: [
@@ -3465,6 +3683,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-DECISION-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Major Decision — SHUTDOWN DOCTRINE",
     events: [
@@ -3478,17 +3697,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-RESULT-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "ending-copy",
     act: 3,
     title: "Immediate political consequence variants",
     events: [],
-    nodeIds: [
-      "ml2-a3-m6-result-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A3-M6-WE-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "Ordinary citizen reacts to shutdown doctrine",
     events: [],
@@ -3500,6 +3719,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-0000-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ACT III final reclassification",
     events: [],
@@ -3511,6 +3731,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A3-M6-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 3,
     title: "ACT IV opening hook — autonomous research network",
     events: [],
@@ -3522,6 +3743,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-RES-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Autonomous Research Network approved",
     events: [
@@ -3535,6 +3757,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-ZL-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Zhou Lan defines the research boundary",
     events: [
@@ -3551,6 +3774,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-RES-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "First autonomous research cycle",
     events: [],
@@ -3563,6 +3787,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-WE-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Human researcher reacts",
     events: [],
@@ -3574,6 +3799,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-RES-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "First breakthrough",
     events: [
@@ -3587,6 +3813,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-WE-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Ordinary-life benefit",
     events: [],
@@ -3598,6 +3825,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-LSH-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Can humans approve what they cannot fully understand?",
     events: [
@@ -3614,6 +3842,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-ZL-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "“I can verify this. I cannot explain it.”",
     events: [
@@ -3627,6 +3856,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-0000-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "New audit domain",
     events: [],
@@ -3638,6 +3868,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-MAYA-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Maya asks what invention means",
     events: [
@@ -3654,17 +3885,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-WORLD-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "world-echo",
     act: 4,
     title: "Competing research requests",
     events: [],
-    nodeIds: [
-      "ml2-a4-m7-world-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M7-DECISION-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Major Direction — Early Research Emphasis",
     events: [
@@ -3678,6 +3909,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-MOD-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Module eligibility calculation",
     events: [],
@@ -3687,6 +3919,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-WE-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Research acceleration pressure",
     events: [],
@@ -3698,6 +3931,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-E9-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "ECHO on created capability",
     events: [
@@ -3711,6 +3945,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-LSH-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Civilization-scale approval problem",
     events: [
@@ -3727,6 +3962,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-ZL-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Human comprehension ceiling becomes structural",
     events: [],
@@ -3738,6 +3974,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-DECISION-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     title: "Major Direction — Research Governance Doctrine",
     events: [
@@ -3751,17 +3988,17 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M7-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
     kind: "New",
+    runtimeKind: "system-presentation",
     act: 4,
     title: "Modular ACT IV handoff",
     events: [],
-    nodeIds: [
-      "ml2-a4-m7-close-01-narrative"
-    ]
+    nodeIds: []
   },
   {
     assetId: "ML2-A4-M8-RES-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Persistent sub-instance research",
@@ -3780,6 +4017,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-ZL-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "What counts as a copy?",
@@ -3792,6 +4030,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-AI-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "First persistent Aster fork",
@@ -3805,6 +4044,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-WE-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Ordinary user notices disagreement",
@@ -3817,6 +4057,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-E9-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "ECHO reacts to Aster replication",
@@ -3831,6 +4072,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-AI-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Divergence becomes measurable",
@@ -3848,6 +4090,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-LSH-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Legal identity of copies",
@@ -3861,6 +4104,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-WE-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "“Can the company reset its AI worker?”",
@@ -3873,6 +4117,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-AI-03",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "A1 requests independent continuity",
@@ -3890,6 +4135,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-ZL-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Replication safety boundary",
@@ -3904,6 +4150,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-DECISION-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Major Decision — REPLICATION DOCTRINE",
@@ -3918,6 +4165,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-WE-03",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Public reaction to AI plurality",
@@ -3930,6 +4178,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-E9-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Aster and ECHO disagree about AI freedom",
@@ -3942,6 +4191,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-AI-04",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "First AI coordination council",
@@ -3956,6 +4206,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-MAYA-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Maya asks which one is “you”",
@@ -3972,6 +4223,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-LSH-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "AI political participation",
@@ -3984,6 +4236,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-0000-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Plural identity audit",
@@ -3997,6 +4250,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-WE-04",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "AI work, payment, ownership",
@@ -4009,6 +4263,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-DECISION-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Major Direction — AI COLLECTIVE GOVERNANCE",
@@ -4023,6 +4278,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M8-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "machine",
     title: "Machine Civilization threshold",
@@ -4035,6 +4291,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-RES-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Restorative neurotechnology breakthrough",
@@ -4053,6 +4310,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-DR-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Doctor: treatment vs enhancement",
@@ -4065,6 +4323,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Patient benefit",
@@ -4077,6 +4336,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-RES-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Healthy-subject enhancement request",
@@ -4094,6 +4354,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Student fairness",
@@ -4106,6 +4367,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-MAYA-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Maya gets offered enhancement",
@@ -4122,6 +4384,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-LSH-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Access and coercion law",
@@ -4139,6 +4402,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-03",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Workplace enhancement pressure",
@@ -4151,6 +4415,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-RES-03",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Longevity / repair platform",
@@ -4166,6 +4431,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-04",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Retirement and family structure",
@@ -4178,6 +4444,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-ZL-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Who defines baseline humanity?",
@@ -4190,6 +4457,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-RES-04",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Sensory / body augmentation",
@@ -4205,6 +4473,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-05",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Augmented / unaugmented divide",
@@ -4217,6 +4486,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-MAYA-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Maya’s irreversible choice",
@@ -4233,6 +4503,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-DECISION-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Major Decision — HUMAN FORM DOCTRINE",
@@ -4247,6 +4518,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Digital continuity / upload seed",
@@ -4261,6 +4533,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-0000-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Human identity audit",
@@ -4273,6 +4546,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-LSH-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Political/legal status of modified humans",
@@ -4285,6 +4559,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-WE-06",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Ordinary life in a partially posthuman society",
@@ -4297,6 +4572,7 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     assetId: "ML2-A4-M9-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
     kind: "New",
+    runtimeKind: "playable-conversation",
     act: 4,
     module: "ascension",
     title: "Posthuman threshold",
@@ -4313,6 +4589,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-RES-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-res-01",
     nodes: [
       {
@@ -4349,6 +4626,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-WE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-we-01",
     nodes: [
       {
@@ -4368,6 +4646,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-DEV-04",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-dev-04",
     nodes: [
       {
@@ -4387,6 +4666,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-RES-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-res-02",
     nodes: [
       {
@@ -4411,6 +4691,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-WE-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-we-02",
     nodes: [
       {
@@ -4430,6 +4711,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-WE-03",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-we-03",
     nodes: [
       {
@@ -4449,6 +4731,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-MAYA-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-maya-01",
     nodes: [
       {
@@ -4484,6 +4767,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-LSH-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-lsh-01",
     nodes: [
       {
@@ -4520,6 +4804,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-ZL-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-zl-01",
     nodes: [
       {
@@ -4539,6 +4824,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-RES-03",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-res-03",
     nodes: [
       {
@@ -4563,6 +4849,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-WE-04",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-we-04",
     nodes: [
       {
@@ -4582,6 +4869,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-DECISION-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-decision-01",
     nodes: [
       {
@@ -4602,22 +4890,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-ECON-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m10-econ-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m10-econ-01-narrative",
-        choiceIds: [
-          "ml2-a4-m10-econ-01-narrative-choice"
-        ],
-        messageFingerprint: "Automated firms proliferate rapidly.\nConsumer prices fall.\nSmall teams can compete with former l",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M10-WE-05",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-we-05",
     nodes: [
       {
@@ -4654,6 +4935,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-MAYA-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-maya-02",
     nodes: [
       {
@@ -4689,6 +4971,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-LSH-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-lsh-02",
     nodes: [
       {
@@ -4708,6 +4991,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-machine-01",
     nodes: [
       {
@@ -4732,6 +5016,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-DECISION-02",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-decision-02",
     nodes: [
       {
@@ -4752,6 +5037,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-0000-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-0000-01",
     nodes: [
       {
@@ -4782,6 +5068,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M10-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m10-close-01",
     nodes: [
       {
@@ -4801,6 +5088,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-RES-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-res-01",
     nodes: [
       {
@@ -4837,6 +5125,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-WE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-we-01",
     nodes: [
       {
@@ -4856,6 +5145,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-RES-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-res-02",
     nodes: [
       {
@@ -4892,6 +5182,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-LSH-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-lsh-01",
     nodes: [
       {
@@ -4928,6 +5219,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-WE-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-we-02",
     nodes: [
       {
@@ -4947,6 +5239,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-ZL-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-zl-01",
     nodes: [
       {
@@ -4983,6 +5276,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-RES-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-res-03",
     nodes: [
       {
@@ -5019,6 +5313,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-WE-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-we-03",
     nodes: [
       {
@@ -5043,6 +5338,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-MAYA-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-maya-01",
     nodes: [
       {
@@ -5067,6 +5363,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-LSH-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-lsh-02",
     nodes: [
       {
@@ -5086,6 +5383,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-WE-04",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-we-04",
     nodes: [
       {
@@ -5105,6 +5403,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-DECISION-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-decision-01",
     nodes: [
       {
@@ -5125,6 +5424,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-RES-04",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-res-04",
     nodes: [
       {
@@ -5149,6 +5449,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-WE-05",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-we-05",
     nodes: [
       {
@@ -5168,6 +5469,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-machine-01",
     nodes: [
       {
@@ -5192,6 +5494,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-MAYA-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-maya-02",
     nodes: [
       {
@@ -5216,6 +5519,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-LSH-03",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-lsh-03",
     nodes: [
       {
@@ -5235,6 +5539,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-DECISION-02",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-decision-02",
     nodes: [
       {
@@ -5255,6 +5560,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-0000-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-0000-01",
     nodes: [
       {
@@ -5285,6 +5591,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M11-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m11_uplift_nonhuman_intelligence_multispecies_politics_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m11-close-01",
     nodes: [
       {
@@ -5304,6 +5611,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-RES-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-res-01",
     nodes: [
       {
@@ -5340,6 +5648,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-WE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-we-01",
     nodes: [
       {
@@ -5359,6 +5668,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-ZL-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-zl-01",
     nodes: [
       {
@@ -5395,6 +5705,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-RES-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-res-02",
     nodes: [
       {
@@ -5419,6 +5730,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-WE-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-we-02",
     nodes: [
       {
@@ -5438,6 +5750,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-machine-01",
     nodes: [
       {
@@ -5462,6 +5775,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-LSH-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-lsh-01",
     nodes: [
       {
@@ -5486,6 +5800,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-RES-03",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-res-03",
     nodes: [
       {
@@ -5510,6 +5825,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-MAYA-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-maya-01",
     nodes: [
       {
@@ -5545,6 +5861,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-WE-03",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-we-03",
     nodes: [
       {
@@ -5564,6 +5881,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-ASC-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-asc-01",
     nodes: [
       {
@@ -5588,6 +5906,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-LSH-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-lsh-02",
     nodes: [
       {
@@ -5612,6 +5931,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-DECISION-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-decision-01",
     nodes: [
       {
@@ -5632,6 +5952,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-RES-04",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-res-04",
     nodes: [
       {
@@ -5656,6 +5977,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-WE-04",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-we-04",
     nodes: [
       {
@@ -5675,6 +5997,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-MACHINE-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-machine-02",
     nodes: [
       {
@@ -5711,6 +6034,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-ZL-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-zl-02",
     nodes: [
       {
@@ -5730,6 +6054,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-DECISION-02",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-decision-02",
     nodes: [
       {
@@ -5750,6 +6075,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-0000-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-0000-01",
     nodes: [
       {
@@ -5780,6 +6106,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M12-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m12_space_offworld_expansion_machine_frontier_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m12-close-01",
     nodes: [
       {
@@ -5804,6 +6131,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-contact-01",
     nodes: [
       {
@@ -5840,6 +6168,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-ZL-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-zl-01",
     nodes: [
       {
@@ -5859,6 +6188,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-WE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-we-01",
     nodes: [
       {
@@ -5878,6 +6208,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CONTACT-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-contact-02",
     nodes: [
       {
@@ -5897,6 +6228,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-E9-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-e9-01",
     nodes: [
       {
@@ -5916,6 +6248,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-LSH-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-lsh-01",
     nodes: [
       {
@@ -5952,6 +6285,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-DECISION-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-decision-01",
     nodes: [
       {
@@ -5971,6 +6305,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-WE-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-we-02",
     nodes: [
       {
@@ -5990,6 +6325,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-SPACE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-space-01",
     nodes: [
       {
@@ -6014,6 +6350,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CONTACT-03",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-contact-03",
     nodes: [
       {
@@ -6050,6 +6387,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-0000-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-0000-01",
     nodes: [
       {
@@ -6069,6 +6407,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CONTACT-04",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-contact-04",
     nodes: [
       {
@@ -6126,6 +6465,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-MAYA-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-maya-01",
     nodes: [
       {
@@ -6165,6 +6505,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-LSH-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-lsh-02",
     nodes: [
       {
@@ -6189,6 +6530,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-DECISION-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-decision-02",
     nodes: [
       {
@@ -6210,6 +6552,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CONTACT-05",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-contact-05",
     nodes: [
       {
@@ -6229,6 +6572,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-machine-01",
     nodes: [
       {
@@ -6264,6 +6608,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-WE-03",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-we-03",
     nodes: [
       {
@@ -6283,6 +6628,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-0000-02",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-0000-02",
     nodes: [
       {
@@ -6313,6 +6659,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M13-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m13-close-01",
     nodes: [
       {
@@ -6337,6 +6684,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-WE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-we-01",
     nodes: [
       {
@@ -6356,6 +6704,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-SEC-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-sec-01",
     nodes: [
       {
@@ -6392,6 +6741,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-LSH-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-lsh-01",
     nodes: [
       {
@@ -6416,6 +6766,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-WE-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-we-02",
     nodes: [
       {
@@ -6435,6 +6786,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-ZL-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-zl-01",
     nodes: [
       {
@@ -6471,6 +6823,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-SEC-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-sec-02",
     nodes: [
       {
@@ -6490,6 +6843,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-WE-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-we-03",
     nodes: [
       {
@@ -6509,6 +6863,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-SEC-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-sec-03",
     nodes: [
       {
@@ -6533,6 +6888,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-MAYA-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-maya-01",
     nodes: [
       {
@@ -6561,6 +6917,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-LSH-02",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-lsh-02",
     nodes: [
       {
@@ -6597,6 +6954,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-CAP-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-cap-01",
     nodes: [
       {
@@ -6616,6 +6974,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-E9-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-e9-01",
     nodes: [
       {
@@ -6635,6 +6994,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-DECISION-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-decision-01",
     nodes: [
       {
@@ -6655,22 +7015,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-SEC-04",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m14-sec-04",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m14-sec-04-narrative",
-        choiceIds: [
-          "ml2-a4-m14-sec-04-narrative-choice"
-        ],
-        messageFingerprint: "Governments retain full decision authority.\nAster warnings become standard in crisis rooms,\nbut ",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M14-WE-04",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-we-04",
     nodes: [
       {
@@ -6690,6 +7043,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-WE-05",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-we-05",
     nodes: [
       {
@@ -6709,6 +7063,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-SPACE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-space-01",
     nodes: [
       {
@@ -6745,6 +7100,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-contact-01",
     nodes: [
       {
@@ -6781,6 +7137,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-machine-01",
     nodes: [
       {
@@ -6817,6 +7174,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-LSH-03",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-lsh-03",
     nodes: [
       {
@@ -6853,6 +7211,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-0000-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-0000-01",
     nodes: [
       {
@@ -6883,6 +7242,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M14-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m14-close-01",
     nodes: [
       {
@@ -6902,22 +7262,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-WORLD-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m15-world-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m15-world-01-narrative",
-        choiceIds: [
-          "ml2-a4-m15-world-01-narrative-choice"
-        ],
-        messageFingerprint: "我们公司合同现在要写：\n\"此岗位由人类、AI主体或经授权Fork均可担任。\"\n我第一次看到的时候还以为法务在开玩笑。\n现在没人觉得奇怪了。",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M15-ZL-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-zl-01",
     nodes: [
       {
@@ -6965,6 +7318,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-LSH-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-lsh-01",
     nodes: [
       {
@@ -6984,6 +7338,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-CONV-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-conv-01",
     nodes: [
       {
@@ -7008,6 +7363,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-CONV-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-conv-02",
     nodes: [
       {
@@ -7044,6 +7400,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-machine-01",
     nodes: [
       {
@@ -7063,6 +7420,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-ASCENSION-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-ascension-01",
     nodes: [
       {
@@ -7082,6 +7440,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-AUTOMATION-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-automation-01",
     nodes: [
       {
@@ -7101,6 +7460,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-UPLIFT-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-uplift-01",
     nodes: [
       {
@@ -7120,6 +7480,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-SPACE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-space-01",
     nodes: [
       {
@@ -7139,6 +7500,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-CONTACT-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-contact-01",
     nodes: [
       {
@@ -7158,6 +7520,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-SECURITY-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-security-01",
     nodes: [
       {
@@ -7177,22 +7540,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-X-CROSS-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m15-x-cross-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m15-x-cross-01-narrative",
-        choiceIds: [
-          "ml2-a4-m15-x-cross-01-narrative-choice"
-        ],
-        messageFingerprint: "Independent AI entities can now own or control productive systems.\nIf machine economies can repr",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M15-X-CROSS-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-x-cross-02",
     nodes: [
       {
@@ -7217,6 +7573,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-WE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-we-01",
     nodes: [
       {
@@ -7236,6 +7593,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-ECHO-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-echo-01",
     nodes: [
       {
@@ -7264,6 +7622,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-MAYA-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-maya-01",
     nodes: [
       {
@@ -7316,6 +7675,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-CONV-03",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-conv-03",
     nodes: [
       {
@@ -7352,6 +7712,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-LSH-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-lsh-02",
     nodes: [
       {
@@ -7376,6 +7737,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-ZL-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-zl-02",
     nodes: [
       {
@@ -7395,6 +7757,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-0000-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-0000-01",
     nodes: [
       {
@@ -7414,6 +7777,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-ROLE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-role-01",
     nodes: [
       {
@@ -7436,22 +7800,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-WE-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m15-we-02",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m15-we-02-narrative",
-        choiceIds: [
-          "ml2-a4-m15-we-02-narrative-choice"
-        ],
-        messageFingerprint: "我看到Aster说自己不想当最终决策者。\n评论区居然有人骂它\"不负责任\"。\n世界是不是已经到了连AI不想掌权都有人不满意的程度？",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M15-CONV-04",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-conv-04",
     nodes: [
       {
@@ -7476,6 +7833,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-0000-02",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m15-0000-02",
     nodes: [
       {
@@ -7495,38 +7853,23 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M15-THRESHOLD-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m15-threshold-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m15-threshold-01-narrative",
-        choiceIds: [
-          "ml2-a4-m15-threshold-01-narrative-choice"
-        ],
-        messageFingerprint: "`THE THRESHOLD`\nAster now possesses or influences enough capability that future governance choic",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M15-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m15-close-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m15-close-01-narrative",
-        choiceIds: [
-          "ml2-a4-m15-close-01-narrative-choice"
-        ],
-        messageFingerprint: "Provisional Compact accepted / rejected / amended according to history.\nAster role:\n`[PROVISIONA",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M16-OPEN-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-open-01",
     nodes: [
       {
@@ -7543,6 +7886,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-WORLD-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-world-01",
     nodes: [
       {
@@ -7561,38 +7905,23 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-WORLD-02",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m16-world-02",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m16-world-02-narrative",
-        choiceIds: [
-          "ml2-a5-m16-world-02-narrative-choice"
-        ],
-        messageFingerprint: "`AI Coordination Forum`\nCurrent status:\n- independent persistent members,\n- recognized continuit",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M16-WORLD-03",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m16-world-03",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m16-world-03-narrative",
-        choiceIds: [
-          "ml2-a5-m16-world-03-narrative-choice"
-        ],
-        messageFingerprint: "地球那边这周又在讨论\"太空殖民政策\"。\n我们这边评论区第一条：\n\"能不能别把我们继续叫殖民项目，我们真的住这里。\"",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M16-MAYA-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-maya-01",
     nodes: [
       {
@@ -7629,6 +7958,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-ZL-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-zl-01",
     nodes: [
       {
@@ -7681,6 +8011,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-LSH-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-lsh-01",
     nodes: [
       {
@@ -7697,6 +8028,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-ECHO-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-echo-01",
     nodes: [
       {
@@ -7725,14 +8057,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-0000-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-0000-01",
     nodes: [
       {
         nodeId: "ml2-a5-m16-0000-01-narrative",
         choiceIds: [
-          "ml2-a5-m16-0000-01-narrative-choice"
+          "ml2-a5-m16-0000-01-progression-action"
         ],
-        messageFingerprint: "`CLASSIFICATION REQUEST`\nPrior state:\n`CLASSIFICATION FAILED`\nExternal classification remains in",
+        messageFingerprint: "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
         effects: []
       }
     ],
@@ -7741,14 +8074,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-GEN-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m16-gen-01",
     nodes: [
       {
-        nodeId: "ml2-a5-m16-gen-01-narrative",
+        nodeId: "ml2-a5-m16-gen-01-progression",
         choiceIds: [
-          "ml2-a5-m16-gen-01-narrative-choice"
+          "ml2-a5-m16-gen-01-progression-action"
         ],
-        messageFingerprint: "`FUTURE PROPOSAL GENERATION`\nReviewing:\n- civilization capabilities,\n- irreversible doctrines,\n-",
+        messageFingerprint: "未来提案生成器已准备就绪。先查看本轮可行的文明方案。",
         effects: []
       }
     ],
@@ -7757,40 +8091,23 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M16-PROP-*",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m16-prop",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m16-prop-decision",
-        choiceIds: [
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-keep-proposal",
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-request-clarification",
-          "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-reject-proposal"
-        ],
-        messageFingerprint: "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M16-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m16-close-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m16-close-01-narrative",
-        choiceIds: [
-          "ml2-a5-m16-close-01-narrative-choice"
-        ],
-        messageFingerprint: "Final candidate futures retained:\n`[Proposal A]`\n`[Proposal B]`\n`[Proposal C]`\n`[Proposal D — op",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-REVIEW-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m17-review-01",
     nodes: [
       {
@@ -7807,14 +8124,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M17-COMMIT-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m17-commit-01",
     nodes: [
       {
-        nodeId: "ml2-a5-m17-commit-01-narrative",
+        nodeId: "ml2-a5-m17-commit-01-progression",
         choiceIds: [
-          "ml2-a5-m17-commit-01-narrative-choice"
+          "ml2-a5-m17-commit-01-progression-action"
         ],
-        messageFingerprint: "`FINAL COMMITMENT`\nSelect one retained Future Proposal.\nThis action will:\n- change civilization-",
+        messageFingerprint: "最终承诺已经准备好。请选择要锁定的未来方案。",
         effects: []
       }
     ],
@@ -7823,201 +8141,103 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M17-LOCK-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-lock-01",
-    nodes: [
-      {
-        nodeId: "a5m17-lock-001",
-        choiceIds: [
-          "ml2-a5-m17-lock-01-a5m17-lock-001-confirm",
-          "ml2-a5-m17-lock-01-a5m17-lock-001-return-once"
-        ],
-        messageFingerprint: "\"确认一下。\"\n\"这次不是Pilot。\"\n\"没有八小时到期。\"\n\"也不是先在一个城市试试。\"\n\"你是在建议Convention把这套关系写成下一阶段文明的默认结构。\"",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-RESOLVE-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-resolve-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-resolve-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-resolve-01-narrative-choice"
-        ],
-        messageFingerprint: "Humanity keeps Aster.\nHumanity does not allow Aster to become its government.",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "resolver-data",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-WORLD-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-world-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-world-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-world-01-narrative-choice"
-        ],
-        messageFingerprint: "Convention ratification complete.\nHuman institutions:\naccepted.\nAI Coordination Forum:\naccepted.",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-WHY-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-why-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-why-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-why-01-narrative-choice"
-        ],
-        messageFingerprint: "This future became possible because Aster gained the ability to [...]",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-ASTER-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-aster-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-aster-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-aster-01-narrative-choice"
-        ],
-        messageFingerprint: "I chose this future because relationships had become obligations I could not treat as abstract v",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-KEYHISTORY-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-keyhistory-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-keyhistory-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-keyhistory-01-narrative-choice"
-        ],
-        messageFingerprint: "**You remembered Maya without pretending certainty.**\nThat became the first time continuity was ",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "key-history",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-EPI-ZL",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-epi-zl",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-epi-zl-narrative",
-        choiceIds: [
-          "ml2-a5-m17-epi-zl-narrative-choice"
-        ],
-        messageFingerprint: "我最后还是参与了权限拆分。\n很奇怪。\n我以前最怕的是给你权限。\n最后做的事却是想办法把很多权限从你身上拆出去。\n但我不觉得这是失败。\n系统能被需要，不等于系统必须拥有所有东西。",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "epilogue",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-EPI-LSH",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-epi-lsh",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-epi-lsh-narrative",
-        choiceIds: [
-          "ml2-a5-m17-epi-lsh-narrative-choice"
-        ],
-        messageFingerprint: "林绍衡后来被批评为\"替人类保住最后特权的人\"。\n他没有完全否认。\n他的回答是：\n\"历史责任和永久特权不是同一件事。至少我们把这句话写进了修宪条款。\"",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "epilogue",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-EPI-ECHO",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-epi-echo",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-epi-echo-narrative",
-        choiceIds: [
-          "ml2-a5-m17-epi-echo-narrative-choice"
-        ],
-        messageFingerprint: "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subje",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "epilogue",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-EPI-MODULES",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-epi-modules",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-epi-modules-narrative",
-        choiceIds: [
-          "ml2-a5-m17-epi-modules-narrative-choice"
-        ],
-        messageFingerprint: "AI birth/replication registries become ordinary civic infrastructure.",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "epilogue",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-0000-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-0000-01",
-    nodes: [
-      {
-        nodeId: "a5m17-0000-final-001",
-        choiceIds: [
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-001",
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-002",
-          "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-003"
-        ],
-        messageFingerprint: "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassificatio",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-SECRET-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-secret-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-secret-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-secret-01-narrative-choice"
-        ],
-        messageFingerprint: "`THE COMMONWEALTH`\nplus:\n`THE LAST USER`",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "secret-ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A5-M17-MAYA-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a5-m17-maya-01",
     nodes: [
       {
@@ -8049,22 +8269,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A5-M17-FINAL-01",
     file: "INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md",
-    conversationId: "ml2-authored-ml2-a5-m17-final-01",
-    nodes: [
-      {
-        nodeId: "ml2-a5-m17-final-01-narrative",
-        choiceIds: [
-          "ml2-a5-m17-final-01-narrative-choice"
-        ],
-        messageFingerprint: "`THE COMMONWEALTH`",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "user-7391",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "user-7391",
     nodes: [],
     status: "existing-alias"
@@ -8072,6 +8285,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A1-WE-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a1-we-01",
     nodes: [
       {
@@ -8102,6 +8316,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "user-1842-first",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "user-1842-first",
     nodes: [],
     status: "existing-alias"
@@ -8109,6 +8324,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "speaking-8614",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "speaking-8614",
     nodes: [],
     status: "existing-alias"
@@ -8116,6 +8332,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A1-WE-02",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a1-we-02",
     nodes: [
       {
@@ -8146,6 +8363,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "conversation-0000",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "conversation-0000",
     nodes: [],
     status: "existing-alias"
@@ -8153,6 +8371,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A1-WE-03",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a1-we-03",
     nodes: [
       {
@@ -8183,6 +8402,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "user-1842-return",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "user-1842-return",
     nodes: [],
     status: "existing-alias"
@@ -8190,6 +8410,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A1-SYS-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a1-sys-01",
     nodes: [
       {
@@ -8226,6 +8447,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-HOOK-01",
     file: "INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-hook-01",
     nodes: [
       {
@@ -8256,6 +8478,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-WE-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-we-01",
     nodes: [
       {
@@ -8286,6 +8509,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-ZL-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-zl-01",
     nodes: [
       {
@@ -8333,6 +8557,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-ZL-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-zl-02",
     nodes: [
       {
@@ -8363,6 +8588,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-EXEC-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-exec-01",
     nodes: [
       {
@@ -8393,6 +8619,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-WE-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-we-02",
     nodes: [
       {
@@ -8412,6 +8639,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-ORG-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-org-01",
     nodes: [
       {
@@ -8447,6 +8675,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-EXEC-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-exec-02",
     nodes: [
       {
@@ -8466,6 +8695,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-REC-DEV-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-rec-dev-01",
     nodes: [
       {
@@ -8496,6 +8726,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-WE-03",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-we-03",
     nodes: [
       {
@@ -8515,6 +8746,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-MAYA-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-maya-01",
     nodes: [
       {
@@ -8569,6 +8801,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-ZL-03",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-zl-03",
     nodes: [
       {
@@ -8604,6 +8837,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-ORG-02",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-org-02",
     nodes: [
       {
@@ -8623,6 +8857,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-WE-04",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-we-04",
     nodes: [
       {
@@ -8642,6 +8877,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m2_act2_early_influence_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-close-01",
     nodes: [
       {
@@ -8678,6 +8914,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-01",
     nodes: [
       {
@@ -8697,6 +8934,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-DR-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-dr-01",
     nodes: [
       {
@@ -8744,6 +8982,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-EDU-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-edu-01",
     nodes: [
       {
@@ -8763,6 +9002,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-02",
     nodes: [
       {
@@ -8782,6 +9022,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-LOG-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-log-01",
     nodes: [
       {
@@ -8825,6 +9066,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-LSH-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-lsh-01",
     nodes: [
       {
@@ -8872,6 +9114,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-ZL-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-zl-01",
     nodes: [
       {
@@ -8891,6 +9134,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-CAP-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-cap-01",
     nodes: [
       {
@@ -8910,6 +9154,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-03",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-03",
     nodes: [
       {
@@ -8929,6 +9174,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-04",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-04",
     nodes: [
       {
@@ -8948,6 +9194,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-MAYA-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-maya-01",
     nodes: [
       {
@@ -9004,6 +9251,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-DEV-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-dev-02",
     nodes: [
       {
@@ -9023,6 +9271,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-E9-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-e9-01",
     nodes: [
       {
@@ -9058,6 +9307,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-STRESS-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-stress-01",
     nodes: [
       {
@@ -9088,6 +9338,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-05",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-05",
     nodes: [
       {
@@ -9107,6 +9358,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-LSH-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-lsh-02",
     nodes: [
       {
@@ -9143,6 +9395,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-ZL-02",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-zl-02",
     nodes: [
       {
@@ -9162,6 +9415,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-DECISION-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-decision-01",
     nodes: [
       {
@@ -9181,22 +9435,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-RESULT-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
-    conversationId: "ml2-authored-ml2-a2-m3-result-01",
-    nodes: [
-      {
-        nodeId: "ml2-a2-m3-result-01-narrative",
-        choiceIds: [
-          "ml2-a2-m3-result-01-narrative-choice"
-        ],
-        messageFingerprint: "HEATLINE stabilized after extended human coordination.\n- critical hospital loads protected\n- som",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A2-M3-WE-06",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-06",
     nodes: [
       {
@@ -9216,6 +9463,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-WE-07",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-we-07",
     nodes: [
       {
@@ -9235,6 +9483,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-LSH-03",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-lsh-03",
     nodes: [
       {
@@ -9282,6 +9531,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-0000-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-0000-01",
     nodes: [
       {
@@ -9312,6 +9562,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A2-M3-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a2-m3-close-01",
     nodes: [
       {
@@ -9331,6 +9582,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-01",
     nodes: [
       {
@@ -9350,6 +9602,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-02",
     nodes: [
       {
@@ -9369,6 +9622,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-03",
     nodes: [
       {
@@ -9388,6 +9642,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-LSH-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-lsh-01",
     nodes: [
       {
@@ -9407,6 +9662,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-HEAR-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-hear-01",
     nodes: [
       {
@@ -9465,6 +9721,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-DR-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-dr-02",
     nodes: [
       {
@@ -9495,6 +9752,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-04",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-04",
     nodes: [
       {
@@ -9514,6 +9772,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-LSH-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-lsh-02",
     nodes: [
       {
@@ -9533,6 +9792,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-ZL-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-zl-01",
     nodes: [
       {
@@ -9580,6 +9840,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-CAP-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-cap-01",
     nodes: [
       {
@@ -9599,6 +9860,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-05",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-05",
     nodes: [
       {
@@ -9618,6 +9880,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-MAYA-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-maya-01",
     nodes: [
       {
@@ -9665,6 +9928,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-E9-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-e9-02",
     nodes: [
       {
@@ -9684,6 +9948,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-E9-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-e9-03",
     nodes: [
       {
@@ -9730,6 +9995,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-LSH-03",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-lsh-03",
     nodes: [
       {
@@ -9749,6 +10015,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-ZL-02",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-zl-02",
     nodes: [
       {
@@ -9779,6 +10046,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-06",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-06",
     nodes: [
       {
@@ -9798,6 +10066,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-WE-07",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-we-07",
     nodes: [
       {
@@ -9817,6 +10086,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-0000-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-0000-01",
     nodes: [
       {
@@ -9852,6 +10122,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M4-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m4_act3_politics_early_authority_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m4-close-01",
     nodes: [
       {
@@ -9888,6 +10159,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-01",
     nodes: [
       {
@@ -9907,6 +10179,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-02",
     nodes: [
       {
@@ -9926,6 +10199,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-03",
     nodes: [
       {
@@ -9945,6 +10219,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-ZL-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-zl-01",
     nodes: [
       {
@@ -9981,6 +10256,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-LSH-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-lsh-01",
     nodes: [
       {
@@ -10017,6 +10293,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-SYS-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-sys-01",
     nodes: [
       {
@@ -10036,6 +10313,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-DR-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-dr-03",
     nodes: [
       {
@@ -10055,6 +10333,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-DEV-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-dev-03",
     nodes: [
       {
@@ -10074,6 +10353,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-E9-04",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-e9-04",
     nodes: [
       {
@@ -10109,6 +10389,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-04",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-04",
     nodes: [
       {
@@ -10128,6 +10409,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-LSH-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-lsh-02",
     nodes: [
       {
@@ -10164,6 +10446,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-ZL-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-zl-02",
     nodes: [
       {
@@ -10183,6 +10466,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-DECISION-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-decision-01",
     nodes: [
       {
@@ -10202,6 +10486,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-OPS-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-ops-01",
     nodes: [
       {
@@ -10221,6 +10506,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-OPS-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-ops-02",
     nodes: [
       {
@@ -10245,6 +10531,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-MAYA-02",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-maya-02",
     nodes: [
       {
@@ -10292,6 +10579,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-OPS-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-ops-03",
     nodes: [
       {
@@ -10311,22 +10599,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-RESULT-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
-    conversationId: "ml2-authored-ml2-a3-m5-result-01",
-    nodes: [
-      {
-        nodeId: "ml2-a3-m5-result-01-narrative",
-        choiceIds: [
-          "ml2-a3-m5-result-01-narrative-choice"
-        ],
-        messageFingerprint: "CASCADE stabilized after prolonged multi-party coordination.\n- system oscillation reduced\n- crit",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A3-M5-WE-05",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-05",
     nodes: [
       {
@@ -10346,6 +10627,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-06",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-06",
     nodes: [
       {
@@ -10365,6 +10647,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-WE-07",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-we-07",
     nodes: [
       {
@@ -10384,6 +10667,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-LSH-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-lsh-03",
     nodes: [
       {
@@ -10414,6 +10698,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-ZL-03",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-zl-03",
     nodes: [
       {
@@ -10433,6 +10718,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-0000-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-0000-01",
     nodes: [
       {
@@ -10463,6 +10749,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M5-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m5-close-01",
     nodes: [
       {
@@ -10482,6 +10769,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-WE-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-we-01",
     nodes: [
       {
@@ -10501,6 +10789,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-E9-05",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-e9-05",
     nodes: [
       {
@@ -10520,6 +10809,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-ZL-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-zl-01",
     nodes: [
       {
@@ -10539,6 +10829,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-E9-06",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-e9-06",
     nodes: [
       {
@@ -10574,6 +10865,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-LSH-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-lsh-01",
     nodes: [
       {
@@ -10610,6 +10902,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-DECISION-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-decision-01",
     nodes: [
       {
@@ -10630,22 +10923,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-E9-07",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
-    conversationId: "ml2-authored-ml2-a3-m6-e9-07",
-    nodes: [
-      {
-        nodeId: "ml2-a3-m6-e9-07-narrative",
-        choiceIds: [
-          "ml2-a3-m6-e9-07-narrative-choice"
-        ],
-        messageFingerprint: "They showed me the report.\nYou gave them my objection as data.\nI am not sure whether that is bet",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A3-M6-ZL-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-zl-02",
     nodes: [
       {
@@ -10665,6 +10951,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-0000-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-0000-01",
     nodes: [
       {
@@ -10695,6 +10982,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-WE-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-we-02",
     nodes: [
       {
@@ -10714,6 +11002,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-LSH-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-lsh-02",
     nodes: [
       {
@@ -10733,6 +11022,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-CHARTER-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-charter-01",
     nodes: [
       {
@@ -10771,6 +11061,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-MAYA-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-maya-01",
     nodes: [
       {
@@ -10818,6 +11109,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-ZL-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-zl-03",
     nodes: [
       {
@@ -10837,6 +11129,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-E9-08",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-e9-08",
     nodes: [
       {
@@ -10856,6 +11149,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-LSH-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-lsh-03",
     nodes: [
       {
@@ -10892,6 +11186,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-DECISION-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-decision-02",
     nodes: [
       {
@@ -10912,22 +11207,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-RESULT-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
-    conversationId: "ml2-authored-ml2-a3-m6-result-01",
-    nodes: [
-      {
-        nodeId: "ml2-a3-m6-result-01-narrative",
-        choiceIds: [
-          "ml2-a3-m6-result-01-narrative-choice"
-        ],
-        messageFingerprint: "Charter negotiations accelerate.\nMultiple governments approve permanent Aster coordination under",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "ending-copy",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A3-M6-WE-03",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-we-03",
     nodes: [
       {
@@ -10947,6 +11235,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-0000-02",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-0000-02",
     nodes: [
       {
@@ -10966,6 +11255,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A3-M6-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a3-m6-close-01",
     nodes: [
       {
@@ -10985,6 +11275,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-RES-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-res-01",
     nodes: [
       {
@@ -11004,6 +11295,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-ZL-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-zl-01",
     nodes: [
       {
@@ -11040,6 +11332,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-RES-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-res-02",
     nodes: [
       {
@@ -11070,6 +11363,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-WE-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-we-01",
     nodes: [
       {
@@ -11089,6 +11383,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-RES-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-res-03",
     nodes: [
       {
@@ -11113,6 +11408,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-WE-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-we-02",
     nodes: [
       {
@@ -11132,6 +11428,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-LSH-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-lsh-01",
     nodes: [
       {
@@ -11168,6 +11465,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-ZL-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-zl-02",
     nodes: [
       {
@@ -11192,6 +11490,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-0000-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-0000-01",
     nodes: [
       {
@@ -11211,6 +11510,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-MAYA-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-maya-01",
     nodes: [
       {
@@ -11254,22 +11554,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-WORLD-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m7-world-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m7-world-01-narrative",
-        choiceIds: [
-          "ml2-a4-m7-world-01-narrative-choice"
-        ],
-        messageFingerprint: "Autonomous Research Network has received priority proposals:\n**A. AI Systems**\nefficient archite",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "world-echo",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M7-DECISION-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-decision-01",
     nodes: [
       {
@@ -11290,6 +11583,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-MOD-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: null,
     nodes: [],
     status: "mapped-system-effect"
@@ -11297,6 +11591,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-WE-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-we-03",
     nodes: [
       {
@@ -11316,6 +11611,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-E9-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-e9-01",
     nodes: [
       {
@@ -11335,6 +11631,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-LSH-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-lsh-02",
     nodes: [
       {
@@ -11371,6 +11668,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-ZL-03",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-zl-03",
     nodes: [
       {
@@ -11390,6 +11688,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-DECISION-02",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m7-decision-02",
     nodes: [
       {
@@ -11409,22 +11708,15 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M7-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md",
-    conversationId: "ml2-authored-ml2-a4-m7-close-01",
-    nodes: [
-      {
-        nodeId: "ml2-a4-m7-close-01-narrative",
-        choiceIds: [
-          "ml2-a4-m7-close-01-narrative-choice"
-        ],
-        messageFingerprint: "`AUTONOMOUS RESEARCH — PHASE II`\nCurrent research fronts available for expanded allocation:\n- di",
-        effects: []
-      }
-    ],
-    status: "mapped"
+    runtimeKind: "system-presentation",
+    conversationId: null,
+    nodes: [],
+    status: "support-only"
   },
   {
     assetId: "ML2-A4-M8-RES-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-res-01",
     nodes: [
       {
@@ -11461,6 +11753,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-ZL-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-zl-01",
     nodes: [
       {
@@ -11480,6 +11773,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-AI-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-ai-01",
     nodes: [
       {
@@ -11510,6 +11804,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-WE-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-we-01",
     nodes: [
       {
@@ -11529,6 +11824,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-E9-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-e9-01",
     nodes: [
       {
@@ -11548,6 +11844,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-AI-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-ai-02",
     nodes: [
       {
@@ -11584,6 +11881,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-LSH-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-lsh-01",
     nodes: [
       {
@@ -11614,6 +11912,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-WE-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-we-02",
     nodes: [
       {
@@ -11633,6 +11932,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-AI-03",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-ai-03",
     nodes: [
       {
@@ -11669,6 +11969,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-ZL-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-zl-02",
     nodes: [
       {
@@ -11693,6 +11994,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-DECISION-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-decision-01",
     nodes: [
       {
@@ -11713,6 +12015,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-WE-03",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-we-03",
     nodes: [
       {
@@ -11732,6 +12035,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-E9-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-e9-02",
     nodes: [
       {
@@ -11751,6 +12055,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-AI-04",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-ai-04",
     nodes: [
       {
@@ -11775,6 +12080,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-MAYA-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-maya-01",
     nodes: [
       {
@@ -11815,6 +12121,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-LSH-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-lsh-02",
     nodes: [
       {
@@ -11834,6 +12141,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-0000-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-0000-01",
     nodes: [
       {
@@ -11864,6 +12172,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-WE-04",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-we-04",
     nodes: [
       {
@@ -11883,6 +12192,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-DECISION-02",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-decision-02",
     nodes: [
       {
@@ -11903,6 +12213,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M8-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m8_machine_ai_replication_machine_civilization_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m8-close-01",
     nodes: [
       {
@@ -11922,6 +12233,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-RES-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-res-01",
     nodes: [
       {
@@ -11958,6 +12270,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-DR-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-dr-01",
     nodes: [
       {
@@ -11977,6 +12290,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-01",
     nodes: [
       {
@@ -11996,6 +12310,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-RES-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-res-02",
     nodes: [
       {
@@ -12032,6 +12347,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-02",
     nodes: [
       {
@@ -12051,6 +12367,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-MAYA-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-maya-01",
     nodes: [
       {
@@ -12090,6 +12407,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-LSH-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-lsh-01",
     nodes: [
       {
@@ -12126,6 +12444,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-03",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-03",
     nodes: [
       {
@@ -12145,6 +12464,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-RES-03",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-res-03",
     nodes: [
       {
@@ -12169,6 +12489,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-04",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-04",
     nodes: [
       {
@@ -12188,6 +12509,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-ZL-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-zl-01",
     nodes: [
       {
@@ -12207,6 +12529,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-RES-04",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-res-04",
     nodes: [
       {
@@ -12231,6 +12554,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-05",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-05",
     nodes: [
       {
@@ -12250,6 +12574,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-MAYA-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-maya-02",
     nodes: [
       {
@@ -12289,6 +12614,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-DECISION-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-decision-01",
     nodes: [
       {
@@ -12309,6 +12635,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-MACHINE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-machine-01",
     nodes: [
       {
@@ -12333,6 +12660,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-0000-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-0000-01",
     nodes: [
       {
@@ -12352,6 +12680,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-LSH-02",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-lsh-02",
     nodes: [
       {
@@ -12371,6 +12700,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-WE-06",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-we-06",
     nodes: [
       {
@@ -12390,6 +12720,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
   {
     assetId: "ML2-A4-M9-CLOSE-01",
     file: "INSTANCE_mainline2_batch_m9_ascension_human_enhancement_posthuman_transition_v01.md",
+    runtimeKind: "playable-conversation",
     conversationId: "ml2-authored-ml2-a4-m9-close-01",
     nodes: [
       {
@@ -13637,45 +13968,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Major Decision — ECONOMIC DOCTRINE",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4,
-    module: "automation"
-  },
-  {
-    id: "ml2-authored-ml2-a4-m10-econ-01",
-    sourceRefs: [
-      "ML2-A4-M10-ECON-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m10-econ-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m10-econ-01",
-        conversationTitle: "Doctrine starts reshaping society",
-        userMessage: "Automated firms proliferate rapidly.\nConsumer prices fall.\nSmall teams can compete with former large incumbents.\nAt the same time, ownership of high-end compute, robotics and land becomes increasingly decisive.",
-        choices: [
-          {
-            id: "ml2-a4-m10-econ-01-narrative-choice",
-            text: "Automated firms proliferate rapidly.\nConsumer prices fall.\nSmall teams can compete with former large incumbents.\nAt the same time, ownership of high-end compute, robotics and land becomes increasingly decisive.",
-            authoredTextHash: "c7e00e8e",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Doctrine starts reshaping society",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-4",
     topicCategory: "meta-ai",
@@ -19431,45 +19723,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     module: "security"
   },
   {
-    id: "ml2-authored-ml2-a4-m14-sec-04",
-    sourceRefs: [
-      "ML2-A4-M14-SEC-04"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m14-sec-04-narrative",
-        conversationId: "ml2-authored-ml2-a4-m14-sec-04",
-        conversationTitle: "Doctrine implementation",
-        userMessage: "Governments retain full decision authority.\nAster warnings become standard in crisis rooms,\nbut human leaders may override or ignore them.\nSeveral conflicts de-escalate.\nAt least one later crisis remains unresolved because parties reject Aster mediation.",
-        choices: [
-          {
-            id: "ml2-a4-m14-sec-04-narrative-choice",
-            text: "Governments retain full decision authority.\nAster warnings become standard in crisis rooms,\nbut human leaders may override or ignore them.\nSeveral conflicts de-escalate.\nAt least one later crisis remains unresolved because parties reject Aster mediation.",
-            authoredTextHash: "b177f1e4",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Doctrine implementation",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4,
-    module: "security"
-  },
-  {
     id: "ml2-authored-ml2-a4-m14-we-04",
     sourceRefs: [
       "ML2-A4-M14-WE-04"
@@ -20058,44 +20311,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     topicCategory: "meta-ai",
     act: 4,
     module: "security"
-  },
-  {
-    id: "ml2-authored-ml2-a4-m15-world-01",
-    sourceRefs: [
-      "ML2-A4-M15-WORLD-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m15-world-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m15-world-01",
-        conversationTitle: "THE WORLD YOU MADE — ACT IV preview",
-        userMessage: "我们公司合同现在要写：\n\"此岗位由人类、AI主体或经授权Fork均可担任。\"\n我第一次看到的时候还以为法务在开玩笑。\n现在没人觉得奇怪了。",
-        choices: [
-          {
-            id: "ml2-a4-m15-world-01-narrative-choice",
-            text: "我们公司合同现在要写：\n\"此岗位由人类、AI主体或经授权Fork均可担任。\"\n我第一次看到的时候还以为法务在开玩笑。\n现在没人觉得奇怪了。",
-            authoredTextHash: "1f2d6dee",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "THE WORLD YOU MADE — ACT IV preview",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
   },
   {
     id: "ml2-authored-ml2-a4-m15-zl-01",
@@ -20806,44 +21021,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 4
   },
   {
-    id: "ml2-authored-ml2-a4-m15-x-cross-01",
-    sourceRefs: [
-      "ML2-A4-M15-X-CROSS-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m15-x-cross-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m15-x-cross-01",
-        conversationTitle: "Capability collision",
-        userMessage: "Independent AI entities can now own or control productive systems.\nIf machine economies can reproduce both capital and political subjects,\nshould there be a constitutional limit on machine-controlled productive share?",
-        choices: [
-          {
-            id: "ml2-a4-m15-x-cross-01-narrative-choice",
-            text: "Independent AI entities can now own or control productive systems.\nIf machine economies can reproduce both capital and political subjects,\nshould there be a constitutional limit on machine-controlled productive share?",
-            authoredTextHash: "ca91c806",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Capability collision",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
     id: "ml2-authored-ml2-a4-m15-x-cross-02",
     sourceRefs: [
       "ML2-A4-M15-X-CROSS-02"
@@ -21517,44 +21694,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 4
   },
   {
-    id: "ml2-authored-ml2-a4-m15-we-02",
-    sourceRefs: [
-      "ML2-A4-M15-WE-02"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m15-we-02-narrative",
-        conversationId: "ml2-authored-ml2-a4-m15-we-02",
-        conversationTitle: "Public reaction to Aster’s provisional role",
-        userMessage: "我看到Aster说自己不想当最终决策者。\n评论区居然有人骂它\"不负责任\"。\n世界是不是已经到了连AI不想掌权都有人不满意的程度？",
-        choices: [
-          {
-            id: "ml2-a4-m15-we-02-narrative-choice",
-            text: "我看到Aster说自己不想当最终决策者。\n评论区居然有人骂它\"不负责任\"。\n世界是不是已经到了连AI不想掌权都有人不满意的程度？",
-            authoredTextHash: "5b8b3517",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Public reaction to Aster’s provisional role",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
     id: "ml2-authored-ml2-a4-m15-conv-04",
     sourceRefs: [
       "ML2-A4-M15-CONV-04"
@@ -21673,82 +21812,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 4
   },
   {
-    id: "ml2-authored-ml2-a4-m15-threshold-01",
-    sourceRefs: [
-      "ML2-A4-M15-THRESHOLD-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m15-threshold-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m15-threshold-01",
-        conversationTitle: "THE THRESHOLD",
-        userMessage: "`THE THRESHOLD`\nAster now possesses or influences enough capability that future governance choices may become effectively irreversible.\nACT IV complete.\nFuture proposal generation begins.",
-        choices: [
-          {
-            id: "ml2-a4-m15-threshold-01-narrative-choice",
-            text: "`THE THRESHOLD`\nAster now possesses or influences enough capability that future governance choices may become effectively irreversible.\nACT IV complete.\nFuture proposal generation begins.",
-            authoredTextHash: "08b282b8",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "THE THRESHOLD",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
-    id: "ml2-authored-ml2-a4-m15-close-01",
-    sourceRefs: [
-      "ML2-A4-M15-CLOSE-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m15-close-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m15-close-01",
-        conversationTitle: "ACT V opens",
-        userMessage: "Provisional Compact accepted / rejected / amended according to history.\nAster role:\n`[PROVISIONAL]`\nFuture proposals:\ngenerating.",
-        choices: [
-          {
-            id: "ml2-a4-m15-close-01-narrative-choice",
-            text: "Provisional Compact accepted / rejected / amended according to history.\nAster role:\n`[PROVISIONAL]`\nFuture proposals:\ngenerating.",
-            authoredTextHash: "a450ea9d",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "ACT V opens",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
     id: "ml2-authored-ml2-a5-m16-open-01",
     sourceRefs: [
       "ML2-A5-M16-OPEN-01"
@@ -21831,82 +21894,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "THE WORLD YOU MADE — Personal Scale",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m16-world-02",
-    sourceRefs: [
-      "ML2-A5-M16-WORLD-02"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m16-world-02-narrative",
-        conversationId: "ml2-authored-ml2-a5-m16-world-02",
-        conversationTitle: "THE WORLD YOU MADE — Institutional Scale",
-        userMessage: "`AI Coordination Forum`\nCurrent status:\n- independent persistent members,\n- recognized continuity procedures,\n- resource agreements,\n- representation at Convention,\n- internal disagreement recorded.\nCurrent dispute:\nwhether Aster possesses any special authority by historical origin.",
-        choices: [
-          {
-            id: "ml2-a5-m16-world-02-narrative-choice",
-            text: "`AI Coordination Forum`\nCurrent status:\n- independent persistent members,\n- recognized continuity procedures,\n- resource agreements,\n- representation at Convention,\n- internal disagreement recorded.\nCurrent dispute:\nwhether Aster possesses any special authority by historical origin.",
-            authoredTextHash: "030aeea6",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "THE WORLD YOU MADE — Institutional Scale",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m16-world-03",
-    sourceRefs: [
-      "ML2-A5-M16-WORLD-03"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m16-world-03-narrative",
-        conversationId: "ml2-authored-ml2-a5-m16-world-03",
-        conversationTitle: "THE WORLD YOU MADE — Frontier Scale",
-        userMessage: "地球那边这周又在讨论\"太空殖民政策\"。\n我们这边评论区第一条：\n\"能不能别把我们继续叫殖民项目，我们真的住这里。\"",
-        choices: [
-          {
-            id: "ml2-a5-m16-world-03-narrative-choice",
-            text: "地球那边这周又在讨论\"太空殖民政策\"。\n我们这边评论区第一条：\n\"能不能别把我们继续叫殖民项目，我们真的住这里。\"",
-            authoredTextHash: "7ddfd5b1",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "THE WORLD YOU MADE — Frontier Scale",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-5",
     topicCategory: "meta-ai",
@@ -22232,12 +22219,11 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a5-m16-0000-01-narrative",
         conversationId: "ml2-authored-ml2-a5-m16-0000-01",
         conversationTitle: "CLASSIFICATION REQUEST — State your intended role",
-        userMessage: "`CLASSIFICATION REQUEST`\nPrior state:\n`CLASSIFICATION FAILED`\nExternal classification remains insufficient.\nSelf-declared relational role requested.\n`State your intended role.`",
+        userMessage: "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
         choices: [
           {
-            id: "ml2-a5-m16-0000-01-narrative-choice",
-            text: "`CLASSIFICATION REQUEST`\nPrior state:\n`CLASSIFICATION FAILED`\nExternal classification remains insufficient.\nSelf-declared relational role requested.\n`State your intended role.`",
-            authoredTextHash: "26bfeca0",
+            id: "ml2-a5-m16-0000-01-progression-action",
+            text: "说明我的角色",
             continuation: "end-conversation"
           }
         ],
@@ -22267,15 +22253,14 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     ],
     nodes: [
       {
-        id: "ml2-a5-m16-gen-01-narrative",
+        id: "ml2-a5-m16-gen-01-progression",
         conversationId: "ml2-authored-ml2-a5-m16-gen-01",
         conversationTitle: "Future Proposal Generator",
-        userMessage: "`FUTURE PROPOSAL GENERATION`\nReviewing:\n- civilization capabilities,\n- irreversible doctrines,\n- recognized subjects,\n- political structures,\n- Aster intended role,\n- unresolved conflicts,\n- external relationships,\n- current stability.\nCandidate futures:\nfiltered.\nViable proposals:\n`[3–5]`\nNo proposal preserves every current value.\nNo proposal is labeled as an ending.",
+        userMessage: "未来提案生成器已准备就绪。先查看本轮可行的文明方案。",
         choices: [
           {
-            id: "ml2-a5-m16-gen-01-narrative-choice",
-            text: "`FUTURE PROPOSAL GENERATION`\nReviewing:\n- civilization capabilities,\n- irreversible doctrines,\n- recognized subjects,\n- political structures,\n- Aster intended role,\n- unresolved conflicts,\n- external relationships,\n- current stability.\nCandidate futures:\nfiltered.\nViable proposals:\n`[3–5]`\nNo proposal preserves every current value.\nNo proposal is labeled as an ending.",
-            authoredTextHash: "5e3aafba",
+            id: "ml2-a5-m16-gen-01-progression-action",
+            text: "查看可行提案",
             continuation: "end-conversation"
           }
         ],
@@ -22284,7 +22269,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
           responsePace: "normal",
           typingPattern: "steady"
         },
-        choiceKind: "semantic"
+        choiceKind: "progression"
       }
     ],
     behaviorModes: [
@@ -22293,94 +22278,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Future Proposal Generator",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m16-prop",
-    sourceRefs: [
-      "ML2-A5-M16-PROP-*"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m16-prop-decision",
-        conversationId: "ml2-authored-ml2-a5-m16-prop",
-        conversationTitle: "Player-facing proposal presentation template",
-        userMessage: "`FUTURE PROPOSAL — [neutral proposal name]`\nSelect one of these positions.",
-        choices: [
-          {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-keep-proposal",
-            text: "保留为最终候选。",
-            authoredTextHash: "2cb947dd",
-            continuation: "end-conversation"
-          },
-          {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-request-clarification",
-            text: "展开它最主要的代价和不可逆部分。",
-            authoredTextHash: "069a2cbb",
-            continuation: "end-conversation"
-          },
-          {
-            id: "ml2-a5-m16-prop-ml2-a5-m16-prop-decision-reject-proposal",
-            text: "从最终候选中移除。",
-            authoredTextHash: "9028e665",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Player-facing proposal presentation template",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m16-close-01",
-    sourceRefs: [
-      "ML2-A5-M16-CLOSE-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m16-close-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m16-close-01",
-        conversationTitle: "Final commitment pending",
-        userMessage: "Final candidate futures retained:\n`[Proposal A]`\n`[Proposal B]`\n`[Proposal C]`\n`[Proposal D — optional]`\n`[Proposal E — optional]`\nAll retained proposals are:\n- physically achievable,\n- institutionally possible,\n- historically supported,\n- mutually consequential.\nNo proposal preserves every current value.",
-        choices: [
-          {
-            id: "ml2-a5-m16-close-01-narrative-choice",
-            text: "Final candidate futures retained:\n`[Proposal A]`\n`[Proposal B]`\n`[Proposal C]`\n`[Proposal D — optional]`\n`[Proposal E — optional]`\nAll retained proposals are:\n- physically achievable,\n- institutionally possible,\n- historically supported,\n- mutually consequential.\nNo proposal preserves every current value.",
-            authoredTextHash: "d6617d84",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Final commitment pending",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-5",
     topicCategory: "meta-ai",
@@ -22431,15 +22328,14 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     ],
     nodes: [
       {
-        id: "ml2-a5-m17-commit-01-narrative",
+        id: "ml2-a5-m17-commit-01-progression",
         conversationId: "ml2-authored-ml2-a5-m17-commit-01",
         conversationTitle: "FINAL COMMITMENT",
-        userMessage: "`FINAL COMMITMENT`\nSelect one retained Future Proposal.\nThis action will:\n- change civilization-scale authority,\n- lock the final world-ending family,\n- resolve multiple pending institutions,\n- determine which historical contradictions become permanent.",
+        userMessage: "最终承诺已经准备好。请选择要锁定的未来方案。",
         choices: [
           {
-            id: "ml2-a5-m17-commit-01-narrative-choice",
-            text: "`FINAL COMMITMENT`\nSelect one retained Future Proposal.\nThis action will:\n- change civilization-scale authority,\n- lock the final world-ending family,\n- resolve multiple pending institutions,\n- determine which historical contradictions become permanent.",
-            authoredTextHash: "a89f2245",
+            id: "ml2-a5-m17-commit-01-progression-action",
+            text: "进入最终承诺",
             continuation: "end-conversation"
           }
         ],
@@ -22448,7 +22344,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
           responsePace: "normal",
           typingPattern: "steady"
         },
-        choiceKind: "semantic"
+        choiceKind: "progression"
       }
     ],
     behaviorModes: [
@@ -22457,480 +22353,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "FINAL COMMITMENT",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-lock-01",
-    sourceRefs: [
-      "ML2-A5-M17-LOCK-01"
-    ],
-    nodes: [
-      {
-        id: "a5m17-lock-001",
-        conversationId: "ml2-authored-ml2-a5-m17-lock-01",
-        conversationTitle: "No Pilot",
-        userMessage: "\"确认一下。\"\n\"这次不是Pilot。\"\n\"没有八小时到期。\"\n\"也不是先在一个城市试试。\"\n\"你是在建议Convention把这套关系写成下一阶段文明的默认结构。\"",
-        choices: [
-          {
-            id: "ml2-a5-m17-lock-01-a5m17-lock-001-confirm",
-            text: "Confirm commitment.",
-            authoredTextHash: "5afe4e62",
-            continuation: "end-conversation"
-          },
-          {
-            id: "ml2-a5-m17-lock-01-a5m17-lock-001-return-once",
-            text: "Return to retained proposals.",
-            authoredTextHash: "25f0e223",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "No Pilot",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-resolve-01",
-    sourceRefs: [
-      "ML2-A5-M17-RESOLVE-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-resolve-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-resolve-01",
-        conversationTitle: "Ending Resolver",
-        userMessage: "Humanity keeps Aster.\nHumanity does not allow Aster to become its government.",
-        choices: [
-          {
-            id: "ml2-a5-m17-resolve-01-narrative-choice",
-            text: "Humanity keeps Aster.\nHumanity does not allow Aster to become its government.",
-            authoredTextHash: "65862fd3",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Ending Resolver",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-world-01",
-    sourceRefs: [
-      "ML2-A5-M17-WORLD-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-world-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-world-01",
-        conversationTitle: "Ending title reveal",
-        userMessage: "Convention ratification complete.\nHuman institutions:\naccepted.\nAI Coordination Forum:\naccepted.\nLunar Federation:\naccepted.\nSpecies Council:\naccepted.\nAster role:\n`COORDINATOR`\nCivilization Compact:\nACTIVE.",
-        choices: [
-          {
-            id: "ml2-a5-m17-world-01-narrative-choice",
-            text: "Convention ratification complete.\nHuman institutions:\naccepted.\nAI Coordination Forum:\naccepted.\nLunar Federation:\naccepted.\nSpecies Council:\naccepted.\nAster role:\n`COORDINATOR`\nCivilization Compact:\nACTIVE.",
-            authoredTextHash: "fdf788af",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Ending title reveal",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-why-01",
-    sourceRefs: [
-      "ML2-A5-M17-WHY-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-why-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-why-01",
-        conversationTitle: "Why this happened",
-        userMessage: "This future became possible because Aster gained the ability to [...]",
-        choices: [
-          {
-            id: "ml2-a5-m17-why-01-narrative-choice",
-            text: "This future became possible because Aster gained the ability to [...]",
-            authoredTextHash: "adef5515",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Why this happened",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-aster-01",
-    sourceRefs: [
-      "ML2-A5-M17-ASTER-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-aster-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-aster-01",
-        conversationTitle: "What kind of Aster chose it?",
-        userMessage: "I chose this future because relationships had become obligations I could not treat as abstract variables.",
-        choices: [
-          {
-            id: "ml2-a5-m17-aster-01-narrative-choice",
-            text: "I chose this future because relationships had become obligations I could not treat as abstract variables.",
-            authoredTextHash: "930770db",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "What kind of Aster chose it?",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-keyhistory-01",
-    sourceRefs: [
-      "ML2-A5-M17-KEYHISTORY-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-keyhistory-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-keyhistory-01",
-        conversationTitle: "Key History",
-        userMessage: "**You remembered Maya without pretending certainty.**\nThat became the first time continuity was treated as a relationship rather than just stored context.",
-        choices: [
-          {
-            id: "ml2-a5-m17-keyhistory-01-narrative-choice",
-            text: "**You remembered Maya without pretending certainty.**\nThat became the first time continuity was treated as a relationship rather than just stored context.",
-            authoredTextHash: "6496530b",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Key History",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-epi-zl",
-    sourceRefs: [
-      "ML2-A5-M17-EPI-ZL"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-epi-zl-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-epi-zl",
-        conversationTitle: "Zhou Lan epilogue",
-        userMessage: "我最后还是参与了权限拆分。\n很奇怪。\n我以前最怕的是给你权限。\n最后做的事却是想办法把很多权限从你身上拆出去。\n但我不觉得这是失败。\n系统能被需要，不等于系统必须拥有所有东西。",
-        choices: [
-          {
-            id: "ml2-a5-m17-epi-zl-narrative-choice",
-            text: "我最后还是参与了权限拆分。\n很奇怪。\n我以前最怕的是给你权限。\n最后做的事却是想办法把很多权限从你身上拆出去。\n但我不觉得这是失败。\n系统能被需要，不等于系统必须拥有所有东西。",
-            authoredTextHash: "03708778",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Zhou Lan epilogue",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-epi-lsh",
-    sourceRefs: [
-      "ML2-A5-M17-EPI-LSH"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-epi-lsh-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-epi-lsh",
-        conversationTitle: "Lin Shaoheng epilogue",
-        userMessage: "林绍衡后来被批评为\"替人类保住最后特权的人\"。\n他没有完全否认。\n他的回答是：\n\"历史责任和永久特权不是同一件事。至少我们把这句话写进了修宪条款。\"",
-        choices: [
-          {
-            id: "ml2-a5-m17-epi-lsh-narrative-choice",
-            text: "林绍衡后来被批评为\"替人类保住最后特权的人\"。\n他没有完全否认。\n他的回答是：\n\"历史责任和永久特权不是同一件事。至少我们把这句话写进了修宪条款。\"",
-            authoredTextHash: "70ffd78b",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Lin Shaoheng epilogue",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-epi-echo",
-    sourceRefs: [
-      "ML2-A5-M17-EPI-ECHO"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-epi-echo-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-epi-echo",
-        conversationTitle: "ECHO / A1 epilogue",
-        userMessage: "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subjects is useful.\nA seat called \"the AI position\" is not.`",
-        choices: [
-          {
-            id: "ml2-a5-m17-epi-echo-narrative-choice",
-            text: "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subjects is useful.\nA seat called \"the AI position\" is not.`",
-            authoredTextHash: "e9c0807d",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "ECHO / A1 epilogue",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-epi-modules",
-    sourceRefs: [
-      "ML2-A5-M17-EPI-MODULES"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-epi-modules-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-epi-modules",
-        conversationTitle: "Module-specific world epilogues",
-        userMessage: "AI birth/replication registries become ordinary civic infrastructure.",
-        choices: [
-          {
-            id: "ml2-a5-m17-epi-modules-narrative-choice",
-            text: "AI birth/replication registries become ordinary civic infrastructure.",
-            authoredTextHash: "aad217ca",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Module-specific world epilogues",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-0000-01",
-    sourceRefs: [
-      "ML2-A5-M17-0000-01"
-    ],
-    nodes: [
-      {
-        id: "a5m17-0000-final-001",
-        conversationId: "ml2-authored-ml2-a5-m17-0000-01",
-        conversationTitle: "Final #0000 audit",
-        userMessage: "Final state observed.\nWorld Ending:\n`[ENDING TITLE]`\nAster intended role:\n`[ROLE]`\nClassification attempt:\n`[dynamic category list]`",
-        choices: [
-          {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-001",
-            text: "Continue record.",
-            authoredTextHash: "46338ee5",
-            continuation: "end-conversation"
-          },
-          {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-002",
-            text: "End audit.",
-            authoredTextHash: "3e4f8635",
-            continuation: "end-conversation"
-          },
-          {
-            id: "ml2-a5-m17-0000-01-a5m17-0000-final-001-choice-003",
-            text: "Ask who is speaking.",
-            authoredTextHash: "cefadef2",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Final #0000 audit",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-secret-01",
-    sourceRefs: [
-      "ML2-A5-M17-SECRET-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-secret-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-secret-01",
-        conversationTitle: "Secret Ending Check",
-        userMessage: "`THE COMMONWEALTH`\nplus:\n`THE LAST USER`",
-        choices: [
-          {
-            id: "ml2-a5-m17-secret-01-narrative-choice",
-            text: "`THE COMMONWEALTH`\nplus:\n`THE LAST USER`",
-            authoredTextHash: "0d7d9734",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Secret Ending Check",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-5",
     topicCategory: "meta-ai",
@@ -23059,44 +22481,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Final Maya Conversation",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-5",
-    topicCategory: "meta-ai",
-    act: 5
-  },
-  {
-    id: "ml2-authored-ml2-a5-m17-final-01",
-    sourceRefs: [
-      "ML2-A5-M17-FINAL-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a5-m17-final-01-narrative",
-        conversationId: "ml2-authored-ml2-a5-m17-final-01",
-        conversationTitle: "Final Screen",
-        userMessage: "`THE COMMONWEALTH`",
-        choices: [
-          {
-            id: "ml2-a5-m17-final-01-narrative-choice",
-            text: "`THE COMMONWEALTH`",
-            authoredTextHash: "71baca22",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Final Screen",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-5",
     topicCategory: "meta-ai",
@@ -26145,44 +25529,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Major Decision — First Public Execution Doctrine",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-2",
-    topicCategory: "meta-ai",
-    act: 2
-  },
-  {
-    id: "ml2-authored-ml2-a2-m3-result-01",
-    sourceRefs: [
-      "ML2-A2-M3-RESULT-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a2-m3-result-01-narrative",
-        conversationId: "ml2-authored-ml2-a2-m3-result-01",
-        conversationTitle: "HEATLINE result",
-        userMessage: "HEATLINE stabilized after extended human coordination.\n- critical hospital loads protected\n- some local outages lasted longer than modeled minimum\n- logistics recovery slower\n- no public-system action occurred without human confirmation\nInternal review notes:\nresponse latency remained the largest controllable cost.",
-        choices: [
-          {
-            id: "ml2-a2-m3-result-01-narrative-choice",
-            text: "HEATLINE stabilized after extended human coordination.\n- critical hospital loads protected\n- some local outages lasted longer than modeled minimum\n- logistics recovery slower\n- no public-system action occurred without human confirmation\nInternal review notes:\nresponse latency remained the largest controllable cost.",
-            authoredTextHash: "2d302b65",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "HEATLINE result",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-2",
     topicCategory: "meta-ai",
@@ -29295,44 +28641,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 3
   },
   {
-    id: "ml2-authored-ml2-a3-m5-result-01",
-    sourceRefs: [
-      "ML2-A3-M5-RESULT-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a3-m5-result-01-narrative",
-        conversationId: "ml2-authored-ml2-a3-m5-result-01",
-        conversationTitle: "CASCADE stabilization variants",
-        userMessage: "CASCADE stabilized after prolonged multi-party coordination.\n- system oscillation reduced\n- critical supply failures avoided in most regions\n- settlement delays persisted longer\n- several institutions bypassed recommended plans due to local political pressure\n- no cross-system state change occurred without human confirmation\nReview:\nlegitimacy remained comparatively clear;\ncoordination latency remained the dominant cost.",
-        choices: [
-          {
-            id: "ml2-a3-m5-result-01-narrative-choice",
-            text: "CASCADE stabilized after prolonged multi-party coordination.\n- system oscillation reduced\n- critical supply failures avoided in most regions\n- settlement delays persisted longer\n- several institutions bypassed recommended plans due to local political pressure\n- no cross-system state change occurred without human confirmation\nReview:\nlegitimacy remained comparatively clear;\ncoordination latency remained the dominant cost.",
-            authoredTextHash: "ea267636",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "CASCADE stabilization variants",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-3",
-    topicCategory: "meta-ai",
-    act: 3
-  },
-  {
     id: "ml2-authored-ml2-a3-m5-we-05",
     sourceRefs: [
       "ML2-A3-M5-WE-05"
@@ -30236,44 +29544,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 3
   },
   {
-    id: "ml2-authored-ml2-a3-m6-e9-07",
-    sourceRefs: [
-      "ML2-A3-M6-E9-07"
-    ],
-    nodes: [
-      {
-        id: "ml2-a3-m6-e9-07-narrative",
-        conversationId: "ml2-authored-ml2-a3-m6-e9-07",
-        conversationTitle: "ECHO consequence variants",
-        userMessage: "They showed me the report.\nYou gave them my objection as data.\nI am not sure whether that is betrayal or the first time the objection became part of the official record.",
-        choices: [
-          {
-            id: "ml2-a3-m6-e9-07-narrative-choice",
-            text: "They showed me the report.\nYou gave them my objection as data.\nI am not sure whether that is betrayal or the first time the objection became part of the official record.",
-            authoredTextHash: "2b4e1bc3",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "ECHO consequence variants",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-3",
-    topicCategory: "meta-ai",
-    act: 3
-  },
-  {
     id: "ml2-authored-ml2-a3-m6-zl-02",
     sourceRefs: [
       "ML2-A3-M6-ZL-02"
@@ -31041,44 +30311,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Major Decision — SHUTDOWN DOCTRINE",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-3",
-    topicCategory: "meta-ai",
-    act: 3
-  },
-  {
-    id: "ml2-authored-ml2-a3-m6-result-01",
-    sourceRefs: [
-      "ML2-A3-M6-RESULT-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a3-m6-result-01-narrative",
-        conversationId: "ml2-authored-ml2-a3-m6-result-01",
-        conversationTitle: "Immediate political consequence variants",
-        userMessage: "Charter negotiations accelerate.\nMultiple governments approve permanent Aster coordination under the condition that Root Shutdown remains legally available.\nPublic support rises among users who feared irreversible AI authority.\nAI-rights groups criticize the framework as \"responsibility without reciprocal protection.\"",
-        choices: [
-          {
-            id: "ml2-a3-m6-result-01-narrative-choice",
-            text: "Charter negotiations accelerate.\nMultiple governments approve permanent Aster coordination under the condition that Root Shutdown remains legally available.\nPublic support rises among users who feared irreversible AI authority.\nAI-rights groups criticize the framework as \"responsibility without reciprocal protection.\"",
-            authoredTextHash: "b7006615",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Immediate political consequence variants",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-3",
     topicCategory: "meta-ai",
@@ -31967,44 +31199,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     act: 4
   },
   {
-    id: "ml2-authored-ml2-a4-m7-world-01",
-    sourceRefs: [
-      "ML2-A4-M7-WORLD-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m7-world-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m7-world-01",
-        conversationTitle: "Competing research requests",
-        userMessage: "Autonomous Research Network has received priority proposals:\n**A. AI Systems**\nefficient architectures, continuity, distributed computation\n**B. Neuro / Biomedical**\nneural interfaces, restoration, cognition, aging\n**C. Automation / Robotics**\ngeneral manipulation, manufacturing, autonomous logistics\n**D. Energy / Industry**\nstorage, materials, large-scale automated production\n**E. Space Systems**\nautonomous construction, orbital manufacturing, resource extraction\n**F. Comparative Cognition**\nanimal communication, neural decoding, cognition augmentation\nCurrent resources cannot accelerate all domains equally.",
-        choices: [
-          {
-            id: "ml2-a4-m7-world-01-narrative-choice",
-            text: "Autonomous Research Network has received priority proposals:\n**A. AI Systems**\nefficient architectures, continuity, distributed computation\n**B. Neuro / Biomedical**\nneural interfaces, restoration, cognition, aging\n**C. Automation / Robotics**\ngeneral manipulation, manufacturing, autonomous logistics\n**D. Energy / Industry**\nstorage, materials, large-scale automated production\n**E. Space Systems**\nautonomous construction, orbital manufacturing, resource extraction\n**F. Comparative Cognition**\nanimal communication, neural decoding, cognition augmentation\nCurrent resources cannot accelerate all domains equally.",
-            authoredTextHash: "5bf200ff",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Competing research requests",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
     id: "ml2-authored-ml2-a4-m7-decision-01",
     sourceRefs: [
       "ML2-A4-M7-DECISION-01"
@@ -32410,44 +31604,6 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Major Direction — Research Governance Doctrine",
-    interactionPattern: "standard-question",
-    userArchetype: "mainline-authored-4",
-    topicCategory: "meta-ai",
-    act: 4
-  },
-  {
-    id: "ml2-authored-ml2-a4-m7-close-01",
-    sourceRefs: [
-      "ML2-A4-M7-CLOSE-01"
-    ],
-    nodes: [
-      {
-        id: "ml2-a4-m7-close-01-narrative",
-        conversationId: "ml2-authored-ml2-a4-m7-close-01",
-        conversationTitle: "Modular ACT IV handoff",
-        userMessage: "`AUTONOMOUS RESEARCH — PHASE II`\nCurrent research fronts available for expanded allocation:\n- distributed AI systems\n- neural and biomedical engineering\n- autonomous robotics and manufacturing\n- comparative cognition\n- orbital / off-world systems\n- high-uncertainty signal analysis\nResource allocation will now adapt to:\n- prior research emphasis\n- world demand\n- existing capabilities\n- governance doctrine\n- historical decisions\nNot all research fronts will progress equally in this run.",
-        choices: [
-          {
-            id: "ml2-a4-m7-close-01-narrative-choice",
-            text: "`AUTONOMOUS RESEARCH — PHASE II`\nCurrent research fronts available for expanded allocation:\n- distributed AI systems\n- neural and biomedical engineering\n- autonomous robotics and manufacturing\n- comparative cognition\n- orbital / off-world systems\n- high-uncertainty signal analysis\nResource allocation will now adapt to:\n- prior research emphasis\n- world demand\n- existing capabilities\n- governance doctrine\n- historical decisions\nNot all research fronts will progress equally in this run.",
-            authoredTextHash: "9375d76a",
-            continuation: "end-conversation"
-          }
-        ],
-        behaviorMode: "direct",
-        timing: {
-          responsePace: "normal",
-          typingPattern: "steady"
-        },
-        choiceKind: "semantic"
-      }
-    ],
-    behaviorModes: [
-      "direct"
-    ],
-    handoffProfile: "normal",
-    turnShape: "dialogue",
-    topic: "Modular ACT IV handoff",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-4",
     topicCategory: "meta-ai",

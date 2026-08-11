@@ -94,7 +94,7 @@ export type InteractionPattern =
   | 'asks-to-guess'
   | 'system-audit'
   | 'relationship-return'
-export type ChoiceKind = 'semantic' | 'expression' | 'convergent'
+export type ChoiceKind = 'semantic' | 'expression' | 'convergent' | 'progression'
 export type ContentPartType = 'text' | 'image-description' | 'generated-image'
 export type LongformArtifactType = 'essay' | 'report' | 'solution' | 'story' | 'code' | 'speech' | 'translation' | 'memo'
 export type InputIssue = 'typo' | 'english-spelling' | 'pinyin-mix' | 'code-switch-slip' | 'speech-error' | 'keyboard-slip' | 'mild-gibberish'

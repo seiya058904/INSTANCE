@@ -151,7 +151,10 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
   const additions = proposalChoices(run, scene)
-  return additions.length ? { ...scene, choices: [...scene.choices, ...additions] } : scene
+  if (!additions.length) return scene
+  const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  const replaceAuthoredPlaceholder = sourceRef === 'ML2-A5-M16-GEN-01' || sourceRef === 'ML2-A5-M17-COMMIT-01'
+  return { ...scene, choices: replaceAuthoredPlaceholder ? additions : [...scene.choices, ...additions] }
 }
 
 export function resolveScene(run: StableRunState): ResolvedScene {
@@ -273,7 +276,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   let progress = run.progress
   const scheduledRun: StableRunState = { ...run, ...proposalFields, ...effects, localState, history, progress: run.progress }
   if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
-    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool.map((conversation) => conversation.id))
+    const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool)
     if (nextConversationId) {
       manifest = appendMainline2Conversation(run.manifest, nextConversationId)
       const nextStory = buildStoryContentForManifest(manifest)

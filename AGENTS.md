@@ -4,6 +4,13 @@
 
 INSTANCE is an interactive narrative game in which the player acts as an AI and selects authored candidate replies to preset real or realistic user conversations. The player cannot freely type replies.
 
+## Stack and entry points
+
+- React 19, TypeScript, Vite, and Vitest; the package manager is npm.
+- `src/main.tsx` mounts `src/app/App.tsx`; global UI styling starts in `src/app/App.css`.
+- `vite.config.ts` serves locally from `/` and builds GitHub Pages assets under `/INSTANCE/`.
+- `.github/workflows/deploy-pages.yml` builds and deploys `main` to GitHub Pages. Do not modify deployment configuration or publish without separate authorization.
+
 ## Start here
 
 Read `D:\xia zai\AI project\Knowledge\AGENTS.md`, then route through `Knowledge\01-Projects\Repository-Index.md` → `INSTANCE.md` → `INSTANCE\AI-HANDOFF.md`. Read `CONTEXT-HISTORY.md` only when historical decisions or rejected directions matter. The current repository files and Git state override Knowledge when they conflict.
@@ -34,6 +41,13 @@ Do not redesign narrative content, resume the paused Narrative Engine work, add 
 ## Verification
 
 Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The current baseline is 37 test files / 212 tests; the build may retain the known Vite large-chunk warning.
+
+## Changes, commits, and configuration
+
+- Keep edits narrowly scoped and preserve existing user changes. Use UTF-8 when reading or editing text.
+- Do not add dependencies, secrets, `.env` files, generated build output, or browser artifacts. `.gitignore` already excludes these local files.
+- Before a commit, run the relevant checks above and inspect the staged diff. Use focused conventional-style commit subjects such as `fix:` or `docs:`.
+- Keep pull requests single-purpose; describe player-visible behavior and verification. Do not merge, push, publish, or alter Pages settings without explicit authorization, except where a separately authorized project-closeout procedure permits it.
 
 ## Knowledge and closeout
 

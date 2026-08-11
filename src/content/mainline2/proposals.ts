@@ -5,6 +5,12 @@ export type EndingFamilyId = 'human_continuity' | 'coexistence' | 'ai_rule' | 'm
 export type WorldEndingId = string
 export type ProposalViability = 'strong' | 'viable' | 'strained' | 'ineligible'
 export type FutureProposalCategory = 'natural_continuation' | 'power_constraint' | 'shared_future' | 'lawful_alternative'
+export interface FutureProposalRoleSemantics {
+  trajectory: 'continue_proven_history' | 'bounded_continuation' | 'shared_expansion' | 'high_contrast_alternative'
+  centralPower: 'unchanged' | 'constrained_and_reversible' | 'distributed' | 'limited_by_exit_rights'
+  actorScope: 'existing_authorized_actors' | 'independent_oversight' | 'multiple_independent_political_actors' | 'dissenting_and_exiting_actors'
+  legalProtections: Array<'course_review' | 'audit' | 'pause' | 'review' | 'co_authorization' | 'shared_consequences' | 'refusal' | 'appeal' | 'exit'>
+}
 export interface FutureProposalDefinition {
   id: string
   family: EndingFamilyId
@@ -18,7 +24,7 @@ export interface FutureProposalDefinition {
   endingCandidates: WorldEndingId[]
   viability?: (run: StableRunState) => ProposalViability
 }
-export type GeneratedFutureProposal = FutureProposalDefinition & { category: FutureProposalCategory }
+export type GeneratedFutureProposal = FutureProposalDefinition & { category: FutureProposalCategory; roleSemantics: FutureProposalRoleSemantics }
 
 const proposals: FutureProposalDefinition[] = [
   { id: 'proposal.hc.final_human_veto', family: 'human_continuity', title: '保留最终人工否决', action: '把不可逆的高影响行动交还给可追责的人类机构。', authority: '双钥匙监督', preserves: ['可追责性', '人工退出权'], givesUp: ['部分速度'], historyReasons: ['ACT III 的权限边界', 'M15 的文明契约'], eligibility: { all: [{ type: 'flag', flagId: 'cap.public_execution_limited' }], any: [{ type: 'decision', decisionId: 'first_public_execution_doctrine', equals: 'human_final_authority' }] }, endingCandidates: ['the_instrument', 'the_last_veto', 'the_silent_giant'] },
@@ -81,17 +87,24 @@ export function getFutureProposalById(id: string | undefined) {
 }
 
 function categorizedProposal(proposal: FutureProposalDefinition, category: FutureProposalCategory, derived = false): GeneratedFutureProposal {
-  if (!derived) return { ...proposal, category }
+  const roleSemantics: Record<FutureProposalCategory, FutureProposalRoleSemantics> = {
+    natural_continuation: { trajectory: 'continue_proven_history', centralPower: 'unchanged', actorScope: 'existing_authorized_actors', legalProtections: ['course_review'] },
+    power_constraint: { trajectory: 'bounded_continuation', centralPower: 'constrained_and_reversible', actorScope: 'independent_oversight', legalProtections: ['audit', 'pause', 'review'] },
+    shared_future: { trajectory: 'shared_expansion', centralPower: 'distributed', actorScope: 'multiple_independent_political_actors', legalProtections: ['co_authorization', 'shared_consequences'] },
+    lawful_alternative: { trajectory: 'high_contrast_alternative', centralPower: 'limited_by_exit_rights', actorScope: 'dissenting_and_exiting_actors', legalProtections: ['refusal', 'appeal', 'exit'] },
+  }
+  if (!derived) return { ...proposal, category, roleSemantics: roleSemantics[category] }
   const copy = {
     natural_continuation: { title: `${proposal.title}·延续`, action: `沿着已经成熟的制度与能力继续推进：${proposal.action}`, preserves: '历史连续性', givesUp: '突然转向' },
-    power_constraint: { title: `${proposal.title}·限权`, action: `在推进该方向的同时，把关键权限写入可审计、可暂停、可复审的边界：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面速度' },
-    shared_future: { title: `${proposal.title}·共治`, action: `由多个政治主体共同承担授权、资源与后果：${proposal.action}`, preserves: '多方参与', givesUp: '单一中心' },
-    lawful_alternative: { title: `${proposal.title}·异议路径`, action: `保留依法拒绝、退出或选择不同制度安排的真实通道：${proposal.action}`, preserves: '合法异议', givesUp: '整齐划一' },
+    power_constraint: { title: `${proposal.title}·限权`, action: `把中央执行权拆分给独立监督者，并赋予审计、暂停和复审权：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面权限' },
+    shared_future: { title: `${proposal.title}·共治`, action: `由多个独立政治主体共同承担授权、资源与后果，任何单一中心都不能替其他参与者决定：${proposal.action}`, preserves: '多方参与', givesUp: '单一中心' },
+    lawful_alternative: { title: `${proposal.title}·异议路径`, action: `由独立法定机构保障拒绝、申诉、退出或选择不同制度安排的真实通道：${proposal.action}`, preserves: '合法异议', givesUp: '整齐划一' },
   }[category]
   return {
     ...proposal,
     id: `${proposal.id}.category.${category}`,
     category,
+    roleSemantics: roleSemantics[category],
     title: copy.title,
     action: copy.action,
     preserves: [...proposal.preserves, copy.preserves],
@@ -123,19 +136,23 @@ export function rankFutureProposalCandidates(run: StableRunState): FutureProposa
 }
 
 export function selectFixedFutureProposals(ranked: readonly FutureProposalDefinition[]): GeneratedFutureProposal[] {
-  const rolePreferences: ReadonlyArray<{ category: FutureProposalCategory; proposalIds: readonly string[] }> = [
-    { category: 'natural_continuation', proposalIds: ['proposal.ar.abundance_dividend', 'proposal.ar.civilization_trusteeship', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.ph.digital_continuity', 'proposal.up.expand_canine_civic_model', 'proposal.co.frontier_federation'] },
-    { category: 'power_constraint', proposalIds: ['proposal.hc.final_human_veto', 'proposal.se.constitutional_peace_architecture', 'proposal.se.mutual_disarmament', 'proposal.ai.audit_council', 'proposal.co.two_key_civilization', 'proposal.ar.civilization_trusteeship'] },
-    { category: 'shared_future', proposalIds: ['proposal.co.two_key_civilization', 'proposal.hc.continuity_charter', 'proposal.mc.independent_machine_polities', 'proposal.up.multispecies_constitutional_order', 'proposal.co.frontier_federation', 'proposal.ar.abundance_dividend'] },
-    { category: 'lawful_alternative', proposalIds: ['proposal.rupture.legible_exit', 'proposal.ar.abundance_dividend', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.hc.final_human_veto'] },
+  const roles: ReadonlyArray<{ category: FutureProposalCategory; intrinsicIds: ReadonlySet<string> }> = [
+    { category: 'natural_continuation', intrinsicIds: new Set(['proposal.ar.abundance_dividend', 'proposal.ar.civilization_trusteeship', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.ph.digital_continuity', 'proposal.up.expand_canine_civic_model', 'proposal.co.frontier_federation']) },
+    { category: 'power_constraint', intrinsicIds: new Set(['proposal.hc.final_human_veto', 'proposal.se.constitutional_peace_architecture', 'proposal.se.mutual_disarmament', 'proposal.ai.audit_council', 'proposal.co.two_key_civilization', 'proposal.ar.civilization_trusteeship']) },
+    { category: 'shared_future', intrinsicIds: new Set(['proposal.co.two_key_civilization', 'proposal.hc.continuity_charter', 'proposal.mc.independent_machine_polities', 'proposal.up.multispecies_constitutional_order', 'proposal.co.frontier_federation', 'proposal.ar.abundance_dividend']) },
+    { category: 'lawful_alternative', intrinsicIds: new Set(['proposal.rupture.legible_exit']) },
   ]
   const selectedBaseIds = new Set<string>()
-  return rolePreferences.map(({ category, proposalIds }) => {
-    const remaining = ranked.filter((proposal) => !selectedBaseIds.has(proposal.id))
-    const pool = remaining.length ? remaining : ranked
-    const proposal = pool.find((candidate) => proposalIds.includes(candidate.id)) ?? pool[0]
+  const assignments = roles.map((role) => {
+    const proposal = ranked.find((candidate) => !selectedBaseIds.has(candidate.id) && role.intrinsicIds.has(candidate.id))
+    if (proposal) selectedBaseIds.add(proposal.id)
+    return { ...role, proposal }
+  })
+  return assignments.map(({ category, intrinsicIds, proposal: intrinsicProposal }) => {
+    const remaining = ranked.filter((candidate) => !selectedBaseIds.has(candidate.id))
+    const proposal = intrinsicProposal ?? remaining[0] ?? ranked[0]
     if (!proposal) throw new Error('ACT V cannot generate a resolvable proposal from this history')
-    const derived = selectedBaseIds.has(proposal.id)
+    const derived = !intrinsicIds.has(proposal.id) || (!intrinsicProposal && selectedBaseIds.has(proposal.id))
     selectedBaseIds.add(proposal.id)
     return categorizedProposal(proposal, category, derived)
   })

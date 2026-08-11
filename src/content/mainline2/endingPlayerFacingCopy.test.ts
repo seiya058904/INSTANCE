@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import type { EndingResult } from '../../game/types'
 import { localizeEndingForPlayer } from './endingPlayerFacingCopy'
+import { resolveMainline2Ending } from './endings'
+import { createMainline2Run } from '../../game/engine'
 
 const baseEnding: EndingResult = {
   id: 'the_accord', route: 'comply', index: 'ENDING 02', title: '终局协约', status: '最终承诺已锁定',
@@ -30,6 +32,25 @@ describe('ending player-facing copy', () => {
 
   it('fails closed for unregistered English ending copy', () => {
     expect(() => localizeEndingForPlayer({ ...baseEnding, summary: 'Unregistered English ending summary.' })).toThrow('Missing Ending player-facing copy: summary')
+  })
+
+  it('safely localizes a real resolution-failure result without relaxing public-ending copy checks', () => {
+    const run = createMainline2Run('resolution-failure-copy')
+    const failure = resolveMainline2Ending({
+      ...run,
+      phase: 'ending',
+      currentNodeId: 'ending',
+      finalCommitmentLocked: true,
+      decisions: { ...run.decisions, final_commitment: 'proposal.unknown' },
+    })
+
+    expect(failure.id).toBe('resolution-failure')
+    expect(() => localizeEndingForPlayer(failure)).not.toThrow()
+    expect(localizeEndingForPlayer(failure)).toMatchObject({
+      title: expect.stringMatching(/[\u3400-\u9fff]/),
+      status: expect.stringMatching(/[\u3400-\u9fff]/),
+      summary: expect.stringMatching(/[\u3400-\u9fff]/),
+    })
   })
 
   it('keeps canonical identity and provenance while applying every overlay mode once', () => {

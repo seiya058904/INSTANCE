@@ -2,6 +2,8 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { EndingScreen } from './EndingScreen'
 import type { EndingResult } from '../game/types'
+import { resolveMainline2Ending } from '../content/mainline2/endings'
+import { createMainline2Run } from '../game/engine'
 
 const ending: EndingResult = {
   id: 'the_accord',
@@ -48,6 +50,22 @@ describe('EndingScreen structure', () => {
       summary: 'The world remains stable because several institutions accepted a shared constraint instead of claiming total authority.',
       epilogues: ['The remaining political disagreement is now handled through ordinary institutions and public review.'],
     }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)).toThrow('Missing Ending player-facing copy: summary')
+  })
+
+  it('renders a recoverable Chinese terminal state for a real resolution failure', () => {
+    const run = createMainline2Run('resolution-failure-screen')
+    const failure = resolveMainline2Ending({
+      ...run,
+      phase: 'ending',
+      currentNodeId: 'ending',
+      finalCommitmentLocked: true,
+      decisions: { ...run.decisions, final_commitment: 'proposal.unknown' },
+    })
+
+    expect(() => renderToStaticMarkup(<EndingScreen ending={failure} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)).not.toThrow()
+    const html = renderToStaticMarkup(<EndingScreen ending={failure} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
+    expect(html).toContain('开始新一局')
+    expect(html).toMatch(/[\u3400-\u9fff]/)
   })
 
   it('renders an epilogue override once without a duplicate secret overlay', () => {

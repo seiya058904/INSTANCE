@@ -1,7 +1,10 @@
 import { renderToStaticMarkup } from 'react-dom/server'
-import { describe, expect, it } from 'vitest'
-import { App, recordEndingCompletion } from './App'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { App, recordEndingCompletion, shouldRenderEndingScreen } from './App'
 import { createMainline2Run } from '../game/engine'
+import { serializeRun } from '../game/storage'
+
+afterEach(() => vi.unstubAllGlobals())
 
 describe('initial product surface', () => {
   it('renders a mature assistant shell with static world UI and real response controls', () => {
@@ -27,5 +30,31 @@ describe('initial product surface', () => {
     expect(completed.run.completedEndingIds).toHaveLength(1)
     expect(completed.meta.completedEndings).toHaveLength(1)
     expect(completedAgain.meta.completedEndings).toHaveLength(1)
+  })
+
+  it('restores an old resolution-failure ending save into a visible recovery screen', () => {
+    const run = createMainline2Run('legacy-ending-recovery')
+    const saved = serializeRun({
+      ...run,
+      phase: 'ending' as const,
+      currentNodeId: 'ending',
+      finalCommitmentLocked: true,
+      decisions: { ...run.decisions, final_commitment: 'proposal.unknown' },
+    })
+    vi.stubGlobal('window', {
+      location: { search: '' },
+      localStorage: { getItem: (key: string) => key === 'instance:run:v1' ? saved : null },
+    })
+
+    const html = renderToStaticMarkup(<App />)
+
+    expect(html).toContain('结局结算异常')
+    expect(html).toContain('开始新一局')
+  })
+
+  it('does not leave the ending handoff on a null presentation frame after the final assistant reply', () => {
+    expect(shouldRenderEndingScreen('ending', true, 'ready')).toBe(true)
+    expect(shouldRenderEndingScreen('ending', false, undefined)).toBe(true)
+    expect(shouldRenderEndingScreen('ending', true, 'assistant-streaming')).toBe(false)
   })
 })

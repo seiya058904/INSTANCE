@@ -45,6 +45,7 @@ import {
   SECRET_ENDINGS,
   evaluateSecretEnding,
   resolveMainline2Ending,
+  isFinalCommitmentResolvable,
   resolveSecretEnding,
 } from '../content/mainline2/endings'
 
@@ -161,6 +162,19 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(result.resolution?.status).toBe('failure')
     expect(result.resolution?.rejectedCandidates).toEqual(expect.any(Array))
     expect(result.worldEndingId).toBeUndefined()
+  })
+
+  it('does not treat a dormant-only proposal as a lockable Final Commitment', () => {
+    const run = createMainline2Run('dormant-final-commitment')
+    const digitalContinuityRun = { ...run, flags: [...run.flags, 'cap.human_enhancement_access'] }
+
+    expect(isFinalCommitmentResolvable(digitalContinuityRun, 'proposal.ph.digital_continuity')).toBe(false)
+    expect(isFinalCommitmentResolvable({
+      ...run,
+      flags: [...run.flags, 'cap.global_coordination_access'],
+      decisions: { ...run.decisions, first_public_execution_doctrine: 'conditional_delegation', cascade_authority: 'human_command' },
+      events: [{ type: 'decision.first_public_execution_doctrine' }],
+    }, 'proposal.co.two_key_civilization')).toBe(true)
   })
 
   it('keeps the public ending identity separate from an authored Secret overlay', () => {

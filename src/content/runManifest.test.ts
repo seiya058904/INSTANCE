@@ -8,6 +8,7 @@ import {
   ordinaryConversationPool,
   recordRunExposure,
 } from './runManifest'
+import { activeRunConversations } from './activeRun'
 
 describe('cross-run manifest selection', () => {
   it('leaves more ordinary breathing room between later mainline anchors', () => {
@@ -38,6 +39,22 @@ describe('cross-run manifest selection', () => {
     expect(ordinaryConversationPool.length).toBeGreaterThanOrEqual(63)
     expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('batch03:')))).toHaveLength(15)
     expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('humor01:')))).toHaveLength(12)
+  })
+
+  it('never repeats a user message inside visible ordinary-conversation content', () => {
+    const duplicates = ordinaryConversationPool.flatMap((conversation) => conversation.nodes
+      .filter((node) => node.userContent?.some((part) => part.text === node.userMessage))
+      .map((node) => `${conversation.id}:${node.id}`))
+
+    expect(duplicates).toEqual([])
+  })
+
+  it('never repeats a user message inside visible legacy-run content', () => {
+    const duplicates = activeRunConversations.flatMap((conversation) => conversation.nodes
+      .filter((node) => node.userContent?.some((part) => part.text === node.userMessage))
+      .map((node) => `${conversation.id}:${node.id}`))
+
+    expect(duplicates).toEqual([])
   })
 
   it('creates three 26-conversation runs with stable anchors and no adjacent ordinary repeats', () => {

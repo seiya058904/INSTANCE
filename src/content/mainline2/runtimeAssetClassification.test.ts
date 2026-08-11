@@ -52,6 +52,14 @@ describe('Mainline runtime asset boundary', () => {
     expect(() => applyMainlinePlayerFacingCopy(fixture)).toThrow('ML2-NESTED:node-02:user-content:0')
   })
 
+  it('never repeats a Mainline user message inside visible user content', () => {
+    const duplicates = MAINLINE2_LIBRARY.flatMap((conversation) => conversation.nodes
+      .filter((node) => node.userContent?.some((part) => part.text === node.userMessage))
+      .map((node) => `${conversation.id}:${node.id}`))
+
+    expect(duplicates).toEqual([])
+  })
+
   it('keeps authored asset coverage while excluding support-only ending assets from the playable pool', () => {
     expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(330)
 

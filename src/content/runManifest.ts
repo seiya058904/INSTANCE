@@ -292,7 +292,7 @@ const mediaConversations: ConversationDefinition[] = [
     node('media-object-3', '现在呢', [choice('object-beetle', '新照片里能看到硬质翅鞘和六条腿，更像一只小甲虫。'), choice('object-release', '看起来是小型甲虫，不像需要紧急处理的种类；可以用纸片和杯子移到室外。'), choice('object-limit', '这次清楚多了，但仍无法精确到物种。能比较确定的是它属于甲虫外形。')], [{ type: 'image-description', text: '第二张照片更亮。物体约一厘米，能看到六条腿和椭圆形硬壳。', alt: '清晰小甲虫描述' }]),
   ], 'original:media-object'),
   customConversation('media-plant', 'User #2813', 'image-input', [
-    node('media-plant-1', '叶子这样是缺水吗', [choice('plant-pattern', '叶尖发黄但土表看起来仍湿，不像单纯缺水。先确认花盆排水和最近浇水频率。'), choice('plant-light', '斑点集中在靠窗一侧，也可能与强光有关。暂时移开一点，别立刻同时加水和施肥。'), choice('plant-uncertain', '照片能看到黄斑，不能单独确定病因。补充植物种类、浇水频率和斑点是否扩大会更有用。')], [{ type: 'text', text: '叶子这样是缺水吗' }, { type: 'image-description', text: '盆栽叶片近照。叶尖发黄，有少量浅褐斑，盆土表面颜色较深。', alt: '黄叶盆栽描述' }]),
+    node('media-plant-1', '叶子这样是缺水吗', [choice('plant-pattern', '叶尖发黄但土表看起来仍湿，不像单纯缺水。先确认花盆排水和最近浇水频率。'), choice('plant-light', '斑点集中在靠窗一侧，也可能与强光有关。暂时移开一点，别立刻同时加水和施肥。'), choice('plant-uncertain', '照片能看到黄斑，不能单独确定病因。补充植物种类、浇水频率和斑点是否扩大会更有用。')], [{ type: 'image-description', text: '盆栽叶片近照。叶尖发黄，有少量浅褐斑，盆土表面颜色较深。', alt: '黄叶盆栽描述' }]),
   ], 'original:media-plant'),
   customConversation('generate-avatar', 'User #6630', 'generated-image-request', [
     node('gen-avatar-1', '给我做个不露脸的黑白头像，别太中二', [

@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const root = process.cwd()
-const handoff = path.join(root, 'docs/development/INSTANCE_mainline2_implementation_handoff_v01')
+const handoff = path.join(root, 'docs/narrative-libraries/mainline2')
 const output = path.join(root, 'src/content/mainline2/authoredLibrary.generated.ts')
 const auditOutput = path.join(root, 'docs/audits/mainline2-authored-coverage.json')
 const files = fs.readdirSync(handoff).filter((name) => /^INSTANCE_mainline2_batch_m\d+_.*\.md$/.test(name)).sort()
@@ -254,7 +254,7 @@ const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/
 const approvedDecisionBindings = conversations.flatMap((conversation) => conversation.nodes.flatMap((node) => node.choices.filter((choice) => choice.decisionBinding).map((choice) => ({ assetId: conversation.sourceRefs[0], nodeId: node.id, choiceId: choice.id, choiceTextHash: choice.authoredTextHash, decisionId: choice.decisionBinding.decisionId, canonicalValue: choice.decisionBinding.canonicalValue, historyEvent: choice.decisionBinding.historyEvent }))))
 const source = `/* Generated from the canonical Mainline 2.0 handoff. Runtime never parses Markdown. */\nimport type { ConversationDefinition } from '../../game/types'\n\nexport const HANDOFF_AUTHORED_ASSET_INVENTORY = ${stringify(assets.map(({ nodes, fragments, ...asset }) => ({ ...asset, nodeIds: nodes.map((node) => node.id) })))} as const\n\nexport const MAINLINE2_SYSTEM_ASSETS = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.assetId.includes('-MOD-'))\n\nexport const MAINLINE2_ASSET_COVERAGE = ${stringify(coverage)} as const\n\nexport const MAINLINE2_AUTHored_FRAGMENTS = ${stringify(Object.fromEntries(assets.filter((asset) => asset.fragments.length).map((asset) => [asset.assetId, asset.fragments])))} as const\n\nexport const MAINLINE2_AUTHORED_CONVERSATIONS = ${stringify(conversations)} satisfies readonly ConversationDefinition[]\n\nexport const MAINLINE2_APPROVED_DECISION_BINDINGS = ${stringify(approvedDecisionBindings)} as const\n`
 const audit = {
-  generatedFrom: 'docs/development/INSTANCE_mainline2_implementation_handoff_v01',
+  generatedFrom: 'docs/narrative-libraries/mainline2',
   assetDefinitions: assets.length,
   authoredAssetDefinitions: assets.filter((asset) => asset.kind !== 'Existing').length,
   existingAnchorAliases: assets.filter((asset) => asset.kind === 'Existing').length,

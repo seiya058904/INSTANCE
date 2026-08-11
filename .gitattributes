@@ -1,0 +1,2 @@
+# Mainline 2.0's canonical Markdown retains intentional two-space hard breaks.
+docs/narrative-libraries/mainline2/*.md whitespace=-trailing-space

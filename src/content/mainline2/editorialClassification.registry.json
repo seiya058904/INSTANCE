@@ -145,15 +145,15 @@
   {
     "assetId": "ML2-A2-M3-CLOSE-01",
     "classification": "MAINLINE CONSEQUENCE",
-    "narrativePurpose": "在 HEATLINE 的受益者、代价承担者、政治后果与 #0000 审计都出现后关闭 ACT II，把焦点转向 Aster 权力的正式合法性。",
-    "character": "HEATLINE affected users / 林绍衡 / #0000 / Aster",
-    "prerequisite": "Bounded tool execution has reached public-system use.",
-    "payoff": "ACT III 听证会继承的是一项已有公共执行先例及其社会账本，而不是突然开始讨论抽象 AI 权力。",
+    "narrativePurpose": "用 User #5884 的晚饭选择把 ACT II 收回普通生活：鸡蛋、西红柿、面条和半根黄瓜，正好说明前面的公共系统争议最终仍落在一个人今晚怎么吃饭。",
+    "character": "User #5884 / Aster",
+    "prerequisite": "The ACT II public-impact conversation has ended and User #5884 asks for a practical dinner choice.",
+    "payoff": "ACT II 以一段不改变世界的吃饭建议收束，让玩家感到 INSTANCE 仍会回到具体的人和当下，而不是把每个日常问题都抬高成制度宣言。",
     "usedByStoryPlan": true,
     "routeFamilies": [
       "act-ii-public-impact"
     ],
-    "dispositionRationale": "KEEP — HEATLINE 的受益者、代价承担者、政治后果和 #0000 审计必须先汇成同一份社会账本，ACT III 听证会才是在审议已有公共权力，而不是突然讨论抽象 AI 合法性。"
+    "dispositionRationale": "KEEP — 这条收束故意不提供新的世界事实：User #5884 只是问今晚吃什么。它保留了主线在重大制度讨论后回到普通生活的节奏，也防止把每个 closing 都误写成下一幕的制度预告。"
   },
   {
     "assetId": "ML2-A2-M3-DECISION-01",

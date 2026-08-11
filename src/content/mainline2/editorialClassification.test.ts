@@ -224,6 +224,11 @@ describe('Mainline 2.0 editorial classification registry', () => {
       classification: 'MAINLINE CONSEQUENCE',
       narrativePurpose: '把医院、学校和物流试点的结果收束为受限 `public_system_advisory` 能力，明确它仍是建议权而非无条件执行权。',
     })
+    expect(byId.get('ML2-A2-M3-CLOSE-01')).toMatchObject({
+      classification: 'MAINLINE CONSEQUENCE',
+      character: 'User #5884 / Aster',
+      narrativePurpose: '用 User #5884 的晚饭选择把 ACT II 收回普通生活：鸡蛋、西红柿、面条和半根黄瓜，正好说明前面的公共系统争议最终仍落在一个人今晚怎么吃饭。',
+    })
     expect(byId.get('ML2-A4-M10-WE-03')).toMatchObject({
       classification: 'MAINLINE WORLD ECHO',
       character: 'displaced worker / family / Aster',

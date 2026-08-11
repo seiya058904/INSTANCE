@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T16:00:14.887Z",
+  "generatedAt": "2026-08-11T17:35:23.330Z",
   "policy": "strict-three-state-v1",
   "records": [
     {
@@ -2579,14 +2579,6 @@
       "source": "ordinary:batch01:12"
     },
     {
-      "assetId": "batch01:13",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:batch01:13"
-    },
-    {
       "assetId": "batch01:14",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -2763,6 +2755,14 @@
       "source": "ordinary:batch02:17"
     },
     {
+      "assetId": "batch02:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:18"
+    },
+    {
       "assetId": "batch02:20",
       "classification": "NON_MAINLINE",
       "subcategory": "WORK",
@@ -2803,12 +2803,68 @@
       "source": "ordinary:batch02:24"
     },
     {
+      "assetId": "batch03:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:01"
+    },
+    {
+      "assetId": "batch03:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:02"
+    },
+    {
+      "assetId": "batch03:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:03"
+    },
+    {
       "assetId": "batch03:04",
       "classification": "NON_MAINLINE",
       "subcategory": "LIFE",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:batch03:04"
+    },
+    {
+      "assetId": "batch03:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:05"
+    },
+    {
+      "assetId": "batch03:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:06"
+    },
+    {
+      "assetId": "batch03:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:07"
+    },
+    {
+      "assetId": "batch03:08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:08"
     },
     {
       "assetId": "batch03:09",
@@ -2827,6 +2883,22 @@
       "source": "ordinary:batch03:10"
     },
     {
+      "assetId": "batch03:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:11"
+    },
+    {
+      "assetId": "batch03:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:12"
+    },
+    {
       "assetId": "batch03:13",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -2841,6 +2913,14 @@
       "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
       "usedInStoryPlan": false,
       "source": "ordinary:batch03:14"
+    },
+    {
+      "assetId": "batch03:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:15"
     },
     {
       "assetId": "batch03:16",
@@ -2923,6 +3003,22 @@
       "source": "ordinary:batch03:25"
     },
     {
+      "assetId": "humor01:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:01"
+    },
+    {
+      "assetId": "humor01:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:02"
+    },
+    {
       "assetId": "humor01:03",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -2939,12 +3035,28 @@
       "source": "ordinary:humor01:04"
     },
     {
+      "assetId": "humor01:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:05"
+    },
+    {
       "assetId": "humor01:06",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:humor01:06"
+    },
+    {
+      "assetId": "humor01:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:07"
     },
     {
       "assetId": "humor01:08",
@@ -2971,12 +3083,36 @@
       "source": "ordinary:humor01:10"
     },
     {
+      "assetId": "humor01:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:11"
+    },
+    {
       "assetId": "humor01:12",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:humor01:12"
+    },
+    {
+      "assetId": "humor01:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:13"
+    },
+    {
+      "assetId": "humor01:14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:14"
     },
     {
       "assetId": "humor01:15",
@@ -2995,6 +3131,22 @@
       "source": "ordinary:humor01:16"
     },
     {
+      "assetId": "humor01:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:17"
+    },
+    {
+      "assetId": "humor01:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:18"
+    },
+    {
       "assetId": "humor01:19",
       "classification": "NON_MAINLINE",
       "subcategory": "STUDY",
@@ -3003,12 +3155,44 @@
       "source": "ordinary:humor01:19"
     },
     {
+      "assetId": "humor01:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:20"
+    },
+    {
+      "assetId": "humor01:21",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:21"
+    },
+    {
+      "assetId": "humor01:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:22"
+    },
+    {
       "assetId": "humor01:23",
       "classification": "NON_MAINLINE",
       "subcategory": "LIFE",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:humor01:23"
+    },
+    {
+      "assetId": "humor01:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:24"
     },
     {
       "assetId": "humor01:25",
@@ -3259,6 +3443,14 @@
       "source": "ordinary:PL01-10"
     },
     {
+      "assetId": "PL01-11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-11"
+    },
+    {
       "assetId": "PL01-13",
       "classification": "NON_MAINLINE",
       "subcategory": "WRITING",
@@ -3299,12 +3491,44 @@
       "source": "ordinary:PL01-19"
     },
     {
+      "assetId": "PL01-20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-20"
+    },
+    {
       "assetId": "FI01",
       "classification": "NON_MAINLINE",
       "subcategory": "WORK",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:FI01"
+    },
+    {
+      "assetId": "FI02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI02"
+    },
+    {
+      "assetId": "FI04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI04"
+    },
+    {
+      "assetId": "FI05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI05"
     },
     {
       "assetId": "FI07",
@@ -3331,6 +3555,14 @@
       "source": "ordinary:FI09"
     },
     {
+      "assetId": "FI10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI10"
+    },
+    {
       "assetId": "FI12",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -3347,6 +3579,14 @@
       "source": "ordinary:FI15"
     },
     {
+      "assetId": "FI16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI16"
+    },
+    {
       "assetId": "FI17",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
@@ -3355,12 +3595,28 @@
       "source": "ordinary:FI17"
     },
     {
+      "assetId": "FI18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI18"
+    },
+    {
       "assetId": "FI19",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:FI19"
+    },
+    {
+      "assetId": "FI20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI20"
     },
     {
       "assetId": "CM01-01",
@@ -3379,12 +3635,52 @@
       "source": "ordinary:CM01-02"
     },
     {
+      "assetId": "CM01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-03"
+    },
+    {
+      "assetId": "CM01-04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-04"
+    },
+    {
+      "assetId": "CM01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-05"
+    },
+    {
+      "assetId": "CM01-06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-06"
+    },
+    {
       "assetId": "CM01-07",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:CM01-07"
+    },
+    {
+      "assetId": "CM01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-08"
     },
     {
       "assetId": "CM01-12",
@@ -3425,6 +3721,14 @@
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:CM01-16"
+    },
+    {
+      "assetId": "CM01-17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-17"
     },
     {
       "assetId": "CM01-19",
@@ -3683,244 +3987,20 @@
       "source": "ordinary:RUP01-20"
     },
     {
+      "assetId": "batch01:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "authored:batch01:13"
+    },
+    {
       "assetId": "batch02:08",
       "classification": "MAINLINE",
       "subcategory": "STUDY",
       "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
       "usedInStoryPlan": true,
       "source": "mainline:batch02:08"
-    },
-    {
-      "assetId": "batch02:18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch02:18"
-    },
-    {
-      "assetId": "batch03:01",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:01"
-    },
-    {
-      "assetId": "batch03:02",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:02"
-    },
-    {
-      "assetId": "batch03:03",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:03"
-    },
-    {
-      "assetId": "batch03:05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:05"
-    },
-    {
-      "assetId": "batch03:06",
-      "classification": "NON_MAINLINE",
-      "subcategory": "STUDY",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:06"
-    },
-    {
-      "assetId": "batch03:07",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:07"
-    },
-    {
-      "assetId": "batch03:08",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:08"
-    },
-    {
-      "assetId": "batch03:11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:11"
-    },
-    {
-      "assetId": "batch03:12",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WORK",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:12"
-    },
-    {
-      "assetId": "batch03:15",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:15"
-    },
-    {
-      "assetId": "humor01:01",
-      "classification": "NON_MAINLINE",
-      "subcategory": "LIFE",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:01"
-    },
-    {
-      "assetId": "humor01:02",
-      "classification": "NON_MAINLINE",
-      "subcategory": "LIFE",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:02"
-    },
-    {
-      "assetId": "humor01:05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:05"
-    },
-    {
-      "assetId": "humor01:07",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:07"
-    },
-    {
-      "assetId": "humor01:11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:11"
-    },
-    {
-      "assetId": "humor01:13",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:13"
-    },
-    {
-      "assetId": "humor01:14",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:14"
-    },
-    {
-      "assetId": "humor01:17",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:17"
-    },
-    {
-      "assetId": "humor01:18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:18"
-    },
-    {
-      "assetId": "humor01:20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "STUDY",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:20"
-    },
-    {
-      "assetId": "humor01:21",
-      "classification": "MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:21"
-    },
-    {
-      "assetId": "humor01:22",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:22"
-    },
-    {
-      "assetId": "humor01:24",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:24"
-    },
-    {
-      "assetId": "PL01-11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:PL01-11"
-    },
-    {
-      "assetId": "PL01-20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:PL01-20"
-    },
-    {
-      "assetId": "FI02",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI02"
-    },
-    {
-      "assetId": "FI04",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI04"
-    },
-    {
-      "assetId": "FI05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI05"
     },
     {
       "assetId": "FI06",
@@ -3931,92 +4011,12 @@
       "source": "ordinary:FI06"
     },
     {
-      "assetId": "FI10",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI10"
-    },
-    {
       "assetId": "FI13",
       "classification": "NON_MAINLINE",
       "subcategory": "WRITING",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
       "usedInStoryPlan": false,
       "source": "ordinary:FI13"
-    },
-    {
-      "assetId": "FI16",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI16"
-    },
-    {
-      "assetId": "FI18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI18"
-    },
-    {
-      "assetId": "FI20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI20"
-    },
-    {
-      "assetId": "CM01-03",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-03"
-    },
-    {
-      "assetId": "CM01-04",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-04"
-    },
-    {
-      "assetId": "CM01-05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-05"
-    },
-    {
-      "assetId": "CM01-06",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-06"
-    },
-    {
-      "assetId": "CM01-08",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WORK",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-08"
-    },
-    {
-      "assetId": "CM01-17",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-17"
     },
     {
       "assetId": "ML2-A4-M10-ECON-01",

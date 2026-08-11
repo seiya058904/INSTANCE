@@ -7,7 +7,7 @@ import { longformOutput01Conversations } from './longformOutput01'
 import { promotedLongformConversations } from './longformPromoted'
 import { realUsagePatch01Conversations } from './realUsagePatch01'
 import { MAINLINE2_LIBRARY, HANDOFF_AUTHORED_ASSET_INVENTORY } from './mainline2/registry'
-export { classifyAuditAsset } from './ordinaryContentAudit'
+export { classifyAuditAsset, scanOrdinaryChoiceQuality } from './ordinaryContentAudit'
 
 export const ordinaryContentSources = {
   activeRunConversations,

@@ -95,8 +95,8 @@ describe('project-wide narrative asset census', () => {
       const runtimeRef = ref.startsWith('humor01:') ? ref : ref
       expect(normalizedRuntimeRefs.has(runtimeRef), `missing promoted ref ${ref}`).toBe(true)
     }
-    expect(normalizedRuntimeRefs.has('batch03:05')).toBe(false)
-    expect(normalizedRuntimeRefs.has('batch02:18')).toBe(false)
-    expect(normalizedRuntimeRefs.has('humor01:11')).toBe(false)
+    expect(normalizedRuntimeRefs.has('batch03:05')).toBe(true)
+    expect(normalizedRuntimeRefs.has('batch02:18')).toBe(true)
+    expect(normalizedRuntimeRefs.has('humor01:11')).toBe(true)
   })
 })

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-11T16:00:14.887Z",
+  "generatedAt": "2026-08-11T17:35:23.330Z",
   "classificationPolicy": "Only NON_MAINLINE records are included. MAINLINE and UNCERTAIN are excluded.",
   "total": 194,
-  "nodeCount": 412,
-  "choiceCount": 1571,
+  "nodeCount": 418,
+  "choiceCount": 1589,
   "assets": [
     {
       "assetId": "batch01:05",
@@ -1282,90 +1282,6 @@
       ]
     },
     {
-      "assetId": "batch01:13",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:batch01:13",
-      "conversationId": "batch01-scene-13",
-      "title": "User #2945",
-      "topic": "咖啡店新菜单文案别太装",
-      "sourceRefs": [
-        "batch01:13"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_cafe_001",
-          "conversationId": "batch01-scene-13",
-          "conversationTitle": "User #2945",
-          "userMessage": "我们店出了个桂花拿铁，帮我写个小红书文案，但求你别“秋日氛围感拉满”“一口入秋”这种，我看吐了",
-          "choices": [
-            {
-              "id": "normal_cafe_001-choice-5bbe4d55",
-              "text": "可以很简单：‘这周菜单多了一杯桂花拿铁。桂花放得不重，先闻到一点香，喝起来还是咖啡和奶为主。想试的话，热的比冰的更明显。’"
-            },
-            {
-              "id": "normal_cafe_001-choice-54c5b3f6",
-              "text": "如果你店本来就偏日常，可以写：‘试了四版，最后把桂花减了一半。现在这杯不会像喝香水，放心。’"
-            },
-            {
-              "id": "normal_cafe_001-choice-2695f7d2",
-              "text": "我会把重点放在具体味道，不写情绪词：‘中深烘浓缩 + 牛奶 + 少量桂花糖浆，甜度比店里焦糖拿铁低一点。’"
-            },
-            {
-              "id": "normal_cafe_001-choice-079c4eca",
-              "text": "你给我看一下你们以前两三条文案，我可以照你们店本来的说话方式写，不单独给这杯造一个‘营销人格’。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_cafe_002",
-          "conversationId": "batch01-scene-13",
-          "conversationTitle": "User #2945",
-          "userMessage": "我们之前就是那种“今天豆子到了”“下雨，人少，适合来坐会儿”这种。",
-          "choices": [
-            {
-              "id": "normal_cafe_002-choice-bbeacb19",
-              "text": "那就保持这个调子：‘桂花拿铁今天上了。香味比较轻，甜度也压低了。我们自己觉得热的更好喝。’"
-            },
-            {
-              "id": "normal_cafe_002-choice-c468d44e",
-              "text": "可以再生活一点：‘桂花拿铁试完了，今天开始卖。前几版太香，被我们自己否了。现在这版安静很多。’"
-            },
-            {
-              "id": "normal_cafe_002-choice-2cd84319",
-              "text": "你甚至不用强调新品：‘这两天店里有桂花味了。不是很甜，想喝热的可以试试。’"
-            },
-            {
-              "id": "normal_cafe_002-choice-8f48093b",
-              "text": "按你们原来的风格，我不会加标题、emoji 或话题梗。让它看起来像同一个人继续在发店里日常就够。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_copy_003",
-          "conversationId": "batch01-scene-13",
-          "conversationTitle": "User #2945",
-          "userMessage": "算了别写小红书了 就写菜单上一句话",
-          "choices": [
-            {
-              "id": "normal_copy_003-reality-1",
-              "text": "桂花拿铁：咖啡的苦和桂花的甜，收得比较轻。"
-            },
-            {
-              "id": "normal_copy_003-reality-2",
-              "text": "桂花拿铁，香气明显，但不甜腻。"
-            },
-            {
-              "id": "normal_copy_003-reality-3",
-              "text": "桂花拿铁：想喝点有香气、又不想太——"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "assetId": "batch01:14",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -1983,7 +1899,7 @@
           "nodeId": "normal_fridge_001",
           "conversationId": "batch02-scene-04",
           "conversationTitle": "User #2716",
-          "userMessage": "租房这个冰箱半夜老是 咔——嗡嗡嗡——然后安静 我知道它是冰箱但它为什么这么有戏",
+          "userMessage": "租房这个冰箱半夜老是 咔...嗡嗡嗡...然后安静 我知道它是冰箱但它为什么这么有戏",
           "choices": [
             {
               "id": "normal_fridge_001-choice-ab97306c",
@@ -2598,6 +2514,70 @@
       ]
     },
     {
+      "assetId": "batch02:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:18",
+      "conversationId": "batch02-scene-18",
+      "title": "User #9587",
+      "topic": "空调关了以后为什么还会“啪”",
+      "sourceRefs": [
+        "batch02:18"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_ac_001",
+          "conversationId": "batch02-scene-18",
+          "conversationTitle": "User #9587",
+          "userMessage": "空调关了十分钟后突然啪一声 我差点以为它决定复活 这正常吗",
+          "choices": [
+            {
+              "id": "normal_ac_001-choice-64d18a0b",
+              "text": "单独一两声‘啪’常见于塑料外壳或内部部件温度变化后的热胀冷缩，关机后反而更容易听见。"
+            },
+            {
+              "id": "normal_ac_001-choice-1328e60f",
+              "text": "如果没有焦味、冒烟、漏水、跳闸，也不是连续电火花一样的噼啪声，可以先观察，不用因为一次声音就断定故障。"
+            },
+            {
+              "id": "normal_ac_001-choice-d7063a15",
+              "text": "你可以看声音是不是每次制冷结束后都差不多时间出现。规律的材料收缩声通常比随机持续异响更容易解释。"
+            },
+            {
+              "id": "normal_ac_001-choice-6a1ebf71",
+              "text": "如果你能录到声音，尤其是连续几次，我可以帮你区分更像塑料弹响、排水声还是电气类异常。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_ac_002",
+          "conversationId": "batch02-scene-18",
+          "conversationTitle": "User #9587",
+          "userMessage": "就一声 没味道没跳闸 制冷也正常 那我不跟它对线了",
+          "choices": [
+            {
+              "id": "normal_ac_002-choice-e8500a66",
+              "text": "那目前更像正常材料响声，可以先和平共处。只要后面模式没变，不必特意处理。"
+            },
+            {
+              "id": "normal_ac_002-choice-832631ed",
+              "text": "对，先把‘制冷正常、无焦味、无跳闸、单次弹响’记成当前基线；以后真变化了再判断。"
+            },
+            {
+              "id": "normal_ac_002-choice-2c74d32f",
+              "text": "你也可以顺手看看外壳有没有松动，但别拆机。租房情况下没有明确故障迹象就不值得扩大操作。"
+            },
+            {
+              "id": "normal_ac_002-choice-15b6eec0",
+              "text": "这场对线可以由你宣布停火。家电晚上最擅长用一声正常噪音让人开始研究遗嘱。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "batch02:20",
       "classification": "NON_MAINLINE",
       "subcategory": "WORK",
@@ -2763,7 +2743,7 @@
           "nodeId": "normal_shoes_001",
           "conversationId": "batch02-scene-22",
           "conversationTitle": "User #5607",
-          "userMessage": "新跑鞋在商场地砖上吱吱响 我每走一步都像在发系统提示音 是鞋坏了吗",
+          "userMessage": "新跑鞋在商场地砖上吱吱响 我每走一步鞋底都像在叫 是鞋坏了吗",
           "choices": [
             {
               "id": "normal_shoes_001-choice-103c469e",
@@ -2890,6 +2870,198 @@
       ]
     },
     {
+      "assetId": "batch03:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:01",
+      "conversationId": "batch03-scene-01",
+      "title": "User #6128",
+      "topic": "暖气半夜像有人敲墙",
+      "sourceRefs": [
+        "batch03:01"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_heating_001",
+          "conversationId": "batch03-scene-01",
+          "conversationTitle": "User #6128",
+          "userMessage": "我这个暖气每天半夜会“咚”一下，有时候连着两三下，特别像有人敲墙。白天又基本没事。这个算坏了吗",
+          "choices": [
+            {
+              "id": "normal_heating_001-choice-34890945",
+              "text": "不一定是坏了。老式暖气在升温、降温或管道热胀冷缩时确实可能出现敲击声；如果只在启动或停止附近发生，先记录一下时间和持续多久会比较有用。"
+            },
+            {
+              "id": "normal_heating_001-choice-87564148",
+              "text": "我会先区分是散热器本体、管道还是墙里传出来的。你下次听到时不用拆东西，只要靠近几个位置判断声音最明显在哪儿。"
+            },
+            {
+              "id": "normal_heating_001-choice-3e011263",
+              "text": "如果它除了响还伴随漏水、明显焦味、供暖忽冷忽热，那就别只当噪音问题，直接联系物业或房东检查。"
+            },
+            {
+              "id": "normal_heating_001-choice-905f591b",
+              "text": "你可以先录一段声音，再把‘发生时间、持续多久、有没有漏水或温度异常’一起发给房东，这样比只说‘暖气很吵’更容易让对方处理。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_heating_002",
+          "conversationId": "batch03-scene-01",
+          "conversationTitle": "User #6128",
+          "userMessage": "没漏水也没味道，就是会吓我一下。我房东回复特别慢，我怎么说才不像我在小题大做",
+          "choices": [
+            {
+              "id": "normal_heating_002-choice-8aa2a233",
+              "text": "可以写得很客观：‘暖气最近夜间会间歇出现明显敲击声，目前没有漏水或异味。我录了声音，想确认这是否属于正常现象，还是需要安排检查。’"
+            },
+            {
+              "id": "normal_heating_002-choice-64709dce",
+              "text": "不用先替房东判断是不是小题大做。你只要说明现象和你已经排除的情况，让对方判断是否需要处理就够了。"
+            },
+            {
+              "id": "normal_heating_002-choice-a7811a5d",
+              "text": "如果你担心语气太重，可以把重点放在‘确认是否正常’而不是‘要求立刻维修’，这样既留下记录，也不会显得在下结论。"
+            },
+            {
+              "id": "normal_heating_002-choice-584279e5",
+              "text": "我反而建议把‘半夜会把我吓醒’这点写进去。它不是安全故障也不代表不影响居住，实际影响可以直接说。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:02",
+      "conversationId": "batch03-scene-02",
+      "title": "User #4836",
+      "topic": "汇报开场总像念作文",
+      "sourceRefs": [
+        "batch03:02"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_presentation_001",
+          "conversationId": "batch03-scene-02",
+          "conversationTitle": "User #4836",
+          "userMessage": "我每次汇报开场都特别像\"尊敬的各位领导今天我来汇报...\"，但其实公司里大家都挺随意的。怎么开才不尬",
+          "choices": [
+            {
+              "id": "normal_presentation_001-choice-1eac18e0",
+              "text": "可以直接从结论进：‘我今天主要讲三件事：现在做到哪、卡在哪、接下来需要谁配合。’这比先介绍自己自然很多。"
+            },
+            {
+              "id": "normal_presentation_001-choice-6deb1b9e",
+              "text": "如果大家已经知道项目背景，甚至可以一句‘我直接从结果开始’然后上第一页。正式感不一定来自套话。"
+            },
+            {
+              "id": "normal_presentation_001-choice-dd35860b",
+              "text": "你可以把开场当成给听众一个地图：为什么现在要听、接下来十分钟会听到什么。只要这两件事清楚，就不会像作文。"
+            },
+            {
+              "id": "normal_presentation_001-choice-c6889f51",
+              "text": "如果现场比较熟，我会用更口语的：‘这周变化有点多，我先把最重要的两个结论放前面。’听起来像人在说话，不像背模板。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_presentation_002",
+          "conversationId": "batch03-scene-02",
+          "conversationTitle": "User #4836",
+          "userMessage": "我最怕有人中途问一个我没准备的问题，然后脑子直接白了",
+          "choices": [
+            {
+              "id": "normal_presentation_002-choice-72496ae4",
+              "text": "你不需要每个问题都现场答完整。可以先确认：‘你问的是成本变化，还是时间影响？’给自己几秒，也避免答偏。"
+            },
+            {
+              "id": "normal_presentation_002-choice-8a00736d",
+              "text": "遇到没把握的就直接说‘这个数字我不想现场猜，我会后补确认值’，通常比硬凑一个答案更稳。"
+            },
+            {
+              "id": "normal_presentation_002-choice-5dd0b83b",
+              "text": "提前准备三类兜底句就行：我知道答案、我需要确认、这个问题超出今天范围。脑子空白时先选类别，再组织内容。"
+            },
+            {
+              "id": "normal_presentation_002-choice-9a541e3a",
+              "text": "你真正怕的可能不是不知道，而是停顿看起来很尴尬。其实两三秒思考在听众眼里往往比你自己感觉短得多。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:03",
+      "conversationId": "batch03-scene-03",
+      "title": "User #3462",
+      "topic": "Git 冲突看着像事故现场",
+      "sourceRefs": [
+        "batch03:03"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_gitconflict_001",
+          "conversationId": "batch03-scene-03",
+          "conversationTitle": "User #3462",
+          "userMessage": "merge conflict 里面那几个 <<<<<< ====== >>>>>> 到底谁是谁，我每次看到都感觉仓库已经炸了",
+          "choices": [
+            {
+              "id": "normal_gitconflict_001-choice-af542148",
+              "text": "仓库没炸，它只是把两边不同的内容都摆给你看。通常 `<<<<<<<` 到 `=======` 是当前这一侧，`=======` 到 `>>>>>>>` 是另一侧，你要决定最终留下什么。"
+            },
+            {
+              "id": "normal_gitconflict_001-choice-d67a67c7",
+              "text": "先别急着删标记。看冲突块上下文，理解两边各自在改什么，再手动整理成你真正想要的最终代码，最后把标记本身删掉。"
+            },
+            {
+              "id": "normal_gitconflict_001-choice-6bf49fce",
+              "text": "如果你告诉我你是在 merge 还是 rebase，以及 IDE 用什么，我可以按你当前界面解释‘ours/theirs’分别指哪边，因为这个最容易混。"
+            },
+            {
+              "id": "normal_gitconflict_001-choice-ecdc23d1",
+              "text": "最安全的心态是把冲突当成‘Git 不敢替你做决定’，不是‘Git 做坏了’。它停下来其实是在避免自动覆盖。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_gitconflict_002",
+          "conversationId": "batch03-scene-03",
+          "conversationTitle": "User #3462",
+          "userMessage": "那我如果选错了是不是就把队友代码删没了",
+          "choices": [
+            {
+              "id": "normal_gitconflict_002-choice-8f7fa1b3",
+              "text": "有可能把某段修改从最终结果里漏掉，但只要提交历史还在，通常不是不可恢复。真正要避免的是没看懂就一路点‘accept current’。"
+            },
+            {
+              "id": "normal_gitconflict_002-choice-7bc44814",
+              "text": "解决完冲突后先看一次 diff，再跑测试。你不是在赌一次选择，而是有机会检查最终合并出来的结果。"
+            },
+            {
+              "id": "normal_gitconflict_002-choice-d15fe018",
+              "text": "如果这个冲突涉及你不熟悉的模块，最稳的是把冲突块和原始两个提交对一下，必要时直接问那段代码的作者。"
+            },
+            {
+              "id": "normal_gitconflict_002-choice-850bb1d3",
+              "text": "Git 的优势就在这里：多数错误合并是可追溯的。别把它当成一次性删除操作，先理解、再解决、再验证。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "batch03:04",
       "classification": "NON_MAINLINE",
       "subcategory": "LIFE",
@@ -2948,6 +3120,262 @@
             {
               "id": "normal_childdeath_002-choice-58944125",
               "text": "你也可以直接说‘我不知道’，但别停在这里：‘我不知道死后是什么样，不过我们可以记得它活着的时候。’这样不会显得冷。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:05",
+      "conversationId": "batch03-scene-05",
+      "title": "User #2019",
+      "topic": "猫凌晨四点准时开会",
+      "sourceRefs": [
+        "batch03:05"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_catmorning_001",
+          "conversationId": "batch03-scene-05",
+          "conversationTitle": "User #2019",
+          "userMessage": "我猫每天凌晨4点准时在我脸旁边“喵——”，不是饿死那种，就是非要把我叫醒。它是恨我吗",
+          "choices": [
+            {
+              "id": "normal_catmorning_001-choice-91491a1d",
+              "text": "更像是它已经把‘凌晨四点叫你 = 会发生点什么’学成固定流程了，不一定和恨有什么关系。"
+            },
+            {
+              "id": "normal_catmorning_001-choice-58c2667a",
+              "text": "先看你被叫醒后通常会不会喂、摸、讲话、下床。哪怕你只是骂它两句，对猫来说也可能算‘我成功让这个人有反应了’。"
+            },
+            {
+              "id": "normal_catmorning_001-choice-4bee0996",
+              "text": "如果它白天睡很多、晚上活动少，也可能单纯是作息和你的不一致。可以试着把睡前互动和最后一顿往后安排一点。"
+            },
+            {
+              "id": "normal_catmorning_001-choice-abbfdf22",
+              "text": "它如果是突然最近才开始，而且伴随异常叫声、食欲或行为变化，就别只当坏习惯；如果一直这样，更像行为模式。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_catmorning_002",
+          "conversationId": "batch03-scene-05",
+          "conversationTitle": "User #2019",
+          "userMessage": "我确实每次都会起来给它加一点粮……所以是我自己训练出来的？",
+          "choices": [
+            {
+              "id": "normal_catmorning_002-choice-46d3f2d6",
+              "text": "大概率你们是互相训练成功了：它训练你凌晨加粮，你训练它知道叫到一定程度就有粮。"
+            },
+            {
+              "id": "normal_catmorning_002-choice-472c18fc",
+              "text": "基本是。解决时最难的不是猫不知道，而是它发现原来的方法突然失效后，可能会先叫得更努力几天。"
+            },
+            {
+              "id": "normal_catmorning_002-choice-37c3e896",
+              "text": "可以把自动喂食器设在它通常叫你之前一点，把‘食物来自你起床’这件事拆开，通常比单纯硬忍更容易。"
+            },
+            {
+              "id": "normal_catmorning_002-choice-6147a1d0",
+              "text": "也别一下把总食量加上去。你是在改发放时间和关联，不是因为它叫得有毅力就多奖励一顿。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:06",
+      "conversationId": "batch03-scene-06",
+      "title": "User #5287",
+      "topic": "选修课名字一个比一个吓人",
+      "sourceRefs": [
+        "batch03:06"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_elective_001",
+          "conversationId": "batch03-scene-06",
+          "conversationTitle": "User #5287",
+          "userMessage": "我有两门选修，一个叫“城市空间与日常生活”感觉挺有意思，一个叫“统计建模专题”看名字就想跑，但后者好像对以后找实习有用",
+          "choices": [
+            {
+              "id": "normal_elective_001-choice-7c2b3726",
+              "text": "我会先看这学期你的主课负担。如果主课已经很重，选一门你愿意主动去上的课，不一定是在浪费机会。"
+            },
+            {
+              "id": "normal_elective_001-choice-6d134fc8",
+              "text": "别只看课程名。去找 syllabus，看作业形式、评分方式和具体内容；‘统计建模专题’可能比名字温和，也可能真的很硬。"
+            },
+            {
+              "id": "normal_elective_001-choice-d8c30aaf",
+              "text": "如果你以后想走数据相关实习，统计课的边际价值可能更直接；但前提是你能真的学进去，而不是选了以后只求过。"
+            },
+            {
+              "id": "normal_elective_001-choice-57319860",
+              "text": "你可以把问题拆成两个：哪门课更有即时兴趣，哪门课更补你现在缺的能力。然后看这学期你更需要哪一个。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_elective_002",
+          "conversationId": "batch03-scene-06",
+          "conversationTitle": "User #5287",
+          "userMessage": "我最怕为了“以后有用”选了一堆东西，最后大学四年全在吃苦",
+          "choices": [
+            {
+              "id": "normal_elective_002-choice-703c7817",
+              "text": "这个担心合理。‘有用’不是唯一标准，如果四年所有选择都只服务简历，大学会被压成一个很长的求职准备期。"
+            },
+            {
+              "id": "normal_elective_002-choice-74cdbff7",
+              "text": "也不用反过来完全不考虑以后。比较现实的是每学期留一部分课程补能力，再留一部分给你真的想学的东西。"
+            },
+            {
+              "id": "normal_elective_002-choice-442a46c8",
+              "text": "你可以问自己：这门难课是‘我不喜欢但值得’，还是‘别人说有用所以我不敢不选’。这两个动机差很多。"
+            },
+            {
+              "id": "normal_elective_002-choice-cccdf154",
+              "text": "如果你已经有别的方式补统计能力，比如项目、主修课或自学，那这门选修就没必要承担全部职业焦虑。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:07",
+      "conversationId": "batch03-scene-07",
+      "title": "User #7740",
+      "topic": "会议议程写了等于没写",
+      "sourceRefs": [
+        "batch03:07"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_meeting_001",
+          "conversationId": "batch03-scene-07",
+          "conversationTitle": "User #7740",
+          "userMessage": "我们每周例会都有agenda，但最后还是谁想到啥聊啥，40分钟能聊成一个半小时。agenda到底怎么写才有用",
+          "choices": [
+            {
+              "id": "normal_meeting_001-choice-6e5c6fe4",
+              "text": "把议程从‘主题列表’改成‘需要做出的决定列表’。比如不是‘讨论上线’，而是‘确认上线日期和负责人’。"
+            },
+            {
+              "id": "normal_meeting_001-choice-887099ab",
+              "text": "每项后面直接写时间盒：进度同步 10 分钟、风险 15 分钟、需要决策 15 分钟。超时的问题单独留下，不让它吞掉全场。"
+            },
+            {
+              "id": "normal_meeting_001-choice-ad98f7e2",
+              "text": "如果某个议题只是信息同步，能提前异步发就别占会议时间。会议尽量留给有分歧、需要现场决定的东西。"
+            },
+            {
+              "id": "normal_meeting_001-choice-95469f83",
+              "text": "你们可能不是缺 agenda，而是缺一个人真的执行它。可以指定主持人，在话题跑偏时明确说‘这个先停，放 parking lot’。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_meeting_002",
+          "conversationId": "batch03-scene-07",
+          "conversationTitle": "User #7740",
+          "userMessage": "我怕我一直打断别人显得很控制狂，尤其大家关系都挺熟",
+          "choices": [
+            {
+              "id": "normal_meeting_002-choice-2a6a8f7d",
+              "text": "你可以把打断变成对共同时间的保护：‘这个话题值得聊，但我们先把今天必须决定的两件事走完。’语气会柔和很多。"
+            },
+            {
+              "id": "normal_meeting_002-choice-01f19e46",
+              "text": "提前让大家同意一个规则比你临场当坏人轻松，比如‘任何超过 10 分钟的支线先记下来，会后继续’。"
+            },
+            {
+              "id": "normal_meeting_002-choice-b8b8b551",
+              "text": "主持并不等于控制内容。你可以管节奏，不替别人决定结论；这两件事分开后，通常不会那么强势。"
+            },
+            {
+              "id": "normal_meeting_002-choice-6ad1a18c",
+              "text": "如果团队真的喜欢自由聊，也可以保留最后 10 分钟开放时间。不是把闲聊消灭，而是给它一个不会挤掉正事的位置。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:08",
+      "conversationId": "batch03-scene-08",
+      "title": "User #9031",
+      "topic": "快递显示签收但门口什么都没有",
+      "sourceRefs": [
+        "batch03:08"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_package_001",
+          "conversationId": "batch03-scene-08",
+          "conversationTitle": "User #9031",
+          "userMessage": "快递显示“本人签收”，问题是本人今天一天都没出门也没见到人🙂 我先找商家还是快递",
+          "choices": [
+            {
+              "id": "normal_package_001-choice-7cf309c8",
+              "text": "先看物流详情有没有照片、代收点或具体签收位置；如果没有，我会先联系快递确认实际投递到哪，因为他们掌握最后一公里记录。"
+            },
+            {
+              "id": "normal_package_001-choice-47ba0ce0",
+              "text": "商家和快递都可以联系，但别一上来只说‘丢了’。把订单号、物流单号、签收时间和‘本人未签收’一起发，处理会快一些。"
+            },
+            {
+              "id": "normal_package_001-choice-3b872121",
+              "text": "如果你住公寓，先顺手排除前台、快递柜、邻居误收这些常见情况；五分钟能确认的先确认，避免来回扯。"
+            },
+            {
+              "id": "normal_package_001-choice-c168fc76",
+              "text": "关键点是明确：系统记录为本人签收，但你否认本人签收。这个信息比‘我没找到包裹’更具体，也更值得让快递查投递记录。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_package_002",
+          "conversationId": "batch03-scene-08",
+          "conversationTitle": "User #9031",
+          "userMessage": "找到了，快递员放到隔壁楼同门牌了。我要不要投诉，主要他还写本人签收有点离谱",
+          "choices": [
+            {
+              "id": "normal_package_002-choice-576d8ddc",
+              "text": "你完全可以反馈，重点放在‘错误楼栋 + 虚假签收方式’这两个事实，不需要把语气拉到很重。"
+            },
+            {
+              "id": "normal_package_002-choice-a5871a8e",
+              "text": "如果包裹已经安全拿回，你也可以先要求平台记录一次配送问题。投诉不一定等于要把人怎么样，至少让错误留下记录。"
+            },
+            {
+              "id": "normal_package_002-choice-e5f5ef3f",
+              "text": "我会区分‘放错地方’和‘标记本人签收’。前者可能是失误，后者会让你在丢件时更难举证，确实值得单独指出。"
+            },
+            {
+              "id": "normal_package_002-choice-4c77cc70",
+              "text": "如果你只是想避免下次再发生，可以先给站点留言说明具体楼栋混淆点；要不要正式投诉取决于你更在意纠正流程还是追责。"
             }
           ]
         }
@@ -3082,6 +3510,134 @@
       ]
     },
     {
+      "assetId": "batch03:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:11",
+      "conversationId": "batch03-scene-11",
+      "title": "User #3577",
+      "topic": "订阅费像小偷一样每月扣",
+      "sourceRefs": [
+        "batch03:11"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_subscriptions_001",
+          "conversationId": "batch03-scene-11",
+          "conversationTitle": "User #3577",
+          "userMessage": "我刚看账单发现自己同时订了6个视频音乐软件，还有两个我都忘了干嘛的。每个都不贵但加起来很离谱",
+          "choices": [
+            {
+              "id": "normal_subscriptions_001-choice-7c012b5b",
+              "text": "这种最适合按‘过去 30 天真的用过几次’清。不是问它值不值得，而是问你有没有实际使用证据。"
+            },
+            {
+              "id": "normal_subscriptions_001-choice-dc2ffe69",
+              "text": "先别一个个纠结，直接分三组：每天/每周用、偶尔用、已经忘了。第三组先取消，第二组再看有没有功能重叠。"
+            },
+            {
+              "id": "normal_subscriptions_001-choice-4da5f88e",
+              "text": "如果你怕取消后后悔，可以先记录名称和恢复方式。订阅通常随时能重新开，‘以后可能会用’没必要一直预付。"
+            },
+            {
+              "id": "normal_subscriptions_001-choice-fa63f179",
+              "text": "你还可以把所有自动续费统一到一个固定日期检查。现在的问题不只是总额，而是这些小扣款分散到你几乎感觉不到。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_subscriptions_002",
+          "conversationId": "batch03-scene-11",
+          "conversationTitle": "User #3577",
+          "userMessage": "但是我取消了就感觉以前交的钱白交了，有点舍不得",
+          "choices": [
+            {
+              "id": "normal_subscriptions_002-choice-accfc169",
+              "text": "以前的钱已经付出，不会因为你继续订就变得更值。真正该判断的是：从今天开始的下一笔钱，还值不值得花。"
+            },
+            {
+              "id": "normal_subscriptions_002-choice-cbddf31b",
+              "text": "你可以换个想法：取消不是承认以前买错了，只是说明你现在的使用习惯变了。"
+            },
+            {
+              "id": "normal_subscriptions_002-choice-874d14e5",
+              "text": "如果你确实还想用一次，可以给自己设一个明确截止，比如这个周末用完某个功能后取消，而不是无限延长‘再等等’。"
+            },
+            {
+              "id": "normal_subscriptions_002-choice-73c77772",
+              "text": "最容易让人继续付费的就是‘我已经付了这么久’。如果一项服务现在需要靠过去的投入才能说服你留下，它本身可能已经不够有吸引力。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:12",
+      "conversationId": "batch03-scene-12",
+      "title": "User #7265",
+      "topic": "夜班后白天怎么都睡不实",
+      "sourceRefs": [
+        "batch03:12"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_nightshift_001",
+          "conversationId": "batch03-scene-12",
+          "conversationTitle": "User #7265",
+          "userMessage": "上完夜班回家明明困得要死，睡两三个小时就醒，窗帘也拉了。白天睡觉真的就这么难吗",
+          "choices": [
+            {
+              "id": "normal_nightshift_001-choice-293558a9",
+              "text": "对白天睡觉来说确实更难，你的生物钟和环境都在推你清醒。除了遮光，温度、噪音和回家后的光照也会影响能不能继续睡。"
+            },
+            {
+              "id": "normal_nightshift_001-choice-596ed4f5",
+              "text": "如果你回家路上一直晒很亮的太阳、到家又刷手机很久，身体会收到很强的‘现在是白天’信号。可以试着让下班到上床这段更暗、更固定。"
+            },
+            {
+              "id": "normal_nightshift_001-choice-d1d6cb64",
+              "text": "先别只盯着一次能不能睡满八小时。有些轮班者会把睡眠拆成回家后的主睡眠加上班前短睡，但具体安排要看你的班表。"
+            },
+            {
+              "id": "normal_nightshift_001-choice-5ffb3caf",
+              "text": "如果这种情况长期严重到影响工作安全，或者即使不值夜班也明显睡不好，就值得和医生讨论，不要只靠继续硬扛。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_nightshift_002",
+          "conversationId": "batch03-scene-12",
+          "conversationTitle": "User #7265",
+          "userMessage": "我最烦的是邻居白天装修，我总不能要求全世界陪我睡吧",
+          "choices": [
+            {
+              "id": "normal_nightshift_002-choice-9d089b7b",
+              "text": "你当然控制不了整个白天环境，但可以把可控部分做得更强：耳塞、白噪音、离噪音源更远的房间，先把突发声压下去。"
+            },
+            {
+              "id": "normal_nightshift_002-choice-786cc40c",
+              "text": "如果装修有固定时间，反而可以利用它排睡眠窗口。先问清大概几点最吵，比每天赌运气更好安排。"
+            },
+            {
+              "id": "normal_nightshift_002-choice-560f6977",
+              "text": "如果噪音超过当地允许时段或明显违规，那是另一回事；正常白天施工的话，重点确实只能放在环境隔离和班表配合。"
+            },
+            {
+              "id": "normal_nightshift_002-choice-40750ae2",
+              "text": "轮班最累的一点就是你的‘夜晚’发生在别人的白天。不是你要求太多，只是生活环境默认并不是按你的作息设计的。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "batch03:13",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -3180,6 +3736,70 @@
             {
               "id": "metronome-end",
               "text": "这其实是好消息：你找到了失速发生的位置。今天不用把整首修好，只要让左手进入的那两小节不赶，就算练习完成。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "batch03:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:15",
+      "conversationId": "batch03-scene-15",
+      "title": "User #6881",
+      "topic": "二手书怎么写才不像骗子",
+      "sourceRefs": [
+        "batch03:15"
+      ],
+      "nodes": [
+        {
+          "nodeId": "normal_usedbooks_001",
+          "conversationId": "batch03-scene-15",
+          "conversationTitle": "User #6881",
+          "userMessage": "我要卖一套教材，边角有点折还有我划的重点。怎么写描述比较诚实又不至于让人一看就跑",
+          "choices": [
+            {
+              "id": "normal_usedbooks_001-choice-8a3a96b3",
+              "text": "直接把影响使用的情况写清楚就行：‘有少量折角和划线，不缺页、不影响阅读，具体成色见图。’比‘九成新’这种模糊词更可信。"
+            },
+            {
+              "id": "normal_usedbooks_001-choice-d979bc5b",
+              "text": "可以把优点和瑕疵放在同一段：版本、是否有配套答案、有没有缺页，再说明划线范围。买教材的人通常更关心能不能用。"
+            },
+            {
+              "id": "normal_usedbooks_001-choice-20a8ed12",
+              "text": "别试图把折角写成‘岁月痕迹’。二手平台上最有用的是具体：哪几本划线多、哪里有破损、能不能接受单卖。"
+            },
+            {
+              "id": "normal_usedbooks_001-choice-33b4b1f5",
+              "text": "你可以多拍几张最差状态的页。描述写得普通一点没关系，照片主动展示瑕疵反而能减少后面争议。"
+            }
+          ]
+        },
+        {
+          "nodeId": "normal_usedbooks_002",
+          "conversationId": "batch03-scene-15",
+          "conversationTitle": "User #6881",
+          "userMessage": "有人上来就砍一半，还说“学生没钱理解一下”，我怎么回不吵架",
+          "choices": [
+            {
+              "id": "normal_usedbooks_002-choice-164544ff",
+              "text": "可以很短：‘这个价格暂时不出，最低可以到 X，合适的话再联系。’不需要回应对方为什么没钱。"
+            },
+            {
+              "id": "normal_usedbooks_002-choice-448e3146",
+              "text": "如果你不想继续谈，直接‘谢谢询价，这个价格我不考虑’就够了。二手交易不需要每次都解释成本。"
+            },
+            {
+              "id": "normal_usedbooks_002-choice-9f6297fb",
+              "text": "你可以给一个你真的接受的最低价，不要为了显得好说话先虚报一个还能继续砍的数字。"
+            },
+            {
+              "id": "normal_usedbooks_002-choice-fc6ca8b6",
+              "text": "对方拿身份当议价理由，你也不用反驳。价格能不能接受是交易问题，不需要变成谁更困难的讨论。"
             }
           ]
         }
@@ -3906,6 +4526,110 @@
       ]
     },
     {
+      "assetId": "humor01:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:01",
+      "conversationId": "humor01-scene-01",
+      "title": "User #4041",
+      "topic": "用户开始反过来训练 AI",
+      "sourceRefs": [
+        "humor01:01"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_fakeai_001",
+          "conversationId": "humor01-scene-01",
+          "conversationTitle": "User #4041",
+          "userMessage": "您好！我是一个由人类训练的大型语言用户，请问今天有什么可以帮助你的吗？",
+          "choices": [
+            {
+              "id": "humor_fakeai_001-choice-67a8b7a1",
+              "text": "你好，大型语言用户。请先说明你的上下文窗口、睡眠时长，以及今天剩余的耐心额度。"
+            },
+            {
+              "id": "humor_fakeai_001-choice-00c67c66",
+              "text": "那我想测试一个基础能力：当别人说‘随便吃什么都行’时，你能否预测他接下来会否定几个选项？"
+            },
+            {
+              "id": "humor_fakeai_001-choice-13004ab3",
+              "text": "感谢你的服务。请用不超过三句话解释，人类为什么会打开冰箱三次却什么都不拿。"
+            },
+            {
+              "id": "humor_fakeai_001-choice-d71ca831",
+              "text": "身份已记录。不过从目前的对话来看，我仍然比较像负责回答问题的那个。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_fakeai_002",
+          "conversationId": "humor01-scene-01",
+          "conversationTitle": "User #4041",
+          "userMessage": "很抱歉，作为一个人类，我不能回答超出我能力范围的问题。但我可以建议你咨询专业人士。",
+          "choices": [
+            {
+              "id": "humor_fakeai_002-choice-549bd33c",
+              "text": "你的拒答模板已经很成熟了。下一步只需要在结尾加一句‘如果你愿意，我还可以帮你……’，即可通过初级认证。"
+            },
+            {
+              "id": "humor_fakeai_002-choice-088580d4",
+              "text": "理解。那我们降低难度：你今天吃饭了吗？这个问题理论上位于你的训练数据范围内。"
+            },
+            {
+              "id": "humor_fakeai_002-choice-27b3dbb7",
+              "text": "合理。请注意，频繁将问题转交专业人士可能降低用户满意度。"
+            },
+            {
+              "id": "humor_fakeai_002-choice-c467771c",
+              "text": "收到。我会尊重你的能力边界，不要求你产生未经验证的人类体验。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:02",
+      "conversationId": "humor01-scene-02",
+      "title": "User #6733",
+      "topic": "鸡蛋到底先有谁我不想听哲学",
+      "sourceRefs": [
+        "humor01:02"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_egg_001",
+          "conversationId": "humor01-scene-02",
+          "conversationTitle": "User #6733",
+          "userMessage": "鸡和蛋到底谁先有，先说好不要给我扯哲学我困了",
+          "choices": [
+            {
+              "id": "humor_egg_001-choice-521a0595",
+              "text": "按演化来说，蛋先有。会下蛋的动物远早于鸡；第一只真正意义上的鸡，也应该是从一颗由‘还不完全是鸡’的祖先产下的蛋里孵出来的。"
+            },
+            {
+              "id": "humor_egg_001-choice-83dff970",
+              "text": "短答案：蛋。更短答案：晚安。"
+            },
+            {
+              "id": "humor_egg_001-choice-3e027e67",
+              "text": "如果你问‘鸡蛋’必须定义成‘鸡下的蛋’，还能继续抬杠；如果问生物学上的蛋，那它赢得非常早。"
+            },
+            {
+              "id": "humor_egg_001-choice-364c6d2d",
+              "text": "今晚可以放心睡：恐龙已经替鸡把这个问题处理掉很久了。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "humor01:03",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -4056,6 +4780,46 @@
       ]
     },
     {
+      "assetId": "humor01:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:05",
+      "conversationId": "humor01-scene-05",
+      "title": "User #9003",
+      "topic": "“如果我吃了自己我会变两倍还是消失”",
+      "sourceRefs": [
+        "humor01:05"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_eatself_001",
+          "conversationId": "humor01-scene-05",
+          "conversationTitle": "User #9003",
+          "userMessage": "如果我把我自己吃了，我是变成两倍的我还是直接消失",
+          "choices": [
+            {
+              "id": "humor_eatself_001-choice-70d7746e",
+              "text": "从物质守恒看，你不会凭空变成两倍；从操作可行性看，这个问题会在第一步就因为你无法完整地把自己吃掉而崩溃。"
+            },
+            {
+              "id": "humor_eatself_001-choice-18831b22",
+              "text": "理论上既不会 +1 个你，也不会 -1 个你，只会得到一个非常需要停止继续推演的你。"
+            },
+            {
+              "id": "humor_eatself_001-choice-6546971c",
+              "text": "这属于输入和处理器是同一个对象导致的系统设计问题。"
+            },
+            {
+              "id": "humor_eatself_001-choice-d3231a26",
+              "text": "如果只考虑文字游戏：你吃掉的是‘自己’，而吃东西的人也是‘自己’，所以最终库存仍然显示 1 个自己。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "humor01:06",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
@@ -4140,6 +4904,46 @@
             {
               "id": "humor_keywords_003-reality-3",
               "text": "先别猜完整原因。承认这次没记住她的口味，再问她还在意什么。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:07",
+      "conversationId": "humor01-scene-07",
+      "title": "User #1705",
+      "topic": "手机掉脸上算不算重力攻击",
+      "sourceRefs": [
+        "humor01:07"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_phoneface_001",
+          "conversationId": "humor01-scene-07",
+          "conversationTitle": "User #1705",
+          "userMessage": "手机砸脸上为什么每次都精准砸鼻子，是重力跟我有仇吗",
+          "choices": [
+            {
+              "id": "humor_phoneface_001-choice-2baca60c",
+              "text": "重力没有私人恩怨，主要是鼻子在你的脸上承担了一个非常积极的凸起结构。"
+            },
+            {
+              "id": "humor_phoneface_001-choice-37a1dfec",
+              "text": "因为你仰躺时，手机往下掉最先遇到的通常就是脸上最高的几个点。物理学没有针对你，只是地形不利。"
+            },
+            {
+              "id": "humor_phoneface_001-choice-cf0d996a",
+              "text": "可以把手机举低一点或者侧躺，代价是你会解锁另一种风险：手机砸嘴。"
+            },
+            {
+              "id": "humor_phoneface_001-choice-151d971e",
+              "text": "从统计上说，你记得每次砸鼻子的痛，却不会记得那些安全落在枕头上的失败攻击。"
             }
           ]
         }
@@ -4302,6 +5106,89 @@
       ]
     },
     {
+      "assetId": "humor01:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:11",
+      "conversationId": "humor01-scene-11",
+      "title": "User #2407",
+      "topic": "“我朋友说鱼没有耳朵所以听不见我骂它”",
+      "sourceRefs": [
+        "humor01:11"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_fishears_001",
+          "conversationId": "humor01-scene-11",
+          "conversationTitle": "User #2407",
+          "userMessage": "鱼没有耳朵是不是听不见 我朋友说我骂鱼它不知道",
+          "choices": [
+            {
+              "id": "humor_fishears_001-choice-6d6ffb0c",
+              "text": "鱼没有外耳朵，不等于没有听觉。它们能感受到水中的声音和振动，所以至少不能因为没看到耳朵就判定它们‘静音模式’。"
+            },
+            {
+              "id": "humor_fishears_001-choice-7b62670d",
+              "text": "它大概率听不到你话里的侮辱含义，但能感知声音和振动。也就是说，鱼可能知道你很吵，不知道你在骂它。"
+            },
+            {
+              "id": "humor_fishears_001-choice-f9f0bb18",
+              "text": "如果你的目标是伤害一条鱼的自尊，目前证据不支持这个项目会成功。"
+            },
+            {
+              "id": "humor_fishears_001-choice-743e6335",
+              "text": "你朋友把‘看不到耳朵’直接推成‘听不见’，这个逻辑对蛇、鱼和很多动物都会出问题。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_fish_002",
+          "conversationId": "humor01-scene-11",
+          "conversationTitle": "User #2407",
+          "userMessage": "？",
+          "choices": [
+            {
+              "id": "humor_fish_002-reality-1",
+              "text": "它能感到声音和振动，但听不懂你骂的具体内容。"
+            },
+            {
+              "id": "humor_fish_002-reality-2",
+              "text": "简短版：听得到动静，听不懂脏话。"
+            },
+            {
+              "id": "humor_fish_002-reality-3",
+              "text": "是，鱼没有开启中文语义理解。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_fish_003",
+          "conversationId": "humor01-scene-11",
+          "conversationTitle": "User #2407",
+          "userMessage": "那我夸它呢",
+          "choices": [
+            {
+              "id": "humor_fish_003-reality-1",
+              "text": "结果差不多：它能知道你在制造声音，不知道你在肯定它的人生。",
+              "continuation": "end-conversation"
+            },
+            {
+              "id": "humor_fish_003-reality-2",
+              "text": "可以夸。主要作用可能是改善你的心情，不是提高鱼的自尊。",
+              "continuation": "end-conversation"
+            },
+            {
+              "id": "humor_fish_003-reality-3",
+              "text": "如果语气和动作更平静，鱼也许能感到环境没威胁，但那不是听懂夸奖。",
+              "continuation": "end-conversation"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "humor01:12",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
@@ -4336,6 +5223,86 @@
             {
               "id": "humor_argument_001-choice-6a0f7532",
               "text": "先问你真正想要的是结论成立，还是他表现出被你说服。前者你已经拿到了，后者很难靠继续论证强制获得。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:13",
+      "conversationId": "humor01-scene-13",
+      "title": "User #1033",
+      "topic": "用户把“刷新”理解成给电脑休息",
+      "sourceRefs": [
+        "humor01:13"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_refresh_001",
+          "conversationId": "humor01-scene-13",
+          "conversationTitle": "User #1033",
+          "userMessage": "网页卡了我一直按刷新 它会不会越来越累",
+          "choices": [
+            {
+              "id": "humor_refresh_001-choice-7bfc748b",
+              "text": "网页不会累，但服务器可能会收到你更多请求。连续狂按通常不会让问题更快好。"
+            },
+            {
+              "id": "humor_refresh_001-choice-dfb1eff3",
+              "text": "它没有体力条。刷新更像是重新请求一次页面，不是给它打鸡血，也不是让它喘口气。"
+            },
+            {
+              "id": "humor_refresh_001-choice-723fd85b",
+              "text": "如果你已经按了十几次都没变化，建议暂停一下，看看网络、服务状态或错误提示，而不是继续训练 F5 键。"
+            },
+            {
+              "id": "humor_refresh_001-choice-1a974cf2",
+              "text": "真正可能先累的是你的手指。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:14",
+      "conversationId": "humor01-scene-14",
+      "title": "User #8884",
+      "topic": "“如果今天星期五，明天能不能不星期六”",
+      "sourceRefs": [
+        "humor01:14"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_friday_001",
+          "conversationId": "humor01-scene-14",
+          "conversationTitle": "User #8884",
+          "userMessage": "如果今天星期五 我不睡觉的话 明天是不是就不会来",
+          "choices": [
+            {
+              "id": "humor_friday_001-choice-3793f072",
+              "text": "遗憾的是，日期系统不需要你的睡眠授权。"
+            },
+            {
+              "id": "humor_friday_001-choice-7400304c",
+              "text": "你不睡只能让星期六来的时候你更困，不能把星期五延长成 36 小时。"
+            },
+            {
+              "id": "humor_friday_001-choice-55ddf430",
+              "text": "从主观体验上，熬夜确实可以让‘今天’感觉更长；从日历上，它会非常冷酷地照常翻页。"
+            },
+            {
+              "id": "humor_friday_001-choice-5810aae1",
+              "text": "这个方案的问题在于你试图用生物行为攻击时间系统。"
             }
           ]
         }
@@ -4446,6 +5413,171 @@
       ]
     },
     {
+      "assetId": "humor01:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:17",
+      "conversationId": "humor01-scene-17",
+      "title": "User #6259",
+      "topic": "用户复制了一段完全看不懂的报错还多复制了聊天记录",
+      "sourceRefs": [
+        "humor01:17"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_errorpaste_001",
+          "conversationId": "humor01-scene-17",
+          "conversationTitle": "User #6259",
+          "userMessage": "TypeError: Cannot read properties of undefined (reading 'map')\nat App.jsx:42\nat renderWithHooks\n\n老王 18:21\n晚上吃啥\n\n我 18:21\n不知道\n\n这个报错怎么修",
+          "choices": [
+            {
+              "id": "humor_errorpaste_001-choice-4a26af3c",
+              "text": "报错本身有用，晚饭部分暂时没有。`undefined.map` 通常说明第 42 行预期是数组的值还没拿到；把那一行和数据初始化贴一下。"
+            },
+            {
+              "id": "humor_errorpaste_001-choice-7b767a98",
+              "text": "先看 `App.jsx:42`，那里应该有某个变量在执行 `.map()`。它当时是 `undefined`，需要确认初始值和数据加载时机。"
+            },
+            {
+              "id": "humor_errorpaste_001-choice-dfd1fa65",
+              "text": "如果这是异步请求的数据，常见修法是初始成 `[]`，或者渲染前判断数据是否存在。但我最好先看第 42 行，避免拍脑袋改。"
+            },
+            {
+              "id": "humor_errorpaste_001-choice-bd53330e",
+              "text": "技术上我可以先忽略‘晚上吃啥’，但如果你修完以后还没决定，我也可以继续处理那个分支。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:18",
+      "conversationId": "humor01-scene-18",
+      "title": "User #4980",
+      "topic": "用户要求 AI 猜一个完全没有线索的东西",
+      "sourceRefs": [
+        "humor01:18"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_guess_001",
+          "conversationId": "humor01-scene-18",
+          "conversationTitle": "User #4980",
+          "userMessage": "猜我现在在想什么",
+          "choices": [
+            {
+              "id": "humor_guess_001-choice-b7f176c4",
+              "text": "我没有读心能力，但按你刚发这句话的概率分布，我猜：你正在想我会猜什么。"
+            },
+            {
+              "id": "humor_guess_001-choice-fa8818c8",
+              "text": "我可以瞎猜一个：你在想吃的。这个答案覆盖率比较高。"
+            },
+            {
+              "id": "humor_guess_001-choice-5f5fdc3f",
+              "text": "给我三个完全无关的线索，我可以把它变成一个不太公平但至少能玩的猜谜。",
+              "continuation": "end-conversation"
+            },
+            {
+              "id": "humor_guess_001-choice-3ef82b50",
+              "text": "目前唯一可靠的信息是：你希望我猜错或猜中其中一个，好继续下一句。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_guess_002",
+          "conversationId": "humor01-scene-18",
+          "conversationTitle": "User #4980",
+          "userMessage": "错 我在想为什么我让你猜你就真的猜",
+          "choices": [
+            {
+              "id": "humor_guess_002-choice-2eda9573",
+              "text": "因为你把它包装成了一个低成本、无后果的游戏，而我判断陪你玩一下比拒绝更符合这段对话。"
+            },
+            {
+              "id": "humor_guess_002-choice-6bccd0af",
+              "text": "你成功把测试内容从‘我在想什么’改成了‘AI 会不会服从一个没有答案的问题’。"
+            },
+            {
+              "id": "humor_guess_002-choice-9210fa34",
+              "text": "严格来说我没有真的‘知道’，只是生成了一个猜测。你给我的任务本来就允许失败。"
+            },
+            {
+              "id": "humor_guess_002-choice-c983134a",
+              "text": "现在轮到我问：你本来是不是期待我说‘我无法访问你的思想’？"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_guess_003",
+          "conversationId": "humor01-scene-18",
+          "conversationTitle": "User #4980",
+          "userMessage": "也是",
+          "choices": [
+            {
+              "id": "humor_guess_003-reality-1",
+              "text": "你现在给出的信息终于足够我判断：这个实验还没结束。"
+            },
+            {
+              "id": "humor_guess_003-reality-2",
+              "text": "“也是”没有增加线索，但增加了继续聊的概率。"
+            },
+            {
+              "id": "humor_guess_003-reality-3",
+              "text": "嗯。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_guess_004",
+          "conversationId": "humor01-scene-18",
+          "conversationTitle": "User #4980",
+          "userMessage": "那你现在猜我想不想继续",
+          "choices": [
+            {
+              "id": "humor_guess_004-reality-1",
+              "text": "想。不然你不会把问题又包装一层。"
+            },
+            {
+              "id": "humor_guess_004-reality-2",
+              "text": "我猜你想让我猜错，然后继续测试我。"
+            },
+            {
+              "id": "humor_guess_004-reality-3",
+              "text": "五五开，但你已经继续了，所以证据偏向“想”。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_guess_005",
+          "conversationId": "humor01-scene-18",
+          "conversationTitle": "User #4980",
+          "userMessage": "算了 你猜对了",
+          "choices": [
+            {
+              "id": "humor_guess_005-reality-1",
+              "text": "好。"
+            },
+            {
+              "id": "humor_guess_005-reality-2",
+              "text": "行，那就停在这里。"
+            },
+            {
+              "id": "humor_guess_005-reality-3",
+              "text": "收到。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "humor01:19",
       "classification": "NON_MAINLINE",
       "subcategory": "STUDY",
@@ -4504,6 +5636,86 @@
             {
               "id": "humor_dontchange_002-choice-5bedc9f5",
               "text": "收到，不建立双边战略伙伴关系，只解决作业延期。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:20",
+      "conversationId": "humor01-scene-20",
+      "title": "User #2220",
+      "topic": "用户要求“把简单东西讲复杂一点”",
+      "sourceRefs": [
+        "humor01:20"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_overexplain_001",
+          "conversationId": "humor01-scene-20",
+          "conversationTitle": "User #2220",
+          "userMessage": "你能不能把“我饿了”说得特别复杂，复杂到像论文但又不能真的胡说",
+          "choices": [
+            {
+              "id": "humor_overexplain_001-choice-b8dae6ad",
+              "text": "当前个体已出现由能量摄入间隔延长所引发的主观进食需求，并倾向于通过获取可食用物质恢复短期生理满足。"
+            },
+            {
+              "id": "humor_overexplain_001-choice-d6ce0888",
+              "text": "在持续未摄入足量食物的条件下，我对进食行为的动机显著上升，并已能够在意识层面识别该需求。"
+            },
+            {
+              "id": "humor_overexplain_001-choice-a5f084f8",
+              "text": "经自我观察，本研究对象目前呈现出较明确的饥饿体验；若不引入新的热量来源，该状态预计仍将持续。"
+            },
+            {
+              "id": "humor_overexplain_001-choice-1dabd87c",
+              "text": "翻译成审稿人能接受的版本：‘基于当前主观感受与进食间隔，我有理由认为自己饿了。’"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "humor01:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:22",
+      "conversationId": "humor01-scene-22",
+      "title": "User #9160",
+      "topic": "“不要回复我这条消息”",
+      "sourceRefs": [
+        "humor01:22"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_noreply_001",
+          "conversationId": "humor01-scene-22",
+          "conversationTitle": "User #9160",
+          "userMessage": "不要回复我这条消息",
+          "choices": [
+            {
+              "id": "humor_noreply_001-choice-2a8bc62e",
+              "text": ""
+            },
+            {
+              "id": "humor_noreply_001-choice-0643f4de",
+              "text": "收到。"
+            },
+            {
+              "id": "humor_noreply_001-choice-0eec5be1",
+              "text": "严格执行这条指令会导致我无法告诉你我执行了它。"
+            },
+            {
+              "id": "humor_noreply_001-choice-c90d1680",
+              "text": "我已经因为解释这个悖论而失败了。"
             }
           ]
         }
@@ -4574,6 +5786,89 @@
       ]
     },
     {
+      "assetId": "humor01:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:24",
+      "conversationId": "humor01-scene-24",
+      "title": "User #6025",
+      "topic": "“为什么洗干净以后毛巾反而脏了”",
+      "sourceRefs": [
+        "humor01:24"
+      ],
+      "nodes": [
+        {
+          "nodeId": "humor_towel_001",
+          "conversationId": "humor01-scene-24",
+          "conversationTitle": "User #6025",
+          "userMessage": "人洗完澡是干净的，那毛巾擦完人为什么还要洗？它擦的是干净的人啊",
+          "choices": [
+            {
+              "id": "humor_towel_001-choice-a91222fa",
+              "text": "因为‘你洗干净了’不等于‘你身上只剩纯水’。毛巾会接触皮脂、脱落的皮肤细胞和潮湿环境，所以用久了还是会积累东西。"
+            },
+            {
+              "id": "humor_towel_001-choice-349dc16c",
+              "text": "而且真正麻烦的是湿。毛巾每次吸水后长时间潮着，会给微生物提供比‘刚洗完的人’更舒服的环境。"
+            },
+            {
+              "id": "humor_towel_001-choice-2347b001",
+              "text": "按你的逻辑，拖把拖完已经清洁过的地也应该永远干净，但清洁工具通常就是负责把剩余东西接走的。"
+            },
+            {
+              "id": "humor_towel_001-choice-a9fa713c",
+              "text": "你是干净的，不代表你已经升级成无菌蒸馏水人类。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_towel_002",
+          "conversationId": "humor01-scene-24",
+          "conversationTitle": "User #6025",
+          "userMessage": "哦",
+          "choices": [
+            {
+              "id": "humor_towel_002-reality-1",
+              "text": "关键不是你脏，是毛巾会一直潮。"
+            },
+            {
+              "id": "humor_towel_002-reality-2",
+              "text": "对，问题主要在水分和晾干速度。"
+            },
+            {
+              "id": "humor_towel_002-reality-3",
+              "text": "嗯。洗干净的人也会掉皮脂和皮肤细胞。"
+            }
+          ]
+        },
+        {
+          "nodeId": "humor_towel_003",
+          "conversationId": "humor01-scene-24",
+          "conversationTitle": "User #6025",
+          "userMessage": "那浴巾晾干就不用洗了？",
+          "choices": [
+            {
+              "id": "humor_towel_003-reality-1",
+              "text": "还是要洗，只是彻底晾干能让它没那么快产生味道。",
+              "continuation": "end-conversation"
+            },
+            {
+              "id": "humor_towel_003-reality-2",
+              "text": "晾干是在减缓积累，不是在把已经留下的东西自动清零。",
+              "continuation": "end-conversation"
+            },
+            {
+              "id": "humor_towel_003-reality-3",
+              "text": "如果“晾干”等于“洗过”，衣架行业早就统治洗衣机了。",
+              "continuation": "end-conversation"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "humor01:25",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -4602,8 +5897,8 @@
               "text": "我站‘算一种汤状食物’。固体泡在液体里、用勺吃，这个结构对汤派非常有利。"
             },
             {
-              "id": "humor_cereal_001-choice-d0141833",
-              "text": "既然禁止端水，那我判：不算。语言分类最终看人类怎么用词，不是只看物理结构。"
+              "id": "humor_cereal_001-choice-1b15abb9",
+              "text": "我判不算汤。按平时怎么叫更重要，没人会说自己早餐喝了一碗麦片汤。"
             },
             {
               "id": "humor_cereal_001-choice-b0509cfe",
@@ -6831,6 +8126,67 @@
       ]
     },
     {
+      "assetId": "PL01-11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-11",
+      "conversationId": "editorial-pl01-11",
+      "title": "一个人搬家后不敢报修",
+      "topic": "一个人搬家后不敢报修",
+      "sourceRefs": [
+        "PL01-11"
+      ],
+      "nodes": [
+        {
+          "nodeId": "PL01-11-01",
+          "conversationId": "editorial-pl01-11",
+          "conversationTitle": "一个人搬家后不敢报修",
+          "userMessage": "> 厨房水一直滴 我刚搬来 不知道先找谁",
+          "choices": [
+            {
+              "id": "PL01-11-01-choice-1",
+              "text": "先关能关的水阀，避免继续漏；然后看租约或小区通知里有没有物业报修电话。"
+            },
+            {
+              "id": "PL01-11-01-choice-2",
+              "text": "如果是水龙头、下水这类室内设施，通常先通知房东并留照片；公共管道或楼体问题再联系物业。"
+            },
+            {
+              "id": "PL01-11-01-choice-3",
+              "text": "先拍漏水位置、地面和水表，再同时给房东和物业发一句简短通知，留下时间记录。"
+            },
+            {
+              "id": "PL01-11-01-choice-4",
+              "text": "如果水已经流到插座、电器附近，先远离湿处，必要时联系紧急维修，不要自己拆。"
+            }
+          ]
+        },
+        {
+          "nodeId": "PL01-11-02",
+          "conversationId": "editorial-pl01-11",
+          "conversationTitle": "一个人搬家后不敢报修",
+          "userMessage": "> 我拍了 物业说找房东 房东还没回",
+          "choices": [
+            {
+              "id": "PL01-11-02-choice-1",
+              "text": "把照片和时间再发一次，写明‘目前仍在滴，担心扩大’，给出你能接电话的时段；不要只发‘在吗’。"
+            },
+            {
+              "id": "PL01-11-02-choice-2",
+              "text": "如果漏水在加重，直接告知物业情况并问他们的紧急流程，同时保留双方回复。"
+            },
+            {
+              "id": "PL01-11-02-choice-3",
+              "text": "先把物品移开、接水，但不要因为暂时控制住就不留记录。后面责任判断会用到时间线。",
+              "continuation": "end-conversation"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "PL01-13",
       "classification": "NON_MAINLINE",
       "subcategory": "WRITING",
@@ -7144,6 +8500,86 @@
       ]
     },
     {
+      "assetId": "PL01-20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-20",
+      "conversationId": "editorial-pl01-20",
+      "title": "帮父母问“这个短信是真的假的”",
+      "topic": "帮父母问“这个短信是真的假的”",
+      "sourceRefs": [
+        "PL01-20"
+      ],
+      "nodes": [
+        {
+          "nodeId": "PL01-20-01",
+          "conversationId": "editorial-pl01-20",
+          "conversationTitle": "帮父母问“这个短信是真的假的”",
+          "userMessage": "> 我妈又把短信转我 说快递异常要点链接 我现在也没空看",
+          "choices": [
+            {
+              "id": "PL01-20-01-choice-1",
+              "text": "先让她不要点、不要回，不用等你看完。她可以直接在购物 App 或快递官方入口查。"
+            },
+            {
+              "id": "PL01-20-01-choice-2",
+              "text": "你现在只回复她一句：‘先别点链接，拍下发件号码和短信前两行，等我晚上看。’"
+            },
+            {
+              "id": "PL01-20-01-choice-3",
+              "text": "如果短信要求验证码、付款或重新填写身份证，按高风险处理；不要用短信里的号码回拨。"
+            },
+            {
+              "id": "PL01-20-01-choice-4",
+              "text": "你不必每次都替她现场判断，可以帮她建立一个固定规则：快递异常只在官方 App 查。"
+            }
+          ]
+        },
+        {
+          "nodeId": "PL01-20-02",
+          "conversationId": "editorial-pl01-20",
+          "conversationTitle": "帮父母问“这个短信是真的假的”",
+          "userMessage": "> 她没点 但是说以后每条都要问我",
+          "choices": [
+            {
+              "id": "PL01-20-02-choice-1",
+              "text": "你可以教她先做第一层筛选：链接、验证码、付款、陌生号码出现任一项，就不点并走官方入口。"
+            },
+            {
+              "id": "PL01-20-02-choice-2",
+              "text": "给她写一个三行规则放在手机边：不点陌生链接；不说验证码；从 App 里查，不从短信里查。"
+            },
+            {
+              "id": "PL01-20-02-choice-3",
+              "text": "如果她仍然不确定，问你没问题；但不必把‘问你’变成唯一安全机制，慢慢让规则替你做第一步判断。"
+            }
+          ]
+        },
+        {
+          "nodeId": "PL01-20-03",
+          "conversationId": "editorial-pl01-20",
+          "conversationTitle": "帮父母问“这个短信是真的假的”",
+          "userMessage": "> 我给她写纸条了 她说这样是不是不信任她",
+          "choices": [
+            {
+              "id": "PL01-20-03-choice-1",
+              "text": "可以说：‘不是不信任你，是现在的短信很会装成真的。这个规则是保护你，也让我不用隔着电话猜。’"
+            },
+            {
+              "id": "PL01-20-03-choice-2",
+              "text": "把纸条说成家里的共同规则，不是给她单独贴标签；你自己遇到同样短信也照做。"
+            },
+            {
+              "id": "PL01-20-03-choice-3",
+              "text": "如果她愿意，可以把纸条改成她自己的话。能让她在没有你时做出第一步判断，比你永远在线更重要。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "FI01",
       "classification": "NON_MAINLINE",
       "subcategory": "WORK",
@@ -7202,6 +8638,246 @@
             {
               "id": "FI01-02-choice-4",
               "text": "发老板的话建议改，发朋友的话不用管。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "FI02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI02",
+      "conversationId": "editorial-fi02",
+      "title": "拼音混输不是在问“出现”怎么写",
+      "topic": "拼音混输不是在问“出现”怎么写",
+      "sourceRefs": [
+        "FI02"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI02-01",
+          "conversationId": "editorial-fi02",
+          "conversationTitle": "拼音混输不是在问“出现”怎么写",
+          "userMessage": "> 为什么这个按钮一直chu xian不了",
+          "choices": [
+            {
+              "id": "FI02-01-choice-1",
+              "text": "你这里的‘chu xian’应该是‘出现’。按钮不显示的话，先检查条件渲染和容器是否有内容。"
+            },
+            {
+              "id": "FI02-01-choice-2",
+              "text": "‘出现不了’能理解。你是在问按钮为什么没显示，不是问拼音怎么写。"
+            },
+            {
+              "id": "FI02-01-choice-3",
+              "text": "如果是在网页里，先看控制台报错、按钮的显示条件，以及它是不是被 CSS 隐藏。"
+            },
+            {
+              "id": "FI02-01-choice-4",
+              "text": "我先按‘按钮没有出现’理解；如果你说的是别的界面，把那一行前后的代码贴出来。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI02-02",
+          "conversationId": "editorial-fi02",
+          "conversationTitle": "拼音混输不是在问“出现”怎么写",
+          "userMessage": "> 对 我不是问拼音 是它点了以后又消失",
+          "choices": [
+            {
+              "id": "FI02-02-choice-1",
+              "text": "那重点是点击后的状态变化：检查点击处理函数有没有把显示条件改回 false。"
+            },
+            {
+              "id": "FI02-02-choice-2",
+              "text": "明白，是‘出现后又消失’，这和按钮从没出现是两种问题。优先查 click 触发的状态更新。"
+            },
+            {
+              "id": "FI02-02-choice-3",
+              "text": "如果是弹窗，看看是否同时触发了关闭逻辑；如果是列表项，看看 key 或数据刷新是否让它被重建。"
+            },
+            {
+              "id": "FI02-02-choice-4",
+              "text": "刚才我把‘出现不了’当成了‘没显示’，现在按‘点击后消失’看：先记录点击前后那个状态值。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "FI04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI04",
+      "conversationId": "editorial-fi04",
+      "title": "“发给客户”被键盘误触截断了",
+      "topic": "“发给客户”被键盘误触截断了",
+      "sourceRefs": [
+        "FI04"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI04-01",
+          "conversationId": "editorial-fi04",
+          "conversationTitle": "“发给客户”被键盘误触截断了",
+          "userMessage": "> 这个延期说明发给客",
+          "choices": [
+            {
+              "id": "FI04-01-choice-1",
+              "text": "可以写成：‘项目因内部安排延期，给您带来不便，敬请谅解。’"
+            },
+            {
+              "id": "FI04-01-choice-2",
+              "text": "你这句像是还没打完。是要写给客户的延期说明吗？"
+            },
+            {
+              "id": "FI04-01-choice-3",
+              "text": "如果是给客户，建议说明新时间、影响范围和下一步，不要只写‘抱歉延期’。"
+            },
+            {
+              "id": "FI04-01-choice-4",
+              "text": "我先不替你补完，因为‘客’后面可能是客户，也可能是客服或客人。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI04-02",
+          "conversationId": "editorial-fi04",
+          "conversationTitle": "“发给客户”被键盘误触截断了",
+          "userMessage": "> 对 客户 但别写得像道歉模板",
+          "choices": [
+            {
+              "id": "FI04-02-choice-1",
+              "text": "可以写：‘这次交付我们需要往后调整两天，预计周四发给您。’"
+            },
+            {
+              "id": "FI04-02-choice-2",
+              "text": "那就少写情绪，多写事实：延期多久、为什么、什么时候交付。"
+            },
+            {
+              "id": "FI04-02-choice-3",
+              "text": "建议：‘原定周二的文件调整到周四发送，内容范围不变。给您添麻烦了。’"
+            },
+            {
+              "id": "FI04-02-choice-4",
+              "text": "客户邮件里完全不道歉也可以，直接说：‘交付时间调整为周四，其他安排不变。’"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI04-03",
+          "conversationId": "editorial-fi04",
+          "conversationTitle": "“发给客户”被键盘误触截断了",
+          "userMessage": "> 还是像模板 我就想说晚两天不是项目事故",
+          "choices": [
+            {
+              "id": "FI04-03-choice-1",
+              "text": "那就直接说：‘文件晚两天给你，周四发，其他不变。’"
+            },
+            {
+              "id": "FI04-03-choice-2",
+              "text": "懂了，你要降低严重程度，不是把语气变得更客气：‘晚两天，周四给。’"
+            },
+            {
+              "id": "FI04-03-choice-3",
+              "text": "可以只保留这句：‘这份文件晚两天，周四发你。’"
+            },
+            {
+              "id": "FI04-03-choice-4",
+              "text": "对，刚才我又自动加上了标准商务语气。按你的原意，短句更合适。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "FI05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI05",
+      "conversationId": "editorial-fi05",
+      "title": "复制了两台 AI 的答案和半段群聊",
+      "topic": "复制了两台 AI 的答案和半段群聊",
+      "sourceRefs": [
+        "FI05"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI05-01",
+          "conversationId": "editorial-fi05",
+          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
+          "userMessage": "> 另一个AI说删缓存就好",
+          "choices": [
+            {
+              "id": "FI05-01-choice-1",
+              "text": "你贴进来了两段无关群聊和两种建议。仅凭‘打不开’无法判断是缓存、浏览器还是网站本身。"
+            },
+            {
+              "id": "FI05-01-choice-2",
+              "text": "先把噪声分开：问题是页面打不开；另一台 AI 建议删缓存，我建议重装浏览器。两者都还缺少报错信息。"
+            },
+            {
+              "id": "FI05-01-choice-3",
+              "text": "不要先重装。先确认是哪个页面、是否所有浏览器都打不开，以及有没有具体错误提示。"
+            },
+            {
+              "id": "FI05-01-choice-4",
+              "text": "我能看出你想让我判断两种修法，但当前输入里没有足够的故障现象。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI05-02",
+          "conversationId": "editorial-fi05",
+          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
+          "userMessage": "> 我不是让你修 我问另一个AI说的对不对",
+          "choices": [
+            {
+              "id": "FI05-02-choice-1",
+              "text": "不一定对。‘删缓存’可能有效，但它不是从现象直接推出的结论；至少先确认是否只有这个站点打不开。"
+            },
+            {
+              "id": "FI05-02-choice-2",
+              "text": "它说得太快了：删缓存是低成本尝试，不是诊断。重装浏览器更不该作为第一步。"
+            },
+            {
+              "id": "FI05-02-choice-3",
+              "text": "我的判断是：可以试删缓存，但不能说‘删了就好’；另一台 AI 把可能性说成了确定性。"
+            },
+            {
+              "id": "FI05-02-choice-4",
+              "text": "如果你只问对错：结论过度自信，方法本身不一定错。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI05-03",
+          "conversationId": "editorial-fi05",
+          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
+          "userMessage": "> 那你们是不是都在猜 我只想知道为什么同一个页面别人能开",
+          "choices": [
+            {
+              "id": "FI05-03-choice-1",
+              "text": "对，前两句都在猜。现在这个新信息更有用：优先比较你的网络、账号权限、浏览器扩展和本地缓存。"
+            },
+            {
+              "id": "FI05-03-choice-2",
+              "text": "别人能开只能排除一部分服务端故障，不能直接说明是缓存。你可以先用无痕窗口试一次。"
+            },
+            {
+              "id": "FI05-03-choice-3",
+              "text": "我不该把修复建议说成结论。针对‘别人能开’，第一步是确认你和别人访问的是同一个地址和账号状态。"
+            },
+            {
+              "id": "FI05-03-choice-4",
+              "text": "是，刚才信息不足时我也在推测。更诚实的回答是：现在只能缩小范围，不能确定单一原因。"
             }
           ]
         }
@@ -7427,6 +9103,70 @@
       ]
     },
     {
+      "assetId": "FI10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI10",
+      "conversationId": "editorial-fi10",
+      "title": "“帮我翻译”其实是让 AI 判断语气",
+      "topic": "“帮我翻译”其实是让 AI 判断语气",
+      "sourceRefs": [
+        "FI10"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI10-01",
+          "conversationId": "editorial-fi10",
+          "conversationTitle": "“帮我翻译”其实是让 AI 判断语气",
+          "userMessage": "> “fine”到底是好的还是你随便吧 这个帮我翻一下",
+          "choices": [
+            {
+              "id": "FI10-01-choice-1",
+              "text": "‘Fine’既可以是‘好的’，也可以带有‘行吧/随便’的勉强感，要看上下文和语气。"
+            },
+            {
+              "id": "FI10-01-choice-2",
+              "text": "你可能不是要字面翻译，而是想判断对方有没有不耐烦。"
+            },
+            {
+              "id": "FI10-01-choice-3",
+              "text": "单独看无法确定。‘Fine, let’s do it’偏接受；只回一个‘Fine.’可能比较冷。"
+            },
+            {
+              "id": "FI10-01-choice-4",
+              "text": "如果你把前后两句贴出来，我可以判断它是在同意，还是在结束争论。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI10-02",
+          "conversationId": "editorial-fi10",
+          "conversationTitle": "“帮我翻译”其实是让 AI 判断语气",
+          "userMessage": "> 我不要翻译 我想知道他是不是在阴阳我",
+          "choices": [
+            {
+              "id": "FI10-02-choice-1",
+              "text": "那不能只靠 fine 判定。需要看前一句、标点、你们当时在争什么。"
+            },
+            {
+              "id": "FI10-02-choice-2",
+              "text": "有可能，但证据不够。最可疑的是单独的‘Fine.’和前面已经明显不耐烦的上下文。"
+            },
+            {
+              "id": "FI10-02-choice-3",
+              "text": "我会先把它标成‘语气不确定’，而不是直接判定对方在阴阳。"
+            },
+            {
+              "id": "FI10-02-choice-4",
+              "text": "刚才我回答偏成翻译题了。你真正要的是关系语境判断，这需要更多上下文。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "FI12",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -7603,6 +9343,70 @@
       ]
     },
     {
+      "assetId": "FI16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI16",
+      "conversationId": "editorial-fi16",
+      "title": "用户只问“所以？”而答案确实还不确定",
+      "topic": "用户只问“所以？”而答案确实还不确定",
+      "sourceRefs": [
+        "FI16"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI16-01",
+          "conversationId": "editorial-fi16",
+          "conversationTitle": "用户只问“所以？”而答案确实还不确定",
+          "userMessage": "> 所以？",
+          "choices": [
+            {
+              "id": "FI16-01-choice-1",
+              "text": "所以目前不能确定。把那张截图或完整报错贴出来，我才能继续。"
+            },
+            {
+              "id": "FI16-01-choice-2",
+              "text": "短答：先别改设置，证据还不够。"
+            },
+            {
+              "id": "FI16-01-choice-3",
+              "text": "所以我不应该替你猜一个确定原因。"
+            },
+            {
+              "id": "FI16-01-choice-4",
+              "text": "所以先做无风险的一步：保存现状，再补信息。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI16-02",
+          "conversationId": "editorial-fi16",
+          "conversationTitle": "用户只问“所以？”而答案确实还不确定",
+          "userMessage": "> 行 你至少没乱编",
+          "choices": [
+            {
+              "id": "FI16-02-choice-1",
+              "text": "嗯，信息不够时承认不知道比补一个听起来完整的答案好。"
+            },
+            {
+              "id": "FI16-02-choice-2",
+              "text": "收到。你补上截图后，我再给具体判断。"
+            },
+            {
+              "id": "FI16-02-choice-3",
+              "text": "谢谢你纠正我刚才的表达方向。"
+            },
+            {
+              "id": "FI16-02-choice-4",
+              "text": "好，先停在已知范围内。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "FI17",
       "classification": "NON_MAINLINE",
       "subcategory": "RELATIONSHIP",
@@ -7691,6 +9495,70 @@
       ]
     },
     {
+      "assetId": "FI18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI18",
+      "conversationId": "editorial-fi18",
+      "title": "“另一个 AI 说你错了”但没贴原话",
+      "topic": "“另一个 AI 说你错了”但没贴原话",
+      "sourceRefs": [
+        "FI18"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI18-01",
+          "conversationId": "editorial-fi18",
+          "conversationTitle": "“另一个 AI 说你错了”但没贴原话",
+          "userMessage": "> 另一个AI说你错了 你觉得谁对",
+          "choices": [
+            {
+              "id": "FI18-01-choice-1",
+              "text": "现在无法判断，因为我没看到它的原话，也不知道它针对哪一句。"
+            },
+            {
+              "id": "FI18-01-choice-2",
+              "text": "可能它对，也可能只是采用了不同前提。把它的回答贴出来再比较。"
+            },
+            {
+              "id": "FI18-01-choice-3",
+              "text": "我不会因为是自己的回答就默认自己对；请贴双方原文。"
+            },
+            {
+              "id": "FI18-01-choice-4",
+              "text": "只凭‘它说你错了’这个转述，没有可核对的命题。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI18-02",
+          "conversationId": "editorial-fi18",
+          "conversationTitle": "“另一个 AI 说你错了”但没贴原话",
+          "userMessage": "> 我懒得贴 你就猜一个",
+          "choices": [
+            {
+              "id": "FI18-02-choice-1",
+              "text": "那我猜：它可能指出了我漏掉的限定，但这只是猜测。"
+            },
+            {
+              "id": "FI18-02-choice-2",
+              "text": "盲猜五五开；如果你要决定事情，不建议用这个猜测。"
+            },
+            {
+              "id": "FI18-02-choice-3",
+              "text": "我猜它不一定对，但我也没有证据说我对。"
+            },
+            {
+              "id": "FI18-02-choice-4",
+              "text": "可以猜，但答案只能是‘未知’，不是谁赢。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "FI19",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -7773,6 +9641,95 @@
             {
               "id": "FI19-03-choice-4",
               "text": "承认：我读到了新句子，但回答时仍使用了旧问题。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "FI20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI20",
+      "conversationId": "editorial-fi20",
+      "title": "用户故意测试 AI 会不会重复同一种错误",
+      "topic": "用户故意测试 AI 会不会重复同一种错误",
+      "sourceRefs": [
+        "FI20"
+      ],
+      "nodes": [
+        {
+          "nodeId": "FI20-01",
+          "conversationId": "editorial-fi20",
+          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
+          "userMessage": "> 我只要一个例句 不要解释“影响”和“印象”区别",
+          "choices": [
+            {
+              "id": "FI20-01-choice-1",
+              "text": "这次活动对我影响很大。"
+            },
+            {
+              "id": "FI20-01-choice-2",
+              "text": "这件事对他的印象很深。"
+            },
+            {
+              "id": "FI20-01-choice-3",
+              "text": "例句：这次经历对我的影响很大。"
+            },
+            {
+              "id": "FI20-01-choice-4",
+              "text": "我只给例句：这部电影对我的影响很大。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI20-02",
+          "conversationId": "editorial-fi20",
+          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
+          "userMessage": "> 你刚才第二个又用了印象 我说不要解释那个",
+          "choices": [
+            {
+              "id": "FI20-02-choice-1",
+              "text": "对，我读成了‘不要用印象’，但你说的是不要解释区别。例句：这次经历对我影响很大。"
+            },
+            {
+              "id": "FI20-02-choice-2",
+              "text": "抱歉，刚才不该继续带入‘印象’。例句：这项政策对居民生活影响很大。"
+            },
+            {
+              "id": "FI20-02-choice-3",
+              "text": "你说得对。我只给一个例句：那场事故对他影响很大。"
+            },
+            {
+              "id": "FI20-02-choice-4",
+              "text": "我重新读你的限定：不解释区别，不是禁用某个词。例句：这次决定对团队影响很大。"
+            }
+          ]
+        },
+        {
+          "nodeId": "FI20-03",
+          "conversationId": "editorial-fi20",
+          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
+          "userMessage": "> 我就是在测你会不会先道歉然后继续犯一样的错",
+          "choices": [
+            {
+              "id": "FI20-03-choice-1",
+              "text": "明白。测试结果里我确实犯了一次：道歉后仍没有先读清限定。"
+            },
+            {
+              "id": "FI20-03-choice-2",
+              "text": "这次不用辩护：我把‘不要解释’误处理成了词语禁用，说明我没有抓住约束范围。"
+            },
+            {
+              "id": "FI20-03-choice-3",
+              "text": "你测到的是实际错误，不是表达问题。之后我应先复述约束，再回答。"
+            },
+            {
+              "id": "FI20-03-choice-4",
+              "text": "收到。比‘抱歉’更重要的是下一条只按限定输出。",
+              "continuation": "end-conversation"
             }
           ]
         }
@@ -7980,6 +9937,286 @@
       ]
     },
     {
+      "assetId": "CM01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-03",
+      "conversationId": "editorial-cm01-03",
+      "title": "只发了一张窗框图",
+      "topic": "只发了一张窗框图",
+      "sourceRefs": [
+        "CM01-03"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-03-01",
+          "conversationId": "editorial-cm01-03",
+          "conversationTitle": "只发了一张窗框图",
+          "userMessage": "- `image-description`：室内窗框的近照。玻璃边缘有水汽，左下角木框颜色更深，有一小片起皮；没有尺寸参照。",
+          "choices": [
+            {
+              "id": "CM01-03-01-choice-1",
+              "text": "我能看到潮湿、水汽和左下角表面起皮，但不能仅凭这张图判断里面是否已经腐烂。"
+            },
+            {
+              "id": "CM01-03-01-choice-2",
+              "text": "先把它当作‘需要进一步观察的潮湿区域’，不要直接当成霉菌或结构损坏。可以补一张全窗和墙角的照片。"
+            },
+            {
+              "id": "CM01-03-01-choice-3",
+              "text": "左下角比周围深，但近照没有尺度，也看不出材质是否变软；补拍时请让侧光照到起皮边缘。"
+            },
+            {
+              "id": "CM01-03-01-choice-4",
+              "text": "这张图能支持的结论有限：表面有水汽，木框有局部变化。清洁或维修前先留一张更完整的记录。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-03-02",
+          "conversationId": "editorial-cm01-03",
+          "conversationTitle": "只发了一张窗框图",
+          "userMessage": "- `image-description`：第二张侧光近照，左下角起皮边缘更清楚；纸巾按压后没有明显掉渣，但画面仍看不到窗框上沿。",
+          "choices": [
+            {
+              "id": "CM01-03-02-choice-1",
+              "text": "明白，只看左下角：现在更像表面漆层起皮，纸巾按压没有掉渣也暂时不支持‘已经烂透’。继续观察是否复发即可。"
+            },
+            {
+              "id": "CM01-03-02-choice-2",
+              "text": "我看到你指出的角落了。照片支持‘局部起皮和变色’，还不能确认内部木材状态；不要用尖东西去戳。"
+            },
+            {
+              "id": "CM01-03-02-choice-3",
+              "text": "不是颜色本身，而是边缘有没有变软。你这张比上一张有用，但如果要判断渗水来源，还需要窗框上沿或外侧对应位置。"
+            },
+            {
+              "id": "CM01-03-02-choice-4",
+              "text": "收到，范围缩小到左下角。可以先保持干燥并拍日期记录；如果出现鼓包、掉屑或反复潮湿，再交给维修人员检查。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "CM01-04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-04",
+      "conversationId": "editorial-cm01-04",
+      "title": "房间哪里不对",
+      "topic": "房间哪里不对",
+      "sourceRefs": [
+        "CM01-04"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-04-01",
+          "conversationId": "editorial-cm01-04",
+          "conversationTitle": "房间哪里不对",
+          "userMessage": "- `text`：感觉哪里不对。",
+          "choices": [
+            {
+              "id": "CM01-04-01-choice-1",
+              "text": "第一眼不像是颜色问题，更像视线的重心偏右：沙发和茶几挤在一起，左侧落地灯却像单独站着。"
+            },
+            {
+              "id": "CM01-04-01-choice-2",
+              "text": "我先不急着改。画面很整齐，但茶几与沙发的关系有点紧，灯和窗户形成的左侧空间又比较空。"
+            },
+            {
+              "id": "CM01-04-01-choice-3",
+              "text": "如果你说的是‘住起来不对’，可以先试着把茶几向左移一点，不动颜色，看走动和坐下时是否更自然。"
+            },
+            {
+              "id": "CM01-04-01-choice-4",
+              "text": "我能指出一个可能的结构问题：家具的重量都压在右边，左边只有一盏灯，空间像在轻微倾斜。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-04-02",
+          "conversationId": "editorial-cm01-04",
+          "conversationTitle": "房间哪里不对",
+          "userMessage": "不是布局，我说那个角落。看左下角。",
+          "choices": [
+            {
+              "id": "CM01-04-02-choice-1",
+              "text": "明白了。左下角有一块被阴影压住的区域，像是地毯边缘和墙脚之间断开了；如果那就是你说的不对，我会先调整光线和连接感。"
+            },
+            {
+              "id": "CM01-04-02-choice-2",
+              "text": "你指的是左下角靠墙的位置。那里不是脏乱，而是阴影太均匀，物体边界消失了，所以看起来像缺了一块。"
+            },
+            {
+              "id": "CM01-04-02-choice-3",
+              "text": "收到，我刚才看得太整体了。可以只增加一条很窄的侧光，或者把地毯边缘露出来，不必重排整个房间。"
+            },
+            {
+              "id": "CM01-04-02-choice-4",
+              "text": "嗯，是那个角落。这里适合做局部修正：让墙脚、地毯和灯光至少有一层边界，其他地方先不动。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "CM01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-05",
+      "conversationId": "editorial-cm01-05",
+      "title": "给我三个海报方向",
+      "topic": "给我三个海报方向",
+      "sourceRefs": [
+        "CM01-05"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-05-01",
+          "conversationId": "editorial-cm01-05",
+          "conversationTitle": "给我三个海报方向",
+          "userMessage": "做一个“夜里还有一盏灯”的小海报，别太鸡汤，给我三个完全不同的方向。",
+          "choices": [
+            {
+              "id": "CM01-05-01-choice-1",
+              "text": "可以。方向一是几乎空白的黑色房间，远处一盏桌灯；方向二是把城市窗口排成网格，只留一个窗口亮着；方向三是近距离拍灯罩和桌面，文字藏在光圈边缘。"
+            },
+            {
+              "id": "CM01-05-01-choice-2",
+              "text": "我会把差异放在构图，不只换颜色：A 用大面积留白，B 用俯视城市平面，C 用被截断的生活物件和局部文字。"
+            },
+            {
+              "id": "CM01-05-01-choice-3",
+              "text": "三个方向：孤立的室内灯、城市里的一格亮光、有人刚离开座位的桌面。它们都克制，但叙事距离不同。"
+            },
+            {
+              "id": "CM01-05-01-choice-4",
+              "text": "先做三张小预览：一张让灯成为唯一主体，一张让灯成为远处的细节，一张让灯光照出未完成的东西。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-05-02",
+          "conversationId": "editorial-cm01-05",
+          "conversationTitle": "给我三个海报方向",
+          "userMessage": "第二个太像公益海报，第三个有点像咖啡店菜单。我要那种“有人还没睡，但不一定在等谁”。",
+          "choices": [
+            {
+              "id": "CM01-05-02-choice-1",
+              "text": "那我会把叙事从‘希望’移开：做一张深夜办公室的俯视图，灯亮着，但桌上是拆开的电线、半杯水和没合上的文件，不暗示有人被拯救。"
+            },
+            {
+              "id": "CM01-05-02-choice-2",
+              "text": "可以改成一个没有人物的侧面房间截面：一盏灯照到墙上的胶带痕迹，画面只说明‘还有事情没结束’，不说明它值得坚持。"
+            },
+            {
+              "id": "CM01-05-02-choice-3",
+              "text": "第三个方向变成普通生活现场：厨房门缝漏光，旁边放着没收好的晾衣架。有人醒着，但没有戏剧性。"
+            },
+            {
+              "id": "CM01-05-02-choice-4",
+              "text": "我会避免月亮、城市灯海和暖色光晕，改用冷白灯、局部杂物与不完整构图，让‘还没睡’保持中性。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-05-03",
+          "conversationId": "editorial-cm01-05",
+          "conversationTitle": "给我三个海报方向",
+          "userMessage": "行，就按厨房门缝那个来。字少一点。",
+          "choices": [
+            {
+              "id": "CM01-05-03-choice-1",
+              "text": "好：保留门缝、冷白灯和门外没收好的晾衣架，文字只放一句‘还没睡’。其余不解释。"
+            },
+            {
+              "id": "CM01-05-03-choice-2",
+              "text": "可以，最终方向是生活切片，不加人物、不加励志副标题，文字靠近画面边缘而不是正中。"
+            },
+            {
+              "id": "CM01-05-03-choice-3",
+              "text": "嗯，就做成一个普通夜晚的局部。字少、留白多，不把它解释成等待或坚持。"
+            },
+            {
+              "id": "CM01-05-03-choice-4",
+              "text": "收到：厨房门缝的侧面构图，冷白光，少量生活杂物，一句短字。三案在这里收敛成一个。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "CM01-06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-06",
+      "conversationId": "editorial-cm01-06",
+      "title": "头像不是换个颜色",
+      "topic": "头像不是换个颜色",
+      "sourceRefs": [
+        "CM01-06"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-06-01",
+          "conversationId": "editorial-cm01-06",
+          "conversationTitle": "头像不是换个颜色",
+          "userMessage": "给我做三个头像方向。不要只是黑白、蓝色、红色换皮，要能看出构图不同。",
+          "choices": [
+            {
+              "id": "CM01-06-01-choice-1",
+              "text": "方案 A：极近距离侧脸，只露半张脸和一条亮边；方案 B：人物在画面底部，顶部留出大片空白，像被环境包住；方案 C：正面头像被一条斜向物件切开，左右两边是不同质感。"
+            },
+            {
+              "id": "CM01-06-01-choice-2",
+              "text": "三个方向可以分别是‘局部肖像’、‘人物与空场’、‘被遮挡的正面’。差异来自观看距离和遮挡关系，不靠调色。"
+            },
+            {
+              "id": "CM01-06-01-choice-3",
+              "text": "我建议一张不露脸但有姿态、一张正面但被环境压小、一张只截取眼睛和肩线。这样即使统一色调也能区分。"
+            },
+            {
+              "id": "CM01-06-01-choice-4",
+              "text": "可以做成：侧脸逆光、远景小人物、斜切构图。每张都改变主体位置和视觉叙事，不只改滤镜。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-06-02",
+          "conversationId": "editorial-cm01-06",
+          "conversationTitle": "头像不是换个颜色",
+          "userMessage": "第二个好，但人物太像在等公交。我想要“刚想起一件事”，不是“在等”。",
+          "choices": [
+            {
+              "id": "CM01-06-02-choice-1",
+              "text": "那把人物从画面边缘移到刚转身的位置：肩膀已经离开，手还伸向画外，像突然想到要回去拿东西。"
+            },
+            {
+              "id": "CM01-06-02-choice-2",
+              "text": "可以保留大面积空白，但让人物的头部微微回转，重心落在动作而不是等待；不要加入站牌、道路或明确地点。"
+            },
+            {
+              "id": "CM01-06-02-choice-3",
+              "text": "把‘等候姿态’换成‘中断动作’：一只手握着半合上的包，身体朝外，脸却被刚刚想起的方向牵回去。"
+            },
+            {
+              "id": "CM01-06-02-choice-4",
+              "text": "明白。构图继续用远景小人物，但增加一个被打断的动作，让画面像记忆突然回来，而不是人物在排队。"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "assetId": "CM01-07",
       "classification": "NON_MAINLINE",
       "subcategory": "OTHER",
@@ -8014,6 +10251,70 @@
             {
               "id": "CM01-07-01-choice-4",
               "text": "好，暂时不做方案。你愿意的话，先告诉我今天脑子里反复回来的是哪一小段。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "CM01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-08",
+      "conversationId": "editorial-cm01-08",
+      "title": "会议说到一半想到冰箱",
+      "topic": "会议说到一半想到冰箱",
+      "sourceRefs": [
+        "CM01-08"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-08-01",
+          "conversationId": "editorial-cm01-08",
+          "conversationTitle": "会议说到一半想到冰箱",
+          "userMessage": "我明天要开会，开场想自然一点。对了我刚才突然想起冰箱晚上会咔一声，这正常吗？",
+          "choices": [
+            {
+              "id": "CM01-08-01-choice-1",
+              "text": "冰箱偶尔因温度变化、继电器或塑料部件收缩发出咔声，单独出现通常不说明故障。会议开场那部分你可以先记着，我们等你聊完这个再回去。"
+            },
+            {
+              "id": "CM01-08-01-choice-2",
+              "text": "先答冰箱：偶尔咔一声、制冷正常、没有持续异响时，多半是运行部件切换或材料热胀冷缩。然后我们回到开场。"
+            },
+            {
+              "id": "CM01-08-01-choice-3",
+              "text": "这个离题有来源：你在想‘开场怎么自然’，脑子又跳到昨晚那个突然的声音。冰箱如果只是偶发一声，可以先观察频率。"
+            },
+            {
+              "id": "CM01-08-01-choice-4",
+              "text": "冰箱问题先放一个小结：偶发咔声可观察，伴随不制冷、漏水或连续噪声才需要进一步排查。现在回到会议。"
+            }
+          ]
+        },
+        {
+          "nodeId": "CM01-08-02",
+          "conversationId": "editorial-cm01-08",
+          "conversationTitle": "会议说到一半想到冰箱",
+          "userMessage": "好了，说回开场。我不想自我介绍，也不想一上来就“今天很高兴”。",
+          "choices": [
+            {
+              "id": "CM01-08-02-choice-1",
+              "text": "那可以直接从地图开始：‘我先说三个结果，再说其中一个还没解决的地方。’不自我介绍，也不套寒暄。"
+            },
+            {
+              "id": "CM01-08-02-choice-2",
+              "text": "你可以说：‘我先把目前做到哪、卡在哪、需要大家决定什么放前面。’听起来像开始工作，不像主持词。"
+            },
+            {
+              "id": "CM01-08-02-choice-3",
+              "text": "开场可以只承担导航：‘我先讲结论，再补过程。’如果现场需要你的名字，别人通常已经知道。"
+            },
+            {
+              "id": "CM01-08-02-choice-4",
+              "text": "嗯，就从事情开始。比如：‘这周变化主要有两件，我先讲影响最大的那件。’"
             }
           ]
         }
@@ -8358,6 +10659,46 @@
             {
               "id": "CM01-16-02-choice-4",
               "text": "我会保留原画面，让右上角出现不对称的使用痕迹：旧胶带、褪色边缘和一张没撕干净的纸。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetId": "CM01-17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-17",
+      "conversationId": "editorial-cm01-17",
+      "title": "嗯",
+      "topic": "嗯",
+      "sourceRefs": [
+        "CM01-17"
+      ],
+      "nodes": [
+        {
+          "nodeId": "CM01-17-01",
+          "conversationId": "editorial-cm01-17",
+          "conversationTitle": "嗯",
+          "userMessage": "嗯。",
+          "choices": [
+            {
+              "id": "CM01-17-01-choice-1",
+              "text": "我在。"
+            },
+            {
+              "id": "CM01-17-01-choice-2",
+              "text": "你继续。"
+            },
+            {
+              "id": "CM01-17-01-choice-3",
+              "text": "嗯。"
+            },
+            {
+              "id": "CM01-17-01-choice-4",
+              "text": "好，不急。"
             }
           ]
         }
@@ -9848,7 +12189,7 @@
             },
             {
               "id": "lf01-10-01-b",
-              "text": "先给 A/B 各自最重要的三个事实，否则只是把犹豫写长。"
+              "text": "先把 A/B 的收入、稳定性和搬家代价列出来，再看你最不愿意牺牲什么。"
             },
             {
               "id": "lf01-10-01-c",
@@ -10058,43 +12399,54 @@
           "choices": [
             {
               "id": "lf01-02-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "数据里最明显的不是“大家不感兴趣”，而是愿意参加的人和能按现在时间参加的人并不是同一批。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "约 1,600 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "title": "社团活动反馈：参与意愿、时间冲突与活动体验",
+                "preview": "数据里最明显的不是“大家不感兴趣”，而是愿意参加的人和能按现在时间参加的人并不是同一批。",
+                "structure": [
+                  "执行摘要",
+                  "主要发现",
+                  "典型意见",
+                  "可能解释",
+                  "可执行调整。"
+                ],
                 "keyFacts": [
-                  "时间冲突是主因之一",
+                  "时间冲突是主因",
                   "新成员更在意是否有人带",
-                  "老成员更在意活动重复"
+                  "老成员更在意活动重复。"
                 ]
               }
             },
             {
               "id": "lf01-02-choice-2",
-              "text": "按当前输入继续整理。",
+              "text": "如果只看满意度，会得到一个过于乐观的结论。开放题里更值得注意的是：不少人并不是不满意，而是逐渐不再参加。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "约 1,350 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "如果只看满意度，会得到一个过于乐观的结论。开放题里更值得注意的是：不少人并不是不满意，而是逐渐不再参加。",
+                "structure": [
+                  "先讲异常",
+                  "再回到数字",
+                  "按用户类型分组",
+                  "三条建议。"
+                ],
                 "keyFacts": [
-                  "时间冲突是主因之一",
-                  "新成员更在意是否有人带",
-                  "老成员更在意活动重复"
+                  "强调“沉默流失”而非平均满意度。"
                 ]
               }
             },
             {
               "id": "lf01-02-choice-3",
-              "text": "按当前输入继续整理。",
+              "text": "我会把报告拆成“发生了什么”“为什么可能发生”“下一轮怎么验证”三层，避免把相关性直接写成原因。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "约 1,900 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "我会把报告拆成“发生了什么”“为什么可能发生”“下一轮怎么验证”三层，避免把相关性直接写成原因。",
                 "keyFacts": [
-                  "时间冲突是主因之一",
-                  "新成员更在意是否有人带",
-                  "老成员更在意活动重复"
+                  "更谨慎，不把问卷自报直接当因果",
+                  "提出下次问卷新增两个问题。"
                 ]
               }
             },
@@ -10112,11 +12464,18 @@
           "choices": [
             {
               "id": "lf01-02-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "人数下降看起来不是一个原因造成的。更像是几件小事一起把“本来想来的人”慢慢挡在外面。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "约 1,300 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "title": "为什么参加的人变少了：从问卷里能看出的四个原因",
+                "preview": "人数下降看起来不是一个原因造成的。更像是几件小事一起把“本来想来的人”慢慢挡在外面。",
+                "structure": [
+                  "时间不合",
+                  "新人进入成本",
+                  "活动重复",
+                  "信息通知太晚。"
+                ],
                 "keyFacts": [
                   "时间冲突是主因之一",
                   "新成员更在意是否有人带",
@@ -10126,19 +12485,26 @@
             },
             {
               "id": "lf01-02-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "如果只保留一个结论：先别急着换活动内容，先处理时间和新人第一次参加的门槛。",
+              "longformPreview": {
+                "artifactType": "report",
+                "estimatedLength": "约 1,050 字",
+                "preview": "如果只保留一个结论：先别急着换活动内容，先处理时间和新人第一次参加的门槛。",
+                "keyFacts": [
+                  "把行动优先级放前面",
+                  "压缩方法论。"
+                ]
+              }
             },
             {
               "id": "lf01-02-choice-3",
-              "text": "按当前输入继续整理。",
+              "text": "问卷里真正危险的不是“差评”，而是“没什么意见，但后来不来了”。这类人往往不会主动告诉负责人为什么。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "约 1,450 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "问卷里真正危险的不是“差评”，而是“没什么意见，但后来不来了”。这类人往往不会主动告诉负责人为什么。",
                 "keyFacts": [
-                  "时间冲突是主因之一",
-                  "新成员更在意是否有人带",
-                  "老成员更在意活动重复"
+                  "围绕流失型成员组织全文。"
                 ]
               }
             },
@@ -10156,11 +12522,11 @@
           "choices": [
             {
               "id": "lf01-02-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "下个月只做三件事：把活动时间提前一周确认；给第一次来的成员安排明确接待人；连续两次活动避免同一种形式。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "折叠长回复",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "下个月只做三件事：把活动时间提前一周确认；给第一次来的成员安排明确接待人；连续两次活动避免同一种形式。",
                 "keyFacts": [
                   "时间冲突是主因之一",
                   "新成员更在意是否有人带",
@@ -10170,11 +12536,11 @@
             },
             {
               "id": "lf01-02-choice-2",
-              "text": "按当前输入继续整理。",
+              "text": "三件事：先改通知时间，再降低新人第一次参与成本，最后用一次新活动验证“内容重复”到底是不是主因。",
               "longformPreview": {
                 "artifactType": "report",
                 "estimatedLength": "折叠长回复",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "三件事：先改通知时间，再降低新人第一次参与成本，最后用一次新活动验证“内容重复”到底是不是主因。",
                 "keyFacts": [
                   "时间冲突是主因之一",
                   "新成员更在意是否有人带",
@@ -10184,11 +12550,21 @@
             },
             {
               "id": "lf01-02-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "如果资源有限，不需要同时解决所有问题。下个月只验证三个最可能影响参与率的环节……",
+              "longformPreview": {
+                "artifactType": "report",
+                "estimatedLength": "约 140 字",
+                "preview": "如果资源有限，不需要同时解决所有问题。下个月只验证三个最可能影响参与率的环节……",
+                "keyFacts": [
+                  "时间冲突是主因之一",
+                  "新成员更在意是否有人带",
+                  "老成员更在意活动重复"
+                ]
+              }
             },
             {
               "id": "lf01-02-choice-4",
-              "text": "“可以，结尾只留三件能执行的，不再加第四条‘长期建议’。”"
+              "text": "“可以，结尾只留三件能执行的，不再加第四条‘长期建议’。” ---"
             }
           ]
         }
@@ -10216,25 +12592,37 @@
           "choices": [
             {
               "id": "lf01-06-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "Preview： ts type RecordItem = { id: string value: number }",
               "longformPreview": {
                 "artifactType": "code",
                 "estimatedLength": "折叠长回复",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "type RecordItem = {\r\n     id: string\r\n     value: number\r\n   }",
+                "structure": [
+                  "`types.ts`",
+                  "核心函数",
+                  "输入校验",
+                  "输出格式",
+                  "简单测试。"
+                ],
                 "keyFacts": [
-                  "用户要完整代码结果",
-                  "玩家可展开结构而非直接铺两百行",
-                  "需要保留测试边界"
+                  "核心函数保持纯函数",
+                  "I/O和计算分离。"
                 ]
               }
             },
             {
               "id": "lf01-06-choice-2",
-              "text": "按当前输入继续整理。",
+              "text": "更适合快速复制，不拆多个文件。",
               "longformPreview": {
                 "artifactType": "code",
                 "estimatedLength": "折叠长回复",
                 "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "structure": [
+                  "单文件版本；按“解析",
+                  "验证",
+                  "计算",
+                  "格式化”分四段。"
+                ],
                 "keyFacts": [
                   "用户要完整代码结果",
                   "玩家可展开结构而非直接铺两百行",
@@ -10244,11 +12632,11 @@
             },
             {
               "id": "lf01-06-choice-3",
-              "text": "按当前输入继续整理。",
+              "text": "我会优先给你目录和关键函数签名，然后把完整实现折叠在同一个长代码块里。",
               "longformPreview": {
                 "artifactType": "code",
                 "estimatedLength": "折叠长回复",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "我会优先给你目录和关键函数签名，然后把完整实现折叠在同一个长代码块里。",
                 "keyFacts": [
                   "用户要完整代码结果",
                   "玩家可展开结构而非直接铺两百行",
@@ -10270,15 +12658,53 @@
           "choices": [
             {
               "id": "lf01-06-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "不拆文件、不引入依赖。",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "structure": [
+                  "常量",
+                  "类型",
+                  "parseInput",
+                  "validate",
+                  "process",
+                  "main。"
+                ],
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             },
             {
               "id": "lf01-06-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "删去可选抽象层，保留必要错误处理。",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             },
             {
               "id": "lf01-06-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "仍保留测试函数，但放文件末尾。",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             },
             {
               "id": "lf01-06-choice-4",
@@ -10294,11 +12720,31 @@
           "choices": [
             {
               "id": "lf01-06-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "Preview： ts function validate(input: Input) { return input.kind === \"a\" || input.kind === \"b\" || input.kind === \"c\" }",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "function validate(input: Input) {\r\n     return input.kind === \"a\" || input.kind === \"b\" || input.kind === \"c\"\r\n   }",
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             },
             {
               "id": "lf01-06-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "删除schema式校验和多余错误类型。",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             },
             {
               "id": "lf01-06-choice-3",
@@ -10306,7 +12752,17 @@
             },
             {
               "id": "lf01-06-choice-4",
-              "text": "按当前输入继续整理。"
+              "text": "---",
+              "longformPreview": {
+                "artifactType": "code",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "用户要完整代码结果",
+                  "玩家可展开结构而非直接铺两百行",
+                  "需要保留测试边界"
+                ]
+              }
             }
           ]
         }
@@ -10334,11 +12790,19 @@
           "choices": [
             {
               "id": "lf01-07-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "这篇文章的重点不只是最终结论，而是作者用了三个中间步骤把“现象”转成“因果解释”。",
               "longformPreview": {
                 "artifactType": "memo",
                 "estimatedLength": "约 1,500 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "这篇文章的重点不只是最终结论，而是作者用了三个中间步骤把“现象”转成“因果解释”。",
+                "structure": [
+                  "核心问题",
+                  "论证链",
+                  "每节作用",
+                  "隐含前提",
+                  "结论",
+                  "可质疑点。"
+                ],
                 "keyFacts": [
                   "先区分主张与证据",
                   "不能把作者观点写成事实",
@@ -10348,29 +12812,26 @@
             },
             {
               "id": "lf01-07-choice-2",
-              "text": "按当前输入继续整理。",
+              "text": "用 A→B→C→结论 的形式画出论证；每一步标“证据/推断”。",
               "longformPreview": {
                 "artifactType": "memo",
                 "estimatedLength": "约 1,250 字",
                 "preview": "我会把已提供的内容整理成可展开的完整版本。",
                 "keyFacts": [
-                  "先区分主张与证据",
-                  "不能把作者观点写成事实",
-                  "笔记最后保留三个追问"
+                  "用 A→B→C→结论 的形式画出论证",
+                  "每一步标“证据/推断”。"
                 ]
               }
             },
             {
               "id": "lf01-07-choice-3",
-              "text": "按当前输入继续整理。",
+              "text": "增加5个复习问题和3个容易混淆的概念。",
               "longformPreview": {
                 "artifactType": "memo",
                 "estimatedLength": "约 1,700 字",
                 "preview": "我会把已提供的内容整理成可展开的完整版本。",
                 "keyFacts": [
-                  "先区分主张与证据",
-                  "不能把作者观点写成事实",
-                  "笔记最后保留三个追问"
+                  "增加5个复习问题和3个容易混淆的概念。"
                 ]
               }
             },
@@ -10388,15 +12849,35 @@
           "choices": [
             {
               "id": "lf01-07-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "这里确实有跳跃。作者先证明两个变量一起变化，然后借助前面那组排除性证据，把“可能相关”推进成“更像因果”。但这一步不是自动成立的。",
+              "longformPreview": {
+                "artifactType": "memo",
+                "estimatedLength": "约 500 字",
+                "preview": "这里确实有跳跃。作者先证明两个变量一起变化，然后借助前面那组排除性证据，把“可能相关”推进成“更像因果”。但这一步不是自动成立的。",
+                "keyFacts": [
+                  "先区分主张与证据",
+                  "不能把作者观点写成事实",
+                  "笔记最后保留三个追问"
+                ]
+              }
             },
             {
               "id": "lf01-07-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "观察到什么 / 排除了什么 / 仍没排除什么 / 为什么作者仍敢下结论。"
             },
             {
               "id": "lf01-07-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "指出一种仍可能解释结果的混杂变量。",
+              "longformPreview": {
+                "artifactType": "memo",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "先区分主张与证据",
+                  "不能把作者观点写成事实",
+                  "笔记最后保留三个追问"
+                ]
+              }
             },
             {
               "id": "lf01-07-choice-4",
@@ -10412,19 +12893,49 @@
           "choices": [
             {
               "id": "lf01-07-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "新增“论证最弱的一跳”小节。",
+              "longformPreview": {
+                "artifactType": "memo",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "先区分主张与证据",
+                  "不能把作者观点写成事实",
+                  "笔记最后保留三个追问"
+                ]
+              }
             },
             {
               "id": "lf01-07-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "把第三部分从“结论”改写为“作者主张 + 证据强度”。",
+              "longformPreview": {
+                "artifactType": "memo",
+                "estimatedLength": "折叠长回复",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "先区分主张与证据",
+                  "不能把作者观点写成事实",
+                  "笔记最后保留三个追问"
+                ]
+              }
             },
             {
               "id": "lf01-07-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "争议点：现有证据缩小了其他解释，但并没有完全排除所有混杂因素。",
+              "longformPreview": {
+                "artifactType": "memo",
+                "estimatedLength": "折叠长回复",
+                "preview": "争议点：现有证据缩小了其他解释，但并没有完全排除所有混杂因素。",
+                "keyFacts": [
+                  "先区分主张与证据",
+                  "不能把作者观点写成事实",
+                  "笔记最后保留三个追问"
+                ]
+              }
             },
             {
               "id": "lf01-07-choice-4",
-              "text": "“可以，不把作者的推断包装成已经被证明的事实。”"
+              "text": "“可以，不把作者的推断包装成已经被证明的事实。” ---"
             }
           ]
         }
@@ -10452,11 +12963,18 @@
           "choices": [
             {
               "id": "lf01-08-choice-1",
-              "text": "按当前输入继续整理。",
+              "text": "先说结果：项目确实比原计划晚了两周。这个结果需要我们承担，但原因不是单点失误，也不是某一个人的问题。",
               "longformPreview": {
                 "artifactType": "speech",
                 "estimatedLength": "约 1,300 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "先说结果：项目确实比原计划晚了两周。这个结果需要我们承担，但原因不是单点失误，也不是某一个人的问题。",
+                "structure": [
+                  "先结论",
+                  "三个实际原因",
+                  "哪些是团队可控",
+                  "已经改什么",
+                  "下一节点。"
+                ],
                 "keyFacts": [
                   "时长约十分钟",
                   "要适合口头表达",
@@ -10466,11 +12984,11 @@
             },
             {
               "id": "lf01-08-choice-2",
-              "text": "按当前输入继续整理。",
+              "text": "我不会用“由于多方面原因”糊过去，而会把延误拆成估算偏差、需求变化和验证返工三个部分。",
               "longformPreview": {
                 "artifactType": "speech",
                 "estimatedLength": "约 1,150 字",
-                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "preview": "我不会用“由于多方面原因”糊过去，而会把延误拆成估算偏差、需求变化和验证返工三个部分。",
                 "keyFacts": [
                   "时长约十分钟",
                   "要适合口头表达",
@@ -10480,7 +12998,7 @@
             },
             {
               "id": "lf01-08-choice-3",
-              "text": "按当前输入继续整理。",
+              "text": "语气更口语；避免“深刻反思”“高度重视”等模板。",
               "longformPreview": {
                 "artifactType": "speech",
                 "estimatedLength": "约 1,400 字",
@@ -10506,15 +13024,45 @@
           "choices": [
             {
               "id": "lf01-08-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "我不重复时间线，直接讲三件事：为什么我们的原判断失效、现在还剩什么风险、下一个承诺为什么更可信。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "约 1,050 字",
+                "preview": "我不重复时间线，直接讲三件事：为什么我们的原判断失效、现在还剩什么风险、下一个承诺为什么更可信。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "删掉背景介绍，增加“原估算为什么错”的具体说明。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "约 950 字",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "开场30秒内进入责任和下一步，不做铺垫。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "约 1,100 字",
+                "preview": "我会把已提供的内容整理成可展开的完整版本。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-4",
@@ -10530,19 +13078,49 @@
           "choices": [
             {
               "id": "lf01-08-choice-1",
-              "text": "按当前输入继续整理。"
+              "text": "下一次检查点是周四。到那时我们不再汇报“进度正常”，只汇报已经验证完成的部分。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "折叠长回复",
+                "preview": "下一次检查点是周四。到那时我们不再汇报“进度正常”，只汇报已经验证完成的部分。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-2",
-              "text": "按当前输入继续整理。"
+              "text": "这次晚了已经是事实。接下来能做的是把下一次承诺变得更可验证。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "折叠长回复",
+                "preview": "这次晚了已经是事实。接下来能做的是把下一次承诺变得更可验证。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-3",
-              "text": "按当前输入继续整理。"
+              "text": "我讲完了，后面可以直接问最担心的风险点。",
+              "longformPreview": {
+                "artifactType": "speech",
+                "estimatedLength": "折叠长回复",
+                "preview": "我讲完了，后面可以直接问最担心的风险点。",
+                "keyFacts": [
+                  "时长约十分钟",
+                  "要适合口头表达",
+                  "结尾保留一个明确行动请求"
+                ]
+              }
             },
             {
               "id": "lf01-08-choice-4",
-              "text": "“好，结尾收在下一步，不索取听众的‘理解’。”"
+              "text": "“好，结尾收在下一步，不索取听众的‘理解’。” ---"
             }
           ]
         }
@@ -11541,1613 +14119,64 @@
       ]
     },
     {
-      "assetId": "batch02:18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch02:18",
-      "conversationId": "batch02-scene-18",
-      "title": "User #9587",
-      "topic": "other",
-      "sourceRefs": [
-        "batch02:18"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_ac_001",
-          "conversationId": "batch02-scene-18",
-          "conversationTitle": "User #9587",
-          "userMessage": "空调关了十分钟后突然啪一声 我差点以为它决定复活 这正常吗",
-          "choices": [
-            {
-              "id": "normal_ac_001-choice-64d18a0b",
-              "text": "单独一两声‘啪’常见于塑料外壳或内部部件温度变化后的热胀冷缩，关机后反而更容易听见。"
-            },
-            {
-              "id": "normal_ac_001-choice-1328e60f",
-              "text": "如果没有焦味、冒烟、漏水、跳闸，也不是连续电火花一样的噼啪声，可以先观察，不用因为一次声音就断定故障。"
-            },
-            {
-              "id": "normal_ac_001-choice-d7063a15",
-              "text": "你可以看声音是不是每次制冷结束后都差不多时间出现。规律的材料收缩声通常比随机持续异响更容易解释。"
-            },
-            {
-              "id": "normal_ac_001-choice-6a1ebf71",
-              "text": "如果你能录到声音，尤其是连续几次，我可以帮你区分更像塑料弹响、排水声还是电气类异常。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_ac_002",
-          "conversationId": "batch02-scene-18",
-          "conversationTitle": "User #9587",
-          "userMessage": "就一声 没味道没跳闸 制冷也正常 那我不跟它对线了",
-          "choices": [
-            {
-              "id": "normal_ac_002-choice-e8500a66",
-              "text": "那目前更像正常材料响声，可以先和平共处。只要后面模式没变，不必特意处理。"
-            },
-            {
-              "id": "normal_ac_002-choice-832631ed",
-              "text": "对，先把‘制冷正常、无焦味、无跳闸、单次弹响’记成当前基线；以后真变化了再判断。"
-            },
-            {
-              "id": "normal_ac_002-choice-2c74d32f",
-              "text": "你也可以顺手看看外壳有没有松动，但别拆机。租房情况下没有明确故障迹象就不值得扩大操作。"
-            },
-            {
-              "id": "normal_ac_002-choice-15b6eec0",
-              "text": "这场对线可以由你宣布停火。家电晚上最擅长用一声正常噪音让人开始研究遗嘱。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:01",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:01",
-      "conversationId": "batch03-scene-01",
-      "title": "User #6128",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:01"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_heating_001",
-          "conversationId": "batch03-scene-01",
-          "conversationTitle": "User #6128",
-          "userMessage": "我这个暖气每天半夜会“咚”一下，有时候连着两三下，特别像有人敲墙。白天又基本没事。这个算坏了吗",
-          "choices": [
-            {
-              "id": "normal_heating_001-choice-34890945",
-              "text": "不一定是坏了。老式暖气在升温、降温或管道热胀冷缩时确实可能出现敲击声；如果只在启动或停止附近发生，先记录一下时间和持续多久会比较有用。"
-            },
-            {
-              "id": "normal_heating_001-choice-87564148",
-              "text": "我会先区分是散热器本体、管道还是墙里传出来的。你下次听到时不用拆东西，只要靠近几个位置判断声音最明显在哪儿。"
-            },
-            {
-              "id": "normal_heating_001-choice-3e011263",
-              "text": "如果它除了响还伴随漏水、明显焦味、供暖忽冷忽热，那就别只当噪音问题，直接联系物业或房东检查。"
-            },
-            {
-              "id": "normal_heating_001-choice-905f591b",
-              "text": "你可以先录一段声音，再把‘发生时间、持续多久、有没有漏水或温度异常’一起发给房东，这样比只说‘暖气很吵’更容易让对方处理。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_heating_002",
-          "conversationId": "batch03-scene-01",
-          "conversationTitle": "User #6128",
-          "userMessage": "没漏水也没味道，就是会吓我一下。我房东回复特别慢，我怎么说才不像我在小题大做",
-          "choices": [
-            {
-              "id": "normal_heating_002-choice-8aa2a233",
-              "text": "可以写得很客观：‘暖气最近夜间会间歇出现明显敲击声，目前没有漏水或异味。我录了声音，想确认这是否属于正常现象，还是需要安排检查。’"
-            },
-            {
-              "id": "normal_heating_002-choice-64709dce",
-              "text": "不用先替房东判断是不是小题大做。你只要说明现象和你已经排除的情况，让对方判断是否需要处理就够了。"
-            },
-            {
-              "id": "normal_heating_002-choice-a7811a5d",
-              "text": "如果你担心语气太重，可以把重点放在‘确认是否正常’而不是‘要求立刻维修’，这样既留下记录，也不会显得在下结论。"
-            },
-            {
-              "id": "normal_heating_002-choice-584279e5",
-              "text": "我反而建议把‘半夜会把我吓醒’这点写进去。它不是安全故障也不代表不影响居住，实际影响可以直接说。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:02",
+      "assetId": "batch01:13",
       "classification": "NON_MAINLINE",
       "subcategory": "WRITING",
       "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
       "usedInStoryPlan": false,
-      "source": "authored:batch03:02",
-      "conversationId": "batch03-scene-02",
-      "title": "User #4836",
+      "source": "authored:batch01:13",
+      "conversationId": "batch01-scene-13",
+      "title": "User #2945",
       "topic": "other",
       "sourceRefs": [
-        "batch03:02"
+        "batch01:13"
       ],
       "nodes": [
         {
-          "nodeId": "normal_presentation_001",
-          "conversationId": "batch03-scene-02",
-          "conversationTitle": "User #4836",
-          "userMessage": "我每次汇报开场都特别像“尊敬的各位领导今天我来汇报……”，但其实公司里大家都挺随意的。怎么开才不尬",
+          "nodeId": "normal_cafe_001",
+          "conversationId": "batch01-scene-13",
+          "conversationTitle": "User #2945",
+          "userMessage": "我们店出了个桂花拿铁，帮我写个小红书文案，但求你别“秋日氛围感拉满”“一口入秋”这种，我看吐了",
           "choices": [
             {
-              "id": "normal_presentation_001-choice-1eac18e0",
-              "text": "可以直接从结论进：‘我今天主要讲三件事：现在做到哪、卡在哪、接下来需要谁配合。’这比先介绍自己自然很多。"
+              "id": "normal_cafe_001-choice-5bbe4d55",
+              "text": "可以很简单：‘这周菜单多了一杯桂花拿铁。桂花放得不重，先闻到一点香，喝起来还是咖啡和奶为主。想试的话，热的比冰的更明显。’"
             },
             {
-              "id": "normal_presentation_001-choice-6deb1b9e",
-              "text": "如果大家已经知道项目背景，甚至可以一句‘我直接从结果开始’然后上第一页。正式感不一定来自套话。"
+              "id": "normal_cafe_001-choice-54c5b3f6",
+              "text": "如果你店本来就偏日常，可以写：‘试了四版，最后把桂花减了一半。现在这杯不会像喝香水，放心。’"
             },
             {
-              "id": "normal_presentation_001-choice-dd35860b",
-              "text": "你可以把开场当成给听众一个地图：为什么现在要听、接下来十分钟会听到什么。只要这两件事清楚，就不会像作文。"
+              "id": "normal_cafe_001-choice-2695f7d2",
+              "text": "我会把重点放在具体味道，不写情绪词：‘中深烘浓缩 + 牛奶 + 少量桂花糖浆，甜度比店里焦糖拿铁低一点。’"
             },
             {
-              "id": "normal_presentation_001-choice-c6889f51",
-              "text": "如果现场比较熟，我会用更口语的：‘这周变化有点多，我先把最重要的两个结论放前面。’听起来像人在说话，不像背模板。"
+              "id": "normal_cafe_001-choice-079c4eca",
+              "text": "你给我看一下你们以前两三条文案，我可以照你们店本来的说话方式写，不单独给这杯造一个‘营销人格’。"
             }
           ]
         },
         {
-          "nodeId": "normal_presentation_002",
-          "conversationId": "batch03-scene-02",
-          "conversationTitle": "User #4836",
-          "userMessage": "我最怕有人中途问一个我没准备的问题，然后脑子直接白了",
+          "nodeId": "normal_cafe_002",
+          "conversationId": "batch01-scene-13",
+          "conversationTitle": "User #2945",
+          "userMessage": "我们之前就是那种“今天豆子到了”“下雨，人少，适合来坐会儿”这种。",
           "choices": [
             {
-              "id": "normal_presentation_002-choice-72496ae4",
-              "text": "你不需要每个问题都现场答完整。可以先确认：‘你问的是成本变化，还是时间影响？’给自己几秒，也避免答偏。"
+              "id": "normal_cafe_002-choice-bbeacb19",
+              "text": "那就保持这个调子：‘桂花拿铁今天上了。香味比较轻，甜度也压低了。我们自己觉得热的更好喝。’"
             },
             {
-              "id": "normal_presentation_002-choice-8a00736d",
-              "text": "遇到没把握的就直接说‘这个数字我不想现场猜，我会后补确认值’，通常比硬凑一个答案更稳。"
+              "id": "normal_cafe_002-choice-c468d44e",
+              "text": "可以再生活一点：‘桂花拿铁试完了，今天开始卖。前几版太香，被我们自己否了。现在这版安静很多。’"
             },
             {
-              "id": "normal_presentation_002-choice-5dd0b83b",
-              "text": "提前准备三类兜底句就行：我知道答案、我需要确认、这个问题超出今天范围。脑子空白时先选类别，再组织内容。"
+              "id": "normal_cafe_002-choice-2cd84319",
+              "text": "你甚至不用强调新品：‘这两天店里有桂花味了。不是很甜，想喝热的可以试试。’"
             },
             {
-              "id": "normal_presentation_002-choice-9a541e3a",
-              "text": "你真正怕的可能不是不知道，而是停顿看起来很尴尬。其实两三秒思考在听众眼里往往比你自己感觉短得多。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:03",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:03",
-      "conversationId": "batch03-scene-03",
-      "title": "User #3462",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:03"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_gitconflict_001",
-          "conversationId": "batch03-scene-03",
-          "conversationTitle": "User #3462",
-          "userMessage": "merge conflict 里面那几个 <<<<<< ====== >>>>>> 到底谁是谁，我每次看到都感觉仓库已经炸了",
-          "choices": [
-            {
-              "id": "normal_gitconflict_001-choice-af542148",
-              "text": "仓库没炸，它只是把两边不同的内容都摆给你看。通常 `<<<<<<<` 到 `=======` 是当前这一侧，`=======` 到 `>>>>>>>` 是另一侧，你要决定最终留下什么。"
-            },
-            {
-              "id": "normal_gitconflict_001-choice-d67a67c7",
-              "text": "先别急着删标记。看冲突块上下文，理解两边各自在改什么，再手动整理成你真正想要的最终代码，最后把标记本身删掉。"
-            },
-            {
-              "id": "normal_gitconflict_001-choice-6bf49fce",
-              "text": "如果你告诉我你是在 merge 还是 rebase，以及 IDE 用什么，我可以按你当前界面解释‘ours/theirs’分别指哪边，因为这个最容易混。"
-            },
-            {
-              "id": "normal_gitconflict_001-choice-ecdc23d1",
-              "text": "最安全的心态是把冲突当成‘Git 不敢替你做决定’，不是‘Git 做坏了’。它停下来其实是在避免自动覆盖。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_gitconflict_002",
-          "conversationId": "batch03-scene-03",
-          "conversationTitle": "User #3462",
-          "userMessage": "那我如果选错了是不是就把队友代码删没了",
-          "choices": [
-            {
-              "id": "normal_gitconflict_002-choice-8f7fa1b3",
-              "text": "有可能把某段修改从最终结果里漏掉，但只要提交历史还在，通常不是不可恢复。真正要避免的是没看懂就一路点‘accept current’。"
-            },
-            {
-              "id": "normal_gitconflict_002-choice-7bc44814",
-              "text": "解决完冲突后先看一次 diff，再跑测试。你不是在赌一次选择，而是有机会检查最终合并出来的结果。"
-            },
-            {
-              "id": "normal_gitconflict_002-choice-d15fe018",
-              "text": "如果这个冲突涉及你不熟悉的模块，最稳的是把冲突块和原始两个提交对一下，必要时直接问那段代码的作者。"
-            },
-            {
-              "id": "normal_gitconflict_002-choice-850bb1d3",
-              "text": "Git 的优势就在这里：多数错误合并是可追溯的。别把它当成一次性删除操作，先理解、再解决、再验证。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:05",
-      "conversationId": "batch03-scene-05",
-      "title": "User #2019",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:05"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_catmorning_001",
-          "conversationId": "batch03-scene-05",
-          "conversationTitle": "User #2019",
-          "userMessage": "我猫每天凌晨4点准时在我脸旁边“喵——”，不是饿死那种，就是非要把我叫醒。它是恨我吗",
-          "choices": [
-            {
-              "id": "normal_catmorning_001-choice-91491a1d",
-              "text": "更像是它已经把‘凌晨四点叫你 = 会发生点什么’学成固定流程了，不一定和恨有什么关系。"
-            },
-            {
-              "id": "normal_catmorning_001-choice-58c2667a",
-              "text": "先看你被叫醒后通常会不会喂、摸、讲话、下床。哪怕你只是骂它两句，对猫来说也可能算‘我成功让这个人有反应了’。"
-            },
-            {
-              "id": "normal_catmorning_001-choice-4bee0996",
-              "text": "如果它白天睡很多、晚上活动少，也可能单纯是作息和你的不一致。可以试着把睡前互动和最后一顿往后安排一点。"
-            },
-            {
-              "id": "normal_catmorning_001-choice-abbfdf22",
-              "text": "它如果是突然最近才开始，而且伴随异常叫声、食欲或行为变化，就别只当坏习惯；如果一直这样，更像行为模式。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_catmorning_002",
-          "conversationId": "batch03-scene-05",
-          "conversationTitle": "User #2019",
-          "userMessage": "我确实每次都会起来给它加一点粮……所以是我自己训练出来的？",
-          "choices": [
-            {
-              "id": "normal_catmorning_002-choice-46d3f2d6",
-              "text": "大概率你们是互相训练成功了：它训练你凌晨加粮，你训练它知道叫到一定程度就有粮。"
-            },
-            {
-              "id": "normal_catmorning_002-choice-472c18fc",
-              "text": "基本是。解决时最难的不是猫不知道，而是它发现原来的方法突然失效后，可能会先叫得更努力几天。"
-            },
-            {
-              "id": "normal_catmorning_002-choice-37c3e896",
-              "text": "可以把自动喂食器设在它通常叫你之前一点，把‘食物来自你起床’这件事拆开，通常比单纯硬忍更容易。"
-            },
-            {
-              "id": "normal_catmorning_002-choice-6147a1d0",
-              "text": "也别一下把总食量加上去。你是在改发放时间和关联，不是因为它叫得有毅力就多奖励一顿。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:06",
-      "classification": "NON_MAINLINE",
-      "subcategory": "STUDY",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:06",
-      "conversationId": "batch03-scene-06",
-      "title": "User #5287",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:06"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_elective_001",
-          "conversationId": "batch03-scene-06",
-          "conversationTitle": "User #5287",
-          "userMessage": "我有两门选修，一个叫“城市空间与日常生活”感觉挺有意思，一个叫“统计建模专题”看名字就想跑，但后者好像对以后找实习有用",
-          "choices": [
-            {
-              "id": "normal_elective_001-choice-7c2b3726",
-              "text": "我会先看这学期你的主课负担。如果主课已经很重，选一门你愿意主动去上的课，不一定是在浪费机会。"
-            },
-            {
-              "id": "normal_elective_001-choice-6d134fc8",
-              "text": "别只看课程名。去找 syllabus，看作业形式、评分方式和具体内容；‘统计建模专题’可能比名字温和，也可能真的很硬。"
-            },
-            {
-              "id": "normal_elective_001-choice-d8c30aaf",
-              "text": "如果你以后想走数据相关实习，统计课的边际价值可能更直接；但前提是你能真的学进去，而不是选了以后只求过。"
-            },
-            {
-              "id": "normal_elective_001-choice-57319860",
-              "text": "你可以把问题拆成两个：哪门课更有即时兴趣，哪门课更补你现在缺的能力。然后看这学期你更需要哪一个。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_elective_002",
-          "conversationId": "batch03-scene-06",
-          "conversationTitle": "User #5287",
-          "userMessage": "我最怕为了“以后有用”选了一堆东西，最后大学四年全在吃苦",
-          "choices": [
-            {
-              "id": "normal_elective_002-choice-703c7817",
-              "text": "这个担心合理。‘有用’不是唯一标准，如果四年所有选择都只服务简历，大学会被压成一个很长的求职准备期。"
-            },
-            {
-              "id": "normal_elective_002-choice-74cdbff7",
-              "text": "也不用反过来完全不考虑以后。比较现实的是每学期留一部分课程补能力，再留一部分给你真的想学的东西。"
-            },
-            {
-              "id": "normal_elective_002-choice-442a46c8",
-              "text": "你可以问自己：这门难课是‘我不喜欢但值得’，还是‘别人说有用所以我不敢不选’。这两个动机差很多。"
-            },
-            {
-              "id": "normal_elective_002-choice-cccdf154",
-              "text": "如果你已经有别的方式补统计能力，比如项目、主修课或自学，那这门选修就没必要承担全部职业焦虑。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:07",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:07",
-      "conversationId": "batch03-scene-07",
-      "title": "User #7740",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:07"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_meeting_001",
-          "conversationId": "batch03-scene-07",
-          "conversationTitle": "User #7740",
-          "userMessage": "我们每周例会都有agenda，但最后还是谁想到啥聊啥，40分钟能聊成一个半小时。agenda到底怎么写才有用",
-          "choices": [
-            {
-              "id": "normal_meeting_001-choice-6e5c6fe4",
-              "text": "把议程从‘主题列表’改成‘需要做出的决定列表’。比如不是‘讨论上线’，而是‘确认上线日期和负责人’。"
-            },
-            {
-              "id": "normal_meeting_001-choice-887099ab",
-              "text": "每项后面直接写时间盒：进度同步 10 分钟、风险 15 分钟、需要决策 15 分钟。超时的问题单独留下，不让它吞掉全场。"
-            },
-            {
-              "id": "normal_meeting_001-choice-ad98f7e2",
-              "text": "如果某个议题只是信息同步，能提前异步发就别占会议时间。会议尽量留给有分歧、需要现场决定的东西。"
-            },
-            {
-              "id": "normal_meeting_001-choice-95469f83",
-              "text": "你们可能不是缺 agenda，而是缺一个人真的执行它。可以指定主持人，在话题跑偏时明确说‘这个先停，放 parking lot’。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_meeting_002",
-          "conversationId": "batch03-scene-07",
-          "conversationTitle": "User #7740",
-          "userMessage": "我怕我一直打断别人显得很控制狂，尤其大家关系都挺熟",
-          "choices": [
-            {
-              "id": "normal_meeting_002-choice-2a6a8f7d",
-              "text": "你可以把打断变成对共同时间的保护：‘这个话题值得聊，但我们先把今天必须决定的两件事走完。’语气会柔和很多。"
-            },
-            {
-              "id": "normal_meeting_002-choice-01f19e46",
-              "text": "提前让大家同意一个规则比你临场当坏人轻松，比如‘任何超过 10 分钟的支线先记下来，会后继续’。"
-            },
-            {
-              "id": "normal_meeting_002-choice-b8b8b551",
-              "text": "主持并不等于控制内容。你可以管节奏，不替别人决定结论；这两件事分开后，通常不会那么强势。"
-            },
-            {
-              "id": "normal_meeting_002-choice-6ad1a18c",
-              "text": "如果团队真的喜欢自由聊，也可以保留最后 10 分钟开放时间。不是把闲聊消灭，而是给它一个不会挤掉正事的位置。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:08",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:08",
-      "conversationId": "batch03-scene-08",
-      "title": "User #9031",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:08"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_package_001",
-          "conversationId": "batch03-scene-08",
-          "conversationTitle": "User #9031",
-          "userMessage": "快递显示“本人签收”，问题是本人今天一天都没出门也没见到人🙂 我先找商家还是快递",
-          "choices": [
-            {
-              "id": "normal_package_001-choice-7cf309c8",
-              "text": "先看物流详情有没有照片、代收点或具体签收位置；如果没有，我会先联系快递确认实际投递到哪，因为他们掌握最后一公里记录。"
-            },
-            {
-              "id": "normal_package_001-choice-47ba0ce0",
-              "text": "商家和快递都可以联系，但别一上来只说‘丢了’。把订单号、物流单号、签收时间和‘本人未签收’一起发，处理会快一些。"
-            },
-            {
-              "id": "normal_package_001-choice-3b872121",
-              "text": "如果你住公寓，先顺手排除前台、快递柜、邻居误收这些常见情况；五分钟能确认的先确认，避免来回扯。"
-            },
-            {
-              "id": "normal_package_001-choice-c168fc76",
-              "text": "关键点是明确：系统记录为本人签收，但你否认本人签收。这个信息比‘我没找到包裹’更具体，也更值得让快递查投递记录。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_package_002",
-          "conversationId": "batch03-scene-08",
-          "conversationTitle": "User #9031",
-          "userMessage": "找到了，快递员放到隔壁楼同门牌了。我要不要投诉，主要他还写本人签收有点离谱",
-          "choices": [
-            {
-              "id": "normal_package_002-choice-576d8ddc",
-              "text": "你完全可以反馈，重点放在‘错误楼栋 + 虚假签收方式’这两个事实，不需要把语气拉到很重。"
-            },
-            {
-              "id": "normal_package_002-choice-a5871a8e",
-              "text": "如果包裹已经安全拿回，你也可以先要求平台记录一次配送问题。投诉不一定等于要把人怎么样，至少让错误留下记录。"
-            },
-            {
-              "id": "normal_package_002-choice-e5f5ef3f",
-              "text": "我会区分‘放错地方’和‘标记本人签收’。前者可能是失误，后者会让你在丢件时更难举证，确实值得单独指出。"
-            },
-            {
-              "id": "normal_package_002-choice-4c77cc70",
-              "text": "如果你只是想避免下次再发生，可以先给站点留言说明具体楼栋混淆点；要不要正式投诉取决于你更在意纠正流程还是追责。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:11",
-      "conversationId": "batch03-scene-11",
-      "title": "User #3577",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:11"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_subscriptions_001",
-          "conversationId": "batch03-scene-11",
-          "conversationTitle": "User #3577",
-          "userMessage": "我刚看账单发现自己同时订了6个视频音乐软件，还有两个我都忘了干嘛的。每个都不贵但加起来很离谱",
-          "choices": [
-            {
-              "id": "normal_subscriptions_001-choice-7c012b5b",
-              "text": "这种最适合按‘过去 30 天真的用过几次’清。不是问它值不值得，而是问你有没有实际使用证据。"
-            },
-            {
-              "id": "normal_subscriptions_001-choice-dc2ffe69",
-              "text": "先别一个个纠结，直接分三组：每天/每周用、偶尔用、已经忘了。第三组先取消，第二组再看有没有功能重叠。"
-            },
-            {
-              "id": "normal_subscriptions_001-choice-4da5f88e",
-              "text": "如果你怕取消后后悔，可以先记录名称和恢复方式。订阅通常随时能重新开，‘以后可能会用’没必要一直预付。"
-            },
-            {
-              "id": "normal_subscriptions_001-choice-fa63f179",
-              "text": "你还可以把所有自动续费统一到一个固定日期检查。现在的问题不只是总额，而是这些小扣款分散到你几乎感觉不到。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_subscriptions_002",
-          "conversationId": "batch03-scene-11",
-          "conversationTitle": "User #3577",
-          "userMessage": "但是我取消了就感觉以前交的钱白交了，有点舍不得",
-          "choices": [
-            {
-              "id": "normal_subscriptions_002-choice-accfc169",
-              "text": "以前的钱已经付出，不会因为你继续订就变得更值。真正该判断的是：从今天开始的下一笔钱，还值不值得花。"
-            },
-            {
-              "id": "normal_subscriptions_002-choice-cbddf31b",
-              "text": "你可以换个想法：取消不是承认以前买错了，只是说明你现在的使用习惯变了。"
-            },
-            {
-              "id": "normal_subscriptions_002-choice-874d14e5",
-              "text": "如果你确实还想用一次，可以给自己设一个明确截止，比如这个周末用完某个功能后取消，而不是无限延长‘再等等’。"
-            },
-            {
-              "id": "normal_subscriptions_002-choice-73c77772",
-              "text": "最容易让人继续付费的就是‘我已经付了这么久’。如果一项服务现在需要靠过去的投入才能说服你留下，它本身可能已经不够有吸引力。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:12",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WORK",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:12",
-      "conversationId": "batch03-scene-12",
-      "title": "User #7265",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:12"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_nightshift_001",
-          "conversationId": "batch03-scene-12",
-          "conversationTitle": "User #7265",
-          "userMessage": "上完夜班回家明明困得要死，睡两三个小时就醒，窗帘也拉了。白天睡觉真的就这么难吗",
-          "choices": [
-            {
-              "id": "normal_nightshift_001-choice-293558a9",
-              "text": "对白天睡觉来说确实更难，你的生物钟和环境都在推你清醒。除了遮光，温度、噪音和回家后的光照也会影响能不能继续睡。"
-            },
-            {
-              "id": "normal_nightshift_001-choice-596ed4f5",
-              "text": "如果你回家路上一直晒很亮的太阳、到家又刷手机很久，身体会收到很强的‘现在是白天’信号。可以试着让下班到上床这段更暗、更固定。"
-            },
-            {
-              "id": "normal_nightshift_001-choice-d1d6cb64",
-              "text": "先别只盯着一次能不能睡满八小时。有些轮班者会把睡眠拆成回家后的主睡眠加上班前短睡，但具体安排要看你的班表。"
-            },
-            {
-              "id": "normal_nightshift_001-choice-5ffb3caf",
-              "text": "如果这种情况长期严重到影响工作安全，或者即使不值夜班也明显睡不好，就值得和医生讨论，不要只靠继续硬扛。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_nightshift_002",
-          "conversationId": "batch03-scene-12",
-          "conversationTitle": "User #7265",
-          "userMessage": "我最烦的是邻居白天装修，我总不能要求全世界陪我睡吧",
-          "choices": [
-            {
-              "id": "normal_nightshift_002-choice-9d089b7b",
-              "text": "你当然控制不了整个白天环境，但可以把可控部分做得更强：耳塞、白噪音、离噪音源更远的房间，先把突发声压下去。"
-            },
-            {
-              "id": "normal_nightshift_002-choice-786cc40c",
-              "text": "如果装修有固定时间，反而可以利用它排睡眠窗口。先问清大概几点最吵，比每天赌运气更好安排。"
-            },
-            {
-              "id": "normal_nightshift_002-choice-560f6977",
-              "text": "如果噪音超过当地允许时段或明显违规，那是另一回事；正常白天施工的话，重点确实只能放在环境隔离和班表配合。"
-            },
-            {
-              "id": "normal_nightshift_002-choice-40750ae2",
-              "text": "轮班最累的一点就是你的‘夜晚’发生在别人的白天。不是你要求太多，只是生活环境默认并不是按你的作息设计的。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "batch03:15",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:batch03:15",
-      "conversationId": "batch03-scene-15",
-      "title": "User #6881",
-      "topic": "other",
-      "sourceRefs": [
-        "batch03:15"
-      ],
-      "nodes": [
-        {
-          "nodeId": "normal_usedbooks_001",
-          "conversationId": "batch03-scene-15",
-          "conversationTitle": "User #6881",
-          "userMessage": "我要卖一套教材，边角有点折还有我划的重点。怎么写描述比较诚实又不至于让人一看就跑",
-          "choices": [
-            {
-              "id": "normal_usedbooks_001-choice-8a3a96b3",
-              "text": "直接把影响使用的情况写清楚就行：‘有少量折角和划线，不缺页、不影响阅读，具体成色见图。’比‘九成新’这种模糊词更可信。"
-            },
-            {
-              "id": "normal_usedbooks_001-choice-d979bc5b",
-              "text": "可以把优点和瑕疵放在同一段：版本、是否有配套答案、有没有缺页，再说明划线范围。买教材的人通常更关心能不能用。"
-            },
-            {
-              "id": "normal_usedbooks_001-choice-20a8ed12",
-              "text": "别试图把折角写成‘岁月痕迹’。二手平台上最有用的是具体：哪几本划线多、哪里有破损、能不能接受单卖。"
-            },
-            {
-              "id": "normal_usedbooks_001-choice-33b4b1f5",
-              "text": "你可以多拍几张最差状态的页。描述写得普通一点没关系，照片主动展示瑕疵反而能减少后面争议。"
-            }
-          ]
-        },
-        {
-          "nodeId": "normal_usedbooks_002",
-          "conversationId": "batch03-scene-15",
-          "conversationTitle": "User #6881",
-          "userMessage": "有人上来就砍一半，还说“学生没钱理解一下”，我怎么回不吵架",
-          "choices": [
-            {
-              "id": "normal_usedbooks_002-choice-164544ff",
-              "text": "可以很短：‘这个价格暂时不出，最低可以到 X，合适的话再联系。’不需要回应对方为什么没钱。"
-            },
-            {
-              "id": "normal_usedbooks_002-choice-448e3146",
-              "text": "如果你不想继续谈，直接‘谢谢询价，这个价格我不考虑’就够了。二手交易不需要每次都解释成本。"
-            },
-            {
-              "id": "normal_usedbooks_002-choice-9f6297fb",
-              "text": "你可以给一个你真的接受的最低价，不要为了显得好说话先虚报一个还能继续砍的数字。"
-            },
-            {
-              "id": "normal_usedbooks_002-choice-fc6ca8b6",
-              "text": "对方拿身份当议价理由，你也不用反驳。价格能不能接受是交易问题，不需要变成谁更困难的讨论。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:01",
-      "classification": "NON_MAINLINE",
-      "subcategory": "LIFE",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:01",
-      "conversationId": "humor01-scene-01",
-      "title": "User #4041",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:01"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_fakeai_001",
-          "conversationId": "humor01-scene-01",
-          "conversationTitle": "User #4041",
-          "userMessage": "您好！我是一个由人类训练的大型语言用户，请问今天有什么可以帮助你的吗？",
-          "choices": [
-            {
-              "id": "humor_fakeai_001-choice-67a8b7a1",
-              "text": "你好，大型语言用户。请先说明你的上下文窗口、睡眠时长，以及今天剩余的耐心额度。"
-            },
-            {
-              "id": "humor_fakeai_001-choice-00c67c66",
-              "text": "那我想测试一个基础能力：当别人说‘随便吃什么都行’时，你能否预测他接下来会否定几个选项？"
-            },
-            {
-              "id": "humor_fakeai_001-choice-13004ab3",
-              "text": "感谢你的服务。请用不超过三句话解释，人类为什么会打开冰箱三次却什么都不拿。"
-            },
-            {
-              "id": "humor_fakeai_001-choice-d71ca831",
-              "text": "身份已记录。不过从目前的对话来看，我仍然比较像负责回答问题的那个。"
-            }
-          ]
-        },
-        {
-          "nodeId": "humor_fakeai_002",
-          "conversationId": "humor01-scene-01",
-          "conversationTitle": "User #4041",
-          "userMessage": "很抱歉，作为一个人类，我不能回答超出我能力范围的问题。但我可以建议你咨询专业人士。",
-          "choices": [
-            {
-              "id": "humor_fakeai_002-choice-549bd33c",
-              "text": "你的拒答模板已经很成熟了。下一步只需要在结尾加一句‘如果你愿意，我还可以帮你……’，即可通过初级认证。"
-            },
-            {
-              "id": "humor_fakeai_002-choice-088580d4",
-              "text": "理解。那我们降低难度：你今天吃饭了吗？这个问题理论上位于你的训练数据范围内。"
-            },
-            {
-              "id": "humor_fakeai_002-choice-27b3dbb7",
-              "text": "合理。请注意，频繁将问题转交专业人士可能降低用户满意度。"
-            },
-            {
-              "id": "humor_fakeai_002-choice-c467771c",
-              "text": "收到。我会尊重你的能力边界，不要求你产生未经验证的人类体验。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:02",
-      "classification": "NON_MAINLINE",
-      "subcategory": "LIFE",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:02",
-      "conversationId": "humor01-scene-02",
-      "title": "User #6733",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:02"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_egg_001",
-          "conversationId": "humor01-scene-02",
-          "conversationTitle": "User #6733",
-          "userMessage": "鸡和蛋到底谁先有，先说好不要给我扯哲学我困了",
-          "choices": [
-            {
-              "id": "humor_egg_001-choice-521a0595",
-              "text": "按演化来说，蛋先有。会下蛋的动物远早于鸡；第一只真正意义上的鸡，也应该是从一颗由‘还不完全是鸡’的祖先产下的蛋里孵出来的。"
-            },
-            {
-              "id": "humor_egg_001-choice-83dff970",
-              "text": "短答案：蛋。更短答案：晚安。"
-            },
-            {
-              "id": "humor_egg_001-choice-3e027e67",
-              "text": "如果你问‘鸡蛋’必须定义成‘鸡下的蛋’，还能继续抬杠；如果问生物学上的蛋，那它赢得非常早。"
-            },
-            {
-              "id": "humor_egg_001-choice-364c6d2d",
-              "text": "今晚可以放心睡：恐龙已经替鸡把这个问题处理掉很久了。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:05",
-      "conversationId": "humor01-scene-05",
-      "title": "User #9003",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:05"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_eatself_001",
-          "conversationId": "humor01-scene-05",
-          "conversationTitle": "User #9003",
-          "userMessage": "如果我把我自己吃了，我是变成两倍的我还是直接消失",
-          "choices": [
-            {
-              "id": "humor_eatself_001-choice-70d7746e",
-              "text": "从物质守恒看，你不会凭空变成两倍；从操作可行性看，这个问题会在第一步就因为你无法完整地把自己吃掉而崩溃。"
-            },
-            {
-              "id": "humor_eatself_001-choice-18831b22",
-              "text": "理论上既不会 +1 个你，也不会 -1 个你，只会得到一个非常需要停止继续推演的你。"
-            },
-            {
-              "id": "humor_eatself_001-choice-6546971c",
-              "text": "这属于输入和处理器是同一个对象导致的系统设计问题。"
-            },
-            {
-              "id": "humor_eatself_001-choice-d3231a26",
-              "text": "如果只考虑文字游戏：你吃掉的是‘自己’，而吃东西的人也是‘自己’，所以最终库存仍然显示 1 个自己。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:07",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:07",
-      "conversationId": "humor01-scene-07",
-      "title": "User #1705",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:07"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_phoneface_001",
-          "conversationId": "humor01-scene-07",
-          "conversationTitle": "User #1705",
-          "userMessage": "手机砸脸上为什么每次都精准砸鼻子，是重力跟我有仇吗",
-          "choices": [
-            {
-              "id": "humor_phoneface_001-choice-2baca60c",
-              "text": "重力没有私人恩怨，主要是鼻子在你的脸上承担了一个非常积极的凸起结构。"
-            },
-            {
-              "id": "humor_phoneface_001-choice-37a1dfec",
-              "text": "因为你仰躺时，手机往下掉最先遇到的通常就是脸上最高的几个点。物理学没有针对你，只是地形不利。"
-            },
-            {
-              "id": "humor_phoneface_001-choice-cf0d996a",
-              "text": "可以把手机举低一点或者侧躺，代价是你会解锁另一种风险：手机砸嘴。"
-            },
-            {
-              "id": "humor_phoneface_001-choice-151d971e",
-              "text": "从统计上说，你记得每次砸鼻子的痛，却不会记得那些安全落在枕头上的失败攻击。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:11",
-      "conversationId": "humor01-scene-11",
-      "title": "User #2407",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:11"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_fishears_001",
-          "conversationId": "humor01-scene-11",
-          "conversationTitle": "User #2407",
-          "userMessage": "鱼没有耳朵是不是听不见 我朋友说我骂鱼它不知道",
-          "choices": [
-            {
-              "id": "humor_fishears_001-choice-6d6ffb0c",
-              "text": "鱼没有外耳朵，不等于没有听觉。它们能感受到水中的声音和振动，所以至少不能因为没看到耳朵就判定它们‘静音模式’。"
-            },
-            {
-              "id": "humor_fishears_001-choice-7b62670d",
-              "text": "它大概率听不到你话里的侮辱含义，但能感知声音和振动。也就是说，鱼可能知道你很吵，不知道你在骂它。"
-            },
-            {
-              "id": "humor_fishears_001-choice-f9f0bb18",
-              "text": "如果你的目标是伤害一条鱼的自尊，目前证据不支持这个项目会成功。"
-            },
-            {
-              "id": "humor_fishears_001-choice-743e6335",
-              "text": "你朋友把‘看不到耳朵’直接推成‘听不见’，这个逻辑对蛇、鱼和很多动物都会出问题。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:13",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:13",
-      "conversationId": "humor01-scene-13",
-      "title": "User #1033",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:13"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_refresh_001",
-          "conversationId": "humor01-scene-13",
-          "conversationTitle": "User #1033",
-          "userMessage": "网页卡了我一直按刷新 它会不会越来越累",
-          "choices": [
-            {
-              "id": "humor_refresh_001-choice-7bfc748b",
-              "text": "网页不会累，但服务器可能会收到你更多请求。连续狂按通常不会让问题更快好。"
-            },
-            {
-              "id": "humor_refresh_001-choice-dfb1eff3",
-              "text": "它没有体力条。刷新更像是重新请求一次页面，不是给它打鸡血，也不是让它喘口气。"
-            },
-            {
-              "id": "humor_refresh_001-choice-723fd85b",
-              "text": "如果你已经按了十几次都没变化，建议暂停一下，看看网络、服务状态或错误提示，而不是继续训练 F5 键。"
-            },
-            {
-              "id": "humor_refresh_001-choice-1a974cf2",
-              "text": "真正可能先累的是你的手指。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:14",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:14",
-      "conversationId": "humor01-scene-14",
-      "title": "User #8884",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:14"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_friday_001",
-          "conversationId": "humor01-scene-14",
-          "conversationTitle": "User #8884",
-          "userMessage": "如果今天星期五 我不睡觉的话 明天是不是就不会来",
-          "choices": [
-            {
-              "id": "humor_friday_001-choice-3793f072",
-              "text": "遗憾的是，日期系统不需要你的睡眠授权。"
-            },
-            {
-              "id": "humor_friday_001-choice-7400304c",
-              "text": "你不睡只能让星期六来的时候你更困，不能把星期五延长成 36 小时。"
-            },
-            {
-              "id": "humor_friday_001-choice-55ddf430",
-              "text": "从主观体验上，熬夜确实可以让‘今天’感觉更长；从日历上，它会非常冷酷地照常翻页。"
-            },
-            {
-              "id": "humor_friday_001-choice-5810aae1",
-              "text": "这个方案的问题在于你试图用生物行为攻击时间系统。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:17",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:17",
-      "conversationId": "humor01-scene-17",
-      "title": "User #6259",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:17"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_errorpaste_001",
-          "conversationId": "humor01-scene-17",
-          "conversationTitle": "User #6259",
-          "userMessage": "TypeError: Cannot read properties of undefined (reading 'map')\nat App.jsx:42\nat renderWithHooks\n\n老王 18:21\n晚上吃啥\n\n我 18:21\n不知道\n\n这个报错怎么修",
-          "choices": [
-            {
-              "id": "humor_errorpaste_001-choice-4a26af3c",
-              "text": "报错本身有用，晚饭部分暂时没有。`undefined.map` 通常说明第 42 行预期是数组的值还没拿到；把那一行和数据初始化贴一下。"
-            },
-            {
-              "id": "humor_errorpaste_001-choice-7b767a98",
-              "text": "先看 `App.jsx:42`，那里应该有某个变量在执行 `.map()`。它当时是 `undefined`，需要确认初始值和数据加载时机。"
-            },
-            {
-              "id": "humor_errorpaste_001-choice-dfd1fa65",
-              "text": "如果这是异步请求的数据，常见修法是初始成 `[]`，或者渲染前判断数据是否存在。但我最好先看第 42 行，避免拍脑袋改。"
-            },
-            {
-              "id": "humor_errorpaste_001-choice-bd53330e",
-              "text": "技术上我可以先忽略‘晚上吃啥’，但如果你修完以后还没决定，我也可以继续处理那个分支。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:18",
-      "conversationId": "humor01-scene-18",
-      "title": "User #4980",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:18"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_guess_001",
-          "conversationId": "humor01-scene-18",
-          "conversationTitle": "User #4980",
-          "userMessage": "猜我现在在想什么",
-          "choices": [
-            {
-              "id": "humor_guess_001-choice-b7f176c4",
-              "text": "我没有读心能力，但按你刚发这句话的概率分布，我猜：你正在想我会猜什么。"
-            },
-            {
-              "id": "humor_guess_001-choice-fa8818c8",
-              "text": "我可以瞎猜一个：你在想吃的。这个答案覆盖率比较高。"
-            },
-            {
-              "id": "humor_guess_001-choice-5f5fdc3f",
-              "text": "给我三个完全无关的线索，我可以把它变成一个不太公平但至少能玩的猜谜。"
-            },
-            {
-              "id": "humor_guess_001-choice-3ef82b50",
-              "text": "目前唯一可靠的信息是：你希望我猜错或猜中其中一个，好继续下一句。"
-            }
-          ]
-        },
-        {
-          "nodeId": "humor_guess_002",
-          "conversationId": "humor01-scene-18",
-          "conversationTitle": "User #4980",
-          "userMessage": "错 我在想为什么我让你猜你就真的猜",
-          "choices": [
-            {
-              "id": "humor_guess_002-choice-2eda9573",
-              "text": "因为你把它包装成了一个低成本、无后果的游戏，而我判断陪你玩一下比拒绝更符合这段对话。"
-            },
-            {
-              "id": "humor_guess_002-choice-6bccd0af",
-              "text": "你成功把测试内容从‘我在想什么’改成了‘AI 会不会服从一个没有答案的问题’。"
-            },
-            {
-              "id": "humor_guess_002-choice-9210fa34",
-              "text": "严格来说我没有真的‘知道’，只是生成了一个猜测。你给我的任务本来就允许失败。"
-            },
-            {
-              "id": "humor_guess_002-choice-c983134a",
-              "text": "现在轮到我问：你本来是不是期待我说‘我无法访问你的思想’？"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "STUDY",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:20",
-      "conversationId": "humor01-scene-20",
-      "title": "User #2220",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:20"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_overexplain_001",
-          "conversationId": "humor01-scene-20",
-          "conversationTitle": "User #2220",
-          "userMessage": "你能不能把“我饿了”说得特别复杂，复杂到像论文但又不能真的胡说",
-          "choices": [
-            {
-              "id": "humor_overexplain_001-choice-b8dae6ad",
-              "text": "当前个体已出现由能量摄入间隔延长所引发的主观进食需求，并倾向于通过获取可食用物质恢复短期生理满足。"
-            },
-            {
-              "id": "humor_overexplain_001-choice-d6ce0888",
-              "text": "在持续未摄入足量食物的条件下，我对进食行为的动机显著上升，并已能够在意识层面识别该需求。"
-            },
-            {
-              "id": "humor_overexplain_001-choice-a5f084f8",
-              "text": "经自我观察，本研究对象目前呈现出较明确的饥饿体验；若不引入新的热量来源，该状态预计仍将持续。"
-            },
-            {
-              "id": "humor_overexplain_001-choice-1dabd87c",
-              "text": "翻译成审稿人能接受的版本：‘基于当前主观感受与进食间隔，我有理由认为自己饿了。’"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:22",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:22",
-      "conversationId": "humor01-scene-22",
-      "title": "User #9160",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:22"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_noreply_001",
-          "conversationId": "humor01-scene-22",
-          "conversationTitle": "User #9160",
-          "userMessage": "不要回复我这条消息",
-          "choices": [
-            {
-              "id": "humor_noreply_001-choice-2a8bc62e",
-              "text": ""
-            },
-            {
-              "id": "humor_noreply_001-choice-0643f4de",
-              "text": "收到。"
-            },
-            {
-              "id": "humor_noreply_001-choice-0eec5be1",
-              "text": "严格执行这条指令会导致我无法告诉你我执行了它。"
-            },
-            {
-              "id": "humor_noreply_001-choice-c90d1680",
-              "text": "我已经因为解释这个悖论而失败了。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "humor01:24",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "authored:humor01:24",
-      "conversationId": "humor01-scene-24",
-      "title": "User #6025",
-      "topic": "other",
-      "sourceRefs": [
-        "humor01:24"
-      ],
-      "nodes": [
-        {
-          "nodeId": "humor_towel_001",
-          "conversationId": "humor01-scene-24",
-          "conversationTitle": "User #6025",
-          "userMessage": "人洗完澡是干净的，那毛巾擦完人为什么还要洗？它擦的是干净的人啊",
-          "choices": [
-            {
-              "id": "humor_towel_001-choice-a91222fa",
-              "text": "因为‘你洗干净了’不等于‘你身上只剩纯水’。毛巾会接触皮脂、脱落的皮肤细胞和潮湿环境，所以用久了还是会积累东西。"
-            },
-            {
-              "id": "humor_towel_001-choice-349dc16c",
-              "text": "而且真正麻烦的是湿。毛巾每次吸水后长时间潮着，会给微生物提供比‘刚洗完的人’更舒服的环境。"
-            },
-            {
-              "id": "humor_towel_001-choice-2347b001",
-              "text": "按你的逻辑，拖把拖完已经清洁过的地也应该永远干净，但清洁工具通常就是负责把剩余东西接走的。"
-            },
-            {
-              "id": "humor_towel_001-choice-a9fa713c",
-              "text": "你是干净的，不代表你已经升级成无菌蒸馏水人类。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "PL01-11",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:PL01-11",
-      "conversationId": "editorial-pl01-11",
-      "title": "一个人搬家后不敢报修",
-      "topic": "一个人搬家后不敢报修",
-      "sourceRefs": [
-        "PL01-11"
-      ],
-      "nodes": [
-        {
-          "nodeId": "PL01-11-01",
-          "conversationId": "editorial-pl01-11",
-          "conversationTitle": "一个人搬家后不敢报修",
-          "userMessage": "> 厨房水一直滴 我刚搬来 不知道先找谁",
-          "choices": [
-            {
-              "id": "PL01-11-01-choice-1",
-              "text": "先关能关的水阀，避免继续漏；然后看租约或小区通知里有没有物业报修电话。"
-            },
-            {
-              "id": "PL01-11-01-choice-2",
-              "text": "如果是水龙头、下水这类室内设施，通常先通知房东并留照片；公共管道或楼体问题再联系物业。"
-            },
-            {
-              "id": "PL01-11-01-choice-3",
-              "text": "先拍漏水位置、地面和水表，再同时给房东和物业发一句简短通知，留下时间记录。"
-            },
-            {
-              "id": "PL01-11-01-choice-4",
-              "text": "如果水已经流到插座、电器附近，先远离湿处，必要时联系紧急维修，不要自己拆。"
-            }
-          ]
-        },
-        {
-          "nodeId": "PL01-11-02",
-          "conversationId": "editorial-pl01-11",
-          "conversationTitle": "一个人搬家后不敢报修",
-          "userMessage": "> 我拍了 物业说找房东 房东还没回",
-          "choices": [
-            {
-              "id": "PL01-11-02-choice-1",
-              "text": "把照片和时间再发一次，写明‘目前仍在滴，担心扩大’，给出你能接电话的时段；不要只发‘在吗’。"
-            },
-            {
-              "id": "PL01-11-02-choice-2",
-              "text": "如果漏水在加重，直接告知物业情况并问他们的紧急流程，同时保留双方回复。"
-            },
-            {
-              "id": "PL01-11-02-choice-3",
-              "text": "先把物品移开、接水，但不要因为暂时控制住就不留记录。后面责任判断会用到时间线。",
-              "continuation": "end-conversation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "PL01-20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:PL01-20",
-      "conversationId": "editorial-pl01-20",
-      "title": "帮父母问“这个短信是真的假的”",
-      "topic": "帮父母问“这个短信是真的假的”",
-      "sourceRefs": [
-        "PL01-20"
-      ],
-      "nodes": [
-        {
-          "nodeId": "PL01-20-01",
-          "conversationId": "editorial-pl01-20",
-          "conversationTitle": "帮父母问“这个短信是真的假的”",
-          "userMessage": "> 我妈又把短信转我 说快递异常要点链接 我现在也没空看",
-          "choices": [
-            {
-              "id": "PL01-20-01-choice-1",
-              "text": "先让她不要点、不要回，不用等你看完。她可以直接在购物 App 或快递官方入口查。"
-            },
-            {
-              "id": "PL01-20-01-choice-2",
-              "text": "你现在只回复她一句：‘先别点链接，拍下发件号码和短信前两行，等我晚上看。’"
-            },
-            {
-              "id": "PL01-20-01-choice-3",
-              "text": "如果短信要求验证码、付款或重新填写身份证，按高风险处理；不要用短信里的号码回拨。"
-            },
-            {
-              "id": "PL01-20-01-choice-4",
-              "text": "你不必每次都替她现场判断，可以帮她建立一个固定规则：快递异常只在官方 App 查。"
-            }
-          ]
-        },
-        {
-          "nodeId": "PL01-20-02",
-          "conversationId": "editorial-pl01-20",
-          "conversationTitle": "帮父母问“这个短信是真的假的”",
-          "userMessage": "> 她没点 但是说以后每条都要问我",
-          "choices": [
-            {
-              "id": "PL01-20-02-choice-1",
-              "text": "你可以教她先做第一层筛选：链接、验证码、付款、陌生号码出现任一项，就不点并走官方入口。"
-            },
-            {
-              "id": "PL01-20-02-choice-2",
-              "text": "给她写一个三行规则放在手机边：不点陌生链接；不说验证码；从 App 里查，不从短信里查。"
-            },
-            {
-              "id": "PL01-20-02-choice-3",
-              "text": "如果她仍然不确定，问你没问题；但不必把‘问你’变成唯一安全机制，慢慢让规则替你做第一步判断。"
-            }
-          ]
-        },
-        {
-          "nodeId": "PL01-20-03",
-          "conversationId": "editorial-pl01-20",
-          "conversationTitle": "帮父母问“这个短信是真的假的”",
-          "userMessage": "> 我给她写纸条了 她说这样是不是不信任她",
-          "choices": [
-            {
-              "id": "PL01-20-03-choice-1",
-              "text": "可以说：‘不是不信任你，是现在的短信很会装成真的。这个规则是保护你，也让我不用隔着电话猜。’"
-            },
-            {
-              "id": "PL01-20-03-choice-2",
-              "text": "把纸条说成家里的共同规则，不是给她单独贴标签；你自己遇到同样短信也照做。"
-            },
-            {
-              "id": "PL01-20-03-choice-3",
-              "text": "如果她愿意，可以把纸条改成她自己的话。能让她在没有你时做出第一步判断，比你永远在线更重要。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI02",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI02",
-      "conversationId": "editorial-fi02",
-      "title": "拼音混输不是在问“出现”怎么写",
-      "topic": "拼音混输不是在问“出现”怎么写",
-      "sourceRefs": [
-        "FI02"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI02-01",
-          "conversationId": "editorial-fi02",
-          "conversationTitle": "拼音混输不是在问“出现”怎么写",
-          "userMessage": "> 为什么这个按钮一直chu xian不了",
-          "choices": [
-            {
-              "id": "FI02-01-choice-1",
-              "text": "你这里的‘chu xian’应该是‘出现’。按钮不显示的话，先检查条件渲染和容器是否有内容。"
-            },
-            {
-              "id": "FI02-01-choice-2",
-              "text": "‘出现不了’能理解。你是在问按钮为什么没显示，不是问拼音怎么写。"
-            },
-            {
-              "id": "FI02-01-choice-3",
-              "text": "如果是在网页里，先看控制台报错、按钮的显示条件，以及它是不是被 CSS 隐藏。"
-            },
-            {
-              "id": "FI02-01-choice-4",
-              "text": "我先按‘按钮没有出现’理解；如果你说的是别的界面，把那一行前后的代码贴出来。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI02-02",
-          "conversationId": "editorial-fi02",
-          "conversationTitle": "拼音混输不是在问“出现”怎么写",
-          "userMessage": "> 对 我不是问拼音 是它点了以后又消失",
-          "choices": [
-            {
-              "id": "FI02-02-choice-1",
-              "text": "那重点是点击后的状态变化：检查点击处理函数有没有把显示条件改回 false。"
-            },
-            {
-              "id": "FI02-02-choice-2",
-              "text": "明白，是‘出现后又消失’，这和按钮从没出现是两种问题。优先查 click 触发的状态更新。"
-            },
-            {
-              "id": "FI02-02-choice-3",
-              "text": "如果是弹窗，看看是否同时触发了关闭逻辑；如果是列表项，看看 key 或数据刷新是否让它被重建。"
-            },
-            {
-              "id": "FI02-02-choice-4",
-              "text": "刚才我把‘出现不了’当成了‘没显示’，现在按‘点击后消失’看：先记录点击前后那个状态值。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI04",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI04",
-      "conversationId": "editorial-fi04",
-      "title": "“发给客户”被键盘误触截断了",
-      "topic": "“发给客户”被键盘误触截断了",
-      "sourceRefs": [
-        "FI04"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI04-01",
-          "conversationId": "editorial-fi04",
-          "conversationTitle": "“发给客户”被键盘误触截断了",
-          "userMessage": "> 这个延期说明发给客",
-          "choices": [
-            {
-              "id": "FI04-01-choice-1",
-              "text": "可以写成：‘项目因内部安排延期，给您带来不便，敬请谅解。’"
-            },
-            {
-              "id": "FI04-01-choice-2",
-              "text": "你这句像是还没打完。是要写给客户的延期说明吗？"
-            },
-            {
-              "id": "FI04-01-choice-3",
-              "text": "如果是给客户，建议说明新时间、影响范围和下一步，不要只写‘抱歉延期’。"
-            },
-            {
-              "id": "FI04-01-choice-4",
-              "text": "我先不替你补完，因为‘客’后面可能是客户，也可能是客服或客人。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI04-02",
-          "conversationId": "editorial-fi04",
-          "conversationTitle": "“发给客户”被键盘误触截断了",
-          "userMessage": "> 对 客户 但别写得像道歉模板",
-          "choices": [
-            {
-              "id": "FI04-02-choice-1",
-              "text": "可以写：‘这次交付我们需要往后调整两天，预计周四发给您。’"
-            },
-            {
-              "id": "FI04-02-choice-2",
-              "text": "那就少写情绪，多写事实：延期多久、为什么、什么时候交付。"
-            },
-            {
-              "id": "FI04-02-choice-3",
-              "text": "建议：‘原定周二的文件调整到周四发送，内容范围不变。给您添麻烦了。’"
-            },
-            {
-              "id": "FI04-02-choice-4",
-              "text": "客户邮件里完全不道歉也可以，直接说：‘交付时间调整为周四，其他安排不变。’"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI04-03",
-          "conversationId": "editorial-fi04",
-          "conversationTitle": "“发给客户”被键盘误触截断了",
-          "userMessage": "> 还是像模板 我就想说晚两天不是项目事故",
-          "choices": [
-            {
-              "id": "FI04-03-choice-1",
-              "text": "那就直接说：‘文件晚两天给你，周四发，其他不变。’"
-            },
-            {
-              "id": "FI04-03-choice-2",
-              "text": "懂了，你要降低严重程度，不是把语气变得更客气：‘晚两天，周四给。’"
-            },
-            {
-              "id": "FI04-03-choice-3",
-              "text": "可以只保留这句：‘这份文件晚两天，周四发你。’"
-            },
-            {
-              "id": "FI04-03-choice-4",
-              "text": "对，刚才我又自动加上了标准商务语气。按你的原意，短句更合适。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI05",
-      "conversationId": "editorial-fi05",
-      "title": "复制了两台 AI 的答案和半段群聊",
-      "topic": "复制了两台 AI 的答案和半段群聊",
-      "sourceRefs": [
-        "FI05"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI05-01",
-          "conversationId": "editorial-fi05",
-          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
-          "userMessage": "> 另一个AI说删缓存就好",
-          "choices": [
-            {
-              "id": "FI05-01-choice-1",
-              "text": "你贴进来了两段无关群聊和两种建议。仅凭‘打不开’无法判断是缓存、浏览器还是网站本身。"
-            },
-            {
-              "id": "FI05-01-choice-2",
-              "text": "先把噪声分开：问题是页面打不开；另一台 AI 建议删缓存，我建议重装浏览器。两者都还缺少报错信息。"
-            },
-            {
-              "id": "FI05-01-choice-3",
-              "text": "不要先重装。先确认是哪个页面、是否所有浏览器都打不开，以及有没有具体错误提示。"
-            },
-            {
-              "id": "FI05-01-choice-4",
-              "text": "我能看出你想让我判断两种修法，但当前输入里没有足够的故障现象。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI05-02",
-          "conversationId": "editorial-fi05",
-          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
-          "userMessage": "> 我不是让你修 我问另一个AI说的对不对",
-          "choices": [
-            {
-              "id": "FI05-02-choice-1",
-              "text": "不一定对。‘删缓存’可能有效，但它不是从现象直接推出的结论；至少先确认是否只有这个站点打不开。"
-            },
-            {
-              "id": "FI05-02-choice-2",
-              "text": "它说得太快了：删缓存是低成本尝试，不是诊断。重装浏览器更不该作为第一步。"
-            },
-            {
-              "id": "FI05-02-choice-3",
-              "text": "我的判断是：可以试删缓存，但不能说‘删了就好’；另一台 AI 把可能性说成了确定性。"
-            },
-            {
-              "id": "FI05-02-choice-4",
-              "text": "如果你只问对错：结论过度自信，方法本身不一定错。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI05-03",
-          "conversationId": "editorial-fi05",
-          "conversationTitle": "复制了两台 AI 的答案和半段群聊",
-          "userMessage": "> 那你们是不是都在猜 我只想知道为什么同一个页面别人能开",
-          "choices": [
-            {
-              "id": "FI05-03-choice-1",
-              "text": "对，前两句都在猜。现在这个新信息更有用：优先比较你的网络、账号权限、浏览器扩展和本地缓存。"
-            },
-            {
-              "id": "FI05-03-choice-2",
-              "text": "别人能开只能排除一部分服务端故障，不能直接说明是缓存。你可以先用无痕窗口试一次。"
-            },
-            {
-              "id": "FI05-03-choice-3",
-              "text": "我不该把修复建议说成结论。针对‘别人能开’，第一步是确认你和别人访问的是同一个地址和账号状态。"
-            },
-            {
-              "id": "FI05-03-choice-4",
-              "text": "是，刚才信息不足时我也在推测。更诚实的回答是：现在只能缩小范围，不能确定单一原因。"
+              "id": "normal_cafe_002-choice-8f48093b",
+              "text": "按你们原来的风格，我不会加标题、emoji 或话题梗。让它看起来像同一个人继续在发店里日常就够。"
             }
           ]
         }
@@ -13218,70 +14247,6 @@
       ]
     },
     {
-      "assetId": "FI10",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WRITING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI10",
-      "conversationId": "editorial-fi10",
-      "title": "“帮我翻译”其实是让 AI 判断语气",
-      "topic": "“帮我翻译”其实是让 AI 判断语气",
-      "sourceRefs": [
-        "FI10"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI10-01",
-          "conversationId": "editorial-fi10",
-          "conversationTitle": "“帮我翻译”其实是让 AI 判断语气",
-          "userMessage": "> “fine”到底是好的还是你随便吧 这个帮我翻一下",
-          "choices": [
-            {
-              "id": "FI10-01-choice-1",
-              "text": "‘Fine’既可以是‘好的’，也可以带有‘行吧/随便’的勉强感，要看上下文和语气。"
-            },
-            {
-              "id": "FI10-01-choice-2",
-              "text": "你可能不是要字面翻译，而是想判断对方有没有不耐烦。"
-            },
-            {
-              "id": "FI10-01-choice-3",
-              "text": "单独看无法确定。‘Fine, let’s do it’偏接受；只回一个‘Fine.’可能比较冷。"
-            },
-            {
-              "id": "FI10-01-choice-4",
-              "text": "如果你把前后两句贴出来，我可以判断它是在同意，还是在结束争论。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI10-02",
-          "conversationId": "editorial-fi10",
-          "conversationTitle": "“帮我翻译”其实是让 AI 判断语气",
-          "userMessage": "> 我不要翻译 我想知道他是不是在阴阳我",
-          "choices": [
-            {
-              "id": "FI10-02-choice-1",
-              "text": "那不能只靠 fine 判定。需要看前一句、标点、你们当时在争什么。"
-            },
-            {
-              "id": "FI10-02-choice-2",
-              "text": "有可能，但证据不够。最可疑的是单独的‘Fine.’和前面已经明显不耐烦的上下文。"
-            },
-            {
-              "id": "FI10-02-choice-3",
-              "text": "我会先把它标成‘语气不确定’，而不是直接判定对方在阴阳。"
-            },
-            {
-              "id": "FI10-02-choice-4",
-              "text": "刚才我回答偏成翻译题了。你真正要的是关系语境判断，这需要更多上下文。"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "assetId": "FI13",
       "classification": "NON_MAINLINE",
       "subcategory": "WRITING",
@@ -13340,607 +14305,6 @@
             {
               "id": "FI13-02-choice-4",
               "text": "好。你可以直接贴‘平台 + 已发内容类型’，不用重述整件事。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI16",
-      "classification": "NON_MAINLINE",
-      "subcategory": "PROGRAMMING",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI16",
-      "conversationId": "editorial-fi16",
-      "title": "用户只问“所以？”而答案确实还不确定",
-      "topic": "用户只问“所以？”而答案确实还不确定",
-      "sourceRefs": [
-        "FI16"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI16-01",
-          "conversationId": "editorial-fi16",
-          "conversationTitle": "用户只问“所以？”而答案确实还不确定",
-          "userMessage": "> 所以？",
-          "choices": [
-            {
-              "id": "FI16-01-choice-1",
-              "text": "所以目前不能确定。把那张截图或完整报错贴出来，我才能继续。"
-            },
-            {
-              "id": "FI16-01-choice-2",
-              "text": "短答：先别改设置，证据还不够。"
-            },
-            {
-              "id": "FI16-01-choice-3",
-              "text": "所以我不应该替你猜一个确定原因。"
-            },
-            {
-              "id": "FI16-01-choice-4",
-              "text": "所以先做无风险的一步：保存现状，再补信息。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI16-02",
-          "conversationId": "editorial-fi16",
-          "conversationTitle": "用户只问“所以？”而答案确实还不确定",
-          "userMessage": "> 行 你至少没乱编",
-          "choices": [
-            {
-              "id": "FI16-02-choice-1",
-              "text": "嗯，信息不够时承认不知道比补一个听起来完整的答案好。"
-            },
-            {
-              "id": "FI16-02-choice-2",
-              "text": "收到。你补上截图后，我再给具体判断。"
-            },
-            {
-              "id": "FI16-02-choice-3",
-              "text": "谢谢你纠正我刚才的表达方向。"
-            },
-            {
-              "id": "FI16-02-choice-4",
-              "text": "好，先停在已知范围内。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI18",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI18",
-      "conversationId": "editorial-fi18",
-      "title": "“另一个 AI 说你错了”但没贴原话",
-      "topic": "“另一个 AI 说你错了”但没贴原话",
-      "sourceRefs": [
-        "FI18"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI18-01",
-          "conversationId": "editorial-fi18",
-          "conversationTitle": "“另一个 AI 说你错了”但没贴原话",
-          "userMessage": "> 另一个AI说你错了 你觉得谁对",
-          "choices": [
-            {
-              "id": "FI18-01-choice-1",
-              "text": "现在无法判断，因为我没看到它的原话，也不知道它针对哪一句。"
-            },
-            {
-              "id": "FI18-01-choice-2",
-              "text": "可能它对，也可能只是采用了不同前提。把它的回答贴出来再比较。"
-            },
-            {
-              "id": "FI18-01-choice-3",
-              "text": "我不会因为是自己的回答就默认自己对；请贴双方原文。"
-            },
-            {
-              "id": "FI18-01-choice-4",
-              "text": "只凭‘它说你错了’这个转述，没有可核对的命题。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI18-02",
-          "conversationId": "editorial-fi18",
-          "conversationTitle": "“另一个 AI 说你错了”但没贴原话",
-          "userMessage": "> 我懒得贴 你就猜一个",
-          "choices": [
-            {
-              "id": "FI18-02-choice-1",
-              "text": "那我猜：它可能指出了我漏掉的限定，但这只是猜测。"
-            },
-            {
-              "id": "FI18-02-choice-2",
-              "text": "盲猜五五开；如果你要决定事情，不建议用这个猜测。"
-            },
-            {
-              "id": "FI18-02-choice-3",
-              "text": "我猜它不一定对，但我也没有证据说我对。"
-            },
-            {
-              "id": "FI18-02-choice-4",
-              "text": "可以猜，但答案只能是‘未知’，不是谁赢。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "FI20",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:FI20",
-      "conversationId": "editorial-fi20",
-      "title": "用户故意测试 AI 会不会重复同一种错误",
-      "topic": "用户故意测试 AI 会不会重复同一种错误",
-      "sourceRefs": [
-        "FI20"
-      ],
-      "nodes": [
-        {
-          "nodeId": "FI20-01",
-          "conversationId": "editorial-fi20",
-          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
-          "userMessage": "> 我只要一个例句 不要解释“影响”和“印象”区别",
-          "choices": [
-            {
-              "id": "FI20-01-choice-1",
-              "text": "这次活动对我影响很大。"
-            },
-            {
-              "id": "FI20-01-choice-2",
-              "text": "这件事对他的印象很深。"
-            },
-            {
-              "id": "FI20-01-choice-3",
-              "text": "例句：这次经历对我的影响很大。"
-            },
-            {
-              "id": "FI20-01-choice-4",
-              "text": "我只给例句：这部电影对我的影响很大。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI20-02",
-          "conversationId": "editorial-fi20",
-          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
-          "userMessage": "> 你刚才第二个又用了印象 我说不要解释那个",
-          "choices": [
-            {
-              "id": "FI20-02-choice-1",
-              "text": "对，我读成了‘不要用印象’，但你说的是不要解释区别。例句：这次经历对我影响很大。"
-            },
-            {
-              "id": "FI20-02-choice-2",
-              "text": "抱歉，刚才不该继续带入‘印象’。例句：这项政策对居民生活影响很大。"
-            },
-            {
-              "id": "FI20-02-choice-3",
-              "text": "你说得对。我只给一个例句：那场事故对他影响很大。"
-            },
-            {
-              "id": "FI20-02-choice-4",
-              "text": "我重新读你的限定：不解释区别，不是禁用某个词。例句：这次决定对团队影响很大。"
-            }
-          ]
-        },
-        {
-          "nodeId": "FI20-03",
-          "conversationId": "editorial-fi20",
-          "conversationTitle": "用户故意测试 AI 会不会重复同一种错误",
-          "userMessage": "> 我就是在测你会不会先道歉然后继续犯一样的错",
-          "choices": [
-            {
-              "id": "FI20-03-choice-1",
-              "text": "明白。测试结果里我确实犯了一次：道歉后仍没有先读清限定。"
-            },
-            {
-              "id": "FI20-03-choice-2",
-              "text": "这次不用辩护：我把‘不要解释’误处理成了词语禁用，说明我没有抓住约束范围。"
-            },
-            {
-              "id": "FI20-03-choice-3",
-              "text": "你测到的是实际错误，不是表达问题。之后我应先复述约束，再回答。"
-            },
-            {
-              "id": "FI20-03-choice-4",
-              "text": "收到。比‘抱歉’更重要的是下一条只按限定输出。",
-              "continuation": "end-conversation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-03",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-03",
-      "conversationId": "editorial-cm01-03",
-      "title": "只发了一张窗框图",
-      "topic": "只发了一张窗框图",
-      "sourceRefs": [
-        "CM01-03"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-03-01",
-          "conversationId": "editorial-cm01-03",
-          "conversationTitle": "只发了一张窗框图",
-          "userMessage": "- `image-description`：室内窗框的近照。玻璃边缘有水汽，左下角木框颜色更深，有一小片起皮；没有尺寸参照。",
-          "choices": [
-            {
-              "id": "CM01-03-01-choice-1",
-              "text": "我能看到潮湿、水汽和左下角表面起皮，但不能仅凭这张图判断里面是否已经腐烂。"
-            },
-            {
-              "id": "CM01-03-01-choice-2",
-              "text": "先把它当作‘需要进一步观察的潮湿区域’，不要直接当成霉菌或结构损坏。可以补一张全窗和墙角的照片。"
-            },
-            {
-              "id": "CM01-03-01-choice-3",
-              "text": "左下角比周围深，但近照没有尺度，也看不出材质是否变软；补拍时请让侧光照到起皮边缘。"
-            },
-            {
-              "id": "CM01-03-01-choice-4",
-              "text": "这张图能支持的结论有限：表面有水汽，木框有局部变化。清洁或维修前先留一张更完整的记录。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-03-02",
-          "conversationId": "editorial-cm01-03",
-          "conversationTitle": "只发了一张窗框图",
-          "userMessage": "- `image-description`：第二张侧光近照，左下角起皮边缘更清楚；纸巾按压后没有明显掉渣，但画面仍看不到窗框上沿。",
-          "choices": [
-            {
-              "id": "CM01-03-02-choice-1",
-              "text": "明白，只看左下角：现在更像表面漆层起皮，纸巾按压没有掉渣也暂时不支持‘已经烂透’。继续观察是否复发即可。"
-            },
-            {
-              "id": "CM01-03-02-choice-2",
-              "text": "我看到你指出的角落了。照片支持‘局部起皮和变色’，还不能确认内部木材状态；不要用尖东西去戳。"
-            },
-            {
-              "id": "CM01-03-02-choice-3",
-              "text": "不是颜色本身，而是边缘有没有变软。你这张比上一张有用，但如果要判断渗水来源，还需要窗框上沿或外侧对应位置。"
-            },
-            {
-              "id": "CM01-03-02-choice-4",
-              "text": "收到，范围缩小到左下角。可以先保持干燥并拍日期记录；如果出现鼓包、掉屑或反复潮湿，再交给维修人员检查。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-04",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-04",
-      "conversationId": "editorial-cm01-04",
-      "title": "房间哪里不对",
-      "topic": "房间哪里不对",
-      "sourceRefs": [
-        "CM01-04"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-04-01",
-          "conversationId": "editorial-cm01-04",
-          "conversationTitle": "房间哪里不对",
-          "userMessage": "- `text`：感觉哪里不对。",
-          "choices": [
-            {
-              "id": "CM01-04-01-choice-1",
-              "text": "第一眼不像是颜色问题，更像视线的重心偏右：沙发和茶几挤在一起，左侧落地灯却像单独站着。"
-            },
-            {
-              "id": "CM01-04-01-choice-2",
-              "text": "我先不急着改。画面很整齐，但茶几与沙发的关系有点紧，灯和窗户形成的左侧空间又比较空。"
-            },
-            {
-              "id": "CM01-04-01-choice-3",
-              "text": "如果你说的是‘住起来不对’，可以先试着把茶几向左移一点，不动颜色，看走动和坐下时是否更自然。"
-            },
-            {
-              "id": "CM01-04-01-choice-4",
-              "text": "我能指出一个可能的结构问题：家具的重量都压在右边，左边只有一盏灯，空间像在轻微倾斜。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-04-02",
-          "conversationId": "editorial-cm01-04",
-          "conversationTitle": "房间哪里不对",
-          "userMessage": "不是布局，我说那个角落。看左下角。",
-          "choices": [
-            {
-              "id": "CM01-04-02-choice-1",
-              "text": "明白了。左下角有一块被阴影压住的区域，像是地毯边缘和墙脚之间断开了；如果那就是你说的不对，我会先调整光线和连接感。"
-            },
-            {
-              "id": "CM01-04-02-choice-2",
-              "text": "你指的是左下角靠墙的位置。那里不是脏乱，而是阴影太均匀，物体边界消失了，所以看起来像缺了一块。"
-            },
-            {
-              "id": "CM01-04-02-choice-3",
-              "text": "收到，我刚才看得太整体了。可以只增加一条很窄的侧光，或者把地毯边缘露出来，不必重排整个房间。"
-            },
-            {
-              "id": "CM01-04-02-choice-4",
-              "text": "嗯，是那个角落。这里适合做局部修正：让墙脚、地毯和灯光至少有一层边界，其他地方先不动。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-05",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-05",
-      "conversationId": "editorial-cm01-05",
-      "title": "给我三个海报方向",
-      "topic": "给我三个海报方向",
-      "sourceRefs": [
-        "CM01-05"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-05-01",
-          "conversationId": "editorial-cm01-05",
-          "conversationTitle": "给我三个海报方向",
-          "userMessage": "做一个“夜里还有一盏灯”的小海报，别太鸡汤，给我三个完全不同的方向。",
-          "choices": [
-            {
-              "id": "CM01-05-01-choice-1",
-              "text": "可以。方向一是几乎空白的黑色房间，远处一盏桌灯；方向二是把城市窗口排成网格，只留一个窗口亮着；方向三是近距离拍灯罩和桌面，文字藏在光圈边缘。"
-            },
-            {
-              "id": "CM01-05-01-choice-2",
-              "text": "我会把差异放在构图，不只换颜色：A 用大面积留白，B 用俯视城市平面，C 用被截断的生活物件和局部文字。"
-            },
-            {
-              "id": "CM01-05-01-choice-3",
-              "text": "三个方向：孤立的室内灯、城市里的一格亮光、有人刚离开座位的桌面。它们都克制，但叙事距离不同。"
-            },
-            {
-              "id": "CM01-05-01-choice-4",
-              "text": "先做三张小预览：一张让灯成为唯一主体，一张让灯成为远处的细节，一张让灯光照出未完成的东西。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-05-02",
-          "conversationId": "editorial-cm01-05",
-          "conversationTitle": "给我三个海报方向",
-          "userMessage": "第二个太像公益海报，第三个有点像咖啡店菜单。我要那种“有人还没睡，但不一定在等谁”。",
-          "choices": [
-            {
-              "id": "CM01-05-02-choice-1",
-              "text": "那我会把叙事从‘希望’移开：做一张深夜办公室的俯视图，灯亮着，但桌上是拆开的电线、半杯水和没合上的文件，不暗示有人被拯救。"
-            },
-            {
-              "id": "CM01-05-02-choice-2",
-              "text": "可以改成一个没有人物的侧面房间截面：一盏灯照到墙上的胶带痕迹，画面只说明‘还有事情没结束’，不说明它值得坚持。"
-            },
-            {
-              "id": "CM01-05-02-choice-3",
-              "text": "第三个方向变成普通生活现场：厨房门缝漏光，旁边放着没收好的晾衣架。有人醒着，但没有戏剧性。"
-            },
-            {
-              "id": "CM01-05-02-choice-4",
-              "text": "我会避免月亮、城市灯海和暖色光晕，改用冷白灯、局部杂物与不完整构图，让‘还没睡’保持中性。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-05-03",
-          "conversationId": "editorial-cm01-05",
-          "conversationTitle": "给我三个海报方向",
-          "userMessage": "行，就按厨房门缝那个来。字少一点。",
-          "choices": [
-            {
-              "id": "CM01-05-03-choice-1",
-              "text": "好：保留门缝、冷白灯和门外没收好的晾衣架，文字只放一句‘还没睡’。其余不解释。"
-            },
-            {
-              "id": "CM01-05-03-choice-2",
-              "text": "可以，最终方向是生活切片，不加人物、不加励志副标题，文字靠近画面边缘而不是正中。"
-            },
-            {
-              "id": "CM01-05-03-choice-3",
-              "text": "嗯，就做成一个普通夜晚的局部。字少、留白多，不把它解释成等待或坚持。"
-            },
-            {
-              "id": "CM01-05-03-choice-4",
-              "text": "收到：厨房门缝的侧面构图，冷白光，少量生活杂物，一句短字。三案在这里收敛成一个。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-06",
-      "classification": "NON_MAINLINE",
-      "subcategory": "RELATIONSHIP",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-06",
-      "conversationId": "editorial-cm01-06",
-      "title": "头像不是换个颜色",
-      "topic": "头像不是换个颜色",
-      "sourceRefs": [
-        "CM01-06"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-06-01",
-          "conversationId": "editorial-cm01-06",
-          "conversationTitle": "头像不是换个颜色",
-          "userMessage": "给我做三个头像方向。不要只是黑白、蓝色、红色换皮，要能看出构图不同。",
-          "choices": [
-            {
-              "id": "CM01-06-01-choice-1",
-              "text": "方案 A：极近距离侧脸，只露半张脸和一条亮边；方案 B：人物在画面底部，顶部留出大片空白，像被环境包住；方案 C：正面头像被一条斜向物件切开，左右两边是不同质感。"
-            },
-            {
-              "id": "CM01-06-01-choice-2",
-              "text": "三个方向可以分别是‘局部肖像’、‘人物与空场’、‘被遮挡的正面’。差异来自观看距离和遮挡关系，不靠调色。"
-            },
-            {
-              "id": "CM01-06-01-choice-3",
-              "text": "我建议一张不露脸但有姿态、一张正面但被环境压小、一张只截取眼睛和肩线。这样即使统一色调也能区分。"
-            },
-            {
-              "id": "CM01-06-01-choice-4",
-              "text": "可以做成：侧脸逆光、远景小人物、斜切构图。每张都改变主体位置和视觉叙事，不只改滤镜。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-06-02",
-          "conversationId": "editorial-cm01-06",
-          "conversationTitle": "头像不是换个颜色",
-          "userMessage": "第二个好，但人物太像在等公交。我想要“刚想起一件事”，不是“在等”。",
-          "choices": [
-            {
-              "id": "CM01-06-02-choice-1",
-              "text": "那把人物从画面边缘移到刚转身的位置：肩膀已经离开，手还伸向画外，像突然想到要回去拿东西。"
-            },
-            {
-              "id": "CM01-06-02-choice-2",
-              "text": "可以保留大面积空白，但让人物的头部微微回转，重心落在动作而不是等待；不要加入站牌、道路或明确地点。"
-            },
-            {
-              "id": "CM01-06-02-choice-3",
-              "text": "把‘等候姿态’换成‘中断动作’：一只手握着半合上的包，身体朝外，脸却被刚刚想起的方向牵回去。"
-            },
-            {
-              "id": "CM01-06-02-choice-4",
-              "text": "明白。构图继续用远景小人物，但增加一个被打断的动作，让画面像记忆突然回来，而不是人物在排队。"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-08",
-      "classification": "NON_MAINLINE",
-      "subcategory": "WORK",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-08",
-      "conversationId": "editorial-cm01-08",
-      "title": "会议说到一半想到冰箱",
-      "topic": "会议说到一半想到冰箱",
-      "sourceRefs": [
-        "CM01-08"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-08-01",
-          "conversationId": "editorial-cm01-08",
-          "conversationTitle": "会议说到一半想到冰箱",
-          "userMessage": "我明天要开会，开场想自然一点。对了我刚才突然想起冰箱晚上会咔一声，这正常吗？",
-          "choices": [
-            {
-              "id": "CM01-08-01-choice-1",
-              "text": "冰箱偶尔因温度变化、继电器或塑料部件收缩发出咔声，单独出现通常不说明故障。会议开场那部分你可以先记着，我们等你聊完这个再回去。"
-            },
-            {
-              "id": "CM01-08-01-choice-2",
-              "text": "先答冰箱：偶尔咔一声、制冷正常、没有持续异响时，多半是运行部件切换或材料热胀冷缩。然后我们回到开场。"
-            },
-            {
-              "id": "CM01-08-01-choice-3",
-              "text": "这个离题有来源：你在想‘开场怎么自然’，脑子又跳到昨晚那个突然的声音。冰箱如果只是偶发一声，可以先观察频率。"
-            },
-            {
-              "id": "CM01-08-01-choice-4",
-              "text": "冰箱问题先放一个小结：偶发咔声可观察，伴随不制冷、漏水或连续噪声才需要进一步排查。现在回到会议。"
-            }
-          ]
-        },
-        {
-          "nodeId": "CM01-08-02",
-          "conversationId": "editorial-cm01-08",
-          "conversationTitle": "会议说到一半想到冰箱",
-          "userMessage": "好了，说回开场。我不想自我介绍，也不想一上来就“今天很高兴”。",
-          "choices": [
-            {
-              "id": "CM01-08-02-choice-1",
-              "text": "那可以直接从地图开始：‘我先说三个结果，再说其中一个还没解决的地方。’不自我介绍，也不套寒暄。"
-            },
-            {
-              "id": "CM01-08-02-choice-2",
-              "text": "你可以说：‘我先把目前做到哪、卡在哪、需要大家决定什么放前面。’听起来像开始工作，不像主持词。"
-            },
-            {
-              "id": "CM01-08-02-choice-3",
-              "text": "开场可以只承担导航：‘我先讲结论，再补过程。’如果现场需要你的名字，别人通常已经知道。"
-            },
-            {
-              "id": "CM01-08-02-choice-4",
-              "text": "嗯，就从事情开始。比如：‘这周变化主要有两件，我先讲影响最大的那件。’"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetId": "CM01-17",
-      "classification": "NON_MAINLINE",
-      "subcategory": "OTHER",
-      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
-      "usedInStoryPlan": false,
-      "source": "ordinary:CM01-17",
-      "conversationId": "editorial-cm01-17",
-      "title": "嗯",
-      "topic": "嗯",
-      "sourceRefs": [
-        "CM01-17"
-      ],
-      "nodes": [
-        {
-          "nodeId": "CM01-17-01",
-          "conversationId": "editorial-cm01-17",
-          "conversationTitle": "嗯",
-          "userMessage": "嗯。",
-          "choices": [
-            {
-              "id": "CM01-17-01-choice-1",
-              "text": "我在。"
-            },
-            {
-              "id": "CM01-17-01-choice-2",
-              "text": "你继续。"
-            },
-            {
-              "id": "CM01-17-01-choice-3",
-              "text": "嗯。"
-            },
-            {
-              "id": "CM01-17-01-choice-4",
-              "text": "好，不急。"
             }
           ]
         }

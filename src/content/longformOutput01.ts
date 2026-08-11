@@ -241,7 +241,7 @@ export const longformOutput01Conversations: ConversationDefinition[] = [
   conversation('longform-lf01-10', 'LF01-10', '做个完整方案比较', 'decision-memo-output', 'relationship', [
     node('longform-lf01-10-01', 'longform-lf01-10', '做个完整方案比较', '我在两个方案里卡了三天，你别直接说选A，给我做个长一点比较，我想看看自己到底在纠结什么', [
       longformChoice('lf01-10-01-a', '先给 A/B 各自最重要的三个事实，否则只是把犹豫写长。'),
-      longformChoice('lf01-10-01-b', '先给 A/B 各自最重要的三个事实，否则只是把犹豫写长。'),
+      longformChoice('lf01-10-01-b', '先把 A/B 的收入、稳定性和搬家代价列出来，再看你最不愿意牺牲什么。'),
       longformChoice('lf01-10-01-c', '先把收入、稳定、搬家和可逆性列成比较维度，但不替你填未知事实。'),
       longformChoice('lf01-10-01-d', '先问你真正比较的是收入、稳定、迁移成本还是关系影响。'),
     ], undefined),

@@ -31,6 +31,41 @@ export interface AuditClassificationResult {
   source: string
 }
 
+export interface OrdinaryChoiceAuditNode {
+  id: string
+  choices: Array<{ id: string; text: string }>
+}
+
+export interface OrdinaryChoiceAuditConversation {
+  id: string
+  sourceRefs?: string[]
+  nodes: OrdinaryChoiceAuditNode[]
+}
+
+export interface OrdinaryChoiceAuditRecord {
+  conversationId: string
+  assetId: string
+  nodeId: string
+  placeholderChoiceIds: string[]
+  exactDuplicateChoiceGroups: string[][]
+  nearDuplicateChoiceGroups: string[][]
+  truncatedChoiceIds: string[]
+  lowDiversity: boolean
+}
+
+export interface OrdinaryChoiceQualityReport {
+  conversationCount: number
+  nodeCount: number
+  choiceCount: number
+  placeholderCount: number
+  exactDuplicateCount: number
+  nearDuplicateCount: number
+  truncatedTextCount: number
+  templateOnlyNodeCount: number
+  lowDiversityNodeCount: number
+  records: OrdinaryChoiceAuditRecord[]
+}
+
 const WORLD_EVIDENCE = [
   'aster', 'maya', 'cascade', 'echo', 'a1', 'autonomous research', 'ai 权利', 'machine civilization',
   'posthuman', 'automation', 'uplift', 'contact', 'civilization convention', '机器文明', '后人类', '自动化',
@@ -48,6 +83,63 @@ function normalized(value: string) {
 function containsAny(text: string, terms: readonly string[]) {
   const value = normalized(text)
   return terms.some((term) => value.includes(term))
+}
+
+const PLACEHOLDER_REPLY = /^(?:按当前输入继续整理|继续整理|按现有内容继续|根据当前输入处理|继续处理即可)[。.!！]?$/
+
+function comparableChoiceText(text: string) {
+  return normalized(text).replace(/[\p{P}\p{S}\s]/gu, '')
+}
+
+function duplicateGroups(choices: Array<{ id: string; text: string }>, near: boolean) {
+  const groups = new Map<string, string[]>()
+  choices.forEach((choice) => {
+    const key = near ? comparableChoiceText(choice.text) : choice.text
+    const group = groups.get(key) ?? []
+    group.push(choice.id)
+    groups.set(key, group)
+  })
+  return [...groups.values()].filter((group) => group.length > 1)
+}
+
+export function scanOrdinaryChoiceQuality(conversations: OrdinaryChoiceAuditConversation[]): OrdinaryChoiceQualityReport {
+  const records: OrdinaryChoiceAuditRecord[] = []
+  let choiceCount = 0
+  for (const conversation of conversations) {
+    for (const node of conversation.nodes) {
+      choiceCount += node.choices.length
+      const placeholderChoiceIds = node.choices.filter((choice) => PLACEHOLDER_REPLY.test(choice.text.trim())).map((choice) => choice.id)
+      const exactDuplicateChoiceGroups = duplicateGroups(node.choices, false)
+      const nearDuplicateGroups = duplicateGroups(node.choices, true)
+        .filter((group) => !exactDuplicateChoiceGroups.some((exactGroup) => exactGroup.join('|') === group.join('|')))
+      const truncatedChoiceIds = node.choices
+        .filter((choice) => /—$/.test(choice.text.trim()))
+        .map((choice) => choice.id)
+      const distinctComparableTexts = new Set(node.choices.map((choice) => comparableChoiceText(choice.text)))
+      records.push({
+        conversationId: conversation.id,
+        assetId: conversation.sourceRefs?.[0] ?? conversation.id,
+        nodeId: node.id,
+        placeholderChoiceIds,
+        exactDuplicateChoiceGroups,
+        nearDuplicateChoiceGroups: nearDuplicateGroups,
+        truncatedChoiceIds,
+        lowDiversity: distinctComparableTexts.size <= Math.max(1, Math.ceil(node.choices.length / 2)),
+      })
+    }
+  }
+  return {
+    conversationCount: conversations.length,
+    nodeCount: records.length,
+    choiceCount,
+    placeholderCount: records.reduce((sum, record) => sum + record.placeholderChoiceIds.length, 0),
+    exactDuplicateCount: records.reduce((sum, record) => sum + record.exactDuplicateChoiceGroups.length, 0),
+    nearDuplicateCount: records.reduce((sum, record) => sum + record.nearDuplicateChoiceGroups.length, 0),
+    truncatedTextCount: records.reduce((sum, record) => sum + record.truncatedChoiceIds.length, 0),
+    templateOnlyNodeCount: records.filter((record) => record.placeholderChoiceIds.length >= 3).length,
+    lowDiversityNodeCount: records.filter((record) => record.lowDiversity).length,
+    records,
+  }
 }
 
 function subcategoryFor(input: AuditAssetInput): AuditSubcategory {

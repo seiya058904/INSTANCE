@@ -16,13 +16,13 @@ describe('Real Usage Patch 01', () => {
     expect(realUsagePatch01Conversations.every((conversation) => conversation.nodes.length > 0)).toBe(true)
   })
 
-  it('keeps every patch conversation runtime eligible and demotes only the four replacements', () => {
+  it('keeps every rated ordinary conversation runtime eligible, including replacement sources', () => {
     const refs = new Set(ordinaryConversationPool.flatMap((conversation) => conversation.sourceRefs))
     for (const sourceId of REAL_USAGE_PATCH01_SOURCE_IDS) expect(refs.has(sourceId)).toBe(true)
-    expect(refs.has('humor01:01')).toBe(false)
-    expect(refs.has('humor01:18')).toBe(false)
-    expect(refs.has('humor01:21')).toBe(false)
-    expect(refs.has('humor01:24')).toBe(false)
+    expect(refs.has('humor01:01')).toBe(true)
+    expect(refs.has('humor01:18')).toBe(true)
+    expect(refs.has('humor01:21')).toBe(true)
+    expect(refs.has('humor01:24')).toBe(true)
   })
 
   it('keeps the catgirl affinity local and only routes correction after format violations', () => {

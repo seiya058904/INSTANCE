@@ -148,11 +148,20 @@ async function main() {
     choiceCount: reviewAssets.reduce((sum, asset) => sum + asset.nodes.reduce((nodeSum, node) => nodeSum + node.choices.length, 0), 0),
     assets: reviewAssets,
   }
+  const qualityInput = module.ordinaryContentSources.ordinaryConversationPool.map((conversation) => ({
+    id: conversation.id,
+    sourceRefs: conversation.sourceRefs,
+    nodes: conversation.nodes.map((node) => ({ id: node.id, choices: node.choices.map((choice) => ({ id: choice.id, text: choice.text })) })),
+  }))
+  const qualityReport = module.scanOrdinaryChoiceQuality(qualityInput)
+  const qualityMarkdown = `# Ordinary Formal Pool Choice Quality Audit\n\n> This report scans the formal Ordinary pool after rating-based curation. It reports structural evidence; rating decides whether a defect is repaired, retained, or discarded.\n\n| Metric | Count |\n| --- | ---: |\n| Conversations | ${qualityReport.conversationCount} |\n| Nodes | ${qualityReport.nodeCount} |\n| Choices | ${qualityReport.choiceCount} |\n| Placeholder choices | ${qualityReport.placeholderCount} |\n| Exact duplicate groups | ${qualityReport.exactDuplicateCount} |\n| Near duplicate groups | ${qualityReport.nearDuplicateCount} |\n| Truncated choices | ${qualityReport.truncatedTextCount} |\n| Template-only nodes | ${qualityReport.templateOnlyNodeCount} |\n| Low-diversity nodes | ${qualityReport.lowDiversityNodeCount} |\n\n## Defect records\n\n${qualityReport.records.filter((record) => record.placeholderChoiceIds.length || record.exactDuplicateChoiceGroups.length || record.nearDuplicateChoiceGroups.length || record.truncatedChoiceIds.length || record.lowDiversity).map((record) => `- \`${record.assetId}\` / \`${record.nodeId}\`: placeholders=${record.placeholderChoiceIds.length}, exact=${record.exactDuplicateChoiceGroups.length}, near=${record.nearDuplicateChoiceGroups.length}, truncated=${record.truncatedChoiceIds.length}, lowDiversity=${record.lowDiversity}`).join('\\n') || '- None'}\n`
   await fs.mkdir(outputDir, { recursive: true })
   await fs.writeFile(path.join(outputDir, 'ordinary-content-classification.json'), `${JSON.stringify(classificationJson, null, 2)}\n`, 'utf8')
   await fs.writeFile(path.join(outputDir, 'ordinary-content-review.json'), `${JSON.stringify(reviewJson, null, 2)}\n`, 'utf8')
   await fs.writeFile(path.join(outputDir, 'ordinary-vs-mainline-classification.md'), markdownReport(records, classifications.filter(({ classification }) => classification.classification === 'NON_MAINLINE')))
-  console.log(JSON.stringify({ scanned: records.length, mainline: records.filter((item) => item.classification === 'MAINLINE').length, nonMainline: reviewAssets.length, uncertain: records.filter((item) => item.classification === 'UNCERTAIN').length, nodes: reviewJson.nodeCount, choices: reviewJson.choiceCount, inventory: inventoryRefs.size }, null, 2))
+  await fs.writeFile(path.join(outputDir, 'ordinary-content-quality-audit.json'), `${JSON.stringify(qualityReport, null, 2)}\n`, 'utf8')
+  await fs.writeFile(path.join(outputDir, 'ordinary-content-quality-audit.md'), qualityMarkdown.replaceAll('\\n', '\n'), 'utf8')
+  console.log(JSON.stringify({ scanned: records.length, mainline: records.filter((item) => item.classification === 'MAINLINE').length, nonMainline: reviewAssets.length, uncertain: records.filter((item) => item.classification === 'UNCERTAIN').length, nodes: reviewJson.nodeCount, choices: reviewJson.choiceCount, inventory: inventoryRefs.size, quality: { conversations: qualityReport.conversationCount, nodes: qualityReport.nodeCount, choices: qualityReport.choiceCount, placeholders: qualityReport.placeholderCount, exactDuplicateGroups: qualityReport.exactDuplicateCount, nearDuplicateGroups: qualityReport.nearDuplicateCount, truncated: qualityReport.truncatedTextCount } }, null, 2))
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1 })

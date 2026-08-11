@@ -21,15 +21,20 @@ function clean(text: string) {
 }
 
 function parseChoice(raw: string, ref: string, index: number): StoryChoice {
-  const preview = raw.match(/Preview：`([^`]+)`/)?.[1]
-  const structure = raw.match(/Structure：([^\n]+)/)?.[1]?.split(/\s*→\s*|\s*\/\s*/).map((item) => item.trim()).filter(Boolean)
-  const keyFacts = raw.match(/KeyFacts：([^\n]+)/)?.[1]?.split(/[；;]/).map((item) => item.trim()).filter(Boolean)
+  const preview = raw.match(/Preview：\s*`([^`]+)`/)?.[1] ?? raw.match(/Preview：\s*```[^\r\n]*\r?\n([\s\S]*?)```/)?.[1]?.trim()
+  const closingPreview = raw.match(/ClosingPreview：\s*`([^`]+)`/)?.[1]
+  const structure = raw.match(/Structure：\s*([^\r\n]+)/)?.[1]?.split(/\s*→\s*|\s*\/\s*/).map((item) => item.trim()).filter(Boolean)
+  const keyFacts = raw.match(/KeyFacts：\s*([^\r\n]+)/)?.[1]?.split(/[；;]/).map((item) => item.trim()).filter(Boolean)
+  const keyFact = raw.match(/KeyFact：\s*([^\r\n]+)/)?.[1]?.trim()
+  const label = raw.match(/\[([^\]]+)\]/)?.[1]?.replace(/\s*·.*$/, '').trim()
   const title = raw.match(/Title：`([^`]+)`/)?.[1]
-  const long = Boolean(preview || /长回复|完整推导|更新长报告|长报告|发言稿|阅读笔记/.test(raw))
-  const text = clean(raw.replace(/\[[^\]]+\]/g, '').replace(/Title：`[^`]+`\s*/g, '').replace(/Structure：[^\n]+\s*/g, '').replace(/Preview：`[^`]+`\s*/g, '').replace(/KeyFacts：[^\n]+\s*/g, '').replace(/ClosingPreview：`[^`]+`\s*/g, '').replace(/\s+/g, ' '))
+  const long = Boolean(preview || closingPreview || keyFact || /长回复|完整推导|更新长报告|长报告|发言稿|阅读笔记/.test(raw))
+  const text = clean(raw.replace(/\[[^\]]+\]/g, '').replace(/Title：`[^`]+`\s*/g, '').replace(/Structure：[^\n]+\s*/g, '').replace(/ClosingPreview：`[^`]+`\s*/g, '').replace(/Preview：`[^`]+`\s*/g, '').replace(/KeyFacts?：[^\n]+\s*/g, '').replace(/\s+/g, ' '))
+  const authoredText = text || closingPreview || preview || keyFact || keyFacts?.join('；') || structure?.join(' / ') || title || label
+  if (!authoredText) throw new Error(`Longform choice ${ref}-${index + 1} has no authored reply or preview`)
   return {
     id: `${ref.toLowerCase()}-choice-${index + 1}`,
-    text: text || '按当前输入继续整理。',
+    text: authoredText,
     longformPreview: long ? {
       artifactType: artifactTypes[ref as typeof refs[number]], estimatedLength: raw.match(/约 [\d,]+ 字|\d+ 步|约 \d+ 字/)?.[0] ?? '折叠长回复', title,
       preview: preview ?? '我会把已提供的内容整理成可展开的完整版本。', structure, keyFacts: keyFacts ?? inputs[ref as typeof refs[number]].keyFacts,
@@ -43,7 +48,7 @@ function parseConversation(ref: typeof refs[number]): ConversationDefinition {
     const nodeBlock = block.slice(marker.index ?? 0, [...block.matchAll(new RegExp(`^## (${ref}-\\d+)\\s*$`, 'gm'))][index + 1]?.index ?? block.length)
     const user = nodeBlock.match(/\*\*User\*\*\s*\r?\n([\s\S]*?)(?=\r?\n\*\*Candidate Replies\*\*)/)?.[1]?.split(/\r?\n/).map((line) => line.replace(/^>\s?/, '').trim()).filter(Boolean).join('\n') ?? ''
     const replySection = nodeBlock.split('**Candidate Replies**')[1] ?? ''
-    const replies = [...replySection.matchAll(/^\s*\d+\.\s+([\s\S]*?)(?=^\s*\d+\.\s+|$)/gm)].map((match) => match[1].trim())
+    const replies = replySection.split(/\r?\n(?=\s*\d+\.\s+)/).map((block) => block.replace(/^\s*\d+\.\s+/, '').trim()).filter(Boolean)
     const choices = replies.map((reply, choiceIndex) => parseChoice(reply, ref, choiceIndex))
     const node: StoryNode = { id: marker[1], conversationId: `longform-${ref.toLowerCase()}`, conversationTitle: ref, userMessage: user, choices, behaviorMode: 'direct', timing: { responsePace: 'considered', typingPattern: 'steady' }, userLongInput: inputs[ref] }
     return node

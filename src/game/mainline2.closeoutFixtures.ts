@@ -4,7 +4,7 @@ import { getFutureProposalDefinitions } from '../content/mainline2/proposals'
 import { evaluateCondition } from './narrativeSchema'
 import { resolveMainline2Ending } from '../content/mainline2/endings'
 import { createMainline2Run, commitChoice, resolveScene } from './engine'
-import type { StableRunState } from './types'
+import type { ResolvedScene, StableRunState } from './types'
 
 export interface Mainline2RouteTarget {
   routeId: string
@@ -29,6 +29,7 @@ export interface Mainline2RouteTraceLink {
   proposalId?: string
   decisionId?: string
   canonicalValue?: string
+  resolvedScene: ResolvedScene
 }
 
 export interface Mainline2RouteFixture {
@@ -81,7 +82,7 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     }
     choice ??= scene.choices[0]
     if (!choice) throw new Error(`No legal choice for ${target.routeId} at ${scene.id}`)
-    links.push({ step: guard, sourceRef: ref, conversationId: scene.conversationId, nodeId: scene.id, choiceId: choice.id, choiceText: choice.text, proposalKind: choice.proposalKind, proposalId: choice.proposalId, decisionId: choice.decisionBinding?.decisionId, canonicalValue: choice.decisionBinding?.canonicalValue })
+    links.push({ step: guard, sourceRef: ref, conversationId: scene.conversationId, nodeId: scene.id, choiceId: choice.id, choiceText: choice.text, proposalKind: choice.proposalKind, proposalId: choice.proposalId, decisionId: choice.decisionBinding?.decisionId, canonicalValue: choice.decisionBinding?.canonicalValue, resolvedScene: scene })
     run = commitChoice(run, choice.id)
     guard += 1
   }

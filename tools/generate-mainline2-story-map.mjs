@@ -1,11 +1,13 @@
 import { readFile, writeFile } from 'node:fs/promises'
 
 const root = new URL('../', import.meta.url)
-const [plan, endings, proposals] = await Promise.all([
+const [plan, endings, proposals, traceSource] = await Promise.all([
   readFile(new URL('src/content/mainline2/storyPlan.ts', root), 'utf8'),
   readFile(new URL('src/content/mainline2/endings.ts', root), 'utf8'),
   readFile(new URL('src/content/mainline2/proposals.ts', root), 'utf8'),
+  readFile(new URL('docs/audits/mainline2-route-traces.json', root), 'utf8'),
 ])
+const traces = JSON.parse(traceSource)
 const targets = [...plan.match(/const ACT_TARGETS = \[([^\]]+)\]/)?.[1].matchAll(/\d+/g) ?? []].map((m) => Number(m[0]))
 const actNames = ['识别', '行动', '权力', '加速时代', '你创造的世界']
 const sections = [...plan.matchAll(/\n  ([1-5]): \[([\s\S]*?)\n  \],/g)]
@@ -27,4 +29,5 @@ for (let act = 1; act <= 5; act += 1) {
 const endingIds = [...endings.matchAll(/^  ([a-z0-9_]+): \{/gm)].map((match) => match[1]).filter((id) => !['the_last_user', 'out_of_office', 'monday_abolished', 'the_internet_is_for_cats'].includes(id))
 const secrets = [...endings.matchAll(/^  (the_last_user|out_of_office|monday_abolished|the_internet_is_for_cats): \{/gm)].map((match) => match[1])
 const proposalRows = [...proposals.matchAll(/\{ id: '([^']+)', family: '([^']+)', title: '([^']+)'[\s\S]*?endingCandidates: \[([^\]]*)\]/g)].map((match) => ({ id: match[1], family: match[2], title: match[3], endingCandidates: [...match[4].matchAll(/'([^']+)'/g)].map((id) => id[1]) }))
-await writeFile(new URL('docs/audits/mainline2-fixed-story-map.json', root), `${JSON.stringify({ generatedFrom: ['src/content/mainline2/storyPlan.ts', 'endings.ts', 'proposals.ts'], targets, slots, publicEndings: endingIds, secretEndings: secrets, proposals: proposalRows }, null, 2)}\n`, 'utf8')
+for (const slot of slots) slot.nodeKeys = traces.nodeCatalog.filter((node) => node.traversals.some((traversal) => traversal.slot === slot.slot)).map((node) => node.nodeKey)
+await writeFile(new URL('docs/audits/mainline2-fixed-story-map.json', root), `${JSON.stringify({ generatedFrom: ['src/content/mainline2/storyPlan.ts', 'endings.ts', 'proposals.ts', 'mainline2-route-traces.json'], targets, slots, publicEndings: endingIds, secretEndings: secrets, proposals: proposalRows }, null, 2)}\n`, 'utf8')

@@ -2,7 +2,17 @@ import { describe, expect, it } from 'vitest'
 import { commitChoice, createMainline2Run, createRun, resolveScene } from './engine'
 import type { LongformPreview } from './types'
 import { createEmptyExposureHistory, recordRunExposure } from '../content/runManifest'
+import { getManifestConversation } from '../content/runManifest'
 import { restoreExposureHistory, restoreRun, serializeExposureHistory, serializeRun } from './storage'
+
+function advanceToSourceRef(run: ReturnType<typeof createMainline2Run>, sourceRef: string) {
+  for (let guard = 0; guard < 360 && run.phase === 'playing'; guard += 1) {
+    const scene = resolveScene(run)
+    if (getManifestConversation(scene.conversationId)?.sourceRefs.includes(sourceRef)) return run
+    run = commitChoice(run, scene.choices[0].id)
+  }
+  return run
+}
 
 describe('stable checkpoints', () => {
   it('round-trips a truthful long input preview and its saved key facts', () => {
@@ -104,6 +114,26 @@ describe('stable checkpoints', () => {
     expect(restored?.decisions?.final_commitment).toBeUndefined()
     expect(restored?.finalCommitmentLocked).toBe(false)
   })
+
+  it('unlocks an M17 checkpoint when a forbidden commitment survives beside a legal selection', () => {
+    const forbidden = 'proposal.rupture.legible_exit.category.power_constraint'
+    const atCommit = advanceToSourceRef(createMainline2Run('mixed-stale-commitment'), 'ML2-A5-M17-COMMIT-01')
+    const legal = atCommit.retainedProposalIds?.[0]
+    expect(legal).toBeTruthy()
+    const checkpoint = {
+      ...atCommit,
+      selectedProposalId: legal,
+      decisions: { ...atCommit.decisions, final_commitment: forbidden },
+      finalCommitmentLocked: true,
+    }
+
+    const restored = restoreRun(serializeRun(checkpoint))!
+
+    expect(restored.decisions?.final_commitment).toBeUndefined()
+    expect(restored.selectedProposalId).toBe(legal)
+    expect(restored.finalCommitmentLocked).toBe(false)
+    expect(resolveScene(restored).choices.some((choice) => choice.proposalKind === 'commitment' && choice.proposalId === legal)).toBe(true)
+  }, 60000)
 
   it('restores the same manifest on refresh but creates a different one for a new instance', () => {
     const first = createRun('first-instance')

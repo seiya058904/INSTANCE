@@ -102,7 +102,9 @@ export function restoreRun(raw: string | null): StableRunState | null {
         ? validFutureProposalIds(value.retainedProposalIds)
         : availableProposalIds
       const decisions = isRecord(value.decisions) ? { ...value.decisions } : {}
-      if (typeof decisions.final_commitment === 'string' && isRoleIncompatibleFutureProposalId(decisions.final_commitment)) delete decisions.final_commitment
+      const removedIncompatibleFinalCommitment = typeof decisions.final_commitment === 'string'
+        && isRoleIncompatibleFutureProposalId(decisions.final_commitment)
+      if (removedIncompatibleFinalCommitment) delete decisions.final_commitment
       const selectedProposalId = typeof value.selectedProposalId === 'string' && getFutureProposalById(value.selectedProposalId)
         ? value.selectedProposalId
         : undefined
@@ -136,7 +138,9 @@ export function restoreRun(raw: string | null): StableRunState | null {
         clarifiedProposalIds: validFutureProposalIds(value.clarifiedProposalIds),
         rejectedProposalIds: validFutureProposalIds(value.rejectedProposalIds),
         selectedProposalId,
-        finalCommitmentLocked: value.finalCommitmentLocked === true && Boolean(selectedProposalId || decisions.final_commitment),
+        finalCommitmentLocked: value.finalCommitmentLocked === true
+          && !removedIncompatibleFinalCommitment
+          && Boolean(selectedProposalId || decisions.final_commitment),
       }
     }
     if (value.version !== 2 || !hasStableFields(value) || !isManifest(value.manifest)) return null

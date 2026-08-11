@@ -21,7 +21,7 @@ ACT V must not feel like:
 It should feel like:
 
 > “You spent the entire game building a world.  
-> These are now the futures that world can realistically become.”
+> 这个世界接下来真正可能走向的未来，也只剩这些了。"
 
 M16 therefore has four jobs:
 
@@ -2075,11 +2075,11 @@ Secret ending checks belong primarily in M17.
 
 ### Conditional ECHO/A1
 
-> We are ready to object.
+> 我们准备提出异议。
 
 ### Conditional ORIGIN: UNKNOWN
 
-> We will record what your civilization chooses to preserve.
+> 你们决定留下什么，我们会如实记下。
 
 ### 岑遥
 

@@ -10,6 +10,7 @@ import { decisionMutationsForChoice, validateDecisionBindings } from './decision
 import intendedRoleBindings from './intendedRoleBindings.registry.json'
 import { isPlayableRuntimeAsset } from './runtimeAssetClassification'
 import { applyMainlinePlayerFacingCopy } from './playerFacingCopy'
+import { ENDING_BRIDGE_CONVERSATIONS } from './endingBridges'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -54,7 +55,6 @@ function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][
   if (ref.includes('M12-DECISION-')) mutations.push({ type: 'event.record', event: 'history.offworld.governance' })
   if (ref.includes('M13-CONTACT-')) mutations.push({ type: 'event.record', event: 'history.contact.first_conversation' })
   if (ref.includes('M11-WE-') || ref.includes('M11-ZL-')) mutations.push({ type: 'event.record', event: 'history.canine.group_representation' })
-  if (ref.includes('M11-RES-03')) mutations.push({ type: 'event.record', event: 'history.canine.civic_success' })
   if (ref.includes('M14-CAP-01')) mutations.push({ type: 'flag.set', flagId: 'cap.defense_access' })
   if (ref.includes('M15-CONV-')) mutations.push({ type: 'event.record', event: 'history.m15.civilization_convention' })
   if (ref.includes('M16-GEN-')) mutations.push({ type: 'event.record', event: 'history.m16.proposals_generated' })
@@ -67,20 +67,26 @@ function authoredMutations(ref: string, choice: ConversationDefinition['nodes'][
 
 function adapt(conversation: ConversationDefinition): ConversationDefinition {
   const ref = assetRef(conversation)
+  const adaptedNodes = conversation.nodes.map((node) => ({
+    ...node,
+    choiceKind: intendedRoleChoices(conversation, node) ? 'semantic' : node.choiceKind,
+    choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
+      ...choice,
+      // The reliable individual-communication finding is the authored entry
+      // point for the voluntary civic-pilot renewal.
+      nextNodeId: ref.includes('M11-RES-02') && choice.id.endsWith('-domain-specific-autonomy') ? 'm11-canine-renewal' : ('nextNodeId' in choice ? choice.nextNodeId : undefined),
+      continuation: ref.includes('M11-RES-02') && choice.id.endsWith('-domain-specific-autonomy') ? undefined : choice.continuation,
+      mutations: [...(choice.mutations ?? []), ...(node.choices.some((candidate) => candidate.id === choice.id) ? decisionMutationsForChoice(conversation, choice) : []), ...authoredMutations(ref, choice)],
+    })),
+  }))
+  const upliftBridge = ENDING_BRIDGE_CONVERSATIONS.find((item) => item.nodes.some((node) => node.id === 'm11-canine-renewal'))
   return {
     ...conversation,
-    nodes: conversation.nodes.map((node) => ({
-      ...node,
-      choiceKind: intendedRoleChoices(conversation, node) ? 'semantic' : node.choiceKind,
-      choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
-        ...choice,
-        mutations: [...(choice.mutations ?? []), ...(node.choices.some((candidate) => candidate.id === choice.id) ? decisionMutationsForChoice(conversation, choice) : []), ...authoredMutations(ref, choice)],
-      })),
-    })),
+    nodes: ref.includes('M11-RES-02') && upliftBridge ? [...adaptedNodes, ...upliftBridge.nodes] : adaptedNodes,
   }
 }
 
-const authored = MAINLINE2_AUTHORED_CONVERSATIONS.filter((conversation) => isPlayableRuntimeAsset(assetRef(conversation))).map((conversation) => {
+const authored = [...MAINLINE2_AUTHORED_CONVERSATIONS, ...ENDING_BRIDGE_CONVERSATIONS].filter((conversation) => isPlayableRuntimeAsset(assetRef(conversation))).map((conversation) => {
   const bindingErrors = validateDecisionBindings(conversation)
   if (bindingErrors.length) throw new Error(bindingErrors.join('; '))
   return adapt(conversation)

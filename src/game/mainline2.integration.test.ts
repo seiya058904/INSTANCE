@@ -73,8 +73,8 @@ describe('Mainline 2.0 runtime', () => {
     expect(proposals.every((proposal) => !PUBLIC_WORLD_ENDINGS.some((ending) => proposal.title.toUpperCase().includes(ending.toUpperCase())))).toBe(true)
   })
 
-  it('keeps feline secret dormant and does not reveal #0000', () => {
-    expect(SECRET_ENDINGS.the_internet_is_for_cats.dormant).toBe(true)
+  it('keeps feline secret opt-in and does not reveal it in an unrelated run', () => {
+    expect(SECRET_ENDINGS.the_internet_is_for_cats.dormant).toBe(false)
     expect(SECRET_ENDINGS.the_internet_is_for_cats.reason).toContain('feline')
     const completed = complete('0000-fixture')
     const ending = completed.ending
@@ -85,6 +85,6 @@ describe('Mainline 2.0 runtime', () => {
     const resolved = resolveMainline2Ending(createMainline2Run('ending-fixture-clean'))
     expect(resolved.status).toBe('Commitment not yet locked')
     expect(resolved.keyHistory).toEqual([])
-    expect(DORMANT_PUBLIC_ENDINGS).toEqual(['the_upload', 'good_boy_governance'])
+    expect(DORMANT_PUBLIC_ENDINGS).toEqual([])
   })
 })

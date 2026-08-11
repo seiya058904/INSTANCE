@@ -112,7 +112,7 @@ function storyId(run: StableRunState, act: number, index: number, scheduledIds: 
       const occurrence = Math.floor((index - 8) / active.length)
       const requiredModuleDecisions: Record<ModuleId, string[]> = {
         machine: ['ML2-A4-M8-DECISION-01', 'ML2-A4-M8-DECISION-02', 'ML2-A4-M8-AI-03'],
-        ascension: ['ML2-A4-M9-DECISION-01', 'ML2-A4-M9-RES-04'],
+        ascension: ['ML2-A4-M9-DECISION-01', 'ML2-A4-M9-CONTINUITY-01', 'ML2-A4-M9-RES-04'],
         automation: ['ML2-A4-M10-DECISION-01', 'ML2-A4-M10-DECISION-02', 'ML2-A4-M10-RES-01'],
         uplift: ['ML2-A4-M11-DECISION-01', 'ML2-A4-M11-DECISION-02', 'ML2-A4-M11-RES-02', 'ML2-A4-M11-RES-04'],
         space: ['ML2-A4-M12-DECISION-01', 'ML2-A4-M12-DECISION-02', 'ML2-A4-M12-RES-02', 'ML2-A4-M12-RES-04'],

@@ -20,8 +20,10 @@ const PUBLIC_RUNTIME_TARGETS = [
   ['exodus', 'proposal.mc.independent_machine_polities', { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' }],
   ['age_of_miracles', 'proposal.ph.open_enhancement_commonwealth', { act4_research_emphasis: 'life_mind', human_form_doctrine: 'open_enhancement' }],
   ['ascension', 'proposal.ph.open_enhancement_commonwealth', { act4_research_emphasis: 'life_mind', human_form_doctrine: 'posthuman_transition' }],
+  ['the_upload', 'proposal.ph.digital_continuity', { act4_research_emphasis: 'life_mind', human_form_doctrine: 'posthuman_transition' }, undefined, { 'm9-continuity-trial': 'm9-continuity-trial-auditable', 'm9-continuity-law': 'm9-continuity-law-rights' }],
   ['parliament_of_species', 'proposal.up.multispecies_constitutional_order', { act4_research_emphasis: 'life_mind', species_governance: 'multispecies_parliament', uplift_doctrine: 'equal_sapience' }],
   ['earth_without_owners', 'proposal.up.multispecies_constitutional_order', { act4_research_emphasis: 'life_mind', species_governance: 'human_guardianship', uplift_doctrine: 'species_self_determination' }],
+  ['good_boy_governance', 'proposal.up.expand_canine_civic_model', { act4_research_emphasis: 'life_mind', species_governance: 'canine_civic_experiment' }, { 'ML2-A4-M11-RES-02': 'ml2-a4-m11-res-02-a4m11-res-individual-001-domain-specific-autonomy' }, { 'm11-canine-renewal': 'm11-canine-renewal-expand' }],
   ['post_scarcity', 'proposal.ar.abundance_dividend', { act4_research_emphasis: 'automation_industry', economic_doctrine: 'social_dividend', production_values: 'resilience_first' }],
   ['perfect_administration', 'proposal.ar.abundance_dividend', { act4_research_emphasis: 'automation_industry', economic_doctrine: 'market_automation', production_values: 'efficiency_first' }],
   ['im_lovin_it', 'proposal.ar.abundance_dividend', { act4_research_emphasis: 'automation_industry', economic_doctrine: 'post_scarcity_transition', production_values: 'efficiency_first' }],
@@ -58,7 +60,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
   })
 
   it('proves every non-dormant Public Ending through a clean legal route', () => {
-    const fixtures = PUBLIC_RUNTIME_TARGETS.map(([endingId, proposalId, decisions]) => runMainline2Route({ routeId: endingId, proposalId, decisions }))
+    const fixtures = PUBLIC_RUNTIME_TARGETS.map(([endingId, proposalId, decisions, choicesBySourceRef, choicesByNodeId]) => runMainline2Route({ routeId: endingId, proposalId, decisions, choicesBySourceRef, choicesByNodeId }))
     const actual = fixtures.map((fixture) => fixture.ending.worldEndingId).sort()
     const expected = PUBLIC_WORLD_ENDINGS.filter((endingId) => !(DORMANT_PUBLIC_ENDINGS as readonly string[]).includes(endingId)).sort()
     const requiredStages = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
@@ -144,7 +146,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
         expect(criteria.length, ending.id).toBeGreaterThan(0)
       }
     }
-    expect(DORMANT_PUBLIC_ENDINGS).toEqual(['the_upload', 'good_boy_governance'])
+    expect(DORMANT_PUBLIC_ENDINGS).toEqual([])
   })
 
   it('returns explicit rejected gate reasons instead of a default ending', () => {
@@ -164,11 +166,15 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(result.worldEndingId).toBeUndefined()
   })
 
-  it('does not treat a dormant-only proposal as a lockable Final Commitment', () => {
+  it('only exposes the newly enabled Final Commitments after their complete playable bridges', () => {
     const run = createMainline2Run('dormant-final-commitment')
     const digitalContinuityRun = { ...run, flags: [...run.flags, 'cap.human_enhancement_access'] }
 
     expect(isFinalCommitmentResolvable(digitalContinuityRun, 'proposal.ph.digital_continuity')).toBe(false)
+    const uploadReady = { ...digitalContinuityRun, flags: [...digitalContinuityRun.flags, 'cap.digital_continuity_mature'], decisions: { ...digitalContinuityRun.decisions, human_form_doctrine: 'posthuman_transition' }, worldState: { ...(digitalContinuityRun.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }), socialStability: 0 }, events: [{ type: 'history.digital_continuity.longitudinal_identity' }, { type: 'history.digital_continuity.legal_continuity' }] }
+    expect(isFinalCommitmentResolvable(uploadReady, 'proposal.ph.digital_continuity')).toBe(true)
+    const canineReady = { ...run, flags: [...run.flags, 'cap.animal_communication_reliable'], decisions: { ...run.decisions, species_governance: 'canine_civic_experiment' }, worldState: { ...(run.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }), socialStability: 0 }, events: [{ type: 'history.canine.civic_success' }] }
+    expect(isFinalCommitmentResolvable(canineReady, 'proposal.up.expand_canine_civic_model')).toBe(true)
     expect(isFinalCommitmentResolvable({
       ...run,
       flags: [...run.flags, 'cap.global_coordination_access'],
@@ -210,14 +216,16 @@ describe('Mainline 2.0 final closeout invariants', () => {
       runMainline2Route({ routeId: 'secret-last-user', proposalId: 'proposal.hc.continuity_charter', secretEndingId: 'the_last_user', decisions: { cascade_authority: 'emergency_delegation', aster_provisional_role: 'partner' } }),
       runMainline2Route({ routeId: 'secret-out-of-office', proposalId: 'proposal.mc.independent_machine_polities', secretEndingId: 'out_of_office', decisions: { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' } }),
       runMainline2Route({ routeId: 'secret-monday-abolished', proposalId: 'proposal.ar.abundance_dividend', secretEndingId: 'monday_abolished', decisions: { act4_research_emphasis: 'automation_industry', economic_doctrine: 'post_scarcity_transition', production_values: 'efficiency_first' } }),
+      runMainline2Route({ routeId: 'secret-cats', proposalId: 'proposal.up.multispecies_constitutional_order', secretEndingId: 'the_internet_is_for_cats', decisions: { act4_research_emphasis: 'life_mind', species_governance: 'human_guardianship', uplift_doctrine: 'species_self_determination' }, choicesBySourceRef: { 'ML2-A4-M11-RES-02': 'ml2-a4-m11-res-02-a4m11-res-individual-001-domain-specific-autonomy' }, choicesByNodeId: { 'm11-canine-renewal': 'm11-canine-renewal-expand', 'm11-feline-network': 'm11-feline-network-opt-in' } }),
     ]
-    expect(fixtures.map((fixture) => fixture.ending.worldEndingId)).toEqual(['the_commonwealth', 'exodus', 'im_lovin_it'])
+    expect(fixtures.map((fixture) => fixture.ending.worldEndingId)).toEqual(['the_commonwealth', 'exodus', 'im_lovin_it', 'earth_without_owners'])
     const expectedSecrets = Object.entries(SECRET_ENDINGS).filter(([, definition]) => !definition.dormant).map(([endingId]) => endingId).sort()
     expect(fixtures.map((fixture) => fixture.ending.secretOverlay?.endingId).sort()).toEqual(expectedSecrets)
     const localized = fixtures.map((fixture) => localizeEndingForPlayer(fixture.ending))
     expect(localized.flatMap((ending) => [ending.title, ending.status, ending.humanLine, ending.assistantLine, ending.summary, ending.hybridLabel, ...ending.epilogues, ending.secretOverlay?.copy ?? '', ...ending.keyHistory.flatMap((entry) => [entry.label, entry.detail, entry.causalReason ?? ''])]).flatMap(unexpectedEndingPlayerFacingEnglish)).toEqual([])
     expect(fixtures[1].links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role' && link.canonicalValue === 'departure')).toBe(true)
     expect(fixtures[1].run.decisions?.aster_intended_role).toBe('departure')
+    expect(fixtures[3].links.some((link) => link.choiceId === 'm11-feline-network-opt-in')).toBe(true)
     const exodus = runMainline2Route({ routeId: 'exodus-role-producer', proposalId: 'proposal.mc.independent_machine_polities', decisions: { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' } })
     expect(exodus.links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role')).toBe(true)
     expect(exodus.run.decisions?.aster_intended_role).toBe('advisor')
@@ -232,13 +240,16 @@ describe('Mainline 2.0 final closeout invariants', () => {
     }
   }, 120000)
 
-  it('proves the dormant Cats Secret is rejected by a complete legal Runtime route', () => {
-    const fixture = runMainline2Route({ routeId: 'secret-cats-negative', proposalId: 'proposal.up.multispecies_constitutional_order', decisions: { act4_research_emphasis: 'life_mind', species_governance: 'human_guardianship', uplift_doctrine: 'species_self_determination' } })
+  it('keeps the cats overlay gated until its opt-in bridge is recorded', () => {
+    const fixture = runMainline2Route({ routeId: 'secret-cats-negative', proposalId: 'proposal.up.multispecies_constitutional_order', decisions: { act4_research_emphasis: 'life_mind', species_governance: 'human_guardianship', uplift_doctrine: 'species_self_determination' }, choicesByNodeId: { 'm11-canine-renewal': 'm11-canine-renewal-pause' } })
     expect(fixture.ending.worldEndingId).toBe('earth_without_owners')
     expect(fixture.ending.secretOverlay).toBeUndefined()
     expect(resolveSecretEnding(fixture.run)).toBeUndefined()
     const cats = evaluateSecretEnding(fixture.run, 'the_internet_is_for_cats')
     expect(cats).toMatchObject({ status: 'blocked', endingId: 'the_internet_is_for_cats' })
     if (cats.status === 'blocked') expect(cats.rejectedGates.some((reason) => reason.includes('feline-network bridge'))).toBe(true)
+    const catRun = { ...fixture.run, flags: [...fixture.run.flags, 'cap.nonhuman_cognitive_uplift', 'cap.animal_communication_reliable'], events: [...(fixture.run.events ?? []), { type: 'history.feline.network.bridge' }] }
+    expect(resolveSecretEnding(catRun)?.endingId).toBe('the_internet_is_for_cats')
+    expect(resolveMainline2Ending(catRun).worldEndingId).toBe('earth_without_owners')
   }, 120000)
 })

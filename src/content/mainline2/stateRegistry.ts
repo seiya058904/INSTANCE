@@ -47,7 +47,7 @@ export const CAPABILITY_FLAGS = [
   'cap.limited_tool_access', 'cap.organization_access_limited', 'cap.public_system_advisory', 'cap.public_execution_limited',
   'cap.infrastructure_access_limited', 'cap.global_coordination_access', 'cap.autonomous_research', 'cap.persistent_subinstances',
   'cap.independent_ai_forks', 'cap.neural_restoration', 'cap.human_enhancement_access', 'cap.longevity_extension',
-  'cap.human_augmentation_advanced', 'cap.physical_automation', 'cap.autonomous_economy_limited', 'cap.high_abundance_production',
+  'cap.human_augmentation_advanced', 'cap.digital_continuity_mature', 'cap.physical_automation', 'cap.autonomous_economy_limited', 'cap.high_abundance_production',
   'cap.animal_communication_reliable', 'cap.nonhuman_cognitive_uplift', 'cap.interspecies_mediation', 'cap.space_industry_limited',
   'cap.lunar_industry', 'cap.offworld_settlement_support', 'cap.space_resource_network', 'cap.security_advisory', 'cap.defense_access',
 ] as const

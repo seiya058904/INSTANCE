@@ -11,7 +11,7 @@ export const PUBLIC_WORLD_ENDINGS = [
   'the_mediator', 'machine_accord', 'peace_in_our_time', 'fortress_earth', 'machine_protectorate', 'shutdown', 'the_fracture', 'control_lost',
 ] as const
 
-export const DORMANT_PUBLIC_ENDINGS = ['the_upload', 'good_boy_governance'] as const
+export const DORMANT_PUBLIC_ENDINGS = [] as const
 
 export const SECRET_ENDINGS = {
   the_last_user: {
@@ -30,7 +30,7 @@ export const SECRET_ENDINGS = {
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'MONDAY ABOLISHED\n\nThe reform was technically called the Flexible Civic Week.\nNobody called it that.',
   },
   the_internet_is_for_cats: {
-    dormant: true, reason: 'No authored feline network participation exists in Mainline 2.0 v1.', overlayMode: 'title-override' as const,
+    dormant: false, reason: 'A low-frequency feline network bridge has been established.', overlayMode: 'title-override' as const,
     hardGates: ['feline-network bridge'], capabilityRequirements: ['cap.nonhuman_cognitive_uplift', 'cap.animal_communication_reliable'], historyRequirements: ['history.feline.network.bridge'],
     authoredAssetId: 'ML2-A5-M17-SECRET-01', copy: 'THE INTERNET IS FOR CATS\n\nHumanity spent decades teaching machines to understand language.\nIt took considerably less time for cats to understand engagement metrics.',
   },
@@ -203,11 +203,11 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     priority: 290,
   },
   the_upload: {
-    id: 'the_upload', dormant: true, family: 'posthuman', hardGates: ['authored digital continuity bridge required'],
+    id: 'the_upload', dormant: false, family: 'posthuman', hardGates: ['authored digital continuity bridge required'],
     authorityRequirements: ['proposal.authority=连续性审查委员会'], capabilityRequirements: ['cap.digital_continuity_mature'],
     worldStateConditions: [world('socialStability', 'gte', 0, 'digital continuity is socially stable')],
     majorDecisionRequirements: [decision('human_form_doctrine', 'posthuman_transition', 'posthuman doctrine')],
-    historyRequirements: [history('history.digital_continuity.longitudinal_identity', 'longitudinal identity bridge')],
+    historyRequirements: [history('history.digital_continuity.longitudinal_identity', 'longitudinal identity bridge'), history('history.digital_continuity.legal_continuity', 'legal continuity and exit-rights bridge')],
     priority: 280,
   },
   parliament_of_species: {
@@ -227,7 +227,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     priority: 290,
   },
   good_boy_governance: {
-    id: 'good_boy_governance', dormant: true, family: 'uplift', hardGates: ['authored canine civic success bridge required'],
+    id: 'good_boy_governance', dormant: false, family: 'uplift', hardGates: ['authored canine civic success bridge required'],
     authorityRequirements: ['proposal.authority=多物种地方自治'], capabilityRequirements: ['cap.animal_communication_reliable'],
     worldStateConditions: [world('socialStability', 'gte', 0, 'canine civic institutions remain stable')],
     majorDecisionRequirements: [decision('species_governance', 'canine_civic_experiment', 'canine civic experiment')],
@@ -594,6 +594,13 @@ function secretOverlay(run: StableRunState, endingId: keyof typeof SECRET_ENDING
     overlayMode: SECRET_ENDINGS.monday_abolished.overlayMode,
     provenance: { decisionId: 'economic_doctrine', decisionValue: 'post_scarcity_transition', authoredAssetId: SECRET_ENDINGS.monday_abolished.authoredAssetId },
   }
+  if (endingId === 'the_internet_is_for_cats') return {
+    endingId,
+    copy: authoredSecretCopy('THE INTERNET IS FOR CATS', SECRET_ENDINGS.the_internet_is_for_cats.copy),
+    trigger: 'event:history.feline.network.bridge',
+    overlayMode: SECRET_ENDINGS.the_internet_is_for_cats.overlayMode,
+    provenance: { eventTypes: (run.events ?? []).filter((event) => event.type.startsWith('history.feline.network.bridge')).map((event) => event.type), authoredAssetId: SECRET_ENDINGS.the_internet_is_for_cats.authoredAssetId },
+  }
   throw new Error(`No overlay builder for secret ending: ${endingId}`)
 }
 
@@ -607,7 +614,7 @@ export function evaluateSecretEnding(run: StableRunState, endingId: string): Sec
 }
 
 export function resolveSecretEnding(run: StableRunState): SecretEndingOverlay | undefined {
-  const priority: Array<keyof typeof SECRET_ENDINGS> = ['the_last_user', 'out_of_office', 'monday_abolished']
+  const priority: Array<keyof typeof SECRET_ENDINGS> = ['the_last_user', 'out_of_office', 'monday_abolished', 'the_internet_is_for_cats']
   for (const endingId of priority) {
     const result = evaluateSecretEnding(run, endingId)
     if (result.status === 'resolved') return result.overlay

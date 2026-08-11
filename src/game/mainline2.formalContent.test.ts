@@ -30,9 +30,9 @@ describe('Mainline 2.0 formal authored content gates', () => {
   it('computes the specified public/secret ending split from registries', () => {
     expect(Object.keys(PUBLIC_ENDING_DEFINITIONS)).toHaveLength(32)
     expect(Object.keys(SECRET_ENDINGS)).toHaveLength(4)
-    expect(endingClassification()).toEqual({ public: { defined: 32, reachable: 30, dormant: 2 }, secret: { defined: 4, reachable: 3, dormant: 1 } })
-    expect(DORMANT_PUBLIC_ENDINGS).toEqual(['the_upload', 'good_boy_governance'])
-    expect(SECRET_ENDINGS.the_internet_is_for_cats.dormant).toBe(true)
+    expect(endingClassification()).toEqual({ public: { defined: 32, reachable: 32, dormant: 0 }, secret: { defined: 4, reachable: 4, dormant: 0 } })
+    expect(DORMANT_PUBLIC_ENDINGS).toEqual([])
+    expect(SECRET_ENDINGS.the_internet_is_for_cats.dormant).toBe(false)
   })
 
   it('uses history, capabilities, decisions and world state for ACT IV modules', () => {

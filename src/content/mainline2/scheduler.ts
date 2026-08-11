@@ -12,18 +12,23 @@ const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
-function contactGateOpen(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>) {
+type CivilisationMaturityInput = Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>
+
+function contactGateOpen(run: CivilisationMaturityInput) {
   return selectAct4Modules(run).audit.some((entry) => entry.module === 'contact' && entry.eligible)
 }
 
 export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number }
-export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
-  const state: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> = typeof run === 'string'
+export const ACTIVE_MODULE_THRESHOLD = 3
+export const MATURE_MODULE_THRESHOLD = 8
+
+export function selectAct4Modules(run: CivilisationMaturityInput | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; matureModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
+  const state: CivilisationMaturityInput = typeof run === 'string'
     ? { runId: run, flags: [], events: [], decisions: {}, worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 } }
     : run
-  const baseScore = 1
+  const baseScore = 0
   const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, baseScore]))
-  const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, ['base-mainline-eligibility']]))
+  const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, []]))
   const add = (module: ModuleId, amount: number, source: string) => { scores.set(module, (scores.get(module) ?? 0) + amount); sources.get(module)!.push(source) }
   if (capability(state, 'cap.persistent_subinstances') || state.decisions?.replication_doctrine) add('machine', 5, 'persistent-subinstances/replication')
   if (capability(state, 'cap.human_enhancement_access') || state.decisions?.human_form_doctrine) add('ascension', 5, 'enhancement/form')
@@ -32,10 +37,13 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) add('space', 5, 'offworld/expansion')
   if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) add('security', 5, 'defense/security')
   const emphasis = state.decisions?.act4_research_emphasis
-  if (emphasis === 'computation_ai') { add('machine', 4, 'research emphasis: computation_ai'); add('space', 4, 'computation frontier bridge'); add('security', 2, 'computation security bridge') }
+  if (emphasis === 'computation_ai') { add('machine', 4, 'research emphasis: computation_ai'); add('space', 4, 'computation frontier bridge'); add('security', 3, 'computation security bridge') }
   if (emphasis === 'life_mind') { add('ascension', 3, 'research emphasis: life_mind'); add('uplift', 3, 'research emphasis: life_mind'); add('security', 1, 'life-mind safety bridge') }
-  if (emphasis === 'automation_industry') { add('automation', 4, 'research emphasis: automation_industry'); add('security', 2, 'automation safety bridge'); add('machine', 2, 'automation machine bridge') }
-  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science'); add('machine', 2, 'frontier machine bridge'); add('uplift', 2, 'frontier species bridge') }
+  if (emphasis === 'automation_industry') { add('automation', 4, 'research emphasis: automation_industry'); add('security', 3, 'automation safety bridge'); add('machine', 3, 'automation machine bridge') }
+  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science'); add('machine', 3, 'frontier machine bridge'); add('uplift', 3, 'frontier species bridge') }
+  if (emphasis === 'balanced_portfolio') {
+    for (const module of MODULE_IDS.filter((candidate) => candidate !== 'contact')) add(module, ACTIVE_MODULE_THRESHOLD, 'research emphasis: balanced_portfolio')
+  }
   const frontierBridge = capability(state, 'cap.space_resource_network') || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && hasEvent(state, 'history.space.'))
   const contactEligible = frontierBridge && (hasEvent(state, 'contact-seed:deep-space-anomaly') || emphasis === 'frontier_science') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
   if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
@@ -44,7 +52,7 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   add('uplift', Math.max(0, world.humanTrust), 'World State trust')
   add('machine', Math.max(0, world.aiDependence), 'World State dependence')
   const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
-  const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
+  const eligible = audit.filter((entry) => entry.eligible && entry.score >= ACTIVE_MODULE_THRESHOLD).map((entry) => entry.module)
   // Maturity is part of the player-visible world state.  Stable registry order
   // resolves equal evidence; runId is reserved for Ordinary conversation picks.
   const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || MODULE_IDS.indexOf(left) - MODULE_IDS.indexOf(right))
@@ -58,15 +66,16 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   const primaryModules = prioritized.slice(0, Math.min(2, prioritized.length))
   const secondary = prioritized.slice(2).filter((module, index) => {
     const item = audit.find((entry) => entry.module === module)!
-    const sourceCount = item.scoreSources.filter((source) => source !== 'base-mainline-eligibility').length
+    const sourceCount = item.scoreSources.length
     const forcedBridge = (emphasisPriority[emphasis ?? ''] ?? []).includes(module)
     return forcedBridge ? item.score >= 3 : (index === 0 && item.score >= 6 && sourceCount >= 1) || (index === 1 && item.score >= 8 && sourceCount >= 2)
   }).slice(0, 2)
   const activeModules = emphasis === 'frontier_science' && capability(state, 'cap.offworld_settlement_support')
     ? (['space', 'contact', 'machine', 'uplift'] as ModuleId[]).filter((module) => eligible.includes(module))
     : [...primaryModules, ...secondary]
+  const matureModules = activeModules.filter((module) => (scores.get(module) ?? 0) >= MATURE_MODULE_THRESHOLD)
   for (const entry of audit) entry.active = activeModules.includes(entry.module)
-  return { primaryModules, activeModules: [...new Set(activeModules)], audit }
+  return { primaryModules, activeModules: [...new Set(activeModules)], matureModules: [...new Set(matureModules)], audit }
 }
 
 function seedHash(seed: string) {
@@ -323,12 +332,14 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
 export function updateProgressForSchedule(run: StableRunState, nextCount: number): StableRunState['progress'] {
   const act = ([1, 2, 3, 4, 5] as const).find((candidate, index) => nextCount <= ACT_STARTS[index] + ACT_TARGETS[index]) ?? 5
   const actStart = ACT_STARTS[act - 1]
-  const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, encounteredModules: [], activeModules: [], primaryModules: [], completedModules: [] }
+  const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] }
   const emphasis = run.decisions?.act4_research_emphasis
   const act4Start = ACT_STARTS[3]
   const shouldSelect = nextCount >= act4Start && current.activeModules.length === 0
   const shouldRefreshFrontier = nextCount >= act4Start && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
-  const modules = shouldSelect || shouldRefreshFrontier ? selectAct4Modules(run) : { primaryModules: current.primaryModules, activeModules: current.activeModules }
+  const currentMaturity = selectAct4Modules(run)
+  const modules = shouldSelect || shouldRefreshFrontier ? currentMaturity : { primaryModules: current.primaryModules, activeModules: current.activeModules }
+  const matureModules = modules.activeModules.filter((module) => currentMaturity.audit.find((entry) => entry.module === module)!.score >= MATURE_MODULE_THRESHOLD)
   const chapterModules: Partial<Record<StoryPlanChapter, ModuleId>> = { MACHINE: 'machine', POSTHUMAN: 'ascension', AUTOMATION: 'automation', UPLIFT: 'uplift', SPACE: 'space', CONTACT: 'contact', SECURITY: 'security' }
   const encounteredModules = [...new Set(MAINLINE2_STORY_PLAN.slice(0, nextCount)
     .flatMap((slot) => {
@@ -336,7 +347,7 @@ export function updateProgressForSchedule(run: StableRunState, nextCount: number
       if (!module || (module === 'contact' && !capability(run, 'cap.space_resource_network'))) return []
       return [module]
     }))]
-  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, encounteredModules, activeModules: [...modules.activeModules], primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
+  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, encounteredModules, activeModules: [...modules.activeModules], matureModules, primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
 }
 
 export function getActConversationCounts(total = ACT_TARGETS.reduce((sum, value) => sum + value, 0)) {

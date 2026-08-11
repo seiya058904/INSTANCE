@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { commitChoice, createRun, resolveScene } from './engine'
+import { commitChoice, createMainline2Run, createRun, resolveScene } from './engine'
 import type { LongformPreview } from './types'
 import { createEmptyExposureHistory, recordRunExposure } from '../content/runManifest'
 import { restoreExposureHistory, restoreRun, serializeExposureHistory, serializeRun } from './storage'
@@ -70,6 +70,13 @@ describe('stable checkpoints', () => {
 
     expect(restored?.flags).toEqual(run.flags)
     expect(restored?.events).toEqual(run.events)
+  })
+
+  it('migrates older v3 progress without a mature-modules field', () => {
+    const checkpoint = JSON.parse(serializeRun(createMainline2Run('legacy-v3-maturity'))) as { progress: { matureModules?: string[] } }
+    delete checkpoint.progress.matureModules
+
+    expect(restoreRun(JSON.stringify(checkpoint))?.progress?.matureModules).toEqual([])
   })
 
   it('restores the same manifest on refresh but creates a different one for a new instance', () => {

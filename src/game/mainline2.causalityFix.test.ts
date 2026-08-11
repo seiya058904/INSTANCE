@@ -82,7 +82,7 @@ describe('Mainline 2.0 causality fixes', () => {
     const frontier = selectAct4Modules({ ...base, decisions: { act4_research_emphasis: 'frontier_science' } })
     expect(computation.audit.find((entry) => entry.module === 'machine')!.score).toBeGreaterThan(baseline.audit.find((entry) => entry.module === 'machine')!.score)
     expect(frontier.audit.find((entry) => entry.module === 'space')!.score).toBeGreaterThan(baseline.audit.find((entry) => entry.module === 'space')!.score)
-    expect(selectAct4Modules(base).activeModules).toHaveLength(2)
+    expect(selectAct4Modules(base).activeModules).toEqual([])
   })
 
   it('only exposes dynamic proposal choices at the exact authored stages', () => {

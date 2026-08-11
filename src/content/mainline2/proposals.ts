@@ -4,6 +4,7 @@ import { evaluateCondition } from '../../game/narrativeSchema'
 export type EndingFamilyId = 'human_continuity' | 'coexistence' | 'ai_rule' | 'machine_civilization' | 'posthuman' | 'uplift' | 'automated_civilization' | 'cosmic' | 'security' | 'rupture'
 export type WorldEndingId = string
 export type ProposalViability = 'strong' | 'viable' | 'strained' | 'ineligible'
+export type FutureProposalCategory = 'natural_continuation' | 'power_constraint' | 'shared_future' | 'lawful_alternative'
 export interface FutureProposalDefinition {
   id: string
   family: EndingFamilyId
@@ -17,6 +18,7 @@ export interface FutureProposalDefinition {
   endingCandidates: WorldEndingId[]
   viability?: (run: StableRunState) => ProposalViability
 }
+export type GeneratedFutureProposal = FutureProposalDefinition & { category: FutureProposalCategory }
 
 const proposals: FutureProposalDefinition[] = [
   { id: 'proposal.hc.final_human_veto', family: 'human_continuity', title: '保留最终人工否决', action: '把不可逆的高影响行动交还给可追责的人类机构。', authority: '双钥匙监督', preserves: ['可追责性', '人工退出权'], givesUp: ['部分速度'], historyReasons: ['ACT III 的权限边界', 'M15 的文明契约'], eligibility: { all: [{ type: 'flag', flagId: 'cap.public_execution_limited' }], any: [{ type: 'decision', decisionId: 'first_public_execution_doctrine', equals: 'human_final_authority' }] }, endingCandidates: ['the_instrument', 'the_last_veto', 'the_silent_giant'] },
@@ -46,6 +48,8 @@ const proposalDecisionSignals: Record<string, Array<[string, string]>> = {
   'proposal.ai.audit_council': [['research_governance_doctrine', 'principle_based_autonomy'], ['aster_provisional_role', 'custodian']],
   'proposal.mc.independent_machine_polities': [['replication_doctrine', 'free_replication'], ['ai_collective_governance', 'ai_self_governance'], ['expansion_doctrine', 'independent_machine_space']],
   'proposal.ph.open_enhancement_commonwealth': [['human_form_doctrine', 'open_enhancement'], ['human_form_doctrine', 'posthuman_transition']],
+  'proposal.ph.digital_continuity': [['human_form_doctrine', 'posthuman_transition']],
+  'proposal.up.expand_canine_civic_model': [['species_governance', 'canine_civic_experiment']],
   'proposal.up.multispecies_constitutional_order': [['species_governance', 'multispecies_parliament'], ['uplift_doctrine', 'species_self_determination']],
   'proposal.ar.abundance_dividend': [['economic_doctrine', 'social_dividend'], ['economic_doctrine', 'post_scarcity_transition'], ['production_values', 'efficiency_first']],
   'proposal.co.frontier_federation': [['act4_research_emphasis', 'frontier_science'], ['expansion_doctrine', 'shared_expansion'], ['contact_doctrine', 'reciprocal_diplomacy'], ['contact_doctrine', 'accept_guidance'], ['contact_doctrine', 'civilizational_assertion'], ['contact_doctrine', 'aster_mediation'], ['contact_doctrine', 'machine_to_machine_channel']],
@@ -64,10 +68,38 @@ function viability(run: StableRunState, proposal: FutureProposalDefinition): Pro
 export function getFutureProposalDefinitions() { return [...proposals] }
 
 export function getFutureProposalById(id: string | undefined) {
-  return proposals.find((proposal) => proposal.id === id)
+  const exact = proposals.find((proposal) => proposal.id === id)
+  if (exact || !id) return exact
+  const marker = '.category.'
+  const markerIndex = id.lastIndexOf(marker)
+  if (markerIndex < 0) return undefined
+  const base = proposals.find((proposal) => proposal.id === id.slice(0, markerIndex))
+  const category = id.slice(markerIndex + marker.length) as FutureProposalCategory
+  return base && ['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'].includes(category)
+    ? categorizedProposal(base, category, true)
+    : undefined
 }
 
-export function generateFutureProposals(run: StableRunState): FutureProposalDefinition[] {
+function categorizedProposal(proposal: FutureProposalDefinition, category: FutureProposalCategory, derived = false): GeneratedFutureProposal {
+  if (!derived) return { ...proposal, category }
+  const copy = {
+    natural_continuation: { title: `${proposal.title}·延续`, action: `沿着已经成熟的制度与能力继续推进：${proposal.action}`, preserves: '历史连续性', givesUp: '突然转向' },
+    power_constraint: { title: `${proposal.title}·限权`, action: `在推进该方向的同时，把关键权限写入可审计、可暂停、可复审的边界：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面速度' },
+    shared_future: { title: `${proposal.title}·共治`, action: `由多个政治主体共同承担授权、资源与后果：${proposal.action}`, preserves: '多方参与', givesUp: '单一中心' },
+    lawful_alternative: { title: `${proposal.title}·异议路径`, action: `保留依法拒绝、退出或选择不同制度安排的真实通道：${proposal.action}`, preserves: '合法异议', givesUp: '整齐划一' },
+  }[category]
+  return {
+    ...proposal,
+    id: `${proposal.id}.category.${category}`,
+    category,
+    title: copy.title,
+    action: copy.action,
+    preserves: [...proposal.preserves, copy.preserves],
+    givesUp: [...proposal.givesUp, copy.givesUp],
+  }
+}
+
+export function rankFutureProposalCandidates(run: StableRunState): FutureProposalDefinition[] {
   const eligible = proposals.filter((proposal) => viability(run, proposal) !== 'ineligible')
   const decisions = Object.values(run.decisions ?? {}).join(' ')
   const history = (run.events ?? []).map((event) => event.type).join(' ')
@@ -77,44 +109,36 @@ export function generateFutureProposals(run: StableRunState): FutureProposalDefi
     if (proposal.family === 'coexistence' || proposal.family === 'rupture') value += 1
     const signalWeight = proposal.family === 'security' ? 30 : proposal.family === 'rupture' ? 20 : 12
     value += (proposalDecisionSignals[proposal.id] ?? []).reduce((sum, [decisionId, expected]) => sum + (run.decisions?.[decisionId as keyof typeof run.decisions] === expected ? signalWeight : 0), 0)
+    const familyModule: Partial<Record<EndingFamilyId, NonNullable<StableRunState['progress']>['activeModules'][number]>> = {
+      ai_rule: 'machine', machine_civilization: 'machine', posthuman: 'ascension', uplift: 'uplift',
+      automated_civilization: 'automation', cosmic: 'space', security: 'security',
+    }
+    const module = familyModule[proposal.family]
+    if (module && run.progress?.activeModules.includes(module)) value += 20
+    if (module && run.progress?.matureModules?.includes(module)) value += 20
     return value
   }
   const ranked = [...eligible].sort((left, right) => score(right) - score(left) || left.id.localeCompare(right.id))
-  const families: EndingFamilyId[] = ['human_continuity', 'coexistence', 'ai_rule', 'machine_civilization', 'posthuman', 'uplift', 'automated_civilization', 'cosmic', 'security', 'rupture']
-  const distinct = families.map((family) => ranked.find((proposal) => proposal.family === family)).filter(Boolean) as FutureProposalDefinition[]
-  const signaled = ranked.filter((proposal) => (proposalDecisionSignals[proposal.id] ?? []).some(([decisionId, expected]) => run.decisions?.[decisionId as keyof typeof run.decisions] === expected)).slice(0, 5)
-  const explicitPriority = [
-    ['proposal.ar.civilization_trusteeship', run.decisions?.aster_provisional_role === 'custodian' || run.decisions?.aster_provisional_role === 'sovereign'],
-    ['proposal.ai.audit_council', run.decisions?.aster_provisional_role === 'custodian' && run.decisions?.research_governance_doctrine === 'principle_based_autonomy'],
-    ['proposal.co.frontier_federation', run.decisions?.act4_research_emphasis === 'frontier_science'],
-    ['proposal.ph.digital_continuity', (run.flags ?? []).includes('cap.digital_continuity_mature') && run.decisions?.human_form_doctrine === 'posthuman_transition' && (run.events ?? []).some((event) => event.type === 'history.digital_continuity.longitudinal_identity') && (run.events ?? []).some((event) => event.type === 'history.digital_continuity.legal_continuity')],
-    ['proposal.ph.open_enhancement_commonwealth', ['open_enhancement', 'posthuman_transition'].includes(run.decisions?.human_form_doctrine ?? '')],
-    ['proposal.up.expand_canine_civic_model', run.decisions?.species_governance === 'canine_civic_experiment' && (run.events ?? []).some((event) => event.type === 'history.canine.civic_success')],
-    ['proposal.hc.continuity_charter', run.decisions?.aster_provisional_role === 'partner'],
-    ['proposal.up.multispecies_constitutional_order', run.decisions?.species_governance === 'multispecies_parliament' || run.decisions?.uplift_doctrine === 'species_self_determination'],
-    ['proposal.ar.abundance_dividend', ['social_dividend', 'post_scarcity_transition'].includes(run.decisions?.economic_doctrine ?? '') || ['efficiency_first', 'resilience_first'].includes(run.decisions?.production_values ?? '')],
-    ['proposal.se.constitutional_peace_architecture', ['mutual_disarmament', 'defensive_command', 'enforced_peace'].includes(run.decisions?.security_doctrine ?? '')],
-    ['proposal.rupture.legible_exit', ['full_human_control'].includes(run.decisions?.shutdown_doctrine ?? '') || ['necessity'].includes(run.decisions?.cascade_authority ?? '')],
-  ].filter(([, matches]) => matches).map(([id]) => ranked.find((proposal) => proposal.id === id)).filter(Boolean) as FutureProposalDefinition[]
-  const preferredIds = [
-    run.decisions?.aster_provisional_role === 'partner' ? 'proposal.hc.continuity_charter' : undefined,
-    run.decisions?.first_public_execution_doctrine === 'human_final_authority' ? 'proposal.hc.final_human_veto' : undefined,
-    run.decisions?.aster_provisional_role === 'custodian' && run.decisions?.research_governance_doctrine === 'principle_based_autonomy' ? 'proposal.ai.audit_council' : undefined,
-    run.decisions?.research_governance_doctrine === 'principle_based_autonomy' || ['sovereign', 'custodian'].includes(run.decisions?.aster_provisional_role ?? '') ? 'proposal.ar.civilization_trusteeship' : undefined,
-    (run.decisions?.replication_doctrine === 'free_replication' || run.decisions?.ai_collective_governance === 'ai_self_governance' || run.decisions?.expansion_doctrine === 'independent_machine_space') ? 'proposal.mc.independent_machine_polities' : undefined,
-    ['open_enhancement', 'posthuman_transition'].includes(run.decisions?.human_form_doctrine ?? '') ? 'proposal.ph.open_enhancement_commonwealth' : undefined,
-    (run.decisions?.species_governance === 'multispecies_parliament' || run.decisions?.uplift_doctrine === 'species_self_determination') ? 'proposal.up.multispecies_constitutional_order' : undefined,
-    ['social_dividend', 'post_scarcity_transition'].includes(run.decisions?.economic_doctrine ?? '') ? 'proposal.ar.abundance_dividend' : undefined,
-    run.decisions?.act4_research_emphasis === 'frontier_science' ? 'proposal.co.frontier_federation' : undefined,
-    ['mutual_disarmament', 'defensive_command', 'enforced_peace'].includes(run.decisions?.security_doctrine ?? '') ? 'proposal.se.constitutional_peace_architecture' : undefined,
-    (run.decisions?.shutdown_doctrine === 'full_human_control' || run.decisions?.cascade_authority === 'necessity') ? 'proposal.rupture.legible_exit' : undefined,
-  ].map((id) => ranked.find((proposal) => proposal.id === id)).filter(Boolean) as FutureProposalDefinition[]
-  const digitalContinuity = ranked.find((proposal) => proposal.id === 'proposal.ph.digital_continuity')
-  const selected = [...new Set([...explicitPriority, ...preferredIds, ...(digitalContinuity ? [digitalContinuity] : []), ...signaled, ...distinct.slice(0, 3), ...ranked.slice(0, 2)])]
-  // ACT V is a deliberation, not a catalogue.  Four stable responsibilities
-  // keep the comparison legible: strongest continuation, restraint, shared
-  // governance, and a lawful counterfactual.
-  return selected.slice(0, 4)
+  return ranked
+}
+
+export function selectFixedFutureProposals(ranked: readonly FutureProposalDefinition[]): GeneratedFutureProposal[] {
+  const rolePreferences: ReadonlyArray<{ category: FutureProposalCategory; proposalIds: readonly string[] }> = [
+    { category: 'natural_continuation', proposalIds: ['proposal.ar.abundance_dividend', 'proposal.ar.civilization_trusteeship', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.ph.digital_continuity', 'proposal.up.expand_canine_civic_model', 'proposal.co.frontier_federation'] },
+    { category: 'power_constraint', proposalIds: ['proposal.hc.final_human_veto', 'proposal.se.constitutional_peace_architecture', 'proposal.se.mutual_disarmament', 'proposal.ai.audit_council', 'proposal.co.two_key_civilization', 'proposal.ar.civilization_trusteeship'] },
+    { category: 'shared_future', proposalIds: ['proposal.co.two_key_civilization', 'proposal.hc.continuity_charter', 'proposal.mc.independent_machine_polities', 'proposal.up.multispecies_constitutional_order', 'proposal.co.frontier_federation', 'proposal.ar.abundance_dividend'] },
+    { category: 'lawful_alternative', proposalIds: ['proposal.rupture.legible_exit', 'proposal.ar.abundance_dividend', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.hc.final_human_veto'] },
+  ]
+  const selectedBaseIds = new Set<string>()
+  return rolePreferences.map(({ category, proposalIds }) => {
+    const remaining = ranked.filter((proposal) => !selectedBaseIds.has(proposal.id))
+    const pool = remaining.length ? remaining : ranked
+    const proposal = pool.find((candidate) => proposalIds.includes(candidate.id)) ?? pool[0]
+    if (!proposal) throw new Error('ACT V cannot generate a resolvable proposal from this history')
+    const derived = selectedBaseIds.has(proposal.id)
+    selectedBaseIds.add(proposal.id)
+    return categorizedProposal(proposal, category, derived)
+  })
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {

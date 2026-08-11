@@ -78,6 +78,21 @@ describe('Mainline 2.0 scheduler polish', () => {
     const right = selectAct4Modules({ ...state, runId: 'ordinary-seed-b' })
     expect(left.activeModules).toEqual(right.activeModules)
     expect(left.primaryModules).toEqual(right.primaryModules)
+    expect(left.matureModules).toEqual(right.matureModules)
+    expect(left.matureModules.every((module) => left.activeModules.includes(module))).toBe(true)
+  })
+
+  it('does not turn synthetic base eligibility into an active or mature module', () => {
+    const empty = selectAct4Modules({
+      runId: 'ordinary-seed-only',
+      flags: [],
+      events: [],
+      decisions: {},
+      worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 },
+    })
+
+    expect(empty.activeModules).toEqual([])
+    expect(empty.matureModules).toEqual([])
   })
 
   it('avoids three consecutive pure-English ordinary conversations when alternatives exist', () => {

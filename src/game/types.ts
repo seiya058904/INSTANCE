@@ -24,6 +24,7 @@ export interface NarrativeProgress {
   actConversationCount: number
   encounteredModules: ModuleId[]
   activeModules: ModuleId[]
+  matureModules: ModuleId[]
   primaryModules: ModuleId[]
   completedModules: ModuleId[]
 }

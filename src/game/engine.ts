@@ -11,7 +11,8 @@ import {
 import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
-import { generateFutureProposals, getFutureProposalById } from '../content/mainline2/proposals'
+import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
+import { getFutureProposalById } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -99,7 +100,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID()): StableR
     localState: {},
     decisions: {},
     worldState: emptyWorldState(),
-    progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], primaryModules: [], completedModules: [] },
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     ...emptySystemState(),
   }
 }

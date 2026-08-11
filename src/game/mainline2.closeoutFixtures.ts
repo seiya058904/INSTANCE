@@ -1,5 +1,5 @@
 import { getManifestConversation } from '../content/runManifest'
-import { generateFutureProposals } from '../content/mainline2/proposals'
+import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
 import { getFutureProposalDefinitions } from '../content/mainline2/proposals'
 import { evaluateCondition } from './narrativeSchema'
 import { resolveMainline2Ending } from '../content/mainline2/endings'

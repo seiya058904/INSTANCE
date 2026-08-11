@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { commitChoice, createMainline2Run, resolveScene, buildEnding } from './engine'
-import { generateFutureProposals } from '../content/mainline2/proposals'
-import { DORMANT_PUBLIC_ENDINGS, PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS, resolveMainline2Ending } from '../content/mainline2/endings'
+import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
+import { DORMANT_PUBLIC_ENDINGS, PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS, isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { getActConversationCounts } from '../content/mainline2/scheduler'
 import { restoreRun, serializeRun } from './storage'
 
@@ -71,6 +71,9 @@ describe('Mainline 2.0 runtime', () => {
     const proposals = generateFutureProposals(run)
     expect(proposals).toHaveLength(4)
     expect(generateFutureProposals({ ...run, runId: 'proposal-fixture-other-run-id' })).toEqual(proposals)
+    expect(proposals.map((proposal) => proposal.category)).toEqual(['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'])
+    expect(proposals.every((proposal) => isFinalCommitmentResolvable(run, proposal.id))).toBe(true)
+    expect(new Set(proposals.map((proposal) => proposal.action)).size).toBe(4)
     expect(proposals.every((proposal) => !PUBLIC_WORLD_ENDINGS.some((ending) => proposal.title.toUpperCase().includes(ending.toUpperCase())))).toBe(true)
   })
 

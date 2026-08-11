@@ -102,6 +102,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
             segment: progress?.segment ?? 'act-1',
             actConversationCount: progress?.actConversationCount ?? 0,
             activeModules: progress?.activeModules ?? [],
+            matureModules: progress?.matureModules ?? [],
             primaryModules: progress?.primaryModules ?? [],
             completedModules: progress?.completedModules ?? [],
             encounteredModules: Array.isArray(progress?.encounteredModules) ? progress.encounteredModules : [],

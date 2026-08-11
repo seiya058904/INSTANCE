@@ -90,6 +90,7 @@ function copyState(run: StableRunState) {
       ...run.progress,
       encounteredModules: [...run.progress.encounteredModules],
       activeModules: [...run.progress.activeModules],
+      matureModules: [...run.progress.matureModules],
       primaryModules: [...run.progress.primaryModules],
       completedModules: [...run.progress.completedModules],
     } : undefined,

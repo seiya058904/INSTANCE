@@ -116,7 +116,7 @@ function createQAPublicEndingRun(): StableRunState {
     events: [...(base.events ?? []), { type: 'decision.first_public_execution_doctrine' }, { type: 'decision.cascade_authority' }],
     decisions: { ...base.decisions, first_public_execution_doctrine: 'conditional_delegation', cascade_authority: 'human_command', final_commitment: 'proposal.co.two_key_civilization' },
     worldState: { humanTrust: base.worldState?.humanTrust ?? 0, aiDependence: base.worldState?.aiDependence ?? 0, humanControl: base.worldState?.humanControl ?? 0, socialStability: base.worldState?.socialStability ?? 0 },
-    progress: { ...(base.progress ?? { act: 5, segment: 'act-5', actConversationCount: 0, activeModules: [], primaryModules: [], completedModules: [] }), activeModules: ['machine'] },
+    progress: { ...(base.progress ?? { act: 5, segment: 'act-5', actConversationCount: 0, encounteredModules: [], activeModules: [], primaryModules: [], completedModules: [] }), activeModules: ['machine'] },
     finalCommitmentLocked: true,
   }
 }

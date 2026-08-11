@@ -88,6 +88,7 @@ function copyState(run: StableRunState) {
     worldState: { ...(run.worldState ?? emptyWorldState) },
     progress: run.progress ? {
       ...run.progress,
+      encounteredModules: [...run.progress.encounteredModules],
       activeModules: [...run.progress.activeModules],
       primaryModules: [...run.progress.primaryModules],
       completedModules: [...run.progress.completedModules],

@@ -1,0 +1,1667 @@
+{
+  "generatedFrom": [
+    "canonical Markdown",
+    "storyPlan.ts"
+  ],
+  "counts": {
+    "CORE": 80,
+    "CONDITIONAL CORE": 10,
+    "MAINLINE CONSEQUENCE": 17,
+    "MAINLINE WORLD ECHO": 7,
+    "OPTIONAL": 216,
+    "ORDINARY": 0,
+    "CUT": 0
+  },
+  "assets": [
+    {
+      "assetId": "ML2-A1-SYS-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A1-WE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A1-WE-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A1-WE-03",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A2-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-EXEC-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-EXEC-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-HOOK-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-0000-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-CAP-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A2-M3-CLOSE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-DEV-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-DR-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-E9-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-EDU-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-LOG-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-03",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A2-M3-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-RESULT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-STRESS-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-05",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-06",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-07",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A2-M3-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-M3-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-ORG-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-ORG-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-REC-DEV-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A2-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A2-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-ZL-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A2-ZL-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-CAP-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M4-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-DR-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-E9-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M4-E9-03",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M4-HEAR-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-05",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-06",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-07",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M4-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-DEV-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-DR-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-E9-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-MAYA-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-RESULT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-SYS-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-05",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-06",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-07",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-0000-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-CHARTER-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-CLOSE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-05",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-06",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-07",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-08",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-03",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-RESULT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-03",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-03",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-DEV-04",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-ECON-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-LSH-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-MAYA-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-RES-01",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A4-M10-RES-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-RES-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-03",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-05",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M10-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M11-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-MAYA-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M11-MAYA-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-02",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-04",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-05",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M11-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-ASC-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M12-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M12-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-LSH-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M12-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-MACHINE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-02",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-04",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M12-ZL-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M12-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-0000-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CLOSE-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-02",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-03",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-05",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-DECISION-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-DECISION-02",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-E9-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-LSH-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-MAYA-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M13-SPACE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M13-ZL-01",
+      "classification": "CONDITIONAL CORE",
+      "responsibility": "Contact 前提成立时的固定章节；前提不足时不以普通池替代。"
+    },
+    {
+      "assetId": "ML2-A4-M14-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-CAP-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M14-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-CONTACT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M14-E9-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-SPACE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-05",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M14-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M15-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-0000-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-ECHO-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-MAYA-01",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A4-M15-ROLE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M15-THRESHOLD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-WORLD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-ASCENSION-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-AUTOMATION-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CONTACT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CROSS-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CROSS-02",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-MACHINE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-SECURITY-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-SPACE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-UPLIFT-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A4-M15-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M15-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M7-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M7-E9-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-MOD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-02",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-WORLD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-03",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-04",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-DECISION-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-E9-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-E9-02",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M8-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-MAYA-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-RES-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M8-ZL-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M8-ZL-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-DECISION-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-DR-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-LSH-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-MACHINE-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-MAYA-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-02",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-03",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-04",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-01",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-04",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-05",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-06",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A4-M9-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-0000-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A5-M16-CLOSE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-ECHO-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-GEN-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A5-M16-LSH-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-MAYA-01",
+      "classification": "MAINLINE WORLD ECHO",
+      "responsibility": "已编排的世界回声：把既有决定落回具体生活。"
+    },
+    {
+      "assetId": "ML2-A5-M16-OPEN-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-PROP-*",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-02",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-03",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M16-ZL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "ML2-A5-M17-0000-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-ASTER-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-COMMIT-01",
+      "classification": "CORE",
+      "responsibility": "固定 Story Plan 场景：承担人物、事实或 Major Decision 的因果职责。"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-ECHO",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-LSH",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-MODULES",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-ZL",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-FINAL-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-KEYHISTORY-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-LOCK-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-MAYA-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-RESOLVE-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-REVIEW-01",
+      "classification": "MAINLINE CONSEQUENCE",
+      "responsibility": "已编排的能力或决定后果，提供下一章的事实前提。"
+    },
+    {
+      "assetId": "ML2-A5-M17-SECRET-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-WHY-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "ML2-A5-M17-WORLD-01",
+      "classification": "OPTIONAL",
+      "responsibility": "作者保留的后果或支持材料，不由 Scheduler 随机冒充主线。"
+    },
+    {
+      "assetId": "conversation-0000",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "speaking-8614",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "user-1842-first",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "user-1842-return",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    },
+    {
+      "assetId": "user-7391",
+      "classification": "OPTIONAL",
+      "responsibility": "可选世界回声；不承担主线推进。"
+    }
+  ]
+}

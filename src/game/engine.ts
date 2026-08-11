@@ -48,6 +48,10 @@ const emptyArcs: StableRunState['arcs'] = { bond: 0, mandate: 0, selfAuthorship:
 const storyCache = new Map<string, StoryContent>()
 
 function storyForRun(run: Pick<StableRunState, 'manifest'>) {
+  // A Mainline 2.0 manifest grows one conversation at a time. Caching every
+  // intermediate manifest retains a full cloned StoryContent for every turn
+  // of every run, which turns long-run verification into an unbounded cache.
+  if (run.manifest.mode === 'mainline2') return buildStoryContentForManifest(run.manifest)
   const cacheKey = `${run.manifest.id}:${run.manifest.conversationIds.join('|')}`
   const cached = storyCache.get(cacheKey)
   if (cached) return cached
@@ -95,7 +99,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID()): StableR
     localState: {},
     decisions: {},
     worldState: emptyWorldState(),
-    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: [], primaryModules: [], completedModules: [] },
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], primaryModules: [], completedModules: [] },
     ...emptySystemState(),
   }
 }

@@ -95,7 +95,18 @@ export function restoreRun(raw: string | null): StableRunState | null {
         version: 3,
         decisions: (value.decisions ?? {}) as StableRunState['decisions'],
         worldState: (value.worldState ?? emptyWorldState()) as StableRunState['worldState'],
-        progress: value.progress as StableRunState['progress'],
+        progress: (() => {
+          const progress = value.progress as Partial<StableRunState['progress']> | undefined
+          return {
+            act: progress?.act ?? 1,
+            segment: progress?.segment ?? 'act-1',
+            actConversationCount: progress?.actConversationCount ?? 0,
+            activeModules: progress?.activeModules ?? [],
+            primaryModules: progress?.primaryModules ?? [],
+            completedModules: progress?.completedModules ?? [],
+            encounteredModules: Array.isArray(progress?.encounteredModules) ? progress.encounteredModules : [],
+          }
+        })(),
         ...emptySystemState(),
         events: Array.isArray(value.events) ? value.events as StableRunState['events'] : [],
         persistentFlags: Array.isArray(value.persistentFlags) ? value.persistentFlags as string[] : [],

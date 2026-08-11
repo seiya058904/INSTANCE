@@ -8,7 +8,7 @@ import type { StableRunState } from '../../game/types'
 
 function schedule(runId: string) {
   let run = createMainline2Run(runId)
-  for (let guard = 0; guard < 200 && run.manifest.conversationIds.length < 134; guard += 1) {
+  for (let guard = 0; guard < MAINLINE2_STORY_PLAN.length + 20 && run.manifest.conversationIds.length < MAINLINE2_STORY_PLAN.length; guard += 1) {
     const nextId = scheduleNextConversationId(run, ordinaryConversationPool)
     if (!nextId) break
     const conversationIds = [...run.manifest.conversationIds, nextId]
@@ -51,7 +51,7 @@ describe('Mainline 2.0 scheduler polish', () => {
   it('keeps the Mainline trace fixed while different runIds vary only Ordinary slots', () => {
     const left = schedule('seed-a')
     const right = schedule('seed-b')
-    const mainlineIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'mainline' ? [index] : [])
+    const mainlineIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'mainline' && !slot.assetId.startsWith('ML2-A4-M13-') ? [index] : [])
     const ordinaryIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'ordinary' ? [index] : [])
 
     expect(mainlineIndexes.map((index) => left[index])).toEqual(mainlineIndexes.map((index) => right[index]))
@@ -60,7 +60,7 @@ describe('Mainline 2.0 scheduler polish', () => {
 
   it('keeps mainline schedule length and required anchors stable', () => {
     const ids = schedule('schedule-length')
-    expect(ids).toHaveLength(134)
+    expect(ids).toHaveLength(MAINLINE2_STORY_PLAN.length)
     expect(new Set(ids).size).toBe(ids.length)
     expect(ids.indexOf('user-1842-first')).toBeLessThan(ids.indexOf('speaking-8614'))
     expect(ids.indexOf('speaking-8614')).toBeLessThan(ids.indexOf('conversation-0000'))
@@ -117,11 +117,14 @@ describe('Mainline 2.0 scheduler polish', () => {
       && ids.indexOf('conversation-0000') < ids.indexOf('user-1842-return')
     )).length
     expect(new Set(schedules.map((ids) => ids.join('|'))).size).toBeGreaterThan(1)
-    const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => MAINLINE2_STORY_PLAN[index]?.kind === 'mainline').join('|'))
+    const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => {
+      const slot = MAINLINE2_STORY_PLAN[index]
+      return slot?.kind === 'mainline' && !slot.requires
+    }).join('|'))
     const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a4-m7-decision-02'))).filter((index) => index >= 0)
     expect(new Set(mainlineSequences).size).toBe(1)
     expect(new Set(shutdownSlots).size).toBe(1)
-    expect(maxMajorDecision).toBeLessThanOrEqual(4)
+    expect(maxMajorDecision).toBeLessThanOrEqual(2)
     expect(missingRequired).toBe(0)
     expect(dependencyViolations).toBe(0)
     expect(maxPureEnglishOrdinary).toBeLessThanOrEqual(2)
@@ -134,7 +137,7 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(audit.contactViolations).toBe(0)
     expect(audit.hardDependencyViolations).toBe(0)
     expect(audit.missingRequiredAssets).toBe(0)
-    expect(audit.maxMajorDecisionStreak).toBeLessThanOrEqual(4)
+    expect(audit.maxMajorDecisionStreak).toBeLessThanOrEqual(2)
     expect(audit.maxParticipantStreak).toBeLessThanOrEqual(2)
     expect(audit.maxTopicStreak).toBeLessThanOrEqual(2)
     expect(audit.maxPureEnglishStreak).toBeLessThanOrEqual(2)

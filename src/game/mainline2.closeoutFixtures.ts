@@ -42,7 +42,7 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
   let run = createMainline2Run(`closeout-${target.routeId}`)
   const links: Mainline2RouteTraceLink[] = []
   let guard = 0
-  while (run.phase === 'playing' && guard < 260) {
+  while (run.phase === 'playing' && guard < 360) {
     const scene = resolveScene(run)
     const ref = getManifestConversation(scene.conversationId)?.sourceRefs[0]
     const forcedChoiceId = target.choicesByNodeId?.[scene.id] ?? (ref ? target.choicesBySourceRef?.[ref] : undefined)

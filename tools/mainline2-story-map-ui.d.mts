@@ -49,4 +49,5 @@ export interface StoryMapTreeNode {
 export function compareRoutes(left?: StoryMapRoute, right?: StoryMapRoute): StoryMapRouteComparison
 export function formatNext(next?: { kind: 'node'; slot: number; conversationId: string; nodeId: string } | { kind: 'ending-resolution' }): string
 export function buildRouteTree(routes: unknown[]): StoryMapTreeNode
+export function renderTreeNode(node: StoryMapTreeNode, selectedRouteId?: string, comparisonNodeIds?: Map<string, string>): string
 export function mountStoryMap(): Promise<void>

@@ -185,12 +185,12 @@ export function buildRouteTree(routes) {
 }
 
 const treeTypeLabel = { act: '主干', narrative: '叙事', decision: '决策', consequence: '回声', ending: '结局' }
-function renderTreeNode(node, selectedRouteId, comparisonNodeIds = new Map()) {
+export function renderTreeNode(node, selectedRouteId, comparisonNodeIds = new Map()) {
   const active = selectedRouteId && node.routeIds?.includes(selectedRouteId) ? ' route-active' : ''
   const comparison = comparisonNodeIds.get(node.id) ?? ''
   const hasChildren = Boolean(node.children?.length)
   const toggle = hasChildren ? `<button type="button" class="tree-toggle" aria-expanded="true" data-toggle-id="${escapeHtml(node.id)}" aria-label="折叠 ${escapeHtml(node.label)}">−</button>` : ''
-  const branch = hasChildren ? `<ul class="tree-children">${node.children.map((child) => renderTreeNode(child, selectedRouteId)).join('')}</ul>` : ''
+  const branch = hasChildren ? `<ul class="tree-children">${node.children.map((child) => renderTreeNode(child, selectedRouteId, comparisonNodeIds)).join('')}</ul>` : ''
   const meta = node.type === 'act' ? `${node.children.length} 个分支节点` : node.type === 'ending' ? `→ ${escapeHtml(node.resolvedEnding ?? node.endingId)}` : `Slot ${node.slot} · ${escapeHtml(treeTypeLabel[node.type] ?? node.type)}`
   return `<li class="tree-item ${node.type}${active} ${comparison}" data-tree-id="${escapeHtml(node.id)}">${toggle}<button type="button" class="tree-node ${node.type}${active} ${comparison}" data-tree-id="${escapeHtml(node.id)}"><span class="tree-node-kind">${escapeHtml(treeTypeLabel[node.type] ?? node.type)}</span><strong>${escapeHtml(node.label)}</strong><small>${meta}</small></button>${branch}</li>`
 }

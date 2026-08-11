@@ -165,4 +165,20 @@ describe('Mainline 2.0 Story Map route trace', () => {
     })())
     expect(types).toEqual(new Set(['act', 'narrative', 'decision', 'consequence', 'ending']))
   })
+
+  it('regenerates route traces from the current generator source', async () => {
+    const generatorModule = '../../tools/generate-mainline2-route-traces.ts'
+    await import(generatorModule)
+    expect(generatorModule).toContain('generate-mainline2-route-traces.ts')
+  }, 120000)
+
+  it('keeps comparison highlighting on deep tree descendants', async () => {
+    const { renderTreeNode } = await import('../../tools/mainline2-story-map-ui.mjs')
+    const html = renderTreeNode({
+      id: 'act:1', type: 'act', label: 'ACT 1', children: [{
+        id: 'step:1:node:choice', type: 'decision', label: '深层决策', slot: 1, act: 1, children: [], routeIds: ['route'],
+      }], routeIds: ['route'],
+    }, undefined, new Map([['step:1:node:choice', 'compare-divergent']]))
+    expect(html).toContain('tree-node decision compare-divergent')
+  })
 })

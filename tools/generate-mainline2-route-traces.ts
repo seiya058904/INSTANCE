@@ -5,6 +5,7 @@ import { getManifestConversation } from '../src/content/runManifest'
 import { runMainline2Route } from '../src/game/mainline2.closeoutFixtures'
 import { PUBLIC_RUNTIME_ROUTE_CATALOG, SECRET_RUNTIME_ROUTE_CATALOG } from '../src/game/mainline2RouteCatalog'
 import { commitChoice, resolveScene } from '../src/game/engine'
+import { evaluateCondition } from '../src/game/narrativeSchema'
 import { resolvePlayerVisibleIdentity } from '../src/game/playerIdentity'
 import type { Condition, Mutation, NarrativePredicate, StableRunState, StoryChoice } from '../src/game/types'
 
@@ -46,8 +47,8 @@ function mutationGroups(mutations: readonly Mutation[] = []) {
 }
 
 function requiredCapabilities(slot: StoryPlanSlot, run: StableRunState) {
-  if (slot.kind !== 'mainline' || !slot.requires || !slot.requires(run)) return []
-  return MAINLINE2_CAPABILITIES.filter((flagId) => !slot.requires!({ ...run, flags: run.flags.filter((candidate) => candidate !== flagId) }))
+  if (slot.kind !== 'mainline' || !slot.requires || !evaluateCondition(slot.requires, run)) return []
+  return MAINLINE2_CAPABILITIES.filter((flagId) => !evaluateCondition(slot.requires, { ...run, flags: run.flags.filter((candidate) => candidate !== flagId) }))
 }
 
 const CHINESE_CHOICE_OVERRIDES = new Map([

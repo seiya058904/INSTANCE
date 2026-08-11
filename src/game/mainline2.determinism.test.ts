@@ -10,12 +10,6 @@ import { PUBLIC_RUNTIME_ROUTE_CATALOG, SECRET_RUNTIME_ROUTE_CATALOG } from './ma
 
 const proposalCategories = ['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'] as const
 const LEGAL_RUNTIME_ROUTE_CATALOG = [...PUBLIC_RUNTIME_ROUTE_CATALOG, ...SECRET_RUNTIME_ROUTE_CATALOG]
-const intrinsicRoleSemantics = {
-  natural_continuation: new Set(['proposal.ar.abundance_dividend', 'proposal.ar.civilization_trusteeship', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.ph.digital_continuity', 'proposal.up.expand_canine_civic_model', 'proposal.co.frontier_federation']),
-  power_constraint: new Set(['proposal.hc.final_human_veto', 'proposal.se.constitutional_peace_architecture', 'proposal.se.mutual_disarmament', 'proposal.ai.audit_council', 'proposal.co.two_key_civilization', 'proposal.ar.civilization_trusteeship']),
-  shared_future: new Set(['proposal.co.two_key_civilization', 'proposal.hc.continuity_charter', 'proposal.mc.independent_machine_polities', 'proposal.up.multispecies_constitutional_order', 'proposal.co.frontier_federation', 'proposal.ar.abundance_dividend']),
-  lawful_alternative: new Set(['proposal.rupture.legible_exit']),
-} as const
 const roleSemanticContracts = {
   natural_continuation: { trajectory: 'continue_proven_history', centralPower: 'unchanged', actorScope: 'existing_authorized_actors', legalProtections: ['course_review'] },
   power_constraint: { trajectory: 'bounded_continuation', centralPower: 'constrained_and_reversible', actorScope: 'independent_oversight', legalProtections: ['audit', 'pause', 'review'] },
@@ -28,15 +22,22 @@ const adaptedRoleTradeoffs = {
   shared_future: { preserves: '多方参与', givesUp: '单一中心' },
   lawful_alternative: { preserves: '合法异议', givesUp: '整齐划一' },
 } as const
+const substantiveRoleEvidence = {
+  natural_continuation: /沿着已经成熟的制度与能力继续推进/,
+  power_constraint: /中央执行权拆分.*审计、暂停和复审权/,
+  shared_future: /多个独立政治主体.*任何单一中心/,
+  lawful_alternative: /独立法定机构.*拒绝、申诉、退出/,
+} as const
 
 function expectSubstantiveRoleSemantics(proposal: ReturnType<typeof generateFutureProposals>[number]) {
   const baseId = proposal.id.split('.category.')[0]
   expect(proposal.roleSemantics).toEqual(roleSemanticContracts[proposal.category])
-  if (intrinsicRoleSemantics[proposal.category].has(baseId)) return
   const tradeoff = adaptedRoleTradeoffs[proposal.category]
-  expect(proposal.id).toBe(`${baseId}.category.${proposal.category}`)
+  expect(proposal.action).toMatch(substantiveRoleEvidence[proposal.category])
   expect(proposal.preserves).toContain(tradeoff.preserves)
   expect(proposal.givesUp).toContain(tradeoff.givesUp)
+  expect(proposal.id).toBe(`${baseId}.category.${proposal.category}`)
+  if (baseId === 'proposal.rupture.legible_exit') expect(proposal.category).toBe('lawful_alternative')
 }
 
 function finalWorldIdentity(routeIndex: number, runId: string) {
@@ -88,6 +89,16 @@ describe('Mainline 2.0 deterministic civilisation maturity', () => {
     expect(proposals.some((proposal) => proposal.id === target.proposalId || proposal.id.startsWith(`${target.proposalId}.category.`))).toBe(true)
     expect(generateFutureProposals(run)).toEqual(proposals)
   }, 60000)
+
+  it('rejects incompatible rupture lineage and semantic stamps without substantive evidence', () => {
+    const reviewedTargets = [0, 3, 29, 30].map((routeIndex) => LEGAL_RUNTIME_ROUTE_CATALOG[routeIndex])
+    const proposals = reviewedTargets.flatMap((target) => generateFutureProposals(runMainline2Route({ ...target, routeId: `proposal-semantic-review-${target.routeId}` }).run))
+
+    expect(proposals
+      .filter((proposal) => proposal.id.startsWith('proposal.rupture.legible_exit') && proposal.category !== 'lawful_alternative')
+      .map((proposal) => `${proposal.category}:${proposal.id}`)).toEqual([])
+    proposals.forEach(expectSubstantiveRoleSemantics)
+  }, 120000)
 
   it('assigns Shutdown Doctrine only to the authored ACT III decision', () => {
     expect(MAINLINE2_STORY_ROLE_BY_ASSET['ML2-A3-M6-DECISION-02']).toMatchObject({

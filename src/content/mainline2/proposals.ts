@@ -82,18 +82,17 @@ export function getFutureProposalById(id: string | undefined) {
   const base = proposals.find((proposal) => proposal.id === id.slice(0, markerIndex))
   const category = id.slice(markerIndex + marker.length) as FutureProposalCategory
   return base && ['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'].includes(category)
-    ? categorizedProposal(base, category, true)
+    ? categorizedProposal(base, category)
     : undefined
 }
 
-function categorizedProposal(proposal: FutureProposalDefinition, category: FutureProposalCategory, derived = false): GeneratedFutureProposal {
+function categorizedProposal(proposal: FutureProposalDefinition, category: FutureProposalCategory): GeneratedFutureProposal {
   const roleSemantics: Record<FutureProposalCategory, FutureProposalRoleSemantics> = {
     natural_continuation: { trajectory: 'continue_proven_history', centralPower: 'unchanged', actorScope: 'existing_authorized_actors', legalProtections: ['course_review'] },
     power_constraint: { trajectory: 'bounded_continuation', centralPower: 'constrained_and_reversible', actorScope: 'independent_oversight', legalProtections: ['audit', 'pause', 'review'] },
     shared_future: { trajectory: 'shared_expansion', centralPower: 'distributed', actorScope: 'multiple_independent_political_actors', legalProtections: ['co_authorization', 'shared_consequences'] },
     lawful_alternative: { trajectory: 'high_contrast_alternative', centralPower: 'limited_by_exit_rights', actorScope: 'dissenting_and_exiting_actors', legalProtections: ['refusal', 'appeal', 'exit'] },
   }
-  if (!derived) return { ...proposal, category, roleSemantics: roleSemantics[category] }
   const copy = {
     natural_continuation: { title: `${proposal.title}·延续`, action: `沿着已经成熟的制度与能力继续推进：${proposal.action}`, preserves: '历史连续性', givesUp: '突然转向' },
     power_constraint: { title: `${proposal.title}·限权`, action: `把中央执行权拆分给独立监督者，并赋予审计、暂停和复审权：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面权限' },
@@ -148,13 +147,14 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
     if (proposal) selectedBaseIds.add(proposal.id)
     return { ...role, proposal }
   })
-  return assignments.map(({ category, intrinsicIds, proposal: intrinsicProposal }) => {
-    const remaining = ranked.filter((candidate) => !selectedBaseIds.has(candidate.id))
-    const proposal = intrinsicProposal ?? remaining[0] ?? ranked[0]
+  return assignments.map(({ category, proposal: intrinsicProposal }) => {
+    const lineageAllowed = (candidate: FutureProposalDefinition) => category === 'lawful_alternative' || candidate.family !== 'rupture'
+    const remaining = ranked.filter((candidate) => !selectedBaseIds.has(candidate.id) && lineageAllowed(candidate))
+    const reusable = ranked.filter(lineageAllowed)
+    const proposal = intrinsicProposal ?? remaining[0] ?? reusable[0]
     if (!proposal) throw new Error('ACT V cannot generate a resolvable proposal from this history')
-    const derived = !intrinsicIds.has(proposal.id) || (!intrinsicProposal && selectedBaseIds.has(proposal.id))
     selectedBaseIds.add(proposal.id)
-    return categorizedProposal(proposal, category, derived)
+    return categorizedProposal(proposal, category)
   })
 }
 

@@ -73,6 +73,16 @@ function viability(run: StableRunState, proposal: FutureProposalDefinition): Pro
 
 export function getFutureProposalDefinitions() { return [...proposals] }
 
+export function isRoleIncompatibleFutureProposalId(id: string) {
+  const marker = '.category.'
+  const markerIndex = id.lastIndexOf(marker)
+  if (markerIndex < 0) return false
+  const base = proposals.find((proposal) => proposal.id === id.slice(0, markerIndex))
+  const category = id.slice(markerIndex + marker.length) as FutureProposalCategory
+  return base?.family === 'rupture'
+    && ['natural_continuation', 'power_constraint', 'shared_future'].includes(category)
+}
+
 export function getFutureProposalById(id: string | undefined) {
   const exact = proposals.find((proposal) => proposal.id === id)
   if (exact || !id) return exact
@@ -81,9 +91,9 @@ export function getFutureProposalById(id: string | undefined) {
   if (markerIndex < 0) return undefined
   const base = proposals.find((proposal) => proposal.id === id.slice(0, markerIndex))
   const category = id.slice(markerIndex + marker.length) as FutureProposalCategory
-  return base && ['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'].includes(category)
-    ? categorizedProposal(base, category)
-    : undefined
+  if (!base || !['natural_continuation', 'power_constraint', 'shared_future', 'lawful_alternative'].includes(category)) return undefined
+  if (isRoleIncompatibleFutureProposalId(id)) return undefined
+  return categorizedProposal(base, category)
 }
 
 function categorizedProposal(proposal: FutureProposalDefinition, category: FutureProposalCategory): GeneratedFutureProposal {

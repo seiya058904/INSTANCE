@@ -9,6 +9,7 @@ import type {
 } from './types'
 import { emptySystemState } from './narrativeSchema'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
+import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -23,6 +24,12 @@ export function serializeExposureHistory(history: NarrativeExposureHistory): str
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
+}
+
+function validFutureProposalIds(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((id): id is string => typeof id === 'string' && getFutureProposalById(id) !== undefined)
+    : []
 }
 
 function isHistoryEntry(value: unknown): value is HistoryEntry {
@@ -90,10 +97,19 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (!hasStableFields(value) || !isManifest(value.manifest)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
+      const availableProposalIds = validFutureProposalIds(value.availableProposalIds)
+      const retainedProposalIds = Array.isArray(value.retainedProposalIds)
+        ? validFutureProposalIds(value.retainedProposalIds)
+        : availableProposalIds
+      const decisions = isRecord(value.decisions) ? { ...value.decisions } : {}
+      if (typeof decisions.final_commitment === 'string' && isRoleIncompatibleFutureProposalId(decisions.final_commitment)) delete decisions.final_commitment
+      const selectedProposalId = typeof value.selectedProposalId === 'string' && getFutureProposalById(value.selectedProposalId)
+        ? value.selectedProposalId
+        : undefined
       return {
         ...(value as unknown as StableRunState),
         version: 3,
-        decisions: (value.decisions ?? {}) as StableRunState['decisions'],
+        decisions: decisions as StableRunState['decisions'],
         worldState: (value.worldState ?? emptyWorldState()) as StableRunState['worldState'],
         progress: (() => {
           const progress = value.progress as Partial<StableRunState['progress']> | undefined
@@ -115,11 +131,12 @@ export function restoreRun(raw: string | null): StableRunState | null {
         selectedChoiceIds: Array.isArray(value.selectedChoiceIds) ? value.selectedChoiceIds as string[] : [],
         completedEndingIds: Array.isArray(value.completedEndingIds) ? value.completedEndingIds as string[] : [],
         proposalPhase: typeof value.proposalPhase === 'string' ? value.proposalPhase as StableRunState['proposalPhase'] : 'idle',
-        retainedProposalIds: Array.isArray(value.retainedProposalIds) ? value.retainedProposalIds as string[] : (Array.isArray(value.availableProposalIds) ? value.availableProposalIds as string[] : []),
-        clarifiedProposalIds: Array.isArray(value.clarifiedProposalIds) ? value.clarifiedProposalIds as string[] : [],
-        rejectedProposalIds: Array.isArray(value.rejectedProposalIds) ? value.rejectedProposalIds as string[] : [],
-        selectedProposalId: typeof value.selectedProposalId === 'string' ? value.selectedProposalId : undefined,
-        finalCommitmentLocked: value.finalCommitmentLocked === true,
+        availableProposalIds,
+        retainedProposalIds,
+        clarifiedProposalIds: validFutureProposalIds(value.clarifiedProposalIds),
+        rejectedProposalIds: validFutureProposalIds(value.rejectedProposalIds),
+        selectedProposalId,
+        finalCommitmentLocked: value.finalCommitmentLocked === true && Boolean(selectedProposalId || decisions.final_commitment),
       }
     }
     if (value.version !== 2 || !hasStableFields(value) || !isManifest(value.manifest)) return null

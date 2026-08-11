@@ -79,6 +79,32 @@ describe('stable checkpoints', () => {
     expect(restoreRun(JSON.stringify(checkpoint))?.progress?.matureModules).toEqual([])
   })
 
+  it('drops role-incompatible retained rupture variants from a v3 checkpoint', () => {
+    const legal = 'proposal.rupture.legible_exit.category.lawful_alternative'
+    const forbidden = [
+      'proposal.rupture.legible_exit.category.power_constraint',
+      'proposal.rupture.legible_exit.category.shared_future',
+    ]
+    const checkpoint = JSON.parse(serializeRun(createMainline2Run('stale-retained-proposals'))) as Record<string, unknown>
+    checkpoint.retainedProposalIds = [...forbidden, legal]
+    checkpoint.availableProposalIds = [...forbidden, legal]
+    checkpoint.clarifiedProposalIds = [...forbidden, legal]
+    checkpoint.rejectedProposalIds = [...forbidden]
+    checkpoint.selectedProposalId = forbidden[0]
+    checkpoint.decisions = { ...checkpoint.decisions as Record<string, string>, final_commitment: forbidden[0] }
+    checkpoint.finalCommitmentLocked = true
+
+    const restored = restoreRun(JSON.stringify(checkpoint))
+
+    expect(restored?.retainedProposalIds).toEqual([legal])
+    expect(restored?.availableProposalIds).toEqual([legal])
+    expect(restored?.clarifiedProposalIds).toEqual([legal])
+    expect(restored?.rejectedProposalIds).toEqual([])
+    expect(restored?.selectedProposalId).toBeUndefined()
+    expect(restored?.decisions?.final_commitment).toBeUndefined()
+    expect(restored?.finalCommitmentLocked).toBe(false)
+  })
+
   it('restores the same manifest on refresh but creates a different one for a new instance', () => {
     const first = createRun('first-instance')
     const restored = restoreRun(serializeRun(first))

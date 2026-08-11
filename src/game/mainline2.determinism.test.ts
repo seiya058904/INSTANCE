@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { evaluateCondition } from './narrativeSchema'
 import { isFinalCommitmentResolvable } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
-import { getFutureProposalDefinitions } from '../content/mainline2/proposals'
+import { getFutureProposalById, getFutureProposalDefinitions } from '../content/mainline2/proposals'
 import { MAINLINE2_STORY_ROLE_BY_ASSET } from '../content/mainline2/storyPlan'
 import { MAINLINE2_STORY_PLAN } from '../content/mainline2/storyPlan'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
@@ -99,6 +99,15 @@ describe('Mainline 2.0 deterministic civilisation maturity', () => {
       .map((proposal) => `${proposal.category}:${proposal.id}`)).toEqual([])
     proposals.forEach(expectSubstantiveRoleSemantics)
   }, 120000)
+
+  it('rejects role-incompatible rupture variants at direct lookup', () => {
+    expect(getFutureProposalById('proposal.rupture.legible_exit.category.power_constraint')).toBeUndefined()
+    expect(getFutureProposalById('proposal.rupture.legible_exit.category.shared_future')).toBeUndefined()
+    expect(getFutureProposalById('proposal.rupture.legible_exit.category.lawful_alternative')).toMatchObject({
+      category: 'lawful_alternative',
+      family: 'rupture',
+    })
+  })
 
   it('assigns Shutdown Doctrine only to the authored ACT III decision', () => {
     expect(MAINLINE2_STORY_ROLE_BY_ASSET['ML2-A3-M6-DECISION-02']).toMatchObject({

@@ -43,15 +43,30 @@ describe('EndingScreen structure', () => {
   })
 
   it('does not leak long English ending copy into the public page', () => {
-    const html = renderToStaticMarkup(<EndingScreen ending={{
+    expect(() => renderToStaticMarkup(<EndingScreen ending={{
       ...ending,
       summary: 'The world remains stable because several institutions accepted a shared constraint instead of claiming total authority.',
-      status: 'world stabilized after a long public review',
       epilogues: ['The remaining political disagreement is now handled through ordinary institutions and public review.'],
+    }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)).toThrow('Missing Ending player-facing copy: summary')
+  })
+
+  it('renders an epilogue override once without a duplicate secret overlay', () => {
+    const html = renderToStaticMarkup(<EndingScreen ending={{
+      ...ending,
+      secretOverlay: { endingId: 'out_of_office', copy: '没有紧急事务等待。', trigger: 'test', overlayMode: 'epilogue-override', provenance: {} },
     }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
 
-    expect(html).not.toContain('The world remains stable because')
-    expect(html).not.toContain('The remaining political disagreement')
-    expect(html).toContain('岑遥将继续观察这次选择对人类制度与日常生活造成的长期影响。')
+    expect((html.match(/没有紧急事务等待。/g) ?? [])).toHaveLength(1)
+    expect(html).not.toContain('secret-overlay')
+  })
+
+  it('uses a title override once while keeping its secret body visible', () => {
+    const html = renderToStaticMarkup(<EndingScreen ending={{
+      ...ending,
+      secretOverlay: { endingId: 'cats', copy: '猫统治网络\n\n猫统治了网络。', trigger: 'test', overlayMode: 'title-override', provenance: {} },
+    }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
+
+    expect(html).toContain('<h1>猫统治网络</h1>')
+    expect((html.match(/猫统治了网络。/g) ?? [])).toHaveLength(1)
   })
 })

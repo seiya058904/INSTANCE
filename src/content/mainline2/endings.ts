@@ -535,10 +535,9 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
     epilogues: epilogues.selected,
     epilogueProvenance: epilogues.provenance,
   }
-  if (overlay) {
-    result.secretOverlay = overlay
-    result.epilogues = [...(result.epilogues ?? []), overlay.copy]
-  }
+    if (overlay) {
+      result.secretOverlay = overlay
+    }
   return result
 }
 
@@ -581,6 +580,7 @@ function secretOverlay(run: StableRunState, endingId: keyof typeof SECRET_ENDING
     copy: authoredSecretCopy('OUT OF OFFICE', SECRET_ENDINGS.out_of_office.copy),
     trigger: 'decision:aster_intended_role=departure',
     overlayMode: SECRET_ENDINGS.out_of_office.overlayMode,
+    epilogueTarget: 'ML2-A5-M17-0000-01',
     provenance: { decisionId: 'aster_intended_role', decisionValue: 'departure', authoredAssetId: SECRET_ENDINGS.out_of_office.authoredAssetId },
   }
   if (endingId === 'monday_abolished') return {

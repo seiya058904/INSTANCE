@@ -12,15 +12,23 @@ export interface StoryMapRouteStep {
 export interface StoryMapRoute {
   routeId: string
   endingId: string
+  resolvedEnding: string
   secretEndingId?: string
+  resolvedOverlay?: { endingId: string; overlayMode: 'title-override' | 'epilogue-override' | 'postscript' }
   steps: StoryMapRouteStep[]
+}
+
+export interface StoryMapResolvedEnding {
+  worldEndingId?: string
+  secretEndingId?: string
+  overlayMode?: 'title-override' | 'epilogue-override' | 'postscript'
 }
 
 export interface StoryMapRouteComparison {
   sharedHistory: StoryMapRouteStep[]
-  firstChoiceDivergence?: { left: StoryMapRouteStep; right: StoryMapRouteStep }
-  laterChoiceDivergences: Array<{ left: StoryMapRouteStep; right: StoryMapRouteStep }>
-  endingDivergence: { left: string; right: string; changed: boolean }
+  firstChoiceDivergence?: { left?: StoryMapRouteStep; right?: StoryMapRouteStep }
+  laterChoiceDivergences: Array<{ left?: StoryMapRouteStep; right?: StoryMapRouteStep }>
+  endingDivergence: { left: StoryMapResolvedEnding; right: StoryMapResolvedEnding; changed: boolean }
 }
 
 export function compareRoutes(left?: StoryMapRoute, right?: StoryMapRoute): StoryMapRouteComparison

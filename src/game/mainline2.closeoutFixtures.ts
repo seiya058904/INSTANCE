@@ -30,6 +30,7 @@ export interface Mainline2RouteTraceLink {
   decisionId?: string
   canonicalValue?: string
   resolvedScene: ResolvedScene
+  runBefore: StableRunState
 }
 
 export interface Mainline2RouteFixture {
@@ -82,7 +83,7 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     }
     choice ??= scene.choices[0]
     if (!choice) throw new Error(`No legal choice for ${target.routeId} at ${scene.id}`)
-    links.push({ step: guard, sourceRef: ref, conversationId: scene.conversationId, nodeId: scene.id, choiceId: choice.id, choiceText: choice.text, proposalKind: choice.proposalKind, proposalId: choice.proposalId, decisionId: choice.decisionBinding?.decisionId, canonicalValue: choice.decisionBinding?.canonicalValue, resolvedScene: scene })
+    links.push({ step: guard, sourceRef: ref, conversationId: scene.conversationId, nodeId: scene.id, choiceId: choice.id, choiceText: choice.text, proposalKind: choice.proposalKind, proposalId: choice.proposalId, decisionId: choice.decisionBinding?.decisionId, canonicalValue: choice.decisionBinding?.canonicalValue, resolvedScene: scene, runBefore: run })
     run = commitChoice(run, choice.id)
     guard += 1
   }

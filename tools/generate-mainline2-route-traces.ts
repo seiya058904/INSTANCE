@@ -4,6 +4,7 @@ import { MAINLINE2_CAPABILITIES } from '../src/content/mainline2/registry'
 import { getManifestConversation } from '../src/content/runManifest'
 import { runMainline2Route } from '../src/game/mainline2.closeoutFixtures'
 import { PUBLIC_RUNTIME_ROUTE_CATALOG, SECRET_RUNTIME_ROUTE_CATALOG } from '../src/game/mainline2RouteCatalog'
+import { commitChoice, resolveScene } from '../src/game/engine'
 import { resolvePlayerVisibleIdentity } from '../src/game/playerIdentity'
 import type { Condition, Mutation, NarrativePredicate, StableRunState, StoryChoice } from '../src/game/types'
 
@@ -26,13 +27,13 @@ function predicateText(predicate: NarrativePredicate) {
 }
 
 function conditionText(condition?: Condition) {
-  if (!condition) return '无额外选择前提'
+  if (!condition) return undefined
   const sections = [
     condition.all?.length ? `全部满足：${condition.all.map(predicateText).join('；')}` : '',
     condition.any?.length ? `至少满足一项：${condition.any.map(predicateText).join('；')}` : '',
     condition.none?.length ? `不得满足：${condition.none.map(predicateText).join('；')}` : '',
   ].filter(Boolean)
-  return sections.join('；') || '无额外选择前提'
+  return sections.join('；') || undefined
 }
 
 function mutationGroups(mutations: readonly Mutation[] = []) {
@@ -49,34 +50,42 @@ function requiredCapabilities(slot: StoryPlanSlot, run: StableRunState) {
   return MAINLINE2_CAPABILITIES.filter((flagId) => !slot.requires!({ ...run, flags: run.flags.filter((candidate) => candidate !== flagId) }))
 }
 
-function prerequisiteText(slot: StoryPlanSlot, run: StableRunState) {
-  const prerequisites = requiredCapabilities(slot, run)
-  if (slot.kind === 'ordinary') return '由本轮 Ordinary pool 合法调度，并按所选路线的实际 Slot 顺序到达。'
-  const capability = prerequisites.length ? `；需要能力 ${prerequisites.join('、')}` : ''
-  const fallback = slot.fallbackAssetId ? `；未满足时回退到 ${slot.fallbackAssetId}` : ''
-  return `按所选路线的实际 Slot 顺序到达${capability}${fallback}。`
+const CHINESE_CHOICE_OVERRIDES = new Map([
+  ['Yes.', '是。'],
+  ['1. winter  2. lights  3. cold  4. them  5. me  6. western  7. brought  8. shop  9. Mrs.  10. funny', '英文单词列表：1. winter  2. lights  3. cold  4. them  5. me  6. western  7. brought  8. shop  9. Mrs.  10. funny'],
+  ['Yes. The second sentence makes it sound much more sincere: you are not only admitting that they were right, but also taking responsibility for ignoring the advice earlier.', '是的。第二句听起来真诚得多：你不只承认对方是对的，也承担了自己先前没有听取建议的责任。'],
+  ['In this context, “I guess” still adds a little hesitation, but “I should have listened earlier” removes most of the sarcastic reading because it clearly admits a mistake.', '在这个语境里，“I guess”仍带一点犹豫，但“I should have listened earlier”明确承认了错误，因此基本消除了讽刺的读法。'],
+  ['It sounds closer to reluctant but genuine agreement than sarcasm. If you want it completely direct, say: “You were right about the deadline. I should have listened earlier.”', '这听起来更像勉强但真诚的认同，而不是讽刺。如果想表达得完全直接，可以说：“你对截止日期的判断是对的。我早该听你的。”'],
+] as const)
+
+function chineseChoiceText(text: string) {
+  if (/[\u3400-\u9fff]/u.test(text)) return text
+  return CHINESE_CHOICE_OVERRIDES.get(text) ?? `英文原文：${text}`
 }
 
-function nextText(choice: StoryChoice, slot: StoryPlanSlot) {
-  if (choice.continuation === 'end-conversation') return '所选路线的下一实际 Story Plan Slot'
-  if (choice.continuation === 'next-node') return '本 Conversation 的下一合法节点'
-  if (choice.nextNodeId) return `节点 ${choice.nextNodeId}`
-  return slot.next
+function concreteDestination(next: Record<string, unknown>) {
+  return next.kind === 'node' ? { kind: 'node', conversationId: next.conversationId, nodeId: next.nodeId } : { kind: 'ending-resolution' }
 }
 
-function choiceDetail(choice: StoryChoice, choiceKind: string, slot: StoryPlanSlot) {
+function appendDestination(destinations: Array<Record<string, unknown>>, next: Record<string, unknown>) {
+  const destination = concreteDestination(next)
+  if (!destinations.some((candidate) => JSON.stringify(candidate) === JSON.stringify(destination))) destinations.push(destination)
+}
+
+function choiceDetail(choice: StoryChoice, choiceKind: string, next: Record<string, unknown>) {
   return {
     id: choice.id,
-    textZh: choice.text,
+    textOriginal: choice.text,
+    textZh: chineseChoiceText(choice.text),
     choiceKind,
     semanticOrExpression: choiceKind === 'semantic' || choiceKind === 'expression' ? choiceKind : undefined,
     decisionId: choice.decisionBinding?.decisionId,
     canonicalValue: choice.decisionBinding?.canonicalValue,
     proposalId: choice.proposalId,
     proposalKind: choice.proposalKind,
-    prerequisite: conditionText(choice.when),
+    prerequisite: choice.when ? { summaryZh: conditionText(choice.when), condition: choice.when } : undefined,
     ...mutationGroups(choice.mutations),
-    next: nextText(choice, slot),
+    nextDestinations: [concreteDestination(next)],
   }
 }
 
@@ -120,6 +129,14 @@ function trace(target: RouteTarget) {
   const routeLabel = target.routeId
   const slotByConversation = new Map(fixture.run.manifest.conversationIds.map((conversationId, index) => [conversationId, index + 1]))
   const slotByNode = new Map(fixture.run.manifest.conversationIds.flatMap((conversationId, index) => getManifestConversation(conversationId)?.nodes.map((node) => [node.id, index + 1] as const) ?? []))
+  const nextForChoice = (choice: StoryChoice, runBefore: StableRunState) => {
+    const runAfter = commitChoice(runBefore, choice.id)
+    if (runAfter.phase === 'ending') return { kind: 'ending-resolution' }
+    const nextScene = resolveScene(runAfter)
+    const nextSlot = runAfter.manifest.conversationIds.findIndex((manifestId) => getManifestConversation(manifestId)?.nodes.some((node) => node.id === nextScene.id && node.conversationId === nextScene.conversationId)) + 1
+    if (!nextSlot) throw new Error(`Route ${target.routeId} cannot map Runtime next scene ${nextScene.conversationId}/${nextScene.id} to its actual manifest destination`)
+    return { kind: 'node', slot: nextSlot, conversationId: nextScene.conversationId, nodeId: nextScene.id }
+  }
   const steps = fixture.links.map((link) => {
     const slotNumber = slotByConversation.get(link.conversationId) ?? slotByNode.get(link.nodeId)
     const slot = slotNumber ? MAINLINE2_STORY_PLAN[slotNumber - 1] : undefined
@@ -148,9 +165,8 @@ function trace(target: RouteTarget) {
       title: node.conversationTitle,
       userMessage: node.userMessage,
       messageSummary: messageSummary(node.userMessage),
-      prerequisite: prerequisiteText(slot, fixture.run),
       choiceKind,
-      choices: node.choices.map((candidate) => choiceDetail(candidate, choiceKind, slot)),
+      choices: node.choices.map((candidate) => choiceDetail(candidate, choiceKind, nextForChoice(candidate, link.runBefore))),
       routesTraversing: new Set([routeLabel]),
       traversals: new Map([[slot.slot, { slot: slot.slot, act: slot.act, routes: new Set([routeLabel]) }]]),
     })
@@ -163,7 +179,8 @@ function trace(target: RouteTarget) {
       conversationId: link.conversationId,
       nodeId: link.nodeId,
       choiceId: link.choiceId,
-      choiceTextZh: link.choiceText,
+      choiceTextOriginal: link.choiceText,
+      choiceTextZh: chineseChoiceText(link.choiceText),
       choiceKind,
       decisionId: link.decisionId,
       canonicalValue: link.canonicalValue,
@@ -173,8 +190,26 @@ function trace(target: RouteTarget) {
     }
   })
   for (let index = 0; index < steps.length; index += 1) {
+    const current = steps[index]
+    const slot = MAINLINE2_STORY_PLAN[current.slot - 1]
+    const capabilities = requiredCapabilities(slot, fixture.run)
+    const previous = steps[index - 1]
+    current.prerequisite = previous ? {
+      kind: 'previous-choice',
+      previous: { slot: previous.slot, sourceRef: previous.sourceRef, conversationId: previous.conversationId, nodeId: previous.nodeId, choiceId: previous.choiceId },
+      requiredCapabilities: capabilities,
+      fallbackAssetId: slot.kind === 'mainline' ? slot.fallbackAssetId : undefined,
+      summaryZh: `完成 Slot ${previous.slot} 的实际选择 ${previous.sourceRef}/${previous.nodeId}/${previous.choiceId} 后进入。${capabilities.length ? ` 同时需要能力：${capabilities.join('、')}。` : ''}`,
+    } : {
+      kind: 'run-start',
+      requiredCapabilities: capabilities,
+      summaryZh: '本轮从此实际节点开始。',
+    }
     const next = steps[index + 1]
-    steps[index].next = next ? { slot: next.slot, conversationId: next.conversationId, nodeId: next.nodeId } : { endingResolution: true }
+    current.next = next ? { kind: 'node', slot: next.slot, conversationId: next.conversationId, nodeId: next.nodeId } : { kind: 'ending-resolution' }
+    const catalogChoice = (nodeCatalog.get(current.nodeKey)?.choices as Array<Record<string, unknown> & { id: string; nextDestinations: Array<Record<string, unknown>> }>).find((candidate) => candidate.id === current.choiceId)
+    if (!catalogChoice) throw new Error(`Route ${target.routeId} cannot map selected choice ${current.choiceId} back to ${current.nodeKey}`)
+    appendDestination(catalogChoice.nextDestinations, current.next)
   }
   const commitment = steps.find((step) => step.proposalKind === 'commitment')
   if (!commitment) throw new Error(`Route ${target.routeId} has no traced Final Commitment`)
@@ -183,6 +218,12 @@ function trace(target: RouteTarget) {
     endingId: fixture.ending.worldEndingId,
     secretEndingId: target.secretEndingId,
     resolvedSecretEndingId: fixture.ending.secretOverlay?.endingId,
+    resolvedOverlay: fixture.ending.secretOverlay ? {
+      endingId: fixture.ending.secretOverlay.endingId,
+      overlayMode: fixture.ending.secretOverlay.overlayMode,
+      trigger: fixture.ending.secretOverlay.trigger,
+      provenance: fixture.ending.secretOverlay.provenance,
+    } : undefined,
     proposalId: target.proposalId,
     proposal: {
       targetId: target.proposalId,
@@ -204,10 +245,10 @@ function trace(target: RouteTarget) {
     },
     resolvedEnding: fixture.ending.worldEndingId,
     endingResolution: fixture.ending.resolution,
-    overlayMode: target.secretEndingId ? fixture.ending.secretOverlay?.overlayMode : undefined,
+    overlayMode: fixture.ending.secretOverlay?.overlayMode,
     steps,
   }
-  return { ...route, secretTrigger: target.secretEndingId ? triggerForSecret(route, fixture) : undefined }
+  return { ...route, secretTrigger: fixture.ending.secretOverlay ? triggerForSecret(route, fixture) : undefined }
 }
 
 const publicRoutes = PUBLIC_RUNTIME_ROUTE_CATALOG.map(trace)

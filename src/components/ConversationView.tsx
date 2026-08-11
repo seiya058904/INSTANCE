@@ -230,7 +230,7 @@ export function ConversationView({
 
       <div className="conversation-scroll" ref={scrollRef}>
         <div className="conversation-column">
-          {history.map((entry) => <StaticExchange entry={entry} key={entry.nodeId} />)}
+          {history.map((entry, index) => <StaticExchange entry={entry} key={`${entry.nodeId}:${index}`} />)}
 
           {isHandoff ? (
             <HandoffPanel stage={flowStage} targetTitle={handoffTargetTitle} />

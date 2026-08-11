@@ -296,7 +296,7 @@ const mediaConversations: ConversationDefinition[] = [
   ], 'original:media-plant'),
   customConversation('generate-avatar', 'User #6630', 'generated-image-request', [
     node('gen-avatar-1', '给我做个不露脸的黑白头像，别太中二', [
-      { ...choice('avatar-side', '可以，我建议这个方向。'), content: [{ type: 'text', text: '可以，我建议这个方向。' }, { type: 'generated-image', text: '黑白极简头像。人物侧脸、逆光、大面积留白，轮廓克制。', alt: '黑白侧脸头像方案' }] },
+      { ...choice('avatar-side', '可以，我建议这个方向。'), content: [{ type: 'generated-image', text: '黑白极简头像。人物侧脸、逆光、大面积留白，轮廓克制。', alt: '黑白侧脸头像方案' }] },
       { ...choice('avatar-hands', '换一个更生活化的版本。'), content: [{ type: 'generated-image', text: '黑白方形头像。只出现扶着书页的手和窗边光影，没有脸。', alt: '窗边手部头像方案' }] },
       { ...choice('avatar-object', '也可以完全不出现人物。'), content: [{ type: 'generated-image', text: '黑白极简头像。一把空椅子靠窗，细颗粒胶片质感。', alt: '空椅头像方案' }] },
     ]),
@@ -310,7 +310,7 @@ const mediaConversations: ConversationDefinition[] = [
   ], 'original:generate-poster'),
   customConversation('generate-room', 'User #8430', 'generated-image-request', [
     node('gen-room-1', '我想看这个房间刷成偏暖的灰，不要酒店感', [
-      { ...choice('room-warm-gray', '先看偏米的暖灰。'), content: [{ type: 'text', text: '先看偏米的暖灰。' }, { type: 'generated-image', text: '同一房间的模拟效果。墙面为低饱和暖灰，保留木地板，白天自然光。', alt: '暖灰墙面房间模拟' }] },
+      { ...choice('room-warm-gray', '先看偏米的暖灰。'), content: [{ type: 'generated-image', text: '同一房间的模拟效果。墙面为低饱和暖灰，保留木地板，白天自然光。', alt: '暖灰墙面房间模拟' }] },
       { ...choice('room-greige', '这个版本再朴素一点。'), content: [{ type: 'generated-image', text: '同一房间的模拟效果。灰褐色墙面，亚麻窗帘，无装饰性灯带。', alt: '灰褐墙面房间模拟' }] },
       { ...choice('room-contrast', '也可以只改一面墙。'), content: [{ type: 'generated-image', text: '同一房间的模拟效果。主墙暖灰，其余墙保持旧白，家具不变。', alt: '单面暖灰墙模拟' }] },
     ]),

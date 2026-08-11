@@ -77,6 +77,7 @@ export function unexpectedPlayerFacingEnglish(value: string) {
 
 function normalizePlayerFacingCopy(value: string) {
   return value
+    .replace(/\s*选择这些位置之一。/g, '')
     .replace(/Northline Studio/gi, '北线工作室')
     .replace(/Global Suspend Protocol/gi, '全局暂停协议')
     .replace(/Global Suspend/gi, '全局暂停')

@@ -83,6 +83,16 @@ function titleOverride(copy: string) {
   return { title, body: body.length ? body.join('\n\n') : copy }
 }
 
+function localizeCausalReason(value: string) {
+  if (
+    value.includes('[ENDING TITLE]') || value.includes('[ROLE]') || value.includes('[dynamic category list]')
+    || value.startsWith('**You chose ') || value.startsWith('**You allowed ') || value.startsWith('**You rejected ')
+  ) {
+    return '该选择影响了最终结局、Aster 的角色与分类尝试。'
+  }
+  return localize('causalReason', value)
+}
+
 export function localizeEndingForPlayer(ending: EndingResult): EndingPlayerFacingCopy {
   const overlay = ending.secretOverlay
   const localizedOverlay = overlay ? { copy: localize(`secret:${overlay.endingId}`, overlay.copy), overlayMode: overlay.overlayMode } : undefined
@@ -96,7 +106,7 @@ export function localizeEndingForPlayer(ending: EndingResult): EndingPlayerFacin
     keyHistory: (ending.keyHistory ?? []).map((entry, index) => ({
       label: localize(`keyHistory:${index}:label`, entry.label),
       detail: localize(`keyHistory:${index}:detail`, entry.detail),
-      causalReason: entry.causalReason ? localize(`keyHistory:${index}:causalReason`, entry.causalReason) : undefined,
+      causalReason: entry.causalReason ? localizeCausalReason(entry.causalReason) : undefined,
     })),
     epilogues: (ending.epilogues ?? []).map((value, index) => localize(`epilogue:${ending.epilogueProvenance?.[index]?.assetId ?? index}:${ending.epilogueProvenance?.[index]?.selector ?? ''}`, value)),
   }

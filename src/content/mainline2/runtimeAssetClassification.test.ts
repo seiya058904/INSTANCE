@@ -91,6 +91,10 @@ describe('Mainline runtime asset boundary', () => {
     expect(choices.filter(pureEnglish)).toEqual([])
     expect(messages).not.toEqual(expect.arrayContaining([expect.stringMatching(/节点 \d+/)]))
     expect(messages.join('\n')).not.toContain('Select one of these positions.')
+    expect(messages.join('\n')).not.toContain('选择这些位置之一。')
+    expect(choices).not.toEqual(expect.arrayContaining([
+      expect.stringContaining('没有这条规则就应该自创优先级。'),
+    ]))
   })
 
   it('does not leak ordinary English words through the player-facing Mainline layer', () => {

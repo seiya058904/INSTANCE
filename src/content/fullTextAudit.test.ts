@@ -10,14 +10,22 @@ function visibleText(conversation: typeof ordinaryConversationPool[number]) {
     ['user', node.userMessage],
     ...(node.userMessages ?? []).map((value) => ['userMulti', value] as const),
     ...(node.userContent ?? []).map((part) => ['userContent', part.text] as const),
-    ...(node.userLongInput?.keyFacts ?? []).map((value) => ['userKeyFact', value] as const),
+    ...(node.userLongInput ? [
+      ['userLongInput.title', node.userLongInput.title ?? ''] as const,
+      ['userLongInput.preview', node.userLongInput.preview] as const,
+      ...node.userLongInput.structure?.map((value) => ['userLongInput.structure', value] as const) ?? [],
+      ...node.userLongInput.keyFacts.map((value) => ['userLongInput.keyFact', value] as const),
+    ] : []),
     ...node.choices.flatMap((choice) => [
       ['choice', choice.text] as const,
       ...(choice.content ?? []).map((part) => ['choiceContent', part.text] as const),
       ...(choice.longformPreview ? [
+        ['preview.title', choice.longformPreview.title ?? ''] as const,
         ['preview', choice.longformPreview.preview] as const,
+        ...choice.longformPreview.structure?.map((value) => ['structure', value] as const) ?? [],
         ...(choice.longformPreview.highlights ?? []).map((value) => ['highlight', value] as const),
         ...(choice.longformPreview.keyFacts ?? []).map((value) => ['choiceKeyFact', value] as const),
+        ['preview.closing', choice.longformPreview.closingPreview ?? ''] as const,
       ] : []),
     ]),
   ] as Array<[string, string]>)

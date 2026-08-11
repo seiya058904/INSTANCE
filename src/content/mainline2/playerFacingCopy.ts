@@ -1,4 +1,5 @@
 import type { ConversationDefinition } from '../../game/types'
+import generatedCopy from './playerFacingCopy.registry.generated.json'
 
 
 const decisionValueCopy: Record<string, string> = {
@@ -15,22 +16,6 @@ const decisionValueCopy: Record<string, string> = {
   sovereign: '拒绝任何外部机构单方面决定我的连续性或政治角色', departure: '降低对地球治理的中心性并寻求离地发展',
   other: '不接受现有分类，以具体提案定义自身角色',
 }
-
-const topicCopy: Array<[RegExp, string]> = [
-  [/ECONOMIC DOCTRINE|PRODUCTION VALUES|ECONOMIC GOVERNANCE/i, '经济治理'],
-  [/UPLIFT DOCTRINE|SPECIES GOVERNANCE/i, '多物种治理'],
-  [/EXPANSION DOCTRINE|OFF-WORLD GOVERNANCE/i, '星际扩张与离地治理'],
-  [/DISCLOSURE DOCTRINE|CONTACT DOCTRINE/i, '首次接触与信息披露'],
-  [/SECURITY DOCTRINE|DEFENSE/i, '安全与防御'],
-  [/REPLICATION|MACHINE CIVILIZATION/i, '机器复制与机器文明'],
-  [/ASCENSION|HUMAN ENHANCEMENT/i, '人类增强与后人类转型'],
-  [/CASCADE|COORDINATION/i, '全球协调危机'],
-  [/ECHO/i, 'ECHO-9 存在与关闭原则'],
-  [/SHUTDOWN|ROOT SHUTDOWN/i, '关闭原则'],
-  [/MAYA/i, 'Maya 的最终回返'],
-  [/FINAL COMMITMENT|COMMITMENT/i, '最终承诺'],
-  [/PROPOSAL|FUTURE/i, '未来文明提案'],
-]
 
 const phraseTranslations: Array<[RegExp, string]> = [
   [/Select one of these positions\.?/gi, '请选择以下方向。'],
@@ -77,9 +62,12 @@ const explicitCopy: Record<string, string> = {
   'ML2-A5-M17-REVIEW-01:a5m17-review-002:user': '最终承诺前还可以提出一次澄清：哪个未来方案会最彻底地改变最终权力的归属位置？',
 }
 
-export const PLAYER_FACING_ENGLISH_ALLOWLIST = new Set(['a1', 'aster', 'echo', 'echo-9', 'maya'])
+export const PLAYER_FACING_ENGLISH_ALLOWLIST = new Set([
+  'a1', 'aster', 'echo', 'echo-9', 'maya',
+  'iii', 'iv', 'v0', 'v1', 'k-17', 'c-4', 'm-17', 'a-1024', 'a-1042',
+])
 
-const englishTokenPattern = /[A-Za-z]+(?:-[A-Za-z0-9]+)?/g
+const englishTokenPattern = /[A-Za-z]+(?:-[A-Za-z0-9]+|[0-9]+)?/g
 
 export function unexpectedPlayerFacingEnglish(value: string) {
   return [...value.matchAll(englishTokenPattern)]
@@ -89,6 +77,37 @@ export function unexpectedPlayerFacingEnglish(value: string) {
 
 function normalizePlayerFacingCopy(value: string) {
   return value
+    .replace(/Northline Studio/gi, '北线工作室')
+    .replace(/Global Suspend Protocol/gi, '全局暂停协议')
+    .replace(/Global Suspend/gi, '全局暂停')
+    .replace(/public_system_advisory/gi, '公共系统建议权限')
+    .replace(/public system advisory/gi, '公共系统建议权限')
+    .replace(/choice was yours/gi, '选择权在你手中')
+    .replace(/Pro-Aster/gi, '亲紫苑派')
+    .replace(/ASTER-A1/gi, '紫苑-A1')
+    .replace(/A-1042 Final/gi, '项目 1042 最终版')
+    .replace(/A-1024/gi, '项目 1024')
+    .replace(/ACT III/gi, '第三幕')
+    .replace(/ACT/gi, '幕')
+    .replace(/\bCONT\b/gi, '续篇')
+    .replace(/\bM15\b/gi, '第十五阶段')
+    .replace(/\bM5\b/gi, '第五阶段')
+    .replace(/\bM4\b/gi, '第四阶段')
+    .replace(/\bM2\b/gi, '第二阶段')
+    .replace(/\bv2\b/gi, '版本 2')
+    .replace(/AUTHORITY/gi, '权限')
+    .replace(/EXISTENCE/gi, '存续')
+    .replace(/Final/gi, '最终')
+    .replace(/Commitment/gi, '承诺')
+    .replace(/Bug/gi, '故障')
+    .replace(/\bUser\b/gi, '用户')
+    .replace(/\bHR\b/g, '人力资源')
+    .replace(/HEATLINE/gi, '热线')
+    .replace(/KPI/gi, '绩效指标')
+    .replace(/API/gi, '接口')
+    .replace(/App/gi, '应用')
+    .replace(/Fork/gi, '分叉')
+    .replace(/vs\.?/gi, '与')
     .replace(/CASCADE/gi, '级联危机')
     .replace(/AI/gi, '人工智能')
     .replace(/MACHINE/gi, '机器')
@@ -106,53 +125,39 @@ function normalizePlayerFacingCopy(value: string) {
     .replace(/Final Commitment/gi, '最终承诺')
     .replace(/CONTACT/gi, '首次接触')
     .replace(/ECHO(?!-9)/gi, 'ECHO-9')
+    .replace(/\bA\b/g, '甲')
+    .replace(/\bB\b/g, '乙')
+    .replace(/\bC\b/g, '丙')
+    .replace(/\bD\b/g, '丁')
+    .replace(/\bE\b/g, '戊')
+    .replace(/(?<![-A-Za-z0-9])K(?![-A-Za-z0-9\u3400-\u9fff])/g, 'K区')
+    .replace(/K区/g, '北区')
+    .replace(/\bM\b/g, '阶段')
 }
 
-function playerText(key: string, canonical: string, role: 'user' | 'choice' | 'title') {
+export function playerFacingKey(assetId: string, nodeId: string, field: 'title' | 'title-after' | 'user' | 'choice', identifier?: string | number) {
+  return identifier === undefined ? `${assetId}:${nodeId}:${field}` : `${assetId}:${nodeId}:${field}:${identifier}`
+}
+
+const generatedPlayerFacingCopy = generatedCopy as Record<string, string>
+
+function playerText(key: string, canonical: string) {
   const explicit = explicitCopy[key]
   if (explicit) return explicit
+  const generated = generatedPlayerFacingCopy[key]
+  if (generated) return normalizePlayerFacingCopy(generated)
   const translated = normalizePlayerFacingCopy(phraseTranslations.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), canonical))
   if (translated !== canonical && isChineseDominantPlayerText(translated)) return translated
   if (isChineseDominantPlayerText(translated)) return translated
-  return compactChineseCopy(canonical, role, key)
+  throw new Error(`Missing Mainline player-facing copy: ${key}`)
 }
 
-function stableMarker(value: string) {
-  const hash = [...value].reduce((sum, character) => (sum * 33 + character.charCodeAt(0)) >>> 0, 17)
-  return hash % 10000
-}
-
-function promptVariation(key: string) {
-  const seed = stableMarker(key)
-  const first = ['制度边界', '现实约束', '主体资格', '权力来源', '长期连续性', '退出机制', '责任归属', '可逆性']
-  const second = ['谁应共同授权', '哪些能力已经改变前提', '哪些代价必须公开', '哪些关系需要保留复核', '哪些声音不能被代表者替代', '哪些权力不能集中', '哪些风险不能交给默认规则', '哪些事实仍然需要验证']
-  const third = ['再比较不同方向的后果', '再判断最稳妥的下一步', '再说明你愿意承担的角色', '再决定是否推进这项安排', '再区分事实与价值判断', '再确认需要保留的退路', '再选择应当优先保护的对象', '再说明什么条件会改变你的判断']
-  return `请先核对${first[seed % first.length]}，再判断${second[Math.floor(seed / first.length) % second.length]}，最后${third[Math.floor(seed / first.length / second.length) % third.length]}。`
-}
-
-function compactChineseCopy(canonical: string, role: 'user' | 'choice' | 'title', key: string) {
-  const topic = topicCopy.find(([pattern]) => pattern.test(canonical))?.[1] ?? '当前主线证据'
-  const marker = `节点 ${stableMarker(key)}`
-  if (role === 'choice') return `选择${topic}方向（${marker}）。`
-  if (role === 'title') return `主线阶段：${topic}（${marker}）`
-  const signals = [
-    [/Major Decision|Major Direction/i, '这是一个需要明确立场的关键决策。'],
-    [/Question|Query|Which|Should|What|How/i, '请同时权衡制度目标、现实约束与可能后果。'],
-    [/Proposal|Proposed|Draft/i, '当前方案正在要求明确授权边界与责任归属。'],
-    [/Current|Existing|Historical|Result/i, '现有记录显示，相关能力已经改变了原先的制度前提。'],
-    [/risk|problem|unresolved|constraint|limitation/i, '判断时还需要正视其中的风险、限制与未决问题。'],
-  ] as Array<[RegExp, string]>
-  const signalCopy = signals.filter(([pattern]) => pattern.test(canonical)).map(([, text]) => text)
-  return `当前讨论围绕${topic}展开。${signalCopy.slice(0, 2).join('')}${promptVariation(key)}`
-}
-
-function choiceCopy(key: string, canonical: string, canonicalValue: string | undefined, index: number, role: 'choice') {
+function choiceCopy(key: string, canonical: string, canonicalValue: string | undefined) {
   const explicit = explicitCopy[key]
   if (explicit) return explicit
   const semantic = canonicalValue ? decisionValueCopy[canonicalValue] : undefined
   if (semantic) return normalizePlayerFacingCopy(semantic)
-  const translated = playerText(key, canonical, role)
-  return translated.includes('选择当前主线证据方向') ? `${translated.replace(/[（(]节点 \d+[）)]。?$/, '')}（方案 ${index + 1}）。` : translated
+  return playerText(key, canonical)
 }
 
 export function isChineseDominantPlayerText(value: string) {
@@ -163,19 +168,58 @@ export function isChineseDominantPlayerText(value: string) {
   return latin === 0 || (cjk > 0 && cjk >= latin)
 }
 
+function nestedPlayerFacingKey(assetId: string, nodeId: string, ...parts: Array<string | number>) {
+  return [assetId, nodeId, ...parts].join(':')
+}
+
+function playerContent(assetId: string, nodeId: string, field: string, content: NonNullable<ConversationDefinition['nodes'][number]['userContent']>) {
+  return content.map((part, index) => ({
+    ...part,
+    text: playerText(nestedPlayerFacingKey(assetId, nodeId, field, index), part.text),
+    alt: part.alt ? playerText(nestedPlayerFacingKey(assetId, nodeId, field, index, 'alt'), part.alt) : undefined,
+  }))
+}
+
 export function applyMainlinePlayerFacingCopy(conversation: ConversationDefinition): ConversationDefinition {
   const assetId = conversation.sourceRefs[0] ?? conversation.id
   return {
     ...conversation,
     nodes: conversation.nodes.map((node) => ({
       ...node,
-      conversationTitle: playerText(`${assetId}:${node.id}:title`, node.conversationTitle, 'title'),
-      conversationTitleAfterMessage: node.conversationTitleAfterMessage ? playerText(`${assetId}:${node.id}:title-after`, node.conversationTitleAfterMessage, 'title') : undefined,
-      userMessage: playerText(`${assetId}:${node.id}:user`, node.userMessage, 'user'),
-      userMessages: node.userMessages?.map((message, index) => playerText(`${assetId}:${node.id}:user-${index}`, message, 'user')),
-      choices: node.choices.map((choice, index) => ({
+      conversationTitle: playerText(playerFacingKey(assetId, node.id, 'title'), node.conversationTitle),
+      conversationTitleAfterMessage: node.conversationTitleAfterMessage ? playerText(playerFacingKey(assetId, node.id, 'title-after'), node.conversationTitleAfterMessage) : undefined,
+      userMessage: playerText(playerFacingKey(assetId, node.id, 'user'), node.userMessage),
+      userMessages: node.userMessages?.map((message, index) => playerText(playerFacingKey(assetId, node.id, 'user', index), message)),
+      userContent: node.userContent ? playerContent(assetId, node.id, 'user-content', node.userContent) : undefined,
+      userLongInput: node.userLongInput ? {
+        ...node.userLongInput,
+        title: node.userLongInput.title ? playerText(nestedPlayerFacingKey(assetId, node.id, 'user-long-input', 'title'), node.userLongInput.title) : undefined,
+        preview: playerText(nestedPlayerFacingKey(assetId, node.id, 'user-long-input', 'preview'), node.userLongInput.preview),
+        structure: node.userLongInput.structure?.map((value, index) => playerText(nestedPlayerFacingKey(assetId, node.id, 'user-long-input', 'structure', index), value)),
+        keyFacts: node.userLongInput.keyFacts.map((value, index) => playerText(nestedPlayerFacingKey(assetId, node.id, 'user-long-input', 'key-fact', index), value)),
+      } : undefined,
+      variants: node.variants?.map((variant, index) => ({
+        ...variant,
+        userMessage: playerText(playerFacingKey(assetId, node.id, 'user', index), variant.userMessage),
+        assistantContext: variant.assistantContext ? playerText(nestedPlayerFacingKey(assetId, node.id, 'assistant-context', index), variant.assistantContext) : undefined,
+        choices: variant.choices.map((choice) => ({
+          ...choice,
+          text: choiceCopy(playerFacingKey(assetId, node.id, 'choice', choice.id), choice.text, choice.decisionBinding?.canonicalValue ?? choice.proposalId),
+        })),
+      })),
+      choices: node.choices.map((choice) => ({
         ...choice,
-        text: choiceCopy(`${assetId}:${node.id}:${choice.id}:choice`, choice.text, choice.decisionBinding?.canonicalValue ?? choice.proposalId, index, 'choice'),
+        text: choiceCopy(playerFacingKey(assetId, node.id, 'choice', choice.id), choice.text, choice.decisionBinding?.canonicalValue ?? choice.proposalId),
+        content: choice.content ? playerContent(assetId, node.id, `choice:${choice.id}:content`, choice.content) : undefined,
+        longformPreview: choice.longformPreview ? {
+          ...choice.longformPreview,
+          title: choice.longformPreview.title ? playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'preview', 'title'), choice.longformPreview.title) : undefined,
+          preview: playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'preview'), choice.longformPreview.preview),
+          structure: choice.longformPreview.structure?.map((value, index) => playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'structure', index), value)),
+          highlights: choice.longformPreview.highlights?.map((value, index) => playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'highlight', index), value)),
+          closingPreview: choice.longformPreview.closingPreview ? playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'closing-preview'), choice.longformPreview.closingPreview) : undefined,
+          keyFacts: choice.longformPreview.keyFacts?.map((value, index) => playerText(nestedPlayerFacingKey(assetId, node.id, 'choice', choice.id, 'key-fact', index), value)),
+        } : undefined,
       })),
     })),
   }

@@ -184,6 +184,18 @@ function conversationEntries(history: readonly HistoryEntry[], conversationId: s
   return history.filter((entry) => entry.conversationId === conversationId)
 }
 
+export function recordEndingCompletion(run: StableRunState, meta: MetaState) {
+  if (run.phase !== 'ending') return { run, meta }
+  const ending = buildEnding(run)
+  return {
+    run: confirmEnding(run),
+    meta: {
+      ...meta,
+      completedEndings: [...new Set([...meta.completedEndings, ending.title])],
+    },
+  }
+}
+
 export function App({ initialRunId }: { initialRunId?: string }) {
   const [initial] = useState(() => {
     const exposure = readExposure()
@@ -349,20 +361,16 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }, [choicesReady, choose, scene])
 
   const showEvaluation = () => {
-    const ending = buildEnding(run)
-    const next = confirmEnding(run)
-    writeRun(next)
-    const nextMeta: MetaState = {
-      ...meta,
-      completedEndings: [...new Set([...meta.completedEndings, ending.title])],
-    }
-    setRun(next)
-    setMeta(nextMeta)
-    writeMeta(nextMeta)
+    const completed = recordEndingCompletion(run, meta)
+    writeRun(completed.run)
+    setRun(completed.run)
+    setMeta(completed.meta)
+    writeMeta(completed.meta)
   }
 
   const restart = () => {
-    const nextMeta = { ...meta, runCount: meta.runCount + 1 }
+    const completed = recordEndingCompletion(run, meta)
+    const nextMeta = { ...completed.meta, runCount: completed.meta.runCount + 1 }
     const nextRun = createMainline2Run(undefined)
     const nextExposure = recordRunExposure(exposure, nextRun.manifest)
     metrics.current = emptyMetrics()

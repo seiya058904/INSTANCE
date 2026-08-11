@@ -364,6 +364,7 @@ export interface SecretEndingOverlay {
   copy: string
   trigger: string
   overlayMode: 'title-override' | 'epilogue-override' | 'postscript'
+  epilogueTarget?: string
   provenance: { eventTypes?: string[]; decisionId?: string; decisionValue?: string; authoredAssetId?: string }
 }
 

@@ -3,6 +3,7 @@ import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { decisionBindingAudit, decisionBindingsForConversation } from '../content/mainline2/decisionBindings'
 import { getAuthoredConversationByAsset, MAINLINE2_BY_ID } from '../content/mainline2/registry'
 import { MAINLINE2_AUTHored_FRAGMENTS, MAINLINE2_AUTHORED_CONVERSATIONS } from '../content/mainline2/authoredLibrary.generated'
+import { localizeEndingForPlayer, unexpectedEndingPlayerFacingEnglish } from '../content/mainline2/endingPlayerFacingCopy'
 
 const PUBLIC_RUNTIME_TARGETS = [
   ['the_instrument', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'human_command' }],
@@ -83,6 +84,8 @@ describe('Mainline 2.0 final closeout invariants', () => {
     }))).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.epilogues?.length ?? 0) > 0 && (fixture.ending.epilogueProvenance?.length ?? 0) > 0 && fixture.ending.epilogueProvenance!.every((entry) => entry.assetId && entry.selector))).toBe(true)
     expect(fixtures.every((fixture) => fixture.ending.epilogueProvenance?.some((entry) => entry.assetId === 'ML2-A5-M17-MAYA-01'))).toBe(true)
+    const localized = fixtures.map((fixture) => localizeEndingForPlayer(fixture.ending))
+    expect(localized.flatMap((ending) => [ending.title, ending.status, ending.humanLine, ending.assistantLine, ending.summary, ending.hybridLabel, ...ending.epilogues, ending.secretOverlay?.copy ?? '', ...ending.keyHistory.flatMap((entry) => [entry.label, entry.detail, entry.causalReason ?? ''])]).flatMap(unexpectedEndingPlayerFacingEnglish)).toEqual([])
   }, 120000)
   it('uses explicit Choice ID bindings instead of positional Option mapping', () => {
     const bindings = decisionBindingAudit()
@@ -197,6 +200,8 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(fixtures.map((fixture) => fixture.ending.worldEndingId)).toEqual(['the_commonwealth', 'exodus', 'im_lovin_it'])
     const expectedSecrets = Object.entries(SECRET_ENDINGS).filter(([, definition]) => !definition.dormant).map(([endingId]) => endingId).sort()
     expect(fixtures.map((fixture) => fixture.ending.secretOverlay?.endingId).sort()).toEqual(expectedSecrets)
+    const localized = fixtures.map((fixture) => localizeEndingForPlayer(fixture.ending))
+    expect(localized.flatMap((ending) => [ending.title, ending.status, ending.humanLine, ending.assistantLine, ending.summary, ending.hybridLabel, ...ending.epilogues, ending.secretOverlay?.copy ?? '', ...ending.keyHistory.flatMap((entry) => [entry.label, entry.detail, entry.causalReason ?? ''])]).flatMap(unexpectedEndingPlayerFacingEnglish)).toEqual([])
     expect(fixtures[1].links.some((link) => link.sourceRef === 'ML2-A5-M16-0000-01' && link.decisionId === 'aster_intended_role' && link.canonicalValue === 'departure')).toBe(true)
     expect(fixtures[1].run.decisions?.aster_intended_role).toBe('departure')
     const exodus = runMainline2Route({ routeId: 'exodus-role-producer', proposalId: 'proposal.mc.independent_machine_polities', decisions: { act4_research_emphasis: 'computation_ai', replication_doctrine: 'licensed_plurality', expansion_doctrine: 'independent_machine_space', offworld_governance: 'offworld_sovereignty' } })
@@ -206,6 +211,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
       expect(fixture.ending.worldEndingId).not.toBe(fixture.ending.secretOverlay?.endingId)
       expect(fixture.ending.secretOverlay?.provenance).toMatchObject({ authoredAssetId: 'ML2-A5-M17-SECRET-01' })
       expect(fixture.ending.secretOverlay?.copy).toEqual(expect.any(String))
+      expect(fixture.ending.epilogues).not.toContain(fixture.ending.secretOverlay?.copy)
       expect(MAINLINE2_AUTHored_FRAGMENTS['ML2-A5-M17-SECRET-01']?.some((fragment) => fixture.ending.secretOverlay?.copy.includes(fragment.text.replace(/\*\*/g, '').trim()))).toBe(true)
       expect(fixture.ending.secretOverlay?.trigger).toEqual(expect.any(String))
       expect(fixture.links.some((link) => link.proposalKind === 'commitment')).toBe(true)

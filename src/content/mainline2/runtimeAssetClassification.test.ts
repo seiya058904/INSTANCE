@@ -1,12 +1,57 @@
 import { describe, expect, it } from 'vitest'
 import { MAINLINE2_ASSET_COVERAGE, MAINLINE2_LIBRARY } from './registry'
-import { isChineseDominantPlayerText, unexpectedPlayerFacingEnglish } from './playerFacingCopy'
+import { applyMainlinePlayerFacingCopy, isChineseDominantPlayerText, playerFacingKey, unexpectedPlayerFacingEnglish } from './playerFacingCopy'
+import type { ConversationDefinition } from '../../game/types'
 
 function normalize(value: string) {
   return value.replace(/\s+/g, ' ').trim().toLowerCase()
 }
 
 describe('Mainline runtime asset boundary', () => {
+  it('binds player-facing choice copy to the stable Choice ID', () => {
+    expect(playerFacingKey('ML2-TEST', 'node-01', 'choice', 'choice-alpha')).toBe('ML2-TEST:node-01:choice:choice-alpha')
+    expect(playerFacingKey('ML2-TEST', 'node-01', 'choice', 'choice-beta')).not.toBe('ML2-TEST:node-01:choice:0')
+  })
+
+  it('fails closed with the complete field key when a player-facing translation is missing', () => {
+    const fixture: ConversationDefinition = {
+      id: 'fixture-mainline-copy',
+      sourceRefs: ['ML2-TEST'],
+      nodes: [{
+        id: 'node-01',
+        conversationId: 'fixture-mainline-copy',
+        conversationTitle: '测试标题',
+        userMessage: '这是中文用户消息。',
+        choices: [{ id: 'choice-alpha', text: 'Unregistered English choice' }],
+      }],
+      behaviorModes: [],
+      handoffProfile: 'normal',
+      turnShape: 'single',
+    }
+
+    expect(() => applyMainlinePlayerFacingCopy(fixture)).toThrow('ML2-TEST:node-01:choice:choice-alpha')
+  })
+
+  it('uses stable nested field keys instead of leaving expandable copy untranslated', () => {
+    const fixture: ConversationDefinition = {
+      id: 'fixture-mainline-nested-copy',
+      sourceRefs: ['ML2-NESTED'],
+      nodes: [{
+        id: 'node-02',
+        conversationId: 'fixture-mainline-nested-copy',
+        conversationTitle: '中文标题',
+        userMessage: '这是中文用户消息。',
+        userContent: [{ type: 'text', text: 'Unregistered English attachment' }],
+        choices: [{ id: 'choice-alpha', text: '中文选择', longformPreview: { artifactType: 'report', estimatedLength: '短', preview: 'Unregistered English preview' } }],
+      }],
+      behaviorModes: [],
+      handoffProfile: 'normal',
+      turnShape: 'single',
+    }
+
+    expect(() => applyMainlinePlayerFacingCopy(fixture)).toThrow('ML2-NESTED:node-02:user-content:0')
+  })
+
   it('keeps authored asset coverage while excluding support-only ending assets from the playable pool', () => {
     expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(330)
 
@@ -54,7 +99,14 @@ describe('Mainline runtime asset boundary', () => {
       node.conversationTitleAfterMessage ?? '',
       node.userMessage,
       ...(node.userMessages ?? []),
+      ...(node.userContent ?? []).flatMap((part) => [part.text, part.alt ?? '']),
+      node.userLongInput?.title ?? '', node.userLongInput?.preview ?? '', ...(node.userLongInput?.structure ?? []), ...(node.userLongInput?.keyFacts ?? []),
       ...node.choices.map((choice) => choice.text),
+      ...node.choices.flatMap((choice) => [
+        ...(choice.content ?? []).flatMap((part) => [part.text, part.alt ?? '']),
+        choice.longformPreview?.title ?? '', choice.longformPreview?.preview ?? '', ...(choice.longformPreview?.structure ?? []), ...(choice.longformPreview?.highlights ?? []), choice.longformPreview?.closingPreview ?? '', ...(choice.longformPreview?.keyFacts ?? []),
+      ]),
+      ...(node.variants ?? []).flatMap((variant) => [variant.userMessage, variant.assistantContext ?? '', ...variant.choices.map((choice) => choice.text)]),
     ]))
     const leaks = values.flatMap((value) => unexpectedPlayerFacingEnglish(value))
 

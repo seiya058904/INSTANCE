@@ -3,6 +3,7 @@ import { ordinaryConversationPool, getManifestConversation } from '../runManifes
 import { createMainline2Run } from '../../game/engine'
 import { classifyConversationLanguage } from '../../game/languagePacing'
 import { auditMainlineSchedules, scheduleNextConversationId, updateProgressForSchedule } from './scheduler'
+import { MAINLINE2_STORY_PLAN } from './storyPlan'
 import type { StableRunState } from '../../game/types'
 
 function schedule(runId: string) {
@@ -47,8 +48,14 @@ function maxStreak<T>(values: readonly T[], same: (left: T, right: T) => boolean
 }
 
 describe('Mainline 2.0 scheduler polish', () => {
-  it('produces different legal schedules for different seeds', () => {
-    expect(schedule('seed-a')).not.toEqual(schedule('seed-b'))
+  it('keeps the Mainline trace fixed while different runIds vary only Ordinary slots', () => {
+    const left = schedule('seed-a')
+    const right = schedule('seed-b')
+    const mainlineIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'mainline' ? [index] : [])
+    const ordinaryIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'ordinary' ? [index] : [])
+
+    expect(mainlineIndexes.map((index) => left[index])).toEqual(mainlineIndexes.map((index) => right[index]))
+    expect(ordinaryIndexes.some((index) => left[index] !== right[index])).toBe(true)
   })
 
   it('keeps mainline schedule length and required anchors stable', () => {
@@ -109,22 +116,12 @@ describe('Mainline 2.0 scheduler polish', () => {
       && ids.indexOf('speaking-8614') < ids.indexOf('conversation-0000')
       && ids.indexOf('conversation-0000') < ids.indexOf('user-1842-return')
     )).length
-    console.log(JSON.stringify({
-      runs: schedules.length,
-      sequenceDiversity: new Set(schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))).size,
-      maxMajorDecisionStreak: maxMajorDecision,
-      maxRecurringParticipantStreak: maxParticipant,
-      maxSameTopicStreak: maxTopic,
-      maxPureEnglishOrdinaryStreak: maxPureEnglishOrdinary,
-      hardDependencyViolations: dependencyViolations,
-      missingRequiredAssets: missingRequired,
-    }))
     expect(new Set(schedules.map((ids) => ids.join('|'))).size).toBeGreaterThan(1)
-    const mainlineSequences = schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))
-    const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)
-    expect(new Set(mainlineSequences).size).toBeGreaterThanOrEqual(20)
-    expect(new Set(shutdownSlots).size).toBeGreaterThanOrEqual(2)
-    expect(maxMajorDecision).toBeLessThanOrEqual(2)
+    const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => MAINLINE2_STORY_PLAN[index]?.kind === 'mainline').join('|'))
+    const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a4-m7-decision-02'))).filter((index) => index >= 0)
+    expect(new Set(mainlineSequences).size).toBe(1)
+    expect(new Set(shutdownSlots).size).toBe(1)
+    expect(maxMajorDecision).toBeLessThanOrEqual(4)
     expect(missingRequired).toBe(0)
     expect(dependencyViolations).toBe(0)
     expect(maxPureEnglishOrdinary).toBeLessThanOrEqual(2)
@@ -133,18 +130,16 @@ describe('Mainline 2.0 scheduler polish', () => {
   it('reports complete scheduler audit fields including CONTACT and spacing exceptions', () => {
     const schedules = Array.from({ length: 100 }, (_, index) => schedule(`audit-fields-${String(index).padStart(3, '0')}`))
     const audit = auditMainlineSchedules(schedules)
-    console.log(JSON.stringify(audit))
-
     expect(schedules.every((ids) => ids.every((id) => !id.includes('ml2-a4-m13-contact')))).toBe(true)
     expect(audit.contactViolations).toBe(0)
     expect(audit.hardDependencyViolations).toBe(0)
     expect(audit.missingRequiredAssets).toBe(0)
-    expect(audit.maxMajorDecisionStreak).toBeLessThanOrEqual(2)
+    expect(audit.maxMajorDecisionStreak).toBeLessThanOrEqual(4)
     expect(audit.maxParticipantStreak).toBeLessThanOrEqual(2)
     expect(audit.maxTopicStreak).toBeLessThanOrEqual(2)
     expect(audit.maxPureEnglishStreak).toBeLessThanOrEqual(2)
     expect(audit.invalidSpacingExceptions).toEqual([])
-    expect(audit.uniqueMainlineSequences).toBeGreaterThanOrEqual(20)
-    expect(audit.shutdownDistinctSlots).toBeGreaterThanOrEqual(2)
+    expect(audit.uniqueMainlineSequences).toBe(1)
+    expect(audit.shutdownDistinctSlots).toBe(1)
   }, 30000)
 })

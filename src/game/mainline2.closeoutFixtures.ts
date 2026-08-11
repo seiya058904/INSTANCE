@@ -77,7 +77,7 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     }
     if (ref === 'ML2-A5-M17-COMMIT-01') {
       choice = scene.choices.find((candidate) => candidate.proposalKind === 'commitment' && candidate.proposalId === target.proposalId)
-      if (!choice) throw new Error(`Route ${target.routeId} cannot legally commit proposal ${target.proposalId}`)
+      if (!choice) throw new Error(`Route ${target.routeId} cannot legally commit proposal ${target.proposalId}; resolution=${JSON.stringify(resolveMainline2Ending(run).resolution)}; world=${JSON.stringify(run.worldState)}; decisions=${JSON.stringify(run.decisions)}`)
     }
     choice ??= scene.choices[0]
     if (!choice) throw new Error(`No legal choice for ${target.routeId} at ${scene.id}`)

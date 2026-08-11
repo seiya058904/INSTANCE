@@ -60,7 +60,7 @@ describe('Mainline 2.0 runtime', () => {
     expect(Math.max(...counts)).toBeLessThanOrEqual(146)
     expect(new Set(counts)).toEqual(new Set([134]))
     expect(getActConversationCounts(counts[0])).toEqual([26, 30, 30, 34, 14])
-    expect(results.every(({ run }) => (run.progress?.activeModules.length ?? 0) >= 2 && (run.progress?.activeModules.length ?? 0) <= 4)).toBe(true)
+    expect(results.every(({ run }) => (run.progress?.activeModules.length ?? 0) === 7)).toBe(true)
     expect(results.every(({ run }) => (run.progress?.act ?? 0) === 5)).toBe(true)
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)
   }, 60000)

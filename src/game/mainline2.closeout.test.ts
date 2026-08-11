@@ -36,7 +36,7 @@ const PUBLIC_RUNTIME_TARGETS = [
   ['fortress_earth', 'proposal.se.constitutional_peace_architecture', { act4_research_emphasis: 'computation_ai', expansion_doctrine: 'shared_expansion', security_doctrine: 'defensive_command' }],
   ['machine_protectorate', 'proposal.se.constitutional_peace_architecture', { act4_research_emphasis: 'computation_ai', replication_doctrine: 'free_replication', security_doctrine: 'enforced_peace' }],
   ['shutdown', 'proposal.rupture.legible_exit', { shutdown_doctrine: 'full_human_control' }],
-  ['the_fracture', 'proposal.rupture.legible_exit', { expansion_doctrine: 'shared_expansion', cascade_authority: 'necessity' }],
+  ['the_fracture', 'proposal.rupture.legible_exit', { first_public_execution_doctrine: 'necessity_intervention', expansion_doctrine: 'shared_expansion', cascade_authority: 'necessity', economic_doctrine: 'market_automation' }],
   ['control_lost', 'proposal.rupture.legible_exit', { replication_doctrine: 'free_replication', security_doctrine: 'enforced_peace' }],
 ] as const
 import { createMainline2Run } from './engine'

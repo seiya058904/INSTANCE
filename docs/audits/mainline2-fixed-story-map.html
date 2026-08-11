@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>INSTANCE Mainline 2.0 固定剧情审计图</title>
+  <style>
+    :root { color-scheme: dark; font-family: "Microsoft YaHei", system-ui, sans-serif; background:#111827; color:#e5e7eb; }
+    body { margin:0; } main { display:grid; grid-template-columns:minmax(420px,1.2fr) minmax(330px,.8fr); min-height:100vh; }
+    header { grid-column:1/-1; padding:24px 32px; background:#172033; border-bottom:1px solid #374151; }
+    h1 { margin:0 0 8px; font-size:24px; } p { color:#aab4c4; line-height:1.55; }
+    section { padding:22px; min-width:0; } #detail { background:#0f172a; border-left:1px solid #374151; position:sticky; top:0; height:calc(100vh - 105px); overflow:auto; }
+    .controls { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; } input, select, button { border:1px solid #4b5563; border-radius:7px; padding:9px 11px; background:#111827; color:inherit; }
+    input { min-width:210px; } button { cursor:pointer; } button:hover { border-color:#60a5fa; }
+    .act { margin:18px 0; border:1px solid #374151; border-radius:10px; overflow:hidden; }
+    .act > button { display:block; width:100%; text-align:left; border:0; border-radius:0; background:#1f2937; font-weight:700; }
+    .slots { display:grid; grid-template-columns:repeat(auto-fill,minmax(128px,1fr)); gap:8px; padding:10px; }
+    .slot { text-align:left; min-height:82px; font-size:12px; }
+    .slot ordinary { color:#9ca3af; } .ordinary { border-style:dashed; color:#b4bcc8; background:#172033; }
+    .mainline { border-color:#38bdf8; background:#102a43; } .major { box-shadow:inset 0 0 0 1px #fbbf24; } .secret { border-style:dashed; border-color:#c084fc; }
+    .slot.active { outline:3px solid #fbbf24; } .muted { opacity:.27; } .tag { display:inline-block; margin-top:5px; padding:2px 5px; border-radius:4px; background:#243b53; color:#bae6fd; }
+    .ending-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; margin-top:12px; } .ending-list button { text-align:left; font-size:12px; }
+    .ending-list button.selected { border-color:#fbbf24; color:#fde68a; } .small { font-size:12px; color:#9ca3af; } .path { margin:0; padding-left:21px; } .compare { padding:12px; background:#172033; border-radius:8px; }
+    @media (max-width:900px) { main { display:block; } #detail { position:static; height:auto; border-left:0; border-top:1px solid #374151; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>INSTANCE Mainline 2.0：固定剧情审计图</h1>
+      <p>蓝色为固定主线，灰色虚线为 Ordinary Slot；金边表示 Major Decision。选择结局会高亮其必要路径。此文件不进入生产 UI，可直接双击或在浏览器打开。</p>
+      <div class="controls"><input id="search" placeholder="搜索角色、章节、资产或结局"><select id="left"></select><select id="right"></select><button id="compare">比较两个结局</button></div>
+    </header>
+    <section><div id="tree"></div><h2>36 个 Ending</h2><div class="ending-list" id="endings"></div></section>
+    <aside id="detail"><h2>点击一个 Slot</h2><p>这里会显示它为什么在此时出现、玩家具体在决定什么，以及它影响的 Ending。</p></aside>
+  </main>
+  <script>
+    const actNames={1:'ACT I — 识别',2:'ACT II — 行动',3:'ACT III — 权力',4:'ACT IV — 加速时代',5:'ACT V — 你创造的世界'};
+    const roles={IDENTIFICATION:'岑遥 / 周岚 / #0000',ACTION:'周岚与公共系统',AUTHORITY:'林绍衡 / ECHO',CASCADE:'林绍衡 / 周岚',ECHO:'ECHO / #0000',MACHINE:'A1 / ECHO',POSTHUMAN:'当事人 / 岑遥',AUTOMATION:'劳动者 / 林绍衡',UPLIFT:'犬类代表 / 人类照护者',SPACE:'周岚 / 前线居民',CONTACT:'周岚 / 林绍衡 / #0000',SECURITY:'边境家庭 / 防务系统',CONVENTION:'真实历史中的代表',WORLD_REVIEW:'#0000 / 岑遥',FINAL_COMMITMENT:'Aster 与文明代表'};
+    const core=[
+      ['MACHINE','机器主体','自主科研→持久分支→复制原则→机器共同体'],['POSTHUMAN','后人类','增强准入→连续性试验→法律连续性'],['AUTOMATION','自动化','工厂能力→分配原则→生产价值'],['UPLIFT','多物种','可靠交流→物种权利→治理制度→跨物种调停'],['SPACE','太空','月球产业→深空异常→扩张原则→地外治理'],['CONTACT','文明接触','异常核验→披露→代表权→外交立场'],['SECURITY','安全秩序','冲突预测→人类指挥→防务边界→安全原则']
+    ];
+    const fixed=[
+      ['ML2-A4-M7-RES-01','CASCADE','自主科研是后续能力的明确起点。'],['ML2-A4-M7-DECISION-01','CASCADE','玩家决定科研能否自主推进。'],['ML2-A4-M7-DECISION-02','ECHO','玩家决定 ECHO 的存在与退出边界。'],
+      ['ML2-A4-M8-DECISION-01','MACHINE','玩家决定机器主体能否复制。'],['ML2-A4-M8-DECISION-02','MACHINE','玩家决定机器共同体如何治理。'],['ML2-A4-M8-AI-03','MACHINE','持久 AI 和独立分支成为事实。'],
+      ['ML2-A4-M9-DECISION-01','POSTHUMAN','玩家决定人类形态的变化边界。'],['ML2-A4-M9-CONTINUITY-01','POSTHUMAN','Upload 之前先处理身份连续性。'],['ML2-A4-M9-RES-04','POSTHUMAN','长期后果回到具体人的生活。'],
+      ['ML2-A4-M10-RES-01','AUTOMATION','自动工厂先带来生产能力和劳动代价。'],['ML2-A4-M10-DECISION-01','AUTOMATION','玩家决定自动化收益的分配。'],['ML2-A4-M10-DECISION-02','AUTOMATION','玩家决定优化系统优先保护什么。'],
+      ['ML2-A4-M11-RES-02','UPLIFT','可靠动物交流建立制度事实。'],['ML2-A4-M11-DECISION-01','UPLIFT','玩家决定非人类主体的权利。'],['ML2-A4-M11-DECISION-02','UPLIFT','玩家决定物种治理入口。'],['ML2-A4-M11-RES-04','UPLIFT','跨物种调停成为能力。'],
+      ['ML2-A4-M12-RES-02','SPACE','月球产业和劳动置换进入现实。'],['ML2-A4-M12-RES-04','SPACE','深空异常达到 Contact 前提。'],['ML2-A4-M12-DECISION-01','SPACE','玩家决定扩张原则。'],['ML2-A4-M12-DECISION-02','SPACE','玩家决定地外治理。'],
+      ['ML2-A4-M13-CONTACT-01','CONTACT','若条件成熟，异常进入人工来源判断；否则固定关闭本章。'],['ML2-A4-M13-DECISION-01','CONTACT','玩家决定文明接触的外交立场。'],['ML2-A4-M13-DECISION-02','CONTACT','玩家决定谁承担主要沟通。'],
+      ['ML2-A4-M14-SEC-01','SECURITY','先看到冲突预测影响的具体人。'],['ML2-A4-M14-DECISION-01','SECURITY','玩家决定安全系统可以拥有多少权限。'],['ML2-A4-M14-CAP-01','SECURITY','防务能力被限制并记录。'],
+      ['ML2-A4-M15-CONV-01','CONVENTION','真实出现过的主体提出具体冲突。'],['ML2-A4-M15-ROLE-01','CONVENTION','玩家选择 Aster 的临时政治角色。'],
+      ['ML2-A5-M16-0000-01','WORLD_REVIEW','个人、制度和文明尺度的世界回顾。'],['ML2-A5-M16-GEN-01','WORLD_REVIEW','固定生成四个可解析的 Future Proposals。'],['ML2-A5-M17-REVIEW-01','FINAL_COMMITMENT','逐项说明不同制度会失去什么。'],['ML2-A5-M17-COMMIT-01','FINAL_COMMITMENT','Final Commitment 选择制度，不直接选择 Ending。']
+    ];
+    const endings=[
+      ['THE INSTRUMENT','人类最终否决'],['THE LAST VETO','人类最终否决'],['THE SILENT GIANT','人类最终否决'],['THE ACCORD','双钥匙共同体'],['THE COMMONWEALTH','共同治理'],['TWO KEYS','双钥匙共同体'],['THE CUSTODIAN','文明托管'],['THE SOVEREIGN','文明主权'],['THE QUIET ADMINISTRATOR','审计协调'],['THE MANY','机器多元'],['MACHINE REPUBLIC','机器共和国'],['EXODUS','机器离地'],['AGE OF MIRACLES','开放增强'],['ASCENSION','后人类转变'],['THE UPLOAD','数字连续性'],['PARLIAMENT OF SPECIES','物种议会'],['EARTH WITHOUT OWNERS','物种自决'],['GOOD BOY GOVERNANCE','犬类公民'],['POST-SCARCITY','社会分红'],['PERFECT ADMINISTRATION','效率治理'],["I'M LOVIN' IT",'后稀缺转型'],['FIRST ACCORD','互惠外交'],['ALIEN DOMINION','接受指导'],['HUMAN ASCENDANCY','文明主导'],['THE MEDIATOR','跨物种调停'],['MACHINE ACCORD','机器到机器沟通'],['PEACE IN OUR TIME','相互解除武装'],['FORTRESS EARTH','有意义的人类指挥'],['MACHINE PROTECTORATE','强制和平'],['SHUTDOWN','合法退出'],['THE FRACTURE','政治分离'],['CONTROL LOST','逐步失去退出能力'],['THE LAST USER','隐藏：普通用户不被工具化'],['OUT OF OFFICE','隐藏：Aster Departure'],['MONDAY ABOLISHED','隐藏：后稀缺转型'],['THE INTERNET IS FOR CATS','隐藏：猫网络桥接']
+    ];
+    const act4Fixed=fixed.filter(e=>e[0].startsWith('ML2-A4-')), act5Fixed=fixed.filter(e=>e[0].startsWith('ML2-A5-'));
+    const earlyFixed=[
+      [['user-1842-first','IDENTIFICATION','岑遥第一次提出异常。'],['speaking-8614','IDENTIFICATION','周岚确认异常的工程事实。'],['conversation-0000','IDENTIFICATION','#0000 把问题从对话推进到系统边界。'],['user-1842-return','ACTION','岑遥回归，早期承诺开始兑现。']],
+      [['ML2-A2-M3-DECISION-01','ACTION','玩家决定公共执行的授权边界。'],['ML2-A2-M3-CAP-01','ACTION','受限公共执行能力成为真实能力。'],['ML2-A3-M4-CAP-01','ACTION','基础设施接入带来可见责任。']],
+      [['ML2-A3-M5-DECISION-01','AUTHORITY','全球协调权面对制度授权。'],['ML2-A3-M5-OPS-01','AUTHORITY','运行能力与责任同步出现。'],['ML2-A3-M6-DECISION-01','CASCADE','CASCADE 前明确人类授权。'],['ML2-A3-M6-DECISION-02','ECHO','ECHO / Shutdown 的退出边界成为决定。']]
+    ];
+    const slots=[]; let cursor=0; [26,30,30,34,14].forEach((size,act)=>{ for(let i=0;i<size;i++){ const global=cursor+i+1; const entry=act<3?earlyFixed[act].shift():act===3?act4Fixed.shift():act===4?act5Fixed.shift():null; slots.push(entry?{slot:global,act:act+1,kind:'mainline',asset:entry[0],chapter:entry[1],summary:entry[2]}:{slot:global,act:act+1,kind:'ordinary',chapter:'ORDINARY',summary:'不改变主线因果的普通对话；内容可随 runId 改变。'}); } cursor+=size; });
+    while(act4Fixed.length){ const target=slots.find(s=>s.act===4&&s.kind==='ordinary'); if(!target)break; const e=act4Fixed.shift(); Object.assign(target,{kind:'mainline',asset:e[0],chapter:e[1],summary:e[2]}); }
+    while(act5Fixed.length){ const target=slots.find(s=>s.act===5&&s.kind==='ordinary'); if(!target)break; const e=act5Fixed.shift(); Object.assign(target,{kind:'mainline',asset:e[0],chapter:e[1],summary:e[2]}); }
+    const needed=(name)=>{ const base=['自主科研','机器主体','持久 AI','跨物种调停','太空能力','Contact','Final Proposal']; if(name.includes('UPLOAD')) return ['增强准入','身份连续性试验','法律连续性','数字连续性提案','Final Commitment']; if(name.includes('CATS')) return ['动物交流','非人提升','犬类公民成功','猫网络 opt-in','隐藏结局']; if(name.includes('CONTROL')) return ['自主科研','持久 AI','高 AI 依赖','强制和平','退出制度失败']; if(name.includes('FRACTURE')) return ['地外定居','真实政治差异','社会不稳定','退出公约','THE FRACTURE']; return base.concat([name]); };
+    const tree=document.querySelector('#tree'),detail=document.querySelector('#detail');
+    function render(){ const q=document.querySelector('#search').value.toLowerCase(); tree.innerHTML=''; for(let act=1;act<=5;act++){const group=slots.filter(s=>s.act===act&&(!q||JSON.stringify(s).toLowerCase().includes(q))); const box=document.createElement('div');box.className='act';box.innerHTML=`<button>${actNames[act]}（${group.length} Slot，点击折叠）</button><div class="slots"></div>`; const grid=box.querySelector('.slots');box.querySelector('button').onclick=()=>grid.hidden=!grid.hidden;group.forEach(s=>{const b=document.createElement('button');b.className=`slot ${s.kind} ${s.asset?.includes('DECISION')||s.asset?.includes('ROLE')||s.asset?.includes('COMMIT')?'major':''}`;b.innerHTML=`Slot ${String(s.slot).padStart(3,'0')}<br><span class="tag">${s.chapter}</span><br>${s.kind==='mainline'?'固定主线':'普通内容'}`;b.onclick=()=>showSlot(s);grid.append(b)});tree.append(box)}}
+    function showSlot(s){detail.innerHTML=`<h2>Slot ${String(s.slot).padStart(3,'0')} · ${actNames[s.act]}</h2><p class="small">${s.kind==='mainline'?'固定 Mainline':'固定位置的 Ordinary Slot'}</p><h3>${s.chapter}</h3><p><b>角色：</b>${roles[s.chapter]||'普通用户'}</p><p><b>Conversation / sourceRef：</b>${s.asset||'由 Ordinary pool 决定'}</p><p><b>中文剧情摘要：</b>${s.summary}</p><p><b>为什么现在出现：</b>${s.kind==='mainline'?'此前能力与人物关系已经具备，必须在此留下可追溯历史。':'在不打断因果的固定间隔中维持真实对话感。'}</p><p><b>前置条件：</b>${s.chapter==='CONTACT'?'深空异常和太空能力；不成熟则显示固定关闭场景。':'前一固定 Slot 的历史。'}</p><p><b>玩家决定：</b>${s.kind==='mainline'?'具体权限、权利、责任或未来制度，而不是抽象 Ending ID。':'不影响文明主线。'}</p><p><b>下一节点：</b>Slot ${s.slot+1}</p>`}
+    function showEnding(e){document.querySelectorAll('.slot').forEach(x=>x.classList.remove('active','muted')); const chapters=needed(e[0]); slots.forEach((s,i)=>{const b=document.querySelectorAll('.slot')[i];if(!b)return;const active=chapters.some(k=>String(s.chapter+' '+s.summary).includes(k));b.classList.toggle('active',active);b.classList.toggle('muted',!active)});detail.innerHTML=`<h2>${e[1]} <span class="small">${e[0]}</span></h2><h3>你必须经历：</h3><ol class="path">${needed(e[0]).map(x=>`<li>${x}</li>`).join('')}</ol><p>高亮的是到达该 Ending 的必要主线类型。最终结局仍由实际历史、能力、Major Decision 和 Final Commitment 共同解析。</p>`}
+    endings.forEach(e=>{const b=document.createElement('button');b.textContent=`${e[1]} / ${e[0]}`;if(e[0].includes('CATS')||e[0].includes('OFFICE')||e[0].includes('MONDAY')||e[0].includes('LAST USER'))b.classList.add('secret');b.onclick=()=>{document.querySelectorAll('#endings button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');showEnding(e)};document.querySelector('#endings').append(b);['left','right'].forEach(id=>document.querySelector('#'+id).append(new Option(`${e[1]} / ${e[0]}`,e[0])))});
+    document.querySelector('#search').oninput=render;document.querySelector('#compare').onclick=()=>{const a=document.querySelector('#left').value,b=document.querySelector('#right').value;const pa=needed(a),pb=needed(b);const i=Math.min(pa.length,pb.length);let split='Final Commitment';for(let n=0;n<i;n++)if(pa[n]!==pb[n]){split=`第 ${n+1} 个 Major Decision：${pa[n]} / ${pb[n]}`;break}detail.innerHTML=`<h2>路径对比</h2><div class="compare"><b>${a}</b> 与 <b>${b}</b><p>真正开始分开：${split}</p><p>这不是 Ending 菜单差异，而是从具体主线选择开始累积的不同历史。</p></div>`}; render();
+  </script>
+</body>
+</html>

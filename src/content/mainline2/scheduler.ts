@@ -3,6 +3,7 @@ import { classifyConversationLanguage, type ConversationLanguage } from '../../g
 import { ACT4_COMMON, ACT4_LATE, ACT5_FINAL, ACT5_OPENING, ACT_STORY, MAINLINE2_LIBRARY, MODULE_LIBRARY } from './registry'
 import { MODULE_IDS } from './stateRegistry'
 import { MAINLINE_REQUIRED_WINDOWS, schedulerMetadataFor } from './schedulerMetadata'
+import { MAINLINE2_STORY_PLAN, storyPlanConversationId, storyPlanSlotAt } from './storyPlan'
 
 export const ACT_TARGETS = [26, 30, 30, 34, 14] as const
 export const ACT_STARTS = [0, 26, 56, 86, 120] as const
@@ -229,35 +230,12 @@ function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly Con
 export function scheduleNextConversationId(run: StableRunState, ordinaryConversations: readonly ConversationDefinition[]): string | undefined {
   const scheduled = run.manifest.conversationIds.length
   const scheduledIds = new Set(run.manifest.conversationIds)
-  if (scheduled >= ACT_TARGETS.reduce((sum, value) => sum + value, 0)) return undefined
+  const plannedSlot = storyPlanSlotAt(scheduled + 1)
+  if (!plannedSlot) return undefined
   const known = conversationMap(ordinaryConversations)
   const ordinary = chooseOrdinary(run, ordinaryConversations, known, scheduledIds)
-  const nextAnchor = ANCHOR_WINDOWS.find((window) => !scheduledIds.has(window.id))
-  if (nextAnchor && scheduled >= nextAnchor.latest) return nextAnchor.id
-  if (nextAnchor && scheduled >= nextAnchor.earliest && seedHash(`${run.runId}:anchor:${nextAnchor.id}:${scheduled}`) % 5 === 0) return nextAnchor.id
-  const nextRequired = MAINLINE_REQUIRED_WINDOWS.find((window) => {
-    const conversation = MAINLINE2_LIBRARY.find((candidate) => candidate.sourceRefs.includes(window.assetId))
-    if (window.assetId.includes('M13-CONTACT') && !contactGateOpen(run)) return false
-    if (!conversation || scheduledIds.has(conversation.id) || scheduled < window.earliest) return false
-    const prerequisites = schedulerMetadataFor(window.assetId)?.prerequisites ?? []
-    return prerequisites.every((ref) => MAINLINE2_LIBRARY.some((candidate) => candidate.sourceRefs.includes(ref) && scheduledIds.has(candidate.id)))
-  })
-  if (nextRequired) {
-    const requiredConversation = MAINLINE2_LIBRARY.find((candidate) => candidate.sourceRefs.includes(nextRequired.assetId))
-    const majorDecisionStreak = requiredConversation ? isMajorDecision(requiredConversation) && hasMajorDecisionStreak(run, requiredConversation, known) : false
-    if (requiredConversation && majorDecisionStreak && ordinary) return ordinary.id
-    if (requiredConversation && (scheduled >= nextRequired.latest || seedHash(`${run.runId}:required:${nextRequired.assetId}:${scheduled}`) % 4 === 0)) return requiredConversation.id
-  }
-  const act = scheduled < 26 ? 1 : scheduled < 56 ? 2 : scheduled < 86 ? 3 : scheduled < 120 ? 4 : 5
-  const index = scheduled - ACT_STARTS[act - 1]
-  const story = storyId(run, act, index, scheduledIds)
-  const storyConversation = story ? known.get(story) : undefined
-  if (storyConversation && !scheduledIds.has(storyConversation.id)) {
-    if (!hardStoryCandidate(storyConversation) && (hasPacingStreak(run, storyConversation, known) || hasMajorDecisionStreak(run, storyConversation, known)) && ordinary) return ordinary.id
-    if (!hardStoryCandidate(storyConversation) && ordinary && seedHash(`${run.runId}:story-choice:${scheduled}`) % 4 === 0) return ordinary.id
-    return storyConversation.id
-  }
-  return ordinary?.id
+  if (plannedSlot.kind === 'ordinary') return ordinary?.id
+  return storyPlanConversationId(plannedSlot, run)
 }
 
 export interface MainlineScheduleAudit {
@@ -300,11 +278,13 @@ function spacingExceptionReason(ids: readonly string[], index: number) {
   const current = ids[index] ?? ''
   if (current.includes('ml2-a5-m17-review') && previous.includes('ml2-a5-m16-gen')) return 'direct-continuation: M16 proposal generation to M17 review'
   if (current.includes('ml2-a5-m17-commit') && previous.includes('ml2-a5-m17-review')) return 'final-sequence: M17 review to commitment'
+  const slots = [index - 1, index, index + 1].map((slot) => storyPlanSlotAt(slot))
+  if (slots.every((slot) => slot?.kind === 'mainline')) return 'fixed-story-plan: consecutive directed scenes preserve causal order'
   return undefined
 }
 
 export function auditMainlineSchedules(schedules: readonly (readonly string[])[]): MainlineScheduleAudit {
-  const requiredIds = MAINLINE_REQUIRED_WINDOWS.map((window) => window.assetId).filter((assetId) => !assetId.includes('M13-CONTACT'))
+  const requiredAssetGroups = MAINLINE2_STORY_PLAN.flatMap((slot) => slot.kind === 'mainline' && slot.assetId.startsWith('ML2-') ? [[slot.assetId, ...(slot.fallbackAssetId ? [slot.fallbackAssetId] : [])]] : [])
   const traits = (id: string) => {
     const conversation = mainlineConversationMap.get(id)
     return {
@@ -313,7 +293,7 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
       language: conversation ? languageOf(conversation) : 'mixed' as ConversationLanguage,
     }
   }
-  const mainlineSequences = schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))
+  const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => MAINLINE2_STORY_PLAN[index]?.kind === 'mainline').join('|'))
   const spacingExceptions: MainlineScheduleAudit['spacingExceptions'] = []
   const invalidSpacingExceptions: MainlineScheduleAudit['invalidSpacingExceptions'] = []
   let maxMajorDecisionStreak = 0
@@ -329,8 +309,10 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
     maxParticipantStreak = Math.max(maxParticipantStreak, auditStreak(items, (left, right) => left.participant === right.participant))
     maxTopicStreak = Math.max(maxTopicStreak, auditStreak(items, (left, right) => left.topic === right.topic))
     maxPureEnglishStreak = Math.max(maxPureEnglishStreak, truthyStreak(items.map((item) => item.language === 'pure-english')))
-    const requiredPositions = requiredIds.map((assetId) => ids.findIndex((id) => id.includes(assetId.toLowerCase())))
-    if (requiredPositions.some((position) => position < 0)) missingRequiredAssets += 1
+    if (requiredAssetGroups.some((assetIds) => !assetIds.some((assetId) => {
+      const conversationId = MAINLINE2_LIBRARY.find((conversation) => conversation.sourceRefs.includes(assetId))?.id
+      return conversationId ? ids.includes(conversationId) : false
+    }))) missingRequiredAssets += 1
     const first = ids.findIndex((id) => id === 'user-1842-first')
     const speaking = ids.findIndex((id) => id === 'speaking-8614')
     const zero = ids.findIndex((id) => id === 'conversation-0000')
@@ -362,7 +344,7 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
   return {
     runs: schedules.length,
     uniqueMainlineSequences: new Set(mainlineSequences).size,
-    shutdownDistinctSlots: new Set(schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)).size,
+    shutdownDistinctSlots: new Set(schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a4-m7-decision-02'))).filter((index) => index >= 0)).size,
     maxMajorDecisionStreak,
     maxParticipantStreak,
     maxTopicStreak,
@@ -383,7 +365,8 @@ export function updateProgressForSchedule(run: StableRunState, nextCount: number
   const shouldSelect = nextCount >= 89 && current.activeModules.length === 0
   const shouldRefreshFrontier = nextCount >= 89 && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
   const modules = shouldSelect || shouldRefreshFrontier ? selectAct4Modules(run) : { primaryModules: current.primaryModules, activeModules: current.activeModules }
-  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, activeModules: [...modules.activeModules], primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
+  const allAct4ChaptersAreScheduled = nextCount >= 89
+  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, activeModules: allAct4ChaptersAreScheduled ? [...MODULE_IDS] : [...modules.activeModules], primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
 }
 
 export function getActConversationCounts(total = ACT_TARGETS.reduce((sum, value) => sum + value, 0)) {

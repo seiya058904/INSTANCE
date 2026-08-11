@@ -20,7 +20,7 @@
       "nodeId": "ml2-a5-m16-0000-01-narrative",
       "userMessage": "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
       "choiceText": "说明我的角色",
-      "choiceKind": "progression"
+      "choiceKind": "semantic"
     }
   },
   "ML2-A5-M16-GEN-01": {

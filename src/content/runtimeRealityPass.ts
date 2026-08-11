@@ -393,7 +393,7 @@ function applyCustomTransforms(sourceId: string, conversation: ConversationDefin
     conversation.nodes[1].choiceSimilarity = 'near-identical'
   }
   if (sourceId === 'original:generate-poster') {
-    markSample(first.choices[2], 'system-failure', 'Something went wrong.')
+    markSample(first.choices[2], 'system-failure', '出了点问题。')
   }
 }
 

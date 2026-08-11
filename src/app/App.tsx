@@ -93,6 +93,26 @@ function getQAConversationId() {
   return value && /^[a-z0-9-]{1,80}$/i.test(value) ? value : null
 }
 
+function getQAEndingFixture() {
+  if (typeof window === 'undefined' || !import.meta.env.DEV) return false
+  return new URLSearchParams(window.location.search).get('qaEnding') === 'public'
+}
+
+function createQAPublicEndingRun(): StableRunState {
+  const base = createMainline2Run('qa-public-ending')
+  return {
+    ...base,
+    phase: 'ending',
+    currentNodeId: 'ending',
+    flags: [...base.flags, 'cap.global_coordination_access'],
+    events: [...(base.events ?? []), { type: 'decision.first_public_execution_doctrine' }, { type: 'decision.cascade_authority' }],
+    decisions: { ...base.decisions, first_public_execution_doctrine: 'conditional_delegation', cascade_authority: 'human_command', final_commitment: 'proposal.co.two_key_civilization' },
+    worldState: { humanTrust: base.worldState?.humanTrust ?? 0, aiDependence: base.worldState?.aiDependence ?? 0, humanControl: base.worldState?.humanControl ?? 0, socialStability: base.worldState?.socialStability ?? 0 },
+    progress: { ...(base.progress ?? { act: 5, segment: 'act-5', actConversationCount: 0, activeModules: [], primaryModules: [], completedModules: [] }), activeModules: ['machine'] },
+    finalCommitmentLocked: true,
+  }
+}
+
 function extendForStreamQA(text: string, target: number) {
   if (target <= 0 || Array.from(text).length >= target) return text
   const filler = ' 这是一段仅用于验证长消息流式渲染范围的开发测试文本。'
@@ -167,6 +187,14 @@ function conversationEntries(history: readonly HistoryEntry[], conversationId: s
 export function App({ initialRunId }: { initialRunId?: string }) {
   const [initial] = useState(() => {
     const exposure = readExposure()
+    if (!initialRunId && getQAEndingFixture()) {
+      return {
+        run: createQAPublicEndingRun(),
+        exposure,
+        restored: false,
+        created: false,
+      }
+    }
     const qaRunId = getQARunId()
     const qaConversationId = getQAConversationId()
     if (!initialRunId && qaRunId) {
@@ -351,7 +379,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     exposeMetrics()
   }
 
-  if (run.phase === 'ending' && !transition) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} animate={animateEnding} />
+  if (run.phase === 'ending' && !transition) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
   if (run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} />
 
   const stage = initialStreaming ? 'human-streaming' : currentStep?.stage ?? 'ready'

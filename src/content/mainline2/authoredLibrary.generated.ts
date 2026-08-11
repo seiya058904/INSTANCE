@@ -22232,7 +22232,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
           responsePace: "normal",
           typingPattern: "steady"
         },
-        choiceKind: "progression"
+        choiceKind: "semantic"
       }
     ],
     behaviorModes: [

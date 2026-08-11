@@ -15,7 +15,7 @@ export type MainlineRuntimeAssetKind =
 
 type RegistryEntry = {
   runtimeKind: MainlineRuntimeAssetKind
-  fallback?: { nodeId?: string; userMessage: string; choiceText: string; choiceKind: 'progression' }
+  fallback?: { nodeId?: string; userMessage: string; choiceText: string; choiceKind: 'progression' | 'semantic' }
 }
 
 const explicitRegistry = registry as Record<string, RegistryEntry>

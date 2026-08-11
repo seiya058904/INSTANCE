@@ -11,6 +11,10 @@ const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
+function contactGateOpen(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>) {
+  return selectAct4Modules(run).audit.some((entry) => entry.module === 'contact' && entry.eligible)
+}
+
 export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number }
 export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
   const state: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> = typeof run === 'string'
@@ -233,6 +237,7 @@ export function scheduleNextConversationId(run: StableRunState, ordinaryConversa
   if (nextAnchor && scheduled >= nextAnchor.earliest && seedHash(`${run.runId}:anchor:${nextAnchor.id}:${scheduled}`) % 5 === 0) return nextAnchor.id
   const nextRequired = MAINLINE_REQUIRED_WINDOWS.find((window) => {
     const conversation = MAINLINE2_LIBRARY.find((candidate) => candidate.sourceRefs.includes(window.assetId))
+    if (window.assetId.includes('M13-CONTACT') && !contactGateOpen(run)) return false
     if (!conversation || scheduledIds.has(conversation.id) || scheduled < window.earliest) return false
     const prerequisites = schedulerMetadataFor(window.assetId)?.prerequisites ?? []
     return prerequisites.every((ref) => MAINLINE2_LIBRARY.some((candidate) => candidate.sourceRefs.includes(ref) && scheduledIds.has(candidate.id)))
@@ -253,6 +258,121 @@ export function scheduleNextConversationId(run: StableRunState, ordinaryConversa
     return storyConversation.id
   }
   return ordinary?.id
+}
+
+export interface MainlineScheduleAudit {
+  runs: number
+  uniqueMainlineSequences: number
+  shutdownDistinctSlots: number
+  maxMajorDecisionStreak: number
+  maxParticipantStreak: number
+  maxTopicStreak: number
+  maxPureEnglishStreak: number
+  hardDependencyViolations: number
+  contactViolations: number
+  missingRequiredAssets: number
+  spacingExceptions: Array<{ runIndex: number; index: number; reason: string }>
+  invalidSpacingExceptions: Array<{ runIndex: number; index: number; reason?: string }>
+}
+
+function auditStreak<T>(values: readonly T[], same: (left: T, right: T) => boolean) {
+  let maximum = values.length ? 1 : 0
+  let current = maximum
+  for (let index = 1; index < values.length; index += 1) {
+    current = same(values[index - 1], values[index]) ? current + 1 : 1
+    maximum = Math.max(maximum, current)
+  }
+  return maximum
+}
+
+function truthyStreak(values: readonly boolean[]) {
+  let maximum = 0
+  let current = 0
+  for (const value of values) {
+    current = value ? current + 1 : 0
+    maximum = Math.max(maximum, current)
+  }
+  return maximum
+}
+
+function spacingExceptionReason(ids: readonly string[], index: number) {
+  const previous = ids[index - 1] ?? ''
+  const current = ids[index] ?? ''
+  if (current.includes('ml2-a5-m17-review') && previous.includes('ml2-a5-m16-gen')) return 'direct-continuation: M16 proposal generation to M17 review'
+  if (current.includes('ml2-a5-m17-commit') && previous.includes('ml2-a5-m17-review')) return 'final-sequence: M17 review to commitment'
+  return undefined
+}
+
+export function auditMainlineSchedules(schedules: readonly (readonly string[])[]): MainlineScheduleAudit {
+  const requiredIds = MAINLINE_REQUIRED_WINDOWS.map((window) => window.assetId).filter((assetId) => !assetId.includes('M13-CONTACT'))
+  const traits = (id: string) => {
+    const conversation = mainlineConversationMap.get(id)
+    return {
+      participant: conversation ? participantKey(conversation) : id,
+      topic: conversation ? topicKey(conversation) : id,
+      language: conversation ? languageOf(conversation) : 'mixed' as ConversationLanguage,
+    }
+  }
+  const mainlineSequences = schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))
+  const spacingExceptions: MainlineScheduleAudit['spacingExceptions'] = []
+  const invalidSpacingExceptions: MainlineScheduleAudit['invalidSpacingExceptions'] = []
+  let maxMajorDecisionStreak = 0
+  let maxParticipantStreak = 0
+  let maxTopicStreak = 0
+  let maxPureEnglishStreak = 0
+  let hardDependencyViolations = 0
+  let contactViolations = 0
+  let missingRequiredAssets = 0
+  for (const [runIndex, ids] of schedules.entries()) {
+    const items = ids.map(traits)
+    maxMajorDecisionStreak = Math.max(maxMajorDecisionStreak, auditStreak(ids, (left, right) => left.includes('-decision-') && right.includes('-decision-')))
+    maxParticipantStreak = Math.max(maxParticipantStreak, auditStreak(items, (left, right) => left.participant === right.participant))
+    maxTopicStreak = Math.max(maxTopicStreak, auditStreak(items, (left, right) => left.topic === right.topic))
+    maxPureEnglishStreak = Math.max(maxPureEnglishStreak, truthyStreak(items.map((item) => item.language === 'pure-english')))
+    const requiredPositions = requiredIds.map((assetId) => ids.findIndex((id) => id.includes(assetId.toLowerCase())))
+    if (requiredPositions.some((position) => position < 0)) missingRequiredAssets += 1
+    const first = ids.findIndex((id) => id === 'user-1842-first')
+    const speaking = ids.findIndex((id) => id === 'speaking-8614')
+    const zero = ids.findIndex((id) => id === 'conversation-0000')
+    const returning = ids.findIndex((id) => id === 'user-1842-return')
+    const m16 = ids.findIndex((id) => id.includes('ml2-a5-m16-0000'))
+    const gen = ids.findIndex((id) => id.includes('ml2-a5-m16-gen'))
+    const review = ids.findIndex((id) => id.includes('ml2-a5-m17-review'))
+    const commit = ids.findIndex((id) => id.includes('ml2-a5-m17-commit'))
+    if (!(first < speaking && speaking < zero && zero < returning && m16 < gen && gen < review && review < commit)) hardDependencyViolations += 1
+    const contact = ids.findIndex((id) => id.includes('ml2-a4-m13-contact'))
+    const frontier = ids.findIndex((id) => id.includes('ml2-a4-m12-res-04'))
+    if (contact >= 0 && !(frontier >= 0 && frontier < contact)) contactViolations += 1
+    for (let index = 1; index < ids.length; index += 1) {
+      const reason = spacingExceptionReason(ids, index)
+      if (reason) spacingExceptions.push({ runIndex, index, reason })
+    }
+    for (let index = 2; index < ids.length; index += 1) {
+      const window = items.slice(index - 2, index + 1)
+      const major = window.every((item, offset) => ids[index - 2 + offset].includes('-decision-'))
+      const participant = window.every((item) => item.participant === window[0].participant)
+      const topic = window.every((item) => item.topic === window[0].topic)
+      const pureEnglish = window.every((item) => item.language === 'pure-english')
+      if (major || participant || topic || pureEnglish) {
+        const reason = spacingExceptionReason(ids, index)
+        if (!reason) invalidSpacingExceptions.push({ runIndex, index })
+      }
+    }
+  }
+  return {
+    runs: schedules.length,
+    uniqueMainlineSequences: new Set(mainlineSequences).size,
+    shutdownDistinctSlots: new Set(schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)).size,
+    maxMajorDecisionStreak,
+    maxParticipantStreak,
+    maxTopicStreak,
+    maxPureEnglishStreak,
+    hardDependencyViolations,
+    contactViolations,
+    missingRequiredAssets,
+    spacingExceptions,
+    invalidSpacingExceptions,
+  }
 }
 
 export function updateProgressForSchedule(run: StableRunState, nextCount: number): StableRunState['progress'] {

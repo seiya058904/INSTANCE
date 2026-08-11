@@ -243,6 +243,9 @@ button { font: inherit; }
 .ending-continue { margin-top: 34px; padding: 11px 18px; border: 1px solid #5f5248; border-radius: 8px; background: transparent; color: #d5c8bb; font-size: 11px; cursor: pointer; transition: border-color 140ms ease, background 140ms ease; }
 .ending-continue:hover { border-color: #a27359; background: rgba(180,112,75,.08); }
 .ending-continue:disabled { opacity: .32; cursor: default; border-color: #49433d; background: transparent; }
+.ending-new-game { margin-top: 34px; padding: 11px 18px; border: 1px solid rgba(232,207,181,.22); border-radius: 8px; background: rgba(255,255,255,.035); color: #d5c8bb; font-size: 11px; cursor: pointer; }
+.ending-new-game:hover { border-color: #a27359; background: rgba(180,112,75,.08); }
+.ending-new-game:focus-visible { outline: 2px solid #d29772; outline-offset: 3px; }
 .ending-continue:focus-visible, .restart-button:focus-visible { outline: 2px solid #d29772; outline-offset: 3px; }
 .ending-status { position: relative; width: min(920px, calc(100% - 48px)); margin: 0 auto 26px; display: flex; align-items: center; gap: 8px; color: #746f67; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; z-index: 2; }
 .ending-status span { width: 5px; height: 5px; border-radius: 50%; background: #809879; }

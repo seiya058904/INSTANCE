@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { ordinaryConversationPool, getManifestConversation } from '../runManifest'
 import { createMainline2Run } from '../../game/engine'
 import { classifyConversationLanguage } from '../../game/languagePacing'
-import { scheduleNextConversationId, updateProgressForSchedule } from './scheduler'
+import { auditMainlineSchedules, scheduleNextConversationId, updateProgressForSchedule } from './scheduler'
 import type { StableRunState } from '../../game/types'
 
 function schedule(runId: string) {
@@ -128,5 +128,23 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(missingRequired).toBe(0)
     expect(dependencyViolations).toBe(0)
     expect(maxPureEnglishOrdinary).toBeLessThanOrEqual(2)
+  }, 30000)
+
+  it('reports complete scheduler audit fields including CONTACT and spacing exceptions', () => {
+    const schedules = Array.from({ length: 100 }, (_, index) => schedule(`audit-fields-${String(index).padStart(3, '0')}`))
+    const audit = auditMainlineSchedules(schedules)
+    console.log(JSON.stringify(audit))
+
+    expect(schedules.every((ids) => ids.every((id) => !id.includes('ml2-a4-m13-contact')))).toBe(true)
+    expect(audit.contactViolations).toBe(0)
+    expect(audit.hardDependencyViolations).toBe(0)
+    expect(audit.missingRequiredAssets).toBe(0)
+    expect(audit.maxMajorDecisionStreak).toBeLessThanOrEqual(2)
+    expect(audit.maxParticipantStreak).toBeLessThanOrEqual(2)
+    expect(audit.maxTopicStreak).toBeLessThanOrEqual(2)
+    expect(audit.maxPureEnglishStreak).toBeLessThanOrEqual(2)
+    expect(audit.invalidSpacingExceptions).toEqual([])
+    expect(audit.uniqueMainlineSequences).toBeGreaterThanOrEqual(20)
+    expect(audit.shutdownDistinctSlots).toBeGreaterThanOrEqual(2)
   }, 30000)
 })

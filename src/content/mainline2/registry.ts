@@ -71,6 +71,7 @@ function adapt(conversation: ConversationDefinition): ConversationDefinition {
     ...conversation,
     nodes: conversation.nodes.map((node) => ({
       ...node,
+      choiceKind: intendedRoleChoices(conversation, node) ? 'semantic' : node.choiceKind,
       choices: (intendedRoleChoices(conversation, node) ?? node.choices).map((choice) => ({
         ...choice,
         mutations: [...(choice.mutations ?? []), ...(node.choices.some((candidate) => candidate.id === choice.id) ? decisionMutationsForChoice(conversation, choice) : []), ...authoredMutations(ref, choice)],

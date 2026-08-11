@@ -26,7 +26,7 @@ const ending: EndingResult = {
 
 describe('EndingScreen structure', () => {
   it('renders the ending as separate readable information sections', () => {
-    const html = renderToStaticMarkup(<EndingScreen ending={ending} onContinue={() => undefined} animate={false} />)
+    const html = renderToStaticMarkup(<EndingScreen ending={ending} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
 
     expect(html).toContain('最终结局')
     expect(html).toContain('ending-resolution')
@@ -35,6 +35,23 @@ describe('EndingScreen structure', () => {
     expect(html).toContain('人物余波')
     expect(html).toContain('世界余波')
     expect(html).toContain('最后一位用户仍然会回来。')
+    expect(html).toContain('开始新一局')
+    expect(html).not.toContain('Final Resolution')
+    expect(html).not.toContain('Causal Trace')
+    expect(html).not.toContain('Secret overlay')
     expect(html).not.toContain('Why this happened')
+  })
+
+  it('does not leak long English ending copy into the public page', () => {
+    const html = renderToStaticMarkup(<EndingScreen ending={{
+      ...ending,
+      summary: 'The world remains stable because several institutions accepted a shared constraint instead of claiming total authority.',
+      status: 'world stabilized after a long public review',
+      epilogues: ['The remaining political disagreement is now handled through ordinary institutions and public review.'],
+    }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
+
+    expect(html).not.toContain('The world remains stable because')
+    expect(html).not.toContain('The remaining political disagreement')
+    expect(html).toContain('岑遥将继续观察这次选择对人类制度与日常生活造成的长期影响。')
   })
 })

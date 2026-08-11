@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { MAINLINE2_ASSET_COVERAGE, MAINLINE2_LIBRARY } from './registry'
+import { isChineseDominantPlayerText, unexpectedPlayerFacingEnglish } from './playerFacingCopy'
 
 function normalize(value: string) {
   return value.replace(/\s+/g, ' ').trim().toLowerCase()
@@ -43,6 +44,51 @@ describe('Mainline runtime asset boundary', () => {
 
     expect(messages.filter(pureEnglish)).toEqual([])
     expect(choices.filter(pureEnglish)).toEqual([])
+    expect(messages).not.toEqual(expect.arrayContaining([expect.stringMatching(/节点 \d+/)]))
     expect(messages.join('\n')).not.toContain('Select one of these positions.')
+  })
+
+  it('does not leak ordinary English words through the player-facing Mainline layer', () => {
+    const values = MAINLINE2_LIBRARY.flatMap((conversation) => conversation.nodes.flatMap((node) => [
+      node.conversationTitle,
+      node.conversationTitleAfterMessage ?? '',
+      node.userMessage,
+      ...(node.userMessages ?? []),
+      ...node.choices.map((choice) => choice.text),
+    ]))
+    const leaks = values.flatMap((value) => unexpectedPlayerFacingEnglish(value))
+
+    expect(leaks).toEqual([])
+  })
+
+  it('keeps long player-facing Mainline text Chinese-dominant', () => {
+    const values = MAINLINE2_LIBRARY.flatMap((conversation) => conversation.nodes.flatMap((node) => [
+      node.userMessage,
+      ...(node.userMessages ?? []),
+      ...node.choices.map((choice) => choice.text),
+    ]))
+
+    expect(values.filter((value) => value.length >= 24 && !isChineseDominantPlayerText(value))).toEqual([])
+  })
+
+  it('rejects duplicate visible choices within one node', () => {
+    const duplicates = MAINLINE2_LIBRARY.flatMap((conversation) => conversation.nodes.flatMap((node) => {
+      const normalized = node.choices.map((choice) => normalize(choice.text))
+      return normalized.filter((text, index) => normalized.indexOf(text) !== index).map((text) => `${conversation.sourceRefs[0]}:${node.id}:${text}`)
+    }))
+
+    expect(duplicates).toEqual([])
+  })
+
+  it('keeps late-game decisions multi-directional and progression nodes single-action', () => {
+    const lateGame = MAINLINE2_LIBRARY.filter((conversation) => /ML2-A4-M15-|ML2-A5-M16-|ML2-A5-M17-/.test(conversation.sourceRefs[0] ?? ''))
+    for (const conversation of lateGame) {
+      for (const node of conversation.nodes) {
+        expect(node.userMessage).not.toMatch(/节点 \d+/)
+        expect(node.choices.map((choice) => choice.text).join('\n')).not.toMatch(/节点 \d+/)
+        if (node.choiceKind === 'progression') expect(node.choices, `${conversation.sourceRefs[0]}:${node.id}`).toHaveLength(1)
+        if (node.choices.some((choice) => choice.decisionBinding) && node.choiceKind !== 'progression') expect(node.choices.length).toBeGreaterThanOrEqual(2)
+      }
+    }
   })
 })

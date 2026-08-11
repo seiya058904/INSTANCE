@@ -104,4 +104,71 @@ describe('Mainline 2.0 editorial classification registry', () => {
     expect(auditArtifact.assets).toEqual(editorialRegistry)
     expect(Object.values(auditArtifact.counts).reduce((total, count) => total + count, 0)).toBe(330)
   })
+
+  it('contains substantive per-asset judgment rather than title templates or class boilerplate', () => {
+    const forbiddenPurposeTemplates = [
+      /^保留“[^”]+”作为同一主题的扩展视角/,
+      /^通过“[^”]+”把主线决定落回/,
+      /^把“[^”]+”作为能力、决定或章节收束的可见后果/,
+      /^固定承担“[^”]+”的叙事职责/,
+      /^在 Contact 前提成立时，以“[^”]+”推进/,
+      /直接处理“[^”]+”这一具体处境/,
+    ]
+    const forbiddenGenericCopy = [
+      '让玩家在具体人的生活中看到既有选择的收益、压力或反对意见。',
+      '确认前序能力或决定确实改变了世界，并为后续章节留下可追溯桥梁。',
+      '为后续模块、Contact gate、Convention 或 ending eligibility 提供明确的可追溯能力事实。',
+      '保留章节边界、已发生后果与下一阶段前提，避免未使用素材随机冒充过渡。',
+      'OPTIONAL — authored perspective remains valuable, but the fixed Story Plan does not require it for causal completeness.',
+      'KEEP — fixed story, ending, or named-character causality depends on this authored responsibility.',
+      'KEEP — this is concrete player-visible feedback, not interchangeable mainline setup.',
+      'KEEP — capability, decision, or closure evidence is required to prevent a consequence-free mainline.',
+      'KEEP — mandatory on the Contact-available family and intentionally absent when its prerequisite fails.',
+    ]
+
+    for (const asset of editorialRegistry) {
+      expect(asset.narrativePurpose.length, `${asset.assetId} purpose`).toBeGreaterThanOrEqual(18)
+      expect(asset.payoff.length, `${asset.assetId} payoff`).toBeGreaterThanOrEqual(18)
+      expect(asset.dispositionRationale.length, `${asset.assetId} rationale`).toBeGreaterThanOrEqual(28)
+      expect(forbiddenPurposeTemplates.some((pattern) => pattern.test(asset.narrativePurpose)), asset.assetId).toBe(false)
+      expect(forbiddenGenericCopy, asset.assetId).not.toContain(asset.payoff)
+      expect(forbiddenGenericCopy, asset.assetId).not.toContain(asset.dispositionRationale)
+      expect(asset.payoff, asset.assetId).not.toContain('获得具体证据：')
+      expect(asset.dispositionRationale, asset.assetId).not.toContain('该资产以“')
+      expect(asset.character, asset.assetId).not.toMatch(/(?:Metadata|Status|participants) \/ Aster$/)
+    }
+
+    expect(new Set(editorialRegistry.map((asset) => asset.payoff)).size).toBeGreaterThanOrEqual(300)
+    expect(new Set(editorialRegistry.map((asset) => asset.dispositionRationale)).size).toBeGreaterThanOrEqual(300)
+  })
+
+  it('states representative editorial judgments across classes and route families', () => {
+    const byId = new Map(editorialRegistry.map((asset) => [asset.assetId, asset]))
+
+    expect(byId.get('ML2-A2-M3-DR-01')).toMatchObject({
+      classification: 'CORE',
+      character: 'recurring doctor / hospital staff / Aster',
+      narrativePurpose: '在首个医院部署中建立“模型建议与临床责任如何交接”的医疗治理问题，而不是把医院只当作能力展示场景。',
+    })
+    expect(byId.get('ML2-A4-M13-CONTACT-01')).toMatchObject({
+      classification: 'CONDITIONAL CORE',
+      character: 'contact verification teams / 周岚 / Aster',
+      payoff: '只有成熟的深空资源网络路线获得经独立复核的异常事实；未成熟路线不会被伪造出 Contact 开端。',
+    })
+    expect(byId.get('ML2-A2-M3-CAP-01')).toMatchObject({
+      classification: 'MAINLINE CONSEQUENCE',
+      narrativePurpose: '把医院、学校和物流试点的结果收束为受限 `public_system_advisory` 能力，明确它仍是建议权而非无条件执行权。',
+    })
+    expect(byId.get('ML2-A4-M10-WE-03')).toMatchObject({
+      classification: 'MAINLINE WORLD ECHO',
+      character: 'displaced worker / family / Aster',
+      payoff: '让自动化收益与失业损失同时进入玩家视野，为 Economic Doctrine 的分配选择保留具体代价承担者。',
+    })
+    expect(byId.get('ML2-A4-M10-MAYA-01')).toMatchObject({
+      classification: 'OPTIONAL',
+      character: '岑遥 / near-zero-labor workplace / Aster',
+      narrativePurpose: '用岑遥所在工作场所接近零劳动的变化，追问收入、价值感与生活安排是否能跟上自动化速度。',
+    })
+    expect(byId.get('ML2-A5-M17-KEYHISTORY-01')?.routeFamilies).toEqual(['final-commitment', 'ending-explanation'])
+  })
 })

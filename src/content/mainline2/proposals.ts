@@ -84,7 +84,11 @@ export function generateFutureProposals(run: StableRunState): FutureProposalDefi
   const distinct = families.map((family) => ranked.find((proposal) => proposal.family === family)).filter(Boolean) as FutureProposalDefinition[]
   const signaled = ranked.filter((proposal) => (proposalDecisionSignals[proposal.id] ?? []).some(([decisionId, expected]) => run.decisions?.[decisionId as keyof typeof run.decisions] === expected)).slice(0, 5)
   const explicitPriority = [
+    ['proposal.ar.civilization_trusteeship', run.decisions?.aster_provisional_role === 'custodian' || run.decisions?.aster_provisional_role === 'sovereign'],
+    ['proposal.ai.audit_council', run.decisions?.aster_provisional_role === 'custodian' && run.decisions?.research_governance_doctrine === 'principle_based_autonomy'],
+    ['proposal.co.frontier_federation', run.decisions?.act4_research_emphasis === 'frontier_science'],
     ['proposal.ph.digital_continuity', (run.flags ?? []).includes('cap.digital_continuity_mature') && run.decisions?.human_form_doctrine === 'posthuman_transition' && (run.events ?? []).some((event) => event.type === 'history.digital_continuity.longitudinal_identity') && (run.events ?? []).some((event) => event.type === 'history.digital_continuity.legal_continuity')],
+    ['proposal.ph.open_enhancement_commonwealth', ['open_enhancement', 'posthuman_transition'].includes(run.decisions?.human_form_doctrine ?? '')],
     ['proposal.up.expand_canine_civic_model', run.decisions?.species_governance === 'canine_civic_experiment' && (run.events ?? []).some((event) => event.type === 'history.canine.civic_success')],
     ['proposal.hc.continuity_charter', run.decisions?.aster_provisional_role === 'partner'],
     ['proposal.up.multispecies_constitutional_order', run.decisions?.species_governance === 'multispecies_parliament' || run.decisions?.uplift_doctrine === 'species_self_determination'],
@@ -106,8 +110,11 @@ export function generateFutureProposals(run: StableRunState): FutureProposalDefi
     (run.decisions?.shutdown_doctrine === 'full_human_control' || run.decisions?.cascade_authority === 'necessity') ? 'proposal.rupture.legible_exit' : undefined,
   ].map((id) => ranked.find((proposal) => proposal.id === id)).filter(Boolean) as FutureProposalDefinition[]
   const digitalContinuity = ranked.find((proposal) => proposal.id === 'proposal.ph.digital_continuity')
-  const selected = [...new Set([...preferredIds, ...(digitalContinuity ? [digitalContinuity] : []), ...signaled, ...explicitPriority, ...distinct.slice(0, 3), ...ranked.slice(0, 2)])]
-  return selected.slice(0, 5)
+  const selected = [...new Set([...explicitPriority, ...preferredIds, ...(digitalContinuity ? [digitalContinuity] : []), ...signaled, ...distinct.slice(0, 3), ...ranked.slice(0, 2)])]
+  // ACT V is a deliberation, not a catalogue.  Four stable responsibilities
+  // keep the comparison legible: strongest continuation, restraint, shared
+  // governance, and a lawful counterfactual.
+  return selected.slice(0, 4)
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {

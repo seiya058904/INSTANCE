@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { ordinaryConversationPool, getManifestConversation } from '../runManifest'
 import { createMainline2Run } from '../../game/engine'
 import { classifyConversationLanguage } from '../../game/languagePacing'
-import { auditMainlineSchedules, scheduleNextConversationId, updateProgressForSchedule } from './scheduler'
+import { auditMainlineSchedules, scheduleNextConversationId, selectAct4Modules, updateProgressForSchedule } from './scheduler'
 import { MAINLINE2_STORY_PLAN } from './storyPlan'
 import type { StableRunState } from '../../game/types'
 
@@ -67,6 +67,19 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(ids.indexOf('conversation-0000')).toBeLessThan(ids.indexOf('user-1842-return'))
   })
 
+  it('derives civilization maturity from state rather than runId', () => {
+    const state = {
+      flags: ['cap.persistent_subinstances', 'cap.space_resource_network'],
+      events: [{ type: 'contact-seed:deep-space-anomaly' }, { type: 'history.space.frontier_maturity' }],
+      decisions: { act4_research_emphasis: 'frontier_science', replication_doctrine: 'free_replication' },
+      worldState: { humanTrust: 1, aiDependence: 1, humanControl: 0, socialStability: 0 },
+    }
+    const left = selectAct4Modules({ ...state, runId: 'ordinary-seed-a' })
+    const right = selectAct4Modules({ ...state, runId: 'ordinary-seed-b' })
+    expect(left.activeModules).toEqual(right.activeModules)
+    expect(left.primaryModules).toEqual(right.primaryModules)
+  })
+
   it('avoids three consecutive pure-English ordinary conversations when alternatives exist', () => {
     const traits = conversationTraits(schedule('language-seed'))
     for (let index = 2; index < traits.length; index += 1) {
@@ -121,7 +134,7 @@ describe('Mainline 2.0 scheduler polish', () => {
       const slot = MAINLINE2_STORY_PLAN[index]
       return slot?.kind === 'mainline' && !slot.requires
     }).join('|'))
-    const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a4-m7-decision-02'))).filter((index) => index >= 0)
+    const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)
     expect(new Set(mainlineSequences).size).toBe(1)
     expect(new Set(shutdownSlots).size).toBe(1)
     expect(maxMajorDecision).toBeLessThanOrEqual(2)

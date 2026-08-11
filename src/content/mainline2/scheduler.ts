@@ -44,9 +44,10 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   add('uplift', Math.max(0, world.humanTrust), 'World State trust')
   add('machine', Math.max(0, world.aiDependence), 'World State dependence')
   const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
-  const tie = (module: ModuleId) => `${state.runId}:${module}`.split('').reduce((sum, char) => (sum * 33 + char.charCodeAt(0)) >>> 0, 17)
   const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
-  const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
+  // Maturity is part of the player-visible world state.  Stable registry order
+  // resolves equal evidence; runId is reserved for Ordinary conversation picks.
+  const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || MODULE_IDS.indexOf(left) - MODULE_IDS.indexOf(right))
   const emphasisPriority: Record<string, ModuleId[]> = {
     computation_ai: ['machine', 'space', 'security'],
     life_mind: ['ascension', 'uplift'],
@@ -306,7 +307,7 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
   return {
     runs: schedules.length,
     uniqueMainlineSequences: new Set(mainlineSequences).size,
-    shutdownDistinctSlots: new Set(schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a4-m7-decision-02'))).filter((index) => index >= 0)).size,
+    shutdownDistinctSlots: new Set(schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)).size,
     maxMajorDecisionStreak,
     maxParticipantStreak,
     maxTopicStreak,

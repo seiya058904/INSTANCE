@@ -66,11 +66,11 @@ describe('Mainline 2.0 runtime', () => {
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)
   }, 60000)
 
-  it('generates three to five player-facing proposals without ending titles', () => {
+  it('generates exactly four deterministic player-facing proposals without ending titles', () => {
     const run = complete('proposal-fixture').run
     const proposals = generateFutureProposals(run)
-    expect(proposals.length).toBeGreaterThanOrEqual(3)
-    expect(proposals.length).toBeLessThanOrEqual(5)
+    expect(proposals).toHaveLength(4)
+    expect(generateFutureProposals({ ...run, runId: 'proposal-fixture-other-run-id' })).toEqual(proposals)
     expect(proposals.every((proposal) => !PUBLIC_WORLD_ENDINGS.some((ending) => proposal.title.toUpperCase().includes(ending.toUpperCase())))).toBe(true)
   })
 

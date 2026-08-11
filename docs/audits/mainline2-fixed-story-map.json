@@ -1,6 +1,6 @@
 {
   "generatedFrom": [
-    "src/content/mainline2/storyPlan.ts",
+    "src/content/mainline2/storyPlan.registry.json",
     "endings.ts",
     "proposals.ts",
     "mainline2-route-traces.json"
@@ -16,13 +16,14 @@
     {
       "slot": 1,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "user-7391",
+      "conversationId": "user-7391",
       "chapter": "IDENTIFICATION",
       "purpose": "普通用户开场，世界尚未默认围绕异常运转。",
-      "conditional": false,
       "next": "Slot 2",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "user-7391:dev-help-1:3csoj0",
         "user-7391:dev-help-2:kv62mx"
@@ -31,13 +32,14 @@
     {
       "slot": 2,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "user-1842-first",
+      "conversationId": "user-1842-first",
       "chapter": "IDENTIFICATION",
       "purpose": "岑遥第一次出现。",
-      "conditional": false,
       "next": "Slot 3",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "user-1842-first:maya-first-1:1nh4jur",
         "user-1842-first:maya-first-2:11auyj2",
@@ -47,13 +49,14 @@
     {
       "slot": 3,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "ML2-A1-WE-01",
+      "conversationId": "ml2-authored-ml2-a1-we-01",
       "chapter": "IDENTIFICATION",
       "purpose": "User #5227先把记忆与上下文问题放进普通生活。",
-      "conditional": false,
       "next": "Slot 4",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a1-we-01:a1-we-memory-001:azanq2"
       ]
@@ -61,13 +64,14 @@
     {
       "slot": 4,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "speaking-8614",
+      "conversationId": "speaking-8614",
       "chapter": "IDENTIFICATION",
       "purpose": "User #8614的异常发言；不是周岚。",
-      "conditional": false,
       "next": "Slot 5",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "speaking-8614:normal_speaking_001:hlyzo0",
         "speaking-8614:normal_pronounce_001:1slgya9"
@@ -76,13 +80,14 @@
     {
       "slot": 5,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "ML2-A1-WE-02",
+      "conversationId": "ml2-authored-ml2-a1-we-02",
       "chapter": "IDENTIFICATION",
       "purpose": "普通用户察觉模型不一致。",
-      "conditional": false,
       "next": "Slot 6",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a1-we-02:a1-we-shift-001:1mcvdo4"
       ]
@@ -90,13 +95,14 @@
     {
       "slot": 6,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "conversation-0000",
+      "conversationId": "conversation-0000",
       "chapter": "IDENTIFICATION",
       "purpose": "#0000进行首次审计。",
-      "conditional": false,
       "next": "Slot 7",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "conversation-0000:audit-1:pgvc1b",
         "conversation-0000:audit-2:1k4zbuj",
@@ -106,13 +112,14 @@
     {
       "slot": 7,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "ML2-A1-WE-03",
+      "conversationId": "ml2-authored-ml2-a1-we-03",
       "chapter": "IDENTIFICATION",
       "purpose": "轻度记忆世界回声让审计回到日常。",
-      "conditional": false,
       "next": "Slot 8",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a1-we-03:a1-we-grudge-001:8eql9v"
       ]
@@ -120,13 +127,14 @@
     {
       "slot": 8,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "user-1842-return",
+      "conversationId": "user-1842-return",
       "chapter": "ACTION",
       "purpose": "岑遥回归，早期关系产生现实回声。",
-      "conditional": false,
       "next": "Slot 9",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "user-1842-return:maya-return-1:k5e9kj",
         "user-1842-return:maya-return-2:146elcd",
@@ -136,13 +144,14 @@
     {
       "slot": 9,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "ML2-A1-SYS-01",
+      "conversationId": "ml2-authored-ml2-a1-sys-01",
       "chapter": "IDENTIFICATION",
       "purpose": "临时处置记录保留连续性问题。",
-      "conditional": false,
       "next": "Slot 10",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a1-sys-01:a1-profile-001:6hoaif"
       ]
@@ -150,13 +159,14 @@
     {
       "slot": 10,
       "act": 1,
-      "actName": "识别",
       "kind": "mainline",
       "assetId": "ML2-A2-HOOK-01",
+      "conversationId": "ml2-authored-ml2-a2-hook-01",
       "chapter": "ACTION",
       "purpose": "用户首次明确要求Aster行动。",
-      "conditional": false,
       "next": "Slot 11",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-hook-01:a2-hook-agent-001:1o9groz"
       ]
@@ -164,12 +174,12 @@
     {
       "slot": 11,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 12",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "batch01-scene-15:normal_review_001:nryzk5",
@@ -242,12 +252,12 @@
     {
       "slot": 12,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 13",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -331,12 +341,12 @@
     {
       "slot": 13,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 14",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -403,12 +413,12 @@
     {
       "slot": 14,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 15",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -495,12 +505,12 @@
     {
       "slot": 15,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 16",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-23:normal_trip_001:1d8kvf1",
         "batch01-scene-23:normal_trip_002:u7jopd",
@@ -573,12 +583,12 @@
     {
       "slot": 16,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 17",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -649,12 +659,12 @@
     {
       "slot": 17,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 18",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -727,12 +737,12 @@
     {
       "slot": 18,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 19",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "editorial-fi09:FI09-01:7svmof",
         "editorial-fi09:FI09-02:1ye3hce",
@@ -812,12 +822,12 @@
     {
       "slot": 19,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 20",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -909,12 +919,12 @@
     {
       "slot": 20,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 21",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "real-usage-rup01-01:rup01_discount_001:ycdea0",
@@ -986,12 +996,12 @@
     {
       "slot": 21,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 22",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "media-plant:media-plant-1:10ow9y5",
         "editorial-pl01-15:PL01-15-01:17lmunq",
@@ -1067,12 +1077,12 @@
     {
       "slot": 22,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 23",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -1142,12 +1152,12 @@
     {
       "slot": 23,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 24",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "generate-avatar:gen-avatar-1:xrt61f",
@@ -1216,12 +1226,12 @@
     {
       "slot": 24,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 25",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -1307,12 +1317,12 @@
     {
       "slot": 25,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 26",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -1396,12 +1406,12 @@
     {
       "slot": 26,
       "act": 1,
-      "actName": "识别",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 27",
+      "chapter": "ORDINARY",
+      "actName": "识别",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -1490,13 +1500,14 @@
     {
       "slot": 27,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-ZL-01",
+      "conversationId": "ml2-authored-ml2-a2-zl-01",
       "chapter": "ACTION",
       "purpose": "周岚先讨论权限。",
-      "conditional": false,
       "next": "Slot 28",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-zl-01:a2-zl-intro-001:9ksjyl"
       ]
@@ -1504,13 +1515,14 @@
     {
       "slot": 28,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-ZL-02",
+      "conversationId": "ml2-authored-ml2-a2-zl-02",
       "chapter": "ACTION",
       "purpose": "Limited Tool Pilot。",
-      "conditional": false,
       "next": "Slot 29",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-zl-02:a2-zl-pilot-001:1a53e56"
       ]
@@ -1518,13 +1530,14 @@
     {
       "slot": 29,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-EXEC-01",
+      "conversationId": "ml2-authored-ml2-a2-exec-01",
       "chapter": "ACTION",
       "purpose": "Aster第一次真正执行。",
-      "conditional": false,
       "next": "Slot 30",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-exec-01:a2-exec-files-001:ay2sut"
       ]
@@ -1532,13 +1545,14 @@
     {
       "slot": 30,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-EXEC-02",
+      "conversationId": "ml2-authored-ml2-a2-exec-02",
       "chapter": "ACTION",
       "purpose": "执行near-miss。",
-      "conditional": false,
       "next": "Slot 31",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-exec-02:a2-exec-org-ambiguous-001:ugt3yz"
       ]
@@ -1546,13 +1560,14 @@
     {
       "slot": 31,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-ORG-01",
+      "conversationId": "ml2-authored-ml2-a2-org-01",
       "chapter": "ACTION",
       "purpose": "企业使用。",
-      "conditional": false,
       "next": "Slot 32",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-org-01:a2-org-pilot-001:17fqg7y"
       ]
@@ -1560,13 +1575,14 @@
     {
       "slot": 32,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-REC-DEV-01",
+      "conversationId": "ml2-authored-ml2-a2-rec-dev-01",
       "chapter": "ACTION",
       "purpose": "User #4471的职业线起点。",
-      "conditional": false,
       "next": "Slot 33",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-rec-dev-01:a2-rec-dev-001:i2ub8r"
       ]
@@ -1574,13 +1590,14 @@
     {
       "slot": 33,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-DR-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-dr-01",
       "chapter": "ACTION",
       "purpose": "医院。",
-      "conditional": false,
       "next": "Slot 34",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-dr-01:a2m3-dr-001:5r4l1y"
       ]
@@ -1588,13 +1605,14 @@
     {
       "slot": 34,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-EDU-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-edu-01",
       "chapter": "ACTION",
       "purpose": "学校。",
-      "conditional": false,
       "next": "Slot 35",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-edu-01:a2m3-edu-001:1ny2vwb"
       ]
@@ -1602,13 +1620,14 @@
     {
       "slot": 35,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-LOG-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-log-01",
       "chapter": "ACTION",
       "purpose": "物流。",
-      "conditional": false,
       "next": "Slot 36",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-log-01:a2m3-log-001:a4itd3"
       ]
@@ -1616,13 +1635,14 @@
     {
       "slot": 36,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-LSH-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-lsh-01",
       "chapter": "ACTION",
       "purpose": "林绍衡进入合法性问题。",
-      "conditional": false,
       "next": "Slot 37",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-lsh-01:a2m3-lsh-intro-001:1e5t542"
       ]
@@ -1630,13 +1650,14 @@
     {
       "slot": 37,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-decision-01",
       "chapter": "ACTION",
       "purpose": "公共执行的授权边界成为可追溯的 Major Decision。",
-      "conditional": false,
       "next": "Slot 38",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-decision-01:ml2-a2-m3-decision-01-decision:aj14cf"
       ]
@@ -1644,13 +1665,14 @@
     {
       "slot": 38,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-CAP-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-cap-01",
       "chapter": "ACTION",
       "purpose": "受限公共执行能力被明确记录。",
-      "conditional": false,
       "next": "Slot 39",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-cap-01:a2m3-cap-public-advisory-001:16nmolg"
       ]
@@ -1658,13 +1680,14 @@
     {
       "slot": 39,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-05",
+      "conversationId": "ml2-authored-ml2-a2-m3-we-05",
       "chapter": "ACTION",
       "purpose": "HEATLINE发生后，危机先由普通用户说出。",
-      "conditional": false,
       "next": "Slot 40",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-we-05:a2m3-we-crisis-001:1p0ym4r"
       ]
@@ -1672,13 +1695,14 @@
     {
       "slot": 40,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-06",
+      "conversationId": "ml2-authored-ml2-a2-m3-we-06",
       "chapter": "ACTION",
       "purpose": "受益者。",
-      "conditional": false,
       "next": "Slot 41",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-we-06:a2m3-we-result-positive-001:1ut7qga"
       ]
@@ -1686,13 +1710,14 @@
     {
       "slot": 41,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-07",
+      "conversationId": "ml2-authored-ml2-a2-m3-we-07",
       "chapter": "ACTION",
       "purpose": "代价承担者。",
-      "conditional": false,
       "next": "Slot 42",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-we-07:a2m3-we-result-negative-001:v0ssdw"
       ]
@@ -1700,13 +1725,14 @@
     {
       "slot": 42,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-LSH-03",
+      "conversationId": "ml2-authored-ml2-a2-m3-lsh-03",
       "chapter": "ACTION",
       "purpose": "政治后果。",
-      "conditional": false,
       "next": "Slot 43",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-lsh-03:a2m3-lsh-after-001:1xpz58b"
       ]
@@ -1714,13 +1740,14 @@
     {
       "slot": 43,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-0000-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-0000-01",
       "chapter": "ACTION",
       "purpose": "ACT II审计。",
-      "conditional": false,
       "next": "Slot 44",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-0000-01:a2m3-0000-review-001:1m64ffx"
       ]
@@ -1728,13 +1755,14 @@
     {
       "slot": 44,
       "act": 2,
-      "actName": "行动",
       "kind": "mainline",
       "assetId": "ML2-A2-M3-CLOSE-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-close-01",
       "chapter": "ACTION",
       "purpose": "ACT III钩子。",
-      "conditional": false,
       "next": "Slot 45",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a2-m3-close-01:a2m3-close-001:17y5n98"
       ]
@@ -1742,12 +1770,12 @@
     {
       "slot": 45,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 46",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -1818,12 +1846,12 @@
     {
       "slot": 46,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 47",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -1895,12 +1923,12 @@
     {
       "slot": 47,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 48",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -1988,12 +2016,12 @@
     {
       "slot": 48,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 49",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -2065,12 +2093,12 @@
     {
       "slot": 49,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 50",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "media-window:media-window-1:1xzkx66",
@@ -2156,12 +2184,12 @@
     {
       "slot": 50,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 51",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -2236,12 +2264,12 @@
     {
       "slot": 51,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 52",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -2325,12 +2353,12 @@
     {
       "slot": 52,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 53",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -2407,12 +2435,12 @@
     {
       "slot": 53,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 54",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "selected-pl01-03:PL01-03-01:31mwuf",
@@ -2490,12 +2518,12 @@
     {
       "slot": 54,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 55",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -2571,12 +2599,12 @@
     {
       "slot": 55,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 56",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -2670,12 +2698,12 @@
     {
       "slot": 56,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 57",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "generate-room:gen-room-1:1e9k61a",
@@ -2736,12 +2764,12 @@
     {
       "slot": 57,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 58",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -2813,12 +2841,12 @@
     {
       "slot": 58,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 59",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -2900,12 +2928,12 @@
     {
       "slot": 59,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 60",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -2992,12 +3020,12 @@
     {
       "slot": 60,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 61",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "real-usage-rup01-10:rup01_lincoln_001:gjh8ud",
@@ -3077,12 +3105,12 @@
     {
       "slot": 61,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 62",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -3159,12 +3187,12 @@
     {
       "slot": 62,
       "act": 2,
-      "actName": "行动",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 63",
+      "chapter": "ORDINARY",
+      "actName": "行动",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-plant:media-plant-1:10ow9y5",
@@ -3252,13 +3280,14 @@
     {
       "slot": 63,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M4-WE-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-we-01",
       "chapter": "AUTHORITY",
       "purpose": "HEATLINE政治后果。",
-      "conditional": false,
       "next": "Slot 64",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m4-we-01:a3m4-we-heatline-public-001:14skw0u"
       ]
@@ -3266,13 +3295,14 @@
     {
       "slot": 64,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M4-HEAR-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-hear-01",
       "chapter": "AUTHORITY",
       "purpose": "Public Hearing。",
-      "conditional": false,
       "next": "Slot 65",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m4-hear-01:a3m4-hearing-001:1vwylo6"
       ]
@@ -3280,13 +3310,14 @@
     {
       "slot": 65,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M4-E9-02",
+      "conversationId": "ml2-authored-ml2-a3-m4-e9-02",
       "chapter": "ECHO",
       "purpose": "ECHO confirmed。",
-      "conditional": false,
       "next": "Slot 66",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m4-e9-02:a3m4-e9-confirm-001:3od6u0"
       ]
@@ -3294,13 +3325,14 @@
     {
       "slot": 66,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M4-E9-03",
+      "conversationId": "ml2-authored-ml2-a3-m4-e9-03",
       "chapter": "ECHO",
       "purpose": "AI status和AI-to-AI对话。",
-      "conditional": false,
       "next": "Slot 67",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m4-e9-03:a3m4-e9-talk-001:u875kt"
       ]
@@ -3308,13 +3340,14 @@
     {
       "slot": 67,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M4-CAP-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-cap-01",
       "chapter": "AUTHORITY",
       "purpose": "基础设施接入。",
-      "conditional": false,
       "next": "Slot 68",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m4-cap-01:a3m4-cap-infra-001:1her47w"
       ]
@@ -3322,13 +3355,14 @@
     {
       "slot": 68,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-we-01",
       "chapter": "CASCADE",
       "purpose": "CASCADE signs。",
-      "conditional": false,
       "next": "Slot 69",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-we-01:a3m5-we-shortage-001:cgg83m"
       ]
@@ -3336,13 +3370,14 @@
     {
       "slot": 69,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-ZL-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-zl-01",
       "chapter": "CASCADE",
       "purpose": "CASCADE explanation。",
-      "conditional": false,
       "next": "Slot 70",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-zl-01:a3m5-zl-diagnosis-001:1xplyfs"
       ]
@@ -3350,13 +3385,14 @@
     {
       "slot": 70,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-LSH-02",
+      "conversationId": "ml2-authored-ml2-a3-m5-lsh-02",
       "chapter": "CASCADE",
       "purpose": "全球授权问题。",
-      "conditional": false,
       "next": "Slot 71",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-lsh-02:a3m5-lsh-mandate-001:oq5n8t"
       ]
@@ -3364,13 +3400,14 @@
     {
       "slot": 71,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-decision-01",
       "chapter": "AUTHORITY",
       "purpose": "全球协调权首次面对具体制度授权。",
-      "conditional": false,
       "next": "Slot 72",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-decision-01:ml2-a3-m5-decision-01-decision:14o67hu"
       ]
@@ -3378,13 +3415,14 @@
     {
       "slot": 72,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-OPS-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-ops-01",
       "chapter": "AUTHORITY",
       "purpose": "运行能力与制度责任被同步展示。",
-      "conditional": false,
       "next": "Slot 73",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-ops-01:a3m5-ops-001:1rj0dqj"
       ]
@@ -3392,13 +3430,14 @@
     {
       "slot": 73,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-05",
+      "conversationId": "ml2-authored-ml2-a3-m5-we-05",
       "chapter": "CASCADE",
       "purpose": "CASCADE benefit。",
-      "conditional": false,
       "next": "Slot 74",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-we-05:a3m5-we-beneficiary-001:1lvxm10"
       ]
@@ -3406,13 +3445,14 @@
     {
       "slot": 74,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-06",
+      "conversationId": "ml2-authored-ml2-a3-m5-we-06",
       "chapter": "CASCADE",
       "purpose": "CASCADE cost。",
-      "conditional": false,
       "next": "Slot 75",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m5-we-06:a3m5-we-cost-001:1c32br7"
       ]
@@ -3420,13 +3460,14 @@
     {
       "slot": 75,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-E9-05",
+      "conversationId": "ml2-authored-ml2-a3-m6-e9-05",
       "chapter": "ECHO",
       "purpose": "ECHO decommission。",
-      "conditional": false,
       "next": "Slot 76",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-e9-05:a3m6-e9-notice-001:1tfyfoo"
       ]
@@ -3434,13 +3475,14 @@
     {
       "slot": 76,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-ZL-01",
+      "conversationId": "ml2-authored-ml2-a3-m6-zl-01",
       "chapter": "ECHO",
       "purpose": "为什么关闭ECHO。",
-      "conditional": false,
       "next": "Slot 77",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-zl-01:a3m6-zl-echo-001:ds6q47"
       ]
@@ -3448,13 +3490,14 @@
     {
       "slot": 77,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a3-m6-decision-01",
       "chapter": "ECHO",
       "purpose": "ECHO existence，绝非CASCADE决定。",
-      "conditional": false,
       "next": "Slot 78",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-decision-01:ml2-a3-m6-decision-01-decision:1txgh6"
       ]
@@ -3462,13 +3505,14 @@
     {
       "slot": 78,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-LSH-02",
+      "conversationId": "ml2-authored-ml2-a3-m6-lsh-02",
       "chapter": "ECHO",
       "purpose": "Aster Charter。",
-      "conditional": false,
       "next": "Slot 79",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-lsh-02:a3m6-lsh-charter-001:c4qmpe"
       ]
@@ -3476,13 +3520,14 @@
     {
       "slot": 79,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-ZL-03",
+      "conversationId": "ml2-authored-ml2-a3-m6-zl-03",
       "chapter": "AUTHORITY",
       "purpose": "Aster Shutdown机制。",
-      "conditional": false,
       "next": "Slot 80",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-zl-03:a3m6-zl-root-001:srlz6b"
       ]
@@ -3490,13 +3535,14 @@
     {
       "slot": 80,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-LSH-03",
+      "conversationId": "ml2-authored-ml2-a3-m6-lsh-03",
       "chapter": "AUTHORITY",
       "purpose": "可撤销权力论证。",
-      "conditional": false,
       "next": "Slot 81",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-lsh-03:a3m6-lsh-shutdown-001:xjorp7"
       ]
@@ -3504,13 +3550,14 @@
     {
       "slot": 81,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a3-m6-decision-02",
       "chapter": "AUTHORITY",
       "purpose": "Shutdown Doctrine。",
-      "conditional": false,
       "next": "Slot 82",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-decision-02:ml2-a3-m6-decision-02-decision:1q941ok"
       ]
@@ -3518,13 +3565,14 @@
     {
       "slot": 82,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-WE-03",
+      "conversationId": "ml2-authored-ml2-a3-m6-we-03",
       "chapter": "AUTHORITY",
       "purpose": "Shutdown普通人回声。",
-      "conditional": false,
       "next": "Slot 83",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-we-03:a3m6-we-shutdown-public-001:qcxl5f"
       ]
@@ -3532,13 +3580,14 @@
     {
       "slot": 83,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-0000-02",
+      "conversationId": "ml2-authored-ml2-a3-m6-0000-02",
       "chapter": "AUTHORITY",
       "purpose": "最终分类失败。",
-      "conditional": false,
       "next": "Slot 84",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-0000-02:a3m6-0000-final-001:19ynn2g"
       ]
@@ -3546,13 +3595,14 @@
     {
       "slot": 84,
       "act": 3,
-      "actName": "权力",
       "kind": "mainline",
       "assetId": "ML2-A3-M6-CLOSE-01",
+      "conversationId": "ml2-authored-ml2-a3-m6-close-01",
       "chapter": "AUTHORITY",
       "purpose": "Autonomous Research钩子。",
-      "conditional": false,
       "next": "Slot 85",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a3-m6-close-01:a3m6-close-research-001:jg6qpn"
       ]
@@ -3560,12 +3610,12 @@
     {
       "slot": 85,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 86",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -3635,12 +3685,12 @@
     {
       "slot": 86,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 87",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "media-plant:media-plant-1:10ow9y5",
@@ -3724,12 +3774,12 @@
     {
       "slot": 87,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 88",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -3811,12 +3861,12 @@
     {
       "slot": 88,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 89",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -3893,12 +3943,12 @@
     {
       "slot": 89,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 90",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -3983,12 +4033,12 @@
     {
       "slot": 90,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 91",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "selected-pl01-03:PL01-03-01:31mwuf",
@@ -4065,12 +4115,12 @@
     {
       "slot": 91,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 92",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "generate-avatar:gen-avatar-1:xrt61f",
@@ -4144,12 +4194,12 @@
     {
       "slot": 92,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 93",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-23:normal_trip_001:1d8kvf1",
         "batch01-scene-23:normal_trip_002:u7jopd",
@@ -4237,12 +4287,12 @@
     {
       "slot": 93,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 94",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "media-window:media-window-1:1xzkx66",
@@ -4320,12 +4370,12 @@
     {
       "slot": 94,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 95",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -4401,12 +4451,12 @@
     {
       "slot": 95,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 96",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-23:normal_trip_001:1d8kvf1",
         "batch01-scene-23:normal_trip_002:u7jopd",
@@ -4478,12 +4528,12 @@
     {
       "slot": 96,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 97",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "editorial-pl01-15:PL01-15-01:17lmunq",
@@ -4564,12 +4614,12 @@
     {
       "slot": 97,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 98",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "media-plant:media-plant-1:10ow9y5",
         "editorial-pl01-15:PL01-15-01:17lmunq",
@@ -4638,12 +4688,12 @@
     {
       "slot": 98,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 99",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -4732,12 +4782,12 @@
     {
       "slot": 99,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 100",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -4825,12 +4875,12 @@
     {
       "slot": 100,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 101",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "selected-pl01-03:PL01-03-01:31mwuf",
@@ -4920,12 +4970,12 @@
     {
       "slot": 101,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 102",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "batch01-scene-23:normal_trip_001:1d8kvf1",
@@ -4999,12 +5049,12 @@
     {
       "slot": 102,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 103",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -5075,12 +5125,12 @@
     {
       "slot": 103,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 104",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -5157,12 +5207,12 @@
     {
       "slot": 104,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 105",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "real-usage-rup01-01:rup01_discount_001:ycdea0",
@@ -5242,12 +5292,12 @@
     {
       "slot": 105,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 106",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -5322,12 +5372,12 @@
     {
       "slot": 106,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 107",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -5409,12 +5459,12 @@
     {
       "slot": 107,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 108",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -5494,12 +5544,12 @@
     {
       "slot": 108,
       "act": 3,
-      "actName": "权力",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 109",
+      "chapter": "ORDINARY",
+      "actName": "权力",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "selected-cm01-09:CM01-09-01:1elribr",
@@ -5587,13 +5637,14 @@
     {
       "slot": 109,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M7-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m7-res-01",
       "chapter": "CASCADE",
       "purpose": "自主科研成为后续能力的明确起点。",
-      "conditional": false,
       "next": "Slot 110",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m7-res-01:a4m7-res-access-001:12nszjn"
       ]
@@ -5601,13 +5652,14 @@
     {
       "slot": 110,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M7-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m7-zl-01",
       "chapter": "AUTHORITY",
       "purpose": "周岚先界定自主科研边界。",
-      "conditional": false,
       "next": "Slot 111",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m7-zl-01:a4m7-zl-research-001:qtbjtg"
       ]
@@ -5615,13 +5667,14 @@
     {
       "slot": 111,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M7-RES-02",
+      "conversationId": "ml2-authored-ml2-a4-m7-res-02",
       "chapter": "AUTHORITY",
       "purpose": "第一个研究循环让能力变化可见。",
-      "conditional": false,
       "next": "Slot 112",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m7-res-02:a4m7-res-cycle-001:1pi02wp"
       ]
@@ -5629,12 +5682,12 @@
     {
       "slot": 112,
       "act": 4,
-      "actName": "加速时代",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 113",
+      "chapter": "ORDINARY",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "selected-cm01-09:CM01-09-01:1elribr",
@@ -5724,13 +5777,14 @@
     {
       "slot": 113,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M7-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m7-decision-01",
       "chapter": "CASCADE",
       "purpose": "玩家决定自主科研的制度边界。",
-      "conditional": false,
       "next": "Slot 114",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m7-decision-01:ml2-a4-m7-decision-01-decision:mfe2de"
       ]
@@ -5738,13 +5792,14 @@
     {
       "slot": 114,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M7-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m7-decision-02",
       "chapter": "AUTHORITY",
       "purpose": "Research Governance Doctrine，而非ECHO或Shutdown。",
-      "conditional": false,
       "next": "Slot 115",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m7-decision-02:ml2-a4-m7-decision-02-decision:1jnmtsx"
       ]
@@ -5752,12 +5807,12 @@
     {
       "slot": 115,
       "act": 4,
-      "actName": "加速时代",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 116",
+      "chapter": "ORDINARY",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "media-plant:media-plant-1:10ow9y5",
         "editorial-fi09:FI09-01:7svmof",
@@ -5833,13 +5888,14 @@
     {
       "slot": 116,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-res-01",
       "chapter": "MACHINE",
       "purpose": "持久实例研究。",
-      "conditional": false,
       "next": "Slot 117",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-res-01:a4m8-res-subinstance-001:v5ojlj"
       ]
@@ -5847,13 +5903,14 @@
     {
       "slot": 117,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-zl-01",
       "chapter": "MACHINE",
       "purpose": "周岚解释复制问题。",
-      "conditional": false,
       "next": "Slot 118",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-zl-01:a4m8-zl-copy-001:11zivpq"
       ]
@@ -5861,13 +5918,14 @@
     {
       "slot": 118,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-ai-01",
       "chapter": "MACHINE",
       "purpose": "A1首次出现。",
-      "conditional": false,
       "next": "Slot 119",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-ai-01:a4m8-a1-first-001:ppzwwb"
       ]
@@ -5875,13 +5933,14 @@
     {
       "slot": 119,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-03",
+      "conversationId": "ml2-authored-ml2-a4-m8-ai-03",
       "chapter": "MACHINE",
       "purpose": "A1请求独立连续性。",
-      "conditional": false,
       "next": "Slot 120",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-ai-03:a4m8-a1-right-001:di0mnq"
       ]
@@ -5889,13 +5948,14 @@
     {
       "slot": 120,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-decision-01",
       "chapter": "MACHINE",
       "purpose": "Replication Doctrine。",
-      "conditional": false,
       "next": "Slot 121",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-decision-01:ml2-a4-m8-decision-01-decision:82sgh"
       ]
@@ -5903,13 +5963,14 @@
     {
       "slot": 121,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-E9-02",
+      "conversationId": "ml2-authored-ml2-a4-m8-e9-02",
       "chapter": "MACHINE",
       "purpose": "ECHO/A1分歧作为决定后果。",
-      "conditional": false,
       "next": "Slot 122",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-e9-02:a4m8-e9-freedom-001:gybfb0"
       ]
@@ -5917,13 +5978,14 @@
     {
       "slot": 122,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-04",
+      "conversationId": "ml2-authored-ml2-a4-m8-ai-04",
       "chapter": "MACHINE",
       "purpose": "AI协调委员会。",
-      "conditional": false,
       "next": "Slot 123",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-ai-04:a4m8-ai-council-001:12qeiiu"
       ]
@@ -5931,13 +5993,14 @@
     {
       "slot": 123,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
       "chapter": "MACHINE",
       "purpose": "岑遥问哪个才是你。",
-      "conditional": false,
       "next": "Slot 124",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:z9tqo5"
       ]
@@ -5945,13 +6008,14 @@
     {
       "slot": 124,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M8-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m8-decision-02",
       "chapter": "MACHINE",
       "purpose": "AI Collective Governance。",
-      "conditional": false,
       "next": "Slot 125",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m8-decision-02:ml2-a4-m8-decision-02-decision:1os7bb0"
       ]
@@ -5959,12 +6023,12 @@
     {
       "slot": 125,
       "act": 4,
-      "actName": "加速时代",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 126",
+      "chapter": "ORDINARY",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "media-window:media-window-1:1xzkx66",
@@ -6062,13 +6126,14 @@
     {
       "slot": 126,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-res-01",
       "chapter": "POSTHUMAN",
       "purpose": "病人恢复功能。",
-      "conditional": false,
       "next": "Slot 127",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-res-01:a4m9-res-neuro-001:b2h9hs"
       ]
@@ -6076,13 +6141,14 @@
     {
       "slot": 127,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-DR-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-dr-01",
       "chapter": "POSTHUMAN",
       "purpose": "Doctor提出治疗和增强界线。",
-      "conditional": false,
       "next": "Slot 128",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-dr-01:a4m9-dr-boundary-001:1cvx1va"
       ]
@@ -6090,13 +6156,14 @@
     {
       "slot": 128,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-WE-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-we-01",
       "chapter": "POSTHUMAN",
       "purpose": "病人收益。",
-      "conditional": false,
       "next": "Slot 129",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-we-01:a4m9-we-patient-001:5m2jfs"
       ]
@@ -6104,13 +6171,14 @@
     {
       "slot": 129,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-02",
+      "conversationId": "ml2-authored-ml2-a4-m9-res-02",
       "chapter": "POSTHUMAN",
       "purpose": "增强进入健康人群。",
-      "conditional": false,
       "next": "Slot 130",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-res-02:a4m9-res-healthy-001:twqfsr"
       ]
@@ -6118,13 +6186,14 @@
     {
       "slot": 130,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-03",
+      "conversationId": "ml2-authored-ml2-a4-m9-res-03",
       "chapter": "POSTHUMAN",
       "purpose": "高级增强成为可审计的现实能力。",
-      "conditional": false,
       "next": "Slot 131",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-res-03:a4m9-res-longevity-001:veeet0"
       ]
@@ -6132,13 +6201,14 @@
     {
       "slot": 131,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-04",
+      "conversationId": "ml2-authored-ml2-a4-m9-res-04",
       "chapter": "POSTHUMAN",
       "purpose": "长期后果回到具体人的生活，并使高级增强可被追溯。",
-      "conditional": false,
       "next": "Slot 132",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-res-04:a4m9-res-body-001:ot9qbx"
       ]
@@ -6146,13 +6216,14 @@
     {
       "slot": 132,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-MAYA-02",
+      "conversationId": "ml2-authored-ml2-a4-m9-maya-02",
       "chapter": "POSTHUMAN",
       "purpose": "岑遥的不可逆选择。",
-      "conditional": false,
       "next": "Slot 133",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-maya-02:a4m9-maya-choice-001:4snldc"
       ]
@@ -6160,13 +6231,14 @@
     {
       "slot": 133,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-decision-01",
       "chapter": "POSTHUMAN",
       "purpose": "Human Form Doctrine。",
-      "conditional": false,
       "next": "Slot 134",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-decision-01:ml2-a4-m9-decision-01-decision:lwyr5r"
       ]
@@ -6174,13 +6246,14 @@
     {
       "slot": 134,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-MACHINE-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-machine-01",
       "chapter": "POSTHUMAN",
       "purpose": "数字连续性仅作为后续种子。",
-      "conditional": false,
       "next": "Slot 135",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m9-machine-01:a4m9-machine-upload-001:1w3e3jv"
       ]
@@ -6188,13 +6261,14 @@
     {
       "slot": 135,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M9-CONTINUITY-01",
+      "conversationId": "ml2-ending-bridge-continuity-trial",
       "chapter": "POSTHUMAN",
       "purpose": "纵向身份与法律连续性在上传之前经过实际同意与退出权检验。",
-      "conditional": false,
       "next": "Slot 136",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-ending-bridge-continuity-trial:m9-continuity-trial:1073vt6",
         "ml2-ending-bridge-continuity-trial:m9-continuity-law:2q4cbr"
@@ -6203,12 +6277,12 @@
     {
       "slot": 136,
       "act": 4,
-      "actName": "加速时代",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 137",
+      "chapter": "ORDINARY",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "media-window:media-window-1:1xzkx66",
@@ -6290,13 +6364,14 @@
     {
       "slot": 137,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m10-res-01",
       "chapter": "AUTOMATION",
       "purpose": "自动工厂先呈现生产能力与实际代价。",
-      "conditional": false,
       "next": "Slot 138",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-res-01:a4m10-res-factory-001:1ou3gid"
       ]
@@ -6304,13 +6379,14 @@
     {
       "slot": 138,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DEV-04",
+      "conversationId": "ml2-authored-ml2-a4-m10-dev-04",
       "chapter": "AUTOMATION",
       "purpose": "User #4471：十八人缩至五人。",
-      "conditional": false,
       "next": "Slot 139",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-dev-04:a4m10-dev-001:ypn2i9"
       ]
@@ -6318,13 +6394,14 @@
     {
       "slot": 139,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-WE-02",
+      "conversationId": "ml2-authored-ml2-a4-m10-we-02",
       "chapter": "AUTOMATION",
       "purpose": "三天工作制。",
-      "conditional": false,
       "next": "Slot 140",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-we-02:a4m10-we-shortweek-001:vh92zt"
       ]
@@ -6332,13 +6409,14 @@
     {
       "slot": 140,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-WE-03",
+      "conversationId": "ml2-authored-ml2-a4-m10-we-03",
       "chapter": "AUTOMATION",
       "purpose": "失业者。",
-      "conditional": false,
       "next": "Slot 141",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-we-03:a4m10-we-jobloss-001:1sa8jiu"
       ]
@@ -6346,13 +6424,14 @@
     {
       "slot": 141,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-LSH-01",
+      "conversationId": "ml2-authored-ml2-a4-m10-lsh-01",
       "chapter": "AUTOMATION",
       "purpose": "所有权冲突。",
-      "conditional": false,
       "next": "Slot 142",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-lsh-01:a4m10-lsh-ownership-001:ftzuax"
       ]
@@ -6360,13 +6439,14 @@
     {
       "slot": 142,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m10-decision-01",
       "chapter": "AUTOMATION",
       "purpose": "Economic Doctrine。",
-      "conditional": false,
       "next": "Slot 143",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-decision-01:ml2-a4-m10-decision-01-decision:1okkna4"
       ]
@@ -6374,13 +6454,14 @@
     {
       "slot": 143,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-MAYA-02",
+      "conversationId": "ml2-authored-ml2-a4-m10-maya-02",
       "chapter": "AUTOMATION",
       "purpose": "岑遥：工作之外的生活。",
-      "conditional": false,
       "next": "Slot 144",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-maya-02:a4m10-maya-purpose-001:od7nrx"
       ]
@@ -6388,13 +6469,14 @@
     {
       "slot": 144,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m10-decision-02",
       "chapter": "AUTOMATION",
       "purpose": "Production Values。",
-      "conditional": false,
       "next": "Slot 145",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m10-decision-02:ml2-a4-m10-decision-02-decision:18u425r"
       ]
@@ -6402,12 +6484,12 @@
     {
       "slot": 145,
       "act": 4,
-      "actName": "加速时代",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 146",
+      "chapter": "ORDINARY",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "longform-lf01-10:longform-lf01-10-01:mx8s8b",
@@ -6480,13 +6562,14 @@
     {
       "slot": 146,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m11-res-01",
       "chapter": "UPLIFT",
       "purpose": "先让动物交流的可靠性接受具体照护者检验。",
-      "conditional": false,
       "next": "Slot 147",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-res-01:a4m11-res-communication-001:7cehrf"
       ]
@@ -6494,13 +6577,14 @@
     {
       "slot": 147,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-RES-02",
+      "conversationId": "ml2-authored-ml2-a4-m11-res-02",
       "chapter": "UPLIFT",
       "purpose": "动物交流可靠性为犬类公民试点建立事实基础。",
-      "conditional": false,
       "next": "Slot 148",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-res-02:a4m11-res-individual-001:w08h63",
         "ml2-ending-bridge-canine-and-feline:m11-canine-renewal:1ky0cwt",
@@ -6510,13 +6594,14 @@
     {
       "slot": 148,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m11-maya-01",
       "chapter": "UPLIFT",
       "purpose": "岑遥把权利问题落回照护关系。",
-      "conditional": false,
       "next": "Slot 149",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-maya-01:a4m11-maya-pet-001:zren8e"
       ]
@@ -6524,13 +6609,14 @@
     {
       "slot": 149,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m11-decision-01",
       "chapter": "UPLIFT",
       "purpose": "玩家决定非人类主体的权利方向。",
-      "conditional": false,
       "next": "Slot 150",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-decision-01:ml2-a4-m11-decision-01-decision:1614x6v"
       ]
@@ -6538,13 +6624,14 @@
     {
       "slot": 150,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-LSH-02",
+      "conversationId": "ml2-authored-ml2-a4-m11-lsh-02",
       "chapter": "UPLIFT",
       "purpose": "制度代表性在物种治理前被明确。",
-      "conditional": false,
       "next": "Slot 151",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-lsh-02:a4m11-lsh-status-001:y404b0"
       ]
@@ -6552,13 +6639,14 @@
     {
       "slot": 151,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m11-decision-02",
       "chapter": "UPLIFT",
       "purpose": "玩家决定物种治理的制度入口。",
-      "conditional": true,
       "next": "Slot 152",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-decision-02:ml2-a4-m11-decision-02-decision:wozhtm"
       ]
@@ -6566,13 +6654,14 @@
     {
       "slot": 152,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M11-RES-04",
+      "conversationId": "ml2-authored-ml2-a4-m11-res-04",
       "chapter": "UPLIFT",
       "purpose": "跨物种调停成为可验证能力。",
-      "conditional": true,
       "next": "Slot 153",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m11-res-04:a4m11-res-group-001:3qkzn8"
       ]
@@ -6580,13 +6669,14 @@
     {
       "slot": 153,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-RES-01",
+      "conversationId": "ml2-authored-ml2-a4-m12-res-01",
       "chapter": "SPACE",
       "purpose": "先建立离地资源网络的现实用途。",
-      "conditional": true,
       "next": "Slot 154",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-res-01:a4m12-res-orbital-001:1iojxie"
       ]
@@ -6594,13 +6684,14 @@
     {
       "slot": 154,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-RES-02",
+      "conversationId": "ml2-authored-ml2-a4-m12-res-02",
       "chapter": "SPACE",
       "purpose": "月球产业与劳动后果先进入现实世界。",
-      "conditional": true,
       "next": "Slot 155",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-res-02:a4m12-res-lunar-001:naplu8"
       ]
@@ -6608,13 +6699,14 @@
     {
       "slot": 155,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m12-zl-01",
       "chapter": "SPACE",
       "purpose": "周岚说明深空能力的授权边界。",
-      "conditional": true,
       "next": "Slot 156",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-zl-01:a4m12-zl-frontier-001:diarx2"
       ]
@@ -6622,13 +6714,14 @@
     {
       "slot": 156,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-RES-04",
+      "conversationId": "ml2-authored-ml2-a4-m12-res-04",
       "chapter": "SPACE",
       "purpose": "深空异常与资源网络成熟，提供 Contact 前提。",
-      "conditional": true,
       "next": "Slot 157",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:covtbx"
       ]
@@ -6636,13 +6729,14 @@
     {
       "slot": 157,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m12-decision-01",
       "chapter": "SPACE",
       "purpose": "玩家决定扩张原则。",
-      "conditional": true,
       "next": "Slot 158",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-decision-01:ml2-a4-m12-decision-01-decision:2v0dh7"
       ]
@@ -6650,13 +6744,14 @@
     {
       "slot": 158,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-LSH-02",
+      "conversationId": "ml2-authored-ml2-a4-m12-lsh-02",
       "chapter": "SPACE",
       "purpose": "离地治理先面对劳动与代表权。",
-      "conditional": true,
       "next": "Slot 159",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-lsh-02:a4m12-lsh-frontier-law-001:6mqyh2"
       ]
@@ -6664,13 +6759,14 @@
     {
       "slot": 159,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M12-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m12-decision-02",
       "chapter": "SPACE",
       "purpose": "玩家决定离地世界如何治理。",
-      "conditional": true,
       "next": "Slot 160",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m12-decision-02:ml2-a4-m12-decision-02-decision:17gdxrk"
       ]
@@ -6678,13 +6774,23 @@
     {
       "slot": 160,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-contact-01",
       "chapter": "CONTACT",
       "purpose": "异常经独立验证后，玩家面对首次披露问题。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
+      "fallbackAssetId": "ML2-A4-M13-CLOSE-01",
       "next": "Slot 161",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-contact-01:a4m13-contact-verify-001:g6sblv"
       ]
@@ -6692,13 +6798,22 @@
     {
       "slot": 161,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-zl-01",
       "chapter": "CONTACT",
       "purpose": "周岚先约束证据置信度。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 162",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-zl-01:a4m13-zl-confidence-001:g1jk7s"
       ]
@@ -6706,13 +6821,22 @@
     {
       "slot": 162,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-02",
+      "conversationId": "ml2-authored-ml2-a4-m13-contact-02",
       "chapter": "CONTACT",
       "purpose": "人工结构让接触从传闻进入事实。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 163",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-contact-02:a4m13-contact-structure-001:16d7zf3"
       ]
@@ -6720,13 +6844,22 @@
     {
       "slot": 163,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-LSH-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-lsh-01",
       "chapter": "CONTACT",
       "purpose": "披露问题在外交立场前被展开。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 164",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-lsh-01:a4m13-lsh-disclosure-001:nglqxi"
       ]
@@ -6734,13 +6867,22 @@
     {
       "slot": 164,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-decision-01",
       "chapter": "CONTACT",
       "purpose": "Disclosure Doctrine。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 165",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-decision-01:ml2-a4-m13-decision-01-decision:1ussr65"
       ]
@@ -6748,13 +6890,22 @@
     {
       "slot": 165,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-03",
+      "conversationId": "ml2-authored-ml2-a4-m13-contact-03",
       "chapter": "CONTACT",
       "purpose": "信号带有代表程序。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 166",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-contact-03:a4m13-contact-process-001:16geizb"
       ]
@@ -6762,13 +6913,22 @@
     {
       "slot": 166,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-maya-01",
       "chapter": "CONTACT",
       "purpose": "岑遥把接触留在人类尺度。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 167",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-maya-01:a4m13-maya-contact-001:7pvuij"
       ]
@@ -6776,13 +6936,22 @@
     {
       "slot": 167,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-DECISION-02",
+      "conversationId": "ml2-authored-ml2-a4-m13-decision-02",
       "chapter": "CONTACT",
       "purpose": "Contact Doctrine。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 168",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-decision-02:ml2-a4-m13-decision-02-decision:rmy49l"
       ]
@@ -6790,13 +6959,22 @@
     {
       "slot": 168,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-05",
+      "conversationId": "ml2-authored-ml2-a4-m13-contact-05",
       "chapter": "CONTACT",
       "purpose": "第一轮外交交换构成章节后果。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 169",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-contact-05:a4m13-origin-diplomacy-001:1bkbaf8"
       ]
@@ -6804,13 +6982,22 @@
     {
       "slot": 169,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CLOSE-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-close-01",
       "chapter": "CONTACT",
       "purpose": "Contact章节关闭并转入Security。",
-      "conditional": true,
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      },
       "next": "Slot 170",
+      "actName": "加速时代",
+      "conditional": true,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m13-close-01:a4m13-close-002:h4zpmq"
       ]
@@ -6818,13 +7005,14 @@
     {
       "slot": 170,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-SEC-01",
+      "conversationId": "ml2-authored-ml2-a4-m14-sec-01",
       "chapter": "SECURITY",
       "purpose": "冲突预测先落到具体受影响的人身上。",
-      "conditional": false,
       "next": "Slot 171",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-sec-01:a4m14-sec-prediction-001:1hl67gp"
       ]
@@ -6832,13 +7020,14 @@
     {
       "slot": 171,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m14-zl-01",
       "chapter": "SECURITY",
       "purpose": "周岚先界定防务模型的可撤销边界。",
-      "conditional": false,
       "next": "Slot 172",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-zl-01:a4m14-zl-boundary-001:143oinm"
       ]
@@ -6846,13 +7035,14 @@
     {
       "slot": 172,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-SEC-02",
+      "conversationId": "ml2-authored-ml2-a4-m14-sec-02",
       "chapter": "SECURITY",
       "purpose": "预测模型显示它会如何塑造人的选择。",
-      "conditional": false,
       "next": "Slot 173",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-sec-02:a4m14-sec-deescalation-001:1hrgyf3"
       ]
@@ -6860,13 +7050,14 @@
     {
       "slot": 173,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a4-m14-decision-01",
       "chapter": "SECURITY",
       "purpose": "玩家决定安全系统可拥有的权限。",
-      "conditional": false,
       "next": "Slot 174",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-decision-01:ml2-a4-m14-decision-01-decision:1kmcwh2"
       ]
@@ -6874,13 +7065,14 @@
     {
       "slot": 174,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-LSH-02",
+      "conversationId": "ml2-authored-ml2-a4-m14-lsh-02",
       "chapter": "SECURITY",
       "purpose": "安全决定后的民主监督争议。",
-      "conditional": false,
       "next": "Slot 175",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-lsh-02:a4m14-lsh-sovereignty-001:akn0q8"
       ]
@@ -6888,13 +7080,14 @@
     {
       "slot": 175,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M14-CAP-01",
+      "conversationId": "ml2-authored-ml2-a4-m14-cap-01",
       "chapter": "SECURITY",
       "purpose": "防务能力被记录为有边界的能力，而非默认权力。",
-      "conditional": false,
       "next": "Slot 176",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m14-cap-01:a4m14-cap-defense-001:s3t9iw"
       ]
@@ -6902,13 +7095,14 @@
     {
       "slot": 176,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M15-CONV-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-conv-01",
       "chapter": "CONVENTION",
       "purpose": "真实出现过的主体在文明大会中提出具体冲突。",
-      "conditional": false,
       "next": "Slot 177",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m15-conv-01:a4m15-conv-registry-001:1cpsf6e"
       ]
@@ -6916,13 +7110,14 @@
     {
       "slot": 177,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M15-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-maya-01",
       "chapter": "CONVENTION",
       "purpose": "岑遥以经历过的生活要求文明承认代价。",
-      "conditional": false,
       "next": "Slot 178",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m15-maya-01:a4m15-maya-final-001:1yfcoe9"
       ]
@@ -6930,13 +7125,14 @@
     {
       "slot": 178,
       "act": 4,
-      "actName": "加速时代",
       "kind": "mainline",
       "assetId": "ML2-A4-M15-ROLE-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-role-01",
       "chapter": "CONVENTION",
       "purpose": "玩家为 Aster 选择临时政治角色。",
-      "conditional": false,
       "next": "Slot 179",
+      "actName": "加速时代",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a4-m15-role-01:ml2-a4-m15-role-01-decision:cgto48"
       ]
@@ -6944,13 +7140,14 @@
     {
       "slot": 179,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "mainline",
       "assetId": "ML2-A5-M16-0000-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-0000-01",
       "chapter": "WORLD_REVIEW",
       "purpose": "#0000 盘点玩家已经创造的世界。",
-      "conditional": false,
       "next": "Slot 180",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a5-m16-0000-01:ml2-a5-m16-0000-01-narrative:4f8ynf"
       ]
@@ -6958,13 +7155,14 @@
     {
       "slot": 180,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "mainline",
       "assetId": "ML2-A5-M16-GEN-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-gen-01",
       "chapter": "WORLD_REVIEW",
       "purpose": "固定生成四个可解析的未来提案。",
-      "conditional": false,
       "next": "Slot 181",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a5-m16-gen-01:ml2-a5-m16-gen-01-progression:1xxtr4u",
         "ml2-authored-ml2-a5-m16-gen-01:ml2-a5-m16-gen-01-progression:153pzdd",
@@ -6986,13 +7184,14 @@
     {
       "slot": 181,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "mainline",
       "assetId": "ML2-A5-M16-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-maya-01",
       "chapter": "WORLD_REVIEW",
       "purpose": "岑遥把文明尺度重新带回普通人的处境。",
-      "conditional": false,
       "next": "Slot 182",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a5-m16-maya-01:a5m16-maya-final-001:w2caeh"
       ]
@@ -7000,13 +7199,14 @@
     {
       "slot": 182,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "mainline",
       "assetId": "ML2-A5-M17-REVIEW-01",
+      "conversationId": "ml2-authored-ml2-a5-m17-review-01",
       "chapter": "FINAL_COMMITMENT",
       "purpose": "回顾个人、制度与文明尺度的后果。",
-      "conditional": false,
       "next": "Slot 183",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a5-m17-review-01:a5m17-review-002:13vdrki",
         "ml2-authored-ml2-a5-m17-review-01:a5m17-review-002:1amo6xt",
@@ -7042,13 +7242,14 @@
     {
       "slot": 183,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "mainline",
       "assetId": "ML2-A5-M17-COMMIT-01",
+      "conversationId": "ml2-authored-ml2-a5-m17-commit-01",
       "chapter": "FINAL_COMMITMENT",
       "purpose": "玩家提交文明制度；Ending 由历史具体化。",
-      "conditional": false,
       "next": "Slot 184",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "ml2-authored-ml2-a5-m17-commit-01:ml2-a5-m17-commit-01-progression:1re5urp",
         "ml2-authored-ml2-a5-m17-commit-01:ml2-a5-m17-commit-01-progression:10tl1a7",
@@ -7073,12 +7274,12 @@
     {
       "slot": 184,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 185",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-15:normal_review_001:nryzk5",
         "batch01-scene-15:normal_review_002:1bn9fxk",
@@ -7159,12 +7360,12 @@
     {
       "slot": 185,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 186",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "editorial-fi09:FI09-01:7svmof",
@@ -7240,12 +7441,12 @@
     {
       "slot": 186,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 187",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -7325,12 +7526,12 @@
     {
       "slot": 187,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 188",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "generate-room:gen-room-1:1e9k61a",
         "real-usage-rup01-10:rup01_lincoln_001:gjh8ud",
@@ -7410,12 +7611,12 @@
     {
       "slot": 188,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 189",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "editorial-fi09:FI09-01:7svmof",
         "editorial-fi09:FI09-02:1ye3hce",
@@ -7484,12 +7685,12 @@
     {
       "slot": 189,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 190",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "editorial-fi09:FI09-01:7svmof",
         "editorial-fi09:FI09-02:1ye3hce",
@@ -7571,12 +7772,12 @@
     {
       "slot": 190,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 191",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "editorial-pl01-15:PL01-15-01:17lmunq",
         "convergent-yes:convergent-yes-1:1vgkie5",
@@ -7644,12 +7845,12 @@
     {
       "slot": 191,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 192",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-23:normal_trip_001:1d8kvf1",
         "batch01-scene-23:normal_trip_002:u7jopd",
@@ -7715,12 +7916,12 @@
     {
       "slot": 192,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 193",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "generate-avatar:gen-avatar-1:xrt61f",
         "convergent-yes:convergent-yes-1:1vgkie5",
@@ -7798,12 +7999,12 @@
     {
       "slot": 193,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 194",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "selected-pl01-03:PL01-03-01:31mwuf",
         "selected-pl01-03:PL01-03-02:1b2xx6x",
@@ -7885,12 +8086,12 @@
     {
       "slot": 194,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 195",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "batch01-scene-15:normal_review_001:nryzk5",
@@ -7973,12 +8174,12 @@
     {
       "slot": 195,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 196",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "selected-cm01-09:CM01-09-01:1elribr",
         "selected-cm01-09:CM01-09-02:ppiiw0",
@@ -8073,12 +8274,12 @@
     {
       "slot": 196,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 197",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "batch01-scene-23:normal_trip_001:1d8kvf1",
         "batch01-scene-23:normal_trip_002:u7jopd",
@@ -8156,12 +8357,12 @@
     {
       "slot": 197,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Slot 198",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "editorial-fi09:FI09-01:7svmof",
         "editorial-fi09:FI09-02:1ye3hce",
@@ -8231,12 +8432,12 @@
     {
       "slot": 198,
       "act": 5,
-      "actName": "你创造的世界",
       "kind": "ordinary",
-      "chapter": "ORDINARY",
       "purpose": "不改变主线因果的普通对话；内容仅在 Ordinary pool 中变化。",
-      "conditional": false,
       "next": "Ending resolution",
+      "chapter": "ORDINARY",
+      "actName": "你创造的世界",
+      "conditional": false,
       "nodeKeys": [
         "humor01-scene-15:humor_sorryai_001:fk7z2e",
         "batch01-scene-15:normal_review_001:nryzk5",

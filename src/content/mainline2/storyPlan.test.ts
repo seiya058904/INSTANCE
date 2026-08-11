@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import storyMapSource from '../../../docs/audits/mainline2-fixed-story-map.json'
 import { createMainline2Run } from '../../game/engine'
 import {
   MAINLINE2_STORY_PLAN,
@@ -34,6 +35,15 @@ describe('Mainline 2.0 fixed story plan', () => {
       chapter: 'AUTHORITY',
       decisionId: 'research_governance_doctrine',
     })
+  })
+
+  it('keeps every generated Story Map mainline slot identical to the Runtime Story Plan', () => {
+    const storyMapMainline = (storyMapSource.slots as Array<Record<string, unknown>>)
+      .filter((slot) => slot.kind === 'mainline')
+      .map(({ actName: _actName, conditional: _conditional, nodeKeys: _nodeKeys, ...runtimeSlot }) => runtimeSlot)
+    const runtimeMainline = MAINLINE2_STORY_PLAN.filter((slot) => slot.kind === 'mainline')
+
+    expect(storyMapMainline).toEqual(runtimeMainline)
   })
 
   it('replaces the whole Contact chapter with its close when its prerequisites are absent', () => {

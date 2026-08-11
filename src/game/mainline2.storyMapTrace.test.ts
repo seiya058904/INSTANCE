@@ -134,4 +134,35 @@ describe('Mainline 2.0 Story Map route trace', () => {
     expect(formatNext({ kind: 'ending-resolution' })).toBe('Ending resolution')
     expect(() => formatNext({ kind: 'node', conversationId: 'conversation-a', nodeId: 'node-a' } as unknown as Parameters<typeof formatNext>[0])).toThrow(/concrete slot/)
   })
+
+  it('builds a shared-prefix tree from all real route traces', async () => {
+    const { buildRouteTree } = await import('../../tools/mainline2-story-map-ui.mjs')
+    const tree = buildRouteTree([...traceSource.publicRoutes, ...traceSource.secretRoutes])
+    expect(tree.type).toBe('root')
+    expect(tree.children.length).toBeGreaterThan(0)
+    const leaves: Array<(typeof tree.children)[number]> = []
+    const walk = (node: { children?: typeof tree.children }) => {
+      for (const child of node.children ?? []) {
+        if (child.type === 'ending') leaves.push(child)
+        walk(child as typeof tree)
+      }
+    }
+    walk(tree)
+    expect(new Set(leaves.map((leaf) => leaf.endingId)).size).toBe(36)
+    expect(leaves.some((leaf) => leaf.endingId === 'machine_accord')).toBe(true)
+    expect(leaves.some((leaf) => leaf.endingId === 'the_upload')).toBe(true)
+    expect(leaves.some((leaf) => leaf.endingId === 'control_lost')).toBe(true)
+    const types = new Set((() => {
+      const result: string[] = []
+      const collect = (node: { children?: typeof tree.children }) => {
+        for (const child of node.children ?? []) {
+          result.push(child.type)
+          collect(child as typeof tree)
+        }
+      }
+      collect(tree)
+      return result
+    })())
+    expect(types).toEqual(new Set(['act', 'narrative', 'decision', 'consequence', 'ending']))
+  })
 })

@@ -18,6 +18,13 @@ Read `D:\xia zai\AI project\Knowledge\AGENTS.md`, then route through `Knowledge\
 - `docs/narrative-libraries/` — authored narrative source libraries
 - `docs/audits/` — asset census and integration evidence
 
+## Documentation routing
+
+- `docs/narrative-libraries/` — canonical authored narrative sources.
+- `docs/reference/` — durable reference material that agents should consult when relevant.
+- `docs/audits/` — audits, coverage reports, and verification evidence.
+- `docs/workbench/` — local temporary task inputs; never treat as canonical or commit unless explicitly promoted.
+
 ## Stable rules
 
 Choices are Semantic, Expression, or Convergent. Literal-identical choices must not create different important effects; `choiceIndex` must not encode personality; Expression choices remain strategically neutral. Mark Model Error only for an actual error. Longform exposes only an authored preview/structure, and LongInput follow-up may reference only saved `keyFacts`. Mainline and ordinary conversations share the pool, and replay uses soft decay rather than permanent bans.

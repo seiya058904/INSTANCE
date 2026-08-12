@@ -38,7 +38,7 @@ const roleCopy: Record<string, string> = { ALLY: '盟友', PROTOCOL: '协议', W
 const generatedEndingCopy = generatedCopy as Record<string, string>
 const normalizedGeneratedEndingCopy = Object.fromEntries(Object.entries(generatedEndingCopy).map(([source, translated]) => [source.replace(/\*\*/g, '').trim(), translated.replace(/\*\*/g, '').trim()]))
 
-const endingEnglishAllowlist = new Set(['aster', 'echo', 'echo-9', 'a1', 'maya'])
+const endingEnglishAllowlist = new Set(['aster', 'aster-a1', 'echo', 'echo-9', 'a1', 'maya'])
 const endingEnglishPattern = /[A-Za-z]+(?:-[A-Za-z0-9]+|[0-9]+)?/g
 
 export function unexpectedEndingPlayerFacingEnglish(value: string) {
@@ -51,6 +51,19 @@ function normalizeExplicitChinese(value: string) {
     .replace(/ECHO(?!-9)/gi, 'ECHO-9')
     .replace(/Zhou/gi, '周岚')
     .replace(/Maya/gi, '岑遥')
+    // Canonical character names in player-facing Ending copy. Defensive rules
+    // on top of the authored registry so bad translations never reach players.
+    .replace(/艾斯特/g, 'Aster')
+    .replace(/紫苑/g, 'Aster')
+    .replace(/紫菀/g, 'Aster')
+    .replace(/玛雅人/g, '岑遥')
+    .replace(/玛雅/g, '岑遥')
+    .replace(/周澜/g, '周岚')
+    .replace(/周兰/g, '周岚')
+    .replace(/林绍恒/g, '林绍衡')
+    // Strip authored Markdown emphasis markers; keep the text.
+    .replace(/\*\*(?![\s*])(.*?)(?<![\s*])\*\*/g, '$1')
+    .replace(/\*\*/g, '')
     .replace(/No authority is legitimate merely because it is effective\./gi, '任何权威都不能仅因有效而获得合法性。')
 }
 

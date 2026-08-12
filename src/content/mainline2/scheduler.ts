@@ -175,11 +175,16 @@ function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly Con
   const available = ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id))
   if (!available.length) return undefined
   const recent = run.manifest.conversationIds.slice(-2).map((id) => known.get(id)).filter(Boolean) as ConversationDefinition[]
+  const priorExposure = new Set(run.priorOrdinaryExposure ?? [])
   const score = (conversation: ConversationDefinition) => {
     const participantPenalty = recent.length === 2 && recent.every((item) => participantKey(item) === participantKey(conversation)) ? 100000 : 0
     const topicPenalty = recent.length === 2 && recent.every((item) => topicKey(item) === topicKey(conversation)) ? 50000 : 0
     const languagePenalty = recent.length === 2 && recent.every((item) => languageOf(item) === 'pure-english') && languageOf(conversation) === 'pure-english' ? 75000 : 0
-    return participantPenalty + topicPenalty + languagePenalty - seedHash(`${run.runId}:${run.manifest.conversationIds.length}:${conversation.id}`) / 1000
+    // Cross-run downweighting: content the player already saw in a recent
+    // previous run is penalized so fresh content is preferred, without any
+    // randomness. The current run remains fully deterministic.
+    const exposurePenalty = priorExposure.has(conversation.id) ? 12000 : 0
+    return participantPenalty + topicPenalty + languagePenalty + exposurePenalty - seedHash(`${run.runId}:${run.manifest.conversationIds.length}:${conversation.id}`) / 1000
   }
   let selected = available[0]
   let selectedScore = score(selected)

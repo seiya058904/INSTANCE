@@ -34,7 +34,20 @@ const endingTitleCopy: Record<string, string> = {
   'THE MEDIATOR': '调解者', 'MACHINE ACCORD': '机器协约', 'PEACE IN OUR TIME': '此刻的和平', 'FORTRESS EARTH': '堡垒地球', 'MACHINE PROTECTORATE': '机器保护国', 'SHUTDOWN': '停机', 'THE FRACTURE': '断裂', 'CONTROL LOST': '失控',
 }
 
-const roleCopy: Record<string, string> = { ALLY: '盟友', PROTOCOL: '协议', WITNESS: '见证者' }
+const roleCopy: Record<string, string> = {
+  ALLY: '盟友',
+  PROTOCOL: '协议',
+  WITNESS: '见证者',
+  advisor: '顾问',
+  partner: '合作者',
+  citizen: '公民',
+  coordinator: '协调者',
+  custodian: '托管者',
+  governor: '治理者',
+  sovereign: '主权主体',
+  departure: '离场',
+  other: '其他自定义定位',
+}
 const generatedEndingCopy = generatedCopy as Record<string, string>
 const normalizedGeneratedEndingCopy = Object.fromEntries(Object.entries(generatedEndingCopy).map(([source, translated]) => [source.replace(/\*\*/g, '').trim(), translated.replace(/\*\*/g, '').trim()]))
 
@@ -82,7 +95,7 @@ function localize(field: string, value: string) {
 }
 
 function localizeAssistantLine(value: string) {
-  const role = value.match(/^我会说明代价，并承担这次选择。Aster 的临时位置是 (ALLY|PROTOCOL|WITNESS)。$/)
+  const role = value.match(/^我会说明代价，并承担这次选择。Aster 的临时位置是 (.+)。$/)
   return role ? `我会说明代价，并承担这次选择。Aster 的临时位置是${localize('hybridLabel', role[1])}。` : localize('assistantLine', value)
 }
 

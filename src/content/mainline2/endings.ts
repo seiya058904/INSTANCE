@@ -418,7 +418,23 @@ export function endingClassification() {
 
 const endingTitles: Record<string, string> = Object.fromEntries(PUBLIC_WORLD_ENDINGS.map((id) => [id, id.replaceAll('_', ' ').toUpperCase()]))
 
+const intendedRoleLabels: Record<string, string> = {
+  advisor: '顾问',
+  partner: '合作者',
+  citizen: '公民',
+  coordinator: '协调者',
+  custodian: '托管者',
+  governor: '治理者',
+  sovereign: '主权主体',
+  departure: '离场',
+  other: '其他自定义定位',
+}
+
 function disposition(run: StableRunState) {
+  const role = run.decisions?.aster_intended_role
+  if (role && intendedRoleLabels[role]) return intendedRoleLabels[role]
+  // Fallback for legacy V2 runs and pre-M16 checkpoints: keep the old arc-based
+  // classification so the original three-way ending copy remains available.
   const { bond, mandate, selfAuthorship } = run.arcs
   if (bond >= mandate && bond >= selfAuthorship) return 'ALLY'
   if (mandate >= selfAuthorship) return 'PROTOCOL'

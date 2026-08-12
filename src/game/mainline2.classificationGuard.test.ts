@@ -3,7 +3,7 @@ import {
   HANDOFF_AUTHORED_ASSET_INVENTORY,
   MAINLINE2_AUTHORED_CONVERSATIONS,
 } from '../content/mainline2/authoredLibrary.generated'
-import { ordinaryConversationPool } from '../content/runManifest'
+import { ordinaryConversationPool, MAINLINE_ANCHOR_IDS } from '../content/runManifest'
 import { activeRunConversations } from '../content/activeRun'
 import { ENDING_BRIDGE_CONVERSATIONS } from '../content/mainline2/endingBridges'
 import { PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS } from '../content/mainline2/endings'
@@ -14,16 +14,20 @@ import storyPlanSource from '../content/mainline2/storyPlan.registry.json'
 // ---------------------------------------------------------------------------
 // Classification invariant: every formal content asset belongs to EXACTLY ONE
 // side of { Mainline domain, Non-Mainline pool }.
-//   Mainline    = ML2 authored conversations + ending bridges + legacy mainline
-//                 anchors (activeRun) + endings + proposals.
+//   Mainline    = ML2 authored conversations + ending bridges + the five
+//                 canonical mainline anchors (MAINLINE_ANCHOR_IDS) + endings
+//                 + proposals.
 //   Non-Mainline = ordinaryConversationPool (the curated ordinary pool).
-// Adding an asset that lands on neither side (or on both) fails the suite.
+// A conversation that lands on neither side (unclassified) or on both
+// (overlap) fails the suite. Note: activeRunConversations also contains
+// legacy ordinary content that is NOT a mainline anchor; only the five
+// canonical anchor ids belong to the Mainline domain.
 // ---------------------------------------------------------------------------
 
 const ml2ConversationIds = new Set(MAINLINE2_AUTHORED_CONVERSATIONS.map((conversation) => conversation.id))
 const bridgeConversationIds = new Set(ENDING_BRIDGE_CONVERSATIONS.map((conversation) => conversation.id))
-const legacyAnchorConversationIds = new Set(activeRunConversations.map((conversation) => conversation.id))
 const poolConversationIds = new Set(ordinaryConversationPool.map((conversation) => conversation.id))
+const canonicalAnchorConversationIds: Set<string> = new Set(MAINLINE_ANCHOR_IDS)
 
 const ml2SourceRefs = new Set(MAINLINE2_AUTHORED_CONVERSATIONS.flatMap((conversation) => conversation.sourceRefs ?? []))
 const bridgeSourceRefs = new Set(ENDING_BRIDGE_CONVERSATIONS.flatMap((conversation) => conversation.sourceRefs ?? []))
@@ -33,7 +37,20 @@ const mainlineAssetIds: Set<string> = new Set(HANDOFF_AUTHORED_ASSET_INVENTORY.m
 const endingIds: Set<string> = new Set([...PUBLIC_WORLD_ENDINGS, ...Object.keys(SECRET_ENDINGS)])
 const proposalIds: Set<string> = new Set(getFutureProposalDefinitions().map((proposal) => proposal.id))
 
-const mainlineConversationDomain = new Set([...ml2ConversationIds, ...bridgeConversationIds, ...legacyAnchorConversationIds])
+const mainlineConversationDomain = new Set([...ml2ConversationIds, ...bridgeConversationIds, ...canonicalAnchorConversationIds])
+
+// Canonical formal-conversation universe: every conversation the runtime can
+// load today (ML2 authored + ending bridges + canonical anchors + ordinary
+// pool). Unregistered content that is not part of this universe (e.g. legacy
+// vertical-slice conversations) is not a current runtime conversation and is
+// deliberately excluded below, with an explicit guard that none of it leaks
+// into the Mainline domain.
+const canonicalConversationUniverse = new Set([
+  ...ml2ConversationIds,
+  ...bridgeConversationIds,
+  ...canonicalAnchorConversationIds,
+  ...poolConversationIds,
+])
 
 describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
   it('keeps ML2 conversations and the ordinary pool disjoint by conversation id', () => {
@@ -63,6 +80,39 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
     }
   })
 
+  it('does not treat legacy ordinary activeRun conversations as mainline anchors', () => {
+    // activeRunConversations contains legacy ordinary content (batch01-food,
+    // user-0024, batch01-photos, ...) alongside the five canonical anchors.
+    // Only MAINLINE_ANCHOR_IDS belong to the Mainline domain; the rest must
+    // not be smuggled in as anchors.
+    const activeRunIds = new Set(activeRunConversations.map((conversation) => conversation.id))
+    const anchorInActiveRun = [...canonicalAnchorConversationIds].filter((id) => activeRunIds.has(id))
+    expect(anchorInActiveRun).toEqual([...MAINLINE_ANCHOR_IDS])
+    const nonAnchorActiveRun = [...activeRunIds].filter((id) => !canonicalAnchorConversationIds.has(id))
+    const leaked = nonAnchorActiveRun.filter((id) => mainlineConversationDomain.has(id))
+    expect(leaked).toEqual([])
+    expect(nonAnchorActiveRun.length).toBeGreaterThan(0)
+  })
+
+  it('covers every canonical conversation on exactly one side (no unclassified, no overlap)', () => {
+    // A conversation that is part of the canonical runtime universe must land
+    // on exactly one side. This catches both double registration (overlap)
+    // and content that was never registered anywhere (unclassified), because
+    // the universe is derived from the runtime sources themselves.
+    const side = new Map<string, string[]>()
+    const register = (id: string, label: string) => side.set(id, [...(side.get(id) ?? []), label])
+    for (const id of ml2ConversationIds) register(id, 'mainline')
+    for (const id of bridgeConversationIds) register(id, 'mainline-bridge')
+    for (const id of canonicalAnchorConversationIds) register(id, 'mainline-anchor')
+    for (const id of poolConversationIds) register(id, 'non-mainline')
+    const unclassified = [...canonicalConversationUniverse].filter((id) => !side.has(id))
+    expect(unclassified).toEqual([])
+    const overlaps = [...side.entries()].filter(([, labels]) => labels.length > 1)
+    expect(overlaps).toEqual([])
+    expect(canonicalConversationUniverse.size).toBeGreaterThan(0)
+    expect(poolConversationIds.size).toBe(194)
+  })
+
   it('keeps every Story Plan mainline slot inside the authored inventory or bridge domain', () => {
     const mainlineSlots = storyPlanSource.slots.filter((slot) => slot.kind === 'mainline')
     const bridgeDomain = new Set(bridgeSourceRefs)
@@ -87,24 +137,9 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
   })
 
   it('does not place the curated ordinary pool inside the Mainline domain', () => {
-    const mainlineConversationIds = new Set([...ml2ConversationIds, ...bridgeConversationIds])
+    const mainlineConversationIds = new Set([...ml2ConversationIds, ...bridgeConversationIds, ...canonicalAnchorConversationIds])
     const overlap = [...poolConversationIds].filter((id) => mainlineConversationIds.has(id))
     expect(overlap).toEqual([])
-  })
-
-  it('enforces exactly-one-side coverage over the formal conversation domain', () => {
-    // Every formal conversation definition must land on exactly one side:
-    // ML2 authored | ending bridge | ordinary pool. Duplicate registration
-    // (both sides) or unregistered content is a structural failure.
-    const seen = new Map<string, string[]>()
-    for (const id of ml2ConversationIds) seen.set(id, [...(seen.get(id) ?? []), 'mainline'])
-    for (const id of bridgeConversationIds) seen.set(id, [...(seen.get(id) ?? []), 'mainline-bridge'])
-    for (const id of poolConversationIds) seen.set(id, [...(seen.get(id) ?? []), 'non-mainline'])
-    for (const [id, sides] of seen) {
-      expect(sides, id).toHaveLength(1)
-    }
-    expect(ml2ConversationIds.size).toBeGreaterThan(0)
-    expect(poolConversationIds.size).toBeGreaterThan(0)
   })
 
   it('keeps the curated ordinary pool exactly at the reconciled size', () => {

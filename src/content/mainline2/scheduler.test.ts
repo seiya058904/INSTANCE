@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { ordinaryConversationPool, getManifestConversation } from '../runManifest'
-import { createMainline2Run } from '../../game/engine'
+import { ordinaryConversationPool, getManifestConversation, createEmptyExposureHistory, recordRunExposure } from '../runManifest'
+import { createMainline2Run, commitChoice, resolveScene } from '../../game/engine'
 import { classifyConversationLanguage } from '../../game/languagePacing'
 import { auditMainlineSchedules, scheduleNextConversationId, selectAct4Modules, updateProgressForSchedule } from './scheduler'
 import { MAINLINE2_STORY_PLAN } from './storyPlan'
@@ -173,4 +173,68 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(audit.uniqueMainlineSequences).toBe(1)
     expect(audit.shutdownDistinctSlots).toBe(1)
   }, 30000)
+})
+
+function advanceToSlot(run: StableRunState, targetConversationCount: number) {
+  let current = run
+  let guard = 0
+  while (current.manifest.conversationIds.length < targetConversationCount && current.phase === 'playing' && guard < 60) {
+    const scene = resolveScene(current)
+    current = commitChoice(current, scene.choices[0].id)
+    guard += 1
+  }
+  return current
+}
+
+describe('cross-run ordinary exposure downweighting', () => {
+  // Slot 10 is the first ordinary breathing slot in the 190-slot plan.
+  const FIRST_ORDINARY_SLOT = 10
+
+  it('A: a completed run records its actually played ordinary conversations and the next run reads them', () => {
+    let run = createMainline2Run('record-run-a')
+    run = advanceToSlot(run, FIRST_ORDINARY_SLOT)
+    expect(run.manifest.ordinaryConversationIds.length).toBeGreaterThan(0)
+    const exposure = recordRunExposure(createEmptyExposureHistory(), run.manifest)
+    expect(exposure.recentRuns.at(-1)?.ordinaryConversationIds).toEqual(run.manifest.ordinaryConversationIds)
+    const nextRun = createMainline2Run('record-run-a-next', exposure)
+    expect(nextRun.priorOrdinaryExposure).toEqual(expect.arrayContaining(run.manifest.ordinaryConversationIds))
+  })
+
+  it('B: recently played ordinary conversations are downweighted versus fresh content at the same slot', () => {
+    const base = createMainline2Run('downweight-seed')
+    const atSlot = advanceToSlot(base, FIRST_ORDINARY_SLOT)
+    // advanceToSlot leaves the first ordinary slot already scheduled inside the
+    // manifest; the next scheduleNextConversationId call resolves the FOLLOWING
+    // ordinary slot, and the manifest's own ordinary ledger is the exposure a
+    // completed run would record.
+    const playedOrdinary = atSlot.manifest.ordinaryConversationIds
+    expect(playedOrdinary.length).toBeGreaterThan(0)
+    const nextId = scheduleNextConversationId(atSlot, ordinaryConversationPool)
+    expect(nextId).toBeTruthy()
+    // Same run, same slot, but the ordinary this run already played is now
+    // prior exposure: the scheduler must prefer something else if an
+    // alternative exists.
+    const withRecent: StableRunState = { ...atSlot, priorOrdinaryExposure: [...playedOrdinary] }
+    const nextWithRecent = scheduleNextConversationId(withRecent, ordinaryConversationPool)
+    expect(nextWithRecent).toBeTruthy()
+    expect(playedOrdinary.includes(nextWithRecent!)).toBe(false)
+  })
+
+  it('C: same runId + same exposure input yields the same ordinary sequence', () => {
+    const run = createMainline2Run('deterministic-exposure')
+    const atSlot = advanceToSlot(run, FIRST_ORDINARY_SLOT)
+    const first = scheduleNextConversationId(atSlot, ordinaryConversationPool)
+    const second = scheduleNextConversationId({ ...atSlot, priorOrdinaryExposure: ['batch01-scene-01'] }, ordinaryConversationPool)
+    const third = scheduleNextConversationId({ ...atSlot, priorOrdinaryExposure: ['batch01-scene-01'] }, ordinaryConversationPool)
+    expect(second).toBe(third)
+    expect(first).toBe(scheduleNextConversationId(atSlot, ordinaryConversationPool))
+  })
+
+  it('D: creating a new run does not fabricate a fake empty completed-exposure run', () => {
+    const fresh = createEmptyExposureHistory()
+    const run = createMainline2Run('fresh-run-d')
+    expect(run.manifest.ordinaryConversationIds).toEqual([])
+    const recorded = recordRunExposure(fresh, run.manifest)
+    expect(recorded).toEqual(fresh)
+  })
 })

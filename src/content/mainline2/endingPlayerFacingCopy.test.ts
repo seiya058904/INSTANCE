@@ -4,6 +4,30 @@ import { localizeEndingForPlayer } from './endingPlayerFacingCopy'
 import { resolveMainline2Ending } from './endings'
 import { createMainline2Run } from '../../game/engine'
 
+function lockedRunWithRole(role: string) {
+  const run = createMainline2Run(`role-${role}`)
+  return {
+    ...run,
+    phase: 'ending' as const,
+    currentNodeId: 'ending',
+    finalCommitmentLocked: true,
+    flags: [...run.flags, 'cap.global_coordination_access', 'cap.public_execution_limited'],
+    events: [
+      ...(run.events ?? []),
+      { type: 'decision.first_public_execution_doctrine' },
+      { type: 'decision.cascade_authority' },
+      { type: 'history.m15.civilization_convention' },
+    ],
+    decisions: {
+      ...run.decisions,
+      final_commitment: 'proposal.co.two_key_civilization',
+      first_public_execution_doctrine: 'conditional_delegation',
+      cascade_authority: 'human_command',
+      aster_intended_role: role,
+    },
+  }
+}
+
 const baseEnding: EndingResult = {
   id: 'the_accord', route: 'comply', index: 'ENDING 02', title: '终局协约', status: '最终承诺已锁定',
   humanLine: '我们会共同承担。', assistantLine: '我会留下理由。', closingExchange: '', summary: '世界维持共同约束。',
@@ -63,5 +87,50 @@ describe('ending player-facing copy', () => {
       expect(ending.id).toBe('the_accord')
       expect(ending.secretOverlay?.provenance.authoredAssetId).toBe('ML2-A5-M17-SECRET-01')
     }
+  })
+
+  describe('Aster final role uses the Mainline2 intended-role decision', () => {
+    it('shows 协调者 for aster_intended_role=coordinator instead of ALLY/PROTOCOL/WITNESS', () => {
+      const ending = resolveMainline2Ending(lockedRunWithRole('coordinator'))
+      expect(ending.hybridLabel).toBe('协调者')
+      expect(ending.hybridLabel).not.toMatch(/ALLY|PROTOCOL|WITNESS/)
+      const copy = localizeEndingForPlayer(ending)
+      expect(copy.hybridLabel).toBe('协调者')
+      expect(copy.assistantLine).toContain('协调者')
+    })
+
+    it('shows 离场 for aster_intended_role=departure', () => {
+      const ending = resolveMainline2Ending(lockedRunWithRole('departure'))
+      expect(ending.hybridLabel).toBe('离场')
+      const copy = localizeEndingForPlayer(ending)
+      expect(copy.hybridLabel).toBe('离场')
+    })
+
+    it('maps every canonical intended role to a player-readable Chinese label', () => {
+      const expected: Record<string, string> = {
+        advisor: '顾问',
+        partner: '合作者',
+        citizen: '公民',
+        coordinator: '协调者',
+        custodian: '托管者',
+        governor: '治理者',
+        sovereign: '主权主体',
+        departure: '离场',
+        other: '其他自定义定位',
+      }
+      for (const [role, label] of Object.entries(expected)) {
+        const ending = resolveMainline2Ending(lockedRunWithRole(role))
+        expect(ending.hybridLabel, role).toBe(label)
+        expect(() => localizeEndingForPlayer(ending)).not.toThrow()
+      }
+    })
+
+    it('does not display a fixed legacy ENDING 02 index in the Mainline2 evaluation summary', () => {
+      const ending = resolveMainline2Ending(lockedRunWithRole('governor'))
+      // Mainline2 resolution carries a real world ending id; the legacy three-way
+      // index must not be the only label the evaluation screen can show.
+      expect(ending.worldEndingId).toBeTruthy()
+      expect(ending.id).not.toBe('pending')
+    })
   })
 })

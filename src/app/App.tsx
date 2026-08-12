@@ -156,11 +156,14 @@ function readInitialRun(initialRunId: string | undefined, exposure: NarrativeExp
   try {
     const restored = restoreRun(window.localStorage.getItem(RUN_KEY))
     if (restored) return { run: restored, exposure, restored: true, created: false }
-    const run = createMainline2Run(undefined)
-    return { run, exposure: recordRunExposure(exposure, run.manifest), restored: false, created: true }
+    // A brand-new run has not played any Ordinary content yet; do not record
+    // its empty manifest as a completed run. The new run still receives the
+    // historical exposure so its scheduler downweights recently seen content.
+    const run = createMainline2Run(undefined, exposure)
+    return { run, exposure, restored: false, created: true }
   } catch {
-    const run = createMainline2Run(undefined)
-    return { run, exposure: recordRunExposure(exposure, run.manifest), restored: false, created: true }
+    const run = createMainline2Run(undefined, exposure)
+    return { run, exposure, restored: false, created: true }
   }
 }
 
@@ -379,8 +382,11 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const restart = () => {
     const completed = recordEndingCompletion(run, meta)
     const nextMeta = { ...completed.meta, runCount: completed.meta.runCount + 1 }
-    const nextRun = createMainline2Run(undefined)
-    const nextExposure = recordRunExposure(exposure, nextRun.manifest)
+    // Record the run that actually finished (it exposed real Ordinary
+    // conversations), then start the next run with that cross-run exposure so
+    // recently played content is downweighted in the new run's scheduler.
+    const nextExposure = recordRunExposure(exposure, completed.run.manifest)
+    const nextRun = createMainline2Run(undefined, nextExposure)
     metrics.current = emptyMetrics()
     setMeta(nextMeta)
     setRun(nextRun)

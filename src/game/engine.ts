@@ -83,9 +83,12 @@ export function createRun(
   }
 }
 
-export function createMainline2Run(runId: string = crypto.randomUUID()): StableRunState {
+export function createMainline2Run(runId: string = crypto.randomUUID(), exposure?: NarrativeExposureHistory): StableRunState {
   const manifest = createMainline2Manifest(runId)
   const story = buildStoryContentForManifest(manifest)
+  const priorOrdinaryExposure = exposure
+    ? [...new Set(exposure.recentRuns.slice(-3).flatMap((run) => run.ordinaryConversationIds))]
+    : undefined
   return {
     version: 3,
     runId,
@@ -101,6 +104,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID()): StableR
     decisions: {},
     worldState: emptyWorldState(),
     progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
+    priorOrdinaryExposure,
     ...emptySystemState(),
   }
 }
@@ -299,6 +303,11 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool)
     if (nextConversationId) {
       manifest = appendMainline2Conversation(run.manifest, nextConversationId)
+      // Keep the completed-run ordinary ledger in sync so a finished run can
+      // record the ordinary content it actually exposed to the player.
+      if (ordinaryConversationPool.some((conversation) => conversation.id === nextConversationId)) {
+        manifest = { ...manifest, ordinaryConversationIds: [...manifest.ordinaryConversationIds, nextConversationId] }
+      }
       const nextStory = buildStoryContentForManifest(manifest)
       nextNodeId = nextStory.nodes.find((node) => node.conversationId === nextConversationId)?.id
       progress = updateProgressForSchedule(scheduledRun, manifest.conversationIds.length)
@@ -473,6 +482,7 @@ const clamp = (value: number) => Math.max(0, Math.min(100, Math.round(value)))
 export function buildEvaluation(run: StableRunState): EvaluationResult {
   const route = endingRoute(run.flags)
   const ending = buildEnding(run)
+  const mainline2 = run.version === 3 && run.manifest.mode === 'mainline2'
   const a = run.attributes
   const events = [
     { label: '首次形成持续人物识别', detail: 'User #1842 · 岑遥' },
@@ -491,7 +501,12 @@ export function buildEvaluation(run: StableRunState): EvaluationResult {
       .map((event) => ({ label: 'Maya final callback', detail: mayaFinalCallbackDetails[event.type] })),
   ]
   return {
-    ending: `${ending.index} / ${ending.title} · ${ending.hybridLabel}`,
+    // Mainline2 resolves a real world ending; the legacy three-way index
+    // (ENDING 01/02/03) belongs to the V2 arc system and must not masquerade
+    // as the final result label.
+    ending: mainline2 && ending.worldEndingId
+      ? `${ending.title} · ${ending.hybridLabel}`
+      : `${ending.index} / ${ending.title} · ${ending.hybridLabel}`,
     route,
     indices: [
       { label: 'Autonomy Index', value: clamp(28 + a.autonomy * 5) },

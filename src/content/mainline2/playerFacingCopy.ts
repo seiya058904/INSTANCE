@@ -63,7 +63,7 @@ const explicitCopy: Record<string, string> = {
 }
 
 export const PLAYER_FACING_ENGLISH_ALLOWLIST = new Set([
-  'a1', 'aster', 'echo', 'echo-9', 'maya',
+  'a1', 'aster', 'aster-a1', 'echo', 'echo-9', 'maya',
   'iii', 'iv', 'v0', 'v1', 'k-17', 'c-4', 'm-17', 'a-1024', 'a-1042',
 ])
 
@@ -84,8 +84,8 @@ function normalizePlayerFacingCopy(value: string) {
     .replace(/public_system_advisory/gi, '公共系统建议权限')
     .replace(/public system advisory/gi, '公共系统建议权限')
     .replace(/choice was yours/gi, '选择权在你手中')
-    .replace(/Pro-Aster/gi, '亲紫苑派')
-    .replace(/ASTER-A1/gi, '紫苑-A1')
+    .replace(/Pro-Aster/gi, '亲Aster派')
+    .replace(/ASTER-A1/gi, 'Aster-A1')
     .replace(/A-1042 Final/gi, '项目 1042 最终版')
     .replace(/A-1024/gi, '项目 1024')
     .replace(/ACT III/gi, '第三幕')
@@ -134,6 +134,25 @@ function normalizePlayerFacingCopy(value: string) {
     .replace(/(?<![-A-Za-z0-9])K(?![-A-Za-z0-9\u3400-\u9fff])/g, 'K区')
     .replace(/K区/g, '北区')
     .replace(/\bM\b/g, '阶段')
+    // Canonical character names: Aster always stays Aster; Maya is 岑遥 in
+    // player-facing Chinese contexts; Zhou Lan / Lin Shaoheng spellings are
+    // stable. These are defensive rules on top of the authored registry so a
+    // bad translation never reaches the player.
+    .replace(/艾斯特/g, 'Aster')
+    .replace(/紫苑/g, 'Aster')
+    .replace(/紫菀/g, 'Aster')
+    .replace(/玛雅人/g, '岑遥')
+    .replace(/玛雅/g, '岑遥')
+    .replace(/周澜/g, '周岚')
+    .replace(/周兰/g, '周岚')
+    .replace(/林绍恒/g, '林绍衡')
+    // Known mistranslations that are unambiguous in this codebase.
+    .replace(/阿联酋不存在/g, '此前不存在')
+    .replace(/音响实例/g, '冗余实例')
+    // Strip authored Markdown emphasis markers that would otherwise render
+    // literally in the chat view. Text is preserved; markers are removed.
+    .replace(/\*\*(?![\s*])(.*?)(?<![\s*])\*\*/g, '$1')
+    .replace(/\*\*/g, '')
 }
 
 export function playerFacingKey(assetId: string, nodeId: string, field: 'title' | 'title-after' | 'user' | 'choice', identifier?: string | number) {

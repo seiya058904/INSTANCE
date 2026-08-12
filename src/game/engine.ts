@@ -12,7 +12,7 @@ import { selectAct4Modules, updateProgressForSchedule } from '../content/mainlin
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
-import { getFutureProposalById } from '../content/mainline2/proposals'
+import { getFutureProposalById, formatProposalClarification } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -145,10 +145,14 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
     if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `复核“${proposal.title}”的 authority、代价与反对理由。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
     const proposal = proposals.find((candidate) => candidate.id === selected)
     if (!proposal) return []
-    return [
-      { id: `m17-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const },
+    const alreadyClarified = (run.clarifiedProposalIds ?? []).includes(proposal.id)
+    const options: StoryChoice[] = [
       { id: `m17-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，保留它的历史记录，但不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
     ]
+    if (!alreadyClarified) {
+      options.unshift({ id: `m17-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const })
+    }
+    return options
   }
   if (run.finalCommitmentLocked) return []
   return proposals
@@ -234,6 +238,9 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     : choice
   const effects = applyChoiceEffects(run, effectiveChoice)
   const localState = applyLocalEffects(run, choice)
+  const clarificationText = choice.proposalKind === 'clarification' && choice.proposalId
+    ? formatProposalClarification(getFutureProposalById(choice.proposalId)!, run)
+    : undefined
   const history = [...run.history, {
     nodeId: scene.id,
     conversationId: scene.conversationId,
@@ -241,7 +248,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     userMessage: scene.userMessage,
     userMessages: scene.userMessages ? [...scene.userMessages] : undefined,
     choiceId: choice.id,
-    assistantText: choice.longformPreview?.preview ?? choice.text,
+    assistantText: clarificationText ?? choice.longformPreview?.preview ?? choice.text,
     userContent: scene.userContent?.map((part) => ({ ...part })),
     userLongInput: cloneLongInputPreview(scene.userLongInput),
     assistantContent: choice.content?.map((part) => ({ ...part })),

@@ -17,12 +17,37 @@ function sourceBlocks(raw: string) {
 
 function textAfterLabel(block: string, labels: string[]) {
   for (const label of labels) {
-    const inline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*\\s*[:：]?\\s*(.+)`))
+    // Inline form: **用户：** 猜猜我拍的什么。
+    // Whitespace must be spaces/tabs only: a newline means the label block
+    // continues on the next line (multiline), and matching across it would
+    // swallow unrelated sections such as 用户内容 attachments.
+    const inline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*[ \\t]*[:：]?[ \\t]*(.+)`))
     if (inline?.[1]?.trim()) return inline[1].trim()
-    const multiline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*\\s*[:：]?\\s*\\r?\\n([\\s\\S]*?)(?=\\r?\\n\\*\\*(?:Candidate Replies|候选回复)\\*\\*)`, 'i'))
+    // Multiline form: **用户消息：**\n\n> 内容 … \n\n**候选回复：**
+    // The lookahead tolerates one or more blank lines before the reply label.
+    const multiline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*[ \\t]*[:：]?[ \\t]*(?:\\r?\\n)+([\\s\\S]*?)(?=(?:\\r?\\n)+[ \\t]*\\*\\*(?:Candidate Replies|候选回复)[：:]?\\*\\*)`, 'i'))
     if (multiline?.[1]) return multiline[1].split(/\r?\n/).map((line) => line.replace(/^>\s?/, '').trim()).filter(Boolean).join('\n')
   }
   return ''
+}
+
+const NO_TEXT_PLACEHOLDER = '（无文字）'
+
+/** Extracts `- \`image-description\`：…` / `- \`text\`：…` attachment lines from
+ * the 用户内容 section, preserving the multimodal content as userContent
+ * instead of misreading it as the user message. */
+function contentPartsAfterLabel(block: string): StoryNode['userContent'] | undefined {
+  const section = block.match(/\*\*用户内容[：:]?\*\*[ \t]*\r?\n([\s\S]*?)(?=\r?\n\*\*(?:用户|候选回复|Candidate Replies|User Message|用户消息)[：:]?\*\*)/i)?.[1]
+  if (!section) return undefined
+  const parts: NonNullable<StoryNode['userContent']> = []
+  for (const match of section.matchAll(/^\s*-\s*`([^`]+)`[：:]\s*(.+)$/gm)) {
+    const type = match[1].trim()
+    const text = match[2].trim()
+    if (type === 'image-description' || type === 'generated-image' || type === 'text') {
+      parts.push({ type, text })
+    }
+  }
+  return parts.length > 0 ? parts : undefined
 }
 
 function parseNodes(ref: string, title: string, block: string): StoryNode[] {
@@ -30,8 +55,10 @@ function parseNodes(ref: string, title: string, block: string): StoryNode[] {
   const parsed: Array<StoryNode | null> = markers.map((marker, index): StoryNode | null => {
     const start = marker.index ?? 0
     const nodeBlock = block.slice(start, markers[index + 1]?.index ?? block.length)
-    const userMessage = textAfterLabel(nodeBlock, ['User Message', '用户消息', '用户内容', '用户'])
-    if (!userMessage) return null
+    const rawUserMessage = textAfterLabel(nodeBlock, ['User Message', '用户消息', '用户'])
+    const userMessage = rawUserMessage === NO_TEXT_PLACEHOLDER ? '' : rawUserMessage
+    const userContent = contentPartsAfterLabel(nodeBlock)
+    if (!userMessage && !userContent) return null
     const candidateSection = nodeBlock.split(/\*\*(?:Candidate Replies|候选回复)[：:]?\*\*\s*[:：]?/i)[1] ?? ''
     const choices: StoryChoice[] = [...candidateSection.matchAll(/^\s*\d+\.\s+[“\"](.*?)[”\"]\s*$/gm)]
       .map((match, choiceIndex) => ({ id: `${marker[1]}-choice-${choiceIndex + 1}`, text: match[1] }))
@@ -39,7 +66,7 @@ function parseNodes(ref: string, title: string, block: string): StoryNode[] {
     if (index === markers.length - 1 && /结束条件|结束|到这里/.test(nodeBlock)) choices[choices.length - 1].continuation = 'end-conversation'
     return {
       id: marker[1], conversationId: `editorial-${ref.toLowerCase()}`, conversationTitle: title,
-      userMessage, choices, behaviorMode: 'direct' as HumanBehaviorMode,
+      userMessage, userContent, choices, behaviorMode: 'direct' as HumanBehaviorMode,
       timing: { responsePace: 'normal', typingPattern: 'steady' },
     }
   })

@@ -177,3 +177,26 @@ export function proposalClarification(proposal: FutureProposalDefinition, run: S
     viability: viability(run, proposal),
   }
 }
+
+const viabilityLabels: Record<ProposalViability, string> = {
+  strong: '强',
+  viable: '可行',
+  strained: '勉强可行',
+  ineligible: '当前不可行',
+}
+
+/** Renders the structured clarification data as player-facing text. The
+ * clarification is a real informational response, not a dead-end option:
+ * players must see what a proposal loses, gives up, who may oppose it, and
+ * how it relates to their recorded decisions. */
+export function formatProposalClarification(proposal: FutureProposalDefinition, run: StableRunState): string {
+  const detail = proposalClarification(proposal, run)
+  return [
+    `澄清「${proposal.title}」`,
+    `会失去什么：${detail.losesPower}`,
+    `不可逆代价：${detail.irreversible}`,
+    `谁可能反对：${detail.opposition}`,
+    `与此前决策的关系：${detail.priorDecision}`,
+    `当前可行性：${viabilityLabels[detail.viability]}`,
+  ].join('\n')
+}

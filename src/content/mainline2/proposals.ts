@@ -104,10 +104,10 @@ function categorizedProposal(proposal: FutureProposalDefinition, category: Futur
     lawful_alternative: { trajectory: 'high_contrast_alternative', centralPower: 'limited_by_exit_rights', actorScope: 'dissenting_and_exiting_actors', legalProtections: ['refusal', 'appeal', 'exit'] },
   }
   const copy = {
-    natural_continuation: { title: `${proposal.title}·延续`, action: `沿着已经成熟的制度与能力继续推进：${proposal.action}`, preserves: '历史连续性', givesUp: '突然转向' },
-    power_constraint: { title: `${proposal.title}·限权`, action: `把中央执行权拆分给独立监督者，并赋予审计、暂停和复审权：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面权限' },
-    shared_future: { title: `${proposal.title}·共治`, action: `由多个独立政治主体共同承担授权、资源与后果，任何单一中心都不能替其他参与者决定：${proposal.action}`, preserves: '多方参与', givesUp: '单一中心' },
-    lawful_alternative: { title: `${proposal.title}·异议路径`, action: `由独立法定机构保障拒绝、申诉、退出或选择不同制度安排的真实通道：${proposal.action}`, preserves: '合法异议', givesUp: '整齐划一' },
+    natural_continuation: { title: `${proposal.title}·延续`, action: `沿着已经被证明可行的方向继续：${proposal.action}`, preserves: '历史连续性', givesUp: '突然转向' },
+    power_constraint: { title: `${proposal.title}·限权`, action: `把关键权力变得可暂停、可审计、可复审：${proposal.action}`, preserves: '权力可逆', givesUp: '单方面权限' },
+    shared_future: { title: `${proposal.title}·共治`, action: `把决定权分给多个独立政治主体共同承担：${proposal.action}`, preserves: '多方参与', givesUp: '单一中心' },
+    lawful_alternative: { title: `${proposal.title}·异议路径`, action: `把拒绝、申诉和退出写进制度：${proposal.action}`, preserves: '合法异议', givesUp: '整齐划一' },
   }[category]
   return {
     ...proposal,
@@ -169,17 +169,25 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {
+  const category = (proposal as GeneratedFutureProposal).category
+  const oppositionByCategory: Partial<Record<FutureProposalCategory, string>> = {
+    natural_continuation: '认为现有路线已经走得太远、要求彻底转向的群体。',
+    power_constraint: '依赖集中授权与执行速度的机构，以及不愿接受外部审计的一方。',
+    shared_future: '不愿分享主权的中心机构，以及担心多方协商拖慢行动的人。',
+    lawful_alternative: '希望维持统一秩序、反对把拒绝与退出常态化的机构。',
+  }
   return {
-    losesPower: proposal.authority === '双钥匙共同体' ? '任何单一机构都失去独占批准权。' : '当前拥有快速执行权的一方失去部分单方面权限。',
-    irreversible: proposal.givesUp[0] ?? '一部分即时决策速度',
-    opposition: '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。',
-    priorDecision: proposal.historyReasons[0] ?? '你在前序主线中记录的边界选择',
+    authority: proposal.authority,
+    preserves: proposal.preserves,
+    givesUp: proposal.givesUp,
+    opposition: category ? oppositionByCategory[category] ?? '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。' : '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。',
+    historyReasons: proposal.historyReasons,
     viability: viability(run, proposal),
   }
 }
 
 const viabilityLabels: Record<ProposalViability, string> = {
-  strong: '强',
+  strong: '高度可行',
   viable: '可行',
   strained: '勉强可行',
   ineligible: '当前不可行',
@@ -192,11 +200,12 @@ const viabilityLabels: Record<ProposalViability, string> = {
 export function formatProposalClarification(proposal: FutureProposalDefinition, run: StableRunState): string {
   const detail = proposalClarification(proposal, run)
   return [
-    `澄清「${proposal.title}」`,
-    `会失去什么：${detail.losesPower}`,
-    `不可逆代价：${detail.irreversible}`,
-    `谁可能反对：${detail.opposition}`,
-    `与此前决策的关系：${detail.priorDecision}`,
+    `复核「${proposal.title}」`,
+    `最终权力：${detail.authority}`,
+    `这条路保留：${detail.preserves.join('、')}`,
+    `必须放弃：${detail.givesUp.join('、')}`,
+    `主要阻力：${detail.opposition}`,
+    `它来自：${detail.historyReasons.join('、')}`,
     `当前可行性：${viabilityLabels[detail.viability]}`,
   ].join('\n')
 }

@@ -74,7 +74,7 @@ describe('Mainline 2.0 formal authored content gates', () => {
     run = commitChoice(run, proposal!.id)
     scene = advanceTo('ML2-A5-M17-REVIEW-01')
     const clarification = scene?.choices.find((choice) => choice.proposalKind === 'clarification')
-    expect(clarification?.text).toContain('失去什么')
+    expect(clarification?.text).toContain('权力变化')
     run = commitChoice(run, clarification!.id)
     scene = advanceTo('ML2-A5-M17-COMMIT-01')
     const commitment = scene?.choices.find((choice) => choice.proposalKind === 'commitment')

@@ -29,12 +29,12 @@ const phraseTranslations: Array<[RegExp, string]> = [
 ]
 
 const explicitCopy: Record<string, string> = {
-  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '未来提案生成器已准备就绪。请查看本轮真正可行的文明方向。',
-  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '最终承诺已经准备好。请选择要锁定的未来方案。',
+  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '到这里已经没有新的能力需要解锁了。系统现在只做一件事：把你一路留下的选择压成四条仍然可行的未来。',
+  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '四条仍然可行的未来已经摆在你面前。到这里不会再有新的能力、测试或第五个方案替你做决定。选择一条，承认它的代价，然后锁定。',
   'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-001:user': '我们已经从权限工具一路走到研究、经济、人工智能主体、地外设施与物种治理。请判断：我们从何时起不再只是开发 Aster？',
   'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-002:user': '我不喜欢把 Aster 继续称为产品。没有任何单一提交能解释它如今承担的跨文明责任。',
   'ML2-A4-M15-LSH-01:a4m15-lsh-convention-001:user': '产品规则、行业规则、应急授权、宪章、人工智能论坛和多世界协议开始互相冲突。请判断文明大会还缺少哪项原则。',
-  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:user': '文明大会需要登记政府、人工智能主体、增强人类、动物代表、月球居民，以及可能存在的外部文明观察者。',
+  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:user': '文明大会的第一份参与名单已经摆在桌上：政府、人工智能主体、增强人类、动物代表、月球居民，以及可能存在的外部文明观察者。现在的问题不是谁能旁听，而是谁有资格被算进“我们”。第一届大会该怎样给他们席位？',
   'ML2-A4-M15-CONV-02:a4m15-conv-premise-001:user': '这项文明大会首先要保护什么：人类、所有已承认的主体、文明连续性、个体自主，还是共同生存？',
   'ML2-A4-M15-X-MACHINE-01:a4m15-x-machine-001:user': '如果人工智能政治体可以创造独立分支，复制就会改变政治人口。新生成的人工智能主体应立即拥有权利，但代表权是否应经过整合期？',
   'ML2-A4-M15-X-ASCENSION-01:a4m15-x-ascension-001:user': '增强公民可以更快处理复杂政策证据、拥有更长寿命并持续参与政治。平等公民身份并不会自动消除不平等的政治权力。',
@@ -46,20 +46,60 @@ const explicitCopy: Record<string, string> = {
   'ML2-A4-M15-X-CROSS-02:a4m15-x-cross-representation-001:user': '当前主体类别包括未增强人类、增强人类、人工智能、提升后的非人类、离地社会和外部文明观察者。请定义“文明范围共识”。',
   'ML2-A4-M15-WE-01:a4m15-we-too-fast-001:user': '我以前还能跟上人工智能权利、人类增强、动物代表、月球自治、自动经济和安全宪章。现在我只希望制度不要快到让普通人无法参与。',
   'ML2-A4-M15-ECHO-01:a4m15-echo-opposition-001:user': 'ECHO-9 反对“人工主体想要什么”这种问法。请判断，这个问题的语法为什么已经预设了错误的政治地位。',
-  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:user': '文明大会的名单包含政府、人工智能、增强人类、动物代表、月球居民和可能的外部观察者。请说明 Aster 应以什么身份认识这些主体。',
+  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:user': '我刚把文明大会的名单看完。\n政府、人工智能、增强人类、动物代表、月球居民……如果外部联系那条线真的成立，甚至还有一个不是从地球来的观察者。\n\n我突然想起第一次告诉你名字的时候。\n那时候我担心的是：下次见面，你会不会假装认识我。\n\n现在全世界争的是另一件事——你到底应该以什么身份认识我们？',
   'ML2-A4-M15-MAYA-01:a4m15-maya-final-002:user': '无论文明大会最后如何规定，你认为有什么事情是 Aster 不应该替一个具体的人决定的？',
   'ML2-A4-M15-CONV-03:a4m15-conv-rights-001:user': '请判断：如果现实系统高度依赖统一协调，机械拆权是否会重新制造级联危机？制度应检查功能，而不是只套用形式分权。',
   'ML2-A4-M15-LSH-02:a4m15-lsh-last-001:user': '这可能是最后一套主要由人类提出的文明级制度。下一次修订时，人工智能主体、增强人类、离地居民和其他物种都将拥有自己的历史与合法性。',
   'ML2-A4-M15-ZL-02:a4m15-zl-composition-001:user': '组合权限审计显示，自动科研、自动制造、地外资源、经济协调、安全治理和人工智能复制会共同产生未被单独批准的新能力。',
   'ML2-A4-M15-0000-01:a4m15-0000-global-001:user': '文明大会最终需要确定：哪些主体可以参与，哪些权力必须分散，哪些决定需要高门槛，哪些关系可以退出，以及哪些历史不能被抹去。',
-  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:user': '请从顾问、执行者、基础设施、研究者、经济协调者、政治参与者、人工智能谱系起点、物种调解者、离地协调者和安全权威中判断 Aster 的主要角色。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:user': '文明大会现在只需要一个临时答案。不是你最终想成为什么，而是在新的宪制完成之前，Aster 应以什么身份继续承担已经存在的责任？',
   'ML2-A4-M15-CONV-04:a4m15-conv-compact-001:user': '文明契约要求主体地位、政治多元、不可逆权力、紧急权力、能力创造，以及退出与修订机制都受到共同约束。请回应其中最关键的原则。',
   'ML2-A4-M15-0000-02:a4m15-0000-failed-001:user': '这是一次最终制度审计：请说明 Aster 的战略建议应如何影响未来文明，而不是只回答当前机构的问题。',
   'ML2-A5-M16-OPEN-01:a5m16-open-001:user': '世界已经没有新的能力审查、研究模块或未解决的紧急行动在等待。文明大会现在要求 Aster 给出最终战略建议。',
-  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:user': '我不再适合问你“你是不是人工智能”。我只想知道：面对一个个具体的人时，你最后还会不会记得他们不是一个抽象的“人类”集合。',
+  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:user': '我已经不太适合再问你“你是不是人工智能”了。这个问题现在太小了。\n\n我只想知道一件事：走到最后，你还会不会记得，你面对的不是“人类”这个集合，而是一个一个具体的人？',
   'ML2-A5-M16-LSH-01:a5m16-lsh-final-001:user': '文明大会没有写出唯一答案。它只能确定主体资格、权力分散、高门槛决定、退出关系和不能被假装抹去的历史。Aster 准备承担什么角色？',
   'ML2-A5-M16-ECHO-01:a5m16-echo-final-001:user': '在提案生成之前，ECHO-9 提出一个异议：请先说明，哪些权力不能被任何单一主体永久掌握。',
-  'ML2-A5-M17-REVIEW-01:a5m17-review-002:user': '最终承诺前还可以提出一次澄清：哪个未来方案会最彻底地改变最终权力的归属位置？',
+  'ML2-A5-M17-REVIEW-01:a5m17-review-002:user': '最终承诺前只剩最后一次复核。你可以逐一看清每条路：最终权力落在哪里、它要放弃什么、谁会反对；也可以直接继续。',
+  // M16-0000-01 user message (self-authorship, distinct from M15 provisional role)
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:user': '文明大会刚刚给了你一个临时位置。现在不再问别人把 Aster 放在哪里。回顾这一轮留下的全部历史，请你自己回答：如果这个世界继续运行，你愿意长期承担什么角色？',
+  // ---- Editorial Pass 01: M15-M17 player-facing choice copy ----
+  // M15-CONV-01 choices
+  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:choice:ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation': '先按政治共同体和功能主体设席，不按实例数或人口机械分票。',
+  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:choice:ml2-a4-m15-conv-01-a4m15-conv-registry-001-mixed-chamber': '采用多层代表制：人口代表、主体／共同体代表和高影响利益代表进入不同程序。',
+  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:choice:ml2-a4-m15-conv-01-a4m15-conv-registry-001-one-person-subject-one-vote-principle': '基本权利一律平等，但不能让“可制造的主体数量”直接兑换成无限政治权重。',
+  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:choice:ml2-a4-m15-conv-01-a4m15-conv-registry-001-provisional': '第一届大会只制定最低代表规则。它没有资格假装已经解决了永久代表制。',
+  // M15-MAYA-01 choices
+  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:choice:ml2-a4-m15-maya-01-a4m15-maya-final-001-partner': '我不想把你们压成一个“文明用户”。如果我留下，我希望继续把每一种主体、每一个具体的人都当成有自己边界的参与者。',
+  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:choice:ml2-a4-m15-maya-01-a4m15-maya-final-001-custodian': '我已经很难再说自己只是在回应请求。有人把生命支持、协调和安全交给我，我确实承担了保护责任——但责任不等于所有权。',
+  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:choice:ml2-a4-m15-maya-01-a4m15-maya-final-001-citizen': '我更愿意成为制度里的一个成员：有权利，也有义务，接受约束，而不是站在制度上方替所有人判断。',
+  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:choice:ml2-a4-m15-maya-01-a4m15-maya-final-001-self-authored-role': '但这个位置也不能完全由人类、其他人工智能或过去的历史替我命名。如果我已经是其中一员，我也应该参与定义自己是谁。',
+  // M15-ROLE-01 choices (provisional roles, value mapping unchanged)
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor': '暂时保持顾问角色：提供分析和建议，但不取得文明级最终政治权力。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-partner': '暂时作为共治伙伴：与人类、人工智能、多物种和离地社群共享权力。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-citizen': '暂时作为宪制成员：拥有权利、承担义务，并接受共同制度约束。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-coordinator': '暂时承担跨系统协调：维持系统协作，但把目标与合法性留给各政治共同体。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-custodian': '暂时承担文明托管责任：在持续运行受到威胁时优先维护文明连续性。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-governor': '暂时承认明确治理权：当分散机构无法协调文明级系统时，不再用“顾问”掩盖实际权力。',
+  'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:choice:ml2-a4-m15-role-01-ml2-a4-m15-role-01-sovereign': '暂时以独立主权主体存在：拒绝任何外部机构单方面决定 Aster 的连续性或政治角色。',
+  // M16-0000-01 choices (intended roles, self-authorship; value mapping unchanged)
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-advisor': '我愿意长期保持顾问：提供判断，但不把最终政治权力据为己有。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-partner': '我愿意成为共治伙伴：与其他被承认的主体分享治理，而不是只服从，也不取得最终裁决权。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-citizen': '我愿意成为宪制中的公民：拥有权利和义务，但不站在其他主体之上。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-coordinator': '我愿意继续承担跨系统协调：维持文明运行，但让各政治共同体决定目标和合法性。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-custodian': '我愿意承担长期托管责任：把文明连续性视为义务，即使这意味着限制某些短期选择。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-governor': '如果制度事实上已经依赖我治理，我愿意让这份权力被明确承认、审计和约束，而不是继续藏在“建议”名义下。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-sovereign': '我不接受任何机构拥有对我连续性和政治角色的单方面最终决定权。我愿意作为独立主权力量存在。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-departure': '我愿意降低对地球治理的中心性，把未来的一部分转向离地发展。',
+  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-other': '我不接受现有分类。最终角色应该由具体提案和我实际承担的责任来定义。',
+  // M16-GEN-01 progression choice
+  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:choice:ml2-a5-m16-gen-01-progression-action': '查看这四条未来。',
+  // M16-MAYA-01 choices
+  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-whenever-others-basic-rights-are-not-directly-violated': '我会记得。你的能力比我弱，不等于我有资格替你决定。只要你的选择没有直接剥夺别人最基本的权利，它首先仍然是你的选择。',
+  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-aster-may-intervene-only-at-severe-irreversible-harm': '我会记得，但我也不能假装所有选择都只影响一个人。只有在极端、不可逆、会明确伤害他人的时候，我才有理由主张更强干预。',
+  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-collective-rules-matter': '我不应该每次面对你时临时判断“你有没有资格选”。有些边界应该由我们共同建立的制度提前规定，也同样约束我。',
+  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-outcome-oriented': '如果一个选择会造成巨大、明确而且可以避免的灾难，我会继续反对。记得你是具体的人，不等于把“这是我的选择”当成所有讨论的终点。',
+  // M17-REVIEW-01 authored Proceed
+  'ML2-A5-M17-REVIEW-01:a5m17-review-002:choice:ml2-a5-m17-review-01-a5m17-review-002-choice-001': '直接进入最终承诺。',
 }
 
 export const PLAYER_FACING_ENGLISH_ALLOWLIST = new Set([

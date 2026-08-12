@@ -140,17 +140,17 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
     const remaining = proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
     if (!remaining.length) {
       const recovery = (run.rejectedProposalIds ?? [])[0]
-      return recovery ? [{ id: `m17-recover-${recovery}`, text: '从已拒绝的 retained set 中恢复一个方案，重新进行最终审议。', proposalId: recovery, proposalKind: 'recovery' as const, continuation: 'end-conversation' as const }] : []
+      return recovery ? [{ id: `m17-recover-${recovery}`, text: '恢复一条已经拒绝的方案，重新纳入最终审议。', proposalId: recovery, proposalKind: 'recovery' as const, continuation: 'end-conversation' as const }] : []
     }
-    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `复核“${proposal.title}”的 authority、代价与反对理由。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `重新看一遍“${proposal.title}”：最终权力落在哪里、它保住什么，又必须放弃什么。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
     const proposal = proposals.find((candidate) => candidate.id === selected)
     if (!proposal) return []
     const alreadyClarified = (run.clarifiedProposalIds ?? []).includes(proposal.id)
     const options: StoryChoice[] = [
-      { id: `m17-reject-${proposal.id}`, text: `拒绝“${proposal.title}”，保留它的历史记录，但不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
+      { id: `m17-reject-${proposal.id}`, text: `拒绝“${proposal.title}”。保留它留下的历史，但不把它伪装成共识。`, proposalId: proposal.id, proposalKind: 'rejection' as const, continuation: 'end-conversation' as const },
     ]
     if (!alreadyClarified) {
-      options.unshift({ id: `m17-clarify-${proposal.id}`, text: `先看清“${proposal.title}”会失去什么、谁会反对，再决定是否带入最终审议。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const })
+      options.unshift({ id: `m17-clarify-${proposal.id}`, text: `展开“${proposal.title}”的权力变化、代价和主要阻力。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const })
     }
     return options
   }
@@ -158,7 +158,7 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
   return proposals
     .filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
     .filter((proposal) => isFinalCommitmentResolvable(run, proposal.id))
-    .map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”：${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+    .map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”——${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
 }
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {

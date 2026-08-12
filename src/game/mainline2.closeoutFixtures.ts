@@ -56,7 +56,7 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     const desiredDecision = scene.choices.find((choice) => choice.decisionBinding && target.decisions?.[choice.decisionBinding.decisionId] === choice.decisionBinding.canonicalValue)
     let choice = forcedChoice ?? desiredDecision
     if (ref === 'ML2-A5-M16-0000-01') {
-      const intendedRole = target.secretEndingId === 'out_of_office' ? 'departure' : 'advisor'
+      const intendedRole = target.decisions?.aster_intended_role ?? (target.secretEndingId === 'out_of_office' ? 'departure' : 'advisor')
       choice = scene.choices.find((candidate) => candidate.decisionBinding?.decisionId === 'aster_intended_role' && candidate.decisionBinding.canonicalValue === intendedRole)
       if (!choice) throw new Error(`Route ${target.routeId} cannot legally select authored intended role ${intendedRole}`)
     }

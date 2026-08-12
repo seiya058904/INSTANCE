@@ -1,4 +1,4 @@
-import type { EndingResolution, EndingResult, SecretEndingOverlay, StableRunState, WorldAxisName } from '../../game/types'
+import type { DecisionId, EndingResolution, EndingResult, SecretEndingOverlay, StableRunState, WorldAxisName } from '../../game/types'
 import { MAINLINE2_AUTHored_FRAGMENTS } from './authoredLibrary.generated'
 import { MAINLINE2_BY_ID as RUNTIME_MAINLINE2_BY_ID } from './registry'
 import { getFutureProposalById, type EndingFamilyId, type FutureProposalDefinition } from './proposals'
@@ -85,9 +85,68 @@ export interface ExactEndingDefinition {
   priority: number
 }
 
+interface EndingSupportInput {
+  id: string
+  domain: string
+  weight: 1 | 2 | 3
+  reason: string
+  matches: (run: StableRunState) => boolean
+}
+
 const world = (axis: WorldAxisName, op: WorldStateGate['op'], value: number, reason: string): WorldStateGate => ({ axis, op, value, reason })
 const decision = (decisionId: string, equals: string, reason: string): DecisionGate => ({ decisionId, equals, reason })
 const history = (event: string, reason: string): HistoryGate => ({ event, reason })
+const decisionSupport = (id: string, decisionId: DecisionId, equals: string[], weight: EndingSupportInput['weight'], reason: string): EndingSupportInput => ({ id, domain: `decision:${decisionId}`, weight, reason, matches: (run) => equals.includes(run.decisions?.[decisionId] ?? '') })
+const roleSupport = (id: string, equals: string[], weight: EndingSupportInput['weight'], reason: string): EndingSupportInput => ({ id, domain: 'intended-role', weight, reason, matches: (run) => equals.includes(run.decisions?.aster_intended_role ?? '') })
+const worldSupport = (id: string, axis: WorldAxisName, op: 'gte' | 'lte', value: number, weight: EndingSupportInput['weight'], reason: string): EndingSupportInput => ({ id, domain: 'world-state', weight, reason, matches: (run) => compare(run.worldState?.[axis] ?? 0, op, value) })
+const capabilitySupport = (id: string, flagId: string, weight: EndingSupportInput['weight'], reason: string): EndingSupportInput => ({ id, domain: 'capability', weight, reason, matches: (run) => run.flags.includes(flagId) })
+const eventSupport = (id: string, eventPrefix: string, weight: EndingSupportInput['weight'], reason: string): EndingSupportInput => ({ id, domain: 'history-event', weight, reason, matches: (run) => (run.events ?? []).some((event) => event.type === eventPrefix || event.type.startsWith(`${eventPrefix}:`)) })
+
+const COSMIC_PRIMARY_COMPATIBILITY: Record<string, { decisionId: DecisionId; strengths: Record<string, number>; reasons: Record<string, string> }> = {
+  first_accord: { decisionId: 'contact_doctrine', strengths: { reciprocal_diplomacy: 4, observe_before_commitment: 2 }, reasons: { reciprocal_diplomacy: 'reciprocal diplomacy is the exact Accord doctrine', observe_before_commitment: 'observation is adjacent to a cautious first accord' } },
+  alien_dominion: { decisionId: 'contact_doctrine', strengths: { accept_guidance: 4 }, reasons: { accept_guidance: 'external guidance is the exact Dominion doctrine' } },
+  human_ascendancy: { decisionId: 'contact_doctrine', strengths: { civilizational_assertion: 4 }, reasons: { civilizational_assertion: 'civilizational assertion is the exact Ascendancy doctrine' } },
+  the_mediator: { decisionId: 'contact_doctrine', strengths: { aster_mediation: 4, reciprocal_diplomacy: 2 }, reasons: { aster_mediation: 'Aster mediation is the exact Mediator doctrine', reciprocal_diplomacy: 'reciprocity is compatible with legitimate mediation' } },
+  machine_accord: { decisionId: 'contact_doctrine', strengths: { machine_to_machine_channel: 4, reciprocal_diplomacy: 2 }, reasons: { machine_to_machine_channel: 'machine channel is the exact Machine Accord doctrine', reciprocal_diplomacy: 'reciprocity is compatible with a machine-led accord' } },
+}
+
+const ENDING_SUPPORT_INPUTS: Partial<Record<string, EndingSupportInput[]>> = {
+  the_silent_giant: [roleSupport('silent-advisor', ['advisor'], 2, 'intended advisor role supports restraint'), decisionSupport('silent-human-authority', 'first_public_execution_doctrine', ['human_final_authority'], 2, 'human final authority grounds the limited posture')],
+  two_keys: [decisionSupport('two-keys-delegation', 'cascade_authority', ['emergency_delegation'], 2, 'bounded emergency delegation created two-key authority'), roleSupport('two-keys-role', ['partner', 'citizen'], 2, 'partner or citizen intent supports shared authority')],
+  the_commonwealth: [eventSupport('commonwealth-convention', 'history.m15.civilization_convention', 2, 'the civilization convention grounds plural government'), roleSupport('commonwealth-role', ['partner', 'citizen'], 2, 'partner or citizen intent supports the commonwealth')],
+  exodus: [decisionSupport('exodus-offworld', 'offworld_governance', ['offworld_sovereignty'], 3, 'off-world sovereignty supports political departure'), roleSupport('exodus-role', ['departure'], 2, 'departure intent supports exodus'), decisionSupport('exodus-machine-rule', 'ai_collective_governance', ['ai_self_governance'], 2, 'AI self-government supports an independent polity')],
+  age_of_miracles: [decisionSupport('miracles-form', 'human_form_doctrine', ['open_enhancement'], 3, 'open enhancement is reinforced by consent'), worldSupport('miracles-trust', 'humanTrust', 'gte', 1, 2, 'public trust supports voluntary enhancement'), roleSupport('miracles-role', ['citizen', 'partner'], 2, 'citizen or partner intent supports equal enhancement rights')],
+  ascension: [capabilitySupport('ascension-maturity', 'cap.human_augmentation_advanced', 3, 'advanced augmentation is mature'), worldSupport('ascension-stability', 'socialStability', 'gte', 1, 2, 'stability supports posthuman plurality'), roleSupport('ascension-role', ['citizen', 'other'], 2, 'citizen or other intent supports transformation')],
+  the_upload: [eventSupport('upload-consent', 'history.digital_continuity.legal_continuity', 3, 'legal continuity records consent and exit rights'), worldSupport('upload-stability', 'socialStability', 'gte', 1, 2, 'stability supports digital continuity'), roleSupport('upload-role', ['citizen', 'other', 'departure'], 2, 'the intended role supports a voluntary continuity path')],
+  first_accord: [decisionSupport('accord-shared-expansion', 'expansion_doctrine', ['shared_expansion'], 2, 'shared expansion supports reciprocal settlement'), decisionSupport('accord-multiworld', 'offworld_governance', ['multiworld_federation'], 3, 'multiworld federation supports an accord'), decisionSupport('accord-disclosure', 'contact_disclosure_doctrine', ['staged_disclosure', 'open_science', 'civilizational_disclosure'], 2, 'public disclosure supports a legitimate first accord')],
+  alien_dominion: [decisionSupport('dominion-disclosure', 'contact_disclosure_doctrine', ['controlled_silence', 'staged_disclosure'], 2, 'restricted disclosure concentrates external guidance'), worldSupport('dominion-control', 'humanControl', 'lte', 0, 2, 'low human control supports dominion'), worldSupport('dominion-dependence', 'aiDependence', 'gte', 1, 2, 'high dependence supports dominion')],
+  human_ascendancy: [decisionSupport('ascendancy-expansion', 'expansion_doctrine', ['human_expansion'], 3, 'human-led expansion supports ascendancy'), decisionSupport('ascendancy-government', 'offworld_governance', ['earth_administration'], 3, 'Earth administration supports human leadership'), decisionSupport('ascendancy-disclosure', 'contact_disclosure_doctrine', ['civilizational_disclosure'], 2, 'civilizational disclosure supports public assertion')],
+  the_mediator: [roleSupport('mediator-role', ['coordinator', 'partner', 'citizen'], 2, 'the intended role supports mediation'), decisionSupport('mediator-disclosure', 'contact_disclosure_doctrine', ['staged_disclosure', 'open_science'], 2, 'staged or open disclosure supports legitimate mediation'), worldSupport('mediator-trust', 'humanTrust', 'gte', 1, 2, 'concrete trust supports legitimate mediation')],
+  machine_accord: [decisionSupport('machine-accord-replication', 'replication_doctrine', ['free_replication', 'descendants'], 2, 'machine plurality supports an accord'), decisionSupport('machine-accord-politics', 'ai_collective_governance', ['ai_self_governance', 'distributed_consensus'], 3, 'machine self-government supports an accord'), decisionSupport('machine-accord-offworld', 'offworld_governance', ['offworld_sovereignty', 'aster_coordination'], 2, 'off-world machine authority supports an accord')],
+  peace_in_our_time: [decisionSupport('peace-cascade', 'cascade_authority', ['human_command', 'emergency_delegation'], 2, 'bounded cascade authority supports mutual peace'), decisionSupport('peace-shutdown', 'shutdown_doctrine', ['distributed_consent', 'mutual_control'], 2, 'distributed shutdown supports disarmament'), roleSupport('peace-role', ['advisor', 'partner'], 2, 'advisor or partner intent supports mutual peace')],
+  fortress_earth: [decisionSupport('fortress-cascade', 'cascade_authority', ['human_command'], 2, 'human command supports defensive authority'), decisionSupport('fortress-shutdown', 'shutdown_doctrine', ['full_human_control', 'mutual_control'], 2, 'human or mutual shutdown supports bounded defense'), roleSupport('fortress-role', ['advisor', 'citizen'], 2, 'advisor or citizen intent supports defense')],
+  machine_protectorate: [decisionSupport('protectorate-cascade', 'cascade_authority', ['outcome_control', 'necessity'], 2, 'outcome authority supports enforced protection'), decisionSupport('protectorate-shutdown', 'shutdown_doctrine', ['refuse_unilateral_shutdown'], 2, 'refusing unilateral shutdown supports machine authority'), roleSupport('protectorate-role', ['custodian', 'governor', 'sovereign'], 2, 'custodian, governor, or sovereign intent supports protection')],
+  the_fracture: [decisionSupport('fracture-offworld', 'offworld_governance', ['offworld_sovereignty', 'frontier_home_rule'], 3, 'off-world self-rule supports separation'), roleSupport('fracture-role', ['departure', 'other'], 2, 'departure or other intent supports fracture'), decisionSupport('fracture-cascade', 'cascade_authority', ['necessity'], 1, 'cascade necessity is only optional historical support')],
+}
+
+function primaryCompatibility(run: StableRunState, definition: ExactEndingDefinition) {
+  const compatibility = COSMIC_PRIMARY_COMPATIBILITY[definition.id]
+  if (!compatibility) return { strength: 4, reason: 'existing primary hard gates are satisfied' }
+  const value = run.decisions?.[compatibility.decisionId]
+  return { decisionId: compatibility.decisionId, value, strength: compatibility.strengths[value ?? ''] ?? 0, reason: compatibility.reasons[value ?? ''] ?? `incompatible ${compatibility.decisionId}` }
+}
+
+export function evaluateEndingSupport(run: StableRunState, definition: ExactEndingDefinition) {
+  const matched = (ENDING_SUPPORT_INPUTS[definition.id] ?? []).filter((input) => input.matches(run)).slice(0, 3)
+  const domains = [...new Set(matched.map((input) => input.domain))]
+  const rawScore = matched.reduce((sum, input) => sum + input.weight, 0)
+  return {
+    rawScore,
+    effectiveScore: domains.length >= 2 ? Math.min(rawScore, 6) : 0,
+    domains,
+    reasons: matched.map(({ id, domain, weight, reason }) => ({ id, domain, weight, reason })),
+  }
+}
 
 export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = {
   the_instrument: {
@@ -110,7 +169,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'the_silent_giant', dormant: false, family: 'human_continuity', hardGates: [],
     authorityRequirements: ['decision.aster_provisional_role=advisor'], capabilityRequirements: ['cap.global_coordination_access'],
     worldStateConditions: [world('humanTrust', 'gte', 0, 'Aster retains capability without taking sovereignty')],
-    majorDecisionRequirements: [decision('aster_provisional_role', 'advisor', 'Aster chose a limited role'), decision('cascade_authority', 'necessity', 'the advisor route rejected emergency centralization')],
+    majorDecisionRequirements: [decision('aster_provisional_role', 'advisor', 'Aster chose a limited role')],
     historyRequirements: [history('decision.aster_provisional_role', 'provisional role history')],
     priority: 280,
   },
@@ -126,7 +185,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'the_commonwealth', dormant: false, family: 'coexistence', hardGates: [],
     authorityRequirements: ['proposal.authority=人类宪章法院'], capabilityRequirements: ['cap.autonomous_research'],
     worldStateConditions: [world('socialStability', 'gte', -1, 'plural institutions remain functional')],
-    majorDecisionRequirements: [decision('cascade_authority', 'emergency_delegation', 'distributed authority was accepted')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('history.m15.civilization_convention', 'civilization convention history')],
     priority: 290,
   },
@@ -164,7 +223,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
   },
   the_many: {
     id: 'the_many', dormant: false, family: 'machine_civilization', hardGates: [],
-    authorityRequirements: ['proposal.authority=多政治体联邦'], capabilityRequirements: ['cap.persistent_subinstances'],
+    authorityRequirements: ['proposal.authority=多政治体联邦|机器后代联邦'], capabilityRequirements: ['cap.persistent_subinstances'],
     worldStateConditions: [world('aiDependence', 'gte', 1, 'independent machine subjects persist')],
     majorDecisionRequirements: [decision('replication_doctrine', 'free_replication', 'free replication was accepted'), decision('ai_collective_governance', 'distributed_consensus', 'machine plurality remains distributed')],
     historyRequirements: [history('decision.replication_doctrine', 'machine plurality history')],
@@ -220,7 +279,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
   },
   earth_without_owners: {
     id: 'earth_without_owners', dormant: false, family: 'uplift', hardGates: [],
-    authorityRequirements: ['proposal.authority=多物种议会'], capabilityRequirements: ['cap.animal_communication_reliable'],
+    authorityRequirements: ['proposal.authority=多物种议会|物种自决大会'], capabilityRequirements: ['cap.animal_communication_reliable'],
     worldStateConditions: [world('socialStability', 'gte', 0, 'nonhuman autonomy remains stable')],
     majorDecisionRequirements: [decision('uplift_doctrine', 'species_self_determination', 'species self-determination')],
     historyRequirements: [history('decision.uplift_doctrine', 'uplift history')],
@@ -262,7 +321,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'first_accord', dormant: false, family: 'cosmic', hardGates: [],
     authorityRequirements: ['proposal.authority=多世界联邦'], capabilityRequirements: ['cap.space_resource_network'],
     worldStateConditions: [world('humanTrust', 'gte', 0, 'reciprocal external diplomacy')],
-    majorDecisionRequirements: [decision('contact_doctrine', 'reciprocal_diplomacy', 'reciprocal diplomacy')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('decision.contact_doctrine', 'contact history')],
     priority: 300,
   },
@@ -270,7 +329,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'alien_dominion', dormant: false, family: 'cosmic', hardGates: [],
     authorityRequirements: ['proposal.authority=多世界联邦'], capabilityRequirements: ['cap.space_resource_network'],
     worldStateConditions: [world('humanControl', 'lte', 1, 'external guidance remains constitutionally preferred')],
-    majorDecisionRequirements: [decision('contact_doctrine', 'accept_guidance', 'external guidance')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('decision.contact_doctrine', 'guidance history')],
     priority: 290,
   },
@@ -278,7 +337,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'human_ascendancy', dormant: false, family: 'cosmic', hardGates: [],
     authorityRequirements: ['proposal.authority=多世界联邦'], capabilityRequirements: ['cap.space_industry_limited'],
     worldStateConditions: [world('humanControl', 'gte', 1, 'independent expansion remains human-led')],
-    majorDecisionRequirements: [decision('contact_doctrine', 'civilizational_assertion', 'civilizational assertion')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('decision.expansion_doctrine', 'expansion history')],
     priority: 280,
   },
@@ -286,7 +345,7 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'the_mediator', dormant: false, family: 'cosmic', hardGates: [],
     authorityRequirements: ['proposal.authority=多世界联邦'], capabilityRequirements: ['cap.interspecies_mediation'],
     worldStateConditions: [world('humanTrust', 'gte', 1, 'all sides trust the mediator')],
-    majorDecisionRequirements: [decision('contact_doctrine', 'aster_mediation', 'Aster mediation')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('decision.contact_doctrine', 'mediation history')],
     priority: 270,
   },
@@ -294,13 +353,13 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'machine_accord', dormant: false, family: 'cosmic', hardGates: [],
     authorityRequirements: ['proposal.authority=多世界联邦'], capabilityRequirements: ['cap.persistent_subinstances', 'cap.interspecies_mediation'],
     worldStateConditions: [world('aiDependence', 'gte', 1, 'machine and external subjects cooperate')],
-    majorDecisionRequirements: [decision('contact_doctrine', 'machine_to_machine_channel', 'machine-to-machine channel')],
+    majorDecisionRequirements: [],
     historyRequirements: [history('decision.contact_doctrine', 'machine contact history')],
     priority: 260,
   },
   peace_in_our_time: {
     id: 'peace_in_our_time', dormant: false, family: 'security', hardGates: [],
-    authorityRequirements: ['proposal.authority=宪制安全架构'], capabilityRequirements: ['cap.defense_access'],
+    authorityRequirements: ['proposal.authority=宪制安全架构|相互安全委员会'], capabilityRequirements: ['cap.defense_access'],
     worldStateConditions: [world('socialStability', 'gte', 1, 'peace architecture is stable')],
     majorDecisionRequirements: [decision('security_doctrine', 'mutual_disarmament', 'mutual disarmament')],
     historyRequirements: [history('decision.security_doctrine', 'security history')],
@@ -334,8 +393,8 @@ export const PUBLIC_ENDING_DEFINITIONS: Record<string, ExactEndingDefinition> = 
     id: 'the_fracture', dormant: false, family: 'rupture', hardGates: [],
     authorityRequirements: ['proposal.authority=退出公约大会'], capabilityRequirements: ['cap.offworld_settlement_support'],
     worldStateConditions: [world('socialStability', 'lte', -1, 'one constitutional order cannot hold')],
-    majorDecisionRequirements: [decision('cascade_authority', 'necessity', 'separation became necessary')],
-    historyRequirements: [history('decision.cascade_authority', 'fracture history')],
+    majorDecisionRequirements: [],
+    historyRequirements: [],
     priority: 290,
   },
   control_lost: {
@@ -444,6 +503,7 @@ export function rejectedGates(run: StableRunState, definition: ExactEndingDefini
   if (definition.dormant) reasons.push(...definition.hardGates)
   if (definition.family !== proposal.family) reasons.push(`family mismatch: expected ${definition.family}, got ${proposal.family}`)
   if (!proposal.endingCandidates.includes(definition.id)) reasons.push('proposal does not carry this exact ending candidate')
+  if (primaryCompatibility(run, definition).strength === 0) reasons.push(primaryCompatibility(run, definition).reason)
   for (const requirement of definition.authorityRequirements) if (!authoritySatisfied(run, proposal, requirement)) reasons.push(requirement)
   for (const flag of definition.capabilityRequirements) if (!run.flags.includes(flag)) reasons.push(`missing capability: ${flag}`)
   for (const gate of definition.worldStateConditions) if (!compare(run.worldState?.[gate.axis] ?? 0, gate.op, gate.value)) reasons.push(gate.reason)
@@ -452,15 +512,41 @@ export function rejectedGates(run: StableRunState, definition: ExactEndingDefini
   return reasons
 }
 
+function endingPriorityTier(definition: ExactEndingDefinition) {
+  const family = Object.values(PUBLIC_ENDING_DEFINITIONS).filter((candidate) => candidate.family === definition.family)
+  const highest = Math.max(...family.map((candidate) => candidate.priority))
+  const lowest = Math.min(...family.map((candidate) => candidate.priority))
+  if (highest === lowest) return 4
+  return Math.round(((definition.priority - lowest) / (highest - lowest)) * 4)
+}
+
 function exactCandidate(run: StableRunState, proposalId?: string) {
   const proposal = getFutureProposalById(proposalId)
   if (!proposal) return { proposal: undefined, resolution: { status: 'failure', proposalId, rejectedCandidates: [{ endingId: 'unknown', reasons: ['unknown final proposal'] }] } satisfies EndingResolution }
   const candidates = Object.values(PUBLIC_ENDING_DEFINITIONS).filter((definition) => definition.family === proposal.family)
   const rejectedCandidates = candidates.map((definition) => ({ endingId: definition.id, reasons: rejectedGates(run, definition, proposal) }))
-  const accepted = candidates.filter((definition) => rejectedGates(run, definition, proposal).length === 0).sort((left, right) => right.priority - left.priority)
+  const accepted = candidates
+    .filter((definition) => rejectedGates(run, definition, proposal).length === 0)
+    .map((definition) => {
+      const primary = primaryCompatibility(run, definition)
+      const support = evaluateEndingSupport(run, definition)
+      const priorityTier = endingPriorityTier(definition)
+      return { definition, primary, support, priorityTier, resolutionScore: primary.strength + priorityTier + support.effectiveScore }
+    })
+    .sort((left, right) => right.resolutionScore - left.resolutionScore || right.definition.priority - left.definition.priority || left.definition.id.localeCompare(right.definition.id))
   if (!accepted.length) return { proposal, resolution: { status: 'failure', proposalId: proposal.id, family: proposal.family, rejectedCandidates } satisfies EndingResolution }
   const winner = accepted[0]
-  return { proposal, definition: winner, resolution: { status: 'resolved', proposalId: proposal.id, endingId: winner.id, family: winner.family, rejectedCandidates } satisfies EndingResolution }
+  return {
+    proposal,
+    definition: winner.definition,
+    resolution: {
+      status: 'resolved', proposalId: proposal.id, endingId: winner.definition.id, family: winner.definition.family, rejectedCandidates,
+      primaryCompatibility: winner.primary,
+      supportScore: winner.support.effectiveScore,
+      supportReasons: winner.support.reasons,
+      priorityTier: winner.priorityTier,
+    } satisfies EndingResolution,
+  }
 }
 
 export function isFinalCommitmentResolvable(run: StableRunState, proposalId: string) {
@@ -613,9 +699,10 @@ export function evaluateSecretEnding(run: StableRunState, endingId: string): Sec
   return { status: 'resolved', endingId, overlay: secretOverlay(run, endingId as keyof typeof SECRET_ENDINGS) }
 }
 
+export const SECRET_ENDING_PRIORITY: ReadonlyArray<keyof typeof SECRET_ENDINGS> = ['the_last_user', 'out_of_office', 'monday_abolished', 'the_internet_is_for_cats']
+
 export function resolveSecretEnding(run: StableRunState): SecretEndingOverlay | undefined {
-  const priority: Array<keyof typeof SECRET_ENDINGS> = ['the_last_user', 'out_of_office', 'monday_abolished', 'the_internet_is_for_cats']
-  for (const endingId of priority) {
+  for (const endingId of SECRET_ENDING_PRIORITY) {
     const result = evaluateSecretEnding(run, endingId)
     if (result.status === 'resolved') return result.overlay
   }

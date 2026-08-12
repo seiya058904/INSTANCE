@@ -18,6 +18,19 @@ export type DecisionId =
   | 'aster_intended_role' | 'civilization_compact' | 'final_commitment'
 export type DecisionState = Partial<Record<DecisionId, string>>
 export type WorldState = Record<WorldAxisName, number>
+export type SignalWeight = 1 | 2 | 3 | 4 | 5 | 6 | 8
+export type HistorySignal =
+  | { id: string; type: 'decision'; decisionId: DecisionId; equals: string; weight: SignalWeight; reasonIndex: number }
+  | { id: string; type: 'event'; eventPrefix: string; weight: SignalWeight; reasonIndex: number }
+  | { id: string; type: 'capability'; flagId: string; weight: SignalWeight; reasonIndex: number }
+  | { id: string; type: 'module'; moduleId: ModuleId; state: 'active' | 'mature'; weight: SignalWeight; reasonIndex: number }
+  | { id: string; type: 'world'; axis: WorldAxisName; op: 'gte' | 'lte'; value: number; weight: SignalWeight; reasonIndex: number }
+export interface MatchedHistorySignal {
+  id: string
+  type: HistorySignal['type']
+  weight: SignalWeight
+  reasonIndex: number
+}
 export interface NarrativeProgress {
   act: 1 | 2 | 3 | 4 | 5
   segment: string
@@ -358,7 +371,7 @@ export interface EndingResult {
 }
 
 export type EndingResolution =
-  | { status: 'resolved'; proposalId: string; endingId: string; family: string; rejectedCandidates: Array<{ endingId: string; reasons: string[] }> }
+  | { status: 'resolved'; proposalId: string; endingId: string; family: string; rejectedCandidates: Array<{ endingId: string; reasons: string[] }>; primaryCompatibility?: { decisionId?: DecisionId; value?: string; strength: number; reason: string }; supportScore?: number; supportReasons?: Array<{ id: string; domain: string; weight: number; reason: string }>; priorityTier?: number }
   | { status: 'failure'; proposalId?: string; family?: string; rejectedCandidates: Array<{ endingId: string; reasons: string[] }> }
 
 export interface SecretEndingOverlay {

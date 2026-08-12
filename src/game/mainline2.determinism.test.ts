@@ -23,10 +23,10 @@ const adaptedRoleTradeoffs = {
   lawful_alternative: { preserves: '合法异议', givesUp: '整齐划一' },
 } as const
 const substantiveRoleEvidence = {
-  natural_continuation: /沿着已经成熟的制度与能力继续推进/,
-  power_constraint: /中央执行权拆分.*审计、暂停和复审权/,
-  shared_future: /多个独立政治主体.*任何单一中心/,
-  lawful_alternative: /独立法定机构.*拒绝、申诉、退出/,
+  natural_continuation: /沿着已经被证明可行的方向继续/,
+  power_constraint: /把关键权力变得可暂停、可审计、可复审/,
+  shared_future: /把决定权分给多个独立政治主体共同承担/,
+  lawful_alternative: /把拒绝、申诉和退出写进制度/,
 } as const
 
 function expectSubstantiveRoleSemantics(proposal: ReturnType<typeof generateFutureProposals>[number]) {

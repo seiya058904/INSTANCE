@@ -241,12 +241,17 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const clarificationText = choice.proposalKind === 'clarification' && choice.proposalId
     ? formatProposalClarification(getFutureProposalById(choice.proposalId)!, run)
     : undefined
+  // M17 REVIEW is a single-entry scene: its user prompt must enter the chat
+  // history exactly once. Review / clarify / reject / recover are assistant-side
+  // sub-interactions that update the review state without re-writing the same
+  // player turn (the authored Proceed choice carries the single user prompt).
+  const isM17ReviewSubinteraction = proposalSource === 'ML2-A5-M17-REVIEW-01' && Boolean(choice.proposalKind) && choice.proposalKind !== 'commitment'
   const history = [...run.history, {
     nodeId: scene.id,
     conversationId: scene.conversationId,
     conversationTitle: scene.conversationTitleAfterMessage ?? scene.conversationTitle,
-    userMessage: scene.userMessage,
-    userMessages: scene.userMessages ? [...scene.userMessages] : undefined,
+    userMessage: isM17ReviewSubinteraction ? '' : scene.userMessage,
+    userMessages: isM17ReviewSubinteraction ? [] : scene.userMessages ? [...scene.userMessages] : undefined,
     choiceId: choice.id,
     assistantText: clarificationText ?? choice.longformPreview?.preview ?? choice.text,
     userContent: scene.userContent?.map((part) => ({ ...part })),

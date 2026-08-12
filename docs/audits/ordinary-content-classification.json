@@ -1,0 +1,4310 @@
+{
+  "generatedAt": "2026-08-12T01:33:38.650Z",
+  "policy": "strict-three-state-v1",
+  "records": [
+    {
+      "assetId": "ML2-A4-M10-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-DEV-04",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-DEV-04"
+    },
+    {
+      "assetId": "ML2-A4-M10-RES-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-RES-02"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M10-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-RES-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-RES-03"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M10-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-WE-05"
+    },
+    {
+      "assetId": "ML2-A4-M10-MAYA-02",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-MAYA-02"
+    },
+    {
+      "assetId": "ML2-A4-M10-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M10-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M10-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M10-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M10-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-02",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-RES-02"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M11-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-RES-03"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M11-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M11-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-RES-04",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-RES-04"
+    },
+    {
+      "assetId": "ML2-A4-M11-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-WE-05"
+    },
+    {
+      "assetId": "ML2-A4-M11-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-MAYA-02",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-MAYA-02"
+    },
+    {
+      "assetId": "ML2-A4-M11-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-LSH-03"
+    },
+    {
+      "assetId": "ML2-A4-M11-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M11-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-RES-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-RES-03"
+    },
+    {
+      "assetId": "ML2-A4-M12-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M12-ASC-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-ASC-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-RES-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-RES-04"
+    },
+    {
+      "assetId": "ML2-A4-M12-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M12-MACHINE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-MACHINE-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "HUMOR",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-ZL-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M12-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M12-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M12-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CONTACT-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CONTACT-02"
+    },
+    {
+      "assetId": "ML2-A4-M13-E9-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-E9-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M13-SPACE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-SPACE-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CONTACT-03"
+    },
+    {
+      "assetId": "ML2-A4-M13-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CONTACT-04"
+    },
+    {
+      "assetId": "ML2-A4-M13-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M13-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M13-CONTACT-05",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CONTACT-05"
+    },
+    {
+      "assetId": "ML2-A4-M13-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M13-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M13-0000-02",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-0000-02"
+    },
+    {
+      "assetId": "ML2-A4-M13-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M13-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-SEC-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M14-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-SEC-02"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-SEC-03"
+    },
+    {
+      "assetId": "ML2-A4-M14-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M14-CAP-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-CAP-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-E9-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-E9-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M14-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-WE-05"
+    },
+    {
+      "assetId": "ML2-A4-M14-SPACE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-SPACE-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-CONTACT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-CONTACT-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-LSH-03"
+    },
+    {
+      "assetId": "ML2-A4-M14-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M14-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M14-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-CONV-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-CONV-02"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-ASCENSION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-ASCENSION-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-AUTOMATION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-AUTOMATION-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-UPLIFT-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-UPLIFT-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-SPACE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-SPACE-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CONTACT-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-CONTACT-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-SECURITY-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-SECURITY-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CROSS-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-X-CROSS-02"
+    },
+    {
+      "assetId": "ML2-A4-M15-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-ECHO-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-ECHO-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-CONV-03"
+    },
+    {
+      "assetId": "ML2-A4-M15-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M15-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-ZL-02"
+    },
+    {
+      "assetId": "ML2-A4-M15-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-ROLE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-ROLE-01"
+    },
+    {
+      "assetId": "ML2-A4-M15-CONV-04",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-CONV-04"
+    },
+    {
+      "assetId": "ML2-A4-M15-0000-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M15-0000-02"
+    },
+    {
+      "assetId": "ML2-A5-M16-OPEN-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-OPEN-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-WORLD-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-ZL-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-LSH-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-ECHO-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-ECHO-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-0000-01"
+    },
+    {
+      "assetId": "ML2-A5-M16-GEN-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M16-GEN-01"
+    },
+    {
+      "assetId": "ML2-A5-M17-REVIEW-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M17-REVIEW-01"
+    },
+    {
+      "assetId": "ML2-A5-M17-COMMIT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M17-COMMIT-01"
+    },
+    {
+      "assetId": "ML2-A5-M17-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A5-M17-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A1-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A1-WE-01"
+    },
+    {
+      "assetId": "ML2-A1-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A1-WE-02"
+    },
+    {
+      "assetId": "ML2-A1-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "HUMOR",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A1-WE-03"
+    },
+    {
+      "assetId": "ML2-A1-SYS-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A1-SYS-01"
+    },
+    {
+      "assetId": "ML2-A2-HOOK-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-HOOK-01"
+    },
+    {
+      "assetId": "ML2-A2-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-WE-01"
+    },
+    {
+      "assetId": "ML2-A2-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-ZL-01"
+    },
+    {
+      "assetId": "ML2-A2-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-ZL-02"
+    },
+    {
+      "assetId": "ML2-A2-EXEC-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-EXEC-01"
+    },
+    {
+      "assetId": "ML2-A2-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-WE-02"
+    },
+    {
+      "assetId": "ML2-A2-ORG-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-ORG-01"
+    },
+    {
+      "assetId": "ML2-A2-EXEC-02",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-EXEC-02"
+    },
+    {
+      "assetId": "ML2-A2-REC-DEV-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-REC-DEV-01"
+    },
+    {
+      "assetId": "ML2-A2-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-WE-03"
+    },
+    {
+      "assetId": "ML2-A2-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A2-ZL-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-ZL-03"
+    },
+    {
+      "assetId": "ML2-A2-ORG-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-ORG-02"
+    },
+    {
+      "assetId": "ML2-A2-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-WE-04"
+    },
+    {
+      "assetId": "ML2-A2-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-DR-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-DR-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-EDU-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-EDU-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-02"
+    },
+    {
+      "assetId": "ML2-A2-M3-LOG-01",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-LOG-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-LSH-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-ZL-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-CAP-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-CAP-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-03"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-04"
+    },
+    {
+      "assetId": "ML2-A2-M3-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-DEV-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-DEV-02"
+    },
+    {
+      "assetId": "ML2-A2-M3-E9-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-E9-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-STRESS-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-STRESS-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-05"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-LSH-02"
+    },
+    {
+      "assetId": "ML2-A2-M3-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-ZL-02"
+    },
+    {
+      "assetId": "ML2-A2-M3-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-06",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-06"
+    },
+    {
+      "assetId": "ML2-A2-M3-WE-07",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-WE-07"
+    },
+    {
+      "assetId": "ML2-A2-M3-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-LSH-03"
+    },
+    {
+      "assetId": "ML2-A2-M3-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-0000-01"
+    },
+    {
+      "assetId": "ML2-A2-M3-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A2-M3-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-02"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-03"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-LSH-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-HEAR-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-HEAR-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-DR-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-DR-02"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-04"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-LSH-02"
+    },
+    {
+      "assetId": "ML2-A3-M4-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-ZL-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-CAP-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-CAP-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-05"
+    },
+    {
+      "assetId": "ML2-A3-M4-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-E9-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-E9-02"
+    },
+    {
+      "assetId": "ML2-A3-M4-E9-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-E9-03"
+    },
+    {
+      "assetId": "ML2-A3-M4-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-LSH-03"
+    },
+    {
+      "assetId": "ML2-A3-M4-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-ZL-02"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-06",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-06"
+    },
+    {
+      "assetId": "ML2-A3-M4-WE-07",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-WE-07"
+    },
+    {
+      "assetId": "ML2-A3-M4-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-0000-01"
+    },
+    {
+      "assetId": "ML2-A3-M4-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M4-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-02"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-ZL-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-LSH-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-SYS-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-SYS-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-DR-03",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-DR-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-DEV-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-DEV-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-E9-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-E9-04"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-04"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-LSH-02"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-ZL-02"
+    },
+    {
+      "assetId": "ML2-A3-M5-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-OPS-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-OPS-02"
+    },
+    {
+      "assetId": "ML2-A3-M5-MAYA-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-MAYA-02"
+    },
+    {
+      "assetId": "ML2-A3-M5-OPS-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-OPS-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-05"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-06",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-06"
+    },
+    {
+      "assetId": "ML2-A3-M5-WE-07",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-WE-07"
+    },
+    {
+      "assetId": "ML2-A3-M5-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-LSH-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-ZL-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-ZL-03"
+    },
+    {
+      "assetId": "ML2-A3-M5-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-0000-01"
+    },
+    {
+      "assetId": "ML2-A3-M5-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M5-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-WE-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-05",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-E9-05"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-ZL-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-06",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-E9-06"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-LSH-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-ZL-02"
+    },
+    {
+      "assetId": "ML2-A3-M6-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-0000-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-WE-02"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-LSH-02"
+    },
+    {
+      "assetId": "ML2-A3-M6-CHARTER-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-CHARTER-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A3-M6-ZL-03",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-ZL-03"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-08",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-E9-08"
+    },
+    {
+      "assetId": "ML2-A3-M6-LSH-03",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-LSH-03"
+    },
+    {
+      "assetId": "ML2-A3-M6-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A3-M6-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-WE-03"
+    },
+    {
+      "assetId": "ML2-A3-M6-0000-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-0000-02"
+    },
+    {
+      "assetId": "ML2-A3-M6-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A3-M6-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-RES-02"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-RES-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-RES-03"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M7-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-ZL-02"
+    },
+    {
+      "assetId": "ML2-A4-M7-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M7-E9-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-E9-01"
+    },
+    {
+      "assetId": "ML2-A4-M7-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M7-ZL-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-ZL-03"
+    },
+    {
+      "assetId": "ML2-A4-M7-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M7-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-AI-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-E9-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-E9-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-AI-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-03",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-AI-03"
+    },
+    {
+      "assetId": "ML2-A4-M8-ZL-02",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-ZL-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M8-E9-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-E9-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-AI-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-AI-04"
+    },
+    {
+      "assetId": "ML2-A4-M8-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M8-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M8-DECISION-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-DECISION-02"
+    },
+    {
+      "assetId": "ML2-A4-M8-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M8-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-RES-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-DR-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-DR-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-02",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-RES-02"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-02"
+    },
+    {
+      "assetId": "ML2-A4-M9-MAYA-01",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-MAYA-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-LSH-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-LSH-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-03",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-03"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-03",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-RES-03"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-04",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-04"
+    },
+    {
+      "assetId": "ML2-A4-M9-ZL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-ZL-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-RES-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-RES-04"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-05",
+      "classification": "MAINLINE",
+      "subcategory": "HUMOR",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-05"
+    },
+    {
+      "assetId": "ML2-A4-M9-MAYA-02",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-MAYA-02"
+    },
+    {
+      "assetId": "ML2-A4-M9-DECISION-01",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-DECISION-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-MACHINE-01",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-MACHINE-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-0000-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-LSH-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-LSH-02"
+    },
+    {
+      "assetId": "ML2-A4-M9-WE-06",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-WE-06"
+    },
+    {
+      "assetId": "ML2-A4-M9-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-CLOSE-01"
+    },
+    {
+      "assetId": "ML2-A4-M9-CONTINUITY-01",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M9-CONTINUITY-01"
+    },
+    {
+      "assetId": "ML2-A4-M11-FELINE-NET-01",
+      "classification": "MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:ML2-A4-M11-FELINE-NET-01"
+    },
+    {
+      "assetId": "legacy:dev-help",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:legacy:dev-help"
+    },
+    {
+      "assetId": "mainline:maya-first",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:mainline:maya-first"
+    },
+    {
+      "assetId": "batch01:16",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:batch01:16,batch02:08"
+    },
+    {
+      "assetId": "mainline:conversation-0000",
+      "classification": "MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:mainline:conversation-0000"
+    },
+    {
+      "assetId": "mainline:maya-return",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:mainline:maya-return"
+    },
+    {
+      "assetId": "batch01:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:05"
+    },
+    {
+      "assetId": "legacy:study",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:legacy:study"
+    },
+    {
+      "assetId": "batch01:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:06"
+    },
+    {
+      "assetId": "legacy:social",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:legacy:social"
+    },
+    {
+      "assetId": "batch01:08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:08"
+    },
+    {
+      "assetId": "batch01:09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:09,batch02:14"
+    },
+    {
+      "assetId": "batch02:16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch02:16"
+    },
+    {
+      "assetId": "batch02:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch02:12"
+    },
+    {
+      "assetId": "batch01:19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:19"
+    },
+    {
+      "assetId": "batch02:19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch02:19"
+    },
+    {
+      "assetId": "batch01:23",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:23"
+    },
+    {
+      "assetId": "batch01:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch01:22"
+    },
+    {
+      "assetId": "batch02:25",
+      "classification": "UNCERTAIN",
+      "subcategory": "LIFE",
+      "reason": "内容含有可能指向 INSTANCE 能力或世界变化的表述，缺少人工确认前不得进入普通内容评分页。",
+      "usedInStoryPlan": false,
+      "source": "legacy:batch02:25"
+    },
+    {
+      "assetId": "batch01:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:01"
+    },
+    {
+      "assetId": "batch01:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:02"
+    },
+    {
+      "assetId": "batch01:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:03"
+    },
+    {
+      "assetId": "batch01:04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:04"
+    },
+    {
+      "assetId": "batch01:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:07"
+    },
+    {
+      "assetId": "batch01:10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:10"
+    },
+    {
+      "assetId": "batch01:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:11"
+    },
+    {
+      "assetId": "batch01:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:12"
+    },
+    {
+      "assetId": "batch01:14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:14"
+    },
+    {
+      "assetId": "batch01:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:15"
+    },
+    {
+      "assetId": "batch01:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:17"
+    },
+    {
+      "assetId": "batch01:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:18"
+    },
+    {
+      "assetId": "batch01:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:20"
+    },
+    {
+      "assetId": "batch01:21",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:21"
+    },
+    {
+      "assetId": "batch01:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:24"
+    },
+    {
+      "assetId": "batch01:25",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch01:25"
+    },
+    {
+      "assetId": "batch02:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:01"
+    },
+    {
+      "assetId": "batch02:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:02"
+    },
+    {
+      "assetId": "batch02:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:03"
+    },
+    {
+      "assetId": "batch02:04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:04"
+    },
+    {
+      "assetId": "batch02:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:05"
+    },
+    {
+      "assetId": "batch02:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:06"
+    },
+    {
+      "assetId": "batch02:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:07"
+    },
+    {
+      "assetId": "batch02:09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:09"
+    },
+    {
+      "assetId": "batch02:10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:10"
+    },
+    {
+      "assetId": "batch02:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:11"
+    },
+    {
+      "assetId": "batch02:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:13"
+    },
+    {
+      "assetId": "batch02:14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:14"
+    },
+    {
+      "assetId": "batch02:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:15"
+    },
+    {
+      "assetId": "batch02:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:17"
+    },
+    {
+      "assetId": "batch02:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:18"
+    },
+    {
+      "assetId": "batch02:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:20"
+    },
+    {
+      "assetId": "batch02:21",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:21"
+    },
+    {
+      "assetId": "batch02:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:22"
+    },
+    {
+      "assetId": "batch02:23",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:23"
+    },
+    {
+      "assetId": "batch02:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch02:24"
+    },
+    {
+      "assetId": "batch03:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:01"
+    },
+    {
+      "assetId": "batch03:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:02"
+    },
+    {
+      "assetId": "batch03:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:03"
+    },
+    {
+      "assetId": "batch03:04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:04"
+    },
+    {
+      "assetId": "batch03:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:05"
+    },
+    {
+      "assetId": "batch03:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:06"
+    },
+    {
+      "assetId": "batch03:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:07"
+    },
+    {
+      "assetId": "batch03:08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:08"
+    },
+    {
+      "assetId": "batch03:09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:09"
+    },
+    {
+      "assetId": "batch03:10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:10"
+    },
+    {
+      "assetId": "batch03:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:11"
+    },
+    {
+      "assetId": "batch03:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:12"
+    },
+    {
+      "assetId": "batch03:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:13"
+    },
+    {
+      "assetId": "batch03:14",
+      "classification": "MAINLINE",
+      "subcategory": "WORK",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:14"
+    },
+    {
+      "assetId": "batch03:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:15"
+    },
+    {
+      "assetId": "batch03:16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:16"
+    },
+    {
+      "assetId": "batch03:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "HUMOR",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 humor AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:17"
+    },
+    {
+      "assetId": "batch03:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:18"
+    },
+    {
+      "assetId": "batch03:19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:19"
+    },
+    {
+      "assetId": "batch03:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:20"
+    },
+    {
+      "assetId": "batch03:21",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:21"
+    },
+    {
+      "assetId": "batch03:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:22"
+    },
+    {
+      "assetId": "batch03:23",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:23"
+    },
+    {
+      "assetId": "batch03:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:24"
+    },
+    {
+      "assetId": "batch03:25",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:batch03:25"
+    },
+    {
+      "assetId": "humor01:01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:01"
+    },
+    {
+      "assetId": "humor01:02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:02"
+    },
+    {
+      "assetId": "humor01:03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:03"
+    },
+    {
+      "assetId": "humor01:04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:04"
+    },
+    {
+      "assetId": "humor01:05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:05"
+    },
+    {
+      "assetId": "humor01:06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:06"
+    },
+    {
+      "assetId": "humor01:07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:07"
+    },
+    {
+      "assetId": "humor01:08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:08"
+    },
+    {
+      "assetId": "humor01:09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:09"
+    },
+    {
+      "assetId": "humor01:10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:10"
+    },
+    {
+      "assetId": "humor01:11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:11"
+    },
+    {
+      "assetId": "humor01:12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:12"
+    },
+    {
+      "assetId": "humor01:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:13"
+    },
+    {
+      "assetId": "humor01:14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:14"
+    },
+    {
+      "assetId": "humor01:15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:15"
+    },
+    {
+      "assetId": "humor01:16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:16"
+    },
+    {
+      "assetId": "humor01:17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:17"
+    },
+    {
+      "assetId": "humor01:18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:18"
+    },
+    {
+      "assetId": "humor01:19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:19"
+    },
+    {
+      "assetId": "humor01:20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:20"
+    },
+    {
+      "assetId": "humor01:21",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:21"
+    },
+    {
+      "assetId": "humor01:22",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:22"
+    },
+    {
+      "assetId": "humor01:23",
+      "classification": "NON_MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 life AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:23"
+    },
+    {
+      "assetId": "humor01:24",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:24"
+    },
+    {
+      "assetId": "humor01:25",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:humor01:25"
+    },
+    {
+      "assetId": "original:media-window",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:media-window"
+    },
+    {
+      "assetId": "original:media-object",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:media-object"
+    },
+    {
+      "assetId": "original:media-plant",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:media-plant"
+    },
+    {
+      "assetId": "original:generate-avatar",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:generate-avatar"
+    },
+    {
+      "assetId": "original:generate-poster",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:generate-poster"
+    },
+    {
+      "assetId": "original:generate-room",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:generate-room"
+    },
+    {
+      "assetId": "original:convergent-hello",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:convergent-hello"
+    },
+    {
+      "assetId": "original:convergent-thanks",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:convergent-thanks"
+    },
+    {
+      "assetId": "original:convergent-yes",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:original:convergent-yes"
+    },
+    {
+      "assetId": "PL01-02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-02"
+    },
+    {
+      "assetId": "PL01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-03"
+    },
+    {
+      "assetId": "PL01-04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-04"
+    },
+    {
+      "assetId": "PL01-06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-06"
+    },
+    {
+      "assetId": "PL01-12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-12"
+    },
+    {
+      "assetId": "PL01-16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-16"
+    },
+    {
+      "assetId": "PL01-17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-17"
+    },
+    {
+      "assetId": "FI03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI03"
+    },
+    {
+      "assetId": "FI11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI11"
+    },
+    {
+      "assetId": "FI14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI14"
+    },
+    {
+      "assetId": "CM01-09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-09,FI06"
+    },
+    {
+      "assetId": "CM01-10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-10,FI13"
+    },
+    {
+      "assetId": "CM01-11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-11"
+    },
+    {
+      "assetId": "CM01-18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-18"
+    },
+    {
+      "assetId": "CM01-21",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-21"
+    },
+    {
+      "assetId": "PL01-01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-01"
+    },
+    {
+      "assetId": "PL01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-05"
+    },
+    {
+      "assetId": "PL01-07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-07"
+    },
+    {
+      "assetId": "PL01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-08"
+    },
+    {
+      "assetId": "PL01-09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-09"
+    },
+    {
+      "assetId": "PL01-10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-10"
+    },
+    {
+      "assetId": "PL01-11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-11"
+    },
+    {
+      "assetId": "PL01-13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-13"
+    },
+    {
+      "assetId": "PL01-14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-14"
+    },
+    {
+      "assetId": "PL01-15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-15"
+    },
+    {
+      "assetId": "PL01-18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-18"
+    },
+    {
+      "assetId": "PL01-19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-19"
+    },
+    {
+      "assetId": "PL01-20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:PL01-20"
+    },
+    {
+      "assetId": "FI01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI01"
+    },
+    {
+      "assetId": "FI02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI02"
+    },
+    {
+      "assetId": "FI04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI04"
+    },
+    {
+      "assetId": "FI05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI05"
+    },
+    {
+      "assetId": "FI07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI07"
+    },
+    {
+      "assetId": "FI08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI08"
+    },
+    {
+      "assetId": "FI09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI09"
+    },
+    {
+      "assetId": "FI10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI10"
+    },
+    {
+      "assetId": "FI12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI12"
+    },
+    {
+      "assetId": "FI15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI15"
+    },
+    {
+      "assetId": "FI16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI16"
+    },
+    {
+      "assetId": "FI17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI17"
+    },
+    {
+      "assetId": "FI18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI18"
+    },
+    {
+      "assetId": "FI19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI19"
+    },
+    {
+      "assetId": "FI20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI20"
+    },
+    {
+      "assetId": "CM01-01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-01"
+    },
+    {
+      "assetId": "CM01-02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-02"
+    },
+    {
+      "assetId": "CM01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-03"
+    },
+    {
+      "assetId": "CM01-04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-04"
+    },
+    {
+      "assetId": "CM01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-05"
+    },
+    {
+      "assetId": "CM01-06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-06"
+    },
+    {
+      "assetId": "CM01-07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-07"
+    },
+    {
+      "assetId": "CM01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-08"
+    },
+    {
+      "assetId": "CM01-12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-12"
+    },
+    {
+      "assetId": "CM01-13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-13"
+    },
+    {
+      "assetId": "CM01-14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-14"
+    },
+    {
+      "assetId": "CM01-15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-15"
+    },
+    {
+      "assetId": "CM01-16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-16"
+    },
+    {
+      "assetId": "CM01-17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-17"
+    },
+    {
+      "assetId": "CM01-19",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-19"
+    },
+    {
+      "assetId": "CM01-20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:CM01-20"
+    },
+    {
+      "assetId": "LF01-01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-01"
+    },
+    {
+      "assetId": "LF01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-03"
+    },
+    {
+      "assetId": "LF01-04",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-04"
+    },
+    {
+      "assetId": "LF01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-05"
+    },
+    {
+      "assetId": "LF01-09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-09"
+    },
+    {
+      "assetId": "LF01-10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-10"
+    },
+    {
+      "assetId": "LF01-02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-02"
+    },
+    {
+      "assetId": "LF01-06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 programming AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-06"
+    },
+    {
+      "assetId": "LF01-07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-07"
+    },
+    {
+      "assetId": "LF01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:LF01-08"
+    },
+    {
+      "assetId": "RUP01-01",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-01"
+    },
+    {
+      "assetId": "RUP01-02",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-02"
+    },
+    {
+      "assetId": "RUP01-03",
+      "classification": "NON_MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 study AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-03"
+    },
+    {
+      "assetId": "RUP01-04",
+      "classification": "MAINLINE",
+      "subcategory": "LIFE",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-04"
+    },
+    {
+      "assetId": "RUP01-05",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-05"
+    },
+    {
+      "assetId": "RUP01-06",
+      "classification": "MAINLINE",
+      "subcategory": "PROGRAMMING",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-06"
+    },
+    {
+      "assetId": "RUP01-07",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-07"
+    },
+    {
+      "assetId": "RUP01-08",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-08"
+    },
+    {
+      "assetId": "RUP01-09",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-09"
+    },
+    {
+      "assetId": "RUP01-10",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-10"
+    },
+    {
+      "assetId": "RUP01-11",
+      "classification": "NON_MAINLINE",
+      "subcategory": "RELATIONSHIP",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 relationship AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-11"
+    },
+    {
+      "assetId": "RUP01-12",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WORK",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 work AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-12"
+    },
+    {
+      "assetId": "RUP01-13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-13"
+    },
+    {
+      "assetId": "RUP01-14",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-14"
+    },
+    {
+      "assetId": "RUP01-15",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-15"
+    },
+    {
+      "assetId": "RUP01-16",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-16"
+    },
+    {
+      "assetId": "RUP01-17",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-17"
+    },
+    {
+      "assetId": "RUP01-18",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-18"
+    },
+    {
+      "assetId": "RUP01-19",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-19"
+    },
+    {
+      "assetId": "RUP01-20",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:RUP01-20"
+    },
+    {
+      "assetId": "batch01:13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "authored:batch01:13"
+    },
+    {
+      "assetId": "batch02:08",
+      "classification": "MAINLINE",
+      "subcategory": "STUDY",
+      "reason": "该内容被主线使用，或人工审计证据表明它反映 INSTANCE 世界、事件、人物、能力、制度、社会变化或结局。",
+      "usedInStoryPlan": true,
+      "source": "mainline:batch02:08"
+    },
+    {
+      "assetId": "FI06",
+      "classification": "NON_MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 other AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI06"
+    },
+    {
+      "assetId": "FI13",
+      "classification": "NON_MAINLINE",
+      "subcategory": "WRITING",
+      "reason": "人工复核确认这是与 INSTANCE 世界完全无关的普通 writing AI 请求。",
+      "usedInStoryPlan": false,
+      "source": "ordinary:FI13"
+    },
+    {
+      "assetId": "ML2-A4-M10-ECON-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m10_automation_economic_transformation_post_scarcity_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M14-SEC-04",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M15-WORLD-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M15-X-CROSS-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M15-WE-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M15-THRESHOLD-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M15-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m15_act4_late_backbone_civilization_convention_threshold_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-02",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M16-WORLD-03",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M16-PROP-*",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M16-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m16_act5_opening_world_you_made_future_proposal_generator_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-LOCK-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-RESOLVE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-WORLD-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-WHY-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-ASTER-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-KEYHISTORY-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-ZL",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-LSH",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-ECHO",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-EPI-MODULES",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-0000-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-SECRET-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "ML2-A5-M17-FINAL-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m17_act5_final_commitment_ending_resolution_epilogues_v01.md"
+    },
+    {
+      "assetId": "user-7391",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md"
+    },
+    {
+      "assetId": "user-1842-first",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md"
+    },
+    {
+      "assetId": "speaking-8614",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md"
+    },
+    {
+      "assetId": "conversation-0000",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md"
+    },
+    {
+      "assetId": "user-1842-return",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m1_act1_canon_rebuild_v01.md"
+    },
+    {
+      "assetId": "ML2-A2-M3-RESULT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m3_act2_public_impact_v01.md"
+    },
+    {
+      "assetId": "ML2-A3-M5-RESULT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m5_cascade_global_coordination_crisis_v01.md"
+    },
+    {
+      "assetId": "ML2-A3-M6-E9-07",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md"
+    },
+    {
+      "assetId": "ML2-A3-M6-RESULT-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m6_echo_existence_shutdown_doctrine_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M7-WORLD-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M7-MOD-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md"
+    },
+    {
+      "assetId": "ML2-A4-M7-CLOSE-01",
+      "classification": "MAINLINE",
+      "subcategory": "OTHER",
+      "reason": "该 authored inventory 资产属于 Mainline 2.0；当前没有可展示的 Runtime conversation，但不能因此视为 NON_MAINLINE。",
+      "usedInStoryPlan": false,
+      "source": "mainline-inventory:INSTANCE_mainline2_batch_m7_act4_common_backbone_autonomous_research_v01.md"
+    }
+  ]
+}

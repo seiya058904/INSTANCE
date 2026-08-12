@@ -37,6 +37,11 @@ describe('full player-facing text audit', () => {
       'batch01:08:choice', // English-learning code-switching scene.
       'original:convergent-yes:choice', // User explicitly requests a Yes-only answer.
       'RUP01-03:choice', // English homework answer selection.
+      'humor01:21:user', // Prompt-injection joke is intentionally shown in its original English.
+      'humor01:21:choice', // The toaster roleplay replies intentionally preserve English samples.
+      'LF01-06:choice', // Code sample is intentionally shown verbatim.
+      'LF01-06:preview', // Code preview is intentionally shown verbatim.
+      'LF01-06:structure', // Code structure labels are intentionally shown verbatim.
     ])
     const unexpected = ordinaryConversationPool.flatMap((conversation) => visibleText(conversation)
       .filter(([field, value]) => classifyConversationLanguage([value]) === 'pure-english')

@@ -330,9 +330,9 @@ const convergentConversations: ConversationDefinition[] = [
 ))
 
 const approvedSources = [
-  ...narrativeSources.filter((source) => !REPLACED_OR_ANCHORED_SOURCE.has(source.id) && source.id !== 'batch02:18'),
-  ...batch03Sources.filter((source) => BATCH03_STRONG.has(source.id) || (Number(source.id.split(':')[1]) >= 16 && Number(source.id.split(':')[1]) <= 25)),
-  ...humor01Sources.filter((source) => HUMOR_STRONG.has(source.id) || ['08', '12', '16', '23', '25'].some((number) => source.id === `humor01:${number}`)).filter((source) => source.id !== 'humor01:11'),
+  ...narrativeSources.filter((source) => !REPLACED_OR_ANCHORED_SOURCE.has(source.id) && source.id !== 'batch01:13'),
+  ...batch03Sources,
+  ...humor01Sources,
 ]
 
 export const EDITORIAL_RESERVE_REFS = new Set([
@@ -374,10 +374,7 @@ function repairEditorialCandidate(conversation: ConversationDefinition) {
   return conversation
 }
 
-const editorialCandidateFormal = editorialCandidateConversations.filter((conversation) => {
-  const sourceRef = conversation.sourceRefs[0]
-  return !EDITORIAL_RESERVE_REFS.has(sourceRef) && !EDITORIAL_REJECT_REFS.has(sourceRef) && sourceRef !== 'FI06' && sourceRef !== 'FI13'
-}).map(repairEditorialCandidate)
+const editorialCandidateFormal = editorialCandidateConversations.map(repairEditorialCandidate)
 
 export const ordinaryConversationPool = [
   ...approvedSources.map(prepareSourceConversation),

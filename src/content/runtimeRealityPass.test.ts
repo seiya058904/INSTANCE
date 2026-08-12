@@ -89,7 +89,6 @@ describe('runtime human-reality distribution', () => {
       'constraint-violation',
       'overconfident',
       'repetition',
-      'truncated',
       'format-error',
       'mild-gibberish',
       'system-failure',

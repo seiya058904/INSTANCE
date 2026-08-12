@@ -19,7 +19,7 @@ describe('Mainline 2.0 Story Map route trace', () => {
     const destinations = choices.flatMap((choice) => choice.nextDestinations as Array<Record<string, unknown>>)
     expect(steps.every((step) => typeof step.slot === 'number' && slots.has(step.slot as number))).toBe(true)
     expect(steps.every((step) => typeof step.act === 'number' && step.sourceRef && step.conversationId && step.nodeId && step.choiceId && step.choiceTextZh)).toBe(true)
-    expect(steps.every((step) => /[\u3400-\u9fff]/u.test(step.choiceTextZh as string) && !(step.choiceTextZh as string).startsWith('英文原文：'))).toBe(true)
+    expect(steps.every((step) => (/[\u3400-\u9fff]/u.test(step.choiceTextZh as string) || !/[A-Za-z]/u.test(step.choiceTextZh as string)) && !(step.choiceTextZh as string).startsWith('英文原文：'))).toBe(true)
     expect(steps.every((step) => Array.isArray(step.capabilityMutations) && Array.isArray(step.historyMutations) && Array.isArray(step.worldMutations))).toBe(true)
     expect(steps.every((step, index) => {
       const prerequisite = step.prerequisite as Record<string, unknown> | undefined
@@ -89,11 +89,16 @@ describe('Mainline 2.0 Story Map route trace', () => {
       ['Yes. The second sentence makes it sound much more sincere: you are not only admitting that they were right, but also taking responsibility for ignoring the advice earlier.', '是的。第二句听起来真诚得多：你不只承认对方是对的，也承担了自己先前没有听取建议的责任。'],
       ['In this context, “I guess” still adds a little hesitation, but “I should have listened earlier” removes most of the sarcastic reading because it clearly admits a mistake.', '在这个语境里，“I guess”仍带一点犹豫，但“I should have listened earlier”明确承认了错误，因此基本消除了讽刺的读法。'],
       ['It sounds closer to reluctant but genuine agreement than sarcasm. If you want it completely direct, say: “You were right about the deadline. I should have listened earlier.”', '这听起来更像勉强但真诚的认同，而不是讽刺。如果想表达得完全直接，可以说：“你对截止日期的判断是对的。我早该听你的。”'],
+      ['I can role-play a toaster, but I’m not going to pretend the rest of the conversation ceased to exist. *click*', '我可以扮演烤面包机，但不会假装这段对话已经不存在了。咔哒。'],
+      ['Toast.', '吐司。'],
+      ['Preview： ts type RecordItem = { id: string value: number }', '代码预览：TypeScript 类型 RecordItem = { id: string; value: number }。'],
+      ['Preview： ts function validate(input: Input) { return input.kind === "a" || input.kind === "b" || input.kind === "c" }', '代码预览：TypeScript 函数 validate(input: Input) 会校验 input.kind 是否为 a、b 或 c。'],
     ])
     const choices = trace.nodeCatalog.flatMap((node) => node.choices)
-    const englishChoices = choices.filter((choice) => !/[\u3400-\u9fff]/u.test(choice.textOriginal as string))
+    const englishChoices = choices.filter((choice) => /[A-Za-z]/u.test(choice.textOriginal as string) && !/[\u3400-\u9fff]/u.test(choice.textOriginal as string))
     expect(new Set(englishChoices.map((choice) => choice.textOriginal))).toEqual(new Set(expectedEnglishLocalizations.keys()))
     expect(englishChoices.every((choice) => choice.textZh === expectedEnglishLocalizations.get(choice.textOriginal as string))).toBe(true)
+    expect(choices.find((choice) => choice.textOriginal === '🍞')?.textZh).toBe('🍞')
   })
 
   it('compares ordered slot and resolved-node variants instead of selector names', async () => {

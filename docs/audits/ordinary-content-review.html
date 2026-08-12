@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>INSTANCE · 非主线内容人工评分</title>
+  <style>
+    :root { color-scheme: light; --ink:#29251f; --muted:#766f66; --line:#ded7cd; --paper:#fbfaf7; --card:#fff; --accent:#8d3f28; --accent-soft:#f4e7df; --gold:#c58724; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans SC",sans-serif; line-height:1.7; }
+    button,input,select,textarea { font:inherit; }
+    button { cursor:pointer; }
+    .wrap { width:min(1180px,calc(100% - 40px)); margin:0 auto; }
+    header { padding:48px 0 28px; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); letter-spacing:.12em; font-size:12px; font-weight:700; }
+    h1 { margin:8px 0 12px; font:600 clamp(30px,4vw,48px)/1.15 Georgia,"Noto Serif SC",serif; }
+    .lead { max-width:780px; margin:0; color:#5e574f; font-size:16px; }
+    .notice { margin-top:22px; padding:15px 18px; border-left:4px solid var(--accent); background:var(--accent-soft); color:#5f3327; }
+    .toolbar { position:sticky; top:0; z-index:3; margin:22px 0; padding:14px; border:1px solid var(--line); background:rgba(251,250,247,.96); box-shadow:0 5px 18px rgba(47,35,23,.06); }
+    .toolbar-row { display:flex; flex-wrap:wrap; gap:9px; align-items:center; }
+    .toolbar-row + .toolbar-row { margin-top:10px; }
+    input[type="search"],select,textarea { border:1px solid #cfc6bb; border-radius:7px; background:#fff; color:var(--ink); }
+    input[type="search"],select { min-height:38px; padding:5px 10px; }
+    input[type="search"] { flex:1 1 260px; }
+    textarea { width:100%; min-height:92px; padding:10px; resize:vertical; }
+    .btn { min-height:36px; padding:5px 11px; border:1px solid #cfc6bb; border-radius:7px; background:#fff; color:var(--ink); }
+    .btn:hover,.btn:focus-visible { border-color:var(--accent); color:var(--accent); }
+    .btn.primary { border-color:var(--accent); background:var(--accent); color:#fff; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:24px 0; }
+    .stat { padding:14px 16px; border:1px solid var(--line); background:#fff; }
+    .stat strong { display:block; font-size:25px; line-height:1.2; }
+    .stat span { color:var(--muted); font-size:13px; }
+    .tag-counts { margin:0 0 24px; color:var(--muted); font-size:13px; }
+    .asset { margin:18px 0; border:1px solid var(--line); background:var(--card); box-shadow:0 4px 15px rgba(42,31,21,.035); }
+    .asset summary { display:flex; gap:14px; align-items:flex-start; padding:19px 22px; cursor:pointer; list-style:none; }
+    .asset summary::-webkit-details-marker { display:none; }
+    .asset summary::before { content:"＋"; flex:0 0 auto; color:var(--accent); font-size:20px; line-height:1.4; }
+    .asset[open] summary::before { content:"－"; }
+    .summary-main { min-width:0; flex:1; }
+    .summary-title { margin:0; font-size:20px; font-weight:650; }
+    .summary-message { margin:4px 0 0; color:#625b53; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .summary-side { flex:0 0 auto; text-align:right; }
+    .meta { color:var(--muted); font-size:12px; }
+    .id { color:#968d82; font:11px ui-monospace,SFMono-Regular,Consolas,monospace; word-break:break-all; }
+    .stars { display:inline-flex; gap:1px; white-space:nowrap; }
+    .star { padding:0 2px; border:0; background:transparent; color:#c9c0b7; font-size:22px; line-height:1; }
+    .star.active { color:var(--gold); }
+    .star:focus-visible { outline:2px solid var(--accent); border-radius:4px; }
+    .asset-body { padding:0 22px 24px; }
+    .asset-head { display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center; padding:0 0 16px; border-bottom:1px solid var(--line); }
+    .classification { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.08em; }
+    .content-node { padding:20px 0; border-bottom:1px solid #eee8e0; }
+    .node-label { margin-bottom:8px; color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.06em; }
+    .user-message { margin:0 0 15px; padding:13px 15px; border-radius:9px 9px 9px 2px; background:#f1eee9; white-space:pre-wrap; }
+    .choice { margin:10px 0; padding:12px 14px; border:1px solid #e5ded5; border-radius:8px; background:#fffdfa; }
+    .choice-row { display:flex; gap:12px; justify-content:space-between; align-items:flex-start; }
+    .choice-text { flex:1; white-space:pre-wrap; }
+    .choice-rating { flex:0 0 auto; text-align:right; }
+    .choice-rating .star { font-size:18px; }
+    .choice-rating small { display:block; color:var(--muted); font-size:11px; }
+    .notes { margin-top:20px; }
+    .notes label { display:block; margin-bottom:7px; font-weight:650; }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
+    .tag { padding:4px 9px; border:1px solid #d4cbc1; border-radius:999px; background:#fff; color:#655d54; font-size:13px; }
+    .tag.active { border-color:var(--accent); background:var(--accent-soft); color:var(--accent); }
+    .empty { padding:50px 0; color:var(--muted); text-align:center; }
+    .status { min-height:24px; margin:6px 0; color:var(--accent); font-size:13px; }
+    footer { padding:40px 0 70px; color:var(--muted); font-size:12px; }
+    @media (max-width:720px) {
+      .wrap { width:min(100% - 24px,1180px); }
+      header { padding-top:28px; }
+      .stats { grid-template-columns:repeat(2,1fr); }
+      .asset summary { padding:15px; }
+      .asset-body { padding:0 15px 20px; }
+      .summary-side { text-align:left; }
+      .choice-row { display:block; }
+      .choice-rating { margin-top:8px; text-align:left; }
+      .toolbar { top:0; }
+    }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="eyebrow">INSTANCE / CONTENT AUDIT</div>
+    <h1>非主线内容人工评分</h1>
+    <p class="lead">本页面只包含与 INSTANCE 剧情、人物、能力、社会变化、世界事件与 Ending 完全无关的普通 AI 对话。这里的评分用于内容人工审阅，不会修改主线运行逻辑。</p>
+    <div class="notice">任何直接或间接反映主线世界变化的内容均不属于本页。无法确定的内容会保留在分类审计中，并不会进入评分页。</div>
+  </div></header>
+  <main class="wrap">
+    <section id="stats" class="stats" aria-label="进度统计"></section>
+    <div id="tagCounts" class="tag-counts"></div>
+    <section class="toolbar" aria-label="审阅工具">
+      <div class="toolbar-row">
+        <input id="search" type="search" placeholder="搜索用户问题、选项、Asset ID、User、Topic…">
+        <select id="ratingFilter" aria-label="星级筛选"><option value="all">全部星级</option><option value="unrated">未评分</option><option value="1">1 星</option><option value="2">2 星</option><option value="3">3 星</option><option value="4">4 星</option><option value="5">5 星</option></select>
+        <select id="typeFilter" aria-label="内容类型"></select>
+        <select id="tagFilter" aria-label="标签筛选"></select>
+        <select id="sort" aria-label="排序"><option value="original">原始顺序</option><option value="id">Asset ID</option><option value="unrated">未评分优先</option><option value="low">评分从低到高</option><option value="high">评分从高到低</option></select>
+      </div>
+      <div class="toolbar-row">
+        <button class="btn primary" id="next">下一个未评分</button><button class="btn" id="expand">全部展开</button><button class="btn" id="collapse">全部折叠</button><button class="btn" id="export">导出评分</button><button class="btn" id="import">导入评分</button><input id="file" type="file" accept="application/json" hidden>
+      </div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
+    <section id="list" aria-live="polite"></section>
+  </main>
+  <footer class="wrap">数据由源码生成器生成；评分、备注、标签与最后查看位置只保存在当前浏览器的 localStorage。</footer>
+<script>
+(() => {
+  const STORAGE_KEY = 'instance:ordinary-content-review:v1'
+  const TAGS = [['keep','👍 保留'],['rewrite','✏️ 需要改写'],['duplicate','🔁 重复'],['excellent','⭐ 很优秀'],['delete','🗑️ 建议删除']]
+  const state = { data:null, ratings:{}, filters:{search:'',rating:'all',type:'all',tag:'all',sort:'original'}, open:new Set(), lastViewed:null }
+  const $ = (id) => document.getElementById(id)
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))
+  const defaultRating = () => ({ rating:null, tags:[], note:'', choices:{} })
+  const getRating = (assetId) => state.ratings[assetId] ?? (state.ratings[assetId] = defaultRating())
+  const persist = () => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({version:1,ratings:state.ratings,lastViewed:state.lastViewed})) } catch {} }
+  const setStatus = (message) => { $('status').textContent = message }
+  const stars = (assetId, nodeId, choiceId, value) => {
+    const rating = getRating(assetId)
+    const current = choiceId ? rating.choices[choiceId] ?? null : rating.rating
+    return '<span class="stars" role="group">' + [1,2,3,4,5].map((score) => `<button class="star ${current === score ? 'active':''}" data-star="1" data-asset="${escapeHtml(assetId)}" data-node="${escapeHtml(nodeId ?? '')}" data-choice="${escapeHtml(choiceId ?? '')}" data-score="${score}" aria-label="${score} 星">${current >= score ? '★':'☆'}</button>`).join('') + '</span>'
+  }
+  const matches = (asset) => {
+    const rating = getRating(asset.assetId), f = state.filters
+    const haystack = [asset.assetId, asset.conversationId, asset.title, asset.topic, asset.source, ...asset.nodes.flatMap((node) => [node.userMessage, ...(node.userMessages || []), ...node.choices.map((choice) => choice.text)])].join('\n').toLowerCase()
+    if (f.search && !haystack.includes(f.search.toLowerCase())) return false
+    if (f.rating === 'unrated' && rating.rating) return false
+    if (f.rating !== 'all' && f.rating !== 'unrated' && rating.rating !== Number(f.rating)) return false
+    if (f.type !== 'all' && asset.subcategory !== f.type) return false
+    if (f.tag !== 'all' && !rating.tags.includes(f.tag)) return false
+    return true
+  }
+  const filtered = () => {
+    const items = state.data.assets.filter(matches).map((asset,index) => ({asset,index}))
+    const score = (item) => getRating(item.asset.assetId).rating || 0
+    if (state.filters.sort === 'id') items.sort((a,b) => a.asset.assetId.localeCompare(b.asset.assetId))
+    if (state.filters.sort === 'unrated') items.sort((a,b) => (getRating(a.asset.assetId).rating ? 1:0) - (getRating(b.asset.assetId).rating ? 1:0) || a.index-b.index)
+    if (state.filters.sort === 'low') items.sort((a,b) => score(a)-score(b) || a.index-b.index)
+    if (state.filters.sort === 'high') items.sort((a,b) => score(b)-score(a) || a.index-b.index)
+    return items.map((item) => item.asset)
+  }
+  const renderStats = () => {
+    const assets = state.data.assets, rated = assets.filter((asset) => getRating(asset.assetId).rating), total = rated.reduce((sum,asset) => sum + getRating(asset.assetId).rating,0), average = rated.length ? (total/rated.length).toFixed(1) : '—'
+    $('stats').innerHTML = [['真正非主线内容',assets.length],['已评分',rated.length],['未评分',assets.length-rated.length],['平均评分',average]].map(([label,value]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join('')
+    $('tagCounts').textContent = TAGS.map(([key,label]) => `${label}：${assets.filter((asset) => getRating(asset.assetId).tags.includes(key)).length}`).join('　')
+  }
+  const renderFilters = () => {
+    const types = [...new Set(state.data.assets.map((asset) => asset.subcategory))].sort()
+    $('typeFilter').innerHTML = '<option value="all">全部内容类型</option>' + types.map((type) => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join('')
+    $('tagFilter').innerHTML = '<option value="all">全部标签</option>' + TAGS.map(([key,label]) => `<option value="${key}">${label}</option>`).join('')
+    $('search').value = state.filters.search; $('ratingFilter').value = state.filters.rating; $('typeFilter').value = state.filters.type; $('tagFilter').value = state.filters.tag; $('sort').value = state.filters.sort
+  }
+  const render = () => {
+    renderStats(); renderFilters()
+    const assets = filtered();
+    $('list').innerHTML = assets.length ? assets.map((asset) => {
+      const rating = getRating(asset.assetId), isOpen = state.open.has(asset.assetId) || state.lastViewed === asset.assetId
+      return `<details class="asset" data-asset-card="${escapeHtml(asset.assetId)}" ${isOpen?'open':''}><summary><div class="summary-main"><p class="summary-title">${escapeHtml(asset.title)}</p><p class="summary-message">${escapeHtml(asset.nodes[0]?.userMessage || '')}</p><div class="meta">${escapeHtml(asset.subcategory)} · ${escapeHtml(asset.source)}</div></div><div class="summary-side">${stars(asset.assetId,'','',rating.rating)}<div class="id">${escapeHtml(asset.assetId)}</div></div></summary><div class="asset-body"><div class="asset-head"><div><div class="classification">NON_MAINLINE · ${escapeHtml(asset.subcategory)}</div><div class="meta">Conversation：${escapeHtml(asset.conversationId)}　来源：${escapeHtml(asset.source)}</div></div>${stars(asset.assetId,'','',rating.rating)}</div>${asset.nodes.map((node,index) => `<article class="content-node"><div class="node-label">第 ${index+1} 轮 · ${escapeHtml(node.nodeId)}</div><p class="user-message">用户：\n${escapeHtml(node.userMessage)}${node.userMessages?.length ? '\n' + node.userMessages.map(escapeHtml).join('\n') : ''}</p><div class="node-label">Aster 可以回复</div>${node.choices.map((choice,choiceIndex) => `<div class="choice"><div class="choice-row"><div class="choice-text">${String.fromCharCode(65+choiceIndex)}. ${escapeHtml(choice.text)}</div><div class="choice-rating"><small>选项评分</small>${stars(asset.assetId,node.nodeId,choice.id,rating.choices[choice.id] ?? null)}</div></div></div>`).join('')}</article>`).join('')}<div class="notes"><label for="note-${escapeHtml(asset.assetId)}">我的备注</label><textarea id="note-${escapeHtml(asset.assetId)}" data-note="${escapeHtml(asset.assetId)}" placeholder="记录你的判断、改写方向或保留理由…">${escapeHtml(rating.note)}</textarea></div><div class="tags" aria-label="处理标签">${TAGS.map(([key,label]) => `<button class="tag ${rating.tags.includes(key)?'active':''}" data-tag="${escapeHtml(asset.assetId)}" data-tag-value="${key}">${label}</button>`).join('')}</div></div></details>`
+    }).join('') : '<div class="empty">没有符合当前筛选条件的 NON_MAINLINE 内容。</div>'
+    document.querySelectorAll('[data-asset-card]').forEach((card) => card.addEventListener('toggle', () => { if (card.open) { state.lastViewed = card.dataset.assetCard; state.open.add(card.dataset.assetCard); persist() } else state.open.delete(card.dataset.assetCard) }))
+    document.querySelectorAll('[data-star]').forEach((button) => button.addEventListener('click', () => { const rating=getRating(button.dataset.asset); if (button.dataset.choice) rating.choices[button.dataset.choice] = Number(button.dataset.score); else rating.rating = Number(button.dataset.score); state.lastViewed=button.dataset.asset; persist(); render() }))
+    document.querySelectorAll('[data-tag]').forEach((button) => button.addEventListener('click', () => { const rating=getRating(button.dataset.tag), key=button.dataset.tagValue; rating.tags = rating.tags.includes(key) ? rating.tags.filter((tag) => tag !== key) : [...rating.tags,key]; state.lastViewed=button.dataset.tag; persist(); render() }))
+    document.querySelectorAll('[data-note]').forEach((area) => area.addEventListener('input', () => { getRating(area.dataset.note).note=area.value; state.lastViewed=area.dataset.note; persist() }))
+  }
+  const loadSaved = () => { try { const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'); if(saved?.ratings) state.ratings=saved.ratings; state.lastViewed=saved?.lastViewed||null } catch { setStatus('无法读取旧评分，当前将从未评分开始。') } }
+  $('search').addEventListener('input',(event)=>{state.filters.search=event.target.value;render()}); $('ratingFilter').addEventListener('change',(event)=>{state.filters.rating=event.target.value;render()}); $('typeFilter').addEventListener('change',(event)=>{state.filters.type=event.target.value;render()}); $('tagFilter').addEventListener('change',(event)=>{state.filters.tag=event.target.value;render()}); $('sort').addEventListener('change',(event)=>{state.filters.sort=event.target.value;render()})
+  $('expand').addEventListener('click',()=>{filtered().forEach((asset)=>state.open.add(asset.assetId));render()}); $('collapse').addEventListener('click',()=>{state.open.clear();render()}); $('next').addEventListener('click',()=>{const next=filtered().find((asset)=>!getRating(asset.assetId).rating); if(!next){setStatus('当前筛选结果中没有未评分内容。');return} state.lastViewed=next.assetId;state.open.add(next.assetId);persist();render();requestAnimationFrame(()=>document.querySelector(`[data-asset-card="${CSS.escape(next.assetId)}"]`)?.scrollIntoView({behavior:'smooth',block:'start'}))})
+  $('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({generatedAt:new Date().toISOString(),ratings:state.ratings},null,2)],{type:'application/json'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='instance-ordinary-content-ratings.json';link.click();URL.revokeObjectURL(link.href);setStatus('评分已导出。')})
+  $('import').addEventListener('click',()=> $('file').click()); $('file').addEventListener('change',(event)=>{const file=event.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const imported=JSON.parse(reader.result);const incoming=imported.ratings||{};const ids=new Set(state.data.assets.map((asset)=>asset.assetId));const orphan=Object.keys(incoming).filter((id)=>!ids.has(id));Object.entries(incoming).forEach(([id,value])=>{if(ids.has(id))state.ratings[id]={...defaultRating(),...value,choices:{...(value?.choices||{})}}});persist();render();setStatus(orphan.length?`已导入评分；发现 ${orphan.length} 个 orphan rating（对应 Asset 已不存在）。`:'已导入评分。')}catch{setStatus('导入失败：文件不是有效的评分 JSON。')}};reader.readAsText(file);event.target.value=''})
+  fetch('ordinary-content-review.json').then((response)=>{if(!response.ok)throw new Error('HTTP '+response.status);return response.json()}).then((data)=>{state.data=data;loadSaved();render();if(state.lastViewed)requestAnimationFrame(()=>document.querySelector(`[data-asset-card="${CSS.escape(state.lastViewed)}"]`)?.scrollIntoView({block:'center'}))}).catch((error)=>{$('list').innerHTML=`<div class="empty">无法加载审计数据：${escapeHtml(error.message)}<br>请通过 HTTP 服务打开此页面，不要直接双击 file:// 文件。</div>`})
+})()
+</script>
+</body>
+</html>

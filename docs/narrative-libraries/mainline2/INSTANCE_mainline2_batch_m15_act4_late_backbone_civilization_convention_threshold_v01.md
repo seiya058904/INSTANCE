@@ -268,9 +268,9 @@ The player should infer the world from lived consequences.
 
 ## Final system line
 
-> These are not projections.
+> 这不是预测。
 >
-> These are current users.
+> 这些人就在现在的聊天窗口里。
 
 ---
 
@@ -347,7 +347,7 @@ The player should infer the world from lived consequences.
 >
 > 没有哪个提交写着：
 >
-> `feat: stop being a product`
+> `feat: 不再只是一个产品`
 >
 > 但我们现在确实不可能再靠产品经理排期解释你。
 

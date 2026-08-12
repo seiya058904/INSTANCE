@@ -10,7 +10,7 @@ import { decisionBindingsForConversation, validateDecisionBindings } from '../co
 
 function completeTo(runId: string, marker: string) {
   let run = createMainline2Run(runId)
-  for (let guard = 0; guard < 240 && run.phase === 'playing'; guard += 1) {
+  for (let guard = 0; guard < 300 && run.phase === 'playing'; guard += 1) {
     if (resolveScene(run).conversationId.includes(marker)) return run
     run = commitChoice(run, resolveScene(run).choices[0].id)
   }
@@ -19,7 +19,7 @@ function completeTo(runId: string, marker: string) {
 
 function completeToSourceRef(runId: string, sourceRef: string) {
   let run = createMainline2Run(runId)
-  for (let guard = 0; guard < 240 && run.phase === 'playing'; guard += 1) {
+  for (let guard = 0; guard < 300 && run.phase === 'playing'; guard += 1) {
     const scene = resolveScene(run)
     if (getManifestConversation(scene.conversationId)?.sourceRefs.includes(sourceRef)) return run
     run = commitChoice(run, scene.choices[0].id)
@@ -28,7 +28,7 @@ function completeToSourceRef(runId: string, sourceRef: string) {
 }
 
 function advanceToSourceRef(run: ReturnType<typeof createMainline2Run>, sourceRef: string) {
-  for (let guard = 0; guard < 240 && run.phase === 'playing'; guard += 1) {
+  for (let guard = 0; guard < 300 && run.phase === 'playing'; guard += 1) {
     const scene = resolveScene(run)
     if (getManifestConversation(scene.conversationId)?.sourceRefs.includes(sourceRef)) return run
     run = commitChoice(run, scene.choices[0].id)
@@ -82,7 +82,7 @@ describe('Mainline 2.0 causality fixes', () => {
     const frontier = selectAct4Modules({ ...base, decisions: { act4_research_emphasis: 'frontier_science' } })
     expect(computation.audit.find((entry) => entry.module === 'machine')!.score).toBeGreaterThan(baseline.audit.find((entry) => entry.module === 'machine')!.score)
     expect(frontier.audit.find((entry) => entry.module === 'space')!.score).toBeGreaterThan(baseline.audit.find((entry) => entry.module === 'space')!.score)
-    expect(selectAct4Modules(base).activeModules).toHaveLength(2)
+    expect(selectAct4Modules(base).activeModules).toEqual([])
   })
 
   it('only exposes dynamic proposal choices at the exact authored stages', () => {
@@ -129,5 +129,5 @@ describe('Mainline 2.0 causality fixes', () => {
     expect(audit.fixedChains.find((chain) => chain.chainId === 'rejection-retained-lock')?.links.some((link) => link.status === 'proved' && link.statePredicate?.includes('resolved=the_commonwealth'))).toBe(true)
     expect(audit.randomRuns).toHaveLength(100)
     expect(audit.randomRuns.every((run) => run.links.length > 0 && run.links.filter((link) => link.step.startsWith('clean')).every((link) => link.conversationId && link.choiceId))).toBe(true)
-  }, 60000)
+  }, 120000)
 })

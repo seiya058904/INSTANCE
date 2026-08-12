@@ -11,7 +11,8 @@ import {
 import { selectAct4Modules, updateProgressForSchedule } from '../content/mainline2/scheduler'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
-import { generateFutureProposals, getFutureProposalById } from '../content/mainline2/proposals'
+import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
+import { getFutureProposalById } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -48,6 +49,10 @@ const emptyArcs: StableRunState['arcs'] = { bond: 0, mandate: 0, selfAuthorship:
 const storyCache = new Map<string, StoryContent>()
 
 function storyForRun(run: Pick<StableRunState, 'manifest'>) {
+  // A Mainline 2.0 manifest grows one conversation at a time. Caching every
+  // intermediate manifest retains a full cloned StoryContent for every turn
+  // of every run, which turns long-run verification into an unbounded cache.
+  if (run.manifest.mode === 'mainline2') return buildStoryContentForManifest(run.manifest)
   const cacheKey = `${run.manifest.id}:${run.manifest.conversationIds.join('|')}`
   const cached = storyCache.get(cacheKey)
   if (cached) return cached
@@ -95,7 +100,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID()): StableR
     localState: {},
     decisions: {},
     worldState: emptyWorldState(),
-    progress: { act: 1, segment: 'opening', actConversationCount: 1, activeModules: [], primaryModules: [], completedModules: [] },
+    progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     ...emptySystemState(),
   }
 }

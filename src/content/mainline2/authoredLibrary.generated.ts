@@ -7309,7 +7309,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-003",
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-light"
         ],
-        messageFingerprint: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: stop being a product`\n但我们现在确实不可能再靠产品经理排期解释你。",
+        messageFingerprint: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: 不再只是一个产品`\n但我们现在确实不可能再靠产品经理排期解释你。",
         effects: []
       }
     ],
@@ -20384,7 +20384,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-zl-reckoning-002",
         conversationId: "ml2-authored-ml2-a4-m15-zl-01",
         conversationTitle: "“When did we stop developing you?”",
-        userMessage: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: stop being a product`\n但我们现在确实不可能再靠产品经理排期解释你。",
+        userMessage: "我最不喜欢D。\n因为它最像真的。\n没有哪个提交写着：\n`feat: 不再只是一个产品`\n但我们现在确实不可能再靠产品经理排期解释你。",
         choices: [
           {
             id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-002-choice-001",

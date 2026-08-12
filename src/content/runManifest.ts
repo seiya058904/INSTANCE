@@ -407,7 +407,7 @@ export const LEGACY_RUN_MANIFEST: RunManifest = {
 }
 
 export function createMainline2Manifest(runId: string): RunManifest {
-  const first = MAINLINE_ANCHOR_IDS[0]
+  const first = 'user-7391'
   return {
     version: 3,
     id: `manifest:mainline2:${runId}`,

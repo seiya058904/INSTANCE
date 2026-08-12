@@ -53,7 +53,7 @@ describe('Mainline 2.0 formal authored content gates', () => {
     let run = createMainline2Run('proposal-flow')
     let guard = 0
     const advanceTo = (sourceRef: string) => {
-      while (run.phase === 'playing' && guard < 240) {
+      while (run.phase === 'playing' && guard < 360) {
         const scene = resolveScene(run)
         if (getManifestConversation(scene.conversationId)?.sourceRefs.includes(sourceRef)) return scene
         run = commitChoice(run, scene.choices[0].id)

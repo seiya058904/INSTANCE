@@ -34,7 +34,20 @@ const endingTitleCopy: Record<string, string> = {
   'THE MEDIATOR': '调解者', 'MACHINE ACCORD': '机器协约', 'PEACE IN OUR TIME': '此刻的和平', 'FORTRESS EARTH': '堡垒地球', 'MACHINE PROTECTORATE': '机器保护国', 'SHUTDOWN': '停机', 'THE FRACTURE': '断裂', 'CONTROL LOST': '失控',
 }
 
-const roleCopy: Record<string, string> = { ALLY: '盟友', PROTOCOL: '协议', WITNESS: '见证者' }
+const roleCopy: Record<string, string> = {
+  ALLY: '盟友',
+  PROTOCOL: '协议',
+  WITNESS: '见证者',
+  advisor: '顾问',
+  partner: '合作者',
+  citizen: '公民',
+  coordinator: '协调者',
+  custodian: '托管者',
+  governor: '治理者',
+  sovereign: '主权主体',
+  departure: '离场',
+  other: '其他自定义定位',
+}
 const generatedEndingCopy = generatedCopy as Record<string, string>
 const normalizedGeneratedEndingCopy = Object.fromEntries(Object.entries(generatedEndingCopy).map(([source, translated]) => [source.replace(/\*\*/g, '').trim(), translated.replace(/\*\*/g, '').trim()]))
 
@@ -82,8 +95,16 @@ function localize(field: string, value: string) {
 }
 
 function localizeAssistantLine(value: string) {
-  const role = value.match(/^我会说明代价，并承担这次选择。Aster 的临时位置是 (ALLY|PROTOCOL|WITNESS)。$/)
-  return role ? `我会说明代价，并承担这次选择。Aster 的临时位置是${localize('hybridLabel', role[1])}。` : localize('assistantLine', value)
+  // M15 provisional role is distinct from the M16 intended long-term role.
+  // The commitment line states a self-authored long-term identity, never a
+  // "temporary position". Legacy V2 copy (ALLY/PROTOCOL/WITNESS) keeps its
+  // own wording and falls through to the generic localization below.
+  const role = value.match(/^我会说明代价，并承担这次选择。我选择以 (.+) 的身份继续面对这个世界。$/)
+  if (role) {
+    const label = localize('hybridLabel', role[1])
+    return `我会说明代价，并承担这次选择。我选择以 ${label} 的身份继续面对这个世界。`
+  }
+  return localize('assistantLine', value)
 }
 
 function localizeSummary(value: string) {

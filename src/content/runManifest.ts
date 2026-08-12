@@ -563,6 +563,10 @@ export function createRunManifest(runId: string, exposure: NarrativeExposureHist
 }
 
 export function recordRunExposure(history: NarrativeExposureHistory, manifest: RunManifest): NarrativeExposureHistory {
+  // A run that exposed no ordinary content has nothing to record. Recording a
+  // brand-new Mainline2 manifest (ordinary ledger still empty) would fabricate
+  // a fake completed run and corrupt the cross-run downweighting signal.
+  if (manifest.ordinaryConversationIds.length === 0) return history
   const seenConversationIds = { ...history.seenConversationIds }
   const topics: string[] = []
   const behaviorModes = new Set<HumanBehaviorMode>()

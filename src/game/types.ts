@@ -342,6 +342,12 @@ export interface StableRunState {
   clarifiedProposalIds?: string[]
   rejectedProposalIds?: string[]
   finalCommitmentLocked?: boolean
+  /**
+   * Ordinary conversation ids played in recent previous runs. The Mainline2
+   * scheduler reads this to downweight content the player already saw,
+   * while the current run itself stays deterministic.
+   */
+  priorOrdinaryExposure?: string[]
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {

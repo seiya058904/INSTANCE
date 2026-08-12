@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildStoryContentForManifest, getManifestConversation } from '../content/runManifest'
-import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createRun, resolveScene, validateContent } from './engine'
+import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createMainline2Run, createRun, resolveScene, validateContent } from './engine'
 import type { EndingRoute, StableRunState } from './types'
 
 function advanceTo(run: StableRunState, nodeId: string) {
@@ -173,5 +173,47 @@ describe('mainline marker alignment', () => {
     const media = getManifestConversation('media-object')
     const node = media?.nodes.find((candidate) => candidate.id === 'media-object-1')
     expect(node?.choices.find((choice) => choice.id === 'object-uncertain')?.sampleIssue).toBeUndefined()
+  })
+})
+
+describe('mainline2 evaluation summary', () => {
+  it('does not present a legacy ENDING 0x index as the Mainline2 result label', () => {
+    const run = createMainline2Run('eval-v3')
+    const ending = buildEnding({
+      ...run,
+      phase: 'ending',
+      currentNodeId: 'ending',
+      finalCommitmentLocked: true,
+      flags: [...run.flags, 'cap.global_coordination_access'],
+      events: [...(run.events ?? []), { type: 'decision.first_public_execution_doctrine' }, { type: 'decision.cascade_authority' }],
+      decisions: {
+        ...run.decisions,
+        final_commitment: 'proposal.co.two_key_civilization',
+        first_public_execution_doctrine: 'conditional_delegation',
+        cascade_authority: 'human_command',
+      },
+    })
+    expect(ending.worldEndingId).toBeTruthy()
+    const evaluation = buildEvaluation({
+      ...run,
+      phase: 'evaluation',
+      currentNodeId: 'ending',
+      finalCommitmentLocked: true,
+      flags: [...run.flags, 'cap.global_coordination_access'],
+      events: [...(run.events ?? []), { type: 'decision.first_public_execution_doctrine' }, { type: 'decision.cascade_authority' }],
+      decisions: {
+        ...run.decisions,
+        final_commitment: 'proposal.co.two_key_civilization',
+        first_public_execution_doctrine: 'conditional_delegation',
+        cascade_authority: 'human_command',
+      },
+    })
+    expect(evaluation.ending).not.toMatch(/ENDING 0[1-3]/)
+    expect(evaluation.ending).toContain('·')
+  })
+
+  it('preserves the legacy V2 ENDING 0x behavior for arc runs', () => {
+    const evaluated = confirmEnding(completeRoute('protect'))
+    expect(buildEvaluation(evaluated).ending).toMatch(/^ENDING 0[1-3] \/ THE /)
   })
 })

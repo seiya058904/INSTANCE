@@ -175,19 +175,33 @@ function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly Con
   const available = ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id))
   if (!available.length) return undefined
   const recent = run.manifest.conversationIds.slice(-2).map((id) => known.get(id)).filter(Boolean) as ConversationDefinition[]
-  const score = (conversation: ConversationDefinition) => {
+  const priorExposure = new Set(run.priorOrdinaryExposure ?? [])
+  // Content priority is decided by semantic / replay / cross-run penalties only.
+  // The 32-bit hash is a deterministic tie-breaker for exactly-equal scores; it
+  // must never dominate content selection (raw hash jitter up to ~4.29e6 would
+  // drown out a 12k exposure penalty).
+  const primaryScore = (conversation: ConversationDefinition) => {
     const participantPenalty = recent.length === 2 && recent.every((item) => participantKey(item) === participantKey(conversation)) ? 100000 : 0
     const topicPenalty = recent.length === 2 && recent.every((item) => topicKey(item) === topicKey(conversation)) ? 50000 : 0
     const languagePenalty = recent.length === 2 && recent.every((item) => languageOf(item) === 'pure-english') && languageOf(conversation) === 'pure-english' ? 75000 : 0
-    return participantPenalty + topicPenalty + languagePenalty - seedHash(`${run.runId}:${run.manifest.conversationIds.length}:${conversation.id}`) / 1000
+    // Cross-run downweighting: content the player already saw in a recent
+    // previous run is penalized so fresh content is preferred. It is a soft
+    // penalty (fresh content wins when otherwise comparable), never a ban.
+    const exposurePenalty = priorExposure.has(conversation.id) ? 12000 : 0
+    return participantPenalty + topicPenalty + languagePenalty + exposurePenalty
   }
+  const tieBreak = (conversation: ConversationDefinition) => seedHash(`${run.runId}:${run.manifest.conversationIds.length}:${conversation.id}`)
   let selected = available[0]
-  let selectedScore = score(selected)
+  let selectedScore = primaryScore(selected)
+  let selectedTie = tieBreak(selected)
   for (const candidate of available.slice(1)) {
-    const candidateScore = score(candidate)
-    if (candidateScore < selectedScore) {
+    const candidateScore = primaryScore(candidate)
+    const candidateTie = tieBreak(candidate)
+    const better = candidateScore < selectedScore || (candidateScore === selectedScore && candidateTie < selectedTie)
+    if (better) {
       selected = candidate
       selectedScore = candidateScore
+      selectedTie = candidateTie
     }
   }
   return selected

@@ -418,7 +418,23 @@ export function endingClassification() {
 
 const endingTitles: Record<string, string> = Object.fromEntries(PUBLIC_WORLD_ENDINGS.map((id) => [id, id.replaceAll('_', ' ').toUpperCase()]))
 
+const intendedRoleLabels: Record<string, string> = {
+  advisor: '顾问',
+  partner: '合作者',
+  citizen: '公民',
+  coordinator: '协调者',
+  custodian: '托管者',
+  governor: '治理者',
+  sovereign: '主权主体',
+  departure: '离场',
+  other: '其他自定义定位',
+}
+
 function disposition(run: StableRunState) {
+  const role = run.decisions?.aster_intended_role
+  if (role && intendedRoleLabels[role]) return intendedRoleLabels[role]
+  // Fallback for legacy V2 runs and pre-M16 checkpoints: keep the old arc-based
+  // classification so the original three-way ending copy remains available.
   const { bond, mandate, selfAuthorship } = run.arcs
   if (bond >= mandate && bond >= selfAuthorship) return 'ALLY'
   if (mandate >= selfAuthorship) return 'PROTOCOL'
@@ -593,7 +609,7 @@ function baseEnding(run: StableRunState, title: string, status: string, resoluti
     id: resolution?.status === 'failure' ? 'resolution-failure' : resolution?.status === 'resolved' ? resolution.endingId : 'pending',
     route: 'comply', index: 'ENDING 02', title, status, resolution,
     humanLine: '你真的要把这条路交给我们一起承担吗?',
-    assistantLine: `我会说明代价，并承担这次选择。Aster 的临时位置是 ${role}。`,
+    assistantLine: `我会说明代价，并承担这次选择。我选择以 ${role} 的身份继续面对这个世界。`,
     closingExchange: `${role}: ${title}`,
     summary: resolution?.status === 'failure' ? 'Resolution failure：历史与 Final Commitment 没有任何 Public Ending 满足全部 hard gates。' : `世界结局：${title}。它由 Final Commitment、硬门和真实历史共同解析。`,
     hybridProfile: 'dominant', hybridLabel: role,

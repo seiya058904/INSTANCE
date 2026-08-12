@@ -248,4 +248,52 @@ describe('stable checkpoints', () => {
     expect(restoreRun(JSON.stringify(missingNode))).toBeNull()
     expect(restoreRun(JSON.stringify(invalidAttribute))).toBeNull()
   })
+
+  describe('v3 checkpoint integrity validation', () => {
+    function v3Checkpoint(overrides: Record<string, unknown> = {}) {
+      const base = JSON.parse(serializeRun(createMainline2Run('v3-integrity'))) as Record<string, unknown>
+      return { ...base, ...overrides }
+    }
+
+    it('rejects a v3 checkpoint whose world axis is missing', () => {
+      const checkpoint = v3Checkpoint({ worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0 } })
+      expect(restoreRun(JSON.stringify(checkpoint))).toBeNull()
+    })
+
+    it('rejects a v3 checkpoint whose world axis is NaN or a string', () => {
+      const nanWorld = v3Checkpoint({ worldState: { humanTrust: NaN, aiDependence: 0, humanControl: 0, socialStability: 0 } })
+      expect(restoreRun(JSON.stringify(nanWorld))).toBeNull()
+      const stringWorld = v3Checkpoint({ worldState: { humanTrust: 'high', aiDependence: 0, humanControl: 0, socialStability: 0 } })
+      expect(restoreRun(JSON.stringify(stringWorld))).toBeNull()
+    })
+
+    it('rejects a v3 checkpoint with malformed progress arrays', () => {
+      const badProgress = v3Checkpoint({ progress: { act: 3, activeModules: 'machine' } })
+      expect(restoreRun(JSON.stringify(badProgress))).toBeNull()
+    })
+
+    it('rejects a v3 checkpoint with a legacy or mismatched manifest', () => {
+      const legacyManifest = v3Checkpoint({ manifest: { ...(v3Checkpoint().manifest as Record<string, unknown>), mode: 'legacy-mainline', version: 1 } })
+      expect(restoreRun(JSON.stringify(legacyManifest))).toBeNull()
+    })
+
+    it('rejects a v3 checkpoint whose current node is absent from the manifest story', () => {
+      const badNode = v3Checkpoint({ currentNodeId: 'not-a-real-node' })
+      expect(restoreRun(JSON.stringify(badNode))).toBeNull()
+    })
+
+    it('rejects a v3 checkpoint whose progress is missing entirely', () => {
+      const checkpoint = v3Checkpoint({ progress: undefined })
+      expect(restoreRun(JSON.stringify(checkpoint))).toBeNull()
+    })
+
+    it('still safely migrates a legal older v3 checkpoint without matureModules', () => {
+      const checkpoint = v3Checkpoint()
+      delete (checkpoint.progress as Record<string, unknown>).matureModules
+      const restored = restoreRun(JSON.stringify(checkpoint))
+      expect(restored?.version).toBe(3)
+      expect(restored?.progress?.matureModules).toEqual([])
+      expect(restored?.worldState).toEqual(createMainline2Run('v3-integrity').worldState)
+    })
+  })
 })

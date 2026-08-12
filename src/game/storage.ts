@@ -94,7 +94,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
     if (!isRecord(value)) return null
     if (value.version === 1) return migrateVersionOne(value)
     if (value.version === 3) {
-      if (!hasStableFields(value) || !isManifest(value.manifest)) return null
+      if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
       const availableProposalIds = validFutureProposalIds(value.availableProposalIds)

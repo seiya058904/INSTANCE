@@ -59,9 +59,10 @@ function LongInput({ preview }: { preview?: ResolvedScene['userLongInput'] }) {
 }
 
 const StaticExchange = memo(function StaticExchange({ entry }: { entry: HistoryEntry }) {
+  const hasUserTurn = (entry.userMessages?.length ?? 0) > 0 || (entry.userMessage ?? '').length > 0
   return (
     <div className="exchange completed-exchange">
-      <StaticUserTurn messages={entry.userMessages ?? [entry.userMessage]} content={entry.userContent} />
+      {hasUserTurn && <StaticUserTurn messages={entry.userMessages ?? [entry.userMessage]} content={entry.userContent} />}
       <LongInput preview={entry.userLongInput} />
       <AssistantMessage content={entry.assistantContent}>
         {entry.assistantLongform

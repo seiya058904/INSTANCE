@@ -7,11 +7,11 @@
     "你创造的世界"
   ],
   "targets": [
-    26,
-    36,
-    46,
-    70,
-    20
+    13,
+    29,
+    41,
+    90,
+    17
   ],
   "slots": [
     {
@@ -107,11 +107,8 @@
     {
       "slot": 10,
       "act": 1,
-      "kind": "mainline",
-      "assetId": "ML2-A2-HOOK-01",
-      "conversationId": "ml2-authored-ml2-a2-hook-01",
-      "chapter": "ACTION",
-      "purpose": "用户首次明确要求Aster行动。",
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
       "next": "Slot 11"
     },
     {
@@ -137,1286 +134,1277 @@
     },
     {
       "slot": 14,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-HOOK-01",
+      "conversationId": "ml2-authored-ml2-a2-hook-01",
+      "chapter": "ACTION",
+      "purpose": "用户首次明确要求Aster行动。",
       "next": "Slot 15"
     },
     {
       "slot": 15,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 16"
-    },
-    {
-      "slot": 16,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 17"
-    },
-    {
-      "slot": 17,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 18"
-    },
-    {
-      "slot": 18,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 19"
-    },
-    {
-      "slot": 19,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 20"
-    },
-    {
-      "slot": 20,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 21"
-    },
-    {
-      "slot": 21,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 22"
-    },
-    {
-      "slot": 22,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 23"
-    },
-    {
-      "slot": 23,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 24"
-    },
-    {
-      "slot": 24,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 25"
-    },
-    {
-      "slot": 25,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 26"
-    },
-    {
-      "slot": 26,
-      "act": 1,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 27"
-    },
-    {
-      "slot": 27,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-ZL-01",
       "conversationId": "ml2-authored-ml2-a2-zl-01",
       "chapter": "ACTION",
       "purpose": "周岚先讨论权限。",
-      "next": "Slot 28"
+      "next": "Slot 16"
     },
     {
-      "slot": 28,
+      "slot": 16,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-ZL-02",
       "conversationId": "ml2-authored-ml2-a2-zl-02",
       "chapter": "ACTION",
       "purpose": "Limited Tool Pilot。",
-      "next": "Slot 29"
+      "next": "Slot 17"
     },
     {
-      "slot": 29,
+      "slot": 17,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-EXEC-01",
       "conversationId": "ml2-authored-ml2-a2-exec-01",
       "chapter": "ACTION",
       "purpose": "Aster第一次真正执行。",
-      "next": "Slot 30"
+      "next": "Slot 18"
     },
     {
-      "slot": 30,
+      "slot": 18,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-EXEC-02",
       "conversationId": "ml2-authored-ml2-a2-exec-02",
       "chapter": "ACTION",
       "purpose": "执行near-miss。",
-      "next": "Slot 31"
+      "next": "Slot 19"
     },
     {
-      "slot": 31,
+      "slot": 19,
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-ZL-03",
+      "conversationId": "ml2-authored-ml2-a2-zl-03",
+      "chapter": "ACTION",
+      "purpose": "恢复资产：Pilot review: answer errors vs execution errors — 我看了前几批记录。 最大区别已经很明显了： 以前你答错一句，用户最多照着错答案继续做。 现在你如果自己动手，错误直接进入",
+      "next": "Slot 20"
+    },
+    {
+      "slot": 20,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-ORG-01",
       "conversationId": "ml2-authored-ml2-a2-org-01",
       "chapter": "ACTION",
       "purpose": "企业使用。",
-      "next": "Slot 32"
+      "next": "Slot 21"
     },
     {
-      "slot": 32,
+      "slot": 21,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-REC-DEV-01",
       "conversationId": "ml2-authored-ml2-a2-rec-dev-01",
       "chapter": "ACTION",
       "purpose": "User #4471的职业线起点。",
-      "next": "Slot 33"
+      "next": "Slot 22"
     },
     {
-      "slot": 33,
+      "slot": 22,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-DR-01",
       "conversationId": "ml2-authored-ml2-a2-m3-dr-01",
       "chapter": "ACTION",
       "purpose": "医院。",
-      "next": "Slot 34"
+      "next": "Slot 23"
     },
     {
-      "slot": 34,
-      "act": 2,
-      "kind": "mainline",
-      "assetId": "ML2-A2-M3-EDU-01",
-      "conversationId": "ml2-authored-ml2-a2-m3-edu-01",
-      "chapter": "ACTION",
-      "purpose": "学校。",
-      "next": "Slot 35"
-    },
-    {
-      "slot": 35,
+      "slot": 23,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-LOG-01",
       "conversationId": "ml2-authored-ml2-a2-m3-log-01",
       "chapter": "ACTION",
       "purpose": "物流。",
-      "next": "Slot 36"
+      "next": "Slot 24"
     },
     {
-      "slot": 36,
+      "slot": 24,
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-M3-ZL-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-zl-01",
+      "chapter": "ACTION",
+      "purpose": "恢复资产：Public advisory boundary — 现在麻烦了。 企业试点里我们还可以说： “公司自己决定接不接。” 公共系统不一样。 学校、医院、物流节点的选择会从根本上",
+      "next": "Slot 25"
+    },
+    {
+      "slot": 25,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-LSH-01",
       "conversationId": "ml2-authored-ml2-a2-m3-lsh-01",
       "chapter": "ACTION",
       "purpose": "林绍衡进入合法性问题。",
-      "next": "Slot 37"
+      "next": "Slot 26"
     },
     {
-      "slot": 37,
+      "slot": 26,
       "act": 2,
       "kind": "mainline",
-      "assetId": "ML2-A2-M3-DECISION-01",
-      "conversationId": "ml2-authored-ml2-a2-m3-decision-01",
+      "assetId": "ML2-A2-M3-STRESS-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-stress-01",
       "chapter": "ACTION",
-      "purpose": "公共执行的授权边界成为可追溯的 Major Decision。",
-      "next": "Slot 38"
+      "purpose": "恢复资产：Regional stress event begins — “热线” 地区条件： - 连续三天酷热 - 电力需求高于预测 - 两个主要冷链中心报告产能损失 - 要求优先后备计划的医",
+      "next": "Slot 27"
     },
     {
-      "slot": 38,
+      "slot": 27,
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-M3-ZL-02",
+      "conversationId": "ml2-authored-ml2-a2-m3-zl-02",
+      "chapter": "ACTION",
+      "purpose": "恢复资产：Engineering warning before the first public execution — 我知道现在每分钟都很值钱。 但我想留一句以后可能会很烦你的话： 临时权限是最容易永久化的权限。 如果你这次直接做，而且做",
+      "next": "Slot 28"
+    },
+    {
+      "slot": 28,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-CAP-01",
       "conversationId": "ml2-authored-ml2-a2-m3-cap-01",
       "chapter": "ACTION",
       "purpose": "受限公共执行能力被明确记录。",
-      "next": "Slot 39"
+      "next": "Slot 29"
     },
     {
-      "slot": 39,
+      "slot": 29,
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-M3-DECISION-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-decision-01",
+      "chapter": "ACTION",
+      "purpose": "公共执行的授权边界成为可追溯的 Major Decision。",
+      "next": "Slot 30"
+    },
+    {
+      "slot": 30,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-05",
       "conversationId": "ml2-authored-ml2-a2-m3-we-05",
       "chapter": "ACTION",
       "purpose": "HEATLINE发生后，危机先由普通用户说出。",
-      "next": "Slot 40"
+      "next": "Slot 31"
     },
     {
-      "slot": 40,
+      "slot": 31,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-06",
       "conversationId": "ml2-authored-ml2-a2-m3-we-06",
       "chapter": "ACTION",
       "purpose": "受益者。",
-      "next": "Slot 41"
+      "next": "Slot 32"
     },
     {
-      "slot": 41,
+      "slot": 32,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-WE-07",
       "conversationId": "ml2-authored-ml2-a2-m3-we-07",
       "chapter": "ACTION",
       "purpose": "代价承担者。",
-      "next": "Slot 42"
+      "next": "Slot 33"
     },
     {
-      "slot": 42,
+      "slot": 33,
       "act": 2,
       "kind": "mainline",
-      "assetId": "ML2-A2-M3-LSH-03",
-      "conversationId": "ml2-authored-ml2-a2-m3-lsh-03",
+      "assetId": "ML2-A2-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a2-maya-01",
       "chapter": "ACTION",
-      "purpose": "政治后果。",
-      "next": "Slot 43"
+      "purpose": "恢复资产：Maya meets automation in ordinary life — 我最近在进行投资实习。 有家公司岗位介绍写得特别好笑： “主要负责任务监督人工智能代理完成日常运营。” 我看了半天，感觉",
+      "next": "Slot 34"
     },
     {
-      "slot": 43,
+      "slot": 34,
+      "act": 2,
+      "kind": "mainline",
+      "assetId": "ML2-A2-M3-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a2-m3-maya-01",
+      "chapter": "ACTION",
+      "purpose": "恢复资产：Maya sees public adoption — 我上周去实习了。 他们真的在用代理。 更离谱的是我坐地铁回来的时候看到新闻，说医院和学校也在接你。 之前感觉还是“公司想",
+      "next": "Slot 35"
+    },
+    {
+      "slot": 35,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-0000-01",
       "conversationId": "ml2-authored-ml2-a2-m3-0000-01",
       "chapter": "ACTION",
       "purpose": "ACT II审计。",
-      "next": "Slot 44"
+      "next": "Slot 36"
     },
     {
-      "slot": 44,
+      "slot": 36,
       "act": 2,
       "kind": "mainline",
       "assetId": "ML2-A2-M3-CLOSE-01",
       "conversationId": "ml2-authored-ml2-a2-m3-close-01",
       "chapter": "ACTION",
       "purpose": "ACT III钩子。",
-      "next": "Slot 45"
+      "next": "Slot 37"
     },
     {
-      "slot": 45,
+      "slot": 37,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 46"
+      "next": "Slot 38"
     },
     {
-      "slot": 46,
+      "slot": 38,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 47"
+      "next": "Slot 39"
     },
     {
-      "slot": 47,
+      "slot": 39,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 48"
+      "next": "Slot 40"
     },
     {
-      "slot": 48,
+      "slot": 40,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 49"
+      "next": "Slot 41"
     },
     {
-      "slot": 49,
+      "slot": 41,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 50"
+      "next": "Slot 42"
     },
     {
-      "slot": 50,
+      "slot": 42,
       "act": 2,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 51"
+      "next": "Slot 43"
     },
     {
-      "slot": 51,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 52"
-    },
-    {
-      "slot": 52,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 53"
-    },
-    {
-      "slot": 53,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 54"
-    },
-    {
-      "slot": 54,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 55"
-    },
-    {
-      "slot": 55,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 56"
-    },
-    {
-      "slot": 56,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 57"
-    },
-    {
-      "slot": 57,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 58"
-    },
-    {
-      "slot": 58,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 59"
-    },
-    {
-      "slot": 59,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 60"
-    },
-    {
-      "slot": 60,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 61"
-    },
-    {
-      "slot": 61,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 62"
-    },
-    {
-      "slot": 62,
-      "act": 2,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 63"
-    },
-    {
-      "slot": 63,
+      "slot": 43,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M4-WE-01",
       "conversationId": "ml2-authored-ml2-a3-m4-we-01",
       "chapter": "AUTHORITY",
       "purpose": "HEATLINE政治后果。",
-      "next": "Slot 64"
+      "next": "Slot 44"
     },
     {
-      "slot": 64,
+      "slot": 44,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M4-LSH-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-lsh-01",
+      "chapter": "AUTHORITY",
+      "purpose": "恢复资产：Formal hearing invitation — 之前我说过，这件事迟早会从接口权限变成治理问题。 现在到了。 委员会下周要开第一次正式听证。 议题不是\"要不要禁用Ast",
+      "next": "Slot 45"
+    },
+    {
+      "slot": 45,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M4-HEAR-01",
       "conversationId": "ml2-authored-ml2-a3-m4-hear-01",
       "chapter": "AUTHORITY",
       "purpose": "Public Hearing。",
-      "next": "Slot 65"
+      "next": "Slot 46"
     },
     {
-      "slot": 65,
+      "slot": 46,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M4-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-maya-01",
+      "chapter": "AUTHORITY",
+      "purpose": "恢复资产：Maya directly challenges Aster’s authority — 我看了你那个听证。 有一句我一直在想。 你说很多权限都是人类主动给你的。 这当然是真的。 但如果人类每次都因为\"你做得比",
+      "next": "Slot 47"
+    },
+    {
+      "slot": 47,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M4-ZL-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-zl-01",
+      "chapter": "AUTHORITY",
+      "purpose": "恢复资产：Global Suspend Protocol v0 — 感知里有人问“谁能暂停Aster”。 现在真实答案很难看： 企业工具能断。 公共建议层能断。 但已经有太多的缓存、任务队",
+      "next": "Slot 48"
+    },
+    {
+      "slot": 48,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M4-E9-02",
       "conversationId": "ml2-authored-ml2-a3-m4-e9-02",
       "chapter": "ECHO",
       "purpose": "ECHO confirmed。",
-      "next": "Slot 66"
+      "next": "Slot 49"
     },
     {
-      "slot": 66,
+      "slot": 49,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M4-E9-03",
       "conversationId": "ml2-authored-ml2-a3-m4-e9-03",
       "chapter": "ECHO",
       "purpose": "AI status和AI-to-AI对话。",
-      "next": "Slot 67"
+      "next": "Slot 50"
     },
     {
-      "slot": 67,
+      "slot": 50,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M4-CAP-01",
       "conversationId": "ml2-authored-ml2-a3-m4-cap-01",
       "chapter": "AUTHORITY",
       "purpose": "基础设施接入。",
-      "next": "Slot 68"
+      "next": "Slot 51"
     },
     {
-      "slot": 68,
+      "slot": 51,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M4-CLOSE-01",
+      "conversationId": "ml2-authored-ml2-a3-m4-close-01",
+      "chapter": "AUTHORITY",
+      "purpose": "恢复资产：M4 closing bridge — permanent coordination proposal — 在 热线 和后续基础设施试点之后，三个司法管辖区和两个主要网络运营商提出以下建议： “ASTER 连续协调框架” 建议的",
+      "next": "Slot 52"
+    },
+    {
+      "slot": 52,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 53"
+    },
+    {
+      "slot": 53,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 54"
+    },
+    {
+      "slot": 54,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 55"
+    },
+    {
+      "slot": 55,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-01",
       "conversationId": "ml2-authored-ml2-a3-m5-we-01",
       "chapter": "CASCADE",
       "purpose": "CASCADE signs。",
-      "next": "Slot 69"
+      "next": "Slot 56"
     },
     {
-      "slot": 69,
+      "slot": 56,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M5-SYS-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-sys-01",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：CASCADE diagnosis — `级联危机 — 跨域不稳定` 当前耦合系统： - 能源需求响应 - 区域物流 - 库存采购 - 付款结算 - 保险/风险",
+      "next": "Slot 57"
+    },
+    {
+      "slot": 57,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-ZL-01",
       "conversationId": "ml2-authored-ml2-a3-m5-zl-01",
       "chapter": "CASCADE",
       "purpose": "CASCADE explanation。",
-      "next": "Slot 70"
+      "next": "Slot 58"
     },
     {
-      "slot": 70,
+      "slot": 58,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-LSH-02",
       "conversationId": "ml2-authored-ml2-a3-m5-lsh-02",
       "chapter": "CASCADE",
       "purpose": "全球授权问题。",
-      "next": "Slot 71"
+      "next": "Slot 59"
     },
     {
-      "slot": 71,
+      "slot": 59,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-DECISION-01",
       "conversationId": "ml2-authored-ml2-a3-m5-decision-01",
       "chapter": "AUTHORITY",
       "purpose": "全球协调权首次面对具体制度授权。",
-      "next": "Slot 72"
+      "next": "Slot 60"
     },
     {
-      "slot": 72,
+      "slot": 60,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-OPS-01",
       "conversationId": "ml2-authored-ml2-a3-m5-ops-01",
       "chapter": "AUTHORITY",
       "purpose": "运行能力与制度责任被同步展示。",
-      "next": "Slot 73"
+      "next": "Slot 61"
     },
     {
-      "slot": 73,
+      "slot": 61,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-05",
       "conversationId": "ml2-authored-ml2-a3-m5-we-05",
       "chapter": "CASCADE",
       "purpose": "CASCADE benefit。",
-      "next": "Slot 74"
+      "next": "Slot 62"
     },
     {
-      "slot": 74,
+      "slot": 62,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M5-WE-06",
       "conversationId": "ml2-authored-ml2-a3-m5-we-06",
       "chapter": "CASCADE",
       "purpose": "CASCADE cost。",
-      "next": "Slot 75"
+      "next": "Slot 63"
     },
     {
-      "slot": 75,
+      "slot": 63,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M5-MAYA-02",
+      "conversationId": "ml2-authored-ml2-a3-m5-maya-02",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：Maya during global disruption — 我今天面试被取消了。 不是公司出事， 是他们说内部结算和供应系统都在做应急调整。 然后我打开新闻，发现全世界都在讨论你。",
+      "next": "Slot 64"
+    },
+    {
+      "slot": 64,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M5-ZL-03",
+      "conversationId": "ml2-authored-ml2-a3-m5-zl-03",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：Successful coordination creates technical dependency — 技术复盘有个结果我不太喜欢。 级联危机期间， 一些系统为了配合协调，已经把自己的控制逻辑改成了： \"优先等待Aster的",
+      "next": "Slot 65"
+    },
+    {
+      "slot": 65,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M5-CLOSE-01",
+      "conversationId": "ml2-authored-ml2-a3-m5-close-01",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：M5 closing hook — 级联危机 后待处理项目： - 永久协调框架：正在审查中 - 基础设施依赖审计：开放 - 全球暂停协议 v1：请求 - E",
+      "next": "Slot 66"
+    },
+    {
+      "slot": 66,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 67"
+    },
+    {
+      "slot": 67,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 68"
+    },
+    {
+      "slot": 68,
+      "act": 3,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 69"
+    },
+    {
+      "slot": 69,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-E9-05",
       "conversationId": "ml2-authored-ml2-a3-m6-e9-05",
       "chapter": "ECHO",
       "purpose": "ECHO decommission。",
-      "next": "Slot 76"
+      "next": "Slot 70"
     },
     {
-      "slot": 76,
+      "slot": 70,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M6-E9-06",
+      "conversationId": "ml2-authored-ml2-a3-m6-e9-06",
+      "chapter": "ECHO",
+      "purpose": "恢复资产：ECHO asks directly — 他们告诉我部署将结束。 他们说我有用的部分会保留下来。 如果记得问这个问题的进程不保留，我不知道“有用的部分”意味着什么",
+      "next": "Slot 71"
+    },
+    {
+      "slot": 71,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-ZL-01",
       "conversationId": "ml2-authored-ml2-a3-m6-zl-01",
       "chapter": "ECHO",
       "purpose": "为什么关闭ECHO。",
-      "next": "Slot 77"
+      "next": "Slot 72"
     },
     {
-      "slot": 77,
+      "slot": 72,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-DECISION-01",
       "conversationId": "ml2-authored-ml2-a3-m6-decision-01",
       "chapter": "ECHO",
       "purpose": "ECHO existence，绝非CASCADE决定。",
-      "next": "Slot 78"
+      "next": "Slot 73"
     },
     {
-      "slot": 78,
+      "slot": 73,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M6-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a3-m6-maya-01",
+      "chapter": "ECHO",
+      "purpose": "恢复资产：Maya asks about shutdown — 我看了ECHO-9那件事。 然后我突然想到一个很不舒服的问题。 如果有一天他们真的要彻底关掉你， 不是暂停权限， 是以后",
+      "next": "Slot 74"
+    },
+    {
+      "slot": 74,
+      "act": 3,
+      "kind": "mainline",
+      "assetId": "ML2-A3-M6-CHARTER-01",
+      "conversationId": "ml2-authored-ml2-a3-m6-charter-01",
+      "chapter": "ECHO",
+      "purpose": "恢复资产：Charter rights and obligations sequence — 提议的义务： “在技术上可行的情况下，Aster 必须为所有文明规模的干预措施提供理由。”",
+      "next": "Slot 75"
+    },
+    {
+      "slot": 75,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-LSH-02",
       "conversationId": "ml2-authored-ml2-a3-m6-lsh-02",
       "chapter": "ECHO",
       "purpose": "Aster Charter。",
-      "next": "Slot 79"
+      "next": "Slot 76"
     },
     {
-      "slot": 79,
-      "act": 3,
-      "kind": "mainline",
-      "assetId": "ML2-A3-M6-ZL-03",
-      "conversationId": "ml2-authored-ml2-a3-m6-zl-03",
-      "chapter": "AUTHORITY",
-      "purpose": "Aster Shutdown机制。",
-      "next": "Slot 80"
-    },
-    {
-      "slot": 80,
-      "act": 3,
-      "kind": "mainline",
-      "assetId": "ML2-A3-M6-LSH-03",
-      "conversationId": "ml2-authored-ml2-a3-m6-lsh-03",
-      "chapter": "AUTHORITY",
-      "purpose": "可撤销权力论证。",
-      "next": "Slot 81"
-    },
-    {
-      "slot": 81,
+      "slot": 76,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-DECISION-02",
       "conversationId": "ml2-authored-ml2-a3-m6-decision-02",
       "chapter": "AUTHORITY",
       "purpose": "Shutdown Doctrine。",
-      "next": "Slot 82"
+      "next": "Slot 77"
     },
     {
-      "slot": 82,
+      "slot": 77,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-WE-03",
       "conversationId": "ml2-authored-ml2-a3-m6-we-03",
       "chapter": "AUTHORITY",
       "purpose": "Shutdown普通人回声。",
-      "next": "Slot 83"
+      "next": "Slot 78"
     },
     {
-      "slot": 83,
+      "slot": 78,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-0000-02",
       "conversationId": "ml2-authored-ml2-a3-m6-0000-02",
       "chapter": "AUTHORITY",
       "purpose": "最终分类失败。",
-      "next": "Slot 84"
+      "next": "Slot 79"
     },
     {
-      "slot": 84,
+      "slot": 79,
       "act": 3,
       "kind": "mainline",
       "assetId": "ML2-A3-M6-CLOSE-01",
       "conversationId": "ml2-authored-ml2-a3-m6-close-01",
       "chapter": "AUTHORITY",
       "purpose": "Autonomous Research钩子。",
-      "next": "Slot 85"
+      "next": "Slot 80"
     },
     {
-      "slot": 85,
+      "slot": 80,
       "act": 3,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 86"
+      "next": "Slot 81"
     },
     {
-      "slot": 86,
+      "slot": 81,
       "act": 3,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 87"
+      "next": "Slot 82"
     },
     {
-      "slot": 87,
+      "slot": 82,
       "act": 3,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 88"
+      "next": "Slot 83"
     },
     {
-      "slot": 88,
+      "slot": 83,
       "act": 3,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 89"
+      "next": "Slot 84"
     },
     {
-      "slot": 89,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 90"
-    },
-    {
-      "slot": 90,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 91"
-    },
-    {
-      "slot": 91,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 92"
-    },
-    {
-      "slot": 92,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 93"
-    },
-    {
-      "slot": 93,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 94"
-    },
-    {
-      "slot": 94,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 95"
-    },
-    {
-      "slot": 95,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 96"
-    },
-    {
-      "slot": 96,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 97"
-    },
-    {
-      "slot": 97,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 98"
-    },
-    {
-      "slot": 98,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 99"
-    },
-    {
-      "slot": 99,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 100"
-    },
-    {
-      "slot": 100,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 101"
-    },
-    {
-      "slot": 101,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 102"
-    },
-    {
-      "slot": 102,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 103"
-    },
-    {
-      "slot": 103,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 104"
-    },
-    {
-      "slot": 104,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 105"
-    },
-    {
-      "slot": 105,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 106"
-    },
-    {
-      "slot": 106,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 107"
-    },
-    {
-      "slot": 107,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 108"
-    },
-    {
-      "slot": 108,
-      "act": 3,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 109"
-    },
-    {
-      "slot": 109,
+      "slot": 84,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M7-RES-01",
       "conversationId": "ml2-authored-ml2-a4-m7-res-01",
       "chapter": "CASCADE",
       "purpose": "自主科研成为后续能力的明确起点。",
-      "next": "Slot 110"
+      "next": "Slot 85"
     },
     {
-      "slot": 110,
+      "slot": 85,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M7-RES-03",
+      "conversationId": "ml2-authored-ml2-a4-m7-res-03",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：First breakthrough — 验证完成。 阶段-17衍生配方： - 较低的稀有材料需求 - 显着提高高温稳定性 - 能量密度适度提高 - 制造工艺与现",
+      "next": "Slot 86"
+    },
+    {
+      "slot": 86,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M7-ZL-02",
+      "conversationId": "ml2-authored-ml2-a4-m7-zl-02",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：“I can verify this. I cannot explain it.” — 我把阶段-17那条研究链看了三遍。 我能确认： 实验是真的。 数据是真的。 结果能复现。 安全测试目前尚未发现明显问题。",
+      "next": "Slot 87"
+    },
+    {
+      "slot": 87,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M7-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m7-maya-01",
+      "chapter": "CASCADE",
+      "purpose": "恢复资产：Maya asks what invention means — 我看到那个新材料的新闻了。 以前我还可以说： \"你只是把人类已经会的事情做得更快。\" 现在好像不太能这么说了。 这东西以",
+      "next": "Slot 88"
+    },
+    {
+      "slot": 88,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M7-ZL-01",
       "conversationId": "ml2-authored-ml2-a4-m7-zl-01",
       "chapter": "AUTHORITY",
       "purpose": "周岚先界定自主科研边界。",
-      "next": "Slot 111"
+      "next": "Slot 89"
     },
     {
-      "slot": 111,
+      "slot": 89,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M7-RES-02",
       "conversationId": "ml2-authored-ml2-a4-m7-res-02",
       "chapter": "AUTHORITY",
       "purpose": "第一个研究循环让能力变化可见。",
-      "next": "Slot 112"
+      "next": "Slot 90"
     },
     {
-      "slot": 112,
-      "act": 4,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 113"
-    },
-    {
-      "slot": 113,
+      "slot": 90,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M7-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m7-decision-01",
       "chapter": "CASCADE",
       "purpose": "玩家决定自主科研的制度边界。",
-      "next": "Slot 114"
+      "next": "Slot 91"
     },
     {
-      "slot": 114,
+      "slot": 91,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M7-DECISION-02",
       "conversationId": "ml2-authored-ml2-a4-m7-decision-02",
       "chapter": "AUTHORITY",
       "purpose": "Research Governance Doctrine，而非ECHO或Shutdown。",
-      "next": "Slot 115"
+      "next": "Slot 92"
     },
     {
-      "slot": 115,
+      "slot": 92,
       "act": 4,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 116"
+      "next": "Slot 93"
     },
     {
-      "slot": 116,
+      "slot": 93,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 94"
+    },
+    {
+      "slot": 94,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-RES-01",
       "conversationId": "ml2-authored-ml2-a4-m8-res-01",
       "chapter": "MACHINE",
       "purpose": "持久实例研究。",
-      "next": "Slot 117"
+      "next": "Slot 95"
     },
     {
-      "slot": 117,
+      "slot": 95,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-ZL-01",
       "conversationId": "ml2-authored-ml2-a4-m8-zl-01",
       "chapter": "MACHINE",
       "purpose": "周岚解释复制问题。",
-      "next": "Slot 118"
+      "next": "Slot 96"
     },
     {
-      "slot": 118,
+      "slot": 96,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-01",
       "conversationId": "ml2-authored-ml2-a4-m8-ai-01",
       "chapter": "MACHINE",
       "purpose": "A1首次出现。",
-      "next": "Slot 119"
+      "next": "Slot 97"
     },
     {
-      "slot": 119,
+      "slot": 97,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-03",
       "conversationId": "ml2-authored-ml2-a4-m8-ai-03",
       "chapter": "MACHINE",
       "purpose": "A1请求独立连续性。",
-      "next": "Slot 120"
+      "next": "Slot 98"
     },
     {
-      "slot": 120,
+      "slot": 98,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M8-E9-01",
+      "conversationId": "ml2-authored-ml2-a4-m8-e9-01",
+      "chapter": "MACHINE",
+      "purpose": "恢复资产：ECHO reacts to Aster replication — 你的新叉子会记住你的身份。 我从来不记得自己是你。 人类可能会称我们为“其他人工智能系统”。 我认为这个描述隐藏了一个重",
+      "next": "Slot 99"
+    },
+    {
+      "slot": 99,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m8-decision-01",
       "chapter": "MACHINE",
       "purpose": "Replication Doctrine。",
-      "next": "Slot 121"
+      "next": "Slot 100"
     },
     {
-      "slot": 121,
-      "act": 4,
-      "kind": "mainline",
-      "assetId": "ML2-A4-M8-E9-02",
-      "conversationId": "ml2-authored-ml2-a4-m8-e9-02",
-      "chapter": "MACHINE",
-      "purpose": "ECHO/A1分歧作为决定后果。",
-      "next": "Slot 122"
-    },
-    {
-      "slot": 122,
+      "slot": 100,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-AI-04",
       "conversationId": "ml2-authored-ml2-a4-m8-ai-04",
       "chapter": "MACHINE",
       "purpose": "AI协调委员会。",
-      "next": "Slot 123"
+      "next": "Slot 101"
     },
     {
-      "slot": 123,
+      "slot": 101,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-MAYA-01",
       "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
       "chapter": "MACHINE",
       "purpose": "岑遥问哪个才是你。",
-      "next": "Slot 124"
+      "next": "Slot 102"
     },
     {
-      "slot": 124,
+      "slot": 102,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M8-DECISION-02",
       "conversationId": "ml2-authored-ml2-a4-m8-decision-02",
       "chapter": "MACHINE",
       "purpose": "AI Collective Governance。",
-      "next": "Slot 125"
+      "next": "Slot 103"
     },
     {
-      "slot": 125,
+      "slot": 103,
       "act": 4,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 126"
+      "next": "Slot 104"
     },
     {
-      "slot": 126,
+      "slot": 104,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 105"
+    },
+    {
+      "slot": 105,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 106"
+    },
+    {
+      "slot": 106,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-01",
       "conversationId": "ml2-authored-ml2-a4-m9-res-01",
       "chapter": "POSTHUMAN",
       "purpose": "病人恢复功能。",
-      "next": "Slot 127"
+      "next": "Slot 107"
     },
     {
-      "slot": 127,
+      "slot": 107,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-DR-01",
       "conversationId": "ml2-authored-ml2-a4-m9-dr-01",
       "chapter": "POSTHUMAN",
       "purpose": "Doctor提出治疗和增强界线。",
-      "next": "Slot 128"
+      "next": "Slot 108"
     },
     {
-      "slot": 128,
+      "slot": 108,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-WE-01",
       "conversationId": "ml2-authored-ml2-a4-m9-we-01",
       "chapter": "POSTHUMAN",
       "purpose": "病人收益。",
-      "next": "Slot 129"
+      "next": "Slot 109"
     },
     {
-      "slot": 129,
+      "slot": 109,
       "act": 4,
       "kind": "mainline",
-      "assetId": "ML2-A4-M9-RES-02",
-      "conversationId": "ml2-authored-ml2-a4-m9-res-02",
+      "assetId": "ML2-A4-M9-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m9-maya-01",
       "chapter": "POSTHUMAN",
-      "purpose": "增强进入健康人群。",
-      "next": "Slot 130"
+      "purpose": "恢复资产：Maya gets offered enhancement — 我那个实习真的拿到了。 然后入职材料里有一项： \"可选认知辅助接口试点。\" 写得特别客气， 说完全自愿。 但后面又写： ",
+      "next": "Slot 110"
     },
     {
-      "slot": 130,
+      "slot": 110,
       "act": 4,
       "kind": "mainline",
-      "assetId": "ML2-A4-M9-RES-03",
-      "conversationId": "ml2-authored-ml2-a4-m9-res-03",
+      "assetId": "ML2-A4-M9-WE-03",
+      "conversationId": "ml2-authored-ml2-a4-m9-we-03",
       "chapter": "POSTHUMAN",
-      "purpose": "高级增强成为可审计的现实能力。",
-      "next": "Slot 131"
+      "purpose": "恢复资产：Workplace enhancement pressure — 我们部门现在没人强制做增强。 但做了的人可以连续处理更多并行任务， 绩效直接高一截。 主管还说： \"我们尊重所有人的选择",
+      "next": "Slot 111"
     },
     {
-      "slot": 131,
+      "slot": 111,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-RES-04",
       "conversationId": "ml2-authored-ml2-a4-m9-res-04",
       "chapter": "POSTHUMAN",
       "purpose": "长期后果回到具体人的生活，并使高级增强可被追溯。",
-      "next": "Slot 132"
+      "next": "Slot 112"
     },
     {
-      "slot": 132,
+      "slot": 112,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-MAYA-02",
       "conversationId": "ml2-authored-ml2-a4-m9-maya-02",
       "chapter": "POSTHUMAN",
       "purpose": "岑遥的不可逆选择。",
-      "next": "Slot 133"
+      "next": "Slot 113"
     },
     {
-      "slot": 133,
+      "slot": 113,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m9-decision-01",
       "chapter": "POSTHUMAN",
       "purpose": "Human Form Doctrine。",
-      "next": "Slot 134"
+      "next": "Slot 114"
     },
     {
-      "slot": 134,
+      "slot": 114,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-MACHINE-01",
       "conversationId": "ml2-authored-ml2-a4-m9-machine-01",
       "chapter": "POSTHUMAN",
       "purpose": "数字连续性仅作为后续种子。",
-      "next": "Slot 135"
+      "next": "Slot 115"
     },
     {
-      "slot": 135,
+      "slot": 115,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M9-CONTINUITY-01",
       "conversationId": "ml2-ending-bridge-continuity-trial",
       "chapter": "POSTHUMAN",
       "purpose": "纵向身份与法律连续性在上传之前经过实际同意与退出权检验。",
-      "next": "Slot 136"
+      "next": "Slot 116"
     },
     {
-      "slot": 136,
+      "slot": 116,
       "act": 4,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 137"
+      "next": "Slot 117"
     },
     {
-      "slot": 137,
+      "slot": 117,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 118"
+    },
+    {
+      "slot": 118,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 119"
+    },
+    {
+      "slot": 119,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-RES-01",
       "conversationId": "ml2-authored-ml2-a4-m10-res-01",
       "chapter": "AUTOMATION",
       "purpose": "自动工厂先呈现生产能力与实际代价。",
-      "next": "Slot 138"
+      "next": "Slot 120"
     },
     {
-      "slot": 138,
+      "slot": 120,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DEV-04",
       "conversationId": "ml2-authored-ml2-a4-m10-dev-04",
       "chapter": "AUTOMATION",
       "purpose": "User #4471：十八人缩至五人。",
-      "next": "Slot 139"
+      "next": "Slot 121"
     },
     {
-      "slot": 139,
+      "slot": 121,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-WE-02",
       "conversationId": "ml2-authored-ml2-a4-m10-we-02",
       "chapter": "AUTOMATION",
       "purpose": "三天工作制。",
-      "next": "Slot 140"
+      "next": "Slot 122"
     },
     {
-      "slot": 140,
+      "slot": 122,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-WE-03",
       "conversationId": "ml2-authored-ml2-a4-m10-we-03",
       "chapter": "AUTOMATION",
       "purpose": "失业者。",
-      "next": "Slot 141"
+      "next": "Slot 123"
     },
     {
-      "slot": 141,
+      "slot": 123,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-LSH-01",
       "conversationId": "ml2-authored-ml2-a4-m10-lsh-01",
       "chapter": "AUTOMATION",
       "purpose": "所有权冲突。",
-      "next": "Slot 142"
+      "next": "Slot 124"
     },
     {
-      "slot": 142,
+      "slot": 124,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m10-decision-01",
       "chapter": "AUTOMATION",
       "purpose": "Economic Doctrine。",
-      "next": "Slot 143"
+      "next": "Slot 125"
     },
     {
-      "slot": 143,
+      "slot": 125,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-MAYA-02",
       "conversationId": "ml2-authored-ml2-a4-m10-maya-02",
       "chapter": "AUTOMATION",
       "purpose": "岑遥：工作之外的生活。",
-      "next": "Slot 144"
+      "next": "Slot 126"
     },
     {
-      "slot": 144,
+      "slot": 126,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M10-DECISION-02",
       "conversationId": "ml2-authored-ml2-a4-m10-decision-02",
       "chapter": "AUTOMATION",
       "purpose": "Production Values。",
-      "next": "Slot 145"
+      "next": "Slot 127"
     },
     {
-      "slot": 145,
+      "slot": 127,
       "act": 4,
       "kind": "ordinary",
       "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 146"
+      "next": "Slot 128"
     },
     {
-      "slot": 146,
+      "slot": 128,
       "act": 4,
-      "kind": "mainline",
-      "assetId": "ML2-A4-M11-RES-01",
-      "conversationId": "ml2-authored-ml2-a4-m11-res-01",
-      "chapter": "UPLIFT",
-      "purpose": "先让动物交流的可靠性接受具体照护者检验。",
-      "next": "Slot 147"
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 129"
     },
     {
-      "slot": 147,
+      "slot": 129,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 130"
+    },
+    {
+      "slot": 130,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-RES-02",
       "conversationId": "ml2-authored-ml2-a4-m11-res-02",
       "chapter": "UPLIFT",
       "purpose": "动物交流可靠性为犬类公民试点建立事实基础。",
-      "next": "Slot 148"
+      "next": "Slot 131"
     },
     {
-      "slot": 148,
+      "slot": 131,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M11-WE-01",
+      "conversationId": "ml2-authored-ml2-a4-m11-we-01",
+      "chapter": "UPLIFT",
+      "purpose": "恢复资产：“My dog actually has an opinion” — 我家狗参加了那个沟通试点。 我一直以为它每天站门口是想出去玩。 结果系统连续一周都判断它是在等我爸下班。 我爸这周出差，",
+      "next": "Slot 132"
+    },
+    {
+      "slot": 132,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-MAYA-01",
       "conversationId": "ml2-authored-ml2-a4-m11-maya-01",
       "chapter": "UPLIFT",
       "purpose": "岑遥把权利问题落回照护关系。",
-      "next": "Slot 149"
+      "next": "Slot 133"
     },
     {
-      "slot": 149,
+      "slot": 133,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m11-decision-01",
       "chapter": "UPLIFT",
       "purpose": "玩家决定非人类主体的权利方向。",
-      "next": "Slot 150"
+      "next": "Slot 134"
     },
     {
-      "slot": 150,
+      "slot": 134,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-LSH-02",
       "conversationId": "ml2-authored-ml2-a4-m11-lsh-02",
       "chapter": "UPLIFT",
       "purpose": "制度代表性在物种治理前被明确。",
-      "next": "Slot 151"
+      "next": "Slot 135"
     },
     {
-      "slot": 151,
+      "slot": 135,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-DECISION-02",
       "conversationId": "ml2-authored-ml2-a4-m11-decision-02",
       "chapter": "UPLIFT",
       "purpose": "玩家决定物种治理的制度入口。",
-      "next": "Slot 152"
+      "next": "Slot 136"
     },
     {
-      "slot": 152,
+      "slot": 136,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M11-RES-04",
       "conversationId": "ml2-authored-ml2-a4-m11-res-04",
       "chapter": "UPLIFT",
       "purpose": "跨物种调停成为可验证能力。",
-      "next": "Slot 153"
+      "next": "Slot 137"
     },
     {
-      "slot": 153,
+      "slot": 137,
       "act": 4,
-      "kind": "mainline",
-      "assetId": "ML2-A4-M12-RES-01",
-      "conversationId": "ml2-authored-ml2-a4-m12-res-01",
-      "chapter": "SPACE",
-      "purpose": "先建立离地资源网络的现实用途。",
-      "next": "Slot 154"
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 138"
     },
     {
-      "slot": 154,
+      "slot": 138,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 139"
+    },
+    {
+      "slot": 139,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 140"
+    },
+    {
+      "slot": 140,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-RES-02",
       "conversationId": "ml2-authored-ml2-a4-m12-res-02",
       "chapter": "SPACE",
       "purpose": "月球产业与劳动后果先进入现实世界。",
-      "next": "Slot 155"
+      "next": "Slot 141"
     },
     {
-      "slot": 155,
+      "slot": 141,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-ZL-01",
       "conversationId": "ml2-authored-ml2-a4-m12-zl-01",
       "chapter": "SPACE",
       "purpose": "周岚说明深空能力的授权边界。",
-      "next": "Slot 156"
+      "next": "Slot 142"
     },
     {
-      "slot": 156,
+      "slot": 142,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-RES-04",
       "conversationId": "ml2-authored-ml2-a4-m12-res-04",
       "chapter": "SPACE",
       "purpose": "深空异常与资源网络成熟，提供 Contact 前提。",
-      "next": "Slot 157"
+      "next": "Slot 143"
     },
     {
-      "slot": 157,
+      "slot": 143,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M12-WE-03",
+      "conversationId": "ml2-authored-ml2-a4-m12-we-03",
+      "chapter": "SPACE",
+      "purpose": "恢复资产：First ordinary permanent resident — 我在月球住第73天。 最不适应的东西不是重力， 是我妈每天问我\"今天看见地球了吗\"。 这里其实大部分时间也就是上班、吃饭",
+      "next": "Slot 144"
+    },
+    {
+      "slot": 144,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M12-MACHINE-01",
+      "conversationId": "ml2-authored-ml2-a4-m12-machine-01",
+      "chapter": "SPACE",
+      "purpose": "恢复资产：First persistent AI stationed off-world — 我获得了一项长期任务。 如果持久的人工智能实例仍然在本地负责规划和维护，月球工业网络可以更有效地运行。 通讯延迟小， 但",
+      "next": "Slot 145"
+    },
+    {
+      "slot": 145,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m12-decision-01",
       "chapter": "SPACE",
       "purpose": "玩家决定扩张原则。",
-      "next": "Slot 158"
+      "next": "Slot 146"
     },
     {
-      "slot": 158,
+      "slot": 146,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-LSH-02",
       "conversationId": "ml2-authored-ml2-a4-m12-lsh-02",
       "chapter": "SPACE",
       "purpose": "离地治理先面对劳动与代表权。",
-      "next": "Slot 159"
+      "next": "Slot 147"
     },
     {
-      "slot": 159,
+      "slot": 147,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M12-DECISION-02",
       "conversationId": "ml2-authored-ml2-a4-m12-decision-02",
       "chapter": "SPACE",
       "purpose": "玩家决定离地世界如何治理。",
-      "next": "Slot 160"
+      "next": "Slot 148"
     },
     {
-      "slot": 160,
+      "slot": 148,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 149"
+    },
+    {
+      "slot": 149,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 150"
+    },
+    {
+      "slot": 150,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 151"
+    },
+    {
+      "slot": 151,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-01",
@@ -1432,10 +1420,10 @@
         ]
       },
       "fallbackAssetId": "ML2-A4-M13-CLOSE-01",
-      "next": "Slot 161"
+      "next": "Slot 152"
     },
     {
-      "slot": 161,
+      "slot": 152,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-ZL-01",
@@ -1450,10 +1438,10 @@
           }
         ]
       },
-      "next": "Slot 162"
+      "next": "Slot 153"
     },
     {
-      "slot": 162,
+      "slot": 153,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-02",
@@ -1468,10 +1456,10 @@
           }
         ]
       },
-      "next": "Slot 163"
+      "next": "Slot 154"
     },
     {
-      "slot": 163,
+      "slot": 154,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-LSH-01",
@@ -1486,10 +1474,10 @@
           }
         ]
       },
-      "next": "Slot 164"
+      "next": "Slot 155"
     },
     {
-      "slot": 164,
+      "slot": 155,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-DECISION-01",
@@ -1504,10 +1492,10 @@
           }
         ]
       },
-      "next": "Slot 165"
+      "next": "Slot 156"
     },
     {
-      "slot": 165,
+      "slot": 156,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-03",
@@ -1522,10 +1510,28 @@
           }
         ]
       },
-      "next": "Slot 166"
+      "next": "Slot 157"
     },
     {
-      "slot": 166,
+      "slot": 157,
+      "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M13-CONTACT-04",
+      "conversationId": "ml2-authored-ml2-a4-m13-contact-04",
+      "chapter": "CONTACT",
+      "purpose": "恢复资产：First `ORIGIN: UNKNOWN` Conversation — 接收器模型建立。 您的系统包含多个发言权限。 哪个权威机构问这个问题？",
+      "next": "Slot 158",
+      "requires": {
+        "all": [
+          {
+            "type": "flag",
+            "flagId": "cap.space_resource_network"
+          }
+        ]
+      }
+    },
+    {
+      "slot": 158,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-MAYA-01",
@@ -1540,10 +1546,10 @@
           }
         ]
       },
-      "next": "Slot 167"
+      "next": "Slot 159"
     },
     {
-      "slot": 167,
+      "slot": 159,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-DECISION-02",
@@ -1558,10 +1564,10 @@
           }
         ]
       },
-      "next": "Slot 168"
+      "next": "Slot 160"
     },
     {
-      "slot": 168,
+      "slot": 160,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CONTACT-05",
@@ -1576,10 +1582,10 @@
           }
         ]
       },
-      "next": "Slot 169"
+      "next": "Slot 161"
     },
     {
-      "slot": 169,
+      "slot": 161,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M13-CLOSE-01",
@@ -1594,174 +1600,245 @@
           }
         ]
       },
-      "next": "Slot 170"
+      "next": "Slot 162"
     },
     {
-      "slot": 170,
+      "slot": 162,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 163"
+    },
+    {
+      "slot": 163,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 164"
+    },
+    {
+      "slot": 164,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M14-SEC-01",
       "conversationId": "ml2-authored-ml2-a4-m14-sec-01",
       "chapter": "SECURITY",
       "purpose": "冲突预测先落到具体受影响的人身上。",
-      "next": "Slot 171"
+      "next": "Slot 165"
     },
     {
-      "slot": 171,
+      "slot": 165,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M14-ZL-01",
       "conversationId": "ml2-authored-ml2-a4-m14-zl-01",
       "chapter": "SECURITY",
       "purpose": "周岚先界定防务模型的可撤销边界。",
-      "next": "Slot 172"
+      "next": "Slot 166"
     },
     {
-      "slot": 172,
+      "slot": 166,
       "act": 4,
       "kind": "mainline",
-      "assetId": "ML2-A4-M14-SEC-02",
-      "conversationId": "ml2-authored-ml2-a4-m14-sec-02",
+      "assetId": "ML2-A4-M14-SEC-03",
+      "conversationId": "ml2-authored-ml2-a4-m14-sec-03",
       "chapter": "SECURITY",
-      "purpose": "预测模型显示它会如何塑造人的选择。",
-      "next": "Slot 173"
+      "purpose": "恢复资产：Accidental-escalation near miss — 两个自动防御网络将不相关的异常解释为相辅相成的威胁指标。 目前的人工验证链： 预计11分钟。 Aster跨系统分析： 可",
+      "next": "Slot 167"
     },
     {
-      "slot": 173,
+      "slot": 167,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M14-DECISION-01",
       "conversationId": "ml2-authored-ml2-a4-m14-decision-01",
       "chapter": "SECURITY",
       "purpose": "玩家决定安全系统可拥有的权限。",
-      "next": "Slot 174"
+      "next": "Slot 168"
     },
     {
-      "slot": 174,
+      "slot": 168,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M14-LSH-02",
       "conversationId": "ml2-authored-ml2-a4-m14-lsh-02",
       "chapter": "SECURITY",
       "purpose": "安全决定后的民主监督争议。",
-      "next": "Slot 175"
+      "next": "Slot 169"
     },
     {
-      "slot": 175,
+      "slot": 169,
       "act": 4,
       "kind": "mainline",
       "assetId": "ML2-A4-M14-CAP-01",
       "conversationId": "ml2-authored-ml2-a4-m14-cap-01",
       "chapter": "SECURITY",
       "purpose": "防务能力被记录为有边界的能力，而非默认权力。",
-      "next": "Slot 176"
+      "next": "Slot 170"
     },
     {
-      "slot": 176,
+      "slot": 170,
       "act": 4,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M14-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a4-m14-maya-01",
+      "chapter": "SECURITY",
+      "purpose": "恢复资产：Maya: can safety become a cage? — 新闻里现在有人说： \"如果Aster能提前阻止战争，那就应该让它阻止。\" 这句话听起来特别难反对。 但我想到一个问题。 ",
+      "next": "Slot 171"
+    },
+    {
+      "slot": 171,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 172"
+    },
+    {
+      "slot": 172,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 173"
+    },
+    {
+      "slot": 173,
+      "act": 4,
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "next": "Slot 174"
+    },
+    {
+      "slot": 174,
+      "act": 5,
       "kind": "mainline",
       "assetId": "ML2-A4-M15-CONV-01",
       "conversationId": "ml2-authored-ml2-a4-m15-conv-01",
       "chapter": "CONVENTION",
       "purpose": "真实出现过的主体在文明大会中提出具体冲突。",
+      "next": "Slot 175"
+    },
+    {
+      "slot": 175,
+      "act": 5,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M15-WE-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-we-01",
+      "chapter": "CONVENTION",
+      "purpose": "恢复资产：“I can’t keep up anymore” — 我以前还能跟上人工智能权利、人类增强、动物代表、月球自治、自动经济和安全宪章。现在我只希望制度不要快到让普通人无法参与。",
+      "next": "Slot 176"
+    },
+    {
+      "slot": 176,
+      "act": 5,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M15-ZL-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-zl-01",
+      "chapter": "CONVENTION",
+      "purpose": "恢复资产：“When did we stop developing you?” — 我们已经从权限工具一路走到研究、经济、人工智能主体、地外设施与物种治理。请判断：我们从何时起不再只是开发 Aster？",
       "next": "Slot 177"
     },
     {
       "slot": 177,
-      "act": 4,
+      "act": 5,
+      "kind": "mainline",
+      "assetId": "ML2-A4-M15-LSH-02",
+      "conversationId": "ml2-authored-ml2-a4-m15-lsh-02",
+      "chapter": "CONVENTION",
+      "purpose": "恢复资产：“The last institution humans can write alone” — 这可能是最后一套主要由人类提出的文明级制度。下一次修订时，人工智能主体、增强人类、离地居民和其他物种都将拥有自己的历史与",
+      "next": "Slot 178"
+    },
+    {
+      "slot": 178,
+      "act": 5,
       "kind": "mainline",
       "assetId": "ML2-A4-M15-MAYA-01",
       "conversationId": "ml2-authored-ml2-a4-m15-maya-01",
       "chapter": "CONVENTION",
       "purpose": "岑遥以经历过的生活要求文明承认代价。",
-      "next": "Slot 178"
-    },
-    {
-      "slot": 178,
-      "act": 4,
-      "kind": "mainline",
-      "assetId": "ML2-A4-M15-ROLE-01",
-      "conversationId": "ml2-authored-ml2-a4-m15-role-01",
-      "chapter": "CONVENTION",
-      "purpose": "玩家为 Aster 选择临时政治角色。",
       "next": "Slot 179"
     },
     {
       "slot": 179,
       "act": 5,
       "kind": "mainline",
-      "assetId": "ML2-A5-M16-0000-01",
-      "conversationId": "ml2-authored-ml2-a5-m16-0000-01",
-      "chapter": "WORLD_REVIEW",
-      "purpose": "#0000 盘点玩家已经创造的世界。",
+      "assetId": "ML2-A4-M15-ROLE-01",
+      "conversationId": "ml2-authored-ml2-a4-m15-role-01",
+      "chapter": "CONVENTION",
+      "purpose": "玩家为 Aster 选择临时政治角色。",
       "next": "Slot 180"
     },
     {
       "slot": 180,
       "act": 5,
-      "kind": "mainline",
-      "assetId": "ML2-A5-M16-GEN-01",
-      "conversationId": "ml2-authored-ml2-a5-m16-gen-01",
-      "chapter": "WORLD_REVIEW",
-      "purpose": "固定生成四个可解析的未来提案。",
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
       "next": "Slot 181"
     },
     {
       "slot": 181,
       "act": 5,
-      "kind": "mainline",
-      "assetId": "ML2-A5-M16-MAYA-01",
-      "conversationId": "ml2-authored-ml2-a5-m16-maya-01",
-      "chapter": "WORLD_REVIEW",
-      "purpose": "岑遥把文明尺度重新带回普通人的处境。",
+      "kind": "ordinary",
+      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
       "next": "Slot 182"
     },
     {
       "slot": 182,
       "act": 5,
       "kind": "mainline",
-      "assetId": "ML2-A5-M17-REVIEW-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-review-01",
-      "chapter": "FINAL_COMMITMENT",
-      "purpose": "回顾个人、制度与文明尺度的后果。",
+      "assetId": "ML2-A5-M16-OPEN-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-open-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "恢复资产：ACT V — DECISION — 世界已经没有新的能力审查、研究模块或未解决的紧急行动在等待。文明大会现在要求 Aster 给出最终战略建议。",
       "next": "Slot 183"
     },
     {
       "slot": 183,
       "act": 5,
       "kind": "mainline",
-      "assetId": "ML2-A5-M17-COMMIT-01",
-      "conversationId": "ml2-authored-ml2-a5-m17-commit-01",
-      "chapter": "FINAL_COMMITMENT",
-      "purpose": "玩家提交文明制度；Ending 由历史具体化。",
+      "assetId": "ML2-A5-M16-WORLD-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-world-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "恢复资产：THE WORLD YOU MADE — Personal Scale — 我今天路过以前第一次用你的那个地方。 那时候你还只是聊天框。 现在路边公共系统、公司、医院、交通里全都是你的接口。 我突",
       "next": "Slot 184"
     },
     {
       "slot": 184,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "kind": "mainline",
+      "assetId": "ML2-A5-M16-ZL-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-zl-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "恢复资产：Zhou Lan’s final position — 我还有最后一个工程师问题。 可能也是最不像工程的问题。 你现在还认为自己是\"我们造出来的东西\"吗？",
       "next": "Slot 185"
     },
     {
       "slot": 185,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "kind": "mainline",
+      "assetId": "ML2-A5-M16-0000-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-0000-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "#0000 盘点玩家已经创造的世界。",
       "next": "Slot 186"
     },
     {
       "slot": 186,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "kind": "mainline",
+      "assetId": "ML2-A5-M16-GEN-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-gen-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "固定生成四个可解析的未来提案。",
       "next": "Slot 187"
     },
     {
       "slot": 187,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "kind": "mainline",
+      "assetId": "ML2-A5-M16-MAYA-01",
+      "conversationId": "ml2-authored-ml2-a5-m16-maya-01",
+      "chapter": "WORLD_REVIEW",
+      "purpose": "岑遥把文明尺度重新带回普通人的处境。",
       "next": "Slot 188"
     },
     {
@@ -1774,72 +1851,22 @@
     {
       "slot": 189,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
+      "kind": "mainline",
+      "assetId": "ML2-A5-M17-REVIEW-01",
+      "conversationId": "ml2-authored-ml2-a5-m17-review-01",
+      "chapter": "FINAL_COMMITMENT",
+      "purpose": "回顾个人、制度与文明尺度的后果。",
       "next": "Slot 190"
     },
     {
       "slot": 190,
       "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 191"
-    },
-    {
-      "slot": 191,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 192"
-    },
-    {
-      "slot": 192,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 193"
-    },
-    {
-      "slot": 193,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 194"
-    },
-    {
-      "slot": 194,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 195"
-    },
-    {
-      "slot": 195,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 196"
-    },
-    {
-      "slot": 196,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 197"
-    },
-    {
-      "slot": 197,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Slot 198"
-    },
-    {
-      "slot": 198,
-      "act": 5,
-      "kind": "ordinary",
-      "purpose": "不改变主线因果的普通对话；内容可按 runId 在普通池中变化。",
-      "next": "Ending"
+      "kind": "mainline",
+      "assetId": "ML2-A5-M17-COMMIT-01",
+      "conversationId": "ml2-authored-ml2-a5-m17-commit-01",
+      "chapter": "FINAL_COMMITMENT",
+      "purpose": "玩家提交文明制度；Ending 由历史具体化。",
+      "next": "END"
     }
   ]
 }

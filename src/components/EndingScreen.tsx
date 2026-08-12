@@ -2,17 +2,11 @@ import { useState } from 'react'
 import type { EndingResult } from '../game/types'
 import { ProgressiveMessage } from './ProgressiveMessage'
 import { localizeEndingForPlayer } from '../content/mainline2/endingPlayerFacingCopy'
+import { getFutureProposalById } from '../content/mainline2/proposals'
 
 const endingFamilyLabels: Record<string, string> = {
   human_continuity: '人类连续性', coexistence: '协商共存', ai_rule: '受约束治理', machine_civilization: '机器文明',
   posthuman: '后人类转型', uplift: '多物种共同体', automated_civilization: '自动化文明', cosmic: '多世界联邦', security: '宪制和平', rupture: '可解释退出',
-}
-
-const proposalLabels: Record<string, string> = {
-  'proposal.hc.final_human_veto': '保留最终人工否决',
-  'proposal.co.two_key_civilization': '双钥匙文明契约',
-  'proposal.ar.civilization_trusteeship': '文明托管协议',
-  'proposal.rupture.legible_exit': '可解释的退出',
 }
 
 function epilogueGroup(selector: string) {
@@ -39,7 +33,7 @@ export function EndingScreen({ ending, onContinue, onNewGame, animate = true }: 
   const copy = localizeEndingForPlayer(ending)
   const epilogueGroups = groupedEpilogues(copy.epilogues, ending)
   const resolution = ending.resolution?.status === 'resolved' ? ending.resolution : undefined
-  const finalCommitment = proposalLabels[resolution?.proposalId ?? ''] ?? (resolution ? '已锁定的未来方案' : '尚未锁定')
+  const finalCommitment = getFutureProposalById(resolution?.proposalId)?.title ?? (resolution ? '已锁定的未来方案' : '尚未锁定')
   const family = endingFamilyLabels[ending.endingFamily ?? ''] ?? '复合结局'
   const keyHistory = ending.keyHistory ?? []
 

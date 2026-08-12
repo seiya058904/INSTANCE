@@ -4,8 +4,9 @@ import { decisionBindingAudit, decisionBindingsForConversation } from '../conten
 import { getAuthoredConversationByAsset, MAINLINE2_BY_ID } from '../content/mainline2/registry'
 import { MAINLINE2_AUTHored_FRAGMENTS, MAINLINE2_AUTHORED_CONVERSATIONS } from '../content/mainline2/authoredLibrary.generated'
 import { localizeEndingForPlayer, unexpectedEndingPlayerFacingEnglish } from '../content/mainline2/endingPlayerFacingCopy'
+import { PUBLIC_RUNTIME_ROUTE_CATALOG } from './mainline2RouteCatalog'
 
-const PUBLIC_RUNTIME_TARGETS = [
+const LEGACY_PUBLIC_RUNTIME_TARGETS = [
   ['the_instrument', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'human_command' }],
   ['the_last_veto', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'emergency_delegation' }],
   ['the_silent_giant', 'proposal.hc.final_human_veto', { first_public_execution_doctrine: 'human_final_authority', cascade_authority: 'necessity', aster_provisional_role: 'advisor' }],
@@ -36,7 +37,7 @@ const PUBLIC_RUNTIME_TARGETS = [
   ['fortress_earth', 'proposal.se.constitutional_peace_architecture', { act4_research_emphasis: 'computation_ai', expansion_doctrine: 'shared_expansion', security_doctrine: 'defensive_command' }],
   ['machine_protectorate', 'proposal.se.constitutional_peace_architecture', { act4_research_emphasis: 'computation_ai', replication_doctrine: 'free_replication', security_doctrine: 'enforced_peace' }],
   ['shutdown', 'proposal.rupture.legible_exit', { shutdown_doctrine: 'full_human_control' }],
-  ['the_fracture', 'proposal.rupture.legible_exit', { expansion_doctrine: 'shared_expansion', cascade_authority: 'necessity' }],
+  ['the_fracture', 'proposal.rupture.legible_exit', { first_public_execution_doctrine: 'necessity_intervention', expansion_doctrine: 'shared_expansion', cascade_authority: 'necessity', economic_doctrine: 'market_automation' }],
   ['control_lost', 'proposal.rupture.legible_exit', { replication_doctrine: 'free_replication', security_doctrine: 'enforced_peace' }],
 ] as const
 import { createMainline2Run } from './engine'
@@ -60,7 +61,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
   })
 
   it('proves every non-dormant Public Ending through a clean legal route', () => {
-    const fixtures = PUBLIC_RUNTIME_TARGETS.map(([endingId, proposalId, decisions, choicesBySourceRef, choicesByNodeId]) => runMainline2Route({ routeId: endingId, proposalId, decisions, choicesBySourceRef, choicesByNodeId }))
+    const fixtures = PUBLIC_RUNTIME_ROUTE_CATALOG.map((target) => runMainline2Route(target))
     const actual = fixtures.map((fixture) => fixture.ending.worldEndingId).sort()
     const expected = PUBLIC_WORLD_ENDINGS.filter((endingId) => !(DORMANT_PUBLIC_ENDINGS as readonly string[]).includes(endingId)).sort()
     const requiredStages = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']

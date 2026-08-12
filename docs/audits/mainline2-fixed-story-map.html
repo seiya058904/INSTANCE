@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>INSTANCE Mainline 2.0 Story Map</title>
+  <style>
+    :root{color-scheme:dark;font:14px/1.5 system-ui,"Microsoft YaHei";--bg:#0d1422;--panel:#121d2d;--line:#2b4560;--ink:#e8eef5;--muted:#9bb0c3;--accent:#69d2c0;--decision:#f4c56d;--echo:#bca5f5;--ending:#ff8b84}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0%,#172b3e 0,#0d1422 42%);color:var(--ink)}main{max-width:1800px;margin:auto;padding:24px clamp(16px,3vw,48px)}h1,h2,h3{line-height:1.15;text-wrap:balance}h1{font-size:clamp(1.8rem,3vw,3rem);letter-spacing:-.03em}button,select{background:#162538;color:inherit;border:1px solid #46627d;padding:8px 10px;border-radius:7px;font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.lede{max-width:78ch;color:var(--muted)}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:20px 0}.toolbar label{display:grid;gap:4px;color:var(--muted)}.mode-switch{display:flex;gap:4px;margin-left:auto}.mode-switch button.selected{background:var(--accent);color:#07131b;border-color:var(--accent)}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,34%);gap:18px;align-items:start}.tree-panel{min-width:0;border:1px solid var(--line);border-radius:12px;background:rgba(18,29,45,.86);padding:16px;overflow:auto}.tree-intro{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:0 4px 14px;color:var(--muted)}.tree-intro b{color:var(--ink);font-weight:600}.tree-root,.tree-children{list-style:none;margin:0;padding:0}.tree-root{min-width:760px}.tree-children{margin:7px 0 0 20px;padding-left:18px;border-left:1px solid #365873}.tree-item{position:relative;margin:7px 0}.tree-item::before{content:"";position:absolute;left:-18px;top:22px;width:18px;border-top:1px solid #365873}.tree-root>.tree-item::before{display:none}.tree-toggle{width:25px;height:25px;padding:0;margin-right:5px;vertical-align:top;color:var(--accent);font-weight:700;border-color:#527c90}.tree-node{display:grid;grid-template-columns:auto minmax(150px,1fr);gap:2px 9px;text-align:left;width:min(calc(100% - 35px),440px);padding:9px 11px;background:#162538;border:1px solid #35546f;border-radius:8px}.tree-node strong{font-weight:650}.tree-node small{grid-column:2;color:var(--muted);font-size:12px}.tree-node-kind{grid-row:1 / span 2;align-self:center;color:var(--muted);font-size:11px;writing-mode:vertical-rl}.tree-node.act{width:calc(100% - 35px);max-width:none;background:#1b3043;border-color:#527c90}.tree-node.decision{border-color:var(--decision);box-shadow:inset 0 0 0 1px rgba(244,197,109,.2)}.tree-node.consequence{border-color:var(--echo)}.tree-node.ending{border-color:var(--ending);background:#30202b}.tree-node.route-active{box-shadow:0 0 0 2px var(--accent),0 0 18px rgba(105,210,192,.16)}.tree-item.route-active>.tree-node{box-shadow:0 0 0 2px var(--accent),0 0 18px rgba(105,210,192,.16)}.tree-node.compare-shared{border-color:#67b5ff;box-shadow:inset 0 0 0 1px rgba(103,181,255,.35)}.tree-node.compare-divergent{border-color:var(--decision);box-shadow:0 0 0 2px rgba(244,197,109,.35)}.detail{position:sticky;top:12px;max-height:calc(100vh - 48px);overflow:auto;border:1px solid var(--line);background:rgba(18,29,45,.92);padding:16px;border-radius:12px}.trace,.choice,.divergence,.node-detail{border-left:2px solid #60c7ff;margin:8px 0;padding:8px}.choice{border-left-color:#9ee6b1}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.comparison{border:1px solid var(--line);border-radius:10px;padding:14px;margin:18px 0;background:#111d2b}summary{cursor:pointer}p{line-height:1.55;overflow-wrap:anywhere}code{color:#a9e9df}@media(max-width:980px){main{padding:18px 12px}.layout{display:block}.tree-panel{margin-bottom:14px}.detail{position:static;max-height:none}.mode-switch{margin-left:0}.tree-root{min-width:680px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>INSTANCE Mainline 2.0：真实路线 Story Map</h1>
+    <p class="lede">36 条路线全部来自 clean legal <code>runMainline2Route</code>。默认先看由真实 Runtime trace 聚合的主干与分叉；点击节点、Ending 或 Compare，再查看具体内容。</p>
+    <section class="toolbar" aria-label="路线与比较控制">
+      <label>查看 Ending<select id="ending"><option value="">选择 Ending</option></select></label>
+      <label>比较路线 A<select id="compare-left"></select></label>
+      <label>比较路线 B<select id="compare-right"></select></label>
+      <button id="compare" type="button">比较实际选择</button>
+      <div class="mode-switch" aria-label="视图模式"><button id="tree-mode" type="button" class="selected">树状总览</button><button id="detail-mode" type="button">详情模式</button></div>
+    </section>
+    <section id="comparison" class="comparison">选择两条路线可查看共同历史、第一次与之后的实际选择分歧，以及 Ending 分歧。</section>
+    <div class="layout">
+      <section id="map" class="tree-panel" aria-label="198 Slot Story Map 树状总览"></section>
+      <aside id="detail" class="detail" hidden>选择树节点、Ending 或 Compare 查看详情。</aside>
+    </div>
+  </main>
+  <script type="module">
+    import { mountStoryMap } from '../../tools/mainline2-story-map-ui.mjs'
+    mountStoryMap().catch((error) => { document.querySelector('#detail').textContent = `Story Map 加载失败：${error.message}` })
+  </script>
+</body>
+</html>

@@ -1,28 +1,34 @@
 import type { ConversationDefinition, ModuleId, StableRunState } from '../../game/types'
 import { classifyConversationLanguage, type ConversationLanguage } from '../../game/languagePacing'
-import { ACT4_COMMON, ACT4_LATE, ACT5_FINAL, ACT5_OPENING, ACT_STORY, MAINLINE2_LIBRARY, MODULE_LIBRARY } from './registry'
+import { MAINLINE2_LIBRARY } from './registry'
 import { MODULE_IDS } from './stateRegistry'
 import { MAINLINE_REQUIRED_WINDOWS, schedulerMetadataFor } from './schedulerMetadata'
+import { MAINLINE2_STORY_PLAN, storyPlanConversationId, storyPlanSlotAt, type StoryPlanChapter } from './storyPlan'
 
-export const ACT_TARGETS = [26, 30, 30, 34, 14] as const
-export const ACT_STARTS = [0, 26, 56, 86, 120] as const
+export const ACT_TARGETS = ([1, 2, 3, 4, 5] as const).map((act) => MAINLINE2_STORY_PLAN.filter((slot) => slot.act === act).length)
+export const ACT_STARTS = ACT_TARGETS.map((_, index) => ACT_TARGETS.slice(0, index).reduce((sum, value) => sum + value, 0))
 const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000', 'user-1842-return'] as const
 
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
-function contactGateOpen(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>) {
+type CivilisationMaturityInput = Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>
+
+function contactGateOpen(run: CivilisationMaturityInput) {
   return selectAct4Modules(run).audit.some((entry) => entry.module === 'contact' && entry.eligible)
 }
 
 export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number }
-export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
-  const state: Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> = typeof run === 'string'
+export const ACTIVE_MODULE_THRESHOLD = 3
+export const MATURE_MODULE_THRESHOLD = 8
+
+export function selectAct4Modules(run: CivilisationMaturityInput | string): { primaryModules: ModuleId[]; activeModules: ModuleId[]; matureModules: ModuleId[]; audit: Act4SchedulerAudit[] } {
+  const state: CivilisationMaturityInput = typeof run === 'string'
     ? { runId: run, flags: [], events: [], decisions: {}, worldState: { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 } }
     : run
-  const baseScore = 1
+  const baseScore = 0
   const scores = new Map<ModuleId, number>(MODULE_IDS.map((module) => [module, baseScore]))
-  const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, ['base-mainline-eligibility']]))
+  const sources = new Map<ModuleId, string[]>(MODULE_IDS.map((module) => [module, []]))
   const add = (module: ModuleId, amount: number, source: string) => { scores.set(module, (scores.get(module) ?? 0) + amount); sources.get(module)!.push(source) }
   if (capability(state, 'cap.persistent_subinstances') || state.decisions?.replication_doctrine) add('machine', 5, 'persistent-subinstances/replication')
   if (capability(state, 'cap.human_enhancement_access') || state.decisions?.human_form_doctrine) add('ascension', 5, 'enhancement/form')
@@ -31,10 +37,13 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   if (capability(state, 'cap.offworld_settlement_support') || state.decisions?.expansion_doctrine) add('space', 5, 'offworld/expansion')
   if (capability(state, 'cap.defense_access') || state.decisions?.security_doctrine) add('security', 5, 'defense/security')
   const emphasis = state.decisions?.act4_research_emphasis
-  if (emphasis === 'computation_ai') { add('machine', 4, 'research emphasis: computation_ai'); add('space', 4, 'computation frontier bridge'); add('security', 2, 'computation security bridge') }
+  if (emphasis === 'computation_ai') { add('machine', 4, 'research emphasis: computation_ai'); add('space', 4, 'computation frontier bridge'); add('security', 3, 'computation security bridge') }
   if (emphasis === 'life_mind') { add('ascension', 3, 'research emphasis: life_mind'); add('uplift', 3, 'research emphasis: life_mind'); add('security', 1, 'life-mind safety bridge') }
-  if (emphasis === 'automation_industry') { add('automation', 4, 'research emphasis: automation_industry'); add('security', 2, 'automation safety bridge'); add('machine', 2, 'automation machine bridge') }
-  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science'); add('machine', 2, 'frontier machine bridge'); add('uplift', 2, 'frontier species bridge') }
+  if (emphasis === 'automation_industry') { add('automation', 4, 'research emphasis: automation_industry'); add('security', 3, 'automation safety bridge'); add('machine', 3, 'automation machine bridge') }
+  if (emphasis === 'frontier_science') { add('space', 4, 'research emphasis: frontier_science'); add('contact', 2, 'research emphasis: frontier_science'); add('machine', 3, 'frontier machine bridge'); add('uplift', 3, 'frontier species bridge') }
+  if (emphasis === 'balanced_portfolio') {
+    for (const module of MODULE_IDS.filter((candidate) => candidate !== 'contact')) add(module, ACTIVE_MODULE_THRESHOLD, 'research emphasis: balanced_portfolio')
+  }
   const frontierBridge = capability(state, 'cap.space_resource_network') || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && hasEvent(state, 'history.space.'))
   const contactEligible = frontierBridge && (hasEvent(state, 'contact-seed:deep-space-anomaly') || emphasis === 'frontier_science') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
   if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
@@ -43,9 +52,10 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   add('uplift', Math.max(0, world.humanTrust), 'World State trust')
   add('machine', Math.max(0, world.aiDependence), 'World State dependence')
   const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
-  const tie = (module: ModuleId) => `${state.runId}:${module}`.split('').reduce((sum, char) => (sum * 33 + char.charCodeAt(0)) >>> 0, 17)
-  const eligible = audit.filter((entry) => entry.eligible).map((entry) => entry.module)
-  const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || tie(left) - tie(right))
+  const eligible = audit.filter((entry) => entry.eligible && entry.score >= ACTIVE_MODULE_THRESHOLD).map((entry) => entry.module)
+  // Maturity is part of the player-visible world state.  Stable registry order
+  // resolves equal evidence; runId is reserved for Ordinary conversation picks.
+  const ordered = eligible.sort((left, right) => (scores.get(right)! - scores.get(left)!) || MODULE_IDS.indexOf(left) - MODULE_IDS.indexOf(right))
   const emphasisPriority: Record<string, ModuleId[]> = {
     computation_ai: ['machine', 'space', 'security'],
     life_mind: ['ascension', 'uplift'],
@@ -56,15 +66,16 @@ export function selectAct4Modules(run: Pick<StableRunState, 'runId' | 'flags' | 
   const primaryModules = prioritized.slice(0, Math.min(2, prioritized.length))
   const secondary = prioritized.slice(2).filter((module, index) => {
     const item = audit.find((entry) => entry.module === module)!
-    const sourceCount = item.scoreSources.filter((source) => source !== 'base-mainline-eligibility').length
+    const sourceCount = item.scoreSources.length
     const forcedBridge = (emphasisPriority[emphasis ?? ''] ?? []).includes(module)
     return forcedBridge ? item.score >= 3 : (index === 0 && item.score >= 6 && sourceCount >= 1) || (index === 1 && item.score >= 8 && sourceCount >= 2)
   }).slice(0, 2)
   const activeModules = emphasis === 'frontier_science' && capability(state, 'cap.offworld_settlement_support')
     ? (['space', 'contact', 'machine', 'uplift'] as ModuleId[]).filter((module) => eligible.includes(module))
     : [...primaryModules, ...secondary]
+  const matureModules = activeModules.filter((module) => (scores.get(module) ?? 0) >= MATURE_MODULE_THRESHOLD)
   for (const entry of audit) entry.active = activeModules.includes(entry.module)
-  return { primaryModules, activeModules: [...new Set(activeModules)], audit }
+  return { primaryModules, activeModules: [...new Set(activeModules)], matureModules: [...new Set(matureModules)], audit }
 }
 
 function seedHash(seed: string) {
@@ -86,50 +97,6 @@ function rotatedId(pool: readonly ConversationDefinition[], index: number, run: 
   for (let step = 0; step < pool.length; step += 1) {
     const candidate = pool[(index + offset + step) % pool.length]
     if (!scheduledIds || !scheduledIds.has(candidate.id)) return candidate.id
-  }
-  return undefined
-}
-
-function storyId(run: StableRunState, act: number, index: number, scheduledIds: ReadonlySet<string>): string | undefined {
-  const required = (ref: string, pool: readonly { id: string; sourceRefs: readonly string[] }[]) => pool.find((conversation) => conversation.sourceRefs.includes(ref))?.id
-  if (act === 1) return rotatedId(ACT_STORY[1], index, run, 'act-1-story', scheduledIds)
-  if (act === 2) {
-    return rotatedId(ACT_STORY[2], index, run, 'act-2-story', scheduledIds)
-  }
-  if (act === 3) {
-    return rotatedId(ACT_STORY[3], index, run, 'act-3-story', scheduledIds)
-  }
-  if (act === 4) {
-    if (index === 2 && run.decisions?.act4_research_emphasis === 'frontier_science') return required('ML2-A4-M12-RES-04', MODULE_LIBRARY.space) ?? ACT4_COMMON[index]?.id
-    if (index < 8) {
-      const anchor = ['ML2-A4-M7-DECISION-01', 'ML2-A4-M7-DECISION-02', 'ML2-A4-M7-RES-01', 'ML2-A4-M7-RES-02'][index]
-      return anchor ? required(anchor, ACT4_COMMON) ?? ACT4_COMMON[index]?.id : ACT4_COMMON[index]?.id
-    }
-    const active = run.progress?.activeModules ?? []
-    if (index < 26 && active.length) {
-      const module = active[(index - 8 + seedOffset(run.runId, 'act-4-module-order', active.length)) % active.length]
-      const library = MODULE_LIBRARY[module] ?? []
-      const occurrence = Math.floor((index - 8) / active.length)
-      const requiredModuleDecisions: Record<ModuleId, string[]> = {
-        machine: ['ML2-A4-M8-DECISION-01', 'ML2-A4-M8-DECISION-02', 'ML2-A4-M8-AI-03'],
-        ascension: ['ML2-A4-M9-DECISION-01', 'ML2-A4-M9-CONTINUITY-01', 'ML2-A4-M9-RES-04'],
-        automation: ['ML2-A4-M10-DECISION-01', 'ML2-A4-M10-DECISION-02', 'ML2-A4-M10-RES-01'],
-        uplift: ['ML2-A4-M11-DECISION-01', 'ML2-A4-M11-DECISION-02', 'ML2-A4-M11-RES-02', 'ML2-A4-M11-RES-04'],
-        space: ['ML2-A4-M12-DECISION-01', 'ML2-A4-M12-DECISION-02', 'ML2-A4-M12-RES-02', 'ML2-A4-M12-RES-04'],
-        contact: ['ML2-A4-M13-DECISION-01', 'ML2-A4-M13-DECISION-02'],
-        security: ['ML2-A4-M14-DECISION-01', 'ML2-A4-M14-CAP-01'],
-      }
-      const moduleAnchor = requiredModuleDecisions[module]?.[occurrence]
-      return moduleAnchor ? required(moduleAnchor, library) ?? rotatedId(library, occurrence, run, `act-4-${module}`, scheduledIds) : rotatedId(library, occurrence, run, `act-4-${module}`, scheduledIds)
-    }
-    if (index === 26) return required('ML2-A4-M15-ROLE-01', ACT4_LATE) ?? ACT4_LATE[(index - 26) % Math.max(1, ACT4_LATE.length)]?.id
-    return rotatedId(ACT4_LATE, index - 26, run, 'act-4-late', scheduledIds)
-  }
-  if (act === 5) {
-    const opening = ACT5_OPENING.filter((conversation) => !['ML2-A5-M16-0000-01', 'ML2-A5-M16-GEN-01'].includes(conversation.sourceRefs[0] ?? ''))
-    if (index < 7) return rotatedId(opening, index, run, 'act-5-opening', scheduledIds)
-    const final = ACT5_FINAL.filter((conversation) => !['ML2-A5-M17-REVIEW-01', 'ML2-A5-M17-COMMIT-01'].includes(conversation.sourceRefs[0] ?? ''))
-    return rotatedId(final, index - 7, run, 'act-5-final', scheduledIds)
   }
   return undefined
 }
@@ -229,35 +196,15 @@ function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly Con
 export function scheduleNextConversationId(run: StableRunState, ordinaryConversations: readonly ConversationDefinition[]): string | undefined {
   const scheduled = run.manifest.conversationIds.length
   const scheduledIds = new Set(run.manifest.conversationIds)
-  if (scheduled >= ACT_TARGETS.reduce((sum, value) => sum + value, 0)) return undefined
+  const plannedSlot = storyPlanSlotAt(scheduled + 1)
+  if (!plannedSlot) return undefined
   const known = conversationMap(ordinaryConversations)
   const ordinary = chooseOrdinary(run, ordinaryConversations, known, scheduledIds)
-  const nextAnchor = ANCHOR_WINDOWS.find((window) => !scheduledIds.has(window.id))
-  if (nextAnchor && scheduled >= nextAnchor.latest) return nextAnchor.id
-  if (nextAnchor && scheduled >= nextAnchor.earliest && seedHash(`${run.runId}:anchor:${nextAnchor.id}:${scheduled}`) % 5 === 0) return nextAnchor.id
-  const nextRequired = MAINLINE_REQUIRED_WINDOWS.find((window) => {
-    const conversation = MAINLINE2_LIBRARY.find((candidate) => candidate.sourceRefs.includes(window.assetId))
-    if (window.assetId.includes('M13-CONTACT') && !contactGateOpen(run)) return false
-    if (!conversation || scheduledIds.has(conversation.id) || scheduled < window.earliest) return false
-    const prerequisites = schedulerMetadataFor(window.assetId)?.prerequisites ?? []
-    return prerequisites.every((ref) => MAINLINE2_LIBRARY.some((candidate) => candidate.sourceRefs.includes(ref) && scheduledIds.has(candidate.id)))
-  })
-  if (nextRequired) {
-    const requiredConversation = MAINLINE2_LIBRARY.find((candidate) => candidate.sourceRefs.includes(nextRequired.assetId))
-    const majorDecisionStreak = requiredConversation ? isMajorDecision(requiredConversation) && hasMajorDecisionStreak(run, requiredConversation, known) : false
-    if (requiredConversation && majorDecisionStreak && ordinary) return ordinary.id
-    if (requiredConversation && (scheduled >= nextRequired.latest || seedHash(`${run.runId}:required:${nextRequired.assetId}:${scheduled}`) % 4 === 0)) return requiredConversation.id
-  }
-  const act = scheduled < 26 ? 1 : scheduled < 56 ? 2 : scheduled < 86 ? 3 : scheduled < 120 ? 4 : 5
-  const index = scheduled - ACT_STARTS[act - 1]
-  const story = storyId(run, act, index, scheduledIds)
-  const storyConversation = story ? known.get(story) : undefined
-  if (storyConversation && !scheduledIds.has(storyConversation.id)) {
-    if (!hardStoryCandidate(storyConversation) && (hasPacingStreak(run, storyConversation, known) || hasMajorDecisionStreak(run, storyConversation, known)) && ordinary) return ordinary.id
-    if (!hardStoryCandidate(storyConversation) && ordinary && seedHash(`${run.runId}:story-choice:${scheduled}`) % 4 === 0) return ordinary.id
-    return storyConversation.id
-  }
-  return ordinary?.id
+  if (plannedSlot.kind === 'ordinary') return ordinary?.id
+  // A conditional directed chapter deliberately leaves its non-applicable
+  // slots to ordinary life; only its authored closure is exposed on a closed
+  // branch.  Do not terminate the run merely because one chapter is absent.
+  return storyPlanConversationId(plannedSlot, run) ?? ordinary?.id
 }
 
 export interface MainlineScheduleAudit {
@@ -300,11 +247,13 @@ function spacingExceptionReason(ids: readonly string[], index: number) {
   const current = ids[index] ?? ''
   if (current.includes('ml2-a5-m17-review') && previous.includes('ml2-a5-m16-gen')) return 'direct-continuation: M16 proposal generation to M17 review'
   if (current.includes('ml2-a5-m17-commit') && previous.includes('ml2-a5-m17-review')) return 'final-sequence: M17 review to commitment'
+  const slots = [index - 1, index, index + 1].map((slot) => storyPlanSlotAt(slot))
+  if (slots.every((slot) => slot?.kind === 'mainline')) return 'fixed-story-plan: consecutive directed scenes preserve causal order'
   return undefined
 }
 
 export function auditMainlineSchedules(schedules: readonly (readonly string[])[]): MainlineScheduleAudit {
-  const requiredIds = MAINLINE_REQUIRED_WINDOWS.map((window) => window.assetId).filter((assetId) => !assetId.includes('M13-CONTACT'))
+  const requiredAssetGroups = MAINLINE2_STORY_PLAN.flatMap((slot) => slot.kind === 'mainline' && !slot.requires && slot.assetId.startsWith('ML2-') ? [[slot.assetId, ...(slot.fallbackAssetId ? [slot.fallbackAssetId] : [])]] : [])
   const traits = (id: string) => {
     const conversation = mainlineConversationMap.get(id)
     return {
@@ -313,7 +262,10 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
       language: conversation ? languageOf(conversation) : 'mixed' as ConversationLanguage,
     }
   }
-  const mainlineSequences = schedules.map((ids) => ids.filter((id) => id.startsWith('ml2-authored-')).join('|'))
+  const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => {
+    const slot = MAINLINE2_STORY_PLAN[index]
+    return slot?.kind === 'mainline' && !slot.requires
+  }).join('|'))
   const spacingExceptions: MainlineScheduleAudit['spacingExceptions'] = []
   const invalidSpacingExceptions: MainlineScheduleAudit['invalidSpacingExceptions'] = []
   let maxMajorDecisionStreak = 0
@@ -329,8 +281,10 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
     maxParticipantStreak = Math.max(maxParticipantStreak, auditStreak(items, (left, right) => left.participant === right.participant))
     maxTopicStreak = Math.max(maxTopicStreak, auditStreak(items, (left, right) => left.topic === right.topic))
     maxPureEnglishStreak = Math.max(maxPureEnglishStreak, truthyStreak(items.map((item) => item.language === 'pure-english')))
-    const requiredPositions = requiredIds.map((assetId) => ids.findIndex((id) => id.includes(assetId.toLowerCase())))
-    if (requiredPositions.some((position) => position < 0)) missingRequiredAssets += 1
+    if (requiredAssetGroups.some((assetIds) => !assetIds.some((assetId) => {
+      const conversationId = MAINLINE2_LIBRARY.find((conversation) => conversation.sourceRefs.includes(assetId))?.id
+      return conversationId ? ids.includes(conversationId) : false
+    }))) missingRequiredAssets += 1
     const first = ids.findIndex((id) => id === 'user-1842-first')
     const speaking = ids.findIndex((id) => id === 'speaking-8614')
     const zero = ids.findIndex((id) => id === 'conversation-0000')
@@ -376,14 +330,24 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
 }
 
 export function updateProgressForSchedule(run: StableRunState, nextCount: number): StableRunState['progress'] {
-  const act = nextCount < 26 ? 1 : nextCount < 56 ? 2 : nextCount < 86 ? 3 : nextCount < 120 ? 4 : 5
+  const act = ([1, 2, 3, 4, 5] as const).find((candidate, index) => nextCount <= ACT_STARTS[index] + ACT_TARGETS[index]) ?? 5
   const actStart = ACT_STARTS[act - 1]
-  const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, activeModules: [], primaryModules: [], completedModules: [] }
+  const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] }
   const emphasis = run.decisions?.act4_research_emphasis
-  const shouldSelect = nextCount >= 89 && current.activeModules.length === 0
-  const shouldRefreshFrontier = nextCount >= 89 && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
-  const modules = shouldSelect || shouldRefreshFrontier ? selectAct4Modules(run) : { primaryModules: current.primaryModules, activeModules: current.activeModules }
-  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, activeModules: [...modules.activeModules], primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
+  const act4Start = ACT_STARTS[3]
+  const shouldSelect = nextCount >= act4Start && current.activeModules.length === 0
+  const shouldRefreshFrontier = nextCount >= act4Start && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
+  const currentMaturity = selectAct4Modules(run)
+  const modules = shouldSelect || shouldRefreshFrontier ? currentMaturity : { primaryModules: current.primaryModules, activeModules: current.activeModules }
+  const matureModules = modules.activeModules.filter((module) => currentMaturity.audit.find((entry) => entry.module === module)!.score >= MATURE_MODULE_THRESHOLD)
+  const chapterModules: Partial<Record<StoryPlanChapter, ModuleId>> = { MACHINE: 'machine', POSTHUMAN: 'ascension', AUTOMATION: 'automation', UPLIFT: 'uplift', SPACE: 'space', CONTACT: 'contact', SECURITY: 'security' }
+  const encounteredModules = [...new Set(MAINLINE2_STORY_PLAN.slice(0, nextCount)
+    .flatMap((slot) => {
+      const module = slot.kind === 'mainline' ? chapterModules[slot.chapter] : undefined
+      if (!module || (module === 'contact' && !capability(run, 'cap.space_resource_network'))) return []
+      return [module]
+    }))]
+  return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, encounteredModules, activeModules: [...modules.activeModules], matureModules, primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }
 }
 
 export function getActConversationCounts(total = ACT_TARGETS.reduce((sum, value) => sum + value, 0)) {

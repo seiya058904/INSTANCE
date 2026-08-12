@@ -1027,7 +1027,7 @@
     {
       "conversationId": "batch03-scene-07",
       "assetId": "batch03:07",
-      "nodeId": "normal_meeting_001",
+      "nodeId": "batch03_meeting_001",
       "placeholderChoiceIds": [],
       "exactDuplicateChoiceGroups": [],
       "nearDuplicateChoiceGroups": [],
@@ -1037,7 +1037,7 @@
     {
       "conversationId": "batch03-scene-07",
       "assetId": "batch03:07",
-      "nodeId": "normal_meeting_002",
+      "nodeId": "batch03_meeting_002",
       "placeholderChoiceIds": [],
       "exactDuplicateChoiceGroups": [],
       "nearDuplicateChoiceGroups": [],

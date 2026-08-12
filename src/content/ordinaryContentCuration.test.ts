@@ -8,6 +8,22 @@ describe('ordinary content curation', () => {
     expect(ordinaryConversationPool.some((conversation) => conversation.sourceRefs.includes('batch01:13'))).toBe(false)
   })
 
+  it('keeps every formal ordinary Runtime node ID globally unique', () => {
+    const owners = new Map<string, string[]>()
+    for (const conversation of ordinaryConversationPool) {
+      for (const node of conversation.nodes) {
+        const entries = owners.get(node.id) ?? []
+        entries.push(conversation.sourceRefs[0] ?? conversation.id)
+        owners.set(node.id, entries)
+      }
+    }
+    const duplicates = [...owners.entries()]
+      .filter(([, sourceRefs]) => sourceRefs.length > 1)
+      .map(([nodeId, sourceRefs]) => `${nodeId}: ${sourceRefs.join(', ')}`)
+
+    expect(duplicates, `duplicate Runtime node IDs: ${duplicates.join('; ')}`).toEqual([])
+  })
+
   it('keeps promoted longform choices distinct instead of falling back to a placeholder', () => {
     const lf01_02 = promotedLongformConversations.find((conversation) => conversation.id === 'longform-lf01-02')
     const firstNode = lf01_02?.nodes[0]

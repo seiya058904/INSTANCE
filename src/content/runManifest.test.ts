@@ -37,8 +37,8 @@ describe('cross-run manifest selection', () => {
 
   it('keeps a high-quality ordinary pool large enough for adjacent-run variety', () => {
     expect(ordinaryConversationPool.length).toBeGreaterThanOrEqual(63)
-    expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('batch03:')))).toHaveLength(15)
-    expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('humor01:')))).toHaveLength(12)
+    expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('batch03:')))).toHaveLength(25)
+    expect(ordinaryConversationPool.filter((item) => item.sourceRefs.some((ref) => ref.startsWith('humor01:')))).toHaveLength(25)
   })
 
   it('never repeats a user message inside visible ordinary-conversation content', () => {

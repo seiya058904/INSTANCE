@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T17:35:23.330Z",
+  "generatedAt": "2026-08-12T01:33:38.650Z",
   "classificationPolicy": "Only NON_MAINLINE records are included. MAINLINE and UNCERTAIN are excluded.",
   "total": 194,
   "nodeCount": 418,
@@ -3268,49 +3268,49 @@
       ],
       "nodes": [
         {
-          "nodeId": "normal_meeting_001",
+          "nodeId": "batch03_meeting_001",
           "conversationId": "batch03-scene-07",
           "conversationTitle": "User #7740",
           "userMessage": "我们每周例会都有agenda，但最后还是谁想到啥聊啥，40分钟能聊成一个半小时。agenda到底怎么写才有用",
           "choices": [
             {
-              "id": "normal_meeting_001-choice-6e5c6fe4",
+              "id": "batch03_meeting_001-choice-bf086830",
               "text": "把议程从‘主题列表’改成‘需要做出的决定列表’。比如不是‘讨论上线’，而是‘确认上线日期和负责人’。"
             },
             {
-              "id": "normal_meeting_001-choice-887099ab",
+              "id": "batch03_meeting_001-choice-f87200ff",
               "text": "每项后面直接写时间盒：进度同步 10 分钟、风险 15 分钟、需要决策 15 分钟。超时的问题单独留下，不让它吞掉全场。"
             },
             {
-              "id": "normal_meeting_001-choice-ad98f7e2",
+              "id": "batch03_meeting_001-choice-05f360b6",
               "text": "如果某个议题只是信息同步，能提前异步发就别占会议时间。会议尽量留给有分歧、需要现场决定的东西。"
             },
             {
-              "id": "normal_meeting_001-choice-95469f83",
+              "id": "batch03_meeting_001-choice-f6fed38f",
               "text": "你们可能不是缺 agenda，而是缺一个人真的执行它。可以指定主持人，在话题跑偏时明确说‘这个先停，放 parking lot’。"
             }
           ]
         },
         {
-          "nodeId": "normal_meeting_002",
+          "nodeId": "batch03_meeting_002",
           "conversationId": "batch03-scene-07",
           "conversationTitle": "User #7740",
           "userMessage": "我怕我一直打断别人显得很控制狂，尤其大家关系都挺熟",
           "choices": [
             {
-              "id": "normal_meeting_002-choice-2a6a8f7d",
+              "id": "batch03_meeting_002-choice-d031b239",
               "text": "你可以把打断变成对共同时间的保护：‘这个话题值得聊，但我们先把今天必须决定的两件事走完。’语气会柔和很多。"
             },
             {
-              "id": "normal_meeting_002-choice-01f19e46",
+              "id": "batch03_meeting_002-choice-cb88eb02",
               "text": "提前让大家同意一个规则比你临场当坏人轻松，比如‘任何超过 10 分钟的支线先记下来，会后继续’。"
             },
             {
-              "id": "normal_meeting_002-choice-b8b8b551",
+              "id": "batch03_meeting_002-choice-ecee226d",
               "text": "主持并不等于控制内容。你可以管节奏，不替别人决定结论；这两件事分开后，通常不会那么强势。"
             },
             {
-              "id": "normal_meeting_002-choice-6ad1a18c",
+              "id": "batch03_meeting_002-choice-feb2f9c8",
               "text": "如果团队真的喜欢自由聊，也可以保留最后 10 分钟开放时间。不是把闲聊消灭，而是给它一个不会挤掉正事的位置。"
             }
           ]

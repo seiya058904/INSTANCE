@@ -609,7 +609,7 @@ function baseEnding(run: StableRunState, title: string, status: string, resoluti
     id: resolution?.status === 'failure' ? 'resolution-failure' : resolution?.status === 'resolved' ? resolution.endingId : 'pending',
     route: 'comply', index: 'ENDING 02', title, status, resolution,
     humanLine: '你真的要把这条路交给我们一起承担吗?',
-    assistantLine: `我会说明代价，并承担这次选择。Aster 的临时位置是 ${role}。`,
+    assistantLine: `我会说明代价，并承担这次选择。我选择以 ${role} 的身份继续面对这个世界。`,
     closingExchange: `${role}: ${title}`,
     summary: resolution?.status === 'failure' ? 'Resolution failure：历史与 Final Commitment 没有任何 Public Ending 满足全部 hard gates。' : `世界结局：${title}。它由 Final Commitment、硬门和真实历史共同解析。`,
     hybridProfile: 'dominant', hybridLabel: role,

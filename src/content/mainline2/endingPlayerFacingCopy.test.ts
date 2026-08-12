@@ -99,11 +99,22 @@ describe('ending player-facing copy', () => {
       expect(copy.assistantLine).toContain('协调者')
     })
 
+    it('never calls the M16 intended role a 临时位置 (provisional is an M15 concept)', () => {
+      for (const role of ['advisor', 'partner', 'citizen', 'coordinator', 'custodian', 'governor', 'sovereign', 'departure', 'other']) {
+        const ending = resolveMainline2Ending(lockedRunWithRole(role))
+        const copy = localizeEndingForPlayer(ending)
+        expect(copy.assistantLine, role).not.toContain('临时')
+        expect(copy.assistantLine, role).toContain('身份继续面对这个世界')
+      }
+    })
+
     it('shows 离场 for aster_intended_role=departure', () => {
       const ending = resolveMainline2Ending(lockedRunWithRole('departure'))
       expect(ending.hybridLabel).toBe('离场')
       const copy = localizeEndingForPlayer(ending)
       expect(copy.hybridLabel).toBe('离场')
+      expect(copy.assistantLine).not.toContain('临时')
+      expect(copy.assistantLine).toContain('离场')
     })
 
     it('maps every canonical intended role to a player-readable Chinese label', () => {

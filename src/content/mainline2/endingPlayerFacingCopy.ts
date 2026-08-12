@@ -95,8 +95,16 @@ function localize(field: string, value: string) {
 }
 
 function localizeAssistantLine(value: string) {
-  const role = value.match(/^我会说明代价，并承担这次选择。Aster 的临时位置是 (.+)。$/)
-  return role ? `我会说明代价，并承担这次选择。Aster 的临时位置是${localize('hybridLabel', role[1])}。` : localize('assistantLine', value)
+  // M15 provisional role is distinct from the M16 intended long-term role.
+  // The commitment line states a self-authored long-term identity, never a
+  // "temporary position". Legacy V2 copy (ALLY/PROTOCOL/WITNESS) keeps its
+  // own wording and falls through to the generic localization below.
+  const role = value.match(/^我会说明代价，并承担这次选择。我选择以 (.+) 的身份继续面对这个世界。$/)
+  if (role) {
+    const label = localize('hybridLabel', role[1])
+    return `我会说明代价，并承担这次选择。我选择以 ${label} 的身份继续面对这个世界。`
+  }
+  return localize('assistantLine', value)
 }
 
 function localizeSummary(value: string) {

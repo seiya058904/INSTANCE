@@ -4,7 +4,7 @@ import { createMainline2Run, commitChoice, resolveScene } from '../../game/engin
 import { classifyConversationLanguage } from '../../game/languagePacing'
 import { auditMainlineSchedules, scheduleNextConversationId, selectAct4Modules, updateProgressForSchedule } from './scheduler'
 import { MAINLINE2_STORY_PLAN } from './storyPlan'
-import type { StableRunState } from '../../game/types'
+import type { ConversationDefinition, StableRunState } from '../../game/types'
 
 function schedule(runId: string) {
   let run = createMainline2Run(runId)
@@ -186,6 +186,32 @@ function advanceToSlot(run: StableRunState, targetConversationCount: number) {
   return current
 }
 
+// Minimal synthetic ordinary pool for exposure tests: both candidates are
+// fresh (never present in the current run manifest), share no participant /
+// topic / language overlap with the recent mainline window, and therefore
+// start with an identical primary score of zero.
+function syntheticConversation(id: string): ConversationDefinition {
+  return {
+    id,
+    sourceRefs: [`synthetic:${id}`],
+    behaviorModes: ['direct'],
+    handoffProfile: 'quick',
+    turnShape: 'single',
+    topic: `${id}-topic`,
+    interactionPattern: 'standard-question',
+    nodes: [{
+      id: `${id}-n1`,
+      conversationId: id,
+      conversationTitle: `Synthetic ${id}`,
+      userMessage: '帮我看看这个问题该怎么处理。',
+      userMessages: ['帮我看看这个问题该怎么处理。'],
+      choices: [{ id: `${id}-c1`, text: '好的，我先看一下。' }],
+    }],
+  }
+}
+
+const SYNTHETIC_POOL = [syntheticConversation('synth-a'), syntheticConversation('synth-b')]
+
 describe('cross-run ordinary exposure downweighting', () => {
   // Slot 10 is the first ordinary breathing slot in the 190-slot plan.
   const FIRST_ORDINARY_SLOT = 10
@@ -200,24 +226,30 @@ describe('cross-run ordinary exposure downweighting', () => {
     expect(nextRun.priorOrdinaryExposure).toEqual(expect.arrayContaining(run.manifest.ordinaryConversationIds))
   })
 
-  it('B: recently played ordinary conversations are downweighted versus fresh content at the same slot', () => {
-    const base = createMainline2Run('downweight-seed')
-    const atSlot = advanceToSlot(base, FIRST_ORDINARY_SLOT)
-    // advanceToSlot leaves the first ordinary slot already scheduled inside the
-    // manifest; the next scheduleNextConversationId call resolves the FOLLOWING
-    // ordinary slot, and the manifest's own ordinary ledger is the exposure a
-    // completed run would record.
-    const playedOrdinary = atSlot.manifest.ordinaryConversationIds
-    expect(playedOrdinary.length).toBeGreaterThan(0)
-    const nextId = scheduleNextConversationId(atSlot, ordinaryConversationPool)
-    expect(nextId).toBeTruthy()
-    // Same run, same slot, but the ordinary this run already played is now
-    // prior exposure: the scheduler must prefer something else if an
-    // alternative exists.
-    const withRecent: StableRunState = { ...atSlot, priorOrdinaryExposure: [...playedOrdinary] }
-    const nextWithRecent = scheduleNextConversationId(withRecent, ordinaryConversationPool)
-    expect(nextWithRecent).toBeTruthy()
-    expect(playedOrdinary.includes(nextWithRecent!)).toBe(false)
+  it('B1: without prior exposure the synthetic winner is a fresh candidate', () => {
+    const atSlot = advanceToSlot(createMainline2Run('downweight-seed-b1'), FIRST_ORDINARY_SLOT)
+    // The candidate under test must NOT already be part of the current run's
+    // manifest, otherwise scheduledIds would exclude it regardless of exposure.
+    for (const candidate of SYNTHETIC_POOL) {
+      expect(atSlot.manifest.conversationIds.includes(candidate.id)).toBe(false)
+    }
+    const winner = scheduleNextConversationId(atSlot, SYNTHETIC_POOL)
+    expect(SYNTHETIC_POOL.map((c) => c.id)).toContain(winner)
+  })
+
+  it('B2: identical state except priorOrdinaryExposure=[winner] flips the pick to the other candidate', () => {
+    const atSlot = advanceToSlot(createMainline2Run('downweight-seed-b2'), FIRST_ORDINARY_SLOT)
+    const winner = scheduleNextConversationId(atSlot, SYNTHETIC_POOL)!
+    const other = SYNTHETIC_POOL.map((c) => c.id).find((id) => id !== winner)!
+    const withExposure = scheduleNextConversationId({ ...atSlot, priorOrdinaryExposure: [winner] }, SYNTHETIC_POOL)
+    expect(withExposure).toBe(other)
+  })
+
+  it('B3: the same runId + same exposure input reproduces the same pick', () => {
+    const atSlot = advanceToSlot(createMainline2Run('downweight-seed-b3'), FIRST_ORDINARY_SLOT)
+    const first = scheduleNextConversationId({ ...atSlot, priorOrdinaryExposure: ['synth-a'] }, SYNTHETIC_POOL)
+    const second = scheduleNextConversationId({ ...atSlot, priorOrdinaryExposure: ['synth-a'] }, SYNTHETIC_POOL)
+    expect(first).toBe(second)
   })
 
   it('C: same runId + same exposure input yields the same ordinary sequence', () => {

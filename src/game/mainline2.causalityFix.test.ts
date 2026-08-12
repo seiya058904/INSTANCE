@@ -129,5 +129,8 @@ describe('Mainline 2.0 causality fixes', () => {
     expect(audit.fixedChains.find((chain) => chain.chainId === 'rejection-retained-lock')?.links.some((link) => link.status === 'proved' && link.statePredicate?.includes('resolved=the_commonwealth'))).toBe(true)
     expect(audit.randomRuns).toHaveLength(100)
     expect(audit.randomRuns.every((run) => run.links.length > 0 && run.links.filter((link) => link.step.startsWith('clean')).every((link) => link.conversationId && link.choiceId))).toBe(true)
-  }, 120000)
+    // This route audit walks full causal chains (locally ~43s; the GitHub
+    // 2-core runner measured ~137s). 180s keeps CI headroom without raising
+    // the global testTimeout for the whole suite.
+  }, 180_000)
 })

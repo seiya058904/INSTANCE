@@ -130,7 +130,7 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
     const overlaps = [...side.entries()].filter(([, labels]) => labels.length > 1)
     expect(overlaps).toEqual([])
     expect(canonicalConversationUniverse.size).toBeGreaterThan(0)
-    expect(poolConversationIds.size).toBe(194)
+    expect(poolConversationIds.size).toBe(212)
   })
 
   it('keeps every Story Plan mainline slot inside the authored inventory or bridge domain', () => {
@@ -165,7 +165,7 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
   it('keeps the curated ordinary pool exactly at the reconciled size', () => {
     // Guard against silent pool churn: new ordinary content must be added
     // deliberately, mirroring the human-reviewed NON_MAINLINE set.
-    expect(ordinaryConversationPool.length).toBe(194)
+    expect(ordinaryConversationPool.length).toBe(212)
   })
 })
 

@@ -6,6 +6,7 @@ import { longformOutput01Conversations } from './longformOutput01'
 import { editorialCandidateConversations } from './editorialCandidateSources'
 import { promotedLongformConversations } from './longformPromoted'
 import { realUsagePatch01Conversations } from './realUsagePatch01'
+import { nonMainlineExpansion02Conversations } from './nonMainlineExpansion02'
 import type {
   ConversationDefinition,
   HumanBehaviorMode,
@@ -385,6 +386,7 @@ export const ordinaryConversationPool = [
   ...longformOutput01Conversations.filter((conversation) => !['longform-lf01-02', 'longform-lf01-06', 'longform-lf01-07', 'longform-lf01-08'].includes(conversation.id)),
   ...promotedLongformConversations,
   ...realUsagePatch01Conversations,
+  ...nonMainlineExpansion02Conversations,
 ]
 
 const anchorMap = new Map(

@@ -1,11 +1,13 @@
+import type { ReactNode } from 'react'
 import type { PlayerVisibleHistoryEntry } from '../game/playerIdentity'
 
 interface WorldSidebarProps {
   history: readonly PlayerVisibleHistoryEntry[]
   runNumber: number
+  modeControls?: ReactNode
 }
 
-export function WorldSidebar({ history, runNumber }: WorldSidebarProps) {
+export function WorldSidebar({ history, runNumber, modeControls }: WorldSidebarProps) {
   const visibleHistory = history.slice(-4).reverse()
   return (
     <aside className="sidebar" aria-label="对话导航">
@@ -14,10 +16,12 @@ export function WorldSidebar({ history, runNumber }: WorldSidebarProps) {
         <span className="brand-model">Assistant</span>
       </div>
 
-      <div className="world-action" aria-hidden="true">
-        <span className="world-action-plus">＋</span>
-        <span>新的对话</span>
-      </div>
+      {modeControls ?? (
+        <div className="world-action" aria-hidden="true">
+          <span className="world-action-plus">＋</span>
+          <span>新的对话</span>
+        </div>
+      )}
 
       <nav className="history-nav" aria-label="对话记录">
         <p className="nav-section-label">今天</p>

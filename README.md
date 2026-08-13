@@ -12,7 +12,7 @@ Each Conversation presents a human user with a realistic or strange prompt. You 
 
 ## Features
 
-- 160+ authored playable conversation sources
+- 212 authored ordinary conversation sources
 - Choice-driven AI responses
 - Realistic and unusual human prompts
 - Recurring users and hidden narrative arcs
@@ -20,6 +20,7 @@ Each Conversation presents a human user with a realistic or strange prompt. You 
 - Long-input abstractions
 - Multimodal interaction abstractions
 - Persistent run state and replay variation
+- Non-Mainline mode with 40 conversations per session and a post-session evaluation
 
 ## Tech
 
@@ -48,4 +49,4 @@ npm run build
 
 ## Status
 
-Active development. The project is a playable narrative prototype and remains under continuous content and runtime review.
+Stable `main` currently includes the Non-Mainline expansion through 212 ordinary conversation sources. The project remains under continuous content and runtime review.

@@ -1,4 +1,4 @@
-# INSTANCE Repository Guidelines
+# Repository Guidelines
 
 ## Project purpose
 
@@ -34,7 +34,7 @@ Read `D:\xia zai\AI project\Knowledge\AGENTS.md`, then route through `Knowledge\
 
 ## Stable rules
 
-Choices are Semantic, Expression, or Convergent. Literal-identical choices must not create different important effects; `choiceIndex` must not encode personality; Expression choices remain strategically neutral. Mark Model Error only for an actual error. Longform exposes only an authored preview/structure, and LongInput follow-up may reference only saved `keyFacts`. Mainline and ordinary conversations are strictly separated domains: the 145 mainline Story Plan slots resolve only from the ML2/bridge/anchor domain, and the 194-content ordinary pool is the only Non-Mainline source; replay uses soft decay rather than permanent bans, with cross-run exposure downweighting recently played ordinary content.
+Choices are Semantic, Expression, or Convergent. Literal-identical choices must not create different important effects; `choiceIndex` must not encode personality; Expression choices remain strategically neutral. Mark Model Error only for an actual error. Longform exposes only an authored preview/structure, and LongInput follow-up may reference only saved `keyFacts`. Mainline and ordinary conversations are strictly separated domains: the 145 mainline Story Plan slots resolve only from the ML2/bridge/anchor domain, and the 212-content ordinary pool is the only Non-Mainline source; replay uses soft decay rather than permanent bans, with cross-run exposure downweighting recently played ordinary content.
 
 Do not redesign narrative content, resume the paused Narrative Engine work, add broad engine abstractions, expose secrets, or make deployment/remote-exposure changes unless separately authorized.
 

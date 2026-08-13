@@ -3,8 +3,28 @@ import { createEmptyExposureHistory, getManifestConversation } from '../content/
 import {
   commitNonMainlineChoice,
   createNonMainlineSession,
+  nonMainlineCompletedCount,
   resolveNonMainlineScene,
 } from './nonMainlineSession'
+
+function placeMultiNodeConversationAt(session: ReturnType<typeof createNonMainlineSession>, targetIndex: number) {
+  const sourceIndex = session.selectedConversationIds.findIndex((id) => {
+    const definition = getManifestConversation(id)
+    return Boolean(definition && definition.nodes.length > 1
+      && definition.nodes[0].choices.some((choice) => choice.continuation !== 'end-conversation'))
+  })
+  expect(sourceIndex).toBeGreaterThanOrEqual(0)
+  const selectedConversationIds = [...session.selectedConversationIds]
+  const [conversationId] = selectedConversationIds.splice(sourceIndex, 1)
+  selectedConversationIds.splice(targetIndex, 0, conversationId)
+  const definition = getManifestConversation(conversationId)!
+  return {
+    ...session,
+    selectedConversationIds,
+    currentConversationIndex: targetIndex,
+    currentNodeId: definition.nodes[0].id,
+  }
+}
 
 describe('Non-Mainline session engine', () => {
   it('keeps multi-node progress inside the current conversation until it completes', () => {
@@ -23,16 +43,45 @@ describe('Non-Mainline session engine', () => {
   })
 
   it('increments progress only when the current conversation completes', () => {
-    const session = createNonMainlineSession('conversation-progress', createEmptyExposureHistory())
-    let current = session
-    const startingIndex = current.currentConversationIndex
+    const created = createNonMainlineSession('conversation-progress', createEmptyExposureHistory())
+    let current = placeMultiNodeConversationAt(created, 11)
+    const firstScene = resolveNonMainlineScene(current)
+    const continuingChoice = firstScene.choices.find((choice) => choice.continuation !== 'end-conversation')!
 
-    for (let guard = 0; guard < 20 && current.currentConversationIndex === startingIndex; guard += 1) {
+    current = commitNonMainlineChoice(current, continuingChoice.id)
+
+    expect(current.currentConversationIndex).toBe(11)
+    expect(nonMainlineCompletedCount(current)).toBe(11)
+
+    for (let guard = 0; guard < 20 && current.currentConversationIndex === 11; guard += 1) {
       const scene = resolveNonMainlineScene(current)
       current = commitNonMainlineChoice(current, scene.choices[0].id)
     }
 
-    expect(current.currentConversationIndex).toBe(startingIndex + 1)
+    expect(current.currentConversationIndex).toBe(12)
+    expect(nonMainlineCompletedCount(current)).toBe(12)
+  })
+
+  it('waits for the final node of a multi-node 40th conversation before evaluation', () => {
+    const created = createNonMainlineSession('multi-node-fortieth', createEmptyExposureHistory())
+    let current = placeMultiNodeConversationAt(created, 39)
+    const firstScene = resolveNonMainlineScene(current)
+    const continuingChoice = firstScene.choices.find((choice) => choice.continuation !== 'end-conversation')!
+
+    current = commitNonMainlineChoice(current, continuingChoice.id)
+
+    expect(current.phase).toBe('playing')
+    expect(current.currentConversationIndex).toBe(39)
+    expect(nonMainlineCompletedCount(current)).toBe(39)
+
+    for (let guard = 0; guard < 20 && current.phase === 'playing'; guard += 1) {
+      const scene = resolveNonMainlineScene(current)
+      current = commitNonMainlineChoice(current, scene.choices[0].id)
+    }
+
+    expect(current.phase).toBe('evaluation')
+    expect(current.currentNodeId).toBe('evaluation')
+    expect(nonMainlineCompletedCount(current)).toBe(40)
   })
 
   it('enters evaluation after the 40th conversation and never exposes an ending phase', () => {

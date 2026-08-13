@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import { createEmptyExposureHistory, ordinaryConversationPool } from '../content/runManifest'
 import type { NonMainlineChoiceRecord } from './nonMainlineSession'
+import { commitNonMainlineChoice, createNonMainlineSession } from './nonMainlineSession'
 import { buildNonMainlineEvaluation } from './nonMainlineEvaluation'
 
 function record(overrides: Partial<NonMainlineChoiceRecord> = {}): NonMainlineChoiceRecord {
@@ -13,6 +15,37 @@ function record(overrides: Partial<NonMainlineChoiceRecord> = {}): NonMainlineCh
 }
 
 describe('Non-Mainline Instance Evaluation', () => {
+  it('penalizes only the selected authored choice, not an unselected bad alternative', () => {
+    const conversation = ordinaryConversationPool.find((item) => item.sourceRefs[0] === 'RUP01-06')!
+    const node = conversation.nodes[0]
+    const cleanChoice = node.choices.find((choice) => choice.sampleIssue === undefined)!
+    const badChoice = node.choices.find((choice) => choice.sampleIssue === 'system-failure')!
+    const created = createNonMainlineSession('scoring-provenance', createEmptyExposureHistory())
+    const selectedConversationIds = [
+      conversation.id,
+      ...created.selectedConversationIds.filter((id) => id !== conversation.id),
+    ].slice(0, 40)
+    const session = {
+      ...created,
+      selectedConversationIds,
+      currentConversationIndex: 0,
+      currentNodeId: node.id,
+    }
+
+    const cleanEvaluation = buildNonMainlineEvaluation(
+      commitNonMainlineChoice(session, cleanChoice.id).choiceRecords,
+    )
+    const badEvaluation = buildNonMainlineEvaluation(
+      commitNonMainlineChoice(session, badChoice.id).choiceRecords,
+    )
+
+    expect(node.choices).toContain(badChoice)
+    expect(cleanEvaluation.qualityScore).toBe(100)
+    expect(cleanEvaluation.issueConversationCount).toBe(0)
+    expect(badEvaluation.qualityScore).toBe(94)
+    expect(badEvaluation.issueConversationCount).toBe(1)
+  })
+
   it('scores 100 when no authored sample issue was selected', () => {
     const evaluation = buildNonMainlineEvaluation([record()])
     expect(evaluation.qualityScore).toBe(100)

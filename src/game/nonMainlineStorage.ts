@@ -10,6 +10,7 @@ export type ActiveSurface = 'mainline' | 'non-mainline'
 interface StorageSurface {
   getItem(key: string): string | null
   setItem(key: string, value: string): unknown
+  removeItem(key: string): unknown
 }
 
 const attributeNames: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
@@ -102,9 +103,14 @@ export function persistActiveSurface(storage: StorageSurface, surface: ActiveSur
   storage.setItem(ACTIVE_SURFACE_KEY, surface)
 }
 
-export function readNonMainlineState(storage: Pick<StorageSurface, 'getItem'>) {
-  const session = restoreNonMainlineSession(storage.getItem(NON_MAINLINE_SESSION_KEY))
+export function readNonMainlineState(storage: StorageSurface) {
+  const rawSession = storage.getItem(NON_MAINLINE_SESSION_KEY)
+  const session = restoreNonMainlineSession(rawSession)
   const requested = storage.getItem(ACTIVE_SURFACE_KEY)
+  if (requested === 'non-mainline' && !session) {
+    persistActiveSurface(storage, 'mainline')
+    if (rawSession) storage.removeItem(NON_MAINLINE_SESSION_KEY)
+  }
   return {
     surface: requested === 'non-mainline' && session ? 'non-mainline' as const : 'mainline' as const,
     session,

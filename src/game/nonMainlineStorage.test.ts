@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createEmptyExposureHistory } from '../content/runManifest'
+import { createEmptyExposureHistory, getManifestConversation } from '../content/runManifest'
 import { createNonMainlineSession, resolveNonMainlineScene, commitNonMainlineChoice } from './nonMainlineSession'
 import {
   ACTIVE_SURFACE_KEY,
@@ -16,6 +16,7 @@ function memoryStorage(seed: Record<string, string> = {}) {
   return {
     getItem: (key: string) => values.get(key) ?? null,
     setItem: (key: string, value: string) => values.set(key, value),
+    removeItem: (key: string) => values.delete(key),
     values,
   }
 }
@@ -52,18 +53,39 @@ describe('Non-Mainline storage and mode isolation', () => {
   })
 
   it('resumes an incomplete session and safely falls back to Mainline for corruption', () => {
-    const session = createNonMainlineSession('resume-session', createEmptyExposureHistory())
+    const created = createNonMainlineSession('resume-session', createEmptyExposureHistory())
+    const conversationId = created.selectedConversationIds[16]
+    const resumable = {
+      ...created,
+      currentConversationIndex: 16,
+      currentNodeId: getManifestConversation(conversationId)!.nodes[0].id,
+    }
     const valid = memoryStorage({
       [ACTIVE_SURFACE_KEY]: 'non-mainline',
-      [NON_MAINLINE_SESSION_KEY]: serializeNonMainlineSession(session),
+      [NON_MAINLINE_SESSION_KEY]: serializeNonMainlineSession(resumable),
     })
     const corrupt = memoryStorage({
+      'instance:run:v1': '{"runId":"mainline-preserved"}',
       [ACTIVE_SURFACE_KEY]: 'non-mainline',
       [NON_MAINLINE_SESSION_KEY]: '{broken',
     })
 
-    expect(readNonMainlineState(valid)).toEqual({ surface: 'non-mainline', session })
+    expect(readNonMainlineState(valid)).toEqual({ surface: 'non-mainline', session: resumable })
     expect(readNonMainlineState(corrupt)).toEqual({ surface: 'mainline', session: null })
+    expect(corrupt.values.get(ACTIVE_SURFACE_KEY)).toBe('mainline')
+    expect(corrupt.values.has(NON_MAINLINE_SESSION_KEY)).toBe(false)
+    expect(corrupt.values.get('instance:run:v1')).toBe('{"runId":"mainline-preserved"}')
+  })
+
+  it('normalizes a stale Non-Mainline surface when its session is missing', () => {
+    const storage = memoryStorage({
+      'instance:run:v1': '{"runId":"mainline-preserved"}',
+      [ACTIVE_SURFACE_KEY]: 'non-mainline',
+    })
+
+    expect(readNonMainlineState(storage)).toEqual({ surface: 'mainline', session: null })
+    expect(storage.values.get(ACTIVE_SURFACE_KEY)).toBe('mainline')
+    expect(storage.values.get('instance:run:v1')).toBe('{"runId":"mainline-preserved"}')
   })
 
   it('rejects a checkpoint whose recorded sample issue is not authored', () => {

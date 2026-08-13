@@ -77,7 +77,11 @@ describe('initial product surface', () => {
     }
     vi.stubGlobal('window', {
       location: { search: '' },
-      localStorage: { getItem: (key: string) => values[key] ?? null },
+      localStorage: {
+        getItem: (key: string) => values[key] ?? null,
+        setItem: (key: string, value: string) => { values[key] = value },
+        removeItem: (key: string) => { delete values[key] },
+      },
     })
 
     const html = renderToStaticMarkup(<App />)
@@ -95,7 +99,11 @@ describe('initial product surface', () => {
     }
     vi.stubGlobal('window', {
       location: { search: '' },
-      localStorage: { getItem: (key: string) => values[key] ?? null },
+      localStorage: {
+        getItem: (key: string) => values[key] ?? null,
+        setItem: (key: string, value: string) => { values[key] = value },
+        removeItem: (key: string) => { delete values[key] },
+      },
     })
 
     const html = renderToStaticMarkup(<App />)
@@ -103,5 +111,7 @@ describe('initial product surface', () => {
     expect(html).toContain('新的对话')
     expect(html).not.toContain('非主线 ·')
     expect(values['instance:run:v1']).toContain('safe-mainline-fallback')
+    expect(values[ACTIVE_SURFACE_KEY]).toBe('mainline')
+    expect(values[NON_MAINLINE_SESSION_KEY]).toBeUndefined()
   })
 })

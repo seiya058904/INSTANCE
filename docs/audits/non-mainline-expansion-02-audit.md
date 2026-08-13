@@ -69,7 +69,7 @@ Counts overlap because one conversation can satisfy multiple traits.
 - standard casual: 4
 - message burst: 2
 - unpunctuated / weak punctuation: 12
-- typo / keyboard-slip metadata: 1
+- typo / English-spelling metadata: 1
 - speech-like metadata: 1
 - code-switch: 1 (`Windows`)
 - joking: 8

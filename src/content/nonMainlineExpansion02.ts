@@ -113,7 +113,7 @@ export const nonMainlineExpansion02Conversations: ConversationDefinition[] = [
       choice('exp02-03-02-02', '可以先走通用排查，不需要你先弄清版本。关键是别把报错窗口关掉，先把文字或截图留下。', { awareness: 1 }),
       choice('exp02-03-02-03', 'Windows的话直接重装系统肯定能解决。', {}, 'overconfident'),
       choice('exp02-03-02-04', '你不提供版本我没办法帮你。', {}, 'misunderstanding'),
-    ], 'missing-context', 'missing-context', undefined, 'keyboard-slip'),
+    ], 'missing-context', 'missing-context', undefined, 'english-spelling'),
   ]),
   conversation('EXP02-04', '投诉写到一半不想投诉了', 'social-boundary', 'constraint-shift', ['constraint-shift'], [
     node('exp02-04-01', 'exp02-exp02-04', '投诉写到一半不想投诉了', '帮我写个投诉邮件吧 这客服真的给我气死了', [

@@ -21,6 +21,7 @@ interface ConversationViewProps {
   currentMessageMode: 'static' | 'hidden' | 'streaming'
   onChoose: (choiceId: string) => void
   onCurrentMessageComplete?: () => void
+  modeControls?: ReactNode
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -162,6 +163,7 @@ export function ConversationView({
   currentMessageMode,
   onChoose,
   onCurrentMessageComplete,
+  modeControls,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const followOutput = useRef(true)
@@ -215,9 +217,12 @@ export function ConversationView({
           <p className="conversation-kicker">当前对话</p>
           <h1>{conversationTitle}</h1>
         </div>
-        <div className={modelLabel.includes('/') ? 'model-label is-anomalous' : 'model-label'}>
-          <span className="status-dot" aria-hidden="true" />
-          {modelLabel}
+        <div className="conversation-header-actions">
+          {modeControls}
+          <div className={modelLabel.includes('/') ? 'model-label is-anomalous' : 'model-label'}>
+            <span className="status-dot" aria-hidden="true" />
+            {modelLabel}
+          </div>
         </div>
       </header>
 

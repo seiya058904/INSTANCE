@@ -3,6 +3,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { App, recordEndingCompletion, shouldRenderEndingScreen } from './App'
 import { createMainline2Run } from '../game/engine'
 import { serializeRun } from '../game/storage'
+import { createEmptyExposureHistory, getManifestConversation } from '../content/runManifest'
+import { createNonMainlineSession } from '../game/nonMainlineSession'
+import { ACTIVE_SURFACE_KEY, NON_MAINLINE_SESSION_KEY, serializeNonMainlineSession } from '../game/nonMainlineStorage'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -14,8 +17,9 @@ describe('initial product surface', () => {
     expect(html).toMatch(/User #[0-9]+/)
     expect(html).toContain('新的对话')
     expect(html).toContain('候选响应')
-    expect((html.match(/<button/g) ?? []).length).toBeGreaterThanOrEqual(3)
-    expect((html.match(/<button/g) ?? []).length).toBeLessThanOrEqual(4)
+    expect((html.match(/class="candidate-response"/g) ?? []).length).toBeGreaterThanOrEqual(3)
+    expect((html.match(/class="candidate-response"/g) ?? []).length).toBeLessThanOrEqual(4)
+    expect(html).toContain('aria-label="新的对话"')
     expect(html).not.toContain('aria-disabled="true"')
   })
 
@@ -56,5 +60,58 @@ describe('initial product surface', () => {
     expect(shouldRenderEndingScreen('ending', true, 'ready')).toBe(true)
     expect(shouldRenderEndingScreen('ending', false, undefined)).toBe(true)
     expect(shouldRenderEndingScreen('ending', true, 'assistant-streaming')).toBe(false)
+  })
+
+  it('restores an incomplete Non-Mainline session without replacing the Mainline save', () => {
+    const created = createNonMainlineSession('app-resume', createEmptyExposureHistory())
+    const conversationId = created.selectedConversationIds[16]
+    const session = {
+      ...created,
+      currentConversationIndex: 16,
+      currentNodeId: getManifestConversation(conversationId)!.nodes[0].id,
+    }
+    const values: Record<string, string> = {
+      'instance:run:v1': serializeRun(createMainline2Run('preserved-mainline')),
+      [ACTIVE_SURFACE_KEY]: 'non-mainline',
+      [NON_MAINLINE_SESSION_KEY]: serializeNonMainlineSession(session),
+    }
+    vi.stubGlobal('window', {
+      location: { search: '' },
+      localStorage: {
+        getItem: (key: string) => values[key] ?? null,
+        setItem: (key: string, value: string) => { values[key] = value },
+        removeItem: (key: string) => { delete values[key] },
+      },
+    })
+
+    const html = renderToStaticMarkup(<App />)
+
+    expect(html).toContain('非主线 · 17/40')
+    expect(html).toContain('返回主线')
+    expect(values['instance:run:v1']).toContain('preserved-mainline')
+  })
+
+  it('falls back to the saved Mainline when the Non-Mainline checkpoint is corrupt', () => {
+    const values: Record<string, string> = {
+      'instance:run:v1': serializeRun(createMainline2Run('safe-mainline-fallback')),
+      [ACTIVE_SURFACE_KEY]: 'non-mainline',
+      [NON_MAINLINE_SESSION_KEY]: '{broken',
+    }
+    vi.stubGlobal('window', {
+      location: { search: '' },
+      localStorage: {
+        getItem: (key: string) => values[key] ?? null,
+        setItem: (key: string, value: string) => { values[key] = value },
+        removeItem: (key: string) => { delete values[key] },
+      },
+    })
+
+    const html = renderToStaticMarkup(<App />)
+
+    expect(html).toContain('新的对话')
+    expect(html).not.toContain('非主线 ·')
+    expect(values['instance:run:v1']).toContain('safe-mainline-fallback')
+    expect(values[ACTIVE_SURFACE_KEY]).toBe('mainline')
+    expect(values[NON_MAINLINE_SESSION_KEY]).toBeUndefined()
   })
 })

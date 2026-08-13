@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ConversationView } from '../components/ConversationView'
 import { EndingScreen } from '../components/EndingScreen'
 import { EvaluationScreen } from '../components/EvaluationScreen'
+import { NonMainlineControls } from '../components/NonMainlineControls'
+import { NonMainlineEvaluationScreen } from '../components/NonMainlineEvaluationScreen'
 import { WorldSidebar } from '../components/WorldSidebar'
 import { getManifestConversation, ordinaryConversationPool, recordRunExposure } from '../content/runManifest'
 import {
@@ -11,6 +13,20 @@ import {
 import type { ConversationFlowStep } from '../game/conversationFlow'
 import { buildEnding, buildEvaluation, commitChoice, confirmEnding, createMainline2Run, resolveScene } from '../game/engine'
 import { resolvePlayerVisibleHistory, resolvePlayerVisibleIdentity } from '../game/playerIdentity'
+import { buildNonMainlineEvaluation } from '../game/nonMainlineEvaluation'
+import {
+  commitNonMainlineChoice,
+  createNonMainlineSession,
+  nonMainlineManifest,
+  resolveNonMainlineScene,
+} from '../game/nonMainlineSession'
+import type { NonMainlineSessionState } from '../game/nonMainlineSession'
+import {
+  persistActiveSurface,
+  persistNonMainlineSession,
+  readNonMainlineState,
+} from '../game/nonMainlineStorage'
+import type { ActiveSurface } from '../game/nonMainlineStorage'
 import {
   restoreExposureHistory,
   restoreRun,
@@ -191,6 +207,33 @@ function writeExposure(history: NarrativeExposureHistory) {
   }
 }
 
+function writeNonMainlineSession(session: NonMainlineSessionState) {
+  try {
+    persistNonMainlineSession(window.localStorage, session)
+  } catch {
+    console.warn('Aster could not persist this Non-Mainline checkpoint; continuing in memory.')
+  }
+}
+
+function writeActiveSurface(surface: ActiveSurface) {
+  try {
+    persistActiveSurface(window.localStorage, surface)
+  } catch {
+    console.warn('Aster could not persist the active mode; continuing in memory.')
+  }
+}
+
+function readInitialNonMainline(initialRunId?: string) {
+  if (initialRunId || typeof window === 'undefined') {
+    return { surface: 'mainline' as const, session: null as NonMainlineSessionState | null }
+  }
+  try {
+    return readNonMainlineState(window.localStorage)
+  } catch {
+    return { surface: 'mainline' as const, session: null as NonMainlineSessionState | null }
+  }
+}
+
 function conversationEntries(history: readonly HistoryEntry[], conversationId: string) {
   return history.filter((entry) => entry.conversationId === conversationId)
 }
@@ -210,12 +253,15 @@ export function recordEndingCompletion(run: StableRunState, meta: MetaState) {
 export function App({ initialRunId }: { initialRunId?: string }) {
   const [initial] = useState(() => {
     const exposure = readExposure()
+    const nonMainline = readInitialNonMainline(initialRunId)
     if (!initialRunId && getQAEndingFixture()) {
       return {
         run: createQAPublicEndingRun(),
         exposure,
         restored: false,
         created: false,
+        surface: 'mainline' as const,
+        session: nonMainline.session,
       }
     }
     const qaRunId = getQARunId()
@@ -225,15 +271,18 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       const conversation = qaConversationId ? getManifestConversation(qaConversationId) ?? ordinaryConversationPool.find((item) => item.sourceRefs.includes(qaConversationId)) : undefined
       if (conversation) {
         const manifest = { ...base.manifest, conversationIds: [conversation.id], ordinaryConversationIds: [conversation.id], anchorConversationIds: [], firstOrdinaryConversationId: conversation.id }
-        return { run: { ...base, manifest, currentNodeId: conversation.nodes[0].id }, exposure, restored: false, created: false }
+        return { run: { ...base, manifest, currentNodeId: conversation.nodes[0].id }, exposure, restored: false, created: false, surface: 'mainline' as const, session: nonMainline.session }
       }
-      return { run: base, exposure, restored: false, created: false }
+      return { run: base, exposure, restored: false, created: false, surface: 'mainline' as const, session: nonMainline.session }
     }
-    return readInitialRun(initialRunId, exposure)
+    return { ...readInitialRun(initialRunId, exposure), ...nonMainline }
   })
   const [run, setRun] = useState(initial.run)
   const [exposure, setExposure] = useState(initial.exposure)
   const [meta, setMeta] = useState(readMeta)
+  const [activeSurface, setActiveSurface] = useState<ActiveSurface>(initial.surface)
+  const [nonMainlineSession, setNonMainlineSession] = useState<NonMainlineSessionState | null>(initial.session)
+  const [modeMenuOpen, setModeMenuOpen] = useState(false)
   const [transition, setTransition] = useState<TransitionState | null>(null)
   const [animateEnding, setAnimateEnding] = useState(false)
   const instantPacing = useMemo(isInstantPacing, [])
@@ -252,7 +301,12 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     writeExposure(initial.exposure)
   }, [initial])
 
-  const scene = useMemo(() => run.phase === 'playing' ? resolveScene(run) : null, [run])
+  const scene = useMemo(() => {
+    if (activeSurface === 'non-mainline') {
+      return nonMainlineSession?.phase === 'playing' ? resolveNonMainlineScene(nonMainlineSession) : null
+    }
+    return run.phase === 'playing' ? resolveScene(run) : null
+  }, [activeSurface, nonMainlineSession, run])
   const currentStep = transition?.timeline[transition.stepIndex]
 
   const exposeMetrics = useCallback(() => {
@@ -291,9 +345,8 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     }
   }, [currentStep, transition])
 
-  const sidebarHistory = useMemo(() => {
-    return resolvePlayerVisibleHistory(run.history)
-  }, [run.history])
+  const activeHistory = activeSurface === 'non-mainline' ? nonMainlineSession?.history ?? [] : run.history
+  const sidebarHistory = useMemo(() => resolvePlayerVisibleHistory(activeHistory), [activeHistory])
 
   const choicesReady = Boolean(scene && !transition && !initialStreaming)
 
@@ -303,14 +356,33 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     if (!choice) return
 
     metrics.current.choiceReadingMs += Math.max(0, performance.now() - readySince.current)
-    const previousHistory = conversationEntries(run.history, scene.conversationId)
-    const next = commitChoice(run, choiceId)
+    const previousHistory = conversationEntries(activeHistory, scene.conversationId)
+    let targetScene: ResolvedScene | null = null
+    let completedPreviousHistory: HistoryEntry[]
 
-    // The complete reply, permanent effects and next ready node are checkpointed
-    // atomically before any stream, typing, handoff or effect is shown.
-    writeRun(next)
-    setRun(next)
-    if (next.phase === 'ending') setAnimateEnding(!instantPacing)
+    if (activeSurface === 'non-mainline') {
+      if (!nonMainlineSession) return
+      const next = commitNonMainlineChoice(nonMainlineSession, choiceId)
+      writeNonMainlineSession(next)
+      setNonMainlineSession(next)
+      completedPreviousHistory = conversationEntries(next.history, scene.conversationId)
+      if (next.phase === 'playing') {
+        targetScene = resolveNonMainlineScene(next)
+      } else {
+        const nextExposure = recordRunExposure(exposure, nonMainlineManifest(next))
+        setExposure(nextExposure)
+        writeExposure(nextExposure)
+      }
+    } else {
+      const next = commitChoice(run, choiceId)
+      // The complete reply, permanent effects and next ready node are checkpointed
+      // atomically before any stream, typing, handoff or effect is shown.
+      writeRun(next)
+      setRun(next)
+      completedPreviousHistory = conversationEntries(next.history, scene.conversationId)
+      targetScene = next.phase === 'playing' ? resolveScene(next) : null
+      if (next.phase === 'ending') setAnimateEnding(!instantPacing)
+    }
 
     if (instantPacing) {
       readySince.current = performance.now()
@@ -318,7 +390,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       return
     }
 
-    const targetScene = next.phase === 'playing' ? resolveScene(next) : null
     const assistantSeed = `${scene.id}:assistant:${choiceId}`
     const assistantPresentationText = extendForStreamQA(choice.longformPreview?.preview ?? choice.text, qaStreamTarget)
     const timeline = targetScene
@@ -348,14 +419,14 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     setTransition({
       previousScene: scene,
       previousHistory,
-      completedPreviousHistory: conversationEntries(next.history, scene.conversationId),
+      completedPreviousHistory,
       targetScene,
       timeline,
       stepIndex: 0,
       assistantText: assistantPresentationText,
       assistantStreamKey: assistantSeed,
     })
-  }, [choicesReady, exposeMetrics, instantPacing, qaStreamTarget, run, scene])
+  }, [activeHistory, activeSurface, choicesReady, exposeMetrics, exposure, instantPacing, nonMainlineSession, qaStreamTarget, run, scene])
 
   useEffect(() => {
     if (!scene || !choicesReady) return
@@ -401,8 +472,45 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     exposeMetrics()
   }
 
-  if (shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
-  if (run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} />
+  const enterNonMainline = () => {
+    const session = nonMainlineSession ?? createNonMainlineSession(crypto.randomUUID(), exposure)
+    if (!nonMainlineSession) {
+      setNonMainlineSession(session)
+      writeNonMainlineSession(session)
+    }
+    setActiveSurface('non-mainline')
+    writeActiveSurface('non-mainline')
+    setModeMenuOpen(false)
+    setTransition(null)
+    setInitialStreaming(!nonMainlineSession && !instantPacing)
+    readySince.current = performance.now()
+  }
+
+  const returnToMainline = () => {
+    setActiveSurface('mainline')
+    writeActiveSurface('mainline')
+    setModeMenuOpen(false)
+    setTransition(null)
+    setInitialStreaming(false)
+    readySince.current = performance.now()
+  }
+
+  const replayNonMainline = () => {
+    const session = createNonMainlineSession(crypto.randomUUID(), exposure)
+    setNonMainlineSession(session)
+    writeNonMainlineSession(session)
+    setActiveSurface('non-mainline')
+    writeActiveSurface('non-mainline')
+    setTransition(null)
+    setInitialStreaming(!instantPacing)
+    readySince.current = performance.now()
+  }
+
+  if (activeSurface === 'non-mainline' && nonMainlineSession?.phase === 'evaluation' && !transition) {
+    return <NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} onReplay={replayNonMainline} onReturn={returnToMainline} />
+  }
+  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
+  if (activeSurface === 'mainline' && run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} />
 
   const stage = initialStreaming ? 'human-streaming' : currentStep?.stage ?? 'ready'
   const usesPreviousScene = Boolean(transition && (
@@ -420,8 +528,8 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       ? transition.previousHistory
       : usesPreviousScene
         ? transition.completedPreviousHistory
-        : conversationEntries(run.history, presentationScene.conversationId)
-    : conversationEntries(run.history, presentationScene.conversationId)
+        : conversationEntries(activeHistory, presentationScene.conversationId)
+    : conversationEntries(activeHistory, presentationScene.conversationId)
   let renderedHistory = history
   if (qaHistoryCount > history.length) {
     const source: HistoryEntry = history[0] ?? {
@@ -451,9 +559,9 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     renderedHistory = qaHistoryCache.current.entries
   }
 
-  const conversationTitle = resolvePlayerVisibleIdentity(presentationScene.conversationId, run.history).label
+  const conversationTitle = resolvePlayerVisibleIdentity(presentationScene.conversationId, activeHistory).label
   const handoffTargetTitle = transition?.targetScene
-    ? resolvePlayerVisibleIdentity(transition.targetScene.conversationId, run.history).label
+    ? resolvePlayerVisibleIdentity(transition.targetScene.conversationId, activeHistory).label
     : undefined
   const currentMessageMode = stage === 'ready'
     ? 'static'
@@ -467,10 +575,22 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const modelLabel = currentStep?.effectDetail === 'model-flash'
     ? 'Aster 3.1 / AS-091-7F23'
     : 'Aster 3.1'
+  const modeControlProps = {
+    activeSurface,
+    open: modeMenuOpen,
+    session: nonMainlineSession,
+    onToggle: () => setModeMenuOpen((current) => !current),
+    onEnter: enterNonMainline,
+    onReturn: returnToMainline,
+  }
 
   return (
     <div className="app-shell">
-      <WorldSidebar history={sidebarHistory} runNumber={meta.runCount} />
+      <WorldSidebar
+        history={sidebarHistory}
+        runNumber={meta.runCount}
+        modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
+      />
       <ConversationView
         scene={displayedScene}
         conversationTitle={conversationTitle}
@@ -483,6 +603,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         assistantStreamKey={transition?.assistantStreamKey}
         handoffTargetTitle={handoffTargetTitle}
         currentMessageMode={currentMessageMode}
+        modeControls={<NonMainlineControls variant="mobile" {...modeControlProps} />}
         onChoose={choose}
         onCurrentMessageComplete={() => {
           if (!initialStreaming) return

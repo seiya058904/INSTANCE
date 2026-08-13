@@ -24,7 +24,7 @@ describe('Non-Mainline conversation selection', () => {
     const ordinaryIds = new Set(ordinaryConversationPool.map((conversation) => conversation.id))
     const mainlineIds = new Set(MAINLINE2_LIBRARY.map((conversation) => conversation.id))
 
-    expect(ordinaryConversationPool).toHaveLength(194)
+    expect(ordinaryConversationPool).toHaveLength(212)
     expect(selected).toHaveLength(NON_MAINLINE_SESSION_SIZE)
     expect(new Set(selected.map((conversation) => conversation.id))).toHaveLength(NON_MAINLINE_SESSION_SIZE)
     expect(selected.every((conversation) => ordinaryIds.has(conversation.id))).toBe(true)

@@ -10,6 +10,7 @@ import type {
 import { emptySystemState } from './narrativeSchema'
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
+import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -97,6 +98,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
+      if (value.phase === 'ending' && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
       const availableProposalIds = validFutureProposalIds(value.availableProposalIds)
       const retainedProposalIds = Array.isArray(value.retainedProposalIds)
         ? validFutureProposalIds(value.retainedProposalIds)

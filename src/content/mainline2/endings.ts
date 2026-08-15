@@ -37,6 +37,16 @@ export const SECRET_ENDINGS = {
 } as const
 
 type KeyHistoryStage = 'ACT I' | 'ACT II' | 'ACT III' | 'ACT IV' | 'M15' | 'M16' | 'Final Commitment'
+const requiredKeyHistoryStages: KeyHistoryStage[] = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
+const causalProducerByStage: Record<KeyHistoryStage, (sourceRef: string) => boolean> = {
+  'ACT I': (sourceRef) => sourceRef === 'user-1842-return',
+  'ACT II': (sourceRef) => sourceRef === 'ML2-A2-M3-DECISION-01',
+  'ACT III': (sourceRef) => sourceRef === 'ML2-A3-M6-DECISION-02',
+  'ACT IV': (sourceRef) => sourceRef === 'ML2-A4-M7-RES-01' || sourceRef === 'ML2-A4-M7-DECISION-01',
+  M15: (sourceRef) => sourceRef === 'ML2-A4-M15-ROLE-01',
+  M16: (sourceRef) => sourceRef === 'ML2-A5-M16-0000-01',
+  'Final Commitment': (sourceRef) => sourceRef === 'ML2-A5-M17-COMMIT-01',
+}
 function stageForConversation(conversationId: string): KeyHistoryStage {
   const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(conversationId)?.sourceRefs[0] ?? ''
   if (/^ML2-A5-M17-/.test(sourceRef)) return 'Final Commitment'
@@ -459,16 +469,6 @@ function keyHistory(run: StableRunState) {
     producer: entry.conversationId,
     provenance: { conversationId: entry.conversationId, nodeId: entry.nodeId, choiceId: entry.choiceId },
   }))
-  const requiredStages: KeyHistoryStage[] = ['ACT I', 'ACT II', 'ACT III', 'ACT IV', 'M15', 'M16', 'Final Commitment']
-  const causalProducerByStage: Record<KeyHistoryStage, (sourceRef: string) => boolean> = {
-    'ACT I': (sourceRef) => sourceRef === 'user-1842-return',
-    'ACT II': (sourceRef) => sourceRef === 'ML2-A2-M3-DECISION-01',
-    'ACT III': (sourceRef) => sourceRef === 'ML2-A3-M6-DECISION-02',
-    'ACT IV': (sourceRef) => sourceRef === 'ML2-A4-M7-RES-01' || sourceRef === 'ML2-A4-M7-DECISION-01',
-    M15: (sourceRef) => sourceRef === 'ML2-A4-M15-ROLE-01',
-    M16: (sourceRef) => sourceRef === 'ML2-A5-M16-0000-01',
-    'Final Commitment': (sourceRef) => sourceRef === 'ML2-A5-M17-COMMIT-01',
-  }
   const authoredByStage: Record<KeyHistoryStage, { assetId: string; selector: string }> = {
     'ACT I': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT I' },
     'ACT II': { assetId: 'ML2-A5-M17-KEYHISTORY-01', selector: 'ACT II' },
@@ -478,7 +478,7 @@ function keyHistory(run: StableRunState) {
     M16: { assetId: 'ML2-A5-M17-0000-01', selector: 'Final state observed' },
     'Final Commitment': { assetId: 'ML2-A5-M17-0000-01', selector: 'Final record' },
   }
-  const selected = requiredStages.flatMap((stage) => {
+  const selected = requiredKeyHistoryStages.flatMap((stage) => {
     const entry = entries.find((candidate) => {
       if (candidate.stage !== stage) return false
       const conversationId = candidate.provenance.conversationId ?? ''
@@ -499,6 +499,14 @@ function keyHistory(run: StableRunState) {
     }]
   })
   return selected.slice(0, 8)
+}
+
+export function hasCompleteMainline2KeyHistory(run: StableRunState) {
+  return requiredKeyHistoryStages.every((stage) => run.history.some((entry) => {
+    if (stageForConversation(entry.conversationId) !== stage) return false
+    const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(entry.conversationId)?.sourceRefs[0] ?? entry.conversationId
+    return causalProducerByStage[stage](sourceRef)
+  }))
 }
 
 function compare(left: number, op: WorldStateGate['op'], right: number) {
@@ -620,6 +628,14 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   if (!run.finalCommitmentLocked) {
     const pending = baseEnding(run, 'COMMITMENT PENDING', 'Commitment not yet locked')
     return { ...pending, keyHistory: [], epilogues: [] }
+  }
+  if (run.history.length > 0 && !hasCompleteMainline2KeyHistory(run)) {
+    const resolution: EndingResolution = {
+      status: 'failure',
+      proposalId,
+      rejectedCandidates: [{ endingId: 'key-history', reasons: ['missing causal key history'] }],
+    }
+    return { ...baseEnding(run, 'RESOLUTION FAILURE', 'Key history invariant violation', resolution), keyHistory: [], epilogues: [] }
   }
   const selected = exactCandidate(run, proposalId)
   const resolutionFailed = selected.resolution.status === 'failure'

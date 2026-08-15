@@ -33,6 +33,15 @@ describe('Non-Mainline storage and mode isolation', () => {
     expect(restored?.selectedConversationIds).toEqual(created.selectedConversationIds)
   })
 
+  it('restores a completed evaluation only when its 40 recorded conversations agree', () => {
+    let session = createNonMainlineSession('completed-evaluation', createEmptyExposureHistory())
+    while (session.phase === 'playing') session = commitNonMainlineChoice(session, resolveNonMainlineScene(session).choices[0].id)
+
+    expect(session.choiceRecords).toHaveLength(session.history.length)
+    expect(session.history.length).toBeGreaterThanOrEqual(40)
+    expect(restoreNonMainlineSession(serializeNonMainlineSession(session))).toEqual(session)
+  })
+
   it('stores Non-Mainline state separately from the Mainline run and meta', () => {
     const mainlineRun = '{"runId":"mainline-preserved"}'
     const mainlineMeta = '{"runCount":7}'
@@ -86,6 +95,17 @@ describe('Non-Mainline storage and mode isolation', () => {
     expect(readNonMainlineState(storage)).toEqual({ surface: 'mainline', session: null })
     expect(storage.values.get(ACTIVE_SURFACE_KEY)).toBe('mainline')
     expect(storage.values.get('instance:run:v1')).toBe('{"runId":"mainline-preserved"}')
+  })
+
+  it('clears a semantically corrupt evaluation checkpoint before returning to Mainline', () => {
+    const session = createNonMainlineSession('corrupt-evaluation', createEmptyExposureHistory())
+    const storage = memoryStorage({
+      [ACTIVE_SURFACE_KEY]: 'non-mainline',
+      [NON_MAINLINE_SESSION_KEY]: serializeNonMainlineSession({ ...session, phase: 'evaluation', currentNodeId: 'evaluation' }),
+    })
+
+    expect(readNonMainlineState(storage)).toEqual({ surface: 'mainline', session: null })
+    expect(storage.values.has(NON_MAINLINE_SESSION_KEY)).toBe(false)
   })
 
   it('rejects a checkpoint whose recorded sample issue is not authored', () => {

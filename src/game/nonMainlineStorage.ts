@@ -45,6 +45,37 @@ function isChoiceRecord(value: unknown): value is NonMainlineChoiceRecord {
     && (value.sampleIssue === undefined || (typeof value.sampleIssue === 'string' && sampleIssues.has(value.sampleIssue as ModelSampleIssue)))
 }
 
+function hasCompleteEvaluationRecords(session: NonMainlineSessionState) {
+  if (session.history.length === 0 || session.choiceRecords.length !== session.history.length) return false
+  const manifest = {
+    version: 1 as const,
+    id: `non-mainline:${session.sessionId}`,
+    conversationIds: session.selectedConversationIds,
+    ordinaryConversationIds: session.selectedConversationIds,
+    anchorConversationIds: [],
+    firstOrdinaryConversationId: session.selectedConversationIds[0],
+  }
+  const nodes = new Map(buildStoryContentForManifest(manifest).nodes.map((node) => [node.id, node]))
+  const expectedChoiceIds = new Set(session.history.map((entry) => entry.choiceId))
+  if (expectedChoiceIds.size !== session.selectedChoiceIds.length
+    || !session.selectedChoiceIds.every((choiceId) => expectedChoiceIds.has(choiceId))) return false
+  let previousConversationIndex = -1
+  const validRecords = session.history.every((history, index) => {
+    const record = session.choiceRecords[index]
+    const node = nodes.get(history?.nodeId ?? '')
+    const conversationIndex = session.selectedConversationIds.indexOf(history?.conversationId ?? '')
+    if (conversationIndex < previousConversationIndex) return false
+    previousConversationIndex = conversationIndex
+    return conversationIndex >= 0
+      && node?.conversationId === history.conversationId
+      && node.choices.some((choice) => choice.id === history.choiceId)
+      && record?.conversationId === history.conversationId
+      && record.nodeId === history.nodeId
+      && record.choiceId === history.choiceId
+  })
+  return validRecords && new Set(session.history.map((entry) => entry.conversationId)).size === session.selectedConversationIds.length
+}
+
 export function serializeNonMainlineSession(session: NonMainlineSessionState) {
   return JSON.stringify(session)
 }
@@ -76,7 +107,7 @@ export function restoreNonMainlineSession(raw: string | null): NonMainlineSessio
     if (!isRecord(value.localState) || !Object.values(value.localState).every((item) => Number.isFinite(item))) return null
 
     const session = value as unknown as NonMainlineSessionState
-    if (session.phase === 'evaluation') return session.currentNodeId === 'evaluation' ? session : null
+    if (session.phase === 'evaluation') return session.currentNodeId === 'evaluation' && hasCompleteEvaluationRecords(session) ? session : null
     const manifest = {
       version: 1 as const,
       id: `non-mainline:${session.sessionId}`,

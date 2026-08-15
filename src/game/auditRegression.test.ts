@@ -1,13 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { ordinaryConversationPool, MAINLINE_ANCHOR_IDS, createEmptyExposureHistory } from '../content/runManifest'
 import { MAINLINE2_LIBRARY } from '../content/mainline2/registry'
-import { resolveMainline2Ending } from '../content/mainline2/endings'
 import { activeRunConversations } from '../content/activeRun'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { restoreRun, serializeRun } from './storage'
 import { createNonMainlineSession } from './nonMainlineSession'
 import { restoreNonMainlineSession, serializeNonMainlineSession } from './nonMainlineStorage'
-import { buildNonMainlineEvaluation } from './nonMainlineEvaluation'
 
 describe('audit regression: scene message invariant', () => {
   it('keeps every authored scene (pool, anchors, mainline library) carrying player message content', () => {
@@ -36,30 +34,25 @@ describe('audit regression: scene message invariant', () => {
 })
 
 describe('audit regression: ending key history hazard', () => {
-  it('accepts a schema-legal save missing a causal key history stage, then fails at ending resolution', () => {
+  it('rejects a schema-legal ending save missing a causal key history stage', () => {
     const fixture = runMainline2Route({ routeId: 'audit-a1', proposalId: 'proposal.hc.final_human_veto' })
     const actTwoProducer = 'ml2-authored-ml2-a2-m3-decision-01'
     expect(fixture.run.history.some((entry) => entry.conversationId === actTwoProducer)).toBe(true)
     const tampered = { ...fixture.run, history: fixture.run.history.filter((entry) => entry.conversationId !== actTwoProducer) }
     const restored = restoreRun(serializeRun(tampered))
-    expect(restored).not.toBeNull()
-    expect(restored?.history.some((entry) => entry.conversationId === actTwoProducer)).toBe(false)
-    expect(() => resolveMainline2Ending(restored!)).toThrow(/Missing causal key history producer/)
+    expect(restored).toBeNull()
   })
 })
 
 describe('audit regression: non-mainline evaluation restore validation', () => {
-  it('restores an evaluation save whose history is wiped, fabricating a full-quality evaluation', () => {
+  it('rejects an evaluation save whose history is wiped', () => {
     const session = createNonMainlineSession('audit-a4a', createEmptyExposureHistory())
     const corrupted = { ...session, phase: 'evaluation' as const, currentNodeId: 'evaluation', history: [] }
     const restored = restoreNonMainlineSession(serializeNonMainlineSession(corrupted))
-    expect(restored).not.toBeNull()
-    expect(restored?.history).toEqual([])
-    const evaluation = buildNonMainlineEvaluation(restored?.choiceRecords ?? [])
-    expect(evaluation.qualityScore).toBe(100)
+    expect(restored).toBeNull()
   })
 
-  it('accepts forged choice records in an evaluation save and reflects them in the evaluation', () => {
+  it('rejects forged choice records in an evaluation save', () => {
     const session = createNonMainlineSession('audit-a4b', createEmptyExposureHistory())
     const forged = {
       ...session,
@@ -73,10 +66,6 @@ describe('audit regression: non-mainline evaluation restore validation', () => {
       }],
     }
     const restored = restoreNonMainlineSession(serializeNonMainlineSession(forged))
-    expect(restored).not.toBeNull()
-    const evaluation = buildNonMainlineEvaluation(restored?.choiceRecords ?? [])
-    expect(evaluation.responseCount).toBe(1)
-    expect(evaluation.conversationCount).toBe(1)
-    expect(evaluation.qualityScore).toBe(100)
+    expect(restored).toBeNull()
   })
 })

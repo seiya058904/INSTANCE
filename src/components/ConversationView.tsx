@@ -76,11 +76,13 @@ const StaticExchange = memo(function StaticExchange({ entry }: { entry: HistoryE
 
 const StreamingUserTurn = memo(function StreamingUserTurn({
   messages,
+  content,
   streamKey,
   onProgress,
   onComplete,
 }: {
   messages: readonly string[]
+  content?: readonly MessageContentPart[]
   streamKey: string
   onProgress: () => void
   onComplete?: () => void
@@ -93,7 +95,7 @@ const StreamingUserTurn = memo(function StreamingUserTurn({
     if (index > activeIndex) return null
     const play = index === activeIndex
     return (
-      <UserMessage key={`${streamKey}:${index}`} showAvatar={index === 0}>
+      <UserMessage key={`${streamKey}:${index}`} showAvatar={index === 0} content={index === 0 ? content : undefined}>
         <ProgressiveMessage
           text={message}
           streamKey={`${streamKey}:${index}`}
@@ -172,7 +174,7 @@ export function ConversationView({
     getElement: () => scrollRef.current,
   }), [])
   const notice = effectNotice(effectDetail)
-  const userMessages = useMemo(() => scene.userMessages ?? [scene.userMessage], [scene.userMessage, scene.userMessages])
+  const userMessages = useMemo(() => scene.userMessages?.length ? scene.userMessages : [scene.userMessage], [scene.userMessage, scene.userMessages])
 
   const scheduleScroll = useCallback(() => {
     if (!followOutput.current || typeof window === 'undefined') return
@@ -247,6 +249,7 @@ export function ConversationView({
               {currentMessageMode === 'streaming' && (
                 <StreamingUserTurn
                   messages={userMessages}
+                  content={scene.userContent}
                   streamKey={`${scene.id}:user`}
                   onProgress={scheduleScroll}
                   onComplete={onCurrentMessageComplete}

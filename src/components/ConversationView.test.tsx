@@ -51,6 +51,18 @@ describe('multimodal conversation presentation', () => {
     expect(html).not.toContain('longform-preview-card')
   })
 
+  it('falls back to the authored user message while streaming when userMessages is empty', () => {
+    const html = renderToStaticMarkup(<ConversationView scene={{ ...scene, userMessages: [] }} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady={false} currentMessageMode="streaming" onChoose={() => undefined} />)
+
+    expect(html).toContain('class="message-row user-row"')
+  })
+
+  it('renders user attachments during the streaming turn', () => {
+    const html = renderToStaticMarkup(<ConversationView scene={scene} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady={false} currentMessageMode="streaming" onChoose={() => undefined} />)
+
+    expect(html).toContain('潮湿窗框的描述型附件')
+  })
+
   it('renders a real collapsed long input without exposing continuity facts', () => {
     const longInputScene = { ...scene, userLongInput: {
       kind: 'transcript' as const,

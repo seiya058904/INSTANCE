@@ -67,6 +67,14 @@ export function shouldRenderEndingScreen(
   return phase === 'ending' && (!hasTransition || stage === 'ready')
 }
 
+export function shouldRenderNonMainlineEvaluation(
+  phase: NonMainlineSessionState['phase'],
+  hasTransition: boolean,
+  stage?: ConversationFlowStep['stage'],
+) {
+  return phase === 'evaluation' && (!hasTransition || stage === 'ready')
+}
+
 const emptyMetrics = (): QAPacingMetrics => ({
   choiceReadingMs: 0,
   humanWaitMs: 0,
@@ -506,7 +514,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     readySince.current = performance.now()
   }
 
-  if (activeSurface === 'non-mainline' && nonMainlineSession?.phase === 'evaluation' && !transition) {
+  if (activeSurface === 'non-mainline' && nonMainlineSession && shouldRenderNonMainlineEvaluation(nonMainlineSession.phase, Boolean(transition), currentStep?.stage)) {
     return <NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} onReplay={replayNonMainline} onReturn={returnToMainline} />
   }
   if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />

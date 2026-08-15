@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import * as app from './App'
 import { App, recordEndingCompletion, shouldRenderEndingScreen } from './App'
 import { createMainline2Run } from '../game/engine'
 import { serializeRun } from '../game/storage'
@@ -36,7 +37,7 @@ describe('initial product surface', () => {
     expect(completedAgain.meta.completedEndings).toHaveLength(1)
   })
 
-  it('restores an old resolution-failure ending save into a visible recovery screen', () => {
+  it('rejects an old resolution-failure ending save and starts a new run', () => {
     const run = createMainline2Run('legacy-ending-recovery')
     const saved = serializeRun({
       ...run,
@@ -52,14 +53,21 @@ describe('initial product surface', () => {
 
     const html = renderToStaticMarkup(<App />)
 
-    expect(html).toContain('结局结算异常')
-    expect(html).toContain('开始新一局')
+    expect(html).toContain('新的对话')
+    expect(html).not.toContain('结局结算异常')
   })
 
   it('does not leave the ending handoff on a null presentation frame after the final assistant reply', () => {
     expect(shouldRenderEndingScreen('ending', true, 'ready')).toBe(true)
     expect(shouldRenderEndingScreen('ending', false, undefined)).toBe(true)
     expect(shouldRenderEndingScreen('ending', true, 'assistant-streaming')).toBe(false)
+  })
+
+  it('shows the Non-Mainline evaluation on the transition ready frame', () => {
+    const shouldRender = (app as unknown as { shouldRenderNonMainlineEvaluation: (phase: 'playing' | 'evaluation', hasTransition: boolean, stage?: string) => boolean }).shouldRenderNonMainlineEvaluation
+
+    expect(shouldRender('evaluation', true, 'ready')).toBe(true)
+    expect(shouldRender('evaluation', true, 'assistant-streaming')).toBe(false)
   })
 
   it('restores an incomplete Non-Mainline session without replacing the Mainline save', () => {

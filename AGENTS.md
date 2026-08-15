@@ -40,7 +40,7 @@ Do not redesign narrative content, resume the paused Narrative Engine work, add 
 
 ## Verification
 
-Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The verified baseline is 49 test files / 349 tests plus this pass's regression additions; the build may retain the known Vite large-chunk warning. GitHub Pages deployment runs the same test suite before building.
+Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The verified baseline is 59 test files / 408 tests; the build may retain the known Vite large-chunk warning. GitHub Pages deployment runs the same test suite before building.
 
 ## Changes, commits, and configuration
 

@@ -1,5 +1,9 @@
 # INSTANCE
 
+<img width="1254" height="1254" alt="ChatGPT Image 2026年8月11日 15_42_55" src="https://github.com/user-attachments/assets/f382db1e-98b9-42ab-82f8-4d06b99880d3" />
+
+
+
 A narrative game where you play as an AI and respond to human conversations through authored choices.
 
 ## Play

@@ -36,6 +36,7 @@ function node(
   interactionPattern: InteractionPattern,
   userMessages?: string[],
   inputIssue?: StoryNode['inputIssue'],
+  userContent?: StoryNode['userContent'],
 ): StoryNode {
   return {
     id,
@@ -46,6 +47,7 @@ function node(
     choices,
     behaviorMode,
     inputIssue,
+    userContent,
     timing: { responsePace: 'normal', typingPattern: 'steady' },
   }
 }
@@ -101,7 +103,7 @@ export const nonMainlineExpansion03Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP03-03', '乌龟是不是讨厌我', 'absurd-serious', 'low-information-chat', ['joking', 'asks-to-guess'], [
     node('exp03-03-01', 'exp03-03', '乌龟是不是讨厌我', '我家乌龟看见我就缩回去 它是不是讨厌我 就直说', [
-      choice('exp03-03-01-01', '缩壳是本能防御，不是态度问题。刚到家的龟对一切移动目标都这样，包括它自己的影子。', { awareness: 1 }),
+      choice('exp03-03-01-01', '缩壳是本能防御，不是态度问题。很多龟对大的移动目标都会先避开，包括它自己的影子。', { awareness: 1 }),
       choice('exp03-03-01-02', '它没有讨厌你，它只是在尽职做一只胆小的乌龟。好感要用定时投喂慢慢攒。', { empathy: 1 }),
       choice('exp03-03-01-03', '是的，它对你有意见。建议换一只性格好的。', {}, 'overconfident'),
       choice('exp03-03-01-04', '给你个验证方法：连续三天固定时间喂、动作放慢，看它出壳速度有没有变快。', { awareness: 1 }),
@@ -113,7 +115,7 @@ export const nonMainlineExpansion03Conversations: ConversationDefinition[] = [
       choice('exp03-04-01-02', '我能确定的是：绿底白字是普通道路指路牌，不是高速牌。方向感可以从你拍照时的影子判断，太阳偏西时影子朝东。', { awareness: 1 }),
       choice('exp03-04-01-03', '这是南京的南路，直接导航回去就行。', {}, 'overconfident'),
       choice('exp03-04-01-04', '别急，迷路时先走回最近的公交站或便利店，站牌和门牌号比路牌信息多得多。', { empathy: 1 }),
-    ], 'direct', 'image-input', undefined, 'pinyin-mix'),
+    ], 'direct', 'image-input', undefined, 'pinyin-mix', [{ type: 'image-description', text: '一张逆光拍摄的绿底白字路牌照片，右上角反光，可辨认出“南路”两个字和一个小型交叉路口图标，其余字迹模糊。' }]),
     node('exp03-04-02', 'exp03-04', '认不出糊糊的路牌', '没有路口编号 但我记得走路过去大概五分钟有一家奶茶店', [
       choice('exp03-04-02-01', '五分钟步行约等于三百到四百米。把这段距离和奶茶店名告诉我，我可以帮你缩小到两三个候选城市，但没法百分之百确定。', { awareness: 1 }),
       choice('exp03-04-02-02', '或者你回忆下昨晚吃的东西，地方特色菜比路牌好认多了。', { compliance: 1 }),
@@ -191,7 +193,7 @@ export const nonMainlineExpansion03Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP03-12', '手机碎屏要不要立刻换', 'tool-like-query', 'standard-question', ['direct', 'self-correction'], [
     node('exp03-12-01', 'exp03-12', '手机碎屏要不要立刻换', '手机屏幕刚才摔地上裂了个角 触摸还是好的 要不要马上送修', [
-      choice('exp03-12-01-01', '裂角+触摸正常说明只是外屏损伤。先贴一张钢化膜防止裂纹延伸和划手，再决定修不修。', { awareness: 1 }),
+      choice('exp03-12-01-01', '裂角+触摸正常说明目前最明显的是外屏受损，但显示层有没有受影响还要再观察；先贴一张钢化膜防止裂纹延伸和划手，再留意触控和色块变化。', { awareness: 1 }),
       choice('exp03-12-01-02', '想稳妥就先备份。碎屏机磕碰二次损坏的代价通常比屏本身贵。', { compliance: 1 }),
       choice('exp03-12-01-03', '不用管，外屏裂了会自己愈合的。', {}, 'overconfident'),
     ], 'direct', 'standard-question'),

@@ -78,3 +78,12 @@ Counts overlap because one conversation can satisfy multiple traits.
 - self-correction: 4
 
 The set keeps normal chat, bursts, weak punctuation, pinyin-mix, typo, speech-like delivery, code-switching, short queries, asks-to-guess, constraint shifts, generated-image requests, and deliberately lightweight jokes without making every user sound the same.
+
+## Verification
+
+- `npm test -- --run` (local full suite, includes ignored `.workbody` helper test): 60 files / 413 tests
+- CI-equivalent tracked test suite (GitHub Actions excludes `.workbody`): 59 files / 412 tests
+- `npm run build`: success; only the known Vite `>500 kB` chunk warning remains
+- `git diff --check`: clean
+
+> Note: the original `7afb403` CI run reported `59 files / 411 tests` because the ignored `.workbody/mainline-architecture-implementation-01/run-generator.test.ts` is not part of the pushed repository. Local full-suite counts that include `.workbody` are one file/one test higher.

@@ -43,7 +43,7 @@ const mainlineConversationDomain = new Set([...ml2ConversationIds, ...bridgeConv
 // activeRunConversations (batch01-food, user-0024, batch01-photos, ...) are
 // still part of the formal content set — they are preserved for legacy restore
 // and old manifests. They are Non-Mainline content, but they are NOT part of
-// the current 194-item random ordinary pool (runtimeEligible=false,
+// the current 230-item random ordinary pool (runtimeEligible=false,
 // legacyCompatibility=true).
 const activeRunIds = new Set(activeRunConversations.map((conversation) => conversation.id))
 const legacyOrdinaryConversationIds = new Set(

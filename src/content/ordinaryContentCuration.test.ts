@@ -24,6 +24,13 @@ describe('ordinary content curation', () => {
     expect(duplicates, `duplicate Runtime node IDs: ${duplicates.join('; ')}`).toEqual([])
   })
 
+  it('attaches real image-description content to every image-input conversation', () => {
+    const imageInputConversations = ordinaryConversationPool.filter((conversation) => conversation.interactionPattern === 'image-input')
+    expect(imageInputConversations.length).toBeGreaterThan(0)
+    const missing = imageInputConversations.filter((conversation) => !conversation.nodes.some((node) => node.userContent?.some((part) => part.type === 'image-description')))
+    expect(missing.map((conversation) => conversation.sourceRefs[0] ?? conversation.id)).toEqual([])
+  })
+
   it('keeps promoted longform choices distinct instead of falling back to a placeholder', () => {
     const lf01_02 = promotedLongformConversations.find((conversation) => conversation.id === 'longform-lf01-02')
     const firstNode = lf01_02?.nodes[0]

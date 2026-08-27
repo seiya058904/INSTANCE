@@ -7,6 +7,7 @@ import { editorialCandidateConversations } from './editorialCandidateSources'
 import { promotedLongformConversations } from './longformPromoted'
 import { realUsagePatch01Conversations } from './realUsagePatch01'
 import { nonMainlineExpansion02Conversations } from './nonMainlineExpansion02'
+import { nonMainlineExpansion03Conversations } from './nonMainlineExpansion03'
 import type {
   ConversationDefinition,
   HumanBehaviorMode,
@@ -387,6 +388,7 @@ export const ordinaryConversationPool = [
   ...promotedLongformConversations,
   ...realUsagePatch01Conversations,
   ...nonMainlineExpansion02Conversations,
+  ...nonMainlineExpansion03Conversations,
 ]
 
 const anchorMap = new Map(

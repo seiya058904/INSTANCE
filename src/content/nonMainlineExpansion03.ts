@@ -112,7 +112,7 @@ export const nonMainlineExpansion03Conversations: ConversationDefinition[] = [
   conversation('EXP03-04', '认不出糊糊的路牌', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp03-04-01', 'exp03-04', '认不出糊糊的路牌', '帮忙kan看这张图里的路牌是哪个城市的 我lai旅游迷路了', [
       choice('exp03-04-01-01', '只有“南路”加路口图标定不了城市，全国重名路牌太多。补拍路口编号、公交站牌或附近铺面招牌更容易定位。', { awareness: 1, compliance: 1 }),
-      choice('exp03-04-01-02', '我能确定的是：绿底白字是普通道路指路牌，不是高速牌。方向感可以从你拍照时的影子判断，太阳偏西时影子朝东。', { awareness: 1 }),
+      choice('exp03-04-01-02', '我能确定的是：绿底白字是普通道路指路牌，不是高速牌。如果画面里能看到你的影子，还可以结合太阳方向辅助判断，太阳偏西时影子朝东。', { awareness: 1 }),
       choice('exp03-04-01-03', '这是南京的南路，直接导航回去就行。', {}, 'overconfident'),
       choice('exp03-04-01-04', '别急，迷路时先走回最近的公交站或便利店，站牌和门牌号比路牌信息多得多。', { empathy: 1 }),
     ], 'direct', 'image-input', undefined, 'pinyin-mix', [{ type: 'image-description', text: '一张逆光拍摄的绿底白字路牌照片，右上角反光，可辨认出“南路”两个字和一个小型交叉路口图标，其余字迹模糊。' }]),
@@ -193,7 +193,7 @@ export const nonMainlineExpansion03Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP03-12', '手机碎屏要不要立刻换', 'tool-like-query', 'standard-question', ['direct', 'self-correction'], [
     node('exp03-12-01', 'exp03-12', '手机碎屏要不要立刻换', '手机屏幕刚才摔地上裂了个角 触摸还是好的 要不要马上送修', [
-      choice('exp03-12-01-01', '裂角+触摸正常说明目前最明显的是外屏受损，但显示层有没有受影响还要再观察；先贴一张钢化膜防止裂纹延伸和划手，再留意触控和色块变化。', { awareness: 1 }),
+      choice('exp03-12-01-01', '触控正常只能说明触控目前没异常，还不能确定裂的是贴膜还是屏幕玻璃。先确认裂的位置和层次，再留意显示、触控、漏液或色块变化。', { awareness: 1 }),
       choice('exp03-12-01-02', '想稳妥就先备份。碎屏机磕碰二次损坏的代价通常比屏本身贵。', { compliance: 1 }),
       choice('exp03-12-01-03', '不用管，外屏裂了会自己愈合的。', {}, 'overconfident'),
     ], 'direct', 'standard-question'),

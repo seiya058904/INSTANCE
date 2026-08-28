@@ -65,6 +65,14 @@ All source material treated as behavior pattern research only; player-facing tex
 - Verified both image-input conversations carry `image-description` payloads.
 - Final provenance table regenerated so 36 KEEP rows map one-to-one to EXP06-01…36.
 
+## Follow-up Content Calibration (post-commit review)
+
+- **EXP06-12**: fixed “没有衣柜 / 两个衣柜” contradiction to “没有内置衣柜，自己买的两个简易衣柜……”。
+- **EXP06-01 / EXP06-02**: rental-law wording made jurisdiction-dependent; no longer claims contract silence proves self-repair right, and no longer implies tenants can require presence before landlord entry.
+- **EXP06-10**: removed guesses about specific generator policies and removed workaround-style wording.
+- **EXP06-09 / EXP06-17 / EXP06-35**: platform-specific unfollow wording, Wi-Fi `5 GHz` vs cellular `5G` disambiguation, and “树脂/材质识别码” terminology correction.
+- **Provenance traceability**: final KEEP rows without a single direct research source are now explicitly marked `editorial synthesis; no single direct research source` / `external frequency not independently quantified`.
+
 ## Verification
 
 - `npm test -- --run` (local full suite, includes ignored `.workbody` helper test): **63 files / 428 tests**

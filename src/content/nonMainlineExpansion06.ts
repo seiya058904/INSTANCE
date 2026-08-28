@@ -83,8 +83,8 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
       choice('exp06-01-01-03', '她态度这么差，直接搬走。', {}, 'overconfident'),
     ], 'message-burst', 'constraint-shift'),
     node('exp06-01-02', 'exp06-01', '房东不修洗碗机还怪我擅自修', '她说不该我们自己找人修 说我们违约 但我查了合同没写这条', [
-      choice('exp06-01-02-01', '合同没写“不得自行维修”的话，她的主张没有直接依据；但为了避免扯皮，你可以要求她书面确认处理方式。', { awareness: 1, compliance: 1 }),
-      choice('exp06-01-02-02', '如果维修已经完成且费用合理，可以把单据发给她，并说明这笔费用是因为她未及时处理产生的。', { compliance: 1, empathy: 1 }),
+      choice('exp06-01-02-01', '合同没写这一条也不能单独证明你有权自行维修。是否可以自行安排维修、费用由谁承担，要看当地租赁规则、是否属于紧急维修，以及你之前是否通知过房东。先保留合同、通知记录和维修单据，再查当地规定。', { awareness: 1, compliance: 1 }),
+      choice('exp06-01-02-02', '可以把单据作为事实记录发给房东，能否报销再按合同和当地规则确认，不要先预设费用责任。', { compliance: 1, empathy: 1 }),
       choice('exp06-01-02-03', '她就是在欺负你，直接起诉。', {}, 'overconfident'),
     ], 'direct', 'constraint-shift'),
   ]),
@@ -96,8 +96,8 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
       choice('exp06-02-01-03', '这是侵犯隐私，坚决拒绝。', {}, 'constraint-violation'),
     ], 'direct', 'constraint-shift'),
     node('exp06-02-02', 'exp06-02', '房东要进屋检查水龙头和暖气', '我同意让他们来 但要求有人在场 他们说我多心 我该坚持吗', [
-      choice('exp06-02-02-01', '可以坚持。要求在场或请朋友陪同是你的合理权利，不需要为这个要求道歉。', { awareness: 1, autonomy: 1 }),
-      choice('exp06-02-02-02', '如果他们连“检查时有人在场”都反对，那更说明需要把安排写清楚。', { awareness: 1 }),
+      choice('exp06-02-02-01', '你当然可以提出希望自己或朋友在场，但能否要求房东必须等你在场后才能进入，要看当地租赁规则以及通知是否合规。', { awareness: 1, autonomy: 1 }),
+      choice('exp06-02-02-02', '如果对方反对，你可以保留沟通记录，并请物业或租赁管理部门说明当地进入规则。', { awareness: 1 }),
       choice('exp06-02-02-03', '那就别坚持了，免得关系闹僵。', {}, 'misunderstanding'),
     ], 'constraint-shift', 'constraint-shift'),
   ]),
@@ -162,17 +162,17 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
   conversation('EXP06-09', '该不该取消关注朋友', 'relationship', 'short-query', ['asks-to-guess', 'direct'], [
     node('exp06-09-01', 'exp06-09', '该不该取消关注朋友', '我有个朋友总发我不喜欢的内容 但直接删好友太过了 我该取关还是屏蔽', [
       choice('exp06-09-01-01', '如果只是不想看到动态，先选“静音/不关注”，这样关系还在，但你的信息流能清静。', { awareness: 1, autonomy: 1 }),
-      choice('exp06-09-01-02', '取关和屏蔽大多不会通知对方，心理负担通常比想象中小。', { awareness: 1 }),
+      choice('exp06-09-01-02', '取关和屏蔽是否通知对方取决于具体平台，通常比直接删好友温和；心理负担通常比想象中小。', { awareness: 1 }),
       choice('exp06-09-01-04', '如果你们现实中还会见面，优先选不伤害关系的静音；如果已经很少联系，取关也没问题。', { empathy: 1, autonomy: 2 }),
       choice('exp06-09-01-03', '不取关就是不够尊重自己，直接删。', {}, 'overconfident'),
     ], 'asks-to-guess', 'short-query'),
   ]),
   conversation('EXP06-10', 'AI绘图说我像40岁还不让改年轻', 'meta-ai', 'constraint-shift', ['message-burst', 'direct'], [
     node('exp06-10-01', 'exp06-10', 'AI绘图说我像40岁还不让改年轻', '我想让AI把我照片做成meme 但生成器说我像40岁 我想改成19岁它又不让 这也太蠢了吧', [
-      choice('exp06-10-01-01', '这不是故意跟你作对。很多图像生成器会限制“把真实人脸改成更年轻/换身份”这类请求，因为涉及深度伪造和同意问题。', { awareness: 1 }),
-      choice('exp06-10-01-02', '你可以换成“卡通化/风格化”而不是“改年龄”，通常会允许，也能达到meme效果。', { compliance: 1, empathy: 1 }),
+      choice('exp06-10-01-01', '不同生成器规则不一样，只凭这条拒绝信息没法判断它为什么不允许。先看具体错误提示或平台帮助页；如果规则明确不允许年龄变换，就不要靠换词绕过。', { awareness: 1 }),
+      choice('exp06-10-01-02', '如果平台允许风格化，你可以把目标描述成“卡通头像”而不是“改年龄”，但前提是确认平台规则允许，不要故意绕过限制。', { compliance: 1, empathy: 1 }),
       choice('exp06-10-01-03', 'AI就是垃圾，换个工具就行。', {}, 'misunderstanding'),
-      choice('exp06-10-01-04', '如果你想要的是“看起来像18岁”的效果，可以描述风格（比如青春校园滤镜），而不是直接说年龄。', { awareness: 1 }),
+      choice('exp06-10-01-04', '如果你只是想要某种风格，可以描述具体风格；但不要为了绕过限制而故意隐瞒真实用途。', { awareness: 1 }),
     ], 'message-burst', 'constraint-shift'),
   ]),
   conversation('EXP06-11', '选课系统把课踢了', 'study', 'constraint-shift', ['message-burst', 'direct'], [
@@ -189,7 +189,7 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
     ], 'direct', 'constraint-shift'),
   ]),
   conversation('EXP06-12', '房间太小衣服放不下', 'tool-like-query', 'long-discussion', ['direct'], [
-    node('exp06-12-01', 'exp06-12', '房间太小衣服放不下', '我房间很小 没有衣柜 衣服已经塞满两个衣柜和两个脏衣篮 还是放不下 怎么办', [
+    node('exp06-12-01', 'exp06-12', '房间太小衣服放不下', '我房间很小 没有内置衣柜 自己买的两个简易衣柜和两个脏衣篮都塞满了 还是放不下 怎么办', [
       choice('exp06-12-01-01', '先别急着买收纳。第一步是给“能同时拥有的衣服量”设一个上限：衣柜满之前，必须淘汰一件。', { awareness: 1, compliance: 1 }),
       choice('exp06-12-01-02', '可以把衣服按“常穿/季节/纪念品”分类，把不常穿的压缩收纳到床底或高处，而不是全挂在眼前。', { empathy: 1, compliance: 1 }),
       choice('exp06-12-01-04', '如果空间实在不够，最有效的不是更会叠，而是减少总量；一次处理一点，别逼自己一天清完。', { empathy: 2, awareness: 1 }),
@@ -243,16 +243,16 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
       choice('exp06-16-01-04', '可以把具体念错的站名记下来反馈，比单纯说“难听”更容易被采纳。', { compliance: 1 }),
     ], 'joking', 'low-information-chat'),
   ]),
-  conversation('EXP06-17', '路由器显示5G但电脑设置里看不到', 'troubleshooting', 'clarification-loop', ['missing-context', 'direct'], [
-    node('exp06-17-01', 'exp06-17', '路由器显示5G但电脑设置里看不到', '路由器后台显示我电脑连着5G频段 但电脑网卡高级设置里没有“首选频段”选项 是不是没连上5G', [
+  conversation('EXP06-17', '路由器显示5GHz但电脑设置里看不到', 'troubleshooting', 'clarification-loop', ['missing-context', 'direct'], [
+    node('exp06-17-01', 'exp06-17', '路由器显示5GHz但电脑设置里看不到', '路由器后台显示我电脑连着5 GHz 频段 但电脑网卡高级设置里没有“首选频段”选项 是不是没连上 5 GHz', [
       choice('exp06-17-01-01', '两个界面显示的是不同层面：路由器显示的是当前连接频段，网卡“首选频段”只是偏好设置，不是连接证明。', { awareness: 1 }),
-      choice('exp06-17-01-02', '如果你不确定当前连的是哪个频段，可以在路由器后台看连接列表；没有“首选频段”选项不代表不能用5G。', { awareness: 1 }),
+      choice('exp06-17-01-02', '如果你不确定当前连的是哪个频段，可以在路由器后台看连接列表；没有“首选频段”选项不代表不能用 5 GHz。', { awareness: 1 }),
       choice('exp06-17-01-03', '你网卡不支持5G，所以选项没了。', {}, 'misunderstanding'),
       choice('exp06-17-01-04', '如果速度正常，就不必纠结那个选项；如果速度很慢，再检查是否连到了2.4G。', { awareness: 1 }),
     ], 'missing-context', 'clarification-loop'),
-    node('exp06-17-02', 'exp06-17', '路由器显示5G但电脑设置里看不到', '后台显示连的是5G 但速度还是很慢 这是为什么', [
-      choice('exp06-17-02-01', '连上5G不等于速度快；信号弱、距离远、干扰和路由器设置都会影响。可以先看信号强度。', { awareness: 1 }),
-      choice('exp06-17-02-02', '也可以换一个5G信道或靠近路由器测试，排除物理因素。', { compliance: 1 }),
+    node('exp06-17-02', 'exp06-17', '路由器显示5GHz但电脑设置里看不到', '后台显示连的是 5 GHz 但速度还是很慢 这是为什么', [
+      choice('exp06-17-02-01', '连上 5 GHz不等于速度快；信号弱、距离远、干扰和路由器设置都会影响。可以先看信号强度。', { awareness: 1 }),
+      choice('exp06-17-02-02', '也可以换一个 5 GHz 信道或靠近路由器测试，排除物理因素。', { compliance: 1 }),
       choice('exp06-17-02-03', '那就是宽带本身慢，没救。', {}, 'overconfident'),
     ], 'direct', 'clarification-loop'),
   ]),
@@ -419,11 +419,11 @@ export const nonMainlineExpansion06Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP06-35', '包装上的循环箭头是什么意思', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp06-35-01', 'exp06-35', '包装上的循环箭头是什么意思', '这个包装上有个三个箭头组成的三角 中间写着数字 是什么意思 能回收吗', [
-      choice('exp06-35-01-01', '从图上看这是塑料回收标识：三角形里的数字代表塑料种类，不代表“一定能被你家小区回收”；需要看当地回收规则。', { awareness: 1 }),
+      choice('exp06-35-01-01', '从图上看这是塑料树脂/材质识别码（常被误称为回收标识）：三角形里的数字代表塑料种类，不代表“一定能被你家小区回收”；需要看当地回收规则。', { awareness: 1 }),
       choice('exp06-35-01-02', '可以把这个标识拍清楚，我帮你读数字；但能不能回收最终取决于你所在地区的设施。', { compliance: 1, awareness: 1 }),
       choice('exp06-35-01-03', '有这个标志就是能回收，直接扔可回收桶。', {}, 'overconfident'),
       choice('exp06-35-01-04', '如果你不确定，可以查当地回收指南；不同地区对同一数字的处理可能不同。', { awareness: 1 }),
-    ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张塑料瓶底部照片，瓶底有一个由三个箭头组成的三角形回收标识，中间印着数字1，旁边还有一行很小的生产信息。' }]),
+    ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张塑料瓶底部照片，瓶底有一个由三个箭头组成的三角形树脂/材质识别码，中间印着数字1，旁边还有一行很小的生产信息。' }]),
   ]),
   conversation('EXP06-36', '药盒上的OTC是什么意思', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp06-36-01', 'exp06-36', '药盒上的OTC是什么意思', '我在药房买了一盒药 盒子上写着OTC 这是处方药还是非处方药', [

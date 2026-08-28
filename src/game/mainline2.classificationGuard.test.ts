@@ -43,7 +43,7 @@ const mainlineConversationDomain = new Set([...ml2ConversationIds, ...bridgeConv
 // activeRunConversations (batch01-food, user-0024, batch01-photos, ...) are
 // still part of the formal content set — they are preserved for legacy restore
 // and old manifests. They are Non-Mainline content, but they are NOT part of
-// the current 266-item random ordinary pool (runtimeEligible=false,
+// the current 302-item random ordinary pool (runtimeEligible=false,
 // legacyCompatibility=true).
 const activeRunIds = new Set(activeRunConversations.map((conversation) => conversation.id))
 const legacyOrdinaryConversationIds = new Set(
@@ -130,7 +130,7 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
     const overlaps = [...side.entries()].filter(([, labels]) => labels.length > 1)
     expect(overlaps).toEqual([])
     expect(canonicalConversationUniverse.size).toBeGreaterThan(0)
-    expect(poolConversationIds.size).toBe(266)
+    expect(poolConversationIds.size).toBe(302)
   })
 
   it('keeps every Story Plan mainline slot inside the authored inventory or bridge domain', () => {
@@ -165,7 +165,7 @@ describe('Mainline / Non-Mainline classification guard (XOR invariant)', () => {
   it('keeps the curated ordinary pool exactly at the reconciled size', () => {
     // Guard against silent pool churn: new ordinary content must be added
     // deliberately, mirroring the human-reviewed NON_MAINLINE set.
-    expect(ordinaryConversationPool.length).toBe(266)
+    expect(ordinaryConversationPool.length).toBe(302)
   })
 })
 

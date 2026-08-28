@@ -16,7 +16,7 @@ Each Conversation presents a human user with a realistic or strange prompt. You 
 
 ## Features
 
-- 266 authored ordinary conversation sources
+- 302 authored ordinary conversation sources
 - Choice-driven AI responses
 - Realistic and unusual human prompts
 - Recurring users and hidden narrative arcs
@@ -53,4 +53,4 @@ npm run build
 
 ## Status
 
-Stable `main` currently includes the Non-Mainline expansion through 266 ordinary conversation sources. The project remains under continuous content and runtime review.
+Stable `main` currently includes the Non-Mainline expansion through 302 ordinary conversation sources. The project remains under continuous content and runtime review.

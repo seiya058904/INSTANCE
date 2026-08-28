@@ -1,37 +1,37 @@
 import { describe, expect, it } from 'vitest'
-import { nonMainlineExpansion04Conversations } from './nonMainlineExpansion04'
+import { nonMainlineExpansion05Conversations } from './nonMainlineExpansion05'
 import { scanOrdinaryChoiceQuality } from './ordinaryContentAudit'
 import { ordinaryConversationPool } from './runManifest'
 
-describe('Non-Mainline Content Expansion 04', () => {
+describe('Non-Mainline Content Expansion 05', () => {
   it('adds all 36 approved conversations to the ordinary pool', () => {
-    expect(nonMainlineExpansion04Conversations).toHaveLength(36)
-    expect(new Set(nonMainlineExpansion04Conversations.map((conversation) => conversation.id)).size).toBe(36)
-    expect(nonMainlineExpansion04Conversations.every((conversation) => conversation.sourceRefs[0].startsWith('EXP04-'))).toBe(true)
-    expect(nonMainlineExpansion04Conversations.every((conversation) => ordinaryConversationPool.includes(conversation))).toBe(true)
+    expect(nonMainlineExpansion05Conversations).toHaveLength(36)
+    expect(new Set(nonMainlineExpansion05Conversations.map((conversation) => conversation.id)).size).toBe(36)
+    expect(nonMainlineExpansion05Conversations.every((conversation) => conversation.sourceRefs[0].startsWith('EXP05-'))).toBe(true)
+    expect(nonMainlineExpansion05Conversations.every((conversation) => ordinaryConversationPool.includes(conversation))).toBe(true)
     expect(ordinaryConversationPool).toHaveLength(302)
   })
 
   it('keeps node and choice identities unique and preserves authored issue annotations', () => {
-    const nodes = nonMainlineExpansion04Conversations.flatMap((conversation) => conversation.nodes)
+    const nodes = nonMainlineExpansion05Conversations.flatMap((conversation) => conversation.nodes)
     const choices = nodes.flatMap((node) => node.choices)
     expect(new Set(nodes.map((node) => node.id)).size).toBe(nodes.length)
     expect(new Set(choices.map((choice) => choice.id)).size).toBe(choices.length)
-    expect(nodes).toHaveLength(53)
-    expect(choices).toHaveLength(199)
-    expect(choices.filter((choice) => choice.sampleIssue).length).toBe(53)
+    expect(nodes).toHaveLength(55)
+    expect(choices).toHaveLength(201)
+    expect(choices.filter((choice) => choice.sampleIssue).length).toBe(55)
     expect(choices.filter((choice) => choice.sampleIssue === 'system-failure').length).toBe(0)
   })
 
   it('does not introduce Mainline or proposal content', () => {
-    expect(nonMainlineExpansion04Conversations.every((conversation) => (
-      conversation.sourceRefs.every((sourceRef) => sourceRef.startsWith('EXP04-'))
+    expect(nonMainlineExpansion05Conversations.every((conversation) => (
+      conversation.sourceRefs.every((sourceRef) => sourceRef.startsWith('EXP05-'))
       && conversation.nodes.every((node) => node.choices.every((choice) => !choice.proposalId && !choice.decisionBinding))
     ))).toBe(true)
   })
 
   it('keeps every image-input conversation backed by real image-description payloads', () => {
-    const imageInputs = nonMainlineExpansion04Conversations.filter((conversation) => conversation.interactionPattern === 'image-input')
+    const imageInputs = nonMainlineExpansion05Conversations.filter((conversation) => conversation.interactionPattern === 'image-input')
     expect(imageInputs.length).toBeGreaterThanOrEqual(2)
     const missing = imageInputs.filter((conversation) => (
       !conversation.nodes.some((node) => node.userContent?.some((part) => part.type === 'image-description'))
@@ -40,7 +40,7 @@ describe('Non-Mainline Content Expansion 04', () => {
   })
 
   it('keeps the new batch clean under the ordinary choice quality scan', () => {
-    const report = scanOrdinaryChoiceQuality(nonMainlineExpansion04Conversations.map((conversation) => ({
+    const report = scanOrdinaryChoiceQuality(nonMainlineExpansion05Conversations.map((conversation) => ({
       id: conversation.id,
       sourceRefs: [...conversation.sourceRefs],
       nodes: conversation.nodes,

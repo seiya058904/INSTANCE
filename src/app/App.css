@@ -59,7 +59,7 @@ button { font: inherit; }
   margin-top: 3px; padding: 8px 10px; border: 1px solid #ded5c8; border-radius: 8px; background: #f7f2e9;
   color: #4d4740; font: inherit; font-size: 11px; text-align: left; cursor: pointer;
 }
-.mode-controls.is-active { min-height: 41px; padding: 0 10px; display: flex; align-items: center; gap: 8px; border: 1px solid #ded6c8; border-radius: 10px; }
+.mode-controls-desktop.is-active { min-height: 41px; padding: 0 10px; display: flex; align-items: center; gap: 8px; border: 1px solid #ded6c8; border-radius: 10px; }
 .mode-progress { color: #6e655c; font-size: 10px; white-space: nowrap; }
 .mode-return { margin-left: auto; padding: 4px 0; border: 0; background: transparent; color: #8b5d49; font: inherit; font-size: 10px; cursor: pointer; white-space: nowrap; }
 .history-nav { margin-top: 28px; min-height: 0; overflow: hidden; }
@@ -341,7 +341,7 @@ button { font: inherit; }
   .mode-controls-mobile { display: block; }
   .mobile-mode-trigger { width: 40px; height: 40px; padding: 0; border: 1px solid #ddd5c9; border-radius: 9px; background: rgba(255,255,255,.32); color: #756d63; font-size: 17px; line-height: 1; cursor: pointer; }
   .mode-controls-mobile .mode-popover { right: 0; left: auto; width: min(280px, calc(100vw - 28px)); }
-  .mode-controls-mobile.is-active { min-height: 28px; padding: 0; border: 0; gap: 6px; }
+  .mode-controls-mobile.is-active { min-height: 28px; padding: 0; border: 0; gap: 6px; display: flex; align-items: center; }
   .mode-controls-mobile .mode-progress, .mode-controls-mobile .mode-return { font-size: 9px; }
   .conversation-kicker { display: none; }
   .conversation-header h1 { font-size: 11px; }

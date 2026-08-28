@@ -57,6 +57,13 @@ describe('multimodal conversation presentation', () => {
     expect(html).toContain('class="message-row user-row"')
   })
 
+  it('adds a non-color textual anomaly label when the model label is anomalous', () => {
+    const html = renderToStaticMarkup(<ConversationView scene={scene} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1 / AS-091-7F23" history={[]} flowStage="ready" choicesReady currentMessageMode="static" onChoose={() => undefined} />)
+
+    expect(html).toContain('状态异常')
+    expect(html).toContain('model-label is-anomalous')
+  })
+
   it('renders user attachments during the streaming turn', () => {
     const html = renderToStaticMarkup(<ConversationView scene={scene} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady={false} currentMessageMode="streaming" onChoose={() => undefined} />)
 

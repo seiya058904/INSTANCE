@@ -5,10 +5,18 @@ interface WorldSidebarProps {
   history: readonly PlayerVisibleHistoryEntry[]
   runNumber: number
   modeControls?: ReactNode
+  currentConversationId?: string
+  currentLabel?: string
 }
 
-export function WorldSidebar({ history, runNumber, modeControls }: WorldSidebarProps) {
+export function WorldSidebar({ history, runNumber, modeControls, currentConversationId, currentLabel }: WorldSidebarProps) {
   const visibleHistory = history.slice(-4).reverse()
+  const currentMissing = Boolean(
+    currentConversationId && !visibleHistory.some((item) => item.conversationId === currentConversationId),
+  )
+  const displayHistory = currentMissing
+    ? [{ participantId: currentConversationId!, conversationId: currentConversationId!, label: currentLabel ?? '当前对话' }, ...visibleHistory]
+    : visibleHistory
   return (
     <aside className="sidebar" aria-label="对话导航">
       <div className="brand-lockup" aria-label="Aster">
@@ -25,8 +33,8 @@ export function WorldSidebar({ history, runNumber, modeControls }: WorldSidebarP
 
       <nav className="history-nav" aria-label="对话记录">
         <p className="nav-section-label">今天</p>
-        {visibleHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
-        {visibleHistory.map((item, index) => (
+        {displayHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
+        {displayHistory.map((item, index) => (
           <div className={index === 0 ? 'history-row is-current' : 'history-row'} key={`${item.participantId}-${item.conversationId}`}>
             <span className="history-dot" aria-hidden="true" />
             <span>{item.label}</span>

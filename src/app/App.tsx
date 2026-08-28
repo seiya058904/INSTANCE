@@ -597,6 +597,8 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       <WorldSidebar
         history={sidebarHistory}
         runNumber={meta.runCount}
+        currentConversationId={presentationScene.conversationId}
+        currentLabel={conversationTitle}
         modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
       />
       <ConversationView

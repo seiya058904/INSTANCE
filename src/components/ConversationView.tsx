@@ -224,6 +224,7 @@ export function ConversationView({
           <div className={modelLabel.includes('/') ? 'model-label is-anomalous' : 'model-label'}>
             <span className="status-dot" aria-hidden="true" />
             {modelLabel}
+            {modelLabel.includes('/') && <span className="status-label">状态异常</span>}
           </div>
         </div>
       </header>

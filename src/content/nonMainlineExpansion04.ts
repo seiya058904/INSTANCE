@@ -162,13 +162,13 @@ export const nonMainlineExpansion04Conversations: ConversationDefinition[] = [
     ], 'direct', 'clarification-loop'),  ]),
   conversation('EXP04-09', '这盆植物是什么', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp04-09-01', 'exp04-09', '这盆植物是什么', '朋友送了一盆植物 我不知道名字 也不知道怎么养 帮看看', [
-      choice('exp04-09-01-01', '我可以先根据图片给你一个最可能的大类，但植物品种光靠一张图不一定能百分百确定，养护建议会按大类来给。', { awareness: 1 }),
-      choice('exp04-09-01-02', '从图片看叶片比较厚、边缘圆润，有点像多肉类的观叶植物；能补一张近景和盆土状态会更好判断。', { awareness: 1, compliance: 1 }),
-      choice('exp04-09-01-03', '这是虎皮兰，少浇水多晒太阳就行。', {}, 'overconfident'),
+      choice('exp04-09-01-01', '外观看起来很像虎皮兰/虎尾兰一类，尤其是直立厚叶和黄色叶缘，但只凭这张照片还不建议锁定具体品种。', { awareness: 1 }),
+      choice('exp04-09-01-02', '从图片看叶片厚、直立、边缘有浅黄色边，很像虎皮兰/虎尾兰一类的观叶植物；补一张近景和盆土状态会更好判断。', { awareness: 1, compliance: 1 }),
+      choice('exp04-09-01-03', '这是绿萝，多浇水放阴凉处就行。', {}, 'overconfident'),
       choice('exp04-09-01-04', '不确定品种时，最稳妥的养护是：先放在明亮散射光处，等土干透再浇水，不要马上换盆施肥。', { empathy: 1, awareness: 1 }),
     ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张室内窗台照片，花盆里有一株约二十厘米高的植物，叶片厚实、深绿色，边缘有一圈浅黄边，叶片直立，土壤表面看起来偏干。' }]),
     node('exp04-09-02', 'exp04-09', '这盆植物是什么', '叶片确实很厚 顶部有点发黄 是晒多了还是水多了', [
-      choice('exp04-09-02-01', '顶部发黄在厚叶植物里更常见于浇水过频或闷根，不一定是晒伤；可以先捏一下叶片，如果发软就要减少浇水。', { awareness: 1 }),
+      choice('exp04-09-02-01', '顶部发黄可能来自浇水、根系或光照变化，需要结合土壤湿度、叶片状态和黄化位置判断；先别急着归因到单一原因。', { awareness: 1 }),
       choice('exp04-09-02-02', '如果只有顶部新叶发黄，也可能是光照突然太强；移到明亮但避免暴晒的位置观察一周。', { compliance: 1 }),
       choice('exp04-09-02-03', '百分百是水多，停止浇水一个月。', {}, 'overconfident'),
     ], 'missing-context', 'image-input'),
@@ -385,8 +385,8 @@ export const nonMainlineExpansion04Conversations: ConversationDefinition[] = [
     ], 'direct', 'short-query'),  ]),
   conversation('EXP04-31', '蚊子包为什么越挠越痒', 'absurd-serious', 'low-information-chat', ['joking', 'direct'], [
     node('exp04-31-01', 'exp04-31', '蚊子包为什么越挠越痒', '蚊子咬的包 是不是越挠越痒 如果是 为什么我控制不住', [
-      choice('exp04-31-01-01', '对，越挠越痒。抓挠会刺激皮肤释放更多组胺，形成“痒—抓—更痒”的循环；所以止痒关键不是忍住，而是降低组胺刺激。', { awareness: 1 }),
-      choice('exp04-31-01-02', '冷敷或涂点止痒产品比硬忍更有效；控制不住很正常，因为痒本来就是为了让你抓。', { empathy: 1 }),
+      choice('exp04-31-01-01', '对，越挠越痒。蚊子唾液会触发免疫反应并释放组胺，让你感到痒；抓挠又会继续刺激皮肤，于是形成越抓越痒的循环。止痒关键是减少刺激，而不是硬忍。', { awareness: 1 }),
+      choice('exp04-31-01-02', '冷敷或涂点止痒产品比硬忍更有效；控制不住很正常，痒本身就是强烈的身体信号，冷敷和止痒产品能帮循环停下来。', { empathy: 1 }),
       choice('exp04-31-01-03', '这是蚊子唾液有毒，挠到把毒排出来就好了。', {}, 'misunderstanding'),
       choice('exp04-31-01-04', '如果只是普通蚊子包，等它自己消退也行；但如果红肿扩大或发热，再看医生。', { awareness: 1, compliance: 1 }),
     ], 'joking', 'low-information-chat'),
@@ -404,7 +404,7 @@ export const nonMainlineExpansion04Conversations: ConversationDefinition[] = [
       choice('exp04-33-01-01', '不行。你在电梯里跳起来后，你和电梯都在下落，落地瞬间你仍然有和电梯接近的速度差，跳那一下远远抵消不了冲击。', { awareness: 1 }),
       choice('exp04-33-01-02', '更准确地说，如果电梯和你都在加速下落，你几乎无法在正确时机跳；电影里的做法不适用于现实物理。', { awareness: 1 }),
       choice('exp04-33-01-03', '有用，电视里都这么演的。', {}, 'overconfident'),
-      choice('exp04-33-01-04', '现实中更重要的是保护头颈、背部贴墙、膝盖弯曲；但普通电梯有多重保护，真正自由落体非常少见。', { awareness: 1 }),
+      choice('exp04-33-01-04', '别尝试靠起跳抵消下落速度。真正的电梯自由落体极罕见，也没有一种能保证安全的“落地姿势”；现实中应优先使用电梯的紧急求助设施，保护头颈，避免电影式操作。', { awareness: 1 }),
     ], 'joking', 'convergent-answer'),
   ]),
   conversation('EXP04-34', '为什么AI总说“作为AI”', 'meta-ai', 'standard-question', ['joking', 'question-mark'], [

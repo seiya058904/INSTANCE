@@ -15,6 +15,8 @@ Platforms and themes covered:
 
 All source material was treated as behavior pattern research only. All player-facing text was re-authored, anonymized, and synthesized.
 
+> Research provenance appendix: `docs/audits/non-mainline-expansion-04-research.md` (72 candidates with source basis, external signal, duplicate risk, and KEEP/DROP reason).
+
 ## Candidate Pool
 
 - Initial research candidates: **72**
@@ -77,6 +79,12 @@ All 36 selected scenarios were checked against the prior 230-pool titles and sce
 - Corrected self-correction labels that were not backed by actual correction language.
 - Reordered choices in three nodes to keep semantic Arc position distribution under the 80% guard.
 - Verified both image-input conversations carry `image-description` payloads.
+
+## Follow-up Content Calibration (post-commit review)
+
+- **EXP04-09**: tiger-plant-like identification now presented as likely/uncertain; bad answer changed to a clearly wrong species; second-turn yellow-leaf explanation made multi-cause instead of over-crediting water.
+- **EXP04-31**: mosquito itch mechanism corrected to immune response + histamine + itch-scratch cycle; removed teleological “痒本来就是为了让你抓” phrasing.
+- **EXP04-33**: elevator survival-posture claim removed; answer now says no guaranteed position exists and prioritizes emergency devices/head protection.
 
 ## Verification
 

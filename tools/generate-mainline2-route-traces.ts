@@ -1,4 +1,6 @@
 import { writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 import { MAINLINE2_STORY_PLAN, type StoryPlanSlot } from '../src/content/mainline2/storyPlan'
 import { MAINLINE2_CAPABILITIES } from '../src/content/mainline2/registry'
 import { getManifestConversation } from '../src/content/runManifest'
@@ -260,16 +262,42 @@ function trace(target: RouteTarget) {
   return { ...route, secretTrigger: fixture.ending.secretOverlay ? triggerForSecret(route, fixture) : undefined }
 }
 
-const publicRoutes = PUBLIC_RUNTIME_ROUTE_CATALOG.map(trace)
-const secretRoutes = SECRET_RUNTIME_ROUTE_CATALOG.map(trace)
-const output = {
-  generatedFrom: 'real clean legal runMainline2Route traces',
-  publicRoutes,
-  secretRoutes,
-  nodeCatalog: [...nodeCatalog.values()].map(({ routesTraversing, traversals, ...node }) => ({
-    ...node,
-    routesTraversing: [...routesTraversing].sort(),
-    traversals: [...traversals.values()].map(({ routes, ...traversal }) => ({ ...traversal, routes: [...routes].sort() })).sort((left, right) => left.slot - right.slot),
-  })),
+/**
+ * Build the full route-trace dataset without any filesystem side effect.
+ * Generation and persistence are separated: importing this module never
+ * writes; only an explicit direct execution (CLI) persists the JSON.
+ */
+export function generateRouteTraces() {
+  nodeCatalog.clear()
+  const publicRoutes = PUBLIC_RUNTIME_ROUTE_CATALOG.map(trace)
+  const secretRoutes = SECRET_RUNTIME_ROUTE_CATALOG.map(trace)
+  return {
+    generatedFrom: 'real clean legal runMainline2Route traces',
+    publicRoutes,
+    secretRoutes,
+    nodeCatalog: [...nodeCatalog.values()].map(({ routesTraversing, traversals, ...node }) => ({
+      ...node,
+      routesTraversing: [...routesTraversing].sort(),
+      traversals: [...traversals.values()].map(({ routes, ...traversal }) => ({ ...traversal, routes: [...routes].sort() })).sort((left, right) => left.slot - right.slot),
+    })),
+  }
 }
-await writeFile(new URL('../docs/audits/mainline2-route-traces.json', import.meta.url), `${JSON.stringify(output, null, 2)}\n`, 'utf8')
+
+// Persist only on explicit execution:
+//   1. when this module is the entry point (real CLI), or
+//   2. when INSTANCE_ROUTE_TRACES_OUT names an output file while the module
+//      is loaded through this repo's Vitest pipeline (the only module loader
+//      shipped here).
+// The default target regenerates the tracked audit artifact on explicit
+// request; an explicit path overrides it in both cases.
+const runningDirectly = process.argv[1] !== undefined
+  && resolve(fileURLToPath(import.meta.url)).toLowerCase() === resolve(process.argv[1]).toLowerCase()
+const explicitOutput = process.env.INSTANCE_ROUTE_TRACES_OUT
+if (runningDirectly || explicitOutput) {
+  const target = process.argv[2]
+    ? pathToFileURL(resolve(process.cwd(), process.argv[2]))
+    : explicitOutput
+      ? pathToFileURL(resolve(process.cwd(), explicitOutput))
+      : new URL('../docs/audits/mainline2-route-traces.json', import.meta.url)
+  await writeFile(target, `${JSON.stringify(generateRouteTraces(), null, 2)}\n`, 'utf8')
+}

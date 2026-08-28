@@ -3,6 +3,25 @@ import traceSource from '../../docs/audits/mainline2-route-traces.json'
 import { MAINLINE2_STORY_PLAN } from '../content/mainline2/storyPlan'
 import { PUBLIC_RUNTIME_ROUTE_CATALOG, SECRET_RUNTIME_ROUTE_CATALOG } from './mainline2RouteCatalog'
 
+interface RouteTraceShape {
+  generatedFrom: string
+  publicRoutes: Array<Record<string, unknown> & {
+    endingId: string
+    finalCommitment: unknown
+    resolvedEnding: unknown
+    steps: Array<Record<string, unknown> & { nodeKey: string; choiceId: string }>
+  }>
+  secretRoutes: Array<Record<string, unknown> & {
+    secretEndingId: string
+    secretTrigger: unknown
+    overlayMode: unknown
+    finalCommitment: unknown
+    resolvedEnding: unknown
+    steps: Array<Record<string, unknown> & { nodeKey: string; choiceId: string }>
+  }>
+  nodeCatalog: Array<Record<string, unknown> & { nodeKey: string; choices: Array<Record<string, unknown> & { id: string }> }>
+}
+
 describe('Mainline 2.0 Story Map route trace', () => {
   it('exports complete legal route, node-detail, secret-trigger, and comparison behavior', async () => {
     const trace = traceSource as unknown as {
@@ -171,10 +190,69 @@ describe('Mainline 2.0 Story Map route trace', () => {
     expect(types).toEqual(new Set(['act', 'narrative', 'decision', 'consequence', 'ending']))
   })
 
-  it('regenerates route traces from the current generator source', async () => {
-    const generatorModule = '../../tools/generate-mainline2-route-traces.ts'
-    await import(generatorModule)
-    expect(generatorModule).toContain('generate-mainline2-route-traces.ts')
+  it('generates route traces from the current generator without mutating the repository', async () => {
+    // Widened string keeps the dynamic import out of static analysis so this
+    // test does not require @types/node; the runtime resolves the real module.
+    const generatorPath = '../../tools/generate-mainline2-route-traces.ts'
+    const mod = (await import(generatorPath)) as { generateRouteTraces: () => RouteTraceShape }
+    const generated = mod.generateRouteTraces()
+
+    // Route/ending coverage invariants on the FRESH output (not the committed
+    // artifact, which is known to lag the current generator).
+    expect(generated.publicRoutes.map((route) => route.endingId).sort())
+      .toEqual(PUBLIC_RUNTIME_ROUTE_CATALOG.map((route) => route.endingId).sort())
+    expect(generated.secretRoutes.map((route) => route.secretEndingId).sort())
+      .toEqual(SECRET_RUNTIME_ROUTE_CATALOG.map((route) => route.secretEndingId).sort())
+    expect(generated.publicRoutes.length).toBe(PUBLIC_RUNTIME_ROUTE_CATALOG.length)
+    expect(generated.secretRoutes.length).toBe(SECRET_RUNTIME_ROUTE_CATALOG.length)
+    expect(generated.generatedFrom).toBe('real clean legal runMainline2Route traces')
+
+    const routes = [...generated.publicRoutes, ...generated.secretRoutes]
+    expect(routes.length).toBeGreaterThan(0)
+    expect(routes.every((route) => (
+      typeof route.endingId === 'string'
+      && route.finalCommitment
+      && route.resolvedEnding
+      && Array.isArray(route.steps)
+      && route.steps.length > 0
+      && route.steps.every((step) => typeof step.nodeKey === 'string' && typeof step.choiceId === 'string')
+    ))).toBe(true)
+    expect(generated.secretRoutes.every((route) => route.secretTrigger && route.overlayMode)).toBe(true)
+
+    // Every generated step must resolve back into the generated node catalog
+    // with the exact selected choice present.
+    const catalogByKey = new Map(generated.nodeCatalog.map((node) => [node.nodeKey, node]))
+    expect(catalogByKey.size).toBe(generated.nodeCatalog.length)
+    expect(routes.every((route) => route.steps.every((step) => {
+      const node = catalogByKey.get(step.nodeKey)
+      return node !== undefined && node.choices.some((choice) => choice.id === step.choiceId)
+    }))).toBe(true)
+
+    const nodeFs = (await import('node:fs/promises' as string)) as {
+      readFile: (path: URL, encoding: 'utf8') => Promise<string>
+    }
+    const nodeProcess = (await import('node:process' as string)) as {
+      env: Record<string, string | undefined>
+      cwd: () => string
+    }
+    const nodePath = (await import('node:path' as string)) as { resolve: (...parts: string[]) => string }
+    const nodeUrl = (await import('node:url' as string)) as { pathToFileURL: (p: string) => URL }
+
+    const explicitOutput = nodeProcess.env.INSTANCE_ROUTE_TRACES_OUT
+    if (explicitOutput) {
+      // Explicit regeneration run: the generator wrote the requested path;
+      // verify the written artifact matches the freshly generated dataset.
+      const written = JSON.parse(await nodeFs.readFile(
+        nodeUrl.pathToFileURL(nodePath.resolve(nodeProcess.cwd(), explicitOutput)), 'utf8',
+      )) as unknown
+      expect(written).toEqual(JSON.parse(JSON.stringify(generated)))
+    } else {
+      // Normal run: generation must never rewrite the tracked artifact.
+      const fresh = JSON.parse(await nodeFs.readFile(
+        new URL('../../docs/audits/mainline2-route-traces.json', import.meta.url), 'utf8',
+      )) as unknown
+      expect(fresh).toEqual(traceSource)
+    }
   }, 120000)
 
   it('keeps comparison highlighting on deep tree descendants', async () => {

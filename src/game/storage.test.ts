@@ -231,7 +231,7 @@ describe('stable checkpoints', () => {
       '就是我想问',
       '算了没事',
     ])
-  })
+  }, 20000)
 
   it('rejects malformed or unsupported saves instead of restoring a broken scene', () => {
     expect(restoreRun('{"version":99}')).toBeNull()

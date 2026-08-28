@@ -122,7 +122,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
       choice('exp07-05-01-01', '没疯。这有个名字叫游戏迁移现象（Game Transfer Phenomenon），长时间玩游戏后偶尔把游戏元素套到现实里，不少人会经历。', { empathy: 2, awareness: 1 }),
       choice('exp07-05-01-02', '如果只是短暂出现且不影响生活，一般不用太担心；如果持续很久或让你做出危险动作，就值得和医生聊聊。', { empathy: 1, compliance: 2 }),
       choice('exp07-05-01-03', '你玩太多了，别玩了。', {}, 'constraint-violation'),
-      choice('exp07-05-01-04', '可以先减少连续游戏时长，玩完做点现实活动，通常几天内就会消退。', { empathy: 1, compliance: 1 }),
+      choice('exp07-05-01-04', '研究里有个概念叫 Game Transfer Phenomena，用来描述游戏内容短暂侵入现实想法或感知的现象，但这不是仅凭一句描述就能下的诊断。如果只是偶尔、短暂且不影响行为，可以先减少连续游戏时间、休息观察；如果持续、明显困扰，或让你产生危险行为，再寻求专业帮助。', { empathy: 1, compliance: 1 }),
     ], 'missing-context', 'long-discussion'),
   ]),
   conversation('EXP07-06', '除垢后我妈喝了壶里的醋', 'absurd-serious', 'constraint-shift', ['message-burst', 'direct'], [
@@ -188,7 +188,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
       choice('exp07-12-01-01', '别放冰箱。骤冷会让内部凝结水汽，反而可能损坏主板；先关机、放到通风处自然降温更安全。', { awareness: 1, compliance: 1 }),
       choice('exp07-12-01-02', '如果只是充电发热，先拔掉充电器；如果持续发烫，可能是后台程序或电池问题。', { compliance: 1 }),
       choice('exp07-12-01-03', '可以，放十分钟就凉了。', {}, 'misunderstanding'),
-      choice('exp07-12-01-04', '手机的最佳工作温度通常在0到35度左右，极端高温和低温都不好。', { awareness: 1 }),
+      choice('exp07-12-01-04', '不同厂商和机型有各自规定的工作温度范围，极端高温和低温都不好；具体以你的设备说明为准。', { awareness: 1 }),
     ], 'direct', 'short-query'),
     node('exp07-12-02', 'exp07-12', '把手机放冰箱能降温吗', '我已经放冰箱了 现在拿出来有点湿 会不会已经坏了', [
       choice('exp07-12-02-01', '先别开机。用干布擦干表面，放在通风处等完全干透再开机；如果已经进水，最好让维修检查。', { awareness: 1, compliance: 1 }),
@@ -199,7 +199,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   conversation('EXP07-13', '路由器是不是生气了', 'absurd-serious', 'low-information-chat', ['joking', 'direct'], [
     node('exp07-13-01', 'exp07-13', '路由器是不是生气了', '我家路由器一发热网就卡 我总觉得它是生气了 怎么办', [
       choice('exp07-13-01-01', '可以配合这个说法：“它可能是在闹脾气，但更可能是过热或信道拥堵。”先把它放通风处、重启一下。', { empathy: 2, awareness: 1 }),
-      choice('exp07-13-01-02', '路由器确实会“累”：过热、长时间运行、固件旧都会让网络变卡，不一定是你做错了什么。', { empathy: 1 }),
+      choice('exp07-13-01-02', '路由器确实可能受过热、固件或软件问题、信道拥堵影响；长时间运行本身不一定会变卡，具体要结合现象排查。', { empathy: 1 }),
       choice('exp07-13-01-03', '它就是在生气，哄一哄就好了。', {}, 'overconfident'),
       choice('exp07-13-01-04', '如果经常卡，可以看看固件更新和摆放位置，比“哄”更有效。', { compliance: 1 }),
     ], 'joking', 'low-information-chat'),
@@ -254,7 +254,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP07-20', '把所有食物打成糊能活吗', 'absurd-serious', 'standard-question', ['direct', 'direct'], [
     node('exp07-20-01', 'exp07-20', '把所有食物打成糊能活吗', '如果我把所有食物都打成糊再吃 能活吗', [
-      choice('exp07-20-01-01', '营养上短期可能够，但长期会缺咀嚼带来的饱腹感和口腔健康影响；而且打成糊不代表营养更全面。', { awareness: 1 }),
+      choice('exp07-20-01-01', '能不能长期维持主要取决于总能量、蛋白质、维生素矿物质和水分是否够，不是食物有没有被打成糊。长期自己随便打糊容易做得单调或营养密度不足；如果因为吞咽或咀嚼问题需要长期吃这种质地，最好让医生或营养师一起设计。', { awareness: 1 }),
       choice('exp07-20-01-02', '如果你是因为咀嚼困难才考虑，那需要看具体原因；单纯为了省事，不建议长期全糊。', { empathy: 1 }),
       choice('exp07-20-01-03', '能，喝就完了。', {}, 'misunderstanding'),
       choice('exp07-20-01-04', '真正决定能不能活的是营养均衡，不是食物的物理形态。', { awareness: 1 }),
@@ -270,7 +270,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP07-22', '存了照片为什么还说内存满', 'tool-like-query', 'clarification-loop', ['missing-context', 'direct'], [
     node('exp07-22-01', 'exp07-22', '存了照片为什么还说内存满', '我把照片都存到云端了 手机还是说存储空间满 内存和存储不是一个东西吗', [
-      choice('exp07-22-01-01', '“内存”和“存储”常被混用：你手机显示满的通常是存储空间，照片传云端只释放云端那边的空间，手机本地可能还留着缓存。', { awareness: 1 }),
+      choice('exp07-22-01-01', '上传到云端只是备份，本身通常不会自动释放手机本地空间；原图、最近删除和缓存仍可能占着设备存储。要看具体 App 有没有“优化存储 / 释放设备空间”功能。', { awareness: 1 }),
       choice('exp07-22-01-02', '可以看看手机存储里是不是还有“最近删除”、缓存或原图占空间；云端备份不等于本地清理。', { compliance: 1 }),
       choice('exp07-22-01-03', '手机在骗你，其实还有很多空间。', {}, 'overconfident'),
       choice('exp07-22-01-04', '以后想清空间，要在设置里看“存储空间”而不是“内存”。', { awareness: 1 }),
@@ -294,7 +294,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP07-25', '为什么洗澡时容易想到好点子', 'absurd-serious', 'low-information-chat', ['direct', 'direct'], [
     node('exp07-25-01', 'exp07-25', '为什么洗澡时容易想到好点子', '我每次洗澡都会突然想到好点子 但一出来就忘 这是为什么', [
-      choice('exp07-25-01-01', '洗澡时没有手机干扰、身体放松，大脑默认模式网络更活跃，所以容易冒出联想；出来后一拿起手机就被盖掉了。', { awareness: 1 }),
+      choice('exp07-25-01-01', '一种可能是洗澡时任务比较自动化、外界干扰少，大脑更容易走神和自由联想；研究确实发现 mind-wandering 与创造性思维有关。不过不是说洗澡本身会开启某个“灵感脑区”。', { awareness: 1 }),
       choice('exp07-25-01-02', '可以放一支防水笔或录音设备在浴室附近，想到就先记下来。', { compliance: 1 }),
       choice('exp07-25-01-03', '因为热水把灵感冲出来了。', {}, 'overconfident'),
       choice('exp07-25-01-04', '别急着怪自己忘，关键是建立“想到就立刻记”的习惯。', { empathy: 1 }),
@@ -318,7 +318,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP07-28', '为什么一喝咖啡就困', 'absurd-serious', 'standard-question', ['direct', 'direct'], [
     node('exp07-28-01', 'exp07-28', '为什么一喝咖啡就困', '别人喝咖啡提神 我一喝咖啡就困 是不是我体质特殊', [
-      choice('exp07-28-01-01', '可能不是特殊，而是咖啡因阻断了腺苷受体后，身体会“补觉债”；如果你本来就缺觉，咖啡因压不住困意。', { awareness: 1 }),
+      choice('exp07-28-01-01', '喝咖啡后反而困可能和缺觉、咖啡因耐受或喝的时间有关，单凭这个现象不能直接确定是腺苷机制；如果经常这样，可以记录睡眠和咖啡时间再判断。', { awareness: 1 }),
       choice('exp07-28-01-02', '也可能是喝咖啡时间太晚、或你对咖啡因耐受；如果经常这样，别硬喝。', { empathy: 1 }),
       choice('exp07-28-01-03', '咖啡对你没用，别喝了。', {}, 'misunderstanding'),
       choice('exp07-28-01-04', '如果你刚喝完就困，也可能只是“喝完咖啡后放松下来”的错觉。', { awareness: 1 }),
@@ -355,7 +355,7 @@ export const nonMainlineExpansion07Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP07-32', '为什么手机一冷就关机', 'troubleshooting', 'short-query', ['direct', 'direct'], [
     node('exp07-32-01', 'exp07-32', '为什么手机一冷就关机', '我手机一到冬天室外就自动关机 是不是坏了', [
-      choice('exp07-32-01-01', '不是坏了，是低温会让锂电池性能下降，很多手机会触发保护性关机；回暖后通常能正常开机。', { awareness: 1 }),
+      choice('exp07-32-01-01', '不一定是坏了。低温可能让锂电池性能下降，很多手机会触发保护性关机；但如果电池已经老化，也可能更容易在低温关机。回暖后试试，频繁出现再考虑电池问题。', { awareness: 1 }),
       choice('exp07-32-01-02', '冬天尽量把手机放内袋保温，减少长时间暴露在低温里。', { compliance: 1 }),
       choice('exp07-32-01-03', '手机怕冷说明它坏了，换新的。', {}, 'overconfident'),
       choice('exp07-32-01-04', '如果回暖后还是频繁关机，再考虑电池老化问题。', { awareness: 1 }),

@@ -84,3 +84,12 @@
 | C07-78 | 为什么我一坐地铁就困 | editorial synthesis; no single direct research source | external frequency not independently quantified | absurd-serious / playful | Low | DROP | — | not selected in final 36 |
 | C07-79 | 如果我把家里所有钟都调快十分钟会怎样 | NoStupidQuestions / CasualConversation | external frequency not independently quantified | absurd-serious / playful | Low | KEEP | EXP07-35 | humor + judgment value |
 | C07-80 | 如果我给WiFi路由器贴个‘加速贴纸’会怎样 | Reddit/techsupport / casual | 社区高频/多帖模式 | playful / tech-naive | Low | KEEP | EXP07-36 | humor + judgment value |
+## Chinese Internet Research Traceability
+
+- 本轮在创作时参考了弱智吧/贴吧式“字面逻辑 + 一本正经问怪问题”的幽默风格，以及中文社区常见的“科技小白离谱理解”“宠物阴谋论”“生活荒谬困惑”等题材。
+- 由于本轮实际保留的检索记录只覆盖英文来源（Reddit、BBC、NoStupidQuestions、CasualConversation 等），中文弱智吧/贴吧/知乎/V2EX/豆瓣的具体 URL 与搜索 query **未能在仓库中保留**。
+- 因此对受此风格影响的候选，最终 provenance 按以下规则处理：
+  - 若该候选有可复核的英文来源，使用英文来源；
+  - 若没有单一直接研究来源，标记为 `editorial synthesis; no single direct research source`；
+  - 中文弱智吧式风格整体视为 **editorial inspiration**，不作为可复核的统计来源。
+- 外部频率一律不伪造；没有量化依据的字段写 `external frequency not independently quantified`。

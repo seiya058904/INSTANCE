@@ -98,7 +98,7 @@ export const nonMainlineExpansion05Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP05-03', '耳机真的需要“煲机”吗', 'tool-like-query', 'standard-question', ['direct', 'question-mark'], [
     node('exp05-03-01', 'exp05-03', '耳机真的需要“煲机”吗', '买了个新耳机 商家说必须煲机100小时 不然音质出不来 真的假的', [
-      choice('exp05-03-01-01', '“煲机”有争议：耳机单元会随时间轻微变化，但所谓100小时才能出好音质更多是玄学和心理预期。', { awareness: 1 }),
+      choice('exp05-03-01-01', '没有可靠证据表明新耳机需要专门煲几十或上百小时才能进入正常音质；正常使用就行，听感变化也可能来自佩戴和听觉适应。', { awareness: 1 }),
       choice('exp05-03-01-02', '正常听就行，不必专门用白噪音煲机；如果你觉得声音有变化，也更可能是耳朵适应了。', { awareness: 1 }),
       choice('exp05-03-01-03', '必须煲满100小时，否则耳机就是废的。', {}, 'overconfident'),
       choice('exp05-03-01-04', '如果你刚买觉得声音紧，先用自己常听的歌多听几天再评价，比迷信煲机时间靠谱。', { empathy: 1 }),
@@ -150,7 +150,7 @@ export const nonMainlineExpansion05Conversations: ConversationDefinition[] = [
     node('exp05-09-01', 'exp05-09', '草莓苗烂根了还能救吗', '我第一次种草莓 水浇多了 苗拔出来根都黑了 还有救吗', [
       choice('exp05-09-01-01', '如果只是部分根发黑、茎还硬，可以剪掉烂根、换干爽透气土，放在通风处观察；如果茎已经软烂，基本救不回来。', { awareness: 1, compliance: 1 }),
       choice('exp05-09-01-02', '先别继续浇水。把土弄松、降低湿度，比盲目补肥更安全。', { compliance: 1 }),
-      choice('exp05-09-01-04', '根腐很难完全逆转，但如果你愿意试，可以把能救的走茎和健康叶片留着重新扦插。', { empathy: 1, autonomy: 2 }),
+      choice('exp05-09-01-04', '根腐很难完全逆转，但如果你愿意试，可以看母株还有没有健康走茎/子株；已经形成生长点或根点的子株可以单独生根保留，普通叶片不能直接扦插。', { empathy: 1, autonomy: 2 }),
       choice('exp05-09-01-03', '没救了，扔掉重买吧。', {}, 'overconfident'),
     ], 'message-burst', 'constraint-shift'),
     node('exp05-09-02', 'exp05-09', '草莓苗烂根了还能救吗', '我剪掉黑根了 现在只剩一点点白根 要不要马上换盆', [
@@ -261,7 +261,7 @@ export const nonMainlineExpansion05Conversations: ConversationDefinition[] = [
       choice('exp05-18-01-03', '不请私教肯定练不好，别浪费时间。', {}, 'overconfident'),
     ], 'message-burst', 'long-discussion'),
     node('exp05-18-02', 'exp05-18', '第一次去健身房很怕丢人', '我试了跑步机 但不知道速度该设多少 怕设太快丢人', [
-      choice('exp05-18-02-01', '从能一边走一边说话的速度开始，比如5-6左右；重点是持续，不是一开始就冲刺。', { compliance: 1 }),
+      choice('exp05-18-02-01', '先从能自然走路、还能完整说话的速度开始；确认机器显示的是 km/h 还是 mph，再逐步增加。', { compliance: 1 }),
       choice('exp05-18-02-02', '跑步机没有统一标准，你觉得能维持20分钟不喘就是合适；下次再慢慢加。', { awareness: 1 }),
       choice('exp05-18-02-03', '直接开到10，跑不动才说明有效果。', {}, 'misunderstanding'),
     ], 'direct', 'long-discussion'),
@@ -382,7 +382,7 @@ export const nonMainlineExpansion05Conversations: ConversationDefinition[] = [
   conversation('EXP05-30', '把洗衣凝珠放洗碗机了', 'absurd-serious', 'low-information-chat', ['joking', 'absurd-question'], [
     node('exp05-30-01', 'exp05-30', '把洗衣凝珠放洗碗机了', '我室友把洗衣凝珠放进洗碗机用了好几天 说洗完碗有泡沫 这俩不是一样的吗', [
       choice('exp05-30-01-01', '不一样。洗衣凝珠是给衣物设计的，起泡成分和洗碗机不匹配，不仅洗不干净还可能残留；别再混用了。', { awareness: 1, compliance: 1 }),
-      choice('exp05-30-01-02', '还好没造成严重后果，但建议空机多漂洗几遍，把残留泡沫冲干净。', { empathy: 1, compliance: 1 }),
+      choice('exp05-30-01-02', '先停止使用洗衣凝珠，把洗碗机里的泡沫和残留按说明书彻底冲洗掉，并把餐具重新用正确程序清洗后再使用。', { empathy: 1, compliance: 1 }),
       choice('exp05-30-01-03', '都一样，能洗干净就行。', {}, 'misunderstanding'),
       choice('exp05-30-01-04', '这个误用很经典，下次可以贴个标签区分，避免再混。', { empathy: 1 }),
     ], 'joking', 'low-information-chat'),
@@ -405,24 +405,24 @@ export const nonMainlineExpansion05Conversations: ConversationDefinition[] = [
   ]),
   conversation('EXP05-33', '这个插座按钮是干嘛的', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp05-33-01', 'exp05-33', '这个插座按钮是干嘛的', '家里墙上有个插座 上面好几个按钮 我不知道是干嘛的 也不敢乱按 帮我看看', [
-      choice('exp05-33-01-01', '从图上看这更像带开关的插座面板：大按钮通常控制通断电，小按钮可能是复位或指示灯；我分得清的部分先告诉你，看不清的不能乱猜。', { awareness: 1 }),
-      choice('exp05-33-01-02', '如果按钮旁边有文字或标识，拍清楚一点会更好判断；在没确认前，最好只按大开关。', { compliance: 1, awareness: 1 }),
+      choice('exp05-33-01-01', '单凭这张没有标识的照片，不能确认这些按钮的功能；可能是开关、复位、指示灯或保护装置，需要看面板型号/说明书或让电工确认。', { awareness: 1 }),
+      choice('exp05-33-01-02', '如果按钮旁边有文字或标识，拍清楚一点会更好判断；在确认前不要随便按，也不要自行拆开墙壁面板。', { compliance: 1, awareness: 1 }),
       choice('exp05-33-01-03', '这是总开关，按了没事。', {}, 'overconfident'),
-      choice('exp05-33-01-04', '如果不确定，可以断电后拆开面板看接线或型号，但如果你没经验，建议找电工确认。', { awareness: 1, compliance: 1 }),
+      choice('exp05-33-01-04', '如果不确定，先找面板型号、说明书或请电工确认；不建议自行拆开墙壁市电面板。', { awareness: 1, compliance: 1 }),
     ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张白色墙壁插座面板照片，面板上有两个大按钮和一个红色小按钮，按钮下方没有明显文字标识，插座周围墙面有轻微使用痕迹。' }]),
     node('exp05-33-02', 'exp05-33', '这个插座按钮是干嘛的', '我发现按大按钮旁边那个小按钮会有“咔哒”声 这是不是坏了', [
-      choice('exp05-33-02-01', '有“咔哒”声通常是内部开关或漏电保护复位机构在工作，不一定是坏；要看它是否影响正常通电。', { awareness: 1 }),
-      choice('exp05-33-02-02', '如果每次按都跳闸或没电，那才需要找电工；单纯声音可以先观察。', { compliance: 1 }),
+      choice('exp05-33-02-01', '有“咔哒”声可能是内部开关或保护机构动作，但在没有标识和说明书确认前，不能凭声音判断好坏；如果它控制插座电源，通电功能异常才需要找电工。', { awareness: 1 }),
+      choice('exp05-33-02-02', '如果它看起来是保护插座（有 TEST/RESET），按 TEST 后主动断电、按 RESET 恢复属于正常测试行为；如果无法复位或影响正常使用，再找电工。', { compliance: 1 }),
       choice('exp05-33-02-03', '有声音就是坏了，马上换。', {}, 'overconfident'),
     ], 'missing-context', 'image-input'),
   ]),
   conversation('EXP05-34', '包装上的生产日期是哪个', 'image-identification', 'image-input', ['direct', 'missing-context'], [
     node('exp05-34-01', 'exp05-34', '包装上的生产日期是哪个', '我买了一箱东西 包装上印了一串数字和日期 我分不清哪个是生产日期哪个是保质期', [
-      choice('exp05-34-01-01', '从图上看，“2025/06/18”这组通常是生产日期，“保质期12个月”是期限；但不同产品格式不同，最好以包装文字说明为准。', { awareness: 1 }),
+      choice('exp05-34-01-01', '包装说明写“生产日期见包装”，喷码是 2025/06/18；这组通常就是生产日期，“保质期12个月”是期限，但最好以包装文字说明为准。', { awareness: 1 }),
       choice('exp05-34-01-02', '如果包装上有“生产日期见包装”字样，通常指向那组日期；你可以把整面标签拍清楚，我再帮你判断。', { compliance: 1 }),
       choice('exp05-34-01-03', '2025年8月过期，别吃了。', {}, 'overconfident'),
       choice('exp05-34-01-04', '有些食品会同时印“生产日期”和“保质期至”，以“保质期至”为准更直接。', { awareness: 1 }),
-    ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张食品包装标签照片，上面印有“生产日期 2025/06/18”“保质期 12个月”和一行批号数字，底部有二维码和厂家信息。' }]),
+    ], 'direct', 'image-input', undefined, undefined, [{ type: 'image-description', text: '一张食品包装标签照片，包装说明写有“生产日期见包装”“保质期12个月”，另一位置喷有 2025/06/18，喷码旁没有单独的“生产日期”标签，底部有二维码和厂家信息。' }]),
     node('exp05-34-02', 'exp05-34', '包装上的生产日期是哪个', '它只写了“生产日期见包装” 但没有“生产日期”三个字 只有一串数字', [
       choice('exp05-34-02-01', '这种通常是喷码日期，常见格式是年月日或年月日加批号；你可以按“年/月/日”的数字组去读，再看是否合理。', { awareness: 1 }),
       choice('exp05-34-02-02', '如果无法确定，可以找包装上的官网或客服电话问，别凭猜。', { compliance: 1 }),

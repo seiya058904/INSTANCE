@@ -69,6 +69,15 @@ Main elimination reasons: high overlap with existing pool, lower uniqueness, or 
 - Reordered/strengthened positive choices to satisfy semantic Arc position balance.
 - Verified both image-input conversations carry `image-description` payloads.
 
+## Follow-up Content Calibration (post-commit review)
+
+- **Provenance sync**: research appendix regenerated so the 36 final EXP05 conversations correspond exactly to 36 KEEP rows; C05-64/66/70 marked reinstated after editorial review, C05-01/02/13 marked dropped after editorial review.
+- **EXP05-33**: no longer guesses unlabeled socket button functions, does not recommend pressing buttons or opening wall panels; adds TEST/RESET conditional guidance for protected receptacles.
+- **EXP05-34**: first-round image description now matches the second-round “生产日期见包装”/no-label detail, closing the multimodal continuity gap.
+- **EXP05-09**: removed “健康叶片扦插”; now only healthy runners/daughter plants with growth points are suggested for propagation.
+- **EXP05-18**: treadmill speed no longer uses unit-less “5–6”; answer now says start at a walk-and-talk pace and check km/h vs mph.
+- **EXP05-03 / EXP05-30**: burn-in wording aligned with lack of reliable evidence; laundry-pod dishwasher cleanup made safety-first.
+
 ## Verification
 
 - `npm test -- --run` (local full suite, includes ignored `.workbody` helper test): **62 files / 423 tests**

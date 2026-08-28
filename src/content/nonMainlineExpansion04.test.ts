@@ -9,7 +9,7 @@ describe('Non-Mainline Content Expansion 04', () => {
     expect(new Set(nonMainlineExpansion04Conversations.map((conversation) => conversation.id)).size).toBe(36)
     expect(nonMainlineExpansion04Conversations.every((conversation) => conversation.sourceRefs[0].startsWith('EXP04-'))).toBe(true)
     expect(nonMainlineExpansion04Conversations.every((conversation) => ordinaryConversationPool.includes(conversation))).toBe(true)
-    expect(ordinaryConversationPool).toHaveLength(338)
+    expect(ordinaryConversationPool).toHaveLength(374)
   })
 
   it('keeps node and choice identities unique and preserves authored issue annotations', () => {

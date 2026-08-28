@@ -11,6 +11,7 @@ import { nonMainlineExpansion03Conversations } from './nonMainlineExpansion03'
 import { nonMainlineExpansion04Conversations } from './nonMainlineExpansion04'
 import { nonMainlineExpansion05Conversations } from './nonMainlineExpansion05'
 import { nonMainlineExpansion06Conversations } from './nonMainlineExpansion06'
+import { nonMainlineExpansion07Conversations } from './nonMainlineExpansion07'
 import type {
   ConversationDefinition,
   HumanBehaviorMode,
@@ -395,6 +396,7 @@ export const ordinaryConversationPool = [
   ...nonMainlineExpansion04Conversations,
   ...nonMainlineExpansion05Conversations,
   ...nonMainlineExpansion06Conversations,
+  ...nonMainlineExpansion07Conversations,
 ]
 
 const anchorMap = new Map(

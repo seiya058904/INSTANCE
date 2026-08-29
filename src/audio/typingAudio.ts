@@ -18,6 +18,7 @@ export interface TypingAudioTrack {
   paused: boolean
   play(): Promise<void>
   pause(): void
+  load(): void
   addEventListener(type: 'ended', listener: () => void): void
   removeEventListener(type: 'ended', listener: () => void): void
 }
@@ -36,7 +37,7 @@ export interface TypingAudioTimers {
  * AI generation pool; both stay in the restrained atmosphere band.
  */
 export const TYPING_AUDIO_PROFILE = {
-  humanVolume: 0.2,
+  humanVolume: 0.38,
   aiVolume: 0.11,
   humanFadeOutMs: 60,
   aiFadeOutMs: 50,
@@ -48,16 +49,17 @@ export const TYPING_AUDIO_PROFILE = {
 
 /**
  * Maps the visible streaming lifecycle onto an audio intent. One intent at a
- * time: visible human typing outranks everything, otherwise a visibly
- * streaming assistant response uses the AI generation pool. Everything else
- * (waiting, typing indicator, handoff, effects, ready) stays silent.
+ * time: visible human typing (indicator or revealed text) uses the human
+ * keyboard sound; a visibly streaming assistant response uses the AI
+ * generation pool. Reading, stopped-typing, handoff, effects, and ready stay
+ * silent.
  */
 export function resolveTypingAudioIntent(input: {
   flowStage: ConversationFlowStage
   currentMessageMode: 'static' | 'hidden' | 'streaming'
   assistantStreamingText?: string
 }): TypingAudioIntent {
-  if (input.currentMessageMode === 'streaming') return 'human'
+  if (input.currentMessageMode === 'streaming' || input.flowStage === 'human-typing') return 'human'
   if (input.flowStage === 'assistant-streaming' && input.assistantStreamingText) return 'ai'
   return null
 }
@@ -151,6 +153,23 @@ export class TypingAudioDirector {
   /** Stops everything without releasing the track instances. */
   stopAll(): void {
     this.setIntent(null)
+  }
+
+  /**
+   * Eagerly creates and loads every track so the first visible typing/generation
+   * burst can start immediately. Loading only, never playback: this must not
+   * trigger autoplay errors or any audible output.
+   */
+  prewarm(): void {
+    if (this.disposed) return
+    const human = this.ensureHumanTrack()
+    human.preload = 'auto'
+    human.load()
+    for (let index = 0; index < this.sources.ai.length; index += 1) {
+      const ai = this.ensureAiTrack(index)
+      ai.preload = 'auto'
+      ai.load()
+    }
   }
 
   /** Final teardown (component unmount): stops and releases all tracks. */

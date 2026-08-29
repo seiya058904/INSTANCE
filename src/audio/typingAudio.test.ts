@@ -15,6 +15,7 @@ class FakeTrack implements TypingAudioTrack {
   paused = true
   playCount = 0
   pauseCount = 0
+  loadCount = 0
   private listeners: Array<() => void> = []
   constructor(readonly source: string, private playResult: Promise<void> = Promise.resolve()) {}
   failPlay(): void {
@@ -28,6 +29,9 @@ class FakeTrack implements TypingAudioTrack {
   pause(): void {
     this.pauseCount += 1
     this.paused = true
+  }
+  load(): void {
+    this.loadCount += 1
   }
   addEventListener(_type: 'ended', listener: () => void): void {
     this.listeners.push(listener)
@@ -112,7 +116,7 @@ describe('typing audio intent mapping', () => {
     // renders whenever the stage is assistant-streaming with text.
     expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static', assistantStreamingText: '回复' })).toBe('ai')
     expect(resolveTypingAudioIntent({ flowStage: 'human-waiting', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'human-typing', currentMessageMode: 'hidden' })).toBeNull()
+    expect(resolveTypingAudioIntent({ flowStage: 'human-typing', currentMessageMode: 'hidden' })).toBe('human')
     expect(resolveTypingAudioIntent({ flowStage: 'human-rewriting', currentMessageMode: 'hidden' })).toBeNull()
     expect(resolveTypingAudioIntent({ flowStage: 'conversation-closing', currentMessageMode: 'hidden' })).toBeNull()
     expect(resolveTypingAudioIntent({ flowStage: 'assigning', currentMessageMode: 'hidden' })).toBeNull()
@@ -123,7 +127,8 @@ describe('typing audio intent mapping', () => {
 
   it('keeps human clearly louder than the AI generation pool', () => {
     expect(TYPING_AUDIO_PROFILE.humanVolume).toBeGreaterThan(TYPING_AUDIO_PROFILE.aiVolume)
-    expect(TYPING_AUDIO_PROFILE.humanVolume).toBeLessThanOrEqual(0.25)
+    expect(TYPING_AUDIO_PROFILE.humanVolume).toBeGreaterThanOrEqual(0.35)
+    expect(TYPING_AUDIO_PROFILE.humanVolume).toBeLessThanOrEqual(0.4)
     expect(TYPING_AUDIO_PROFILE.aiVolume).toBeGreaterThanOrEqual(0.08)
     expect(TYPING_AUDIO_PROFILE.aiGapMinMs).toBeGreaterThanOrEqual(30)
     expect(TYPING_AUDIO_PROFILE.aiGapMaxMs).toBeLessThanOrEqual(120)
@@ -175,6 +180,27 @@ describe('typing audio human channel', () => {
     advance(20000)
     expect(human.playCount).toBe(1)
     expect(human.paused).toBe(false)
+  })
+})
+
+describe('typing audio prewarm', () => {
+  it('creates and loads every track without playing', () => {
+    const { director, tracks, pendingCount } = createHarness()
+    director.prewarm()
+    expect(tracks.map((track) => track.source).sort()).toEqual([
+      'ai-0', 'ai-1', 'ai-2', 'ai-3', 'ai-4', 'human-typing.mp3',
+    ])
+    expect(tracks.every((track) => track.playCount === 0)).toBe(true)
+    expect(tracks.every((track) => track.loadCount === 1)).toBe(true)
+    expect(tracks.every((track) => track.paused)).toBe(true)
+    expect(pendingCount()).toBe(0)
+  })
+
+  it('does not create playback timers or start any audio', () => {
+    const { director, tracks, pendingCount } = createHarness({ human: 'human.mp3', ai: ['a', 'b'] })
+    director.prewarm()
+    expect(tracks.every((track) => track.playCount === 0)).toBe(true)
+    expect(pendingCount()).toBe(0)
   })
 })
 

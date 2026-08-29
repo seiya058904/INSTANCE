@@ -37,6 +37,12 @@ export function useTypingAudio(intent: TypingAudioIntent): void {
   useEffect(() => {
     const director = directorRef.current
     if (!director) return
+    director.prewarm()
+  }, [])
+
+  useEffect(() => {
+    const director = directorRef.current
+    if (!director) return
     director.setIntent(reducedMotion ? null : intent)
     return () => {
       director.setIntent(null)

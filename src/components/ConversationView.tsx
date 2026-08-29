@@ -1,5 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
+import { resolveTypingAudioIntent } from '../audio/typingAudio'
+import { useTypingAudio } from '../audio/useTypingAudio'
 import type { ConversationFlowStage, ConversationFlowStep } from '../game/conversationFlow'
 import type { HistoryEntry, MessageContentPart, ResolvedScene } from '../game/types'
 import { LongformPreviewCard } from './LongformPreviewCard'
@@ -211,6 +213,14 @@ export function ConversationView({
 
   const isHandoff = ['conversation-closing', 'assigning', 'connecting'].includes(flowStage)
   const isTyping = ['human-waiting', 'human-typing', 'human-rewriting'].includes(flowStage)
+
+  // Audio follows the visible streaming lifecycle; the visual state remains
+  // the source of truth and this never changes any timing.
+  useTypingAudio(resolveTypingAudioIntent({
+    flowStage,
+    currentMessageMode,
+    assistantStreamingText: flowStage === 'assistant-streaming' ? assistantStreamingText : undefined,
+  }))
 
   return (
     <main className="conversation-main" aria-busy={!choicesReady}>

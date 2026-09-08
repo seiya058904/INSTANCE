@@ -13,7 +13,7 @@ INSTANCE is an interactive narrative game in which the player acts as an AI and 
 
 ## Start here
 
-Read `D:\xia zai\AI project\Knowledge\AGENTS.md`, then route through `Knowledge\01-Projects\Repository-Index.md` → `INSTANCE.md` → `INSTANCE\AI-HANDOFF.md`. Read `CONTEXT-HISTORY.md` only when historical decisions or rejected directions matter. The current repository files and Git state override Knowledge when they conflict.
+This repository's `AGENTS.md` / `CLAUDE.md` / docs and Git state are the source of truth for this project's long-term context. The user's shared cross-project reusable knowledge (prompts, protocols, workflows) lives at `D:\xia zai\AI project\Knowledge`; consult its `AGENTS.md` only when the task needs one of those reusable items or to locate this project's repository. Do not mirror project context back into Knowledge — it is a collection, not project memory.
 
 ## Important files
 

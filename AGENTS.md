@@ -13,7 +13,7 @@ INSTANCE is an interactive narrative game in which the player acts as an AI and 
 
 ## Start here
 
-This repository's `AGENTS.md` / `CLAUDE.md` / docs and Git state are the source of truth for this project's long-term context. The user's shared cross-project reusable knowledge (prompts, protocols, workflows) lives at `D:\xia zai\AI project\Knowledge`; consult its `AGENTS.md` only when the task needs one of those reusable items or to locate this project's repository. Do not mirror project context back into Knowledge — it is a collection, not project memory.
+Read this file fully. Then, for architecture and narrative matters, consult `docs/reference/` and `docs/audits/`, and read the relevant `src/` entry points listed under "Important files" before making changes.
 
 ## Important files
 
@@ -49,6 +49,6 @@ Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `g
 - Before a commit, run the relevant checks above and inspect the staged diff. Use focused conventional-style commit subjects such as `fix:` or `docs:`.
 - Keep pull requests single-purpose; describe player-visible behavior and verification. Do not merge, push, publish, or alter Pages settings without explicit authorization, except where a separately authorized project-closeout procedure permits it.
 
-## Knowledge and closeout
+## Closeout
 
-Knowledge is the long-term context map, not a source-code mirror. Preserve minimum necessary context and keep current repository facts authoritative. When the user explicitly says the project is ready to “收工”, read `D:\xia zai\AI project\Knowledge\02-AI\Prompts\项目收工提示词.md` and follow it without expanding scope.
+Do not merge, push, publish, or alter Pages/remote settings without explicit authorization for the specific operation. Keep working tree clean of stray artifacts and verify the staged diff before committing.

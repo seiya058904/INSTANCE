@@ -8,7 +8,7 @@ import type {
   StableRunState,
 } from './types'
 import { emptySystemState } from './narrativeSchema'
-import { emptyWorldState } from '../content/mainline2/stateRegistry'
+import { emptyWorldState, isModuleId } from '../content/mainline2/stateRegistry'
 import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
 import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
 
@@ -60,7 +60,13 @@ function hasV3Fields(value: Record<string, unknown>) {
   if (value.version !== 3 || !isRecord(value.manifest) || value.manifest.version !== 3 || value.manifest.mode !== 'mainline2') return false
   const worldState = value.worldState
   if (!isRecord(worldState) || !['humanTrust', 'aiDependence', 'humanControl', 'socialStability'].every((axis) => Number.isFinite(worldState[axis]))) return false
-  if (!isRecord(value.progress) || !Array.isArray(value.progress.activeModules) || !Array.isArray(value.progress.primaryModules)) return false
+  if (!isRecord(value.progress)) return false
+  const progress = value.progress
+  const validModules = (items: unknown) => Array.isArray(items)
+    && items.every((item) => typeof item === 'string' && isModuleId(item))
+  if (!['activeModules', 'primaryModules'].every((key) => validModules(progress[key]))) return false
+  if (!['matureModules', 'completedModules', 'encounteredModules'].every((key) =>
+    progress[key] === undefined || validModules(progress[key]))) return false
   return isRecord(value.decisions ?? {})
 }
 

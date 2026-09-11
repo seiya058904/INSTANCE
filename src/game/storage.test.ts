@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { MODULE_IDS } from '../content/mainline2/stateRegistry'
 import { commitChoice, createMainline2Run, createRun, resolveScene } from './engine'
 import type { LongformPreview } from './types'
 import { createEmptyExposureHistory, recordRunExposure } from '../content/runManifest'
@@ -296,4 +297,39 @@ describe('stable checkpoints', () => {
       expect(restored?.worldState).toEqual(createMainline2Run('v3-integrity').worldState)
     })
   })
+})
+
+
+describe('v3 module progress contract', () => {
+  const fields = ['activeModules', 'primaryModules', 'matureModules', 'completedModules', 'encounteredModules'] as const
+  for (const field of fields) {
+    it.each([null, {}, 42, 'space', ['garbage'], ['space', 42]])(`rejects invalid ${field}: %j`, (invalid) => {
+      const checkpoint = JSON.parse(serializeRun(createMainline2Run('invalid-modules')))
+      checkpoint.progress[field] = invalid
+      expect(restoreRun(JSON.stringify(checkpoint))).toBeNull()
+    })
+    it(`preserves legal ${field} and continues the same choice after restore`, () => {
+      const run = createMainline2Run('legal-modules')
+      run.progress![field] = [...MODULE_IDS]
+      const restored = restoreRun(serializeRun(run))!
+      expect(restored.progress![field]).toEqual(MODULE_IDS)
+      const choice = resolveScene(run).choices[0].id
+      const expected = commitChoice(run, choice)
+      const actual = commitChoice(restored, choice)
+      expect(actual.history).toEqual(expected.history)
+      expect(actual.progress).toEqual(expected.progress)
+    })
+    it(`handles missing ${field} according to the legacy contract`, () => {
+      const checkpoint = JSON.parse(serializeRun(createMainline2Run('missing-modules')))
+      delete checkpoint.progress[field]
+      const restored = restoreRun(JSON.stringify(checkpoint))
+      if (field === 'activeModules' || field === 'primaryModules') {
+        expect(restored).toBeNull()
+      } else {
+        expect(restored!.progress![field]).toEqual([])
+        const next = commitChoice(restored!, resolveScene(restored!).choices[0].id)
+        expect(next.history).toHaveLength(1)
+      }
+    })
+  }
 })

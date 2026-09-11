@@ -60,7 +60,12 @@ describe('Mainline 2.0 runtime', () => {
     expect(Math.max(...counts)).toBeLessThanOrEqual(190)
     expect(new Set(counts)).toEqual(new Set([190]))
     expect(getActConversationCounts(counts[0])).toEqual([13, 29, 41, 90, 17])
-    expect(results.map(({ run }) => [...new Set(run.progress?.encounteredModules)])).toEqual(Array.from({ length: 12 }, () => ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']))
+    for (const { run } of results) {
+      const contacted = run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01')
+      expect([...new Set(run.progress?.encounteredModules)]).toEqual([
+        'machine', 'ascension', 'automation', 'uplift', 'space', ...(contacted ? ['contact'] : []), 'security',
+      ])
+    }
     expect(results.every(({ run }) => (run.progress?.activeModules.length ?? 0) < 7)).toBe(true)
     expect(results.every(({ run }) => (run.progress?.act ?? 0) === 5)).toBe(true)
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)

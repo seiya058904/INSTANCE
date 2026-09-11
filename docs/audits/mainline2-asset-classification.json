@@ -5,7 +5,7 @@
   ],
   "counts": {
     "CORE": 99,
-    "CONDITIONAL CORE": 9,
+    "CONDITIONAL CORE": 10,
     "MAINLINE CONSEQUENCE": 40,
     "MAINLINE WORLD ECHO": 68,
     "OPTIONAL": 114,
@@ -4359,6 +4359,19 @@
         "act-i-identification"
       ],
       "dispositionRationale": "KEEP — 以普通用户的简短状态询问建立现实基线，防止开局默认围绕 Aster 异常展开。让后续身份异常、连续性和权力问题拥有可感知的正常世界参照，这是固定路线不能跳过的因果交接。"
+    },
+    {
+      "assetId": "ML2-A4-M13-NOCONTACT-01",
+      "classification": "CONDITIONAL CORE",
+      "narrativePurpose": "未满足接触条件时保留观测，不虚构外部文明或外交事实。",
+      "character": "Deep-Space Analysis Network / Aster",
+      "prerequisite": "Contact prerequisites are absent and canonical Contact has not been entered.",
+      "payoff": "继续共同日历，不产生 Contact doctrine。",
+      "usedByStoryPlan": true,
+      "routeFamilies": [
+        "contact-unavailable"
+      ],
+      "dispositionRationale": "KEEP — 未接触路径的唯一过渡，不复用成功接触后的 CLOSE-01。"
     }
   ]
 }

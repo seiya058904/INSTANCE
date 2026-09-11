@@ -162,7 +162,7 @@ function parseAsset(file, block, assetId, kind, fullText) {
       }
     }
     const userMessage = firstQuote(lines, start + 1, choiceStarts[0] ?? end)
-    if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices })
+    if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices, ...(lines.slice(start, end).includes('**Choice Kind:** expression') ? { choiceKind: 'expression' } : {}) })
   }
   // Major decisions in the handoff intentionally use a coordination/system
   // message followed by `### Option A-D`, without a `Node` heading. Preserve

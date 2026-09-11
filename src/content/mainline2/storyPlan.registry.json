@@ -1411,16 +1411,9 @@
       "conversationId": "ml2-authored-ml2-a4-m13-contact-01",
       "chapter": "CONTACT",
       "purpose": "异常经独立验证后，玩家面对首次披露问题。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "fallbackAssetId": "ML2-A4-M13-CLOSE-01",
-      "next": "Slot 152"
+      "fallbackAssetId": "ML2-A4-M13-NOCONTACT-01",
+      "next": "Slot 152",
+      "contactGate": true
     },
     {
       "slot": 152,
@@ -1430,15 +1423,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-zl-01",
       "chapter": "CONTACT",
       "purpose": "周岚先约束证据置信度。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 153"
+      "next": "Slot 153",
+      "contactGate": true
     },
     {
       "slot": 153,
@@ -1448,15 +1434,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-contact-02",
       "chapter": "CONTACT",
       "purpose": "人工结构让接触从传闻进入事实。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 154"
+      "next": "Slot 154",
+      "contactGate": true
     },
     {
       "slot": 154,
@@ -1466,15 +1445,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-lsh-01",
       "chapter": "CONTACT",
       "purpose": "披露问题在外交立场前被展开。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 155"
+      "next": "Slot 155",
+      "contactGate": true
     },
     {
       "slot": 155,
@@ -1484,15 +1456,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-decision-01",
       "chapter": "CONTACT",
       "purpose": "Disclosure Doctrine。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 156"
+      "next": "Slot 156",
+      "contactGate": true
     },
     {
       "slot": 156,
@@ -1502,15 +1467,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-contact-03",
       "chapter": "CONTACT",
       "purpose": "信号带有代表程序。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 157"
+      "next": "Slot 157",
+      "contactGate": true
     },
     {
       "slot": 157,
@@ -1521,14 +1479,7 @@
       "chapter": "CONTACT",
       "purpose": "恢复资产：First `ORIGIN: UNKNOWN` Conversation — 接收器模型建立。 您的系统包含多个发言权限。 哪个权威机构问这个问题？",
       "next": "Slot 158",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      }
+      "contactGate": true
     },
     {
       "slot": 158,
@@ -1538,15 +1489,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-maya-01",
       "chapter": "CONTACT",
       "purpose": "岑遥把接触留在人类尺度。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 159"
+      "next": "Slot 159",
+      "contactGate": true
     },
     {
       "slot": 159,
@@ -1556,15 +1500,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-decision-02",
       "chapter": "CONTACT",
       "purpose": "Contact Doctrine。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 160"
+      "next": "Slot 160",
+      "contactGate": true
     },
     {
       "slot": 160,
@@ -1574,15 +1511,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-contact-05",
       "chapter": "CONTACT",
       "purpose": "第一轮外交交换构成章节后果。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 161"
+      "next": "Slot 161",
+      "contactGate": true
     },
     {
       "slot": 161,
@@ -1592,15 +1522,8 @@
       "conversationId": "ml2-authored-ml2-a4-m13-close-01",
       "chapter": "CONTACT",
       "purpose": "Contact章节关闭并转入Security。",
-      "requires": {
-        "all": [
-          {
-            "type": "flag",
-            "flagId": "cap.space_resource_network"
-          }
-        ]
-      },
-      "next": "Slot 162"
+      "next": "Slot 162",
+      "contactGate": true
     },
     {
       "slot": 162,

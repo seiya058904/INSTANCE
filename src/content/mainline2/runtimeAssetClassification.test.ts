@@ -61,7 +61,7 @@ describe('Mainline runtime asset boundary', () => {
   })
 
   it('keeps authored asset coverage while excluding support-only ending assets from the playable pool', () => {
-    expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(330)
+    expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(331)
 
     const supportAssetIds = [
       'ML2-A5-M16-CLOSE-01',

@@ -1,6 +1,7 @@
 import type { ConversationDefinition, ModuleId, StableRunState } from '../../game/types'
 import { classifyConversationLanguage, type ConversationLanguage } from '../../game/languagePacing'
 import { MAINLINE2_LIBRARY } from './registry'
+import { contactPrerequisitesMet, hasEnteredCanonicalContact, contactRouteOpen } from './contactPolicy'
 import { MODULE_IDS } from './stateRegistry'
 import { MAINLINE_REQUIRED_WINDOWS, schedulerMetadataFor } from './schedulerMetadata'
 import { MAINLINE2_STORY_PLAN, storyPlanConversationId, storyPlanSlotAt, type StoryPlanChapter } from './storyPlan'
@@ -12,13 +13,9 @@ const MAINLINE_ANCHORS = ['user-1842-first', 'speaking-8614', 'conversation-0000
 function hasEvent(run: Pick<StableRunState, 'events'>, prefix: string) { return (run.events ?? []).some((event) => event.type.startsWith(prefix)) }
 function capability(run: Pick<StableRunState, 'flags'>, value: string) { return (run.flags ?? []).includes(value) }
 
-type CivilisationMaturityInput = Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'>
+type CivilisationMaturityInput = Pick<StableRunState, 'runId' | 'flags' | 'events' | 'decisions' | 'worldState'> & Partial<Pick<StableRunState, 'currentNodeId' | 'history'>>
 
-function contactGateOpen(run: CivilisationMaturityInput) {
-  return selectAct4Modules(run).audit.some((entry) => entry.module === 'contact' && entry.eligible)
-}
-
-export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number }
+export interface Act4SchedulerAudit { module: ModuleId; eligible: boolean; active: boolean; rejectionReason?: string; score: number; scoreSources: string[]; baseScore: number; prerequisitesMet?: boolean; continuityOverride?: boolean }
 export const ACTIVE_MODULE_THRESHOLD = 3
 export const MATURE_MODULE_THRESHOLD = 8
 
@@ -44,14 +41,15 @@ export function selectAct4Modules(run: CivilisationMaturityInput | string): { pr
   if (emphasis === 'balanced_portfolio') {
     for (const module of MODULE_IDS.filter((candidate) => candidate !== 'contact')) add(module, ACTIVE_MODULE_THRESHOLD, 'research emphasis: balanced_portfolio')
   }
-  const frontierBridge = capability(state, 'cap.space_resource_network') || (capability(state, 'cap.offworld_settlement_support') && hasEvent(state, 'contact-seed:deep-space-anomaly') && hasEvent(state, 'history.space.'))
-  const contactEligible = frontierBridge && (hasEvent(state, 'contact-seed:deep-space-anomaly') || emphasis === 'frontier_science') && (emphasis === 'frontier_science' || hasEvent(state, 'history.space.'))
-  if (contactEligible) add('contact', 6, 'SPACE frontier bridge + deep-space seed + research/history gate')
+  const prerequisitesMet = contactPrerequisitesMet(state)
+  const continuityOverride = hasEnteredCanonicalContact(state)
+  const contactEligible = contactRouteOpen(state)
+  if (contactEligible) add('contact', 6, prerequisitesMet ? 'canonical Contact prerequisites' : 'canonical Contact continuity')
   const world = state.worldState ?? { humanTrust: 0, aiDependence: 0, humanControl: 0, socialStability: 0 }
   add('security', Math.max(0, -world.socialStability + world.humanControl), 'World State security viability')
   add('uplift', Math.max(0, world.humanTrust), 'World State trust')
   add('machine', Math.max(0, world.aiDependence), 'World State dependence')
-  const audit = MODULE_IDS.map((module) => ({ module, eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT hard gate missing frontier maturity, deep-space seed, or research/history gate' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
+  const audit = MODULE_IDS.map((module) => ({ module, ...(module === 'contact' ? { prerequisitesMet, continuityOverride } : {}), eligible: module !== 'contact' || contactEligible, active: false, rejectionReason: module === 'contact' && !contactEligible ? 'CONTACT canonical prerequisites absent; no entered chapter to preserve' : undefined, score: scores.get(module) ?? 0, scoreSources: sources.get(module) ?? [], baseScore }))
   const eligible = audit.filter((entry) => entry.eligible && entry.score >= ACTIVE_MODULE_THRESHOLD).map((entry) => entry.module)
   // Maturity is part of the player-visible world state.  Stable registry order
   // resolves equal evidence; runId is reserved for Ordinary conversation picks.
@@ -73,6 +71,10 @@ export function selectAct4Modules(run: CivilisationMaturityInput | string): { pr
   const activeModules = emphasis === 'frontier_science' && capability(state, 'cap.offworld_settlement_support')
     ? (['space', 'contact', 'machine', 'uplift'] as ModuleId[]).filter((module) => eligible.includes(module))
     : [...primaryModules, ...secondary]
+  if (contactEligible && !activeModules.includes('contact')) {
+    if (activeModules.length === 4) activeModules.pop()
+    activeModules.push('contact')
+  }
   const matureModules = activeModules.filter((module) => (scores.get(module) ?? 0) >= MATURE_MODULE_THRESHOLD)
   for (const entry of audit) entry.active = activeModules.includes(entry.module)
   return { primaryModules, activeModules: [...new Set(activeModules)], matureModules: [...new Set(matureModules)], audit }
@@ -347,10 +349,9 @@ export function updateProgressForSchedule(run: StableRunState, nextCount: number
   const act = ([1, 2, 3, 4, 5] as const).find((candidate, index) => nextCount <= ACT_STARTS[index] + ACT_TARGETS[index]) ?? 5
   const actStart = ACT_STARTS[act - 1]
   const current = run.progress ?? { act: 1, segment: 'opening', actConversationCount: 0, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] }
-  const emphasis = run.decisions?.act4_research_emphasis
   const act4Start = ACT_STARTS[3]
   const shouldSelect = nextCount >= act4Start && current.activeModules.length === 0
-  const shouldRefreshFrontier = nextCount >= act4Start && current.activeModules.length > 0 && emphasis === 'frontier_science' && capability(run, 'cap.space_resource_network') && !current.activeModules.includes('contact')
+  const shouldRefreshFrontier = nextCount >= act4Start && current.activeModules.includes('contact') !== contactRouteOpen(run)
   const currentMaturity = selectAct4Modules(run)
   const modules = shouldSelect || shouldRefreshFrontier ? currentMaturity : { primaryModules: current.primaryModules, activeModules: current.activeModules }
   const matureModules = modules.activeModules.filter((module) => currentMaturity.audit.find((entry) => entry.module === module)!.score >= MATURE_MODULE_THRESHOLD)
@@ -358,7 +359,7 @@ export function updateProgressForSchedule(run: StableRunState, nextCount: number
   const encounteredModules = [...new Set(MAINLINE2_STORY_PLAN.slice(0, nextCount)
     .flatMap((slot) => {
       const module = slot.kind === 'mainline' ? chapterModules[slot.chapter] : undefined
-      if (!module || (module === 'contact' && !capability(run, 'cap.space_resource_network'))) return []
+      if (!module || (module === 'contact' && !hasEnteredCanonicalContact(run))) return []
       return [module]
     }))]
   return { ...current, act: act as 1 | 2 | 3 | 4 | 5, segment: `act-${act}`, actConversationCount: nextCount - actStart, encounteredModules, activeModules: [...modules.activeModules], matureModules, primaryModules: [...modules.primaryModules], completedModules: [...current.completedModules] }

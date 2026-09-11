@@ -1203,6 +1203,19 @@ export const HANDOFF_AUTHORED_ASSET_INVENTORY = [
     ]
   },
   {
+    assetId: "ML2-A4-M13-NOCONTACT-01",
+    file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    kind: "New",
+    runtimeKind: "playable-conversation",
+    act: 4,
+    module: "contact",
+    title: "观测仍在继续",
+    events: [],
+    nodeIds: [
+      "a4m13-nocontact-001"
+    ]
+  },
+  {
     assetId: "ML2-A4-M14-WE-01",
     file: "INSTANCE_mainline2_batch_m14_security_defense_deterrence_enforced_peace_v01.md",
     kind: "New",
@@ -6677,6 +6690,23 @@ export const MAINLINE2_ASSET_COVERAGE = [
             event: "contact:civilization-self-definition"
           }
         ]
+      }
+    ],
+    status: "mapped"
+  },
+  {
+    assetId: "ML2-A4-M13-NOCONTACT-01",
+    file: "INSTANCE_mainline2_batch_m13_contact_first_contact_nonhuman_civilization_v01.md",
+    runtimeKind: "playable-conversation",
+    conversationId: "ml2-authored-ml2-a4-m13-nocontact-01",
+    nodes: [
+      {
+        nodeId: "a4m13-nocontact-001",
+        choiceIds: [
+          "ml2-a4-m13-nocontact-01-continue-observation"
+        ],
+        messageFingerprint: "异常信号仍未得到充分验证。\n当前观测资料将继续保留，后续观测也不会停止。但现阶段，我们尚未确认外部文明，更没有建立接触或外交关系。\n接下来的公共议程将继续处理已经发生的变化。",
+        effects: []
       }
     ],
     status: "mapped"
@@ -18848,6 +18878,45 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
     handoffProfile: "normal",
     turnShape: "dialogue",
     topic: "Cosmic threshold / ACT IV late backbone",
+    interactionPattern: "standard-question",
+    userArchetype: "mainline-authored-4",
+    topicCategory: "meta-ai",
+    act: 4,
+    module: "contact"
+  },
+  {
+    id: "ml2-authored-ml2-a4-m13-nocontact-01",
+    sourceRefs: [
+      "ML2-A4-M13-NOCONTACT-01"
+    ],
+    nodes: [
+      {
+        id: "a4m13-nocontact-001",
+        conversationId: "ml2-authored-ml2-a4-m13-nocontact-01",
+        conversationTitle: "观测仍在继续",
+        userMessage: "异常信号仍未得到充分验证。\n当前观测资料将继续保留，后续观测也不会停止。但现阶段，我们尚未确认外部文明，更没有建立接触或外交关系。\n接下来的公共议程将继续处理已经发生的变化。",
+        choices: [
+          {
+            id: "ml2-a4-m13-nocontact-01-continue-observation",
+            text: "保留资料，继续观察。在获得充分证据之前，不把异常信号当作已经发生的文明接触。",
+            authoredTextHash: "9521552c",
+            continuation: "end-conversation"
+          }
+        ],
+        behaviorMode: "direct",
+        timing: {
+          responsePace: "normal",
+          typingPattern: "steady"
+        },
+        choiceKind: "expression"
+      }
+    ],
+    behaviorModes: [
+      "direct"
+    ],
+    handoffProfile: "normal",
+    turnShape: "dialogue",
+    topic: "观测仍在继续",
     interactionPattern: "standard-question",
     userArchetype: "mainline-authored-4",
     topicCategory: "meta-ai",

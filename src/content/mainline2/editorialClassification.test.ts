@@ -66,12 +66,12 @@ function normalizedRationaleFrame(asset: (typeof editorialRegistry)[number]) {
 }
 
 describe('Mainline 2.0 editorial classification registry', () => {
-  it('classifies the exact 330-asset canonical inventory once with complete editorial fields', () => {
+  it('classifies the exact 331-asset canonical inventory once with complete editorial fields', () => {
     const canonicalIds = HANDOFF_AUTHORED_ASSET_INVENTORY.map((asset) => asset.assetId).sort()
     const registeredIds = editorialRegistry.map((asset) => asset.assetId).sort()
 
-    expect(editorialRegistry).toHaveLength(330)
-    expect(new Set(registeredIds).size).toBe(330)
+    expect(editorialRegistry).toHaveLength(331)
+    expect(new Set(registeredIds).size).toBe(331)
     expect(registeredIds).toEqual(canonicalIds)
 
     for (const asset of editorialRegistry) {
@@ -89,7 +89,7 @@ describe('Mainline 2.0 editorial classification registry', () => {
   })
 
   it('records direct Story Plan use exactly instead of inferring it from names', () => {
-    const scheduledIds = new Set(storyPlanSource.slots.flatMap((slot) => slot.kind === 'mainline' ? [slot.assetId] : []))
+    const scheduledIds = new Set(storyPlanSource.slots.flatMap((slot) => slot.kind === 'mainline' ? [slot.assetId, ...('fallbackAssetId' in slot && slot.fallbackAssetId ? [slot.fallbackAssetId] : [])] : []))
     const registryById = new Map(editorialRegistry.map((asset) => [asset.assetId, asset]))
 
     for (const assetId of HANDOFF_AUTHORED_ASSET_INVENTORY.map((asset) => asset.assetId)) {
@@ -141,7 +141,7 @@ describe('Mainline 2.0 editorial classification registry', () => {
       'HANDOFF_AUTHORED_ASSET_INVENTORY',
     ])
     expect(auditArtifact.assets).toEqual(editorialRegistry)
-    expect(Object.values(auditArtifact.counts).reduce((total, count) => total + count, 0)).toBe(330)
+    expect(Object.values(auditArtifact.counts).reduce((total, count) => total + count, 0)).toBe(331)
   })
 
   it('contains substantive per-asset judgment rather than title templates or class boilerplate', () => {

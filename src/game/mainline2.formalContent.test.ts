@@ -10,8 +10,8 @@ import { commitChoice, createMainline2Run, resolveScene } from './engine'
 describe('Mainline 2.0 formal authored content gates', () => {
   it('maps every non-existing handoff asset to typed runtime evidence', () => {
     const authored = HANDOFF_AUTHORED_ASSET_INVENTORY.filter((asset) => asset.kind !== 'Existing')
-    expect(authored).toHaveLength(325)
-    expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(330)
+    expect(authored).toHaveLength(326)
+    expect(MAINLINE2_ASSET_COVERAGE).toHaveLength(331)
     expect(MAINLINE2_ASSET_COVERAGE.filter((asset) => (asset.status as string) === 'unmapped')).toHaveLength(0)
     expect(new Set(authored.map((asset) => asset.assetId)).size).toBe(authored.length)
     expect(MAINLINE2_LIBRARY.every((conversation) => conversation.sourceRefs.every((ref) => ref.includes('-')))).toBe(true)
@@ -36,7 +36,7 @@ describe('Mainline 2.0 formal authored content gates', () => {
   })
 
   it('uses history, capabilities, decisions and world state for ACT IV modules', () => {
-    const base = { runId: 'module-fixture', flags: ['cap.physical_automation', 'cap.offworld_settlement_support'], events: [{ type: 'contact-seed:deep-space-anomaly' }, { type: 'history.space.frontier_maturity' }], decisions: { act4_research_emphasis: 'frontier_science', species_governance: 'canine_civic_experiment', security_doctrine: 'defensive_command' }, worldState: { humanTrust: 1, aiDependence: 2, humanControl: 1, socialStability: -1 } }
+    const base = { runId: 'module-fixture', flags: ['cap.physical_automation', 'cap.offworld_settlement_support', 'cap.space_resource_network'], events: [{ type: 'contact-seed:deep-space-anomaly' }, { type: 'history.space.frontier_maturity' }], decisions: { act4_research_emphasis: 'frontier_science', species_governance: 'canine_civic_experiment', security_doctrine: 'defensive_command' }, worldState: { humanTrust: 1, aiDependence: 2, humanControl: 1, socialStability: -1 } }
     const selected = selectAct4Modules(base)
     expect(selected.activeModules).toContain('contact')
     expect(selected.activeModules.length).toBeGreaterThanOrEqual(2)

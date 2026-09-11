@@ -1,3 +1,4 @@
+import { MAYA_CONVERSATION_IDS } from './participantIdentity'
 import type { HistoryEntry } from './types'
 
 export interface PlayerVisibleIdentity {
@@ -23,7 +24,7 @@ interface IdentityRule {
 const identityRules: readonly IdentityRule[] = [
   {
     participantId: 'user-1842',
-    matches: (conversationId) => conversationId === 'user-1842-first' || conversationId === 'user-1842-return',
+    matches: (conversationId) => MAYA_CONVERSATION_IDS.includes(conversationId),
     anonymousLabel: 'User #1842',
     displayName: '岑遥',
     revealNodeIds: ['maya-first-3'],

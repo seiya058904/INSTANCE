@@ -24,7 +24,7 @@ if (!inventoryBlock) throw new Error('Cannot find canonical HANDOFF_AUTHORED_ASS
 const canonicalIds = [...inventoryBlock[1].matchAll(/assetId:\s*"([^"]+)"/g)].map((match) => match[1]).sort()
 const registeredIds = registry.map((asset) => asset.assetId).sort()
 
-if (registry.length !== 330 || new Set(registeredIds).size !== 330 || JSON.stringify(registeredIds) !== JSON.stringify(canonicalIds)) {
+if (registry.length !== 331 || new Set(registeredIds).size !== 331 || JSON.stringify(registeredIds) !== JSON.stringify(canonicalIds)) {
   throw new Error(`Editorial registry inventory mismatch: canonical=${canonicalIds.length}, registry=${registry.length}, unique=${new Set(registeredIds).size}`)
 }
 for (const asset of registry) {
@@ -44,7 +44,7 @@ const counts = Object.fromEntries(classes.map((kind) => [kind, registry.filter((
 const cell = (value) => String(value).replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>')
 const markdown = `# Mainline 2.0 Editorial Classification Registry Audit
 
-This audit is rendered verbatim from the explicit editorial registry. The generator validates the canonical 330-asset inventory and fields, but does not infer classification, character, purpose, prerequisite, payoff, route family, or disposition from filenames or keywords.
+This audit is rendered verbatim from the explicit editorial registry. The generator validates the canonical 331-asset inventory and fields, but does not infer classification, character, purpose, prerequisite, payoff, route family, or disposition from filenames or keywords.
 
 | Class | Count |
 | --- | ---: |

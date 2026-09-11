@@ -1,11 +1,11 @@
 # Mainline 2.0 Editorial Classification Registry Audit
 
-This audit is rendered verbatim from the explicit editorial registry. The generator validates the canonical 330-asset inventory and fields, but does not infer classification, character, purpose, prerequisite, payoff, route family, or disposition from filenames or keywords.
+This audit is rendered verbatim from the explicit editorial registry. The generator validates the canonical 331-asset inventory and fields, but does not infer classification, character, purpose, prerequisite, payoff, route family, or disposition from filenames or keywords.
 
 | Class | Count |
 | --- | ---: |
 | CORE | 99 |
-| CONDITIONAL CORE | 9 |
+| CONDITIONAL CORE | 10 |
 | MAINLINE CONSEQUENCE | 40 |
 | MAINLINE WORLD ECHO | 68 |
 | OPTIONAL | 114 |
@@ -346,3 +346,4 @@ Zero-count classes remain listed because the editorial review found no asset tha
 | user-1842-first | CORE | 岑遥第一次出现，建立她与 Aster 的个人关系及后来回声所需的共同起点。 | 岑遥 | A new run reaches the ACT I identification sequence. | 为岑遥回归、ACT IV 阈值、M16 最终立场和 M17 最终对话提供同一人物连续性。 | yes | act-i-identification | KEEP — 岑遥第一次出现，建立她与 Aster 的个人关系及后来回声所需的共同起点。为岑遥回归、ACT IV 阈值、M16 最终立场和 M17 最终对话提供同一人物连续性，这是固定路线不能跳过的因果交接。 |
 | user-1842-return | CORE | 岑遥第一次回归，让早期关系在 Aster 开始行动前产生个人尺度的现实回声。 | 岑遥 | A new run reaches the ACT I identification sequence. | 证明关系连续性来自已发生的互动，而不是后期为结局临时添加的人物标签。 | yes | act-i-identification | KEEP — 从岑遥第一次回归，让早期关系在 Aster 开始行动前产生个人尺度的现实回声到证明关系连续性来自已发生的互动，而不是后期为结局临时添加的人物标签，该记录承担固定链上的唯一过渡。 |
 | user-7391 | CORE | 以普通用户的简短状态询问建立现实基线，防止开局默认围绕 Aster 异常展开。 | ordinary user #7391 | A new run reaches the ACT I identification sequence. | 让后续身份异常、连续性和权力问题拥有可感知的正常世界参照。 | yes | act-i-identification | KEEP — 以普通用户的简短状态询问建立现实基线，防止开局默认围绕 Aster 异常展开。让后续身份异常、连续性和权力问题拥有可感知的正常世界参照，这是固定路线不能跳过的因果交接。 |
+| ML2-A4-M13-NOCONTACT-01 | CONDITIONAL CORE | 未满足接触条件时保留观测，不虚构外部文明或外交事实。 | Deep-Space Analysis Network / Aster | Contact prerequisites are absent and canonical Contact has not been entered. | 继续共同日历，不产生 Contact doctrine。 | yes | contact-unavailable | KEEP — 未接触路径的唯一过渡，不复用成功接触后的 CLOSE-01。 |

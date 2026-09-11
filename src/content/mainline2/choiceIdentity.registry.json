@@ -8080,5 +8080,11 @@
     "nodeId": "a5m17-review-002",
     "choiceKey": "choice-001",
     "choiceId": "ml2-a5-m17-review-01-a5m17-review-002-choice-001"
+  },
+  {
+    "assetId": "ML2-A4-M13-NOCONTACT-01",
+    "nodeId": "a4m13-nocontact-001",
+    "choiceKey": "continue-observation",
+    "choiceId": "ml2-a4-m13-nocontact-01-continue-observation"
   }
 ]

@@ -1,6 +1,7 @@
 import type { Condition, StableRunState } from '../../game/types'
 import { evaluateCondition } from '../../game/narrativeSchema'
 import storyPlanSource from './storyPlan.registry.json'
+import { CONTACT_PREREQUISITES, contactRouteOpen } from './contactPolicy'
 import { MAINLINE2_LIBRARY } from './registry'
 
 export interface MainlineStoryRole {
@@ -24,6 +25,7 @@ export interface MainlineStoryPlanSlot {
   chapter: StoryPlanChapter
   purpose: string
   next: string
+  contactGate?: boolean
   requires?: Condition
   fallbackAssetId?: string
 }
@@ -44,7 +46,7 @@ function conversationFor(assetId: string) {
   return conversation
 }
 
-export const MAINLINE2_STORY_PLAN = storyPlanSource.slots as readonly StoryPlanSlot[]
+export const MAINLINE2_STORY_PLAN = (storyPlanSource.slots as readonly StoryPlanSlot[]).map((slot) => slot.kind === 'mainline' && slot.contactGate ? { ...slot, requires: CONTACT_PREREQUISITES } : slot)
 
 for (const slot of MAINLINE2_STORY_PLAN) {
   if (slot.kind !== 'mainline') continue
@@ -81,7 +83,7 @@ export function storyPlanSlotAt(slot: number) {
 }
 
 export function storyPlanConversationId(slot: MainlineStoryPlanSlot, run: StableRunState) {
-  if (!evaluateCondition(slot.requires, run)) return slot.fallbackAssetId ? conversationFor(slot.fallbackAssetId).id : undefined
+  if (!(slot.contactGate ? contactRouteOpen(run) : evaluateCondition(slot.requires, run))) return slot.fallbackAssetId ? conversationFor(slot.fallbackAssetId).id : undefined
   return slot.conversationId
 }
 
@@ -89,20 +91,23 @@ export function storyPlanConversationId(slot: MainlineStoryPlanSlot, run: Stable
  * The schedule uses the complete calendar so ordinary breathing slots retain
  * their positions. Editorial consumers use this projection to see the actual
  * directed story a fresh run can encounter. Contact is a chapter gate, not a
- * single-scene fallback: an unavailable Contact route has exactly one closure
+ * single-scene fallback: an unavailable Contact route has exactly one no-contact bridge
  * and no Contact doctrine decision.
  */
 export function storyPlanForRun(run: StableRunState) {
   const directed = MAINLINE2_STORY_PLAN.filter((slot): slot is MainlineStoryPlanSlot => slot.kind === 'mainline')
   const contactSlot = directed.find((slot) => slot.assetId === 'ML2-A4-M13-CONTACT-01')
-  if (!contactSlot || evaluateCondition(contactSlot.requires, run)) return directed
+  if (!contactSlot || contactRouteOpen(run)) return directed
   const nonContact = directed.filter((slot) => !slot.assetId.startsWith('ML2-A4-M13-'))
-  const close = conversationFor('ML2-A4-M13-CLOSE-01')
+  const close = conversationFor('ML2-A4-M13-NOCONTACT-01')
   return [...nonContact, {
     ...contactSlot,
-    assetId: 'ML2-A4-M13-CLOSE-01',
+    assetId: 'ML2-A4-M13-NOCONTACT-01',
     conversationId: close.id,
+    contactGate: undefined,
+    requires: undefined,
+    fallbackAssetId: undefined,
     purpose: 'Contact prerequisites are not mature; the chapter closes without a doctrine decision.',
     next: 'SECURITY',
-  }]
+  }].sort((left, right) => left.slot - right.slot)
 }

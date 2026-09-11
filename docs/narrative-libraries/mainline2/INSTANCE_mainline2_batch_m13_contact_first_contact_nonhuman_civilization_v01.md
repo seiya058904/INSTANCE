@@ -1817,3 +1817,26 @@ After M14, ACT IV’s module library is structurally complete and the project ca
 **M15 — ACT IV Late Backbone / Civilization Convention / THE THRESHOLD**
 
 which reunifies the active modules and sets up ACT V.
+
+
+# 24. New Asset — `ML2-A4-M13-NOCONTACT-01`
+## 观测仍在继续
+
+**Layer:** Conditional story bridge
+**World Function:** Continue the common calendar without claiming first contact.
+
+## Node `a4m13-nocontact-001`
+
+**Choice Kind:** expression
+
+### Deep-Space Analysis Network
+
+> 异常信号仍未得到充分验证。
+>
+> 当前观测资料将继续保留，后续观测也不会停止。但现阶段，我们尚未确认外部文明，更没有建立接触或外交关系。
+>
+> 接下来的公共议程将继续处理已经发生的变化。
+
+### Choice A — continue-observation
+
+> 保留资料，继续观察。在获得充分证据之前，不把异常信号当作已经发生的文明接触。

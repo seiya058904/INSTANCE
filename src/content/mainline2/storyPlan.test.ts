@@ -46,11 +46,11 @@ describe('Mainline 2.0 fixed story plan', () => {
     expect(storyMapMainline).toEqual(runtimeMainline)
   })
 
-  it('replaces the whole Contact chapter with its close when its prerequisites are absent', () => {
+  it('replaces the whole Contact chapter with its no-contact bridge when its prerequisites are absent', () => {
     const run = createMainline2Run('contact-closed')
     const contact = storyPlanForRun(run).filter((slot) => slot.assetId.includes('ML2-A4-M13-'))
 
-    expect(contact.map((slot) => slot.assetId)).toEqual(['ML2-A4-M13-CLOSE-01'])
+    expect(contact.map((slot) => slot.assetId)).toEqual(['ML2-A4-M13-NOCONTACT-01'])
     expect(contact.some((slot) => slot.assetId.includes('DECISION'))).toBe(false)
   })
 })

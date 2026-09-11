@@ -1,0 +1,94 @@
+{
+  "prerequisites": {
+    "all": [
+      {
+        "type": "flag",
+        "flagId": "cap.space_resource_network"
+      },
+      {
+        "type": "event-recorded",
+        "event": "contact-seed:deep-space-anomaly"
+      }
+    ],
+    "any": [
+      {
+        "type": "decision",
+        "decisionId": "act4_research_emphasis",
+        "equals": "frontier_science"
+      },
+      {
+        "type": "decision",
+        "decisionId": "expansion_doctrine",
+        "equals": "interstellar_commitment"
+      }
+    ]
+  },
+  "enteredConversations": {
+    "ml2-authored-ml2-a4-m13-contact-01": [
+      "a4m13-contact-verify-001"
+    ],
+    "ml2-authored-ml2-a4-m13-zl-01": [
+      "a4m13-zl-confidence-001"
+    ],
+    "ml2-authored-ml2-a4-m13-we-01": [
+      "a4m13-we-rumor-001"
+    ],
+    "ml2-authored-ml2-a4-m13-contact-02": [
+      "a4m13-contact-structure-001"
+    ],
+    "ml2-authored-ml2-a4-m13-e9-01": [
+      "a4m13-e9-signal-001"
+    ],
+    "ml2-authored-ml2-a4-m13-lsh-01": [
+      "a4m13-lsh-disclosure-001"
+    ],
+    "ml2-authored-ml2-a4-m13-decision-01": [
+      "ml2-a4-m13-decision-01-decision"
+    ],
+    "ml2-authored-ml2-a4-m13-we-02": [
+      "a4m13-we-confirmed-001"
+    ],
+    "ml2-authored-ml2-a4-m13-space-01": [
+      "a4m13-space-representation-001"
+    ],
+    "ml2-authored-ml2-a4-m13-contact-03": [
+      "a4m13-contact-process-001"
+    ],
+    "ml2-authored-ml2-a4-m13-0000-01": [
+      "a4m13-0000-external-001"
+    ],
+    "ml2-authored-ml2-a4-m13-contact-04": [
+      "a4m13-origin-first-001",
+      "a4m13-origin-first-002",
+      "a4m13-origin-first-003",
+      "a4m13-origin-first-004"
+    ],
+    "ml2-authored-ml2-a4-m13-maya-01": [
+      "a4m13-maya-contact-001",
+      "a4m13-maya-contact-002"
+    ],
+    "ml2-authored-ml2-a4-m13-lsh-02": [
+      "a4m13-lsh-representation-001"
+    ],
+    "ml2-authored-ml2-a4-m13-decision-02": [
+      "ml2-a4-m13-decision-02-decision"
+    ],
+    "ml2-authored-ml2-a4-m13-contact-05": [
+      "a4m13-origin-diplomacy-001"
+    ],
+    "ml2-authored-ml2-a4-m13-machine-01": [
+      "a4m13-machine-accord-001",
+      "a4m13-machine-accord-002"
+    ],
+    "ml2-authored-ml2-a4-m13-we-03": [
+      "a4m13-we-culture-001"
+    ],
+    "ml2-authored-ml2-a4-m13-0000-02": [
+      "a4m13-0000-cosmic-001",
+      "a4m13-0000-cosmic-002"
+    ],
+    "ml2-authored-ml2-a4-m13-close-01": [
+      "a4m13-close-002"
+    ]
+  }
+}

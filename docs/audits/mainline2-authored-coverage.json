@@ -1,9 +1,9 @@
 {
   "generatedFrom": "docs/narrative-libraries/mainline2",
-  "assetDefinitions": 330,
-  "authoredAssetDefinitions": 325,
+  "assetDefinitions": 331,
+  "authoredAssetDefinitions": 326,
   "existingAnchorAliases": 5,
-  "runtimeConversations": 294,
+  "runtimeConversations": 295,
   "missing": [],
   "mappings": [
     {
@@ -2489,6 +2489,22 @@
               "consumer": "runtime.applyMutations / evaluateCondition"
             }
           ]
+        }
+      ]
+    },
+    {
+      "assetId": "ML2-A4-M13-NOCONTACT-01",
+      "conversationId": "ml2-authored-ml2-a4-m13-nocontact-01",
+      "nodes": [
+        {
+          "nodeId": "a4m13-nocontact-001",
+          "choiceIds": [
+            "ml2-a4-m13-nocontact-01-continue-observation"
+          ],
+          "messageFingerprint": "异常信号仍未得到充分验证。\n当前观测资料将继续保留，后续观测也不会停止。但现阶段，我们尚未确认外部文明，更没有建立接触或外交关系。\n接下来的公共议程将继续处理已经发生的变化。",
+          "conditions": [],
+          "effects": [],
+          "callbackProducerConsumer": []
         }
       ]
     },

@@ -1,0 +1,20 @@
+// Explicit player-facing participant membership; do not infer identity from ID substrings.
+export const MAYA_CONVERSATION_IDS: readonly string[] = [
+  'user-1842-first',
+  'user-1842-return',
+  'ml2-authored-ml2-a2-maya-01',
+  'ml2-authored-ml2-a2-m3-maya-01',
+  'ml2-authored-ml2-a3-m4-maya-01',
+  'ml2-authored-ml2-a3-m5-maya-02',
+  'ml2-authored-ml2-a3-m6-maya-01',
+  'ml2-authored-ml2-a4-m7-maya-01',
+  'ml2-authored-ml2-a4-m8-maya-01',
+  'ml2-authored-ml2-a4-m9-maya-01',
+  'ml2-authored-ml2-a4-m9-maya-02',
+  'ml2-authored-ml2-a4-m10-maya-02',
+  'ml2-authored-ml2-a4-m11-maya-01',
+  'ml2-authored-ml2-a4-m13-maya-01',
+  'ml2-authored-ml2-a4-m14-maya-01',
+  'ml2-authored-ml2-a4-m15-maya-01',
+  'ml2-authored-ml2-a5-m16-maya-01',
+]

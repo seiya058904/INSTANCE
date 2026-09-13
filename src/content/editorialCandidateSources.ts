@@ -22,7 +22,12 @@ function textAfterLabel(block: string, labels: string[]) {
     // continues on the next line (multiline), and matching across it would
     // swallow unrelated sections such as 用户内容 attachments.
     const inline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*[ \\t]*[:：]?[ \\t]*(.+)`))
-    if (inline?.[1]?.trim()) return inline[1].trim()
+    const inlineText = inline?.[1]?.trim()
+    // For a label line like **User Message**： the optional [:：]? can backtrack
+    // so (.+) captures only the label's own trailing colon. That capture is
+    // label residue, not a player message; the real content starts on the
+    // following lines and must go through the multiline form below.
+    if (inlineText && !/^[：:]+$/.test(inlineText)) return inlineText
     // Multiline form: **用户消息：**\n\n> 内容 … \n\n**候选回复：**
     // The lookahead tolerates one or more blank lines before the reply label.
     const multiline = block.match(new RegExp(`\\*\\*${label}[：:]?\\*\\*[ \\t]*[:：]?[ \\t]*(?:\\r?\\n)+([\\s\\S]*?)(?=(?:\\r?\\n)+[ \\t]*\\*\\*(?:Candidate Replies|候选回复)[：:]?\\*\\*)`, 'i'))
@@ -100,6 +105,11 @@ function parseLibrary(raw: string): ConversationDefinition[] {
       topic: title, interactionPattern, topicCategory: categoryFor(ref),
     }
   }).filter((conversation) => conversation.nodes.length > 0)
+}
+
+/** Exposed so regression tests can run the parser over synthetic markdown. */
+export function parseEditorialMarkdown(raw: string): ConversationDefinition[] {
+  return parseLibrary(raw)
 }
 
 export const editorialCandidateConversations = [

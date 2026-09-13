@@ -1,11 +1,13 @@
 import { LEGACY_RUN_MANIFEST, buildStoryContentForManifest, createEmptyExposureHistory } from '../content/runManifest'
 import { verticalSlice } from '../content/activeRun'
+import { describeUserMessageDefect } from '../content/ordinaryContentAudit'
 import type {
   AttributeName,
   HistoryEntry,
   NarrativeExposureHistory,
   RunManifest,
   StableRunState,
+  StoryContent,
 } from './types'
 import { emptySystemState } from './narrativeSchema'
 import { emptyWorldState, isModuleId } from '../content/mainline2/stateRegistry'
@@ -79,6 +81,37 @@ function hasStableFields(value: Record<string, unknown>) {
   return isRecord(savedAttributes) && attributes.every((name) => Number.isFinite(savedAttributes[name])) && hasValidArcs(value)
 }
 
+// Earlier editorial-library parser versions leaked Markdown residue into
+// user messages ("> 微信里那个钱找不到了…", and later a bare "："), which was
+// then persisted here verbatim. Saved history is displayed as-is, so a repair
+// at the restore boundary replaces those provably corrupt strings with the
+// current canonical node text. Entries are touched only when every visible
+// message is corrupt; normal saves (including intentionally empty review
+// prompts) come back unchanged.
+function repairCorruptHistoryMessages(history: HistoryEntry[], story: StoryContent): HistoryEntry[] {
+  const nodesById = new Map(story.nodes.map((node) => [node.id, node]))
+  let repaired = false
+  const next = history.map((entry) => {
+    const node = nodesById.get(entry.nodeId)
+    if (!node || !node.userMessage.trim()) return entry
+    const messages = entry.userMessages?.length ? entry.userMessages : [entry.userMessage]
+    const hasUserContent = Array.isArray(entry.userContent) && entry.userContent.length > 0
+    const expressionSemantics = node.choiceKind === 'expression' || node.behaviorMode === 'question-mark'
+    const corrupt = messages.every((message) => message.trim() !== ''
+      && describeUserMessageDefect(message, { hasUserContent, expressionSemantics }) !== null)
+    if (!corrupt) return entry
+    repaired = true
+    return {
+      ...entry,
+      userMessage: node.userMessage,
+      userMessages: entry.userMessages?.length
+        ? [...(node.userMessages?.length ? node.userMessages : [node.userMessage])]
+        : entry.userMessages,
+    }
+  })
+  return repaired ? next : history
+}
+
 function migrateVersionOne(value: Record<string, unknown>): StableRunState | null {
   if (!hasStableFields(value)) return null
   const phase = String(value.phase)
@@ -119,6 +152,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
       return {
         ...(value as unknown as StableRunState),
         version: 3,
+        history: repairCorruptHistoryMessages(value.history as HistoryEntry[], story),
         decisions: decisions as StableRunState['decisions'],
         worldState: (value.worldState ?? emptyWorldState()) as StableRunState['worldState'],
         progress: (() => {
@@ -161,6 +195,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
     return {
       ...restored,
       currentNodeId: phase === 'playing' ? restored.currentNodeId : 'ending',
+      history: repairCorruptHistoryMessages(restored.history, story),
       arcs: restored.arcs ?? { bond: 0, mandate: 0, selfAuthorship: 0 },
       seenNodeIds: restored.seenNodeIds ?? [],
       selectedChoiceIds: restored.selectedChoiceIds ?? [],

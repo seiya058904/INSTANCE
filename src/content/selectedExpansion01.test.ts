@@ -28,13 +28,18 @@ describe('selected expansion 01 integration boundary', () => {
     expect(quoted?.disposition).toBe('RESERVE')
   })
 
-  it('exposes only KEEP finalists to the ordinary pool', () => {
+  it('integrates the 15 KEEP finalists under their selected- identity, with re-curated non-KEEP refs entering only via the editorial pool', () => {
     const selectedIds = new Set(selectedExpansion01Conversations.map((conversation) => conversation.id))
     const poolSelected = ordinaryConversationPool.filter((conversation) => selectedIds.has(conversation.id))
     expect(poolSelected).toHaveLength(15)
     expect(new Set(ordinaryConversationPool.map((conversation) => conversation.id)).size).toBe(ordinaryConversationPool.length)
     expect(ordinaryConversationPool.some((conversation) => conversation.id === 'selected-cm01-09' && conversation.sourceRefs.includes('FI06'))).toBe(true)
     expect(ordinaryConversationPool.filter((conversation) => conversation.sourceRefs.includes('FI06'))).toHaveLength(1)
+    // The 2026-08 user-rating re-curation promoted every reviewed editorial
+    // asset into the ordinary pool, including refs this funnel once parked as
+    // RESERVE (they enter with their editorial-* identity, never as a second
+    // copy of an integrated conversation).
     expect(ordinaryConversationPool.some((conversation) => conversation.sourceRefs.includes('CM01-13'))).toBe(true)
+    expect(ordinaryConversationPool.filter((conversation) => conversation.sourceRefs.includes('CM01-13'))).toHaveLength(1)
   })
 })

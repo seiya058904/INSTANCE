@@ -4,9 +4,9 @@
 
 | Metric | Count |
 | --- | ---: |
-| Conversations | 194 |
-| Nodes | 426 |
-| Choices | 1619 |
+| Conversations | 374 |
+| Nodes | 681 |
+| Choices | 2563 |
 | Placeholder choices | 0 |
 | Exact duplicate groups | 4 |
 | Near duplicate groups | 0 |

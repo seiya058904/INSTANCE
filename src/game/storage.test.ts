@@ -234,6 +234,82 @@ describe('stable checkpoints', () => {
     ])
   }, 20000)
 
+  it('repairs parser-corrupted user messages in saved history from the canonical node text', () => {
+    // Saves written while the editorial parser leaked Markdown residue ("> …",
+    // then a bare "：") must come back with the authored text, not the pollution.
+    const base = createMainline2Run('restore-history-repair')
+    const manifest = {
+      ...base.manifest,
+      conversationIds: ['editorial-pl01-01'],
+      ordinaryConversationIds: ['editorial-pl01-01'],
+      anchorConversationIds: [],
+      firstOrdinaryConversationId: 'editorial-pl01-01',
+    }
+    const historyEntry = (nodeId: string, userMessage: string) => ({
+      nodeId,
+      conversationId: 'editorial-pl01-01',
+      conversationTitle: '微信里那笔钱去哪了',
+      userMessage,
+      choiceId: `${nodeId}-choice-1`,
+      assistantText: '先查账单和余额。',
+    })
+    const corrupted = {
+      ...base,
+      manifest,
+      currentNodeId: 'PL01-01-03',
+      history: [
+        historyEntry('PL01-01-01', '：'),
+        historyEntry('PL01-01-02', '> 是零钱吧 我点到服务了 里面好多东西'),
+        historyEntry('PL01-01-03', '找到了 原来我看的是银行卡 不是零钱'),
+      ],
+    }
+
+    const restored = restoreRun(serializeRun(corrupted))
+    expect(restored?.history.map((entry) => entry.userMessage)).toEqual([
+      '微信里那个钱找不到了，昨天还有的',
+      '是零钱吧 我点到服务了 里面好多东西',
+      '找到了 原来我看的是银行卡 不是零钱',
+    ])
+  })
+
+  it('leaves normal and intentionally empty history messages untouched during restore', () => {
+    const base = createMainline2Run('restore-history-untouched')
+    const manifest = {
+      ...base.manifest,
+      conversationIds: ['editorial-pl01-01'],
+      ordinaryConversationIds: ['editorial-pl01-01'],
+      anchorConversationIds: [],
+      firstOrdinaryConversationId: 'editorial-pl01-01',
+    }
+    const entry = (overrides: Record<string, unknown>) => ({
+      nodeId: 'PL01-01-01',
+      conversationId: 'editorial-pl01-01',
+      conversationTitle: '微信里那笔钱去哪了',
+      userMessage: '',
+      choiceId: 'PL01-01-01-choice-1',
+      assistantText: '先查账单和余额。',
+      ...overrides,
+    })
+    const run = {
+      ...base,
+      manifest,
+      currentNodeId: 'PL01-01-02',
+      history: [
+        // Authored prose must round-trip byte-identical.
+        entry({ userMessage: '微信里那个钱找不到了，昨天还有的' }),
+        // M17-style sub-interactions intentionally save an empty prompt.
+        entry({ nodeId: 'PL01-01-02', userMessage: '' }),
+        // Mixed burst arrays stay as saved.
+        entry({ nodeId: 'PL01-01-03', userMessage: '找到了 原来我看的是银行卡 不是零钱', userMessages: ['找到了', '原来我看的是银行卡 不是零钱'] }),
+      ],
+    }
+
+    const restored = restoreRun(serializeRun(run))
+    expect(restored?.history[0].userMessage).toBe('微信里那个钱找不到了，昨天还有的')
+    expect(restored?.history[1].userMessage).toBe('')
+    expect(restored?.history[2].userMessages).toEqual(['找到了', '原来我看的是银行卡 不是零钱'])
+  })
+
   it('rejects malformed or unsupported saves instead of restoring a broken scene', () => {
     expect(restoreRun('{"version":99}')).toBeNull()
     expect(restoreRun('{broken')).toBeNull()

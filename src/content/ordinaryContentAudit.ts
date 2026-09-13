@@ -204,3 +204,150 @@ export function classifyAuditAsset(input: AuditAssetInput): AuditClassificationR
 export function isReviewableNonMainline(result: AuditClassificationResult) {
   return result.classification === 'NON_MAINLINE'
 }
+
+export type UserMessageDefectReason =
+  | 'empty-without-content'
+  | 'blockquote-leak'
+  | 'authoring-label-leak'
+  | 'attachment-leak'
+  | 'format-symbol-only'
+  | 'punctuation-only-without-expression'
+  | 'user-message-array-mismatch'
+
+export interface OrdinaryUserMessageAuditNode {
+  id: string
+  userMessage: string
+  userMessages?: readonly string[]
+  userContent?: readonly unknown[]
+  behaviorMode?: string
+  choiceKind?: string
+  /** Player-visible alternate-route prompts (Mainline anchors use variants). */
+  variantUserMessages?: readonly (readonly string[])[]
+}
+
+export interface OrdinaryUserMessageAuditConversation {
+  id: string
+  sourceRefs?: readonly string[]
+  nodes: OrdinaryUserMessageAuditNode[]
+}
+
+export interface OrdinaryUserMessageAuditRecord {
+  conversationId: string
+  assetId: string
+  nodeId: string
+  reasons: UserMessageDefectReason[]
+  userMessage: string
+  userMessages: readonly string[]
+}
+
+export interface OrdinaryUserMessageQualityReport {
+  conversationCount: number
+  nodeCount: number
+  defectNodeCount: number
+  reasonCounts: Record<string, number>
+  records: OrdinaryUserMessageAuditRecord[]
+}
+
+// Markdown structure characters can never be a player's authored message.
+const ALL_PUNCTUATION = /^[\p{P}\p{S}\s]+$/u
+// A bare message made only of these marks is a plausible intentional
+// expression (question-mark behavior); anything else punctuation-only is not.
+const EXPRESSION_PUNCTUATION = /^[?!！？…]+$/u
+// Structure characters that only appear as Markdown/authoring residue.
+const FORMAT_CHARACTERS = /[>#*`~|_[\]-]/u
+const BLOCKQUOTE_LEAK = /^\s*>/
+const AUTHORING_LABEL_LEAK = /\*\*\s*(?:User Message|用户消息|用户内容|Candidate Replies|候选回复)/i
+const BARE_LABEL_LEAK = /^\s*(?:Candidate Replies|候选回复|User Message|用户消息)\s*[：:]/
+const ATTACHMENT_LEAK = /`(?:image-description|generated-image|text)`/i
+
+/**
+ * Classifies one player-visible user message. `hasUserContent` marks
+ * image/attachment turns (an empty message is legal there);
+ * `expressionSemantics` marks nodes whose authored behavior explicitly makes a
+ * bare punctuation message the intended input (for example the question-mark
+ * expression node, whose message is exactly "？").
+ */
+export function describeUserMessageDefect(
+  message: string,
+  options: { hasUserContent?: boolean; expressionSemantics?: boolean } = {},
+): UserMessageDefectReason | null {
+  const trimmed = message.trim()
+  if (!trimmed) return options.hasUserContent ? null : 'empty-without-content'
+  if (BLOCKQUOTE_LEAK.test(message)) return 'blockquote-leak'
+  if (AUTHORING_LABEL_LEAK.test(message) || BARE_LABEL_LEAK.test(message)) return 'authoring-label-leak'
+  if (ATTACHMENT_LEAK.test(message)) return 'attachment-leak'
+  if (!ALL_PUNCTUATION.test(trimmed)) return null
+  // A message made only of Markdown structure characters is always corruption,
+  // even on expression nodes.
+  if (FORMAT_CHARACTERS.test(trimmed)) return 'format-symbol-only'
+  if (EXPRESSION_PUNCTUATION.test(trimmed)) {
+    return options.expressionSemantics ? null : 'punctuation-only-without-expression'
+  }
+  return 'punctuation-only-without-expression'
+}
+
+function visibleMessages(node: OrdinaryUserMessageAuditNode): readonly string[] {
+  // Route-specific prompts replace the node prompt entirely when present.
+  if (node.variantUserMessages?.length) return node.variantUserMessages.flat()
+  return node.userMessages?.length ? node.userMessages : [node.userMessage]
+}
+
+/** Burst nodes keep the whitespace-joined prompt as the userMessage fallback
+ * next to the separate userMessages bubbles; that mirror is designed, while a
+ * genuinely divergent pair is a defect. */
+function isDesignedMessageArrayMirror(node: OrdinaryUserMessageAuditNode) {
+  if (!node.userMessages?.length || !node.userMessage.trim()) return true
+  if (node.userMessages.includes(node.userMessage)) return true
+  return node.userMessage.replace(/\s+/g, '') === node.userMessages.join('').replace(/\s+/g, '')
+}
+
+function hasExpressionSemantics(node: OrdinaryUserMessageAuditNode) {
+  return node.choiceKind === 'expression' || node.behaviorMode === 'question-mark'
+}
+
+function hasUserContent(node: OrdinaryUserMessageAuditNode) {
+  return Array.isArray(node.userContent) && node.userContent.length > 0
+}
+
+/** Quality gate for player-facing user messages across the ordinary runtime.
+ * Detects parser residue (blockquotes, authoring labels, attachment lines) and
+ * degenerate symbol-only messages, while leaving intentional expression nodes
+ * (declared via choiceKind/behaviorMode) and image-only turns untouched. */
+export function scanOrdinaryUserMessageQuality(conversations: OrdinaryUserMessageAuditConversation[]): OrdinaryUserMessageQualityReport {
+  const records: OrdinaryUserMessageAuditRecord[] = []
+  const reasonCounts: Record<string, number> = {}
+  for (const conversation of conversations) {
+    for (const node of conversation.nodes) {
+      const messages = visibleMessages(node)
+      const variantMessages = node.variantUserMessages ?? []
+      const reasons = new Set<UserMessageDefectReason>()
+      const expressionSemantics = hasExpressionSemantics(node)
+      const content = hasUserContent(node)
+      for (const message of [...messages, ...variantMessages.flat()]) {
+        const reason = describeUserMessageDefect(message, { hasUserContent: content, expressionSemantics })
+        if (reason) reasons.add(reason)
+      }
+      if (!isDesignedMessageArrayMirror(node)) {
+        reasons.add('user-message-array-mismatch')
+      }
+      if (reasons.size > 0) {
+        for (const reason of reasons) reasonCounts[reason] = (reasonCounts[reason] ?? 0) + 1
+        records.push({
+          conversationId: conversation.id,
+          assetId: conversation.sourceRefs?.[0] ?? conversation.id,
+          nodeId: node.id,
+          reasons: [...reasons],
+          userMessage: node.userMessage,
+          userMessages: [...messages],
+        })
+      }
+    }
+  }
+  return {
+    conversationCount: conversations.length,
+    nodeCount: conversations.reduce((sum, conversation) => sum + conversation.nodes.length, 0),
+    defectNodeCount: records.length,
+    reasonCounts,
+    records,
+  }
+}

@@ -4,24 +4,24 @@
 
 | Metric | Count |
 | --- | ---: |
-| Total scanned content records | 538 |
-| MAINLINE | 343 |
-| NON_MAINLINE | 194 |
-| MAINLINE / UNUSED | 41 |
+| Total scanned content records | 719 |
+| MAINLINE | 349 |
+| NON_MAINLINE | 369 |
+| MAINLINE / UNUSED | 46 |
 | UNCERTAIN | 1 |
 
 ## NON_MAINLINE subcategories
 
 | Subcategory | Count |
 | --- | ---: |
-| LIFE | 10 |
-| RELATIONSHIP | 28 |
-| OTHER | 94 |
-| WORK | 27 |
-| STUDY | 16 |
-| PROGRAMMING | 8 |
-| WRITING | 10 |
-| HUMOR | 1 |
+| LIFE | 22 |
+| RELATIONSHIP | 50 |
+| OTHER | 200 |
+| WORK | 43 |
+| STUDY | 23 |
+| PROGRAMMING | 14 |
+| WRITING | 15 |
+| HUMOR | 2 |
 
 ## UNCERTAIN records
 

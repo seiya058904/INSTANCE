@@ -380,6 +380,12 @@ function repairEditorialCandidate(conversation: ConversationDefinition) {
   return conversation
 }
 
+// The 2026-08 user-rating re-curation (docs/audits/ordinary-content-curation-report.md)
+// promoted every reviewed editorial asset into the ordinary pool, so this list
+// is deliberately NOT filtered by EDITORIAL_RESERVE_REFS / EDITORIAL_REJECT_REFS
+// anymore; those sets survive only as lineage bookkeeping for the asset census.
+// selectedExpansion01 KEEP finalists enter as selected-* conversations and are
+// deduplicated here by sourceRef so no asset appears twice.
 const editorialCandidateFormal = editorialCandidateConversations.map(repairEditorialCandidate)
 
 export const ordinaryConversationPool = [

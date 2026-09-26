@@ -108,8 +108,8 @@ function localizeAssistantLine(value: string) {
 }
 
 function localizeSummary(value: string) {
-  const match = value.match(/^世界结局：(.+)。它由 Final Commitment、硬门和真实历史共同解析。$/)
-  return match ? `世界结局：${localize('title', match[1])}。它由最终承诺、硬门与真实历史共同解析。` : localize('summary', value)
+  const match = value.match(/^世界结局：(.+)。它由最终承诺、关键门槛与真实历史共同解析。$/)
+  return match ? `世界结局：${localize('title', match[1])}。它由最终承诺、关键门槛与真实历史共同解析。` : localize('summary', value)
 }
 
 function titleOverride(copy: string) {

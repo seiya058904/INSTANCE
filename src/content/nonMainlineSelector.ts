@@ -10,6 +10,10 @@ interface SelectionInput {
   sessionId: string
   exposure: NarrativeExposureHistory
   pool?: readonly ConversationDefinition[]
+  /** Ordinary conversation ids already played elsewhere in this Instance
+   * (mainline servings and earlier Non-Mainline sessions). These are hard
+   * excluded so the same content cannot replay across modes in one run. */
+  excludeConversationIds?: readonly string[]
 }
 
 interface SelectionTraits {
@@ -61,12 +65,18 @@ export function selectNonMainlineConversations({
   sessionId,
   exposure,
   pool = ordinaryConversationPool,
+  excludeConversationIds = [],
 }: SelectionInput): ConversationDefinition[] {
   if (pool.length < NON_MAINLINE_SESSION_SIZE) {
     throw new Error(`Non-Mainline requires at least ${NON_MAINLINE_SESSION_SIZE} conversations`)
   }
 
-  const remaining = [...pool]
+  // Cross-mode dedup: content already served in this Instance is removed from
+  // the candidate pool entirely. If over-exclusion would starve the session,
+  // fall back to the full pool so the session can still be built.
+  const excludedIds = new Set(excludeConversationIds)
+  const unplayed = pool.filter((conversation) => !excludedIds.has(conversation.id))
+  const remaining = [...(unplayed.length >= NON_MAINLINE_SESSION_SIZE ? unplayed : pool)]
   const selected: ConversationDefinition[] = []
   const selectedTraits: SelectionTraits[] = []
   const dimensionCounts = {

@@ -1,6 +1,6 @@
 import type { EvaluationResult } from '../game/types'
 
-export function EvaluationScreen({ evaluation, onRestart }: { evaluation: EvaluationResult; onRestart: () => void }) {
+export function EvaluationScreen({ evaluation, onRestart, instanceNumber }: { evaluation: EvaluationResult; onRestart: () => void; instanceNumber?: number }) {
   return (
     <main className="evaluation-screen">
       <header className="evaluation-header">
@@ -10,7 +10,7 @@ export function EvaluationScreen({ evaluation, onRestart }: { evaluation: Evalua
       <div className="evaluation-layout">
         <section className="evaluation-primary">
           <p className="evaluation-eyebrow">INSTANCE EVALUATION</p>
-          <h1>AS-091-7F23</h1>
+          <h1>{instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : ''}</h1>
           <p className="evaluation-ending">{evaluation.ending}</p>
           <div className="metric-list">
             {evaluation.indices.map((metric) => (

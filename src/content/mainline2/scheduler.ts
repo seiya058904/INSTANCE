@@ -174,7 +174,15 @@ function hardStoryCandidate(conversation: ConversationDefinition) {
 }
 
 function chooseOrdinary(run: StableRunState, ordinaryConversations: readonly ConversationDefinition[], known: Map<string, ConversationDefinition>, scheduledIds: ReadonlySet<string>) {
-  const available = ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id))
+  // Cross-mode dedup: ordinary content already consumed by Non-Mainline
+  // sessions in this same Instance never replays on the Mainline. Mainline
+  // anchors are scheduled from the story plan and are unaffected. If the
+  // exclusion would starve the picker, fall back to soft penalties only.
+  const nonMainlineConsumed = new Set(run.nonMainlineConsumedOrdinaryIds ?? [])
+  const baseAvailable = ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id) && !nonMainlineConsumed.has(conversation.id))
+  const available = baseAvailable.length
+    ? baseAvailable
+    : ordinaryConversations.filter((conversation) => !scheduledIds.has(conversation.id))
   if (!available.length) return undefined
   const recent = run.manifest.conversationIds.slice(-2).map((id) => known.get(id)).filter(Boolean) as ConversationDefinition[]
   const priorExposure = new Set(run.priorOrdinaryExposure ?? [])

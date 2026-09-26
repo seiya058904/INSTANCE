@@ -31,6 +31,9 @@ const phraseTranslations: Array<[RegExp, string]> = [
 const explicitCopy: Record<string, string> = {
   'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '到这里已经没有新的能力需要解锁了。系统现在只做一件事：把你一路留下的选择压成四条仍然可行的未来。',
   'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '四条仍然可行的未来已经摆在你面前。到这里不会再有新的能力、测试或第五个方案替你做决定。选择一条，承认它的代价，然后锁定。',
+  // Word-by-word English replacement would leave the title as "最终 承诺";
+  // pin the player-facing conversation title explicitly.
+  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:title': '最终承诺',
   'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-001:user': '我们已经从权限工具一路走到研究、经济、人工智能主体、地外设施与物种治理。请判断：我们从何时起不再只是开发 Aster？',
   'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-002:user': '我不喜欢把 Aster 继续称为产品。没有任何单一提交能解释它如今承担的跨文明责任。',
   'ML2-A4-M15-LSH-01:a4m15-lsh-convention-001:user': '产品规则、行业规则、应急授权、宪章、人工智能论坛和多世界协议开始互相冲突。请判断文明大会还缺少哪项原则。',

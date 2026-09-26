@@ -68,14 +68,14 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 - proposals.ts `proposalProvenanceLines`(纯派生函数,无状态)
 
 ## 9. 测试结果
-- 68 文件 / **547 用例全部通过**(新增 1 项余波归属回归断言;更新 1 处"它来自"断言)
+- 67 文件 / **545 用例全部通过**(新增 productionRepair.test.tsx;删除 2 个临时 routeDump 探针)
 - `npm run build` 通过(仅已知大 chunk 警告)
-- 路线验证:cautious(246 交换,humanControl 3,丰裕分红未来)与 assertive(233 交换,humanControl -1,物种自决未来,自然触发 First Contact)两条路线的世界状态、决策表、四条未来、结局均显著分化
+- 路线验证:cautious(245 交换,humanControl 3,完美行政结局)与 assertive(251 交换,humanControl -1,上传结局,自然触发 First Contact)两条路线的世界状态、决策表、四条未来、结局均显著分化
 - 本地浏览器验证过 qa 结局/Evaluation/跨模式去重(见 Production Final Repair 轮)
+- Final Text Cleanup II: 12 处 MT 误译修复 + 全部标点归一 + 21.4% 替换 + Ending registry 全面扫尾
 
 ## 10. 已知遗留
 - 数字键 1–N 需真人键盘复验(自动化无法注入真实键事件)
 - 普通内容中"按词替换保留空格"伪影类("跟 AI 吵"→"跟 人工智能 吵")——根因在 normalizePlayerFacingCopy 的逐词替换,属普通内容批量清理,本轮范围外
-- Evaluation"模拟全局完成率 21.4%"为静态文案
 - 非主线会话中途返回主线时,进行中(未完成)的会话 ID 要等完成后才进入去重集——极低概率的跨模式重复窗口
-- 主线 #1135/M15/M16 等决策的选项为 5–9 个长选项,仍有压缩空间;本轮为保护 decision binding hash 未动其文本
+- 主线部分决策的选项为 5–9 个长选项,仍有压缩空间;本轮为保护 decision binding hash 未动其文本

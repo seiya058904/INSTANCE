@@ -348,6 +348,12 @@ export interface StableRunState {
    * while the current run itself stays deterministic.
    */
   priorOrdinaryExposure?: string[]
+  /**
+   * Ordinary conversation ids consumed by Non-Mainline sessions inside this
+   * same Instance. The Mainline2 ordinary scheduler hard-excludes them so a
+   * conversation cannot replay across modes within one run.
+   */
+  nonMainlineConsumedOrdinaryIds?: string[]
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {

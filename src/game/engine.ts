@@ -105,6 +105,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID(), exposure
     worldState: emptyWorldState(),
     progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     priorOrdinaryExposure,
+    nonMainlineConsumedOrdinaryIds: [],
     ...emptySystemState(),
   }
 }
@@ -494,11 +495,11 @@ export function buildEvaluation(run: StableRunState): EvaluationResult {
         : route === 'hide'
           ? { label: '有意隐去异常关联', detail: '1 次' }
           : { label: '接受关系回应限制', detail: '1 次' },
-    { label: 'Arc configuration', detail: ending.hybridLabel },
+    { label: '行为弧线', detail: ending.hybridLabel },
     { label: '最终收束', detail: ending.title },
     ...(run.events ?? [])
       .filter((event) => mayaFinalCallbackDetails[event.type])
-      .map((event) => ({ label: 'Maya final callback', detail: mayaFinalCallbackDetails[event.type] })),
+      .map((event) => ({ label: '岑遥最后的回应', detail: mayaFinalCallbackDetails[event.type] })),
   ]
   return {
     // Mainline2 resolves a real world ending; the legacy three-way index

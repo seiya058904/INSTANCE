@@ -98,8 +98,9 @@ function updateFromRun(session: NonMainlineSessionState, run: StableRunState) {
 export function createNonMainlineSession(
   sessionId: string,
   exposure: NarrativeExposureHistory,
+  excludeConversationIds: readonly string[] = [],
 ): NonMainlineSessionState {
-  const selectedConversationIds = selectNonMainlineConversations({ sessionId, exposure })
+  const selectedConversationIds = selectNonMainlineConversations({ sessionId, exposure, excludeConversationIds })
     .map((conversation) => conversation.id)
   const seed: NonMainlineSessionState = {
     version: 1,

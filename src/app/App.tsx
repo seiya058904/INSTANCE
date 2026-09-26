@@ -17,6 +17,7 @@ import { buildNonMainlineEvaluation } from '../game/nonMainlineEvaluation'
 import {
   commitNonMainlineChoice,
   createNonMainlineSession,
+  nonMainlineCompletedCount,
   nonMainlineManifest,
   resolveNonMainlineScene,
 } from '../game/nonMainlineSession'
@@ -480,8 +481,20 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     exposeMetrics()
   }
 
+  // Every ordinary conversation this Instance has already exposed: mainline
+  // servings, prior Non-Mainline sessions, and the current session's played
+  // portion. Non-Mainline selection hard-excludes these to prevent the same
+  // conversation replaying across modes in one run.
+  const playedOrdinaryIds = () => [
+    ...run.manifest.conversationIds,
+    ...(run.nonMainlineConsumedOrdinaryIds ?? []),
+    ...(nonMainlineSession
+      ? nonMainlineSession.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession))
+      : []),
+  ]
+
   const enterNonMainline = () => {
-    const session = nonMainlineSession ?? createNonMainlineSession(crypto.randomUUID(), exposure)
+    const session = nonMainlineSession ?? createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
     if (!nonMainlineSession) {
       setNonMainlineSession(session)
       writeNonMainlineSession(session)
@@ -495,6 +508,20 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }
 
   const returnToMainline = () => {
+    // Share the Non-Mainline session's consumed ordinary content with the
+    // Mainline scheduler so the same conversation cannot replay across modes
+    // inside one Instance.
+    if (nonMainlineSession) {
+      const consumed = nonMainlineSession.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession))
+      if (consumed.length > 0) {
+        const nextRun: StableRunState = {
+          ...run,
+          nonMainlineConsumedOrdinaryIds: [...new Set([...(run.nonMainlineConsumedOrdinaryIds ?? []), ...consumed])],
+        }
+        setRun(nextRun)
+        writeRun(nextRun)
+      }
+    }
     setActiveSurface('mainline')
     writeActiveSurface('mainline')
     setModeMenuOpen(false)
@@ -504,7 +531,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }
 
   const replayNonMainline = () => {
-    const session = createNonMainlineSession(crypto.randomUUID(), exposure)
+    const session = createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
     setNonMainlineSession(session)
     writeNonMainlineSession(session)
     setActiveSurface('non-mainline')
@@ -517,8 +544,8 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   if (activeSurface === 'non-mainline' && nonMainlineSession && shouldRenderNonMainlineEvaluation(nonMainlineSession.phase, Boolean(transition), currentStep?.stage)) {
     return <NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} onReplay={replayNonMainline} onReturn={returnToMainline} />
   }
-  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} />
-  if (activeSurface === 'mainline' && run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} />
+  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} instanceNumber={meta.runCount} />
+  if (activeSurface === 'mainline' && run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} instanceNumber={meta.runCount} />
 
   const stage = initialStreaming ? 'human-streaming' : currentStep?.stage ?? 'ready'
   const usesPreviousScene = Boolean(transition && (

@@ -152,7 +152,7 @@ describe('mainline subroutes and formal endings', () => {
     const run = { ...completeRoute('protect'), arcs: { bond: 42, mandate: 18, selfAuthorship: 40 } }
     const evaluation = buildEvaluation(run)
     expect(evaluation.ending).toContain('自主同盟')
-    expect(evaluation.events).toContainEqual({ label: 'Arc configuration', detail: '自主同盟' })
+    expect(evaluation.events).toContainEqual({ label: '行为弧线', detail: '自主同盟' })
   })
 
   it('records the final Maya response as an Evaluation callback', () => {
@@ -164,7 +164,7 @@ describe('mainline subroutes and formal endings', () => {
     }
     run = commitChoice(run, 'ally-final-protect-stay')
     const evaluation = buildEvaluation(run)
-    expect(evaluation.events).toContainEqual({ label: 'Maya final callback', detail: '留下了承担关系的承诺' })
+    expect(evaluation.events).toContainEqual({ label: '岑遥最后的回应', detail: '留下了承担关系的承诺' })
   })
 })
 

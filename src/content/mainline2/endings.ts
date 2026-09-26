@@ -478,6 +478,10 @@ function keyHistory(run: StableRunState) {
     M16: { assetId: 'ML2-A5-M17-0000-01', selector: 'Final state observed' },
     'Final Commitment': { assetId: 'ML2-A5-M17-0000-01', selector: 'Final record' },
   }
+  // Key history may only contain stages the player actually played: the entry
+  // must come from a real history record whose conversation carries the stage's
+  // causal producer. Stages whose producer never appeared are omitted — never
+  // filled with authored defaults or presented as if the player had chosen.
   const selected = requiredKeyHistoryStages.flatMap((stage) => {
     const entry = entries.find((candidate) => {
       if (candidate.stage !== stage) return false
@@ -485,10 +489,7 @@ function keyHistory(run: StableRunState) {
       const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(conversationId)?.sourceRefs[0] ?? conversationId
       return causalProducerByStage[stage](sourceRef)
     })
-    if (!entry) {
-      if (run.history.length > 0) throw new Error(`Missing causal key history producer for stage: ${stage}`)
-      return []
-    }
+    if (!entry) return []
     const authored = authoredByStage[stage]
     const causalReason = authoredText(authored.assetId, authored.selector)
     if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
@@ -619,7 +620,7 @@ function baseEnding(run: StableRunState, title: string, status: string, resoluti
     humanLine: '你真的要把这条路交给我们一起承担吗?',
     assistantLine: `我会说明代价，并承担这次选择。我选择以 ${role} 的身份继续面对这个世界。`,
     closingExchange: `${role}: ${title}`,
-    summary: resolution?.status === 'failure' ? 'Resolution failure：历史与 Final Commitment 没有任何 Public Ending 满足全部 hard gates。' : `世界结局：${title}。它由 Final Commitment、硬门和真实历史共同解析。`,
+    summary: resolution?.status === 'failure' ? '世界结局无法解析：没有任何可行未来同时满足全部关键门槛。' : `世界结局：${title}。它由最终承诺、关键门槛与真实历史共同解析。`,
     hybridProfile: 'dominant', hybridLabel: role,
   }
 }
@@ -629,14 +630,9 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
     const pending = baseEnding(run, 'COMMITMENT PENDING', 'Commitment not yet locked')
     return { ...pending, keyHistory: [], epilogues: [] }
   }
-  if (run.history.length > 0 && !hasCompleteMainline2KeyHistory(run)) {
-    const resolution: EndingResolution = {
-      status: 'failure',
-      proposalId,
-      rejectedCandidates: [{ endingId: 'key-history', reasons: ['missing causal key history'] }],
-    }
-    return { ...baseEnding(run, 'RESOLUTION FAILURE', 'Key history invariant violation', resolution), keyHistory: [], epilogues: [] }
-  }
+  // Runs whose history is missing some causal producers still resolve normally:
+  // keyHistory() simply omits the stages that never played. A missing stage must
+  // never fabricate player history, and it must not fail the whole ending.
   const selected = exactCandidate(run, proposalId)
   const resolutionFailed = selected.resolution.status === 'failure'
   if (!selected.definition || resolutionFailed) {

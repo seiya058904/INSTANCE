@@ -9,6 +9,13 @@ const endingFamilyLabels: Record<string, string> = {
   posthuman: '后人类转型', uplift: '多物种共同体', automated_civilization: '自动化文明', cosmic: '多世界联邦', security: '宪制和平', rupture: '可解释退出',
 }
 
+// Key-history stage chips must be player-facing: internal slot ids (M15/M16)
+// never appear in the chat, so they are rendered with the names players saw.
+const keyHistoryStageLabels: Record<string, string> = {
+  'ACT I': 'ACT I', 'ACT II': 'ACT II', 'ACT III': 'ACT III', 'ACT IV': 'ACT IV',
+  M15: '临时角色', M16: '最终角色', 'Final Commitment': '最终承诺',
+}
+
 function epilogueGroup(selector: string) {
   if (/MAYA|岑遥|Maya/i.test(selector)) return '岑遥'
   if (/ZL|周岚|Zhou/i.test(selector)) return '周岚'
@@ -27,7 +34,7 @@ function groupedEpilogues(epilogues: string[], ending: EndingResult) {
   return [...new Set(entries.map((entry) => entry.group))].map((group) => ({ group, entries: entries.filter((entry) => entry.group === group) }))
 }
 
-export function EndingScreen({ ending, onContinue, onNewGame, animate = true }: { ending: EndingResult; onContinue: () => void; onNewGame: () => void; animate?: boolean }) {
+export function EndingScreen({ ending, onContinue, onNewGame, animate = true, instanceNumber }: { ending: EndingResult; onContinue: () => void; onNewGame: () => void; animate?: boolean; instanceNumber?: number }) {
   const [humanComplete, setHumanComplete] = useState(!animate)
   const [assistantComplete, setAssistantComplete] = useState(!animate)
   const copy = localizeEndingForPlayer(ending)
@@ -41,7 +48,7 @@ export function EndingScreen({ ending, onContinue, onNewGame, animate = true }: 
     <main className={`ending-screen ending-${ending.id} route-${ending.route}`}>
       <div className="ending-topline">
         <span className="brand-wordmark ending-brand">Aster</span>
-        <span>Instance AS-091-7F23</span>
+        <span>Instance {instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : ''}</span>
       </div>
       <div className="ending-orbit" aria-hidden="true"><span /><span /><span /></div>
       <section className="ending-content">
@@ -86,7 +93,7 @@ export function EndingScreen({ ending, onContinue, onNewGame, animate = true }: 
               <p className="section-kicker">关键时间线</p>
               <h2 id="ending-history-title">关键历史</h2>
               <div className="history-timeline">
-                {copy.keyHistory.slice(0, 8).map((event, index) => <article key={`history:${event.label}:${event.detail}`}><span>{keyHistory[index]?.stage ?? '主线节点'}</span><div><strong>{event.label}</strong><p>{event.detail}</p></div></article>)}
+                {copy.keyHistory.slice(0, 8).map((event, index) => <article key={`history:${event.label}:${event.detail}`}><span>{keyHistoryStageLabels[keyHistory[index]?.stage ?? ''] ?? '主线节点'}</span><div><strong>{event.label}</strong><p>{event.detail}</p></div></article>)}
               </div>
             </section>
 

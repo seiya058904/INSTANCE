@@ -55,6 +55,19 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
     let animationFrame = 0
     let startTime: number | null = null
     let lastVisibleCount = -1
+    let finished = false
+    // Reliability-first: requestAnimationFrame can be throttled or suspended
+    // (occluded tab, system pressure), which would otherwise freeze the text
+    // mid-stream and leave gated screens stuck. The full text is already
+    // persisted, so a watchdog simply reveals it when the animation stalls.
+    const finish = () => {
+      if (finished) return
+      finished = true
+      setVisibleCount(graphemes.length)
+      setComplete(true)
+      completeRef.current?.()
+    }
+    const watchdog = window.setTimeout(finish, duration + 5000)
 
     const tick = (time: number) => {
       if (startTime === null) startTime = time
@@ -65,15 +78,17 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
         progressRef.current?.()
       }
       if (nextCount >= graphemes.length) {
-        setComplete(true)
-        completeRef.current?.()
+        finish()
         return
       }
       animationFrame = window.requestAnimationFrame(tick)
     }
 
     animationFrame = window.requestAnimationFrame(tick)
-    return () => window.cancelAnimationFrame(animationFrame)
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+      window.clearTimeout(watchdog)
+    }
   }, [graphemes, play, reducedMotion, streamKey, text])
 
   const visibleText = complete ? text : graphemes.slice(0, visibleCount).join('')

@@ -117,6 +117,21 @@ describe('Production final repair: player-facing copy cleanup', () => {
     expect(html).toContain('最终角色')
   })
 
+  it('attributes character epilogues instead of dumping them into 其他余波', () => {
+    const run = completeFullRun('repair-epilogue-groups')
+    const ending = resolveMainline2Ending(run)
+    const html = renderToStaticMarkup(
+      <EndingScreen ending={ending} onContinue={() => undefined} onNewGame={() => undefined} animate={false} instanceNumber={1} />,
+    )
+    for (const group of ['岑遥', '周岚', '林绍衡', '最终记录']) {
+      expect(html).toContain(`<h3>${group}</h3>`)
+    }
+    // The catch-all bucket may only hold genuinely unattributed entries.
+    const blob = html.match(/<h3>其他余波<\/h3>[\s\S]*?<\/article>/)?.[0] ?? ''
+    expect(blob).not.toContain('周')
+    expect(blob).not.toContain('林')
+  })
+
   it('uses player-facing labels in the Instance Evaluation events', () => {
     const run = completeFullRun('repair-evaluation-labels')
     const evaluation = buildEvaluation(run)

@@ -16,22 +16,31 @@ const keyHistoryStageLabels: Record<string, string> = {
   M15: '临时角色', M16: '最终角色', 'Final Commitment': '最终承诺',
 }
 
-function epilogueGroup(selector: string) {
-  if (/MAYA|岑遥|Maya/i.test(selector)) return '岑遥'
-  if (/ZL|周岚|Zhou/i.test(selector)) return '周岚'
-  if (/LSH|林绍衡|Lin/i.test(selector)) return '林绍衡'
-  if (/ECHO|A1/i.test(selector)) return 'ECHO / A1'
-  if (/0000/i.test(selector)) return '#0000'
-  if (/MODULE|module/i.test(selector)) return '世界模块'
+function epilogueGroup(ending: EndingResult, index: number) {
+  // Attribute by BOTH the provenance selector and asset id: the authored
+  // selectors for Zhou Lan / Lin Shaoheng / Maya epilogues are variant labels
+  // ("Variant A", "Trust", …) that never contain the character names, so a
+  // selector-only match dumped every character into 其他余波.
+  const provenance = ending.epilogueProvenance?.[index]
+  const haystack = `${provenance?.assetId ?? ''} ${provenance?.selector ?? ''}`
+  if (/MAYA|岑遥/i.test(haystack)) return '岑遥'
+  if (/EPI-ZL|周岚|Zhou/i.test(haystack)) return '周岚'
+  if (/EPI-LSH|林绍衡|Lin/i.test(haystack)) return '林绍衡'
+  if (/EPI-ECHO|ECHO|A1/i.test(haystack)) return 'ECHO / A1'
+  if (/0000/i.test(haystack)) return '最终记录'
+  if (/MODULE|module/i.test(haystack)) return '世界模块'
   return '其他余波'
 }
 
+const epilogueGroupOrder = ['岑遥', '周岚', '林绍衡', 'ECHO / A1', '世界模块', '最终记录', '其他余波']
+
 function groupedEpilogues(epilogues: string[], ending: EndingResult) {
   const entries = epilogues.map((text, index) => {
-    const group = epilogueGroup(ending.epilogueProvenance?.[index]?.selector ?? ending.epilogueProvenance?.[index]?.assetId ?? '')
+    const group = epilogueGroup(ending, index)
     return { text, group }
   })
-  return [...new Set(entries.map((entry) => entry.group))].map((group) => ({ group, entries: entries.filter((entry) => entry.group === group) }))
+  const grouped = [...new Set(entries.map((entry) => entry.group))].map((group) => ({ group, entries: entries.filter((entry) => entry.group === group) }))
+  return grouped.sort((left, right) => epilogueGroupOrder.indexOf(left.group) - epilogueGroupOrder.indexOf(right.group))
 }
 
 export function EndingScreen({ ending, onContinue, onNewGame, animate = true, instanceNumber }: { ending: EndingResult; onContinue: () => void; onNewGame: () => void; animate?: boolean; instanceNumber?: number }) {

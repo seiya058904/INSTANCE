@@ -43,7 +43,7 @@ describe('Mainline 2.0 M17 REVIEW clarification', () => {
     expect(last.assistantText).toContain('这条路保留：')
     expect(last.assistantText).toContain('必须放弃：')
     expect(last.assistantText).toContain('主要阻力：')
-    expect(last.assistantText).toContain('它来自：')
+    expect(last.assistantText).toContain('它来自这一局的：')
     expect(last.assistantText).toContain('当前可行性：')
     // The response must not be the raw choice label alone.
     expect(last.assistantText).not.toEqual(clarify!.text)

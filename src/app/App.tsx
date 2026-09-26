@@ -608,7 +608,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
           ? 'static'
           : 'hidden'
   const modelLabel = currentStep?.effectDetail === 'model-flash'
-    ? 'Aster 3.1 / AS-091-7F23'
+    ? `Aster 3.1 / #${String(8846 + meta.runCount).padStart(4, '0')}`
     : 'Aster 3.1'
   const modeControlProps = {
     activeSurface,

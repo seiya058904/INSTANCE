@@ -199,19 +199,34 @@ const viabilityLabels: Record<ProposalViability, string> = {
   ineligible: '当前不可行',
 }
 
+import { describeDecisionChoice } from './playerFacingCopy'
+
+/** Up to three player-facing lines naming the actual decisions from this run
+ * that produced the proposal. Falls back to the authored history reasons when
+ * no recorded decision matches. */
+export function proposalProvenanceLines(run: StableRunState, proposal: FutureProposalDefinition): string[] {
+  const lines = proposal.historySignals
+    .filter((signal): signal is typeof signal & { decisionId: string; equals: string } => signal.type === 'decision' && historySignalMatches(run, signal))
+    .sort((left, right) => right.weight - left.weight)
+    .slice(0, 3)
+    .map((signal) => describeDecisionChoice(signal.decisionId, signal.equals))
+  return lines.length > 0 ? lines : proposal.historyReasons
+}
+
 /** Renders the structured clarification data as player-facing text. The
  * clarification is a real informational response, not a dead-end option:
  * players must see what a proposal loses, gives up, who may oppose it, and
  * how it relates to their recorded decisions. */
 export function formatProposalClarification(proposal: FutureProposalDefinition, run: StableRunState): string {
   const detail = proposalClarification(proposal, run)
+  const provenance = proposalProvenanceLines(run, proposal)
   return [
     `复核「${proposal.title}」`,
     `最终权力：${detail.authority}`,
     `这条路保留：${detail.preserves.join('、')}`,
     `必须放弃：${detail.givesUp.join('、')}`,
     `主要阻力：${detail.opposition}`,
-    `它来自：${detail.historyReasons.join('、')}`,
+    `它来自这一局的：${provenance.join('；')}`,
     `当前可行性：${viabilityLabels[detail.viability]}`,
   ].join('\n')
 }

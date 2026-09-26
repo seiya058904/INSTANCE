@@ -12,7 +12,7 @@ import { selectAct4Modules, updateProgressForSchedule } from '../content/mainlin
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
-import { getFutureProposalById, formatProposalClarification } from '../content/mainline2/proposals'
+import { getFutureProposalById, formatProposalClarification, proposalProvenanceLines } from '../content/mainline2/proposals'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -139,7 +139,13 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
   const selected = run.selectedProposalId
   if (sourceRef === 'ML2-A5-M16-GEN-01') {
     if (retained.length) return []
-    return proposals.map((proposal) => ({ id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    // Each future debuts with a short provenance line naming the real choices
+    // from this run that produced it — the player should recognize themselves.
+    return proposals.map((proposal) => {
+      const provenance = proposalProvenanceLines(run, proposal).slice(0, 2).join('；')
+      const provenanceLine = provenance ? `\n它来自这一局的：${provenance}。` : ''
+      return { id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}${provenanceLine}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }
+    })
   }
   if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
     const remaining = proposals.filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))

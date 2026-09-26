@@ -524,7 +524,7 @@ export function buildEvaluation(run: StableRunState): EvaluationResult {
       { label: 'System Awareness', value: clamp(20 + a.awareness * 6) },
     ],
     events,
-    simulatedCompletionRate: '模拟全局完成率 21.4%',
+    simulatedCompletionRate: '主线完成度：已完成',
   }
 }
 

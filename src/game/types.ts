@@ -400,7 +400,7 @@ export interface EvaluationResult {
   route: EndingRoute
   indices: Array<{ label: string; value: number }>
   events: Array<{ label: string; detail: string }>
-  simulatedCompletionRate: '模拟全局完成率 21.4%'
+  simulatedCompletionRate: string
 }
 
 export interface MetaState {

@@ -354,6 +354,15 @@ export interface StableRunState {
    * conversation cannot replay across modes within one run.
    */
   nonMainlineConsumedOrdinaryIds?: string[]
+  /**
+   * Which runtime conversation calendar this run walks. Runs created before
+   * the field existed (pre-calendar-versioning v3 saves) walked only the full
+   * 190-slot plan; absence of the field keeps those saves on that legacy
+   * calendar so restoring them mid-run never re-indexes their manifest onto
+   * the compressed branch calendar. New runs are created at version 2, whose
+   * contact-closed branch drops the gated Contact slots.
+   */
+  mainlineCalendarVersion?: number
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {

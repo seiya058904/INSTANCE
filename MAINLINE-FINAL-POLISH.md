@@ -115,7 +115,12 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 - 旧 CI "full-run pacing audit"(26 场)审计的是退役的 createRun() 路线,已更名为 "legacy v2 route pacing audit" 并注明。
 - 新增 `mainline2.pacingAudit.test.ts`:对 createMainline2Run 真实场景图做只计数审计(不等待动画),双分支各走一条完整路线:关闭 = 180 场/232 次选择/对比阅读估计约 118 分钟;开启 = 190 场/236 次/约 121 分钟;快速阅读约 65–67 分钟。断言带 ±10% 预算,内容增删导致节奏漂移会在 CI 直接暴露(输出 INSTANCE_MAINLINE2_PACING_AUDIT)。
 
-### 验证
-- 69 文件 / **552 用例全部通过**(较 90e706a 净增 5 项:pacing 双分支 2 项、label 覆盖 3 项;若干既有断言随分支日历同步更新)
+### D. 旧存档日历兼容(P1,复审发现的回归)
+- 问题:a335086 把 Contact-closed 日历从 190 压到 180,但旧 v3 存档的 `manifest.conversationIds.length` 是按旧 190 日历累计的;新代码直接拿它索引压缩日历,旧 closed 存档恢复后会跳剧情(@155 跳到 Security)、或跳过 ACT V(@179 直达 M17)、或在 length ≥ 180 时因越界返回 undefined 而**提前进入 Ending**。90e706a 在线约 8 小时,该人群真实存在。
+- 修复:新增 `StableRunState.mainlineCalendarVersion`(新局由 `createMainline2Run` 置 2);`effectiveStoryPlanForRun` 对无此字段的旧存档一律返回完整 190 日历——旧玩家按原路线走完(门控槽位仍按旧行为衰减为 Ordinary),下一局新开局自然进入 180 压缩日历。serializeRun/restoreRun 为整状态透传,字段随存档自然持久化,无需 migration。
+- 回归保护:新增 `mainline2.legacyCalendar.test.ts` 四项 fixture——旧存档 @155 不跳 Security、@179 不跳 Final Commitment 且仍完整走完 ACT V(@190 结束)、@180+ 不提前 Ending 且合法抵达 M17、版本标记 round-trip(旧存档无字段保持 190 日历/新局 2 保持 180)。
+
+### 验证(最终)
+- 70 文件 / **556 用例全部通过**(较 90e706a 净增 11 项:上一轮 +7,本项兼容 fixture +4)
 - tsc app/node + `npm run build` 通过
 - 同步修正本文档前半段残留旧术语(经济主义/提升主义/扩张主义/世界外治理/研究治理学说/人形学说 → 现行"原则"系)与泄漏措辞精度

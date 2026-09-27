@@ -122,6 +122,11 @@ export function storyPlanForRun(run: StableRunState) {
  * before slot 148, so the projection is stable for the rest of a run.
  */
 export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
+  // Legacy v3 saves (created before calendar versioning) index their manifest
+  // against the full 190-slot plan and may carry a currentNode inside the
+  // gated chapter region. Re-indexing them onto the compressed calendar would
+  // skip story and could end the run early, so they keep the legacy calendar.
+  if (run.mainlineCalendarVersion !== 2) return MAINLINE2_STORY_PLAN
   if (contactRouteOpen(run)) return MAINLINE2_STORY_PLAN
   return MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
 }

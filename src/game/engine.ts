@@ -106,6 +106,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID(), exposure
     progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     priorOrdinaryExposure,
     nonMainlineConsumedOrdinaryIds: [],
+    mainlineCalendarVersion: 2,
     ...emptySystemState(),
   }
 }

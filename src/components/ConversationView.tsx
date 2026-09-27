@@ -8,6 +8,8 @@ import { LongformPreviewCard } from './LongformPreviewCard'
 import { LongInputPreviewCard } from './LongInputPreviewCard'
 import { ProgressiveMessage } from './ProgressiveMessage'
 import { createScrollScheduler } from './scrollBehavior'
+import { AsterMark } from './AsterMark'
+import { UserAvatar } from './UserAvatar'
 
 interface ConversationViewProps {
   scene: ResolvedScene
@@ -38,17 +40,20 @@ function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
 function UserMessage({ children, showAvatar = true, content }: { children: ReactNode; showAvatar?: boolean; content?: readonly MessageContentPart[] }) {
   return (
     <div className="message-row user-row">
-      {showAvatar ? <span className="user-avatar" aria-hidden="true">U</span> : <span />}
+      {showAvatar ? <UserAvatar /> : <span aria-hidden="true" />}
       <div className="user-message">{children}<ContentParts parts={content} /></div>
     </div>
   )
 }
 
-function AssistantMessage({ children, content }: { children: ReactNode; content?: readonly MessageContentPart[] }) {
+function AssistantMessage({ children, content, active = false }: { children: ReactNode; content?: readonly MessageContentPart[]; active?: boolean }) {
   return (
     <div className="message-row assistant-row">
-      <span className="assistant-mark" aria-hidden="true"><span /></span>
       <div className="assistant-message">{children}<ContentParts parts={content} /></div>
+      <div className="assistant-signature">
+        {active && <span className="response-status" role="status">正在回复</span>}
+        <span>Aster</span><AsterMark active={active} />
+      </div>
     </div>
   )
 }
@@ -124,7 +129,7 @@ function TypingIndicator({ title, stage }: { title: string; stage: ConversationF
       : `${title} 正在输入…`
   return (
     <div className={stopped ? 'typing-status is-paused' : 'typing-status'} role="status" aria-live="polite">
-      <span className="typing-avatar" aria-hidden="true">U</span>
+      <UserAvatar className="typing-avatar" />
       <span>{label}</span>
       {!stopped && <span className="typing-dots" aria-hidden="true"><i /><i /><i /></span>}
     </div>
@@ -223,11 +228,11 @@ export function ConversationView({
   }))
 
   return (
-    <main className="conversation-main" aria-busy={!choicesReady}>
+    <main className="conversation-main" aria-busy={!choicesReady} data-flow-stage={flowStage}>
       <header className="conversation-header">
         <div>
           <p className="conversation-kicker">当前对话</p>
-          <h1>{conversationTitle}</h1>
+          <h1 key={conversationTitle}>{conversationTitle}</h1>
         </div>
         <div className="conversation-header-actions">
           {modeControls}
@@ -270,7 +275,7 @@ export function ConversationView({
               {scene.assistantContext && currentMessageMode !== 'hidden' && <p className="assistant-context">{scene.assistantContext}</p>}
 
               {flowStage === 'assistant-streaming' && assistantStreamingText && (
-                <AssistantMessage>
+                <AssistantMessage active>
                   <ProgressiveMessage
                     text={assistantStreamingText}
                     streamKey={assistantStreamKey ?? `${scene.id}:assistant`}
@@ -284,7 +289,7 @@ export function ConversationView({
               {flowStage === 'ready' && (
                 <section className={`candidate-section is-ready ${scene.choiceKind === 'progression' ? 'is-progression' : ''}`} aria-label={scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}>
                   <div className="candidate-heading">
-                    <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}</span>
+                    <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}{scene.choiceKind !== 'progression' && <span className="draft-label">Aster · 未发送草稿</span>}</span>
                     <small>{scene.choiceKind === 'progression' ? '单向推进' : `按 1–${scene.choices.length} 选择`}</small>
                   </div>
                   <div className="candidate-list">
@@ -299,6 +304,7 @@ export function ConversationView({
                       >
                         <span className="candidate-number" aria-hidden="true">{index + 1}</span>
                         <span className="candidate-copy">{choice.text}<ContentParts parts={choice.content} /></span>
+                        <span className="candidate-action" aria-hidden="true"><span>{scene.choiceKind === 'progression' ? '继续' : '发送'}</span><svg className="candidate-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.25"><path d="M4 10h11M10 5l5 5-5 5" /></svg></span>
                       </button>
                     ))}
                   </div>

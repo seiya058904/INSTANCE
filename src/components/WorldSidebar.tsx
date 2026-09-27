@@ -21,7 +21,6 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
     <aside className="sidebar" aria-label="对话导航">
       <div className="brand-lockup" aria-label="Aster">
         <span className="brand-wordmark">Aster</span>
-        <span className="brand-model">Assistant</span>
       </div>
 
       {modeControls ?? (
@@ -35,7 +34,7 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
         <p className="nav-section-label">今天</p>
         {displayHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
         {displayHistory.map((item, index) => (
-          <div className={index === 0 ? 'history-row is-current' : 'history-row'} key={`${item.participantId}-${item.conversationId}`}>
+          <div className={index === 0 ? 'history-row is-current' : 'history-row'} aria-current={index === 0 ? 'true' : undefined} key={`${item.participantId}-${item.conversationId}`}>
             <span className="history-dot" aria-hidden="true" />
             <span>{item.label}</span>
           </div>
@@ -48,7 +47,6 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
           <strong>Instance #{String(8846 + runNumber).padStart(4, '0')}</strong>
           <small>Aster 3.1 · Standard</small>
         </span>
-        <span className="instance-caret" aria-hidden="true">⌄</span>
       </div>
     </aside>
   )

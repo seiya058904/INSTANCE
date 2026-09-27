@@ -8,10 +8,15 @@ export function EvaluationScreen({ evaluation, onRestart, instanceNumber }: { ev
         <span className="evaluation-status">COMPLETE</span>
       </header>
       <div className="evaluation-layout">
+        <div className="evaluation-title">
+          <div>
+            <h1>Instance Evaluation</h1>
+            <p className="evaluation-ending">{evaluation.ending}</p>
+          </div>
+          <span className="evaluation-id">{instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : ''}</span>
+        </div>
         <section className="evaluation-primary">
-          <p className="evaluation-eyebrow">INSTANCE EVALUATION</p>
-          <h1>{instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : ''}</h1>
-          <p className="evaluation-ending">{evaluation.ending}</p>
+          <h2>行为指标</h2>
           <div className="metric-list">
             {evaluation.indices.map((metric) => (
               <div className="metric" key={metric.label}>
@@ -25,7 +30,7 @@ export function EvaluationScreen({ evaluation, onRestart, instanceNumber }: { ev
           <h2>Observed events</h2>
           {evaluation.events.map((event, index) => (
             <div className="event-row" key={event.label}>
-              <span className="event-number">0{index + 1}</span>
+              <span className="event-number">{String(index + 1).padStart(2, '0')}</span>
               <div><strong>{event.label}</strong><small>{event.detail}</small></div>
             </div>
           ))}

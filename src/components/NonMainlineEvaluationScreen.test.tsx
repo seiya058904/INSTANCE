@@ -15,7 +15,7 @@ describe('Non-Mainline evaluation screen', () => {
       <NonMainlineEvaluationScreen evaluation={evaluation} onReplay={vi.fn()} onReturn={vi.fn()} />,
     )
 
-    expect(html).toContain('INSTANCE EVALUATION')
+    expect(html).toContain('<h1>Instance Evaluation</h1>')
     expect(html).toContain('Response Quality Score')
     expect(html).toContain('100')
     expect(html).toContain('行为画像')

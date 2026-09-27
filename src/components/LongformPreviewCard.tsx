@@ -19,7 +19,7 @@ export function LongformPreviewCard({ preview }: { preview: LongformPreview }) {
           <span className="longform-summary-label">长回复</span>
           <span className="longform-summary-meta">{artifactLabels[preview.artifactType]} · {preview.estimatedLength}</span>
         </span>
-        <span className="longform-summary-state">已折叠</span>
+        <span className="longform-summary-state"><span className="longform-state-collapsed">已折叠</span><span className="longform-state-expanded">已展开</span></span>
       </summary>
       <div className="longform-preview-body">
         {preview.title && <h3>{preview.title}</h3>}

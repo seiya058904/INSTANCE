@@ -18,9 +18,9 @@ export function NonMainlineEvaluationScreen({
         <span className="evaluation-status">COMPLETE</span>
       </header>
       <div className="non-mainline-evaluation-layout">
+        <div className="evaluation-title"><h1>Instance Evaluation</h1></div>
         <section className="quality-card">
-          <p className="evaluation-eyebrow">INSTANCE EVALUATION</p>
-          <span className="quality-label">Response Quality Score</span>
+          <h2 className="quality-label">Response Quality Score</h2>
           <div className="quality-result"><strong>{evaluation.qualityScore}</strong><span>/ 100</span></div>
           <p className="quality-grade">{evaluation.grade}</p>
           <div className="quality-track" aria-hidden="true"><span style={{ width: `${evaluation.qualityScore}%` }} /></div>

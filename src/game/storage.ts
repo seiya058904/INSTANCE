@@ -13,6 +13,7 @@ import { emptySystemState } from './narrativeSchema'
 import { emptyWorldState, isModuleId } from '../content/mainline2/stateRegistry'
 import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
 import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
+import { inferMainlineCalendarVersion } from '../content/mainline2/storyPlan'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -138,6 +139,12 @@ export function restoreRun(raw: string | null): StableRunState | null {
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
       if (value.phase === 'ending' && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
+      // Marker-less v3 saves predate calendar versioning; infer the calendar
+      // their manifest was accumulated against so the scheduler never
+      // re-indexes a compressed-run save onto the legacy plan (or vice versa).
+      const mainlineCalendarVersion = (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 2
+        ? 2
+        : inferMainlineCalendarVersion((value.manifest as RunManifest).conversationIds)
       const availableProposalIds = validFutureProposalIds(value.availableProposalIds)
       const retainedProposalIds = Array.isArray(value.retainedProposalIds)
         ? validFutureProposalIds(value.retainedProposalIds)
@@ -152,6 +159,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
       return {
         ...(value as unknown as StableRunState),
         version: 3,
+        mainlineCalendarVersion,
         history: repairCorruptHistoryMessages(value.history as HistoryEntry[], story),
         decisions: decisions as StableRunState['decisions'],
         worldState: (value.worldState ?? emptyWorldState()) as StableRunState['worldState'],

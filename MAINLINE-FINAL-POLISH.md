@@ -118,9 +118,14 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 ### D. 旧存档日历兼容(P1,复审发现的回归)
 - 问题:a335086 把 Contact-closed 日历从 190 压到 180,但旧 v3 存档的 `manifest.conversationIds.length` 是按旧 190 日历累计的;新代码直接拿它索引压缩日历,旧 closed 存档恢复后会跳剧情(@155 跳到 Security)、或跳过 ACT V(@179 直达 M17)、或在 length ≥ 180 时因越界返回 undefined 而**提前进入 Ending**。90e706a 在线约 8 小时,该人群真实存在。
 - 修复:新增 `StableRunState.mainlineCalendarVersion`(新局由 `createMainline2Run` 置 2);`effectiveStoryPlanForRun` 对无此字段的旧存档一律返回完整 190 日历——旧玩家按原路线走完(门控槽位仍按旧行为衰减为 Ordinary),下一局新开局自然进入 180 压缩日历。serializeRun/restoreRun 为整状态透传,字段随存档自然持久化,无需 migration。
-- 回归保护:新增 `mainline2.legacyCalendar.test.ts` 四项 fixture——旧存档 @155 不跳 Security、@179 不跳 Final Commitment 且仍完整走完 ACT V(@190 结束)、@180+ 不提前 Ending 且合法抵达 M17、版本标记 round-trip(旧存档无字段保持 190 日历/新局 2 保持 180)。
+- 回归保护:新增 `mainline2.legacyCalendar.test.ts` fixture——旧存档 @155 不跳 Security、@179 不跳 Final Commitment 且仍完整走完 ACT V(@190 结束)、@180+ 不提前 Ending 且合法抵达 M17、版本标记 round-trip(旧存档无字段保持 190 日历/新局 2 保持 180)。
+
+### E. a335086 中间版存档的日历推断(P1-Low,ee9288f 复审发现的残留洞)
+- 问题:a335086 上线到 ee9288f 之间约 28 分钟产生的存档是"无 marker + 180 压缩日历"形状,ee9288f 的"无 marker = legacy 190"判定把它们和 90e706a 存档混为一谈。已走过压缩区的这类存档恢复后会按旧日历重新选中**已在 manifest 里**的主线会话,而 `appendMainline2Conversation` 对重复 ID 直接返回原 manifest,形成无法推进的循环。
+- 修复:新增 `inferMainlineCalendarVersion(manifest.conversationIds)`——用 Contact 之后全部固定主线会话(M14/M15/M16/M17 区段)在 manifest 中的位置做形状推断:全部落在压缩位(比 legacy 位早 10)→ 判为日历 2;任一落在 legacy 位 → 判为 legacy;尚未出现任何 post-Contact 固定主线(前期存档,两代不可区分)→ 保守判 legacy(只损失节奏优化,无推进风险)。`restoreRun` 对无 marker 的 v3 存档执行该推断并写回字段;普通 filler 永远不可能占用固定主线 ID,故判据无歧义。
+- 回归保护:新增三项 a335086 形状 fixture(先按 marker=2 玩、最后才剥 marker):@155 恢复后推断为 2、Security 只出现一次、180 场正常结束;@179 直达 M17 Commit、无重复;@150(判据未出现)保守保持 legacy 190 且仍完整通关。三个时代的存档形状(90e706a / a335086 / ee9288f+)现在全部有 fixture 覆盖。
 
 ### 验证(最终)
-- 70 文件 / **556 用例全部通过**(较 90e706a 净增 11 项:上一轮 +7,本项兼容 fixture +4)
+- 70 文件 / **559 用例全部通过**(较 90e706a 净增 14 项:a335086 轮 +7,日历兼容 +4,a335086 形状推断 +3)
 - tsc app/node + `npm run build` 通过
 - 同步修正本文档前半段残留旧术语(经济主义/提升主义/扩张主义/世界外治理/研究治理学说/人形学说 → 现行"原则"系)与泄漏措辞精度

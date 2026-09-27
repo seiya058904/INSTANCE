@@ -121,6 +121,10 @@ export function storyPlanForRun(run: StableRunState) {
  * (resource-network flag, anomaly seed event, doctrine decisions) are fixed
  * before slot 148, so the projection is stable for the rest of a run.
  */
+// The contact-closed branch calendar: the full plan minus the ten gated
+// Contact scenes after the no-contact bridge (full slots 152-161).
+const COMPRESSED_CLOSED_PLAN: readonly StoryPlanSlot[] = MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
+
 export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
   // Legacy v3 saves (created before calendar versioning) index their manifest
   // against the full 190-slot plan and may carry a currentNode inside the
@@ -128,5 +132,31 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
   // skip story and could end the run early, so they keep the legacy calendar.
   if (run.mainlineCalendarVersion !== 2) return MAINLINE2_STORY_PLAN
   if (contactRouteOpen(run)) return MAINLINE2_STORY_PLAN
-  return MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
+  return COMPRESSED_CLOSED_PLAN
+}
+
+/**
+ * Marker-less v3 saves come from two eras: before a335086 (legacy full
+ * calendar) and the short a335086 deployment window (compressed closed
+ * calendar, no marker yet). Fixed mainline conversations after the Contact
+ * region sit exactly ten positions earlier under the compressed calendar, so
+ * their manifest positions identify the era unambiguously — an ordinary
+ * filler can never occupy a fixed mainline id. Saves that have not reached
+ * the post-Contact region yet are indistinguishable; they default to the
+ * legacy calendar, which costs at most pacing, never progression.
+ */
+export function inferMainlineCalendarVersion(conversationIds: readonly string[]): number | undefined {
+  const compressedIndexById = new Map<string, number>()
+  COMPRESSED_CLOSED_PLAN.forEach((slot, index) => {
+    if (slot.kind === 'mainline') compressedIndexById.set(slot.conversationId, index)
+  })
+  let postContactSeen = 0
+  const discriminators = MAINLINE2_STORY_PLAN.filter((slot): slot is MainlineStoryPlanSlot => slot.kind === 'mainline' && !slot.requires && slot.slot > 163)
+  for (const slot of discriminators) {
+    const manifestIndex = conversationIds.indexOf(slot.conversationId)
+    if (manifestIndex === -1) continue
+    postContactSeen += 1
+    if (compressedIndexById.get(slot.conversationId) !== manifestIndex) return undefined
+  }
+  return postContactSeen > 0 ? 2 : undefined
 }

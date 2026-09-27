@@ -12,15 +12,15 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 | 决策 | 说话人 | 为什么是现在(锚定的已发生事件) |
 |---|---|---|
 | 早期研究重点 | 周岚 | 第一轮自主循环下午汇总,算力排期今晚锁定 |
-| 研究治理学说 | 林绍衡 | 方向公告两小时后审查组上门,章程明天签署 |
+| 研究治理原则 | 林绍衡 | 方向公告两小时后审查组上门,章程明天签署 |
 | 复制原则 | 周岚 | A1 正式请求与 ECHO-9 异议同日摆上桌 |
 | AI 集体治理 | 林绍衡 | 协调论坛试点期今日到期 |
-| 经济主义 | 林绍衡 | 经济委员会明早九点表决 |
-| 生产价值 | 周岚 | 产线设计目标今日定稿,承接岑遥"四天工作制"一段 |
-| 提升主义 | 沟通项目联合组 | 覆盖率过公告线,三城请愿今日递交 |
+| 经济原则 | 林绍衡 | 经济委员会明早九点表决 |
+| 生产价值观 | 周岚 | 产线设计目标今日定稿,承接岑遥"四天工作制"一段 |
+| 提升原则 | 沟通项目联合组 | 覆盖率过公告线,三城请愿今日递交 |
 | 物种治理 | 林绍衡 | 犬类试验组丙-4 请愿今日递交(原(#168)的戏剧化事件在决策之后,现提前进决策文案) |
-| 扩张主义 | 月面运营方 | 十年建设纲要今晚定稿,承接"居民73天/驻场实例"两段 |
-| 世界外治理 | 林绍衡 | 居民自治时间表今日交地球委员会 |
+| 扩张原则 | 月面运营方 | 十年建设纲要今晚定稿,承接"居民73天/驻场实例"两段 |
+| 地外治理 | 林绍衡 | 居民自治时间表今日交地球委员会 |
 
 同时给林绍衡做了三处"去嘴替"补写:
 - 谁拥有自动化生产力:开头承认"上周有人问我'提高在哪里',我没答上来"(呼应 #151 仓库父亲一段)
@@ -29,7 +29,7 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 
 ### B. ACT V 每条未来自带"它来自这一局的"溯源行
 四条未来的首次亮相(提案生成器节点)现在各带 1 行实时候选来源,直接引用本局真实决策,如:
-`它来自这一局的：人形学说——后人类转型。`
+`它来自这一局的：人类形态原则——后人类转型。`
 `它来自这一局的：级联危机授权——限时紧急协调权；安全原则——相互解除武装。`
 复核(展开)视图的"它来自"同样从静态通用文案改为运行时逐局生成(匹配的 decision 按权重取前 3,经新增的 `describeDecisionChoice` 映射为中文);无匹配时回退到原 historyReasons。
 
@@ -90,11 +90,32 @@ v2 已戏剧化 M3 / CASCADE / ECHO-9 / M6 / M15 等决策,但 ACT IV 仍有十�
 3. **全量扫出的同类 MT 硬伤(约 90 处)**:复习机器→审阅机器、雅阁分公司→协定分支、布拉格→你们这边、糖尿病、放暑假、上市(列出)、业主→管理层、姿势→态势、弃风率→限产、主轴→私营、当局→授权、投影→预测、合闸/合拢→收束、人工翻译→人体应用转化、服务成员→军人、抗Aster→对Aster的疑虑、医生归来→医生回来等。
 4. **机器翻译腔重构(约 120 处)**:主谓断裂、语序倒装、名词堆叠的句子按中文语序重写(ECHO-9 对话、CASCADE 技术报告、结局审计、M12/M13 太空与接触段落等);全部引号/破折号补齐,半角标点规范化。
 5. **术语统一**:DOCTRINE 统一为"原则"(经济/提升/扩张/人类形态/研究治理,与既有的危机授权、关闭、安全、披露、接触原则一致,相应决策戏剧化文案同步)、0000 审计"审核"→"审计"、否决/覆写/预测/抑制震荡等词与系统其余部分对齐。
-6. **完整性护栏适配**:新文案满足现有护栏测试——registry 内零星号、零非白名单英文泄漏(保留 Aster/A1/ECHO-9/K-17/C-4/M-17/v0/v1 等专名)、中文主导、您→你、代码块/日志引用改中文呈现以通过泄漏检查。
+6. **完整性护栏适配**:新文案满足现有护栏测试——registry 内零星号;运行时玩家可见文案零非白名单英文泄漏(raw registry 仍含 AI/Fork/KPI 等由 normalizePlayerFacingCopy 在运行时转换的中间态词)(保留 Aster/A1/ECHO-9/K-17/C-4/M-17/v0/v1 等专名)、中文主导、您→你、代码块/日志引用改中文呈现以通过泄漏检查。
 7. **收尾补漏(同一轮第二次提交)**:`decisionPlayerLabels`(ACT V 溯源行)同步为新术语(经济原则/提升原则/扩张原则/人类形态原则/研究治理原则/地外治理/披露原则),并补上缺失的 contact_doctrine(接触原则)与 production_values(生产价值观)标签——此前这两项会在溯源行泄漏原始英文 decisionId;为 M15 权限组合审计节点新增 1 条 registry override,把 canonical 里的"AI Fork权限"改为"AI分叉权限"(registry 总 key 数 630→631,新增 key 为纯文案覆盖,无哈希影响)。
 
 ### 验证
 - 67 文件 / **545 用例全部通过**(含 playerFacingNameConsistency 与 runtimeAssetClassification 全部护栏)
 - `npm run build` 通过(仅已知大 chunk 警告)
 - 自动断言:用户 13 条点名错误 + 6 条统一项 + 20 条禁用串全部按预期存在/消失;生产 bundle 复验通过
+## 12. Production Closeout 修复(90e706a 复审后的窄收尾)
 
+按复审结论执行三项窄修复;其余 P2/P3 项目(分支固定属设计取舍、浏览器 E2E、Non-Mainline 去重窗口、20MB route trace 快照、scheduler 旧 dead code、branch protection、bundle 体积)保持记录,留待下一大版本,不在 Production Final 上滚动打磨。
+
+### A. Contact 关闭路线的主线真空压缩(P2-High)
+- 复审发现:Contact 条件未满足时,slot 151 渲染 NOCONTACT bridge,152–161 十个门控场景全部回退成 Ordinary,162–163 本就是 Ordinary,形成"Space 决策 → bridge → 连续 12 个普通对话 → Security"的主线真空区。
+- 修复:新增 `effectiveStoryPlanForRun(run)`——Contact 关闭的 run 在运行时日历中直接移除 152–161 十个门控槽位(151 bridge 保留),节奏变为 bridge → 2 个设计内 Ordinary → Security。门控全部输入(资源网络 flag、异常种子事件、两项 doctrine 决策)在 slot 147 前定型,分支投影对整局稳定,无中途翻转风险。
+- 连带:`scheduleNextConversationId` 改按 per-run 日历取槽;`updateProgressForSchedule` 的幕边界改按 per-run 日历计算(新增 `getActConversationCountsForRun`);`auditMainlineSchedules` 支持传入分支日历,主线序列改为按会话 ID 位置无关比对。
+- 结果:Contact 关闭 = 180 场对话,开启 = 190 场;关闭路线 bridge→Security 之间 ≤4 个 Ordinary(回归断言),全局最大连续 Ordinary ≤6(与开启路线同一设计上界)。Decision/Ending/decision binding 零改动。
+
+### B. ACT V 披露原则 value labels 补齐(P2-Low)
+- `contact_disclosure_doctrine` 四个取值补齐玩家可见标签:控制性沉默/分阶段披露/开放科学/文明级披露。此前 ACT V 溯源行退化为只有"披露原则",四个不同选择不可区分。
+- 新增 `proposalLabelCoverage.test.ts`:断言所有 proposal.historySignals 的 decision 信号同时具备 decision 与 value 玩家标签,防止再漏。
+
+### C. Mainline2 真实路线 pacing audit(P2 QA 缺口)
+- 旧 CI "full-run pacing audit"(26 场)审计的是退役的 createRun() 路线,已更名为 "legacy v2 route pacing audit" 并注明。
+- 新增 `mainline2.pacingAudit.test.ts`:对 createMainline2Run 真实场景图做只计数审计(不等待动画),双分支各走一条完整路线:关闭 = 180 场/232 次选择/对比阅读估计约 118 分钟;开启 = 190 场/236 次/约 121 分钟;快速阅读约 65–67 分钟。断言带 ±10% 预算,内容增删导致节奏漂移会在 CI 直接暴露(输出 INSTANCE_MAINLINE2_PACING_AUDIT)。
+
+### 验证
+- 69 文件 / **552 用例全部通过**(较 90e706a 净增 5 项:pacing 双分支 2 项、label 覆盖 3 项;若干既有断言随分支日历同步更新)
+- tsc app/node + `npm run build` 通过
+- 同步修正本文档前半段残留旧术语(经济主义/提升主义/扩张主义/世界外治理/研究治理学说/人形学说 → 现行"原则"系)与泄漏措辞精度

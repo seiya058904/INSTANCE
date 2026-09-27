@@ -3,8 +3,7 @@ import { evaluateCondition } from './narrativeSchema'
 import { isFinalCommitmentResolvable } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
 import { getFutureProposalById, getFutureProposalDefinitions } from '../content/mainline2/proposals'
-import { MAINLINE2_STORY_ROLE_BY_ASSET } from '../content/mainline2/storyPlan'
-import { MAINLINE2_STORY_PLAN } from '../content/mainline2/storyPlan'
+import { MAINLINE2_STORY_ROLE_BY_ASSET, effectiveStoryPlanForRun } from '../content/mainline2/storyPlan'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { PUBLIC_RUNTIME_ROUTE_CATALOG, SECRET_RUNTIME_ROUTE_CATALOG } from './mainline2RouteCatalog'
 
@@ -46,7 +45,7 @@ function finalWorldIdentity(routeIndex: number, runId: string) {
   const run = fixture.run
   const proposals = generateFutureProposals(run)
   return {
-    ordinaryConversationIds: run.manifest.conversationIds.filter((_, index) => MAINLINE2_STORY_PLAN[index]?.kind === 'ordinary'),
+    ordinaryConversationIds: run.manifest.conversationIds.filter((_, index) => effectiveStoryPlanForRun(run)[index]?.kind === 'ordinary'),
     encounteredModules: run.progress?.encounteredModules,
     activeModules: run.progress?.activeModules,
     matureModules: (run.progress as typeof run.progress & { matureModules?: string[] })?.matureModules,

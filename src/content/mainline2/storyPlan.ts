@@ -111,3 +111,17 @@ export function storyPlanForRun(run: StableRunState) {
     next: 'SECURITY',
   }].sort((left, right) => left.slot - right.slot)
 }
+
+/**
+ * The calendar the runtime scheduler actually walks for this run. On a
+ * contact-closed route the ten gated Contact scenes after the no-contact
+ * bridge (slots 152–161) are dropped instead of decaying into ordinary
+ * fillers, so the branch reads bridge → 2 designed ordinary slots → Security
+ * rather than a twelve-conversation ordinary vacuum. All Contact-gate inputs
+ * (resource-network flag, anomaly seed event, doctrine decisions) are fixed
+ * before slot 148, so the projection is stable for the rest of a run.
+ */
+export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
+  if (contactRouteOpen(run)) return MAINLINE2_STORY_PLAN
+  return MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
+}

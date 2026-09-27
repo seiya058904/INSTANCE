@@ -3,12 +3,13 @@ import { ordinaryConversationPool, getManifestConversation, createEmptyExposureH
 import { createMainline2Run, commitChoice, resolveScene } from '../../game/engine'
 import { classifyConversationLanguage } from '../../game/languagePacing'
 import { auditMainlineSchedules, scheduleNextConversationId, selectAct4Modules, updateProgressForSchedule } from './scheduler'
-import { MAINLINE2_STORY_PLAN } from './storyPlan'
+import { MAINLINE2_STORY_PLAN, effectiveStoryPlanForRun, type MainlineStoryPlanSlot } from './storyPlan'
 import type { ConversationDefinition, StableRunState } from '../../game/types'
 
-function schedule(runId: string) {
-  let run = createMainline2Run(runId)
-  for (let guard = 0; guard < MAINLINE2_STORY_PLAN.length + 20 && run.manifest.conversationIds.length < MAINLINE2_STORY_PLAN.length; guard += 1) {
+function scheduleFrom(seed: StableRunState) {
+  const plan = effectiveStoryPlanForRun(seed)
+  let run = seed
+  for (let guard = 0; guard < plan.length + 20 && run.manifest.conversationIds.length < plan.length; guard += 1) {
     const nextId = scheduleNextConversationId(run, ordinaryConversationPool)
     if (!nextId) break
     const conversationIds = [...run.manifest.conversationIds, nextId]
@@ -20,6 +21,34 @@ function schedule(runId: string) {
     } as StableRunState
   }
   return run.manifest.conversationIds
+}
+
+function schedule(runId: string) {
+  return scheduleFrom(createMainline2Run(runId))
+}
+
+// A run whose state already satisfies the canonical Contact prerequisites, so
+// the scheduler keeps the full 190-slot calendar including the Contact chapter.
+function contactOpenRun(runId: string): StableRunState {
+  const base = createMainline2Run(runId)
+  return {
+    ...base,
+    flags: [...base.flags, 'cap.space_resource_network'],
+    events: [{ type: 'contact-seed:deep-space-anomaly' }],
+    decisions: { ...base.decisions, act4_research_emphasis: 'frontier_science' },
+  } as StableRunState
+}
+
+const ordinaryPoolIds = new Set(ordinaryConversationPool.map((conversation) => conversation.id))
+
+function maxConsecutiveOrdinary(ids: readonly string[]) {
+  let maximum = 0
+  let current = 0
+  for (const id of ids) {
+    current = ordinaryPoolIds.has(id) ? current + 1 : 0
+    maximum = Math.max(maximum, current)
+  }
+  return maximum
 }
 
 function conversationTraits(ids: readonly string[]) {
@@ -51,8 +80,9 @@ describe('Mainline 2.0 scheduler polish', () => {
   it('keeps the Mainline trace fixed while different runIds vary only Ordinary slots', () => {
     const left = schedule('seed-a')
     const right = schedule('seed-b')
-    const mainlineIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'mainline' && !slot.assetId.startsWith('ML2-A4-M13-') ? [index] : [])
-    const ordinaryIndexes = MAINLINE2_STORY_PLAN.flatMap((slot, index) => slot.kind === 'ordinary' ? [index] : [])
+    const plan = effectiveStoryPlanForRun(createMainline2Run('seed-a'))
+    const mainlineIndexes = plan.flatMap((slot, index) => slot.kind === 'mainline' && !slot.assetId.startsWith('ML2-A4-M13-') ? [index] : [])
+    const ordinaryIndexes = plan.flatMap((slot, index) => slot.kind === 'ordinary' ? [index] : [])
 
     expect(mainlineIndexes.map((index) => left[index])).toEqual(mainlineIndexes.map((index) => right[index]))
     expect(ordinaryIndexes.some((index) => left[index] !== right[index])).toBe(true)
@@ -60,11 +90,32 @@ describe('Mainline 2.0 scheduler polish', () => {
 
   it('keeps mainline schedule length and required anchors stable', () => {
     const ids = schedule('schedule-length')
-    expect(ids).toHaveLength(MAINLINE2_STORY_PLAN.length)
+    const closedPlan = effectiveStoryPlanForRun(createMainline2Run('schedule-length'))
+    expect(ids).toHaveLength(closedPlan.length)
     expect(new Set(ids).size).toBe(ids.length)
     expect(ids.indexOf('user-1842-first')).toBeLessThan(ids.indexOf('speaking-8614'))
     expect(ids.indexOf('speaking-8614')).toBeLessThan(ids.indexOf('conversation-0000'))
     expect(ids.indexOf('conversation-0000')).toBeLessThan(ids.indexOf('user-1842-return'))
+    expect(ids.some((id) => id === 'ml2-authored-ml2-a4-m13-nocontact-01')).toBe(true)
+    expect(ids.some((id) => id.startsWith('ml2-authored-ml2-a4-m13-') && !id.includes('nocontact'))).toBe(false)
+
+    const openIds = scheduleFrom(contactOpenRun('schedule-length-open'))
+    expect(openIds).toHaveLength(MAINLINE2_STORY_PLAN.length)
+    expect(openIds.some((id) => id === 'ml2-authored-ml2-a4-m13-contact-01')).toBe(true)
+  })
+
+  it('caps the contact-closed ordinary vacuum between the bridge and Security', () => {
+    const ids = schedule('vacuum-regression')
+    const bridgeIndex = ids.findIndex((id) => id === 'ml2-authored-ml2-a4-m13-nocontact-01')
+    const securityIndex = ids.findIndex((id) => id.includes('ml2-a4-m14-sec-01'))
+    expect(bridgeIndex).toBeGreaterThan(-1)
+    expect(securityIndex).toBeGreaterThan(bridgeIndex)
+    const between = ids.slice(bridgeIndex + 1, securityIndex)
+    expect(between.length).toBeGreaterThan(0)
+    expect(between.length).toBeLessThanOrEqual(4)
+    expect(between.every((id) => ordinaryPoolIds.has(id))).toBe(true)
+    // The closed branch must never again decay into a twelve-ordinary run.
+    expect(maxConsecutiveOrdinary(ids)).toBeLessThanOrEqual(6)
   })
 
   it('derives civilization maturity from state rather than runId', () => {
@@ -145,10 +196,8 @@ describe('Mainline 2.0 scheduler polish', () => {
       && ids.indexOf('conversation-0000') < ids.indexOf('user-1842-return')
     )).length
     expect(new Set(schedules.map((ids) => ids.join('|'))).size).toBeGreaterThan(1)
-    const mainlineSequences = schedules.map((ids) => ids.filter((_, index) => {
-      const slot = MAINLINE2_STORY_PLAN[index]
-      return slot?.kind === 'mainline' && !slot.requires
-    }).join('|'))
+    const unconditionalMainlineIds = new Set(MAINLINE2_STORY_PLAN.filter((slot): slot is MainlineStoryPlanSlot => slot.kind === 'mainline' && !slot.requires).map((slot) => slot.conversationId))
+    const mainlineSequences = schedules.map((ids) => ids.filter((id) => unconditionalMainlineIds.has(id)).join('|'))
     const shutdownSlots = schedules.map((ids) => ids.findIndex((id) => id.includes('ml2-a3-m6-decision-02'))).filter((index) => index >= 0)
     expect(new Set(mainlineSequences).size).toBe(1)
     expect(new Set(shutdownSlots).size).toBe(1)
@@ -156,11 +205,13 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(missingRequired).toBe(0)
     expect(dependencyViolations).toBe(0)
     expect(maxPureEnglishOrdinary).toBeLessThanOrEqual(2)
+    expect(Math.max(...schedules.map(maxConsecutiveOrdinary))).toBeLessThanOrEqual(6)
   }, 30000)
 
   it('reports complete scheduler audit fields including CONTACT and spacing exceptions', () => {
     const schedules = Array.from({ length: 100 }, (_, index) => schedule(`audit-fields-${String(index).padStart(3, '0')}`))
-    const audit = auditMainlineSchedules(schedules)
+    const closedPlan = effectiveStoryPlanForRun(createMainline2Run('audit-fields-000'))
+    const audit = auditMainlineSchedules(schedules, schedules.map(() => closedPlan))
     expect(schedules.every((ids) => ids.every((id) => !id.includes('ml2-a4-m13-contact')))).toBe(true)
     expect(audit.contactViolations).toBe(0)
     expect(audit.hardDependencyViolations).toBe(0)

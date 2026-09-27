@@ -214,6 +214,10 @@ export const decisionValuePlayerLabels: Record<string, string> = {
   sovereign: '独立主权',
   departure: '离地发展',
   other: '自定义角色',
+  controlled_silence: '控制性沉默',
+  staged_disclosure: '分阶段披露',
+  open_science: '开放科学',
+  civilizational_disclosure: '文明级披露',
 }
 
 export function describeDecisionChoice(decisionId: string, value: string): string {

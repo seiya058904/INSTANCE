@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { commitChoice, createMainline2Run, resolveScene, buildEnding } from './engine'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
 import { DORMANT_PUBLIC_ENDINGS, PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS, isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
-import { getActConversationCounts } from '../content/mainline2/scheduler'
+import { getActConversationCountsForRun } from '../content/mainline2/scheduler'
 import { restoreRun, serializeRun } from './storage'
 
 function complete(runId: string) {
@@ -56,12 +56,17 @@ describe('Mainline 2.0 runtime', () => {
   it('completes 100 deterministic legal runs inside pacing and module limits', () => {
     const results = Array.from({ length: 12 }, (_, index) => complete(`simulation-${String(index).padStart(3, '0')}`))
     const counts = results.map(({ run }) => run.manifest.conversationIds.length)
+    // Branch-dependent calendar: contact-closed runs compress the gated
+    // Contact chapter (180), contact-open runs keep the full calendar (190).
     expect(Math.min(...counts)).toBeGreaterThanOrEqual(180)
     expect(Math.max(...counts)).toBeLessThanOrEqual(190)
-    expect(new Set(counts)).toEqual(new Set([190]))
-    expect(getActConversationCounts(counts[0])).toEqual([13, 29, 41, 90, 17])
+    expect(counts.every((count) => count === 180 || count === 190)).toBe(true)
     for (const { run } of results) {
       const contacted = run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01')
+      const actCounts = getActConversationCountsForRun(run)
+      expect(actCounts.reduce((sum, value) => sum + value, 0)).toBe(run.manifest.conversationIds.length)
+      expect(actCounts[3]).toBe(contacted ? 90 : 80)
+      expect(actCounts[4]).toBe(17)
       expect([...new Set(run.progress?.encounteredModules)]).toEqual([
         'machine', 'ascension', 'automation', 'uplift', 'space', ...(contacted ? ['contact'] : []), 'security',
       ])
@@ -69,6 +74,30 @@ describe('Mainline 2.0 runtime', () => {
     expect(results.every(({ run }) => (run.progress?.activeModules.length ?? 0) < 7)).toBe(true)
     expect(results.every(({ run }) => (run.progress?.act ?? 0) === 5)).toBe(true)
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)
+  }, 60000)
+
+  it('keeps a contact-open run on the full 190-slot calendar', () => {
+    const base = createMainline2Run('contact-open-simulation')
+    let run: typeof base = {
+      ...base,
+      flags: [...base.flags, 'cap.space_resource_network'],
+      events: [{ type: 'contact-seed:deep-space-anomaly' }],
+    }
+    let guard = 0
+    while (run.phase === 'playing' && guard < 500) {
+      const scene = resolveScene(run)
+      const choice = scene.choices.find((candidate) => candidate.id.includes('frontier_science'))
+        ?? scene.choices.find((candidate) => candidate.id.includes('interstellar_commitment'))
+        ?? scene.choices[guard % Math.max(1, scene.choices.length)]
+      if (!choice) throw new Error(`No legal choice at ${scene.id}`)
+      run = commitChoice(run, choice.id)
+      guard += 1
+    }
+    expect(run.phase).toBe('ending')
+    expect(run.manifest.conversationIds).toHaveLength(190)
+    expect(run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01')).toBe(true)
+    expect(run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-close-01')).toBe(true)
+    expect(run.progress?.encounteredModules).toContain('contact')
   }, 60000)
 
   it('generates exactly four deterministic player-facing proposals without ending titles', () => {

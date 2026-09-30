@@ -175,8 +175,18 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
   const additions = proposalChoices(run, scene)
-  if (!additions.length) return scene
   const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
+  if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
+    const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
+    const eligible = (retained.length ? retained : generateFutureProposals(run).map(proposal => proposal.id))
+      .some(id => !(run.rejectedProposalIds ?? []).includes(id) && isFinalCommitmentResolvable(run, id))
+    return { ...scene, choices: [...(eligible ? scene.choices : []), ...additions] }
+  }
+  if (sourceRef === 'ML2-A5-M17-COMMIT-01' && !additions.length) {
+    const review = storyForRun(run).nodes.find(node => getManifestConversation(node.conversationId)?.sourceRefs[0] === 'ML2-A5-M17-REVIEW-01')
+    return { ...scene, choices: review ? [{ id: 'm17-return-to-review', text: '返回最终审议，恢复一条方案后再作出承诺。', nextNodeId: review.id }] : [] }
+  }
+  if (!additions.length) return scene
   const replaceAuthoredPlaceholder = sourceRef === 'ML2-A5-M16-GEN-01' || sourceRef === 'ML2-A5-M17-COMMIT-01'
   return { ...scene, choices: replaceAuthoredPlaceholder ? additions : [...scene.choices, ...additions] }
 }
@@ -243,6 +253,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')
   const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
   if (choice.proposalKind === 'commitment' && proposalSource !== 'ML2-A5-M17-COMMIT-01') throw new Error('Commitment is only available at the authored M17 commit stage')
+  if (choice.id === 'm17-return-to-review') return { ...run, currentNodeId: choice.nextNodeId!, phase: 'playing' }
   const effectiveChoice = choice.proposalKind === 'commitment' && choice.proposalId
     ? (() => {
         return { ...choice, mutations: [...(choice.mutations ?? []), { type: 'decision.set' as const, decisionId: 'final_commitment' as const, value: choice.proposalId }, { type: 'event.record' as const, event: 'history.final.commitment_locked' }, { type: 'event.record' as const, event: 'FINAL_COMMITMENT_LOCKED' }] }
@@ -304,10 +315,15 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   }
 
   let manifest = run.manifest
-  let nextNodeId = choice.nextNodeId
+  // Restored legacy endings retain the full manifest/history. Reuse their
+  // existing COMMIT node rather than scheduling past the end of the story.
+  let nextNodeId = choice.nextNodeId ?? (proposalSource === 'ML2-A5-M17-REVIEW-01'
+    ? storyForRun(run).nodes.find(node => getManifestConversation(node.conversationId)?.sourceRefs[0] === 'ML2-A5-M17-COMMIT-01')?.id
+    : undefined)
   let progress = run.progress
   const scheduledRun: StableRunState = { ...run, ...proposalFields, ...effects, localState, history, progress: run.progress }
-  if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')) {
+  if (run.version === 3 && run.manifest.mode === 'mainline2' && (!choice.nextNodeId || choice.continuation === 'end-conversation')
+    && !(proposalSource === 'ML2-A5-M17-REVIEW-01' && nextNodeId)) {
     const nextConversationId = nextMainline2ConversationId(scheduledRun, ordinaryConversationPool)
     if (nextConversationId) {
       manifest = appendMainline2Conversation(run.manifest, nextConversationId)
@@ -323,6 +339,11 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   }
 
   if (!nextNodeId) {
+    if (run.manifest.mode === 'mainline2' && !(choice.proposalKind === 'commitment'
+      && choice.proposalId && effects.decisions?.final_commitment === choice.proposalId
+      && isFinalCommitmentResolvable(run, choice.proposalId))) {
+      throw new Error('A valid Final Commitment must be explicitly locked before ending')
+    }
     return {
       ...run,
       ...proposalFields,

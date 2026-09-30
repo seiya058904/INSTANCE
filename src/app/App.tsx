@@ -507,7 +507,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     readySince.current = performance.now()
   }
 
-  const returnToMainline = () => {
+  const retainCompletedNonMainline = () => {
     // Share the Non-Mainline session's consumed ordinary content with the
     // Mainline scheduler so the same conversation cannot replay across modes
     // inside one Instance.
@@ -520,8 +520,14 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         }
         setRun(nextRun)
         writeRun(nextRun)
+        return nextRun
       }
     }
+    return run
+  }
+
+  const returnToMainline = () => {
+    retainCompletedNonMainline()
     setActiveSurface('mainline')
     writeActiveSurface('mainline')
     setModeMenuOpen(false)
@@ -531,7 +537,11 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }
 
   const replayNonMainline = () => {
-    const session = createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
+    const nextRun = retainCompletedNonMainline()
+    const session = createNonMainlineSession(crypto.randomUUID(), exposure, [
+      ...nextRun.manifest.conversationIds,
+      ...(nextRun.nonMainlineConsumedOrdinaryIds ?? []),
+    ])
     setNonMainlineSession(session)
     writeNonMainlineSession(session)
     setActiveSurface('non-mainline')

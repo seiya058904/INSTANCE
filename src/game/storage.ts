@@ -1,4 +1,4 @@
-import { LEGACY_RUN_MANIFEST, buildStoryContentForManifest, createEmptyExposureHistory } from '../content/runManifest'
+import { LEGACY_RUN_MANIFEST, buildStoryContentForManifest, createEmptyExposureHistory, getManifestConversation } from '../content/runManifest'
 import { verticalSlice } from '../content/activeRun'
 import { describeUserMessageDefect } from '../content/ordinaryContentAudit'
 import type {
@@ -138,7 +138,14 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
-      if (value.phase === 'ending' && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
+      // Old reject-all saves reached ending without a player commitment. Keep
+      // their history and return to the authored review; never invent a choice.
+      const unlockedEnding = value.manifest.mode === 'mainline2'
+        && (value.phase === 'ending' || value.phase === 'evaluation')
+        && value.finalCommitmentLocked !== true
+        && (!isRecord(value.decisions) || !value.decisions.final_commitment)
+      const recoveryReview = unlockedEnding ? story.nodes.find(node => getManifestConversation(node.conversationId)?.sourceRefs[0] === 'ML2-A5-M17-REVIEW-01') : undefined
+      if (value.phase === 'ending' && !recoveryReview && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
       // Marker-less v3 saves predate calendar versioning; infer the calendar
       // their manifest was accumulated against so the scheduler never
       // re-indexes a compressed-run save onto the legacy plan (or vice versa).
@@ -159,6 +166,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
       return {
         ...(value as unknown as StableRunState),
         version: 3,
+        ...(recoveryReview ? { phase: 'playing' as const, currentNodeId: recoveryReview.id } : {}),
         mainlineCalendarVersion,
         history: repairCorruptHistoryMessages(value.history as HistoryEntry[], story),
         decisions: decisions as StableRunState['decisions'],

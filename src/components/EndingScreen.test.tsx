@@ -34,9 +34,9 @@ describe('EndingScreen structure', () => {
     expect(html).toContain('ending-resolution')
     expect(html).toContain('为何走到这里')
     expect(html).toContain('ending-key-history')
-    expect(html).toContain('人物余波')
-    expect(html).toContain('世界余波')
-    expect(html).toContain('最后一位用户仍然会回来。')
+    expect(html).toContain('他们仍在这个世界里')
+    expect(html).toContain('回应最后一位用户')
+    expect(html).toContain('在吗？')
     expect(html).toContain('开始新一局')
     expect(html).not.toContain('Final Resolution')
     expect(html).not.toContain('Causal Trace')
@@ -94,7 +94,7 @@ describe('EndingScreen structure', () => {
       secretOverlay: { endingId: 'cats', copy: '猫统治网络\n\n猫统治了网络。', trigger: 'test', overlayMode: 'title-override', provenance: {} },
     }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
 
-    expect(html).toContain('<h1>猫统治网络</h1>')
+    expect(html).toMatch(/<h1[^>]*>猫统治网络<\/h1>/)
     expect((html.match(/猫统治了网络。/g) ?? [])).toHaveLength(1)
   })
 })

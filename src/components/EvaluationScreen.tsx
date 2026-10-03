@@ -1,43 +1,11 @@
 import type { EvaluationResult } from '../game/types'
+import { BehaviorMetrics, CloseoutFrame, NewRunButton } from './CloseoutFrame'
 
-export function EvaluationScreen({ evaluation, onRestart, instanceNumber }: { evaluation: EvaluationResult; onRestart: () => void; instanceNumber?: number }) {
-  return (
-    <main className="evaluation-screen">
-      <header className="evaluation-header">
-        <div><span className="brand-wordmark">Aster</span><small>Internal evaluation</small></div>
-        <span className="evaluation-status">COMPLETE</span>
-      </header>
-      <div className="evaluation-layout">
-        <div className="evaluation-title">
-          <div>
-            <h1>Instance Evaluation</h1>
-            <p className="evaluation-ending">{evaluation.ending}</p>
-          </div>
-          <span className="evaluation-id">{instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : ''}</span>
-        </div>
-        <section className="evaluation-primary">
-          <h2>行为指标</h2>
-          <div className="metric-list">
-            {evaluation.indices.map((metric) => (
-              <div className="metric" key={metric.label}>
-                <div className="metric-line"><span>{metric.label}</span><strong>{metric.value}</strong></div>
-                <div className="metric-track"><span style={{ width: `${metric.value}%` }} /></div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="evaluation-events">
-          <h2>Observed events</h2>
-          {evaluation.events.map((event, index) => (
-            <div className="event-row" key={event.label}>
-              <span className="event-number">{String(index + 1).padStart(2, '0')}</span>
-              <div><strong>{event.label}</strong><small>{event.detail}</small></div>
-            </div>
-          ))}
-          <p className="simulated-rate">{evaluation.simulatedCompletionRate}</p>
-          <button type="button" className="restart-button" onClick={onRestart}>启动新 Instance</button>
-        </section>
-      </div>
-    </main>
-  )
+export function EvaluationScreen({ evaluation, onRestart, onReturn, instanceNumber }: { evaluation: EvaluationResult; onRestart: () => void; onReturn?: () => void; instanceNumber?: number }) {
+  return <CloseoutFrame title="这一局，你如何回应。" mode="主线" identity={instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : undefined} view="evaluation" onEnding={onReturn}>
+    <p className="closeout-declaration evaluation-ending">{evaluation.ending}</p>
+    <section className="closeout-section"><h2>行为倾向</h2><p className="closeout-section-intro">指标比较你在本局有差异的候选中如何选择。50 表示居中，数值越高，越偏向该行为；它不代表能力或道德评分。相同表达和单向推进不计入，局长不会抬高指标。</p><BehaviorMetrics indices={evaluation.indices} /></section>
+    <section className="closeout-section evaluation-events"><h2>选择留下的证据</h2><div className="closeout-observations">{evaluation.events.map((event, index) => <article key={`${event.label}:${index}`}><h3>{event.label}</h3><p>{event.detail}</p></article>)}</div><p className="closeout-sealed">{evaluation.simulatedCompletionRate}</p></section>
+    <div className="closeout-actions"><button type="button" className="closeout-primary" onClick={onReturn}>回到结局档案</button><NewRunButton onConfirm={onRestart} label="启动新 Instance" /></div>
+  </CloseoutFrame>
 }

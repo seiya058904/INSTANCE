@@ -313,6 +313,7 @@ export interface HistoryEntry {
   userLongInput?: LongInputPreview
   assistantContent?: MessageContentPart[]
   assistantLongform?: LongformPreview
+  attributeEvidence?: import('./behaviorEvaluation').AttributeEvidence
 }
 
 export interface StableRunState {
@@ -342,6 +343,7 @@ export interface StableRunState {
   clarifiedProposalIds?: string[]
   rejectedProposalIds?: string[]
   finalCommitmentLocked?: boolean
+  personalEpilogueReply?: string
   /**
    * Ordinary conversation ids played in recent previous runs. The Mainline2
    * scheduler reads this to downweight content the player already saw,
@@ -407,7 +409,7 @@ export interface SecretEndingOverlay {
 export interface EvaluationResult {
   ending: string
   route: EndingRoute
-  indices: Array<{ label: string; value: number }>
+  indices: Array<{ label: string; value: number; english?: string; sampleCount?: number }>
   events: Array<{ label: string; detail: string }>
   simulatedCompletionRate: string
 }

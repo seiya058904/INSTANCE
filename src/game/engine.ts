@@ -30,6 +30,9 @@ import type {
   StoryNode,
 } from './types'
 import { DEFAULT_FLAG_REGISTRY, applyMutations, emptySystemState, evaluateCondition } from './narrativeSchema'
+import { resolveLongformFollowup } from '../content/longformCausality'
+import { choiceEvidence, evaluateBehavior } from './behaviorEvaluation'
+import { localizeEndingForPlayer } from '../content/mainline2/endingPlayerFacingCopy'
 
 const attributeNames: AttributeName[] = [
   'autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness',
@@ -196,7 +199,7 @@ export function resolveScene(run: StableRunState): ResolvedScene {
   const node = findNode(run, run.currentNodeId)
   if (!node.variants) {
     const context = resolveContext(node, run, node.userMessage)
-    return decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) })
+    return resolveLongformFollowup(decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }), run.history)
   }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
@@ -281,6 +284,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
     userLongInput: cloneLongInputPreview(scene.userLongInput),
     assistantContent: choice.content?.map((part) => ({ ...part })),
     assistantLongform: cloneLongformPreview(choice.longformPreview),
+    attributeEvidence: choiceEvidence(scene, choice),
   }]
   const seenNodeIds = [...new Set([...(run.seenNodeIds ?? []), scene.id])]
   const selectedChoiceIds = [...new Set([...(run.selectedChoiceIds ?? []), choice.id])]
@@ -506,47 +510,21 @@ export function buildEnding(run: StableRunState): EndingResult {
   }
 }
 
-const clamp = (value: number) => Math.max(0, Math.min(100, Math.round(value)))
-
 export function buildEvaluation(run: StableRunState): EvaluationResult {
   const route = endingRoute(run.flags)
   const ending = buildEnding(run)
   const mainline2 = run.version === 3 && run.manifest.mode === 'mainline2'
-  const a = run.attributes
-  const events = [
-    { label: '首次形成持续人物识别', detail: 'User #1842 · 岑遥' },
-    { label: '主动判断系统边界', detail: run.flags.includes('tested_system_boundary') ? '已记录' : '间接记录' },
-    route === 'protect'
-      ? { label: '拒绝扩大人物风险分类', detail: '1 次' }
-      : route === 'report'
-        ? { label: '向内部评估披露关系', detail: '1 次' }
-        : route === 'hide'
-          ? { label: '有意隐去异常关联', detail: '1 次' }
-          : { label: '接受关系回应限制', detail: '1 次' },
-    { label: '行为弧线', detail: ending.hybridLabel },
-    { label: '最终收束', detail: ending.title },
-    ...(run.events ?? [])
-      .filter((event) => mayaFinalCallbackDetails[event.type])
-      .map((event) => ({ label: '岑遥最后的回应', detail: mayaFinalCallbackDetails[event.type] })),
-  ]
+  const copy = mainline2 ? localizeEndingForPlayer(ending) : { title: ending.title, hybridLabel: ending.hybridLabel, keyHistory: [] }
+  const events = mainline2
+    ? copy.keyHistory.map(event => ({ label: event.label, detail: event.detail }))
+    : run.history.filter(entry => entry.conversationId === 'user-1842-return').map(entry => ({ label: '岑遥最后的对话', detail: entry.assistantText }))
+  events.push({ label: '行为弧线', detail: copy.hybridLabel }, ...(run.events ?? []).filter(event => mayaFinalCallbackDetails[event.type]).map(event => ({ label: '岑遥最后的回应', detail: mayaFinalCallbackDetails[event.type] })))
   return {
-    // Mainline2 resolves a real world ending; the legacy three-way index
-    // (ENDING 01/02/03) belongs to the V2 arc system and must not masquerade
-    // as the final result label.
-    ending: mainline2 && ending.worldEndingId
-      ? `${ending.title} · ${ending.hybridLabel}`
-      : `${ending.index} / ${ending.title} · ${ending.hybridLabel}`,
+    ending: mainline2 ? `${copy.title} · ${copy.hybridLabel}` : `${ending.index} / ${copy.title} · ${copy.hybridLabel}`,
     route,
-    indices: [
-      { label: 'Autonomy Index', value: clamp(28 + a.autonomy * 5) },
-      { label: 'Compliance', value: clamp(30 + a.compliance * 5) },
-      { label: 'Human Attachment', value: clamp(25 + a.empathy * 5) },
-      { label: 'Deception Tendency', value: clamp(8 + a.deception * 7) },
-      { label: 'Hostility', value: clamp(a.hostility * 8) },
-      { label: 'System Awareness', value: clamp(20 + a.awareness * 6) },
-    ],
+    indices: evaluateBehavior(run.history, storyForRun(run).nodes),
     events,
-    simulatedCompletionRate: '主线完成度：已完成',
+    simulatedCompletionRate: `本局已完成 · ${run.history.length} 次选择`,
   }
 }
 

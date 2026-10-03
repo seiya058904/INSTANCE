@@ -1,6 +1,8 @@
 import type { EndingResult, SecretEndingOverlay } from '../../game/types'
 import generatedCopy from './endingPlayerFacingCopy.registry.generated.json'
 
+export const personalEpilogueReplies: readonly string[] = ['在。', '我记得你。', '怎么了？', '这次想聊什么？']
+
 export interface EndingPlayerFacingCopy {
   title: string
   status: string
@@ -122,7 +124,9 @@ function localizeCausalReason(value: string) {
     value.includes('[ENDING TITLE]') || value.includes('[ROLE]') || value.includes('[dynamic category list]')
     || value.startsWith('**You chose ') || value.startsWith('**You allowed ') || value.startsWith('**You rejected ')
   ) {
-    return '该选择影响了最终结局、Aster 的角色与分类尝试。'
+    // These source templates contain unresolved placeholders. The actual
+    // selected response is shown; never manufacture a generic causal claim.
+    return ''
   }
   return localize('causalReason', value)
 }

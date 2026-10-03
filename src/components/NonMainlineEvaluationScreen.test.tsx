@@ -12,14 +12,14 @@ describe('Non-Mainline evaluation screen', () => {
       attributes: { empathy: 1 },
     })))
     const html = renderToStaticMarkup(
-      <NonMainlineEvaluationScreen evaluation={evaluation} onReplay={vi.fn()} onReturn={vi.fn()} />,
+      <NonMainlineEvaluationScreen evaluation={evaluation} view="evaluation" onReplay={vi.fn()} onReturn={vi.fn()} />,
     )
 
-    expect(html).toContain('<h1>Instance Evaluation</h1>')
-    expect(html).toContain('Response Quality Score')
+    expect(html.replace(/<[^>]+>/g, '')).toContain('回应的质量，选择的痕迹。')
+    expect(html).toContain('响应质量')
     expect(html).toContain('100')
     expect(html).toContain('行为画像')
-    expect(html).toMatch(/40 \/ 40.*Conversations/)
+    expect(html).toContain('40 段独立对话')
     expect(html).toContain('再来一轮')
     expect(html).toContain('返回')
     expect(html).not.toMatch(/Ending family|Final Commitment|World State|Proposal/)

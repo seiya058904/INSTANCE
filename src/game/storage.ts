@@ -14,6 +14,7 @@ import { emptyWorldState, isModuleId } from '../content/mainline2/stateRegistry'
 import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
 import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
 import { inferMainlineCalendarVersion } from '../content/mainline2/storyPlan'
+import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -41,6 +42,8 @@ function isHistoryEntry(value: unknown): value is HistoryEntry {
   const stableStrings = ['nodeId', 'conversationId', 'conversationTitle', 'userMessage', 'choiceId', 'assistantText']
     .every((key) => typeof value[key] === 'string')
   const messageParts = value.userMessages
+  const evidence = value.attributeEvidence
+  if (evidence !== undefined && (!isRecord(evidence) || !Object.entries(evidence).every(([key, signal]) => attributes.includes(key as AttributeName) && isRecord(signal) && Number.isFinite(signal.selected) && Number.isFinite(signal.minimum) && Number.isFinite(signal.maximum) && Number(signal.maximum) > Number(signal.minimum) && Number(signal.selected) >= Number(signal.minimum) && Number(signal.selected) <= Number(signal.maximum)))) return false
   return stableStrings && (messageParts === undefined || (
     Array.isArray(messageParts) && messageParts.every((part) => typeof part === 'string')
   ))
@@ -133,6 +136,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
   try {
     const value: unknown = JSON.parse(raw)
     if (!isRecord(value)) return null
+    if (value.personalEpilogueReply !== undefined && (typeof value.personalEpilogueReply !== 'string' || !personalEpilogueReplies.includes(value.personalEpilogueReply))) return null
     if (value.version === 1) return migrateVersionOne(value)
     if (value.version === 3) {
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null

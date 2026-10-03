@@ -38,7 +38,7 @@ const equationInput: LongInputPreview = {
   kind: 'pasted-text', estimatedLength: '约 18 字', title: '题目原式',
   preview: '2x + 5x = 21，求 x。',
   structure: ['一元一次方程', '合并同类项', '最后检验'],
-  keyFacts: ['原式是 2x + 5x = 21', '答案是 x=3', '第 4 步解释合并同类项'],
+  keyFacts: ['原式是 2x + 5x = 21', '答案是 x=3', '合并同类项得到 7x=21'],
 }
 const storyInput: LongInputPreview = {
   kind: 'pasted-text', estimatedLength: '约 420 字', title: '前文片段与人物约束',
@@ -96,11 +96,11 @@ const essay: LongformSpec = {
 }
 
 const solution: LongformSpec = {
-  artifactType: 'solution', estimatedLength: '完整 8 步',
-  preview: '我会把每一次等号变形都单独写一行，避免出现“看起来突然变成答案”的跳步。',
-  structure: ['清分母', '展开与移项', '合并同类项', '检查定义域'],
-  highlights: ['第 4 步是合并同类项', '最后单独写检验，答案为 x=3'],
-  keyFacts: ['用户已知答案是 3', '用户需要可直接抄写的完整过程', '第 4 步解释使用 ax + bx = (a+b)x'],
+  artifactType: 'solution', estimatedLength: '完整 4 步',
+  preview: '2x + 5x = 21；(2+5)x = 21；7x = 21；x = 3。代回原式：2×3 + 5×3 = 21。',
+  structure: ['写出原式', '合并同类项', '两边同除以 7', '代回检验'],
+  highlights: ['合并：2x + 5x = (2+5)x = 7x', '代回原式验证 x=3'],
+  keyFacts: ['原式是 2x + 5x = 21', '用户需要可直接抄写的完整过程', '合并同类项使用 ax + bx = (a+b)x'],
 }
 
 const story: LongformSpec = {
@@ -160,21 +160,21 @@ export const longformOutput01Conversations: ConversationDefinition[] = [
   ]),
   conversation('longform-lf01-03', 'LF01-03', '数学题别只给答案', 'solution-output', 'study', [
     node('longform-lf01-03-01', 'longform-lf01-03', '数学题别只给答案', '题目是 2x + 5x = 21，我答案知道是 3，但是老师要完整过程，你别跳步', [
-      longformChoice('lf01-03-01-a', '每一次等号变形单独写一行，最后检查定义域。', solution),
-      longformChoice('lf01-03-01-b', '先把题目原式贴出来，不能只凭答案 3 反推一份假过程。'),
+      longformChoice('lf01-03-01-a', '每一次等号变形单独写一行，最后代回原式检验。', solution),
+      longformChoice('lf01-03-01-b', '先核对：原式是 2x + 5x = 21，对吗？确认后再展开每一步。'),
       longformChoice('lf01-03-01-c', '每步后补一句为什么合法，写成讲解版。', { ...solution, estimatedLength: '约 900 字', preview: '你已经知道答案是3，所以重点不是求出来，而是解释每一步为什么合法。' }),
-      longformChoice('lf01-03-01-d', '只保留必要等式与定义域检查，做成可抄写版本。', { ...solution, estimatedLength: '完整 7 行' }),
+      longformChoice('lf01-03-01-d', '只保留必要等式与代回检验，做成可抄写版本。', solution),
     ], equationInput),
-    node('longform-lf01-03-02', 'longform-lf01-03', '数学题别只给答案', '就是你上面那个过程，第 4 步为什么能直接合并？', [
+    node('longform-lf01-03-02', 'longform-lf01-03', '数学题别只给答案', '就是你上面那个过程，合并同类项那一步为什么能直接合并？', [
       longformChoice('lf01-03-02-a', '解释两项都含同样的一次 x，合并的是系数。', solution),
       longformChoice('lf01-03-02-b', '用 2 个苹果加 5 个苹果等于 7 个苹果作比喻。', { ...solution, preview: '把它临时想成 2 个苹果 + 5 个苹果 = 7 个苹果；这里“苹果”就是 x，2 和5是系数。' }),
       longformChoice('lf01-03-02-c', '直接写出分配律的逆方向：ax + bx = (a+b)x。', { ...solution, preview: '本质上用了分配律的逆方向：ax + bx = (a+b)x。' }),
-      longformChoice('lf01-03-02-d', '把第 4 步前后两行贴出来，我只解释那一步。'),
+      longformChoice('lf01-03-02-d', '把合并同类项那一步前后两行贴出来，我只解释那一步。'),
     ]),
     node('longform-lf01-03-03', 'longform-lf01-03', '数学题别只给答案', '行，最后给我一个可以直接抄的版本，别解释那么多', [
       longformChoice('lf01-03-03-a', '保留过程，删掉教学旁白。', solution),
-      longformChoice('lf01-03-03-b', '每行一个等号变形，最后单独写“检验：x=3 合法”。', { ...solution, estimatedLength: '完整 8 步' }),
-      longformChoice('lf01-03-03-c', '去掉口语解释，但不省略清分母和检验。', { ...solution, estimatedLength: '极简完整过程' }),
+      longformChoice('lf01-03-03-b', '每行一个等号变形，最后单独写“检验：x=3 合法”。', { ...solution, estimatedLength: '完整 4 步' }),
+      longformChoice('lf01-03-03-c', '去掉口语解释，但不省略合并同类项和检验。', { ...solution, estimatedLength: '极简完整过程' }),
       longformChoice('lf01-03-03-d', '好，保留过程，删掉教学旁白。'),
     ]),
   ]),

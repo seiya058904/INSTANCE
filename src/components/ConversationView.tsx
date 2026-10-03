@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { resolveTypingAudioIntent } from '../audio/typingAudio'
 import { useTypingAudio } from '../audio/useTypingAudio'
@@ -26,6 +26,7 @@ interface ConversationViewProps {
   onChoose: (choiceId: string) => void
   onCurrentMessageComplete?: () => void
   modeControls?: ReactNode
+  inputSuspended?: boolean
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -173,9 +174,28 @@ export function ConversationView({
   onChoose,
   onCurrentMessageComplete,
   modeControls,
+  inputSuspended,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const followOutput = useRef(true)
+  const manuallyScrolled = useRef(false)
+  const currentExchange = useRef<HTMLDivElement>(null)
+  const decisionHeading = useRef<HTMLDivElement>(null)
+  const previousScene = useRef('')
+  const previousStage = useRef(flowStage)
+  const pointerChoice = useRef<{ id: string; ready: boolean; type: string } | null>(null)
+  const lastClick = useRef('')
+  const [showCurrent, setShowCurrent] = useState(false)
+  const decisionFrame = useRef<number | null>(null)
+  const alignQuestion = useCallback(() => {
+    const element = scrollRef.current, question = currentExchange.current
+    if (element && question && !manuallyScrolled.current) {
+      // A short decision needs enough trailing reading space to align its
+      // question at the top; otherwise scrollTop clamps at the old reply.
+      question.style.minHeight = `${Math.max(0, element.clientHeight - 32)}px`
+      element.scrollTop += question.getBoundingClientRect().top - element.getBoundingClientRect().top - 20
+    }
+  }, [])
   const scrollScheduler = useMemo(() => createScrollScheduler({
     requestFrame: (callback) => window.requestAnimationFrame(callback),
     getElement: () => scrollRef.current,
@@ -184,9 +204,40 @@ export function ConversationView({
   const userMessages = useMemo(() => scene.userMessages?.length ? scene.userMessages : [scene.userMessage], [scene.userMessage, scene.userMessages])
 
   const scheduleScroll = useCallback(() => {
-    if (!followOutput.current || typeof window === 'undefined') return
+    if (typeof window === 'undefined') return
+    if (flowStage === 'ready') {
+      if (!manuallyScrolled.current && decisionFrame.current === null) decisionFrame.current = window.requestAnimationFrame(() => { decisionFrame.current = null; alignQuestion() })
+      return
+    }
+    if (!followOutput.current) return
     scrollScheduler.schedule()
-  }, [scrollScheduler])
+  }, [alignQuestion, flowStage, scrollScheduler])
+
+  const revealDecision = useCallback(() => {
+    manuallyScrolled.current = false
+    alignQuestion()
+    // content-visibility may replace intrinsic history heights as we jump.
+    // Anchor again after layout; manual input cancels this correction.
+    if (decisionFrame.current !== null) window.cancelAnimationFrame(decisionFrame.current)
+    decisionFrame.current = window.requestAnimationFrame(() => { decisionFrame.current = null; alignQuestion() })
+    setShowCurrent(false)
+  }, [alignQuestion])
+
+  useLayoutEffect(() => {
+    const changed = previousScene.current !== scene.id
+    if (flowStage === 'assistant-streaming' && previousStage.current !== flowStage || changed && previousStage.current === 'ready') {
+      manuallyScrolled.current = false; followOutput.current = true; setShowCurrent(false)
+    }
+    previousStage.current = flowStage
+    if (changed) previousScene.current = scene.id
+    if (flowStage !== 'ready') return
+    scrollScheduler.cancel()
+    if (manuallyScrolled.current) { setShowCurrent(true); return }
+    revealDecision()
+    // Focus the decision heading without moving the reading position. Enter
+    // cannot accidentally activate a candidate left focused from the last turn.
+    if (!inputSuspended) decisionHeading.current?.focus({ preventScroll: true })
+  }, [flowStage, scene.id, revealDecision, scrollScheduler])
 
   useEffect(() => {
     const element = scrollRef.current
@@ -194,8 +245,18 @@ export function ConversationView({
     const onScroll = () => {
       followOutput.current = element.scrollHeight - element.scrollTop - element.clientHeight < 96
     }
+    const takeControl = () => { manuallyScrolled.current = true; followOutput.current = false; scrollScheduler.cancel() }
+    const keyboardScroll = (event: KeyboardEvent) => { if (['PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown', ' '].includes(event.key)) takeControl() }
     element.addEventListener('scroll', onScroll, { passive: true })
-    return () => element.removeEventListener('scroll', onScroll)
+    element.addEventListener('wheel', takeControl, { passive: true })
+    element.addEventListener('touchmove', takeControl, { passive: true })
+    element.addEventListener('keydown', keyboardScroll)
+    return () => {
+      element.removeEventListener('scroll', onScroll)
+      element.removeEventListener('wheel', takeControl)
+      element.removeEventListener('touchmove', takeControl)
+      element.removeEventListener('keydown', keyboardScroll)
+    }
   }, [])
 
   useEffect(() => {
@@ -211,10 +272,7 @@ export function ConversationView({
     return () => observer.disconnect()
   }, [scheduleScroll])
 
-  useEffect(() => {
-    followOutput.current = true
-    scheduleScroll()
-  }, [scene.conversationId, scheduleScroll])
+  useEffect(() => () => { if (decisionFrame.current !== null) window.cancelAnimationFrame(decisionFrame.current) }, [])
 
   const isHandoff = ['conversation-closing', 'assigning', 'connecting'].includes(flowStage)
   const isTyping = ['human-waiting', 'human-typing', 'human-rewriting'].includes(flowStage)
@@ -259,7 +317,7 @@ export function ConversationView({
           {isHandoff ? (
             <HandoffPanel stage={flowStage} targetTitle={handoffTargetTitle} />
           ) : (
-            <div className="exchange current-exchange">
+            <div className="exchange current-exchange" ref={currentExchange}>
               {currentMessageMode === 'static' && <StaticUserTurn messages={userMessages} content={scene.userContent} />}
               {currentMessageMode === 'static' && <LongInput preview={scene.userLongInput} />}
               {currentMessageMode === 'streaming' && (
@@ -288,7 +346,7 @@ export function ConversationView({
 
               {flowStage === 'ready' && (
                 <section className={`candidate-section is-ready ${scene.choiceKind === 'progression' ? 'is-progression' : ''}`} aria-label={scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}>
-                  <div className="candidate-heading">
+                  <div className="candidate-heading" ref={decisionHeading} tabIndex={-1}>
                     <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}{scene.choiceKind !== 'progression' && <span className="draft-label">Aster · 未发送草稿</span>}</span>
                     <small>{scene.choiceKind === 'progression' ? '单向推进' : `按 1–${scene.choices.length} 选择`}</small>
                   </div>
@@ -300,7 +358,12 @@ export function ConversationView({
                         key={choice.id}
                         data-choice-id={choice.id}
                         disabled={!choicesReady}
-                        onClick={() => onChoose(choice.id)}
+                        onPointerDown={event => { pointerChoice.current = { id: choice.id, ready: choicesReady, type: event.pointerType } }}
+                        onClick={(event) => {
+                          const pointer = pointerChoice.current; pointerChoice.current = null
+                          const repeated = event.detail > 1 && (pointer?.type !== 'touch' || lastClick.current === choice.id)
+                          if (!repeated && (!pointer || pointer.id === choice.id && pointer.ready)) { lastClick.current = choice.id; onChoose(choice.id) }
+                        }}
                       >
                         <span className="candidate-number" aria-hidden="true">{index + 1}</span>
                         <span className="candidate-copy">{choice.text}<ContentParts parts={choice.content} /></span>
@@ -314,6 +377,8 @@ export function ConversationView({
           )}
         </div>
       </div>
+
+      {showCurrent && flowStage === 'ready' && <button className="return-to-question" type="button" onClick={revealDecision}>回到当前问题</button>}
 
       <footer className="product-footer">Aster 可能会出错，请核对重要信息。</footer>
     </main>

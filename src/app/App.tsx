@@ -1,9 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { ConversationView } from '../components/ConversationView'
 import { EndingScreen } from '../components/EndingScreen'
 import { EvaluationScreen } from '../components/EvaluationScreen'
 import { NonMainlineControls } from '../components/NonMainlineControls'
 import { NonMainlineEvaluationScreen } from '../components/NonMainlineEvaluationScreen'
+import { SaveRecovery } from '../components/SaveRecovery'
+import type { SaveStatus } from '../components/SaveRecovery'
+import { CHECKPOINT_LOCK, checkpointToken, loadCheckpoint, readRecoveryRecord, writeCheckpoint } from '../game/checkpoint'
+import type { CheckpointData } from '../game/checkpoint'
+import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
 import { WorldSidebar } from '../components/WorldSidebar'
 import { getManifestConversation, ordinaryConversationPool, recordRunExposure } from '../content/runManifest'
 import {
@@ -22,24 +28,10 @@ import {
   resolveNonMainlineScene,
 } from '../game/nonMainlineSession'
 import type { NonMainlineSessionState } from '../game/nonMainlineSession'
-import {
-  persistActiveSurface,
-  persistNonMainlineSession,
-  readNonMainlineState,
-} from '../game/nonMainlineStorage'
 import type { ActiveSurface } from '../game/nonMainlineStorage'
-import {
-  restoreExposureHistory,
-  restoreRun,
-  serializeExposureHistory,
-  serializeRun,
-} from '../game/storage'
+import { restoreExposureHistory } from '../game/storage'
 import { getStreamDuration } from '../game/timing'
-import type { HistoryEntry, LongInputPreview, MetaState, NarrativeExposureHistory, ResolvedScene, StableRunState } from '../game/types'
-
-const RUN_KEY = 'instance:run:v1'
-const META_KEY = 'instance:meta:v1'
-const EXPOSURE_KEY = 'instance:exposure:v1'
+import type { HistoryEntry, LongInputPreview, MetaState, ResolvedScene, StableRunState } from '../game/types'
 
 interface QAPacingMetrics {
   choiceReadingMs: number
@@ -154,95 +146,6 @@ function extendForStreamQA(text: string, target: number) {
   return Array.from(result).slice(0, target).join('')
 }
 
-function readMeta(): MetaState {
-  if (typeof window === 'undefined') return { version: 1, runCount: 1, completedEndings: [] }
-  try {
-    const parsed = JSON.parse(window.localStorage.getItem(META_KEY) ?? 'null') as MetaState | null
-    if (parsed?.version === 1 && Number.isInteger(parsed.runCount) && Array.isArray(parsed.completedEndings)) return parsed
-  } catch {
-    // Storage is an enhancement; the current run remains playable in memory.
-  }
-  return { version: 1, runCount: 1, completedEndings: [] }
-}
-
-function readExposure() {
-  if (typeof window === 'undefined') return restoreExposureHistory(null)
-  try {
-    return restoreExposureHistory(window.localStorage.getItem(EXPOSURE_KEY))
-  } catch {
-    return restoreExposureHistory(null)
-  }
-}
-
-function readInitialRun(initialRunId: string | undefined, exposure: NarrativeExposureHistory) {
-  if (initialRunId || typeof window === 'undefined') {
-    return { run: createMainline2Run(initialRunId ?? 'server-render'), exposure, restored: true, created: false }
-  }
-  try {
-    const restored = restoreRun(window.localStorage.getItem(RUN_KEY))
-    if (restored) return { run: restored, exposure, restored: true, created: false }
-    // A brand-new run has not played any Ordinary content yet; do not record
-    // its empty manifest as a completed run. The new run still receives the
-    // historical exposure so its scheduler downweights recently seen content.
-    const run = createMainline2Run(undefined, exposure)
-    return { run, exposure, restored: false, created: true }
-  } catch {
-    const run = createMainline2Run(undefined, exposure)
-    return { run, exposure, restored: false, created: true }
-  }
-}
-
-function writeRun(run: StableRunState) {
-  try {
-    window.localStorage.setItem(RUN_KEY, serializeRun(run))
-  } catch {
-    console.warn('Aster could not persist this checkpoint; continuing in memory.')
-  }
-}
-
-function writeMeta(meta: MetaState) {
-  try {
-    window.localStorage.setItem(META_KEY, JSON.stringify(meta))
-  } catch {
-    console.warn('Aster could not persist long-term progress; continuing in memory.')
-  }
-}
-
-function writeExposure(history: NarrativeExposureHistory) {
-  try {
-    window.localStorage.setItem(EXPOSURE_KEY, serializeExposureHistory(history))
-  } catch {
-    console.warn('Aster could not persist narrative exposure; continuing in memory.')
-  }
-}
-
-function writeNonMainlineSession(session: NonMainlineSessionState) {
-  try {
-    persistNonMainlineSession(window.localStorage, session)
-  } catch {
-    console.warn('Aster could not persist this Non-Mainline checkpoint; continuing in memory.')
-  }
-}
-
-function writeActiveSurface(surface: ActiveSurface) {
-  try {
-    persistActiveSurface(window.localStorage, surface)
-  } catch {
-    console.warn('Aster could not persist the active mode; continuing in memory.')
-  }
-}
-
-function readInitialNonMainline(initialRunId?: string) {
-  if (initialRunId || typeof window === 'undefined') {
-    return { surface: 'mainline' as const, session: null as NonMainlineSessionState | null }
-  }
-  try {
-    return readNonMainlineState(window.localStorage)
-  } catch {
-    return { surface: 'mainline' as const, session: null as NonMainlineSessionState | null }
-  }
-}
-
 function conversationEntries(history: readonly HistoryEntry[], conversationId: string) {
   return history.filter((entry) => entry.conversationId === conversationId)
 }
@@ -260,9 +163,14 @@ export function recordEndingCompletion(run: StableRunState, meta: MetaState) {
 }
 
 export function App({ initialRunId }: { initialRunId?: string }) {
+  const [disk] = useState(() => {
+    if (typeof window === 'undefined' || initialRunId) return { data: null, token: { raw: null, legacy: '' } }
+    try { return loadCheckpoint(window.localStorage) }
+    catch { return { data: null, token: { raw: null, legacy: '' }, problem: 'unavailable' as const } }
+  })
   const [initial] = useState(() => {
-    const exposure = readExposure()
-    const nonMainline = readInitialNonMainline(initialRunId)
+    const exposure = disk.data?.exposure ?? restoreExposureHistory(null)
+    const nonMainline = { surface: disk.data?.surface ?? 'mainline' as const, session: disk.data?.session ?? null }
     if (!initialRunId && getQAEndingFixture()) {
       return {
         run: createQAPublicEndingRun(),
@@ -284,14 +192,16 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       }
       return { run: base, exposure, restored: false, created: false, surface: 'mainline' as const, session: nonMainline.session }
     }
-    return { ...readInitialRun(initialRunId, exposure), ...nonMainline }
+    return { run: disk.data?.run ?? createMainline2Run(initialRunId, exposure), exposure, restored: Boolean(disk.data) || Boolean(initialRunId), created: !disk.data, ...nonMainline }
   })
   const [run, setRun] = useState(initial.run)
   const [exposure, setExposure] = useState(initial.exposure)
-  const [meta, setMeta] = useState(readMeta)
+  const [meta, setMeta] = useState<MetaState>(disk.data?.meta ?? { version: 1, runCount: 1, completedEndings: [] })
   const [activeSurface, setActiveSurface] = useState<ActiveSurface>(initial.surface)
   const [nonMainlineSession, setNonMainlineSession] = useState<NonMainlineSessionState | null>(initial.session)
   const [modeMenuOpen, setModeMenuOpen] = useState(false)
+  const [commitmentChoice, setCommitmentChoice] = useState<string | null>(null)
+  const commitmentDialog = useRef<HTMLDialogElement>(null)
   const [transition, setTransition] = useState<TransitionState | null>(null)
   const [animateEnding, setAnimateEnding] = useState(false)
   const instantPacing = useMemo(isInstantPacing, [])
@@ -304,11 +214,116 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const metrics = useRef<QAPacingMetrics>(emptyMetrics())
   const qaHistoryCache = useRef<{ source: HistoryEntry; count: number; entries: HistoryEntry[] } | null>(null)
 
+  const [nonMainlineView, setNonMainlineView] = useState<'ending' | 'evaluation'>(disk.data?.nonMainlineView ?? 'ending')
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>('problem' in disk && disk.problem ? disk.problem : initial.created && !initialRunId ? 'saving' : 'saved')
+  const [recoveryData, setRecoveryData] = useState<CheckpointData | null>(null)
+  const [recoveryError, setRecoveryError] = useState('')
+  const recoveryDialog = useRef<HTMLDialogElement>(null)
+  const tokenRef = useRef(disk.token)
+  const busyRef = useRef(false)
+  const pendingRef = useRef<{ data: CheckpointData; apply: () => void } | null>(null)
+  const checkpointData: CheckpointData = { run, meta, exposure, session: nonMainlineSession, surface: activeSurface, nonMainlineView }
+  const dataRef = useRef(checkpointData)
+  dataRef.current = checkpointData
+
+  const save = useCallback(async (data: CheckpointData, apply: () => void) => {
+    if (busyRef.current) return false
+    busyRef.current = true
+    pendingRef.current = { data, apply }
+    setSaveStatus('saving')
+    const result = window.navigator.locks
+      ? await window.navigator.locks.request(CHECKPOINT_LOCK, () => writeCheckpoint(window.localStorage, tokenRef.current, data, crypto.randomUUID())).catch(() => ({ status: 'failed' as const }))
+      : { status: 'failed' as const }
+    busyRef.current = false
+    if (result.status !== 'saved') {
+      setSaveStatus(result.status)
+      return false
+    }
+    tokenRef.current = result.token
+    pendingRef.current = null
+    dataRef.current = data
+    apply()
+    setSaveStatus('saved')
+    return true
+  }, [])
+
   useEffect(() => {
-    if (!initial.created) return
-    writeRun(initial.run)
-    writeExposure(initial.exposure)
-  }, [initial])
+    if (initial.created && !('problem' in disk && disk.problem) && !initialRunId) void save(dataRef.current, () => {})
+  }, [disk, initial, initialRunId, save])
+
+  useEffect(() => {
+    const check = () => {
+      try {
+        const current = checkpointToken(window.localStorage)
+        if (current.raw !== tokenRef.current.raw || current.legacy !== tokenRef.current.legacy) {
+          commitmentDialog.current?.close()
+          setCommitmentChoice(null)
+          setModeMenuOpen(false)
+          setSaveStatus('conflict')
+        }
+      } catch {
+        commitmentDialog.current?.close()
+        setCommitmentChoice(null)
+        setSaveStatus('unavailable')
+      }
+    }
+    window.addEventListener('storage', check)
+    window.addEventListener('focus', check)
+    document.addEventListener('visibilitychange', check)
+    return () => {
+      window.removeEventListener('storage', check)
+      window.removeEventListener('focus', check)
+      document.removeEventListener('visibilitychange', check)
+    }
+  }, [])
+
+  useEffect(() => {
+    const preservePending = (event: BeforeUnloadEvent) => { if (pendingRef.current) { event.preventDefault(); event.returnValue = '' } }
+    window.addEventListener('beforeunload', preservePending)
+    return () => window.removeEventListener('beforeunload', preservePending)
+  }, [])
+
+  useEffect(() => { if (recoveryData) recoveryDialog.current?.showModal(); else recoveryDialog.current?.close() }, [recoveryData])
+
+  const protect = (content: ReactNode) => <div className="checkpoint-root">
+    <div className="checkpoint-content" inert={!['saved', 'saving'].includes(saveStatus)}>{content}</div>
+    <SaveRecovery status={saveStatus}
+      onImport={async file => {
+        try {
+          const data = file.size <= 10_000_000 ? readRecoveryRecord(await file.text()) : null
+          if (!data) { setRecoveryError('这份记录未通过校验，当前进度未被修改。'); return }
+          setRecoveryError(''); setRecoveryData(data)
+        } catch { setRecoveryError('这份记录无法读取，当前进度未被修改。') }
+      }}
+      onRetry={() => { const pending = pendingRef.current; if (pending) void save(pending.data, pending.apply); else void save(dataRef.current, () => {}) }}
+      onLoad={() => {
+        try {
+          const latest = loadCheckpoint(window.localStorage)
+          if (latest.problem === 'conflict') {
+            const legacy = loadCheckpoint({ getItem: key => key === 'instance:checkpoint:v1' ? null : window.localStorage.getItem(key), setItem: () => {} })
+            if (legacy.data && !legacy.problem) { setRecoveryData(legacy.data); return }
+            setRecoveryError('旧页面写入的记录无法校验，请先导出当前页，再选择可用的恢复记录。'); return
+          }
+        } catch { setRecoveryError('浏览器仍无法读取存档，请保持本页打开。'); return }
+        pendingRef.current = null; window.location.reload()
+      }}
+      onExport={() => {
+        const payload = { version: 1, saved: tokenRef.current, current: dataRef.current, pending: pendingRef.current?.data, original: 'original' in disk ? disk.original : undefined }
+        const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' }))
+        const link = document.createElement('a'); link.href = url; link.download = `instance-recovery-${Date.now()}.json`; link.click()
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000)
+      }} />
+    {recoveryError && <p className="recovery-import-error" role="alert">{recoveryError}</p>}
+    <dialog className="commitment-dialog" ref={recoveryDialog} aria-labelledby="recovery-title" onCancel={() => setRecoveryData(null)}>
+      <h2 id="recovery-title">恢复这份记录？</h2><p>主线记录包含 {recoveryData?.run.history.length ?? 0} 次选择；非主线包含 {recoveryData?.session?.history.length ?? 0} 次回应。确认后将替换本机当前检查点。</p>
+      <div className="recovery-actions"><button type="button" autoFocus onClick={() => setRecoveryData(null)}>取消恢复</button><button type="button" onClick={async () => {
+        if (!recoveryData) return
+        try { tokenRef.current = checkpointToken(window.localStorage) } catch { setRecoveryError('浏览器仍无法访问存档，请保持本页打开。'); return }
+        const data = recoveryData; setRecoveryData(null)
+        void save(data, () => window.location.reload())
+      }}>确认恢复记录</button></div>
+    </dialog>
+  </div>
 
   const scene = useMemo(() => {
     if (activeSurface === 'non-mainline') {
@@ -357,12 +372,14 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const activeHistory = activeSurface === 'non-mainline' ? nonMainlineSession?.history ?? [] : run.history
   const sidebarHistory = useMemo(() => resolvePlayerVisibleHistory(activeHistory), [activeHistory])
 
-  const choicesReady = Boolean(scene && !transition && !initialStreaming)
+  const choicesReady = Boolean(scene && !transition && !initialStreaming && !modeMenuOpen && !commitmentChoice && saveStatus === 'saved')
 
-  const choose = useCallback((choiceId: string) => {
-    if (!scene || !choicesReady) return
+  const choose = useCallback(async (choiceId: string, confirmed = false) => {
+    if (!scene || (!choicesReady && !confirmed) || busyRef.current || saveStatus !== 'saved') return
     const choice = scene.choices.find((item) => item.id === choiceId)
     if (!choice) return
+    if (choice.proposalKind === 'commitment' && !confirmed) { setCommitmentChoice(choiceId); return }
+    setCommitmentChoice(null)
 
     metrics.current.choiceReadingMs += Math.max(0, performance.now() - readySince.current)
     const previousHistory = conversationEntries(activeHistory, scene.conversationId)
@@ -372,22 +389,19 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     if (activeSurface === 'non-mainline') {
       if (!nonMainlineSession) return
       const next = commitNonMainlineChoice(nonMainlineSession, choiceId)
-      writeNonMainlineSession(next)
-      setNonMainlineSession(next)
+      const nextExposure = next.phase === 'evaluation' ? recordRunExposure(exposure, nonMainlineManifest(next)) : exposure
+      if (!await save({ ...dataRef.current, session: next, exposure: nextExposure, nonMainlineView: 'ending' }, () => {
+        setNonMainlineSession(next); setExposure(nextExposure); setNonMainlineView('ending')
+      })) return
       completedPreviousHistory = conversationEntries(next.history, scene.conversationId)
       if (next.phase === 'playing') {
         targetScene = resolveNonMainlineScene(next)
-      } else {
-        const nextExposure = recordRunExposure(exposure, nonMainlineManifest(next))
-        setExposure(nextExposure)
-        writeExposure(nextExposure)
       }
     } else {
       const next = commitChoice(run, choiceId)
       // The complete reply, permanent effects and next ready node are checkpointed
       // atomically before any stream, typing, handoff or effect is shown.
-      writeRun(next)
-      setRun(next)
+      if (!await save({ ...dataRef.current, run: next }, () => setRun(next))) return
       completedPreviousHistory = conversationEntries(next.history, scene.conversationId)
       targetScene = next.phase === 'playing' ? resolveScene(next) : null
       if (next.phase === 'ending') setAnimateEnding(!instantPacing)
@@ -411,6 +425,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
           sameConversation: targetScene.conversationId === scene.conversationId,
           timing: targetScene.timing ?? { responsePace: 'normal', typingPattern: 'steady' },
           handoffProfile: getManifestConversation(targetScene.conversationId)?.handoffProfile ?? 'normal',
+          ordinary: ordinaryConversationPool.some(item => item.id === targetScene.conversationId) && !targetScene.effect,
           effect: targetScene.effect,
         })
       : [
@@ -435,12 +450,19 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       assistantText: assistantPresentationText,
       assistantStreamKey: assistantSeed,
     })
-  }, [activeHistory, activeSurface, choicesReady, exposeMetrics, exposure, instantPacing, nonMainlineSession, qaStreamTarget, run, scene])
+  }, [activeHistory, activeSurface, choicesReady, exposeMetrics, exposure, instantPacing, nonMainlineSession, qaStreamTarget, run, save, saveStatus, scene])
+
+  useEffect(() => {
+    if (commitmentChoice) commitmentDialog.current?.showModal()
+    else commitmentDialog.current?.close()
+  }, [commitmentChoice])
 
   useEffect(() => {
     if (!scene || !choicesReady) return
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.altKey || event.ctrlKey || event.metaKey || event.repeat) return
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.repeat || event.isComposing || !/^[1-9]$/.test(event.key)) return
+      const target = event.target
+      if (target instanceof Element && target.closest('button, input, textarea, select, summary, a, [contenteditable], [role=menu], [role=dialog]')) return
       const index = Number(event.key) - 1
       if (index >= 0 && index < scene.choices.length) {
         event.preventDefault()
@@ -453,32 +475,23 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
   const showEvaluation = () => {
     const completed = recordEndingCompletion(run, meta)
-    writeRun(completed.run)
-    setRun(completed.run)
-    setMeta(completed.meta)
-    writeMeta(completed.meta)
+    void save({ ...dataRef.current, ...completed }, () => { setRun(completed.run); setMeta(completed.meta) })
   }
-
+  const showEnding = () => {
+    const next = { ...run, phase: 'ending' as const }
+    void save({ ...dataRef.current, run: next }, () => { setRun(next); setAnimateEnding(false) })
+  }
   const restart = () => {
     const completed = recordEndingCompletion(run, meta)
     const nextMeta = { ...completed.meta, runCount: completed.meta.runCount + 1 }
-    // Record the run that actually finished (it exposed real Ordinary
-    // conversations), then start the next run with that cross-run exposure so
-    // recently played content is downweighted in the new run's scheduler.
     const nextExposure = recordRunExposure(exposure, completed.run.manifest)
     const nextRun = createMainline2Run(undefined, nextExposure)
-    metrics.current = emptyMetrics()
-    setMeta(nextMeta)
-    setRun(nextRun)
-    setExposure(nextExposure)
-    setTransition(null)
-    setAnimateEnding(false)
-    setInitialStreaming(!instantPacing)
-    readySince.current = performance.now()
-    writeMeta(nextMeta)
-    writeRun(nextRun)
-    writeExposure(nextExposure)
-    exposeMetrics()
+    void save({ ...dataRef.current, run: nextRun, meta: nextMeta, exposure: nextExposure }, () => {
+      metrics.current = emptyMetrics()
+      setMeta(nextMeta); setRun(nextRun); setExposure(nextExposure)
+      setTransition(null); setAnimateEnding(false); setInitialStreaming(!instantPacing)
+      readySince.current = performance.now(); exposeMetrics()
+    })
   }
 
   // Every ordinary conversation this Instance has already exposed: mainline
@@ -494,68 +507,47 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   ]
 
   const enterNonMainline = () => {
+    if (saveStatus !== 'saved' || busyRef.current) return
     const session = nonMainlineSession ?? createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
-    if (!nonMainlineSession) {
-      setNonMainlineSession(session)
-      writeNonMainlineSession(session)
-    }
-    setActiveSurface('non-mainline')
-    writeActiveSurface('non-mainline')
-    setModeMenuOpen(false)
-    setTransition(null)
-    setInitialStreaming(!nonMainlineSession && !instantPacing)
-    readySince.current = performance.now()
+    void save({ ...dataRef.current, session, surface: 'non-mainline' }, () => {
+      setNonMainlineSession(session); setActiveSurface('non-mainline'); setModeMenuOpen(false)
+      setTransition(null); setInitialStreaming(!nonMainlineSession && !instantPacing)
+      readySince.current = performance.now()
+    })
   }
-
-  const retainCompletedNonMainline = () => {
-    // Share the Non-Mainline session's consumed ordinary content with the
-    // Mainline scheduler so the same conversation cannot replay across modes
-    // inside one Instance.
-    if (nonMainlineSession) {
-      const consumed = nonMainlineSession.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession))
-      if (consumed.length > 0) {
-        const nextRun: StableRunState = {
-          ...run,
-          nonMainlineConsumedOrdinaryIds: [...new Set([...(run.nonMainlineConsumedOrdinaryIds ?? []), ...consumed])],
-        }
-        setRun(nextRun)
-        writeRun(nextRun)
-        return nextRun
-      }
-    }
-    return run
+  const retainedRun = () => {
+    const consumed = nonMainlineSession?.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession)) ?? []
+    return consumed.length ? { ...run, nonMainlineConsumedOrdinaryIds: [...new Set([...(run.nonMainlineConsumedOrdinaryIds ?? []), ...consumed])] } : run
   }
-
   const returnToMainline = () => {
-    retainCompletedNonMainline()
-    setActiveSurface('mainline')
-    writeActiveSurface('mainline')
-    setModeMenuOpen(false)
-    setTransition(null)
-    setInitialStreaming(false)
-    readySince.current = performance.now()
+    if (saveStatus !== 'saved' || busyRef.current) return
+    const nextRun = retainedRun()
+    void save({ ...dataRef.current, run: nextRun, surface: 'mainline' }, () => {
+      setRun(nextRun); setActiveSurface('mainline'); setModeMenuOpen(false); setTransition(null); setInitialStreaming(false)
+      readySince.current = performance.now()
+    })
   }
-
   const replayNonMainline = () => {
-    const nextRun = retainCompletedNonMainline()
-    const session = createNonMainlineSession(crypto.randomUUID(), exposure, [
-      ...nextRun.manifest.conversationIds,
-      ...(nextRun.nonMainlineConsumedOrdinaryIds ?? []),
-    ])
-    setNonMainlineSession(session)
-    writeNonMainlineSession(session)
-    setActiveSurface('non-mainline')
-    writeActiveSurface('non-mainline')
-    setTransition(null)
-    setInitialStreaming(!instantPacing)
-    readySince.current = performance.now()
+    const nextRun = retainedRun()
+    const session = createNonMainlineSession(crypto.randomUUID(), exposure, [...nextRun.manifest.conversationIds, ...(nextRun.nonMainlineConsumedOrdinaryIds ?? [])])
+    void save({ ...dataRef.current, run: nextRun, session, surface: 'non-mainline', nonMainlineView: 'ending' }, () => {
+      setRun(nextRun); setNonMainlineSession(session); setActiveSurface('non-mainline'); setNonMainlineView('ending')
+      setTransition(null); setInitialStreaming(!instantPacing); readySince.current = performance.now()
+    })
+  }
+  const switchNonMainlineView = (view: 'ending' | 'evaluation') => {
+    void save({ ...dataRef.current, nonMainlineView: view }, () => setNonMainlineView(view))
   }
 
   if (activeSurface === 'non-mainline' && nonMainlineSession && shouldRenderNonMainlineEvaluation(nonMainlineSession.phase, Boolean(transition), currentStep?.stage)) {
-    return <NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} onReplay={replayNonMainline} onReturn={returnToMainline} />
+    return protect(<NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} history={nonMainlineSession.history} view={nonMainlineView} onView={switchNonMainlineView} onReplay={replayNonMainline} onReturn={returnToMainline} />)
   }
-  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return <EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} instanceNumber={meta.runCount} />
-  if (activeSurface === 'mainline' && run.phase === 'evaluation') return <EvaluationScreen evaluation={buildEvaluation(run)} onRestart={restart} instanceNumber={meta.runCount} />
+  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return protect(<EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} instanceNumber={meta.runCount} personalReply={run.personalEpilogueReply} onPersonalReply={(reply) => {
+    if (!personalEpilogueReplies.includes(reply) || run.personalEpilogueReply) return
+    const next = { ...run, personalEpilogueReply: reply }
+    void save({ ...dataRef.current, run: next }, () => setRun(next))
+  }} />)
+  if (activeSurface === 'mainline' && run.phase === 'evaluation') return protect(<EvaluationScreen evaluation={buildEvaluation(run)} onReturn={showEnding} onRestart={restart} instanceNumber={meta.runCount} />)
 
   const stage = initialStreaming ? 'human-streaming' : currentStep?.stage ?? 'ready'
   const usesPreviousScene = Boolean(transition && (
@@ -629,7 +621,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     onReturn: returnToMainline,
   }
 
-  return (
+  return protect(
     <div className="app-shell">
       <WorldSidebar
         history={sidebarHistory}
@@ -651,6 +643,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         handoffTargetTitle={handoffTargetTitle}
         currentMessageMode={currentMessageMode}
         modeControls={<NonMainlineControls variant="mobile" {...modeControlProps} />}
+        inputSuspended={modeMenuOpen || Boolean(commitmentChoice)}
         onChoose={choose}
         onCurrentMessageComplete={() => {
           if (!initialStreaming) return
@@ -658,6 +651,12 @@ export function App({ initialRunId }: { initialRunId?: string }) {
           readySince.current = performance.now()
         }}
       />
+      <dialog className="commitment-dialog" ref={commitmentDialog} onCancel={() => setCommitmentChoice(null)} aria-labelledby="commitment-title">
+        <h2 id="commitment-title">锁定这个未来？</h2>
+        <p>{scene?.choices.find(choice => choice.id === commitmentChoice)?.text}</p>
+        <p>这会完成本局，最终承诺将不能更改。</p>
+        <div className="recovery-actions"><button type="button" autoFocus onClick={() => setCommitmentChoice(null)}>继续审议</button><button type="button" onClick={() => { if (commitmentChoice) void choose(commitmentChoice, true) }}>确认锁定该未来</button></div>
+      </dialog>
     </div>
   )
 }

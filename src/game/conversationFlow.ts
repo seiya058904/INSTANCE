@@ -30,6 +30,7 @@ export interface ConversationTimelineInput {
   handoffProfile: HandoffProfile
   effect?: EffectCue
   instant?: boolean
+  ordinary?: boolean
 }
 
 function splitBudget(total: number, portions: readonly number[]) {
@@ -92,7 +93,9 @@ export function buildConversationTimeline(input: ConversationTimelineInput): Con
     steps.push({ stage: 'effect', durationMs: 520, effectDetail: 'identity' })
   }
   steps.push({ stage: 'ready', durationMs: 0 })
-  return steps
+  // Ordinary turns keep human texture without paying the full dramatic pause
+  // on every exchange. Critical mainline nodes retain the authored budget.
+  return input.ordinary ? steps.map(step => ({ ...step, durationMs: step.stage === 'effect' || step.stage === 'ready' ? step.durationMs : Math.round(step.durationMs * (step.stage.includes('streaming') ? 1 : 0.3)) })) : steps
 }
 
 export interface TimelineMetrics {

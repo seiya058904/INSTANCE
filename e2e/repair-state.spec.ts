@@ -1,5 +1,40 @@
 import { expect, test } from '@playwright/test'
 
+test('rupture-only M16 save remains playable through explicit M17 commitment', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', error => errors.push(error.message))
+  await page.goto('/?qaPacing=instant')
+  await page.evaluate(async () => {
+    const enginePath = '/src/game/engine.ts', storagePath = '/src/game/storage.ts'
+    const engine = await import(enginePath), storage = await import(storagePath)
+    let run = engine.createMainline2Run('independent-audit-13'), rng = 14
+    for (let step = 0; step < 223; step++) {
+      const scene = engine.resolveScene(run)
+      rng = (Math.imul(rng, 1664525) + 1013904223) >>> 0
+      const choice = scene.choices.find((c: any) => c.proposalKind === 'commitment') ?? scene.choices[rng % scene.choices.length]
+      run = engine.commitChoice(run, choice.id)
+      if ((step + 1) % 7 === 0) run = storage.restoreRun(storage.serializeRun(run))
+    }
+    localStorage.setItem('instance:run:v1', storage.serializeRun(run))
+  })
+  await page.reload()
+  await expect(page.locator('.candidate-response')).toHaveCount(1)
+  await expect(page.locator('.candidate-response')).toContainText('异议路径')
+  for (let step = 0; step < 40; step++) {
+    const before = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!))
+    if (before.phase === 'ending') break
+    await page.locator('.candidate-response').first().click()
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!).history.length)).toBeGreaterThan(before.history.length)
+    await page.reload()
+  }
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!))
+  expect(saved.phase).toBe('ending')
+  expect(saved.finalCommitmentLocked).toBe(true)
+  expect(saved.decisions.final_commitment).toBe('proposal.rupture.legible_exit.category.lawful_alternative')
+  await expect(page.getByRole('button', { name: /查看 Instance Evaluation/ })).toBeVisible()
+  expect(errors).toEqual([])
+})
+
 // Isolated browser checkpoints are produced through the actual game engines,
 // not hand-authored completion flags. The actions under test use real UI buttons.
 test('completed replay A and B survive replay, return, and reload', async ({ page }) => {

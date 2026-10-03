@@ -151,6 +151,7 @@ export function rankFutureProposalCandidates(run: StableRunState): FutureProposa
 }
 
 export function selectFixedFutureProposals(ranked: readonly FutureProposalDefinition[]): GeneratedFutureProposal[] {
+  if (!ranked.length) throw new Error('ACT V cannot generate a resolvable proposal from this history')
   const roles: ReadonlyArray<{ category: FutureProposalCategory; intrinsicIds: ReadonlySet<string> }> = [
     { category: 'natural_continuation', intrinsicIds: new Set(['proposal.ar.abundance_dividend', 'proposal.ar.civilization_trusteeship', 'proposal.mc.independent_machine_polities', 'proposal.ph.open_enhancement_commonwealth', 'proposal.ph.digital_continuity', 'proposal.up.expand_canine_civic_model', 'proposal.co.frontier_federation']) },
     { category: 'power_constraint', intrinsicIds: new Set(['proposal.hc.final_human_veto', 'proposal.se.constitutional_peace_architecture', 'proposal.se.mutual_disarmament', 'proposal.ai.audit_council', 'proposal.co.two_key_civilization', 'proposal.ar.civilization_trusteeship']) },
@@ -163,12 +164,14 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
     if (proposal) selectedBaseIds.add(proposal.id)
     return { ...role, proposal }
   })
-  return assignments.map(({ category, proposal: intrinsicProposal }) => {
+  return assignments.flatMap(({ category, proposal: intrinsicProposal }) => {
     const lineageAllowed = (candidate: FutureProposalDefinition) => category === 'lawful_alternative' || candidate.family !== 'rupture'
     const remaining = ranked.filter((candidate) => !selectedBaseIds.has(candidate.id) && lineageAllowed(candidate))
     const reusable = ranked.filter(lineageAllowed)
     const proposal = intrinsicProposal ?? remaining[0] ?? reusable[0]
-    if (!proposal) throw new Error('ACT V cannot generate a resolvable proposal from this history')
+    // A legal history may support only rupture. Leave unsupported roles absent;
+    // relabelling rupture would invent authority/history the player never earned.
+    if (!proposal) return []
     selectedBaseIds.add(proposal.id)
     return categorizedProposal(proposal, category)
   })

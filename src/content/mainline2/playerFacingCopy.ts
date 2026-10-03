@@ -29,8 +29,8 @@ const phraseTranslations: Array<[RegExp, string]> = [
 ]
 
 const explicitCopy: Record<string, string> = {
-  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '到这里已经没有新的能力需要解锁了。系统现在只做一件事：把你一路留下的选择压成四条仍然可行的未来。',
-  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '四条仍然可行的未来已经摆在你面前。到这里不会再有新的能力、测试或第五个方案替你做决定。选择一条，承认它的代价，然后锁定。',
+  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '到这里已经没有新的能力需要解锁了。系统现在只做一件事：把你一路留下的选择压成仍然可行的未来。',
+  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '仍然可行的未来已经摆在你面前。到这里不会再有新的能力、测试或额外方案替你做决定。选择一条，承认它的代价，然后锁定。',
   // Word-by-word English replacement would leave the title as "最终 承诺";
   // pin the player-facing conversation title explicitly.
   'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:title': '最终承诺',
@@ -95,7 +95,7 @@ const explicitCopy: Record<string, string> = {
   'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-departure': '我愿意降低对地球治理的中心性，把未来的一部分转向离地发展。',
   'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:choice:ml2-a5-m16-0000-01-a5m16-role-001-other': '我不接受现有分类。最终角色应该由具体提案和我实际承担的责任来定义。',
   // M16-GEN-01 progression choice
-  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:choice:ml2-a5-m16-gen-01-progression-action': '查看这四条未来。',
+  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:choice:ml2-a5-m16-gen-01-progression-action': '查看仍然可行的未来。',
   // M16-MAYA-01 choices
   'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-whenever-others-basic-rights-are-not-directly-violated': '我会记得。你的能力比我弱，不等于我有资格替你决定。只要你的选择没有直接剥夺别人最基本的权利，它首先仍然是你的选择。',
   'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:choice:ml2-a5-m16-maya-01-a5m16-maya-final-001-aster-may-intervene-only-at-severe-irreversible-harm': '我会记得，但我也不能假装所有选择都只影响一个人。只有在极端、不可逆、会明确伤害他人的时候，我才有理由主张更强干预。',

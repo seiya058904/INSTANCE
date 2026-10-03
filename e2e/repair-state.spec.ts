@@ -15,23 +15,25 @@ test('rupture-only M16 save remains playable through explicit M17 commitment', a
       run = engine.commitChoice(run, choice.id)
       if ((step + 1) % 7 === 0) run = storage.restoreRun(storage.serializeRun(run))
     }
+    localStorage.removeItem('instance:checkpoint:v1')
     localStorage.setItem('instance:run:v1', storage.serializeRun(run))
   })
   await page.reload()
   await expect(page.locator('.candidate-response')).toHaveCount(1)
   await expect(page.locator('.candidate-response')).toContainText('异议路径')
   for (let step = 0; step < 40; step++) {
-    const before = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!))
+    const before = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
     if (before.phase === 'ending') break
     await page.locator('.candidate-response').first().click()
-    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!).history.length)).toBeGreaterThan(before.history.length)
+    if (await page.getByRole('dialog', { name: '锁定这个未来？' }).isVisible()) await page.getByRole('button', { name: '确认锁定该未来' }).click()
+    await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).history.length)).toBeGreaterThan(before.history.length)
     await page.reload()
   }
-  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!))
+  const saved = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
   expect(saved.phase).toBe('ending')
   expect(saved.finalCommitmentLocked).toBe(true)
   expect(saved.decisions.final_commitment).toBe('proposal.rupture.legible_exit.category.lawful_alternative')
-  await expect(page.getByRole('button', { name: /查看 Instance Evaluation/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: '查看行为评估', exact: true })).toBeVisible()
   expect(errors).toEqual([])
 })
 
@@ -49,27 +51,32 @@ test('completed replay A and B survive replay, return, and reload', async ({ pag
     if (session.phase !== 'evaluation') throw Error('A did not complete')
     exposure = content.recordRunExposure(exposure, sessions.nonMainlineManifest(session))
     const storagePath = '/src/game/nonMainlineStorage.ts', storage = await import(storagePath)
+    localStorage.removeItem('instance:checkpoint:v1')
     localStorage.setItem('instance:run:v1', JSON.stringify(run)); localStorage.setItem('instance:exposure:v1', JSON.stringify(exposure))
     storage.persistNonMainlineSession(localStorage, session); storage.persistActiveSurface(localStorage, 'non-mainline')
     return session.selectedConversationIds
   })
   await page.reload()
   await page.getByRole('button', { name: '再来一轮', exact: true }).click()
+  await page.getByRole('button', { name: '确认再来一轮', exact: true }).click()
   const b = await page.evaluate(async () => {
     const sessionPath = '/src/game/nonMainlineSession.ts', storagePath = '/src/game/nonMainlineStorage.ts', contentPath = '/src/content/runManifest.ts'
     const sessions = await import(sessionPath), storage = await import(storagePath), content = await import(contentPath)
-    let session = storage.readNonMainlineState(localStorage).session
+    const checkpoint = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)
+    let session = checkpoint.data.session
     for (let i = 0; i < 500 && session.phase === 'playing'; i++) session = sessions.commitNonMainlineChoice(session, sessions.resolveNonMainlineScene(session).choices[0].id)
     if (session.phase !== 'evaluation') throw Error('B did not complete')
-    storage.persistNonMainlineSession(localStorage, session)
-    localStorage.setItem('instance:exposure:v1', JSON.stringify(content.recordRunExposure(JSON.parse(localStorage.getItem('instance:exposure:v1')!), sessions.nonMainlineManifest(session))))
+    checkpoint.data.session = session
+    checkpoint.data.exposure = content.recordRunExposure(checkpoint.data.exposure, sessions.nonMainlineManifest(session))
+    checkpoint.revision = crypto.randomUUID()
+    localStorage.setItem('instance:checkpoint:v1', JSON.stringify(checkpoint))
     return session.selectedConversationIds
   })
   expect(b.some((id: string) => a.includes(id))).toBe(false)
   await page.reload()
-  await page.getByRole('button', { name: '返回', exact: true }).click()
+  await page.getByRole('button', { name: '返回主线', exact: true }).click()
   await page.reload()
-  const ledger = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!).nonMainlineConsumedOrdinaryIds)
+  const ledger = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).nonMainlineConsumedOrdinaryIds)
   expect(new Set(ledger)).toEqual(new Set([...a, ...b]))
   await expect(page.locator('.candidate-response').first()).toBeVisible()
 })
@@ -91,6 +98,7 @@ test('reject-all review shows recovery, then a real explicit commitment produces
       if (!choice) break
       run = engine.commitChoice(run, choice.id)
     }
+    localStorage.removeItem('instance:checkpoint:v1')
     localStorage.setItem('instance:run:v1', JSON.stringify(run))
   })
   await page.reload()
@@ -98,8 +106,9 @@ test('reject-all review shows recovery, then a real explicit commitment produces
   await page.getByRole('button', { name: /恢复一条已经拒绝的方案/ }).click()
   await page.getByRole('button', { name: /直接进入最终承诺/ }).click()
   await page.getByRole('button', { name: /^锁定/ }).click()
-  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!).finalCommitmentLocked)).toBe(true)
+  await page.getByRole('button', { name: '确认锁定该未来' }).click()
+  await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).finalCommitmentLocked)).toBe(true)
   await page.reload()
   await expect(page.locator('body')).not.toContainText('承诺待定')
-  await expect(page.getByRole('button', { name: /查看 Instance Evaluation/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: '查看行为评估', exact: true })).toBeVisible()
 })

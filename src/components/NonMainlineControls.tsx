@@ -41,7 +41,13 @@ export function NonMainlineControls({
     const isVisible = () => Boolean(triggerRef.current?.getClientRects().length)
     if (isVisible()) itemRef.current?.focus()
     const dismissOutside = (event: PointerEvent) => {
-      if (isVisible() && event.target instanceof Node && !rootRef.current?.contains(event.target)) toggleRef.current()
+      if (isVisible() && event.target instanceof Node && !rootRef.current?.contains(event.target)) {
+        // This pointer gesture dismisses the menu; it must not also send a
+        // candidate in the background after the state change.
+        event.preventDefault()
+        toggleRef.current()
+        triggerRef.current?.focus()
+      }
     }
     document.addEventListener('pointerdown', dismissOutside)
     return () => document.removeEventListener('pointerdown', dismissOutside)

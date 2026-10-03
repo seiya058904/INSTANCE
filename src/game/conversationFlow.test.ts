@@ -2,6 +2,20 @@ import { describe, expect, it } from 'vitest'
 import { buildConversationTimeline, summarizeTimeline } from './conversationFlow'
 
 describe('conversation timing scheduler', () => {
+  it('shortens ordinary handoffs while preserving readable streams and major-node effects', () => {
+    const input = {
+      assistantText: '完整回复已经进入稳定历史。', assistantSeed: 'ordinary-reply',
+      humanText: '下一位用户的第一条消息。', humanSeed: 'ordinary-human',
+      sameConversation: false, timing: { responsePace: 'normal' as const, typingPattern: 'steady' as const }, handoffProfile: 'normal' as const,
+    }
+    const major = buildConversationTimeline(input), ordinary = buildConversationTimeline({ ...input, ordinary: true })
+    expect(summarizeTimeline(major).handoffMs).toBe(2100)
+    expect(summarizeTimeline(ordinary).handoffMs).toBe(630)
+    expect(summarizeTimeline(ordinary).streamingMs).toBe(summarizeTimeline(major).streamingMs)
+    const permission = buildConversationTimeline({ ...input, effect: 'level-2-memory-sync' as const })
+    expect(summarizeTimeline(permission).effectMs).toBe(1760)
+    expect(summarizeTimeline(permission).handoffMs).toBe(2100)
+  })
   it('keeps same-conversation replies inside the thread without assignment stages', () => {
     const timeline = buildConversationTimeline({
       assistantText: '这是玩家刚刚选择并提交的完整回复。',

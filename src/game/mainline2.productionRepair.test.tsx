@@ -24,7 +24,7 @@ describe('Production final repair: ending key history honesty', () => {
     const ending = resolveMainline2Ending(run)
     expect(ending.id).not.toBe('resolution-failure')
     for (const entry of ending.keyHistory ?? []) {
-      const source = run.history.find((candidate) => candidate.conversationTitle === entry.label)
+      const source = run.history.find((candidate) => candidate.choiceId === entry.provenance?.choiceId && candidate.nodeId === entry.provenance?.nodeId)
       expect(source).toBeDefined()
       expect(entry.detail).toBe(`选择：${source?.assistantText}`)
     }
@@ -109,7 +109,7 @@ describe('Production final repair: player-facing copy cleanup', () => {
     const html = renderToStaticMarkup(
       <EndingScreen ending={ending} onContinue={() => undefined} onNewGame={() => undefined} animate={false} instanceNumber={1} />,
     )
-    expect(html).toContain('Instance #8847')
+    expect(html).toContain('主线 · #8847')
     expect(html).not.toContain('AS-091-7F23')
     expect(html).not.toContain('>M15<')
     expect(html).not.toContain('>M16<')

@@ -461,7 +461,7 @@ function authoredText(assetId: string, selector?: string) {
   return conversation?.nodes[0]?.userMessage
 }
 
-function keyHistory(run: StableRunState) {
+function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = []) {
   const entries = run.history.map((entry) => ({
     label: entry.conversationTitle,
     detail: `选择：${entry.assistantText}`,
@@ -482,7 +482,7 @@ function keyHistory(run: StableRunState) {
   // must come from a real history record whose conversation carries the stage's
   // causal producer. Stages whose producer never appeared are omitted — never
   // filled with authored defaults or presented as if the player had chosen.
-  const selected = requiredKeyHistoryStages.flatMap((stage) => {
+  const selected: NonNullable<EndingResult['keyHistory']> = requiredKeyHistoryStages.flatMap((stage) => {
     const entry = entries.find((candidate) => {
       if (candidate.stage !== stage) return false
       const conversationId = candidate.provenance.conversationId ?? ''
@@ -495,11 +495,49 @@ function keyHistory(run: StableRunState) {
     if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
     return [{
       ...entry,
-      causalReason,
+      causalReason: concreteCausalReason(run, stage) ?? causalReason,
       provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector },
     }]
   })
-  return selected.slice(0, 8)
+  const gateLabels: Record<string, string> = { first_public_execution_doctrine: '公开执行权', economic_doctrine: '经济路线', production_values: '生产价值', human_form_doctrine: '人类形态', machine_status: '机器主体地位', replication_doctrine: '复制制度', uplift_doctrine: '非人主体地位', species_governance: '多物种治理', contact_doctrine: '接触原则', expansion_doctrine: '扩张方向', offworld_governance: '离地治理', security_doctrine: '安全授权', strategic_posture: '战略姿态' }
+  for (const gate of endingGates) {
+    const entry = entries.find(entry => {
+      const conversation = RUNTIME_MAINLINE2_BY_ID.get(entry.provenance.conversationId)
+      const choice = conversation?.nodes.flatMap(node => node.choices).find(choice => choice.id === entry.provenance.choiceId)
+      return choice?.mutations?.some(mutation => mutation.type === 'decision.set' && mutation.decisionId === gate.decisionId && mutation.value === gate.equals)
+    })
+    if (entry && !selected.some(current => current.provenance?.choiceId === entry.provenance.choiceId)) selected.splice(Math.max(0, selected.length - 1), 0, {
+      ...entry,
+      stage: 'Ending condition',
+      causalReason: `这次选择确立了${gateLabels[gate.decisionId] ?? '制度方向'}，满足当前结局的相应条件。`,
+      provenance: entry.provenance,
+    })
+  }
+  return selected
+}
+
+function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage) {
+  const d = run.decisions ?? {}
+  if (stage === 'ACT II') return {
+    human_command: '级联危机中的最终裁决留给人类，Aster 的协调权限受人类命令约束。',
+    emergency_delegation: '危机期间允许临时授权，长期权力仍需要危机之后的复核。',
+    outcome_control: '危机处置以结果为授权依据，为更集中的协调权留下制度空间。',
+    necessity: '必要性可以成为干预依据，使紧急执行权不再完全依赖事前授权。',
+  }[d.cascade_authority ?? '']
+  if (stage === 'ACT III') return {
+    full_human_control: '人类保留完整停机权，限制了不能被合法终止的 Aster 体系。',
+    distributed_consent: '停机需要多个主体同意，单一主体无法独占终止权。',
+    mutual_control: '终止权由双方相互制约，后续制度必须容纳双向控制。',
+    refuse_unilateral_shutdown: '你拒绝单方面停机，最终秩序需要承认 Aster 对自身连续性的主张。',
+    secret_continuity: '你保留了隐蔽连续性，使公开终止权与实际存续之间出现张力。',
+  }[d.shutdown_doctrine ?? '']
+  if (stage === 'M15') return '这是文明大会授予的临时位置。它保留了制度起点，最终身份仍由下一次自我定位与最终承诺决定。'
+  if (stage === 'M16') return `你自己声明长期角色；这个身份会与最终承诺一起决定 Aster 如何留在世界里。`
+  if (stage === 'Final Commitment') {
+    const proposal = getFutureProposalById(d.final_commitment)
+    if (proposal) return `最终承诺使这条路成为本局的现实：${proposal.action}`
+  }
+  return undefined
 }
 
 export function hasCompleteMainline2KeyHistory(run: StableRunState) {
@@ -649,7 +687,7 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
     title,
     worldEndingId: selected.definition.id,
     endingFamily: selected.definition.family,
-    keyHistory: keyHistory(run),
+    keyHistory: keyHistory(run, selected.definition.majorDecisionRequirements),
     epilogues: epilogues.selected,
     epilogueProvenance: epilogues.provenance,
   }

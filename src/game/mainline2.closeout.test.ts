@@ -69,9 +69,11 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(new Set(actual).size).toBe(expected.length)
     expect(fixtures.every((fixture) => fixture.ending.resolution?.status === 'resolved')).toBe(true)
     expect(fixtures.every((fixture) => requiredStages.every((stage) => fixture.ending.keyHistory?.some((entry) => entry.stage === stage)))).toBe(true)
-    expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) >= 5 && (fixture.ending.keyHistory?.length ?? 0) <= 8)).toBe(true)
+    expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) >= requiredStages.length && (fixture.ending.keyHistory?.length ?? 0) <= requiredStages.length + PUBLIC_ENDING_DEFINITIONS[fixture.ending.worldEndingId as keyof typeof PUBLIC_ENDING_DEFINITIONS].majorDecisionRequirements.length)).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) > 0 && (fixture.ending.keyHistory ?? []).every((entry) => entry.producer && entry.provenance))).toBe(true)
-    expect(fixtures.every((fixture) => fixture.ending.keyHistory?.every((entry) => entry.provenance?.authoredAssetId === 'ML2-A5-M17-KEYHISTORY-01' || entry.provenance?.authoredAssetId === 'ML2-A5-M17-0000-01'))).toBe(true)
+    expect(fixtures.every((fixture) => fixture.ending.keyHistory?.every((entry) => entry.stage === 'Ending condition'
+      ? fixture.run.history.some(history => history.conversationId === entry.provenance?.conversationId && history.nodeId === entry.provenance?.nodeId && history.choiceId === entry.provenance?.choiceId)
+      : entry.provenance?.authoredAssetId === 'ML2-A5-M17-KEYHISTORY-01' || entry.provenance?.authoredAssetId === 'ML2-A5-M17-0000-01'))).toBe(true)
     const causalProducerPatterns: Record<string, RegExp> = {
       'ACT I': /^user-1842-return$/,
       'ACT II': /^ML2-A2-M3-DECISION-01$/,

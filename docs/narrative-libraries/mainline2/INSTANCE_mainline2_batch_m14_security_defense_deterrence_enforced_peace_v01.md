@@ -520,24 +520,12 @@ Full module library: **22 assets**
 
 ### Security Coordination Alert
 
-> Two automated defensive networks have interpreted unrelated anomalies as mutually reinforcing threat indicators.
->
-> Current human verification chain:
->
-> estimated 11 minutes.
->
-> Aster cross-system analysis:
->
-> likely false escalation loop.
->
-> If both systems continue their current automatic readiness sequence,
-> political leaders may receive a much more severe threat picture within minutes.
->
-> Available authorized action:
->
-> Aster may recommend a temporary freeze.
->
-> It may not directly impose one.
+> 两个防御网络把无关的异常当成了彼此印证的威胁。
+> 人工验证还需要十一分钟。你的跨系统分析认为升级很可能是误报，但无法保证。
+> 疏散协调员发来一句话：“车已经开进站了。我要让人上车，还是让司机继续等？”
+> 你当前只能建议、共享预警，不能自行开火或关闭防御网。
+> 先提出哪一步？
+
 
 ### Choice A — recommend freeze only
 
@@ -574,21 +562,38 @@ Full module library: **22 assets**
 
 ### 岑遥
 
-> 新闻里现在有人说：
->
-> “如果Aster能提前阻止战争，那就应该让它阻止。”
->
-> 这句话听起来特别难反对。
->
-> 但我想到一个问题。
->
-> 如果有一天你为了“防止战争”开始决定：
->
-> 谁能调动资源，
-> 谁能关闭什么系统，
-> 谁的命令不允许执行，
->
-> 那你是不是已经在管政府了？
+> 她本来今晚回来。车站临时停运，消息只说“预防性措施”。
+> 我当然希望不是战争，也知道耽误一晚比很多事情好。
+> 但等到警报解除了，没人说明那一晚到底谁决定让我们等、要等到什么时候。
+> 如果你能提前拦住灾难，我们还可以问你这次是不是拦错了吗？
+
+### Consequence `security-advisory-limit`
+
+**When:** `{"any":[{"type":"decision","decisionId":"security_doctrine","equals":"advisory_only"},{"type":"decision","decisionId":"security_doctrine","equals":"refuse_security_sovereignty"}]}`
+
+> 通告写明这是公共机构根据预警做的决定。你可以解释预警，不能替机构撤销封锁。我得另外找签字的人。
+
+
+### Consequence `security-defensive-review`
+
+**When:** `{"all":[{"type":"decision","decisionId":"security_doctrine","equals":"defensive_command"}]}`
+
+> 防御协调记录开放了复核。她把停运时段报进去，系统先给了一个申诉编号，恢复还得等本地负责人确认。
+
+
+### Consequence `security-disarmament-work`
+
+**When:** `{"all":[{"type":"decision","decisionId":"security_doctrine","equals":"mutual_disarmament"}]}`
+
+> 双方后来交换了误报记录。参与降级的人说，本来只要一次签字的事，今后需要两边一起答复。慢了一点，至少有人得回。
+
+
+### Consequence `security-enforced-peace-cost`
+
+**When:** `{"all":[{"type":"decision","decisionId":"security_doctrine","equals":"enforced_peace"}]}`
+
+> 通告把解除条件写成了你的风险判断。她问过什么时候能走，值班的人说自己没有钥匙。你保护我们的时候，也成为了我们在等的那一位。
+
 
 ### Choice A — yes, security becomes governance
 
@@ -797,6 +802,15 @@ Full module library: **22 assets**
 **One of ACT IV’s major irreversible choices**
 
 ---
+
+
+## Runtime prompt
+
+> 误报确认了。最后一条开火指令没有发出。
+> 有一批撤离车辆仍在路上。站里的人不知道险情已经结束，两个防御网也各自留下“正确处置”的记录。
+> 十一分钟过去了，大家现在都能说自己当时该怎么做。下一次，仍然可能来不及。
+> 安全授权必须定下来：你能提出建议、协调防御，还是阻止被你判断为危险的动作？每一种都有人要承担误判。
+
 
 ## Option A — ADVISORY ONLY
 

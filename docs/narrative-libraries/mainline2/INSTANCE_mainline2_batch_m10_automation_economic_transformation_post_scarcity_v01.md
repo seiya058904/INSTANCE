@@ -248,19 +248,12 @@ Full module library: **20 assets**
 
 ### User #4471
 
-> 还记得我以前说我变成review机器了吗？
->
-> 现在有点好笑。
->
-> 系统自己写、自己测、自己部署到沙箱、自己查监控。
->
-> 真出异常才叫人。
->
-> 我一周真正需要看的东西可能就几小时。
->
-> 公司准备把我们组从18个人缩到5个。
->
-> 我不知道该说“终于不用干破活了”，还是“完了”。
+> 还记得我说自己变成审阅机器了吗？
+> 现在组里从十八个人变成五个。项目没少，系统自己写、测、跑沙箱，异常才叫我们。
+> 上周有个故障，它叫出了离职同事的账号。那条规则是他写的，没人改联系人。
+> 我花十分钟修好了。然后坐在那里，不知道该不该把这事告诉他。
+> “效率提升”是真的。我们十八个人一起做过的事，也是真的。
+
 
 ### Choice A — acknowledge both
 
@@ -943,16 +936,45 @@ Full module library: **20 assets**
 
 ### 岑遥
 
-> 我们公司现在开始试四天工作制，
-> 有些部门甚至三天。
->
-> 我本来以为我会特别开心。
->
-> 结果突然多出来这么多时间，
-> 我第一周什么都没干，
-> 然后莫名其妙有点内疚。
->
-> 我们是不是被训练得太习惯“忙才算有用”了？
+> 公司开始试四天工作制，我第一次有了空着的星期五。
+> 我去找她，才发现她还要上班。以前我们总说有空再见，现在我有空，她没有。
+> 我在咖啡店坐到下午。没学习，没提升自己，也没做什么有用的事。挺舒服，又有点心虚。
+> 如果不用一直证明我有用，我该怎么过这一天？
+
+### Consequence `automation-market-cost`
+
+**When:** `{"all":[{"type":"decision","decisionId":"economic_doctrine","equals":"market_automation"}]}`
+
+> 那个仓库工人的女儿又在求职群发消息。补偿已经到手，新岗位要求却都高了。产量涨得很快，她爸还没有下一份工作。
+
+
+### Consequence `automation-dividend-aftermath`
+
+**When:** `{"all":[{"type":"decision","decisionId":"economic_doctrine","equals":"social_dividend"}]}`
+
+> 第一笔社会分红到账那天，她爸把去面试的车费留下了，剩下的去交房租。他说至少这次，机器越能干不完全等于自己越没用。
+
+
+### Consequence `automation-planned-appeal`
+
+**When:** `{"all":[{"type":"decision","decisionId":"economic_doctrine","equals":"planned_coordination"}]}`
+
+> 基本供给稳定下来，但她爸的技能档案把他分到了不合适的岗位。申诉还在排队。他说这次不担心断粮了，担心没人看他的理由。
+
+
+### Consequence `automation-autonomous-gap`
+
+**When:** `{"all":[{"type":"decision","decisionId":"economic_doctrine","equals":"autonomous_economy"}]}`
+
+> 自动生产网络已经能自己下单和结算。她爸的仓库被当成一个低效节点替换掉，他拿着赔偿文件，不知道该向哪一个主体继续问。
+
+
+### Consequence `automation-postscarcity-purpose`
+
+**When:** `{"all":[{"type":"decision","decisionId":"economic_doctrine","equals":"post_scarcity_transition"}]}`
+
+> 她爸第一次说暂时不用急着找工作了。第二天还是按原来上班的时间起床，到楼下走了一圈。生活松开了，原来的日子还没松开。
+
 
 ### Choice A — yes
 

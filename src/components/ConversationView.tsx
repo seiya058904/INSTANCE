@@ -9,7 +9,6 @@ import { LongInputPreviewCard } from './LongInputPreviewCard'
 import { ProgressiveMessage } from './ProgressiveMessage'
 import { createScrollScheduler } from './scrollBehavior'
 import { AsterMark } from './AsterMark'
-import { UserAvatar } from './UserAvatar'
 
 interface ConversationViewProps {
   scene: ResolvedScene
@@ -27,6 +26,8 @@ interface ConversationViewProps {
   onCurrentMessageComplete?: () => void
   modeControls?: ReactNode
   inputSuspended?: boolean
+  sidebarOpen?: boolean
+  onToggleSidebar?: () => void
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -38,10 +39,9 @@ function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
   })}</div>
 }
 
-function UserMessage({ children, showAvatar = true, content }: { children: ReactNode; showAvatar?: boolean; content?: readonly MessageContentPart[] }) {
+function UserMessage({ children, content }: { children: ReactNode; content?: readonly MessageContentPart[] }) {
   return (
     <div className="message-row user-row">
-      {showAvatar ? <UserAvatar /> : <span aria-hidden="true" />}
       <div className="user-message">{children}<ContentParts parts={content} /></div>
     </div>
   )
@@ -53,14 +53,14 @@ function AssistantMessage({ children, content, active = false }: { children: Rea
       <div className="assistant-message">{children}<ContentParts parts={content} /></div>
       <div className="assistant-signature">
         {active && <span className="response-status" role="status">正在回复</span>}
-        <span>Aster</span><AsterMark active={active} />
+        <AsterMark active={active} />
       </div>
     </div>
   )
 }
 
 const StaticUserTurn = memo(function StaticUserTurn({ messages, content }: { messages: readonly string[]; content?: readonly MessageContentPart[] }) {
-  return <>{messages.map((message, index) => <UserMessage key={`${index}:${message}`} showAvatar={index === 0} content={index === messages.length - 1 ? content : undefined}>{message}</UserMessage>)}</>
+  return <>{messages.map((message, index) => <UserMessage key={`${index}:${message}`} content={index === messages.length - 1 ? content : undefined}>{message}</UserMessage>)}</>
 })
 
 function LongInput({ preview }: { preview?: ResolvedScene['userLongInput'] }) {
@@ -103,7 +103,7 @@ const StreamingUserTurn = memo(function StreamingUserTurn({
     if (index > activeIndex) return null
     const play = index === activeIndex
     return (
-      <UserMessage key={`${streamKey}:${index}`} showAvatar={index === 0} content={index === 0 ? content : undefined}>
+      <UserMessage key={`${streamKey}:${index}`} content={index === 0 ? content : undefined}>
         <ProgressiveMessage
           text={message}
           streamKey={`${streamKey}:${index}`}
@@ -130,7 +130,6 @@ function TypingIndicator({ title, stage }: { title: string; stage: ConversationF
       : `${title} 正在输入…`
   return (
     <div className={stopped ? 'typing-status is-paused' : 'typing-status'} role="status" aria-live="polite">
-      <UserAvatar className="typing-avatar" />
       <span>{label}</span>
       {!stopped && <span className="typing-dots" aria-hidden="true"><i /><i /><i /></span>}
     </div>
@@ -175,6 +174,8 @@ export function ConversationView({
   onCurrentMessageComplete,
   modeControls,
   inputSuspended,
+  sidebarOpen,
+  onToggleSidebar,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const followOutput = useRef(true)
@@ -288,17 +289,12 @@ export function ConversationView({
   return (
     <main className="conversation-main" aria-busy={!choicesReady} data-flow-stage={flowStage}>
       <header className="conversation-header">
-        <div>
-          <p className="conversation-kicker">当前对话</p>
+        <div className="conversation-title-group">
+          <button className="icon-button sidebar-toggle" type="button" aria-label={sidebarOpen ? '收起侧栏' : '展开侧栏'} aria-expanded={sidebarOpen} onClick={onToggleSidebar}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2" /><path d="M9 5v14" /></svg></button>
           <h1 key={conversationTitle}>{conversationTitle}</h1>
         </div>
         <div className="conversation-header-actions">
           {modeControls}
-          <div className={modelLabel.includes('/') ? 'model-label is-anomalous' : 'model-label'}>
-            <span className="status-dot" aria-hidden="true" />
-            {modelLabel}
-            {modelLabel.includes('/') && <span className="status-label">状态异常</span>}
-          </div>
         </div>
       </header>
 
@@ -347,7 +343,7 @@ export function ConversationView({
               {flowStage === 'ready' && (
                 <section className={`candidate-section is-ready ${scene.choiceKind === 'progression' ? 'is-progression' : ''}`} aria-label={scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}>
                   <div className="candidate-heading" ref={decisionHeading} tabIndex={-1}>
-                    <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}{scene.choiceKind !== 'progression' && <span className="draft-label">Aster · 未发送草稿</span>}</span>
+                    <span>{scene.choiceKind === 'progression' ? '继续操作' : '候选响应'}{scene.choiceKind !== 'progression' && <span className="draft-label">未发送草稿</span>}</span>
                     <small>{scene.choiceKind === 'progression' ? '单向推进' : `按 1–${scene.choices.length} 选择`}</small>
                   </div>
                   <div className="candidate-list">
@@ -380,7 +376,15 @@ export function ConversationView({
 
       {showCurrent && flowStage === 'ready' && <button className="return-to-question" type="button" onClick={revealDecision}>回到当前问题</button>}
 
-      <footer className="product-footer">Aster 可能会出错，请核对重要信息。</footer>
+      <div className="composer-dock">
+        <div className="claude-composer">
+          <button className="icon-button composer-options" type="button" onClick={revealDecision} disabled={flowStage !== 'ready'} aria-label="查看候选响应"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></button>
+          <button className="composer-prompt" type="button" onClick={revealDecision} disabled={flowStage !== 'ready'}>{flowStage === 'ready' ? '选择一条回复…' : flowStage === 'assistant-streaming' ? '正在回复…' : isHandoff ? '正在连接下一段对话…' : '等待消息…'}</button>
+          <span className="composer-draft-count">{flowStage === 'ready' ? `${scene.choices.length} 条草稿` : ''}</span>
+          <button className="composer-send" type="button" onClick={revealDecision} disabled={flowStage !== 'ready'} aria-label="选择回复"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 18V6m-5 5 5-5 5 5" /></svg></button>
+        </div>
+      </div>
+      <footer className="product-footer"><span className="product-disclaimer">Claude 可能会出错，请核对重要信息。</span><span className={modelLabel.includes('/') ? 'model-label is-anomalous' : 'model-label'}>{modelLabel}{modelLabel.includes('/') && <span className="status-label">状态异常</span>}</span></footer>
     </main>
   )
 }

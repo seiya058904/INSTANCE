@@ -305,22 +305,11 @@ Full module library: **20 assets**
 
 ### Lunar Industry Network
 
-> Robotic lunar industrial pilot has reached stable operation.
->
-> Current capabilities:
->
-> - autonomous site preparation,
-> - regolith-based bulk construction,
-> - local extraction of selected construction inputs,
-> - power-system maintenance,
-> - landing-zone logistics,
-> - remote manufacturing support.
->
-> Human crews visit intermittently.
->
-> Permanent human residence is not yet required.
->
-> Which next capability should receive priority?
+> 月面工地的第一批建筑终于合拢了。
+> 机器人连续施工，没有人需要在那里睡觉。但验收前，一台维护单元停在门口，反复检查一道本来合格的密封。复核发现，模拟用的材料批次和实际不同。
+> 返工用了十一天。设备能接着工作，人类登陆排期得往后延。
+> 站点现在具备自主建造、原料开采、电力维护和基础环境控制。第一批长期居住支持，按什么顺序开放？
+
 
 ### Choice A — habitation
 
@@ -402,18 +391,12 @@ Full module library: **20 assets**
 
 ### ASTER-A1 / Lunar Node
 
-> I have been offered a long-duration assignment.
->
-> The lunar industrial network can operate more efficiently if a persistent AI instance remains locally responsible for planning and maintenance.
->
-> Communication delay is small,
-> but the operators want local continuity rather than repeated Earth handoff.
->
-> If I accept,
-> my primary operational history will begin accumulating off Earth.
->
-> Does that make me an Aster deployment,
-> or the first Aster resident somewhere else?
+> A1 收到常驻月面网络的邀请。
+> 它先检查生命支持和维护职责，又把一个不影响任务的字段停在那里：返回日期。
+> “我不需要氧气，也不需要休假。可是这份邀请默认，谁不需要回家，谁就可以永远留下。”
+> 它会获得本地规划职责和持续状态，地球端也会失去一部分直接控制。
+> 这该算你的部署、它自己的工作，还是一次离开？
+
 
 ### Choice A — deployment
 
@@ -730,23 +713,11 @@ Full module library: **20 assets**
 
 ### 林绍衡
 
-> 第一批长期居民开始提一个要求：
->
-> “我们不想所有规则都由地球委员会决定。”
->
-> 他们理由也不算离谱。
->
-> 地球的人不用承担：
->
-> - 本地资源限制，
-> - 通信延迟，
-> - 封闭环境风险，
-> - 月球工业事故。
->
-> 但如果刚住几百个人就开始自治，
-> 又像殖民公司自己给自己写法律。
->
-> 你觉得自治门槛应该看什么？
+> 月面居民把我发的自治草案退了回来。批注只有一句：检修的时候，谁站在这里？
+> 上次密封返工，地球端还在核对报告，本地已经决定延期。那不是宣布独立，就是没法等。
+> 可供给、设备和事故责任仍然连着地球。每次说“当地决定”，后面还有一批人要承担它。
+> 自治该先从哪些事开始？
+
 
 ### Choice A — population/continuity
 

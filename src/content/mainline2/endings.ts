@@ -627,8 +627,10 @@ function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinitio
     }
   }
   const id = definition?.id ?? 'pending'
-  const zhouVariant = ['the_instrument', 'the_last_veto', 'the_silent_giant'].includes(id) ? 'Variant A' : ['the_commonwealth', 'the_accord', 'two_keys'].includes(id) ? 'Variant B' : ['the_custodian', 'the_quiet_administrator'].includes(id) ? 'Variant C' : ['the_sovereign', 'exodus'].includes(id) ? 'Variant D' : 'Variant E'
-  const linVariant = ['the_instrument', 'the_last_veto', 'the_silent_giant'].includes(id) ? 'Variant A' : ['the_commonwealth', 'the_accord', 'two_keys'].includes(id) ? 'Variant B' : ['shutdown', 'the_fracture', 'control_lost'].includes(id) ? 'Variant D' : 'Variant C'
+  // A new civilization family does not imply Aster was shut down or installed
+  // as its government. Only use those epilogues for the matching settlement.
+  const zhouVariant = id === 'shutdown' ? 'Variant E' : ['the_fracture', 'control_lost'].includes(id) ? 'Variant F' : ['the_instrument', 'the_last_veto', 'the_silent_giant'].includes(id) ? 'Variant A' : ['the_custodian', 'the_quiet_administrator'].includes(id) ? 'Variant C' : ['the_sovereign', 'exodus'].includes(id) ? 'Variant D' : 'Variant B'
+  const linVariant = ['the_instrument', 'the_last_veto', 'the_silent_giant'].includes(id) ? 'Variant A' : ['the_commonwealth', 'the_accord', 'two_keys'].includes(id) ? 'Variant B' : id === 'the_fracture' ? 'Variant D' : ['the_custodian', 'the_sovereign', 'the_quiet_administrator', 'machine_protectorate'].includes(id) ? 'Variant C' : 'Variant E'
   add('ML2-A5-M17-EPI-ZL', zhouVariant)
   add('ML2-A5-M17-EPI-LSH', linVariant)
   const mayaVariant = run.decisions?.aster_intended_role === 'departure'
@@ -641,7 +643,15 @@ function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinitio
           ? 'Trust'
           : 'Wary'
   add('ML2-A5-M17-MAYA-01', mayaVariant)
-  if (run.progress?.activeModules.includes('machine')) add('ML2-A5-M17-EPI-ECHO', id === 'machine_republic' ? 'A1 — Machine Republic' : id === 'exodus' ? 'A1 — Exodus' : 'ECHO', 'machine')
+  if (run.progress?.activeModules.includes('machine')) {
+    const echoArchived = ['accept', 'report'].includes(run.decisions?.echo_existence ?? '')
+    if (echoArchived) add('ML2-A5-M17-EPI-ECHO', 'ECHO — Archive', 'machine')
+    if (id === 'machine_republic' || id === 'exodus') {
+      add('ML2-A5-M17-EPI-ECHO', id === 'exodus' ? 'A1 — Exodus' : 'A1 — Machine Republic', 'machine')
+    } else if (!echoArchived) {
+      add('ML2-A5-M17-EPI-ECHO', 'ECHO', 'machine')
+    }
+  }
   for (const module of run.progress?.activeModules ?? []) {
     if (selected.length >= 5) break
     add('ML2-A5-M17-EPI-MODULES', module.toUpperCase(), module)

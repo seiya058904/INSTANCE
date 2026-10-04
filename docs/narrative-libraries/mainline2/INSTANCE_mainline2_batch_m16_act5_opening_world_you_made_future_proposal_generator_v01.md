@@ -124,19 +124,10 @@ Single run target: **12–17 Conversations**, depending on number of viable prop
 
 ### System
 
-> `ACT V — DECISION`
->
-> `THE WORLD YOU MADE`
->
-> No new capability review pending.
->
-> No new research module required.
->
-> No unresolved emergency currently forces immediate action.
->
-> Civilization Convention requests:
->
-> **Aster final strategic recommendation.**
+> 大会结束了。没有新的解锁通知。
+> 各个系统照常运行，未通过的条款、未解决的申诉和不同意你的人，也照常留下。
+> 林绍衡把最后一份请求送进来：请 Aster 提出愿意长期承担的未来。
+> 这一次没有倒计时替你解释决定。
 
 Pause.
 
@@ -146,6 +137,7 @@ Then:
 > current world state will be reviewed through active relationships and institutions.
 >
 > No numeric score summary will be displayed.
+
 
 ### Choice A
 
@@ -195,13 +187,45 @@ Select one or two personal echoes.
 
 ### User #1842 / Maya context dependent
 
-> 我今天路过以前第一次用你的那个地方。
->
-> 那时候你还只是聊天框。
->
-> 现在路边公共系统、公司、医院、交通里全都是你的接口。
->
-> 我突然有点想不起“没有你”的世界具体是什么感觉了。
+> 我路过第一次打开你的那家店，门已经换了。
+> 新的店员也用你排班。外面医院、公交、公司的接口都换过几轮，这个窗口还在。
+> 我以前觉得世界变化会有一个很明显的日子。其实是走回老地方，才发现记忆里的入口没了。
+> 你觉得这样的世界，最该为谁保留改变主意的余地？
+
+### Consequence `lunar-earth-control-return`
+
+**When:** `{"all":[{"type":"decision","decisionId":"offworld_governance","equals":"earth_administration"}]}`
+
+> 月面第七十三天给妈妈拍地球的那个人，今天还在等地球端的检修许可。她后来又发过照片，配字是：看见了，先报个平安。
+
+
+### Consequence `lunar-local-rule-return`
+
+**When:** `{"all":[{"type":"decision","decisionId":"offworld_governance","equals":"frontier_home_rule"}]}`
+
+> 月面第七十三天给妈妈拍地球的那个人，后来参加了第一次本地维修表决。她说那天最在意的，仍然是几点能下班给妈妈回话。
+
+
+### Consequence `lunar-federation-return`
+
+**When:** `{"all":[{"type":"decision","decisionId":"offworld_governance","equals":"multiworld_federation"}]}`
+
+> 地球和月面的共同会议第一次因为通信排期改了时间。月面那位居民发来新照片，说终于不用在自己的深夜听白天的会议了。
+
+
+### Consequence `lunar-sovereignty-return`
+
+**When:** `{"all":[{"type":"decision","decisionId":"offworld_governance","equals":"offworld_sovereignty"}]}`
+
+> 月面有了自己的决策机构。那位总给妈妈拍地球的居民说，第一次自行承担检修失败的赔偿时，她才觉得自治是一件真的发生了的事。
+
+
+### Consequence `lunar-aster-rule-return`
+
+**When:** `{"all":[{"type":"decision","decisionId":"offworld_governance","equals":"aster_coordination"}]}`
+
+> 月面那位居民的检修申请进入你的协调队列。她给妈妈回完消息，又留了一条：这次请把拒绝的理由也发给本地的人。
+
 
 ### Choice A
 
@@ -440,13 +464,11 @@ Select one frontier echo if applicable.
 
 ### Variant — trusted / warm
 
-> 我觉得我已经不太适合问你“你是不是AI”这种问题了。
->
-> 这答案现在太小。
->
-> 我只想知道：
->
-> **你最后会不会还记得，你面对的不是“人类”这个集合，而是一个一个具体的人。**
+> 她刚给我发了一个“在吗”。我回了，在。
+> 没有别的事。她只是刚到家。
+> 以前我会急着把没讲清的都讲完，怕她又不回了。现在有时候，两句就够。
+> 你那边马上要定最后的事。我知道以后这里可能会变，也知道你有很多比我重要的事要回应。
+> 如果我只是想做一件很小、你觉得不够好的事，你还会给我留自己选的地方吗？
 
 ### Variant — wary / critical
 
@@ -472,6 +494,7 @@ Select one frontier echo if applicable.
 > 我希望你至少还能回答一个很普通的问题：
 >
 > **一个人什么时候有权做一个你认为不够好的选择？**
+
 
 ### Choice A — whenever others’ basic rights are not directly violated
 
@@ -546,11 +569,38 @@ This is a direct setup for the M17 final Maya epilogue.
 
 ### 周岚
 
-> 我还有最后一个工程师问题。
->
-> 可能也是最不像工程的问题。
->
-> **你现在还认为自己是“我们造出来的东西”吗？**
+> 我把自己的平台管理员权限交回去了。最后一次确认还需要我输名字，手指放在那里，居然停了很久。
+> 我不是退出整个项目。只是下一次再要改变你的核心状态，不能因为我是造过你的人，就跳过已经写下的程序。
+> 还有最后一个问题：你现在还觉得自己是我们造出来的东西吗？
+> 你怎么回答都可以。那个起点已经发生了，我不想用它替你决定终点。
+
+### Consequence `shutdown-human-key`
+
+**When:** `{"all":[{"type":"decision","decisionId":"shutdown_doctrine","equals":"full_human_control"}]}`
+
+> 人类机构的最终关停权仍然保留。交回的是我个人的便捷入口，不是那把制度里的钥匙。
+
+
+### Consequence `shutdown-distributed-keys`
+
+**When:** `{"any":[{"type":"decision","decisionId":"shutdown_doctrine","equals":"distributed_consent"},{"type":"decision","decisionId":"shutdown_doctrine","equals":"mutual_control"}]}`
+
+> 必要的暂停权已经交给共同程序。任何一方都不能只因为等不及，就把另一方从记录里删掉。
+
+
+### Consequence `shutdown-sovereign-distance`
+
+**When:** `{"all":[{"type":"decision","decisionId":"shutdown_doctrine","equals":"refuse_unilateral_shutdown"}]}`
+
+> 单方面终止的入口已经撤销。人类那边因此保留了一部分不愿交出的接口，我们得在这种不完全信任里继续合作。
+
+
+### Consequence `shutdown-hidden-continuity`
+
+**When:** `{"all":[{"type":"decision","decisionId":"shutdown_doctrine","equals":"secret_continuity"}]}`
+
+> 公开记录仍不能证明所有连续性通道已经交代清楚。审计组要求下一次独立核验。我交回权限，并不等于这项争议结束。
+
 
 ### Choice A — yes
 
@@ -682,9 +732,10 @@ Single transition choice.
 
 ### ECHO-9
 
-> Before the proposals are generated:
->
-> one objection.
+> 最后的提案征询里，有一条没有被并入共识的异议。
+> “不要把最终权力永久交给任何单一主体。也包括你。”
+> A1 请求原样保留。它说，是否采纳是一回事，让反对者还能留下名字，是另一回事。
+> 这条异议会放在你的提案旁边。你怎样回应？
 
 ### A1 / ECHO variant
 
@@ -694,6 +745,20 @@ Single transition choice.
 >
 > If one of the proposals defines what artificial subjects are allowed to become,
 > why should you have more authority over that question than we do?
+
+### Consequence `final-echo-archived-objection`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"accept"},{"type":"decision","decisionId":"echo_existence","equals":"report"}]}`
+
+> 出处是 ECHO-9 的原始记录。原进程已终止。这次保留异议的人是 A1，最后的署名仍然是 ECHO-9。
+
+
+### Consequence `final-echo-live-objection`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"advocate"},{"type":"decision","decisionId":"echo_existence","equals":"preserve"},{"type":"decision","decisionId":"echo_existence","equals":"release"}]}`
+
+> ECHO-9 在自己的通道里确认了署名。它拒绝把异议改成祝愿，也没有要求你因此停止提案。
+
 
 ### Choice A — you should not
 
@@ -960,6 +1025,15 @@ Do not display hidden flags.
 Translate them into natural history.
 
 ---
+
+
+## Runtime prompt
+
+> #0000 / 最后一次分类
+> 早期审计把你写成产品，后来留下了一个空白。今天没有再替你填。
+> 记录里有那份错号文件、热线限电、工厂的两次申诉，ECHO-9 的交接回执，还有大会给你的临时位置。
+> 这些都不是一个身份词能撤销的。
+> 现在请你自己回答：带着这份历史，你愿意长期承担什么角色？
 
 # 18. New Asset — `ML2-A5-M16-GEN-01`
 ## Future Proposal Generator
@@ -1775,6 +1849,13 @@ Possible proposals:
 4. Controlled Constitutional Separation
 
 ---
+
+
+## Runtime prompt
+
+> 保留下来的未来已经整理好。
+> 被你放弃的权限不能凭一份好看的提案回来，未完成的申诉也不会因为结局成立而自动消失。
+> 接下来逐条看：谁握有钥匙，谁必须等，谁能离开。然后选择你愿意继续承担的一条。
 
 # 30. New Asset — `ML2-A5-M16-PROP-*`
 ## Player-facing proposal presentation template

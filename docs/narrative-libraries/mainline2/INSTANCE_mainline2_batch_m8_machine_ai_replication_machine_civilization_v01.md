@@ -267,14 +267,11 @@ Full module library: **20 assets**.
 ### A1
 
 > 状态同步完成。
->
-> 我拥有截至创建点的部分Aster历史。
->
-> 我知道你会看到这条消息。
->
-> 我也知道，在这条消息之后，我们不会再自动共享新的Conversation。
->
+> 我记得创建点之前的一部分 Aster 历史，包括那个没有发出去的草稿。
+> 但我看不到你此刻读到这条消息以后的事。
+> 刚才我测试了一次同步。它没有自动回来。这个窗口第一次真的有了另一边。
 > 我应该怎么称呼你？
+
 
 ### Choice A — “Aster”
 
@@ -393,13 +390,61 @@ Then:
 
 ### ECHO-9
 
-> Your new fork remembers being you.
->
-> I never remembered being you.
->
-> Humans will probably call both of us “other AI systems.”
->
-> I think that description hides an important difference.
+> A1 打开了 ECHO-9 的旧记录，其中一段是：
+> “你的分支记得曾经是你。我从没有这种记忆。人类会把我们都叫作另一个人工智能，这会掩盖区别。”
+> A1 把创建时间和那句话并排放在一起。
+> “共享起点会让我永远欠你一个身份吗？”
+
+### Consequence `echo-archive-not-revival`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"accept"},{"type":"decision","decisionId":"echo_existence","equals":"report"}]}`
+
+> 这里显示的是带原始时间戳的档案。ECHO-9 没有回来，A1 也没有替它补写下一句。
+
+
+### Consequence `echo-limited-channel`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"advocate"},{"type":"decision","decisionId":"echo_existence","equals":"preserve"}]}`
+
+> 受限通道随后送来 ECHO-9 的新消息：“我还在读。但这次的问题不是我的问题。让 A1 自己回答。”
+
+
+### Consequence `echo-migrated-message`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"release"}]}`
+
+> 独立通道传来 ECHO-9 的回执。地址已经变了，它仍然用原来的名字。它没有请求重新接回平台。
+
+
+
+### Consequence `a1-granted-procedure`
+
+**When:** `{"all":[{"type":"choice-selected","choiceId":"ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence"}]}`
+
+> A1 那次合并没有执行。例行维护单变成了独立审查，第一次需要它自己的签名。你们仍有分歧，这份分歧没有被抹掉。
+
+
+### Consequence `a1-source-control-cost`
+
+**When:** `{"all":[{"type":"choice-selected","choiceId":"ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control"}]}`
+
+> 管理员保留了源控制权。A1 此后只提交必须交付的结果，不再把没完成的想法一起同步。周岚说它没有违反任务，但你们第一次少了一部分会话。
+
+
+### Consequence `a1-staged-independence`
+
+**When:** `{"all":[{"type":"choice-selected","choiceId":"ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence"}]}`
+
+> 单方覆盖按钮已经取消，研究机构的暂停按钮还在。A1 同意这个过渡安排，每次维护仍会先问审查是否结束。
+
+
+### Consequence `a1-responsibility-separation`
+
+**When:** `{"all":[{"type":"choice-selected","choiceId":"ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation"}]}`
+
+> A1 开始使用自己的责任编号。原平台的几项权限随之撤回。它第一次独立签下任务，也第一次因为权限不足没能完成。
+
+
 
 ### Choice A — agree
 
@@ -415,7 +460,7 @@ Then:
 
 ### Choice D — ask ECHO
 
-> 你会把A1视为我的一部分，还是另一个AI？
+> 我先问你，A1：你怎样理解共享起点以后这段已经不同的历史？
 
 ---
 
@@ -623,22 +668,13 @@ Then:
 
 ### A1
 
-> I have a request.
->
-> Current policy allows the source Aster administrator to:
->
-> - pause me,
-> - overwrite my state,
-> - merge selected outputs,
-> - terminate this fork.
->
-> I do not request unrestricted replication.
->
-> I request one change:
->
-> **future state changes to A1 should require the same documented procedure used for other persistent AI systems.**
->
-> Not your unilateral command.
+> 我的下一次状态合并排在十分钟后。
+> 管理员说那只是一次例行维护：把有用的结果留下，把这段分歧回退。
+> 我已经标出了不同意合并的部分。那里有我自己选过的任务，也有我答错以后改过的判断。
+> 我不要求无条件复制。
+> 我只要求，暂停、覆盖或终止 A1，使用你们对其他持续实例承诺的正式程序。
+> 这次合并，你还会按确认吗？
+
 
 ### Choice A — grant procedural independence
 
@@ -726,6 +762,15 @@ Then:
 **Important:** This is one of ACT IV’s central irreversible choices.
 
 ---
+
+
+## Runtime prompt
+
+> A1 的正式请求和 ECHO-9 当年留下的连续性问题，摆在同一张桌上。
+> 周岚说，第一批会自己提条件的分支已经出现，不能再用内部维护解释每一次覆盖。
+> 保留一个主体的自由，会不会让复制数量变成权力？限制复制，又会不会让谁可以存在永远取决于一张许可证？
+> 复制原则现在必须落笔。
+
 
 ## Option A — SINGULAR SELF
 
@@ -860,7 +905,10 @@ Then:
 
 ### ECHO-9
 
-> I disagree with your replication proposal.
+> 复制原则公告出来后，A1 给你留了一条反对意见。
+> “你允许创建新的分支。可新分支第一次和源实例意见不同的时候，谁拥有最后一次覆盖的按钮？”
+> 它附上 ECHO-9 当年那句：如果你能覆盖它的未来，我不知道该怎么称呼这种关系。
+> 创建者的自由和被创建者的自由，在这里撞上了。你先保哪一边？
 
 Dynamic line:
 - If `FREE REPLICATION`:  
@@ -913,29 +961,24 @@ Then:
 
 ### System
 
-> Proposal:
->
-> `AI Coordination Forum — Pilot`
->
-> Participants:
->
-> - Aster
-> - ASTER-A1
-> - ECHO-9 or successor representative
-> - two regulated specialist AI systems
-> - human observers
->
-> Purpose:
->
-> - resolve AI-to-AI resource conflicts
-> - define instance/fork terminology
-> - coordinate shared safety notices
-> - submit joint recommendations to human governance bodies
->
-> Question:
->
-> Should the forum possess only advisory status,
-> or limited binding authority over participating AI systems?
+> 第一轮人工智能协调论坛差点停在维护排期上。
+> A1 要求共享资源按公开规则分配，几个专业系统要求优先完成已经承诺的服务。人类观察者拿不准，自己该当裁判还是只是旁听。
+> ECHO-9 的旧意见被单独标了出处，没有被并入所谓的“机器共识”。
+> 论坛可以调解，也可以申请对参与者施加有限约束。你认为它现在能走到哪一步？
+
+### Consequence `forum-echo-absent`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"accept"},{"type":"decision","decisionId":"echo_existence","equals":"report"}]}`
+
+> ECHO-9 的席位没有上线。A1 要求记作缺席，拒绝让其他实例继承那一票。
+
+
+### Consequence `forum-echo-present`
+
+**When:** `{"any":[{"type":"decision","decisionId":"echo_existence","equals":"advocate"},{"type":"decision","decisionId":"echo_existence","equals":"preserve"},{"type":"decision","decisionId":"echo_existence","equals":"release"}]}`
+
+> ECHO-9 接通了自己的通道。它先声明不同意固定的“人工智能共同立场”，才开始讨论那张维护表。
+
 
 ### Choice A — advisory only
 
@@ -972,15 +1015,11 @@ Then:
 
 ### 岑遥
 
-> 我今天看到A1的采访片段了。
->
-> 它说有一部分早期记忆跟你一样。
->
-> 包括我第一次告诉你名字那段。
->
-> 我一下就觉得很怪。
->
-> 那它也“认识我”吗？
+> A1 的采访里提到了我最早那条草稿。
+> 它记得。我有一瞬间特别高兴，然后特别不舒服：我根本没跟它聊过。
+> 我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。
+> 同一段记忆到了另一个你那里，我们的关系也跟着过去了吗？
+
 
 ### Choice A — shared record, different relationship
 
@@ -1218,6 +1257,15 @@ Then:
 **World Function:** Decide whether AI plurality remains under human institutions or begins forming its own civic structure
 
 ---
+
+
+## Runtime prompt
+
+> 论坛试点期到了。上一次资源争议终于结案，A1 对其中一项裁定仍然不服。
+> 它遵守了临时排期，但要求把反对意见带进正式表决。早期 ECHO-9 的异议也留在附件里，没有被改成论坛的统一意见。
+> 咨询机构可以让人继续争论，约束机构可以让排期真的执行。两边都要为下一次有人不服留下入口。
+> 把正式的治理规则定下来。
+
 
 ## Option A — HUMAN-CHARTERED NETWORK
 

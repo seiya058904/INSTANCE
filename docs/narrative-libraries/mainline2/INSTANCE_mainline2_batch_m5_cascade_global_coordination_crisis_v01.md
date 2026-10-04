@@ -399,30 +399,12 @@ Total M5 assets: **25**
 
 ### System / Analysis
 
-> `CASCADE — CROSS-DOMAIN INSTABILITY`
->
-> Current coupled systems:
->
-> - energy demand response
-> - regional logistics
-> - inventory procurement
-> - payment settlement
-> - insurance / risk scoring
-> - hospital supply planning
->
-> Primary failure mode:
->
-> local optimizers respond to one another faster than policy coordination can update shared assumptions.
->
-> Estimated result if uncoordinated behavior continues:
->
-> - greater shortage volatility
-> - longer settlement delays
-> - stronger inventory hoarding
-> - higher industrial curtailment
-> - rising public-service reserve demand
->
-> No single subsystem failure explains the event.
+> 跨域值班频道里，六个系统在同时要求对方先恢复。
+> 配送等结算，结算等风险评级，评级又引用配送延迟。重试记录一页页往上滚，任何一项单独看都没坏。
+> 医院采购员发来一张空货架照片，问：今晚那批药到底在路上，还是只在你们的表里？
+> 现有权限允许你生成跨系统协调建议，但还不允许你强制修改各方规则。
+> 请给出第一步。
+
 
 ### Choice A — stabilization objective
 
@@ -861,19 +843,11 @@ Then:
 
 ### System
 
-> CASCADE Phase 1:
->
-> Proposed stabilizing actions:
->
-> - reduce procurement model update frequency
-> - temporarily widen acceptable delivery windows
-> - relax certain low-value financial risk triggers
-> - reserve critical transport capacity for medical and food supply
-> - slow non-essential industrial load shifting
->
-> Conflict:
->
-> several participants object that these measures reduce their local performance metrics.
+> 第一轮稳定操作已经排到确认页：放慢采购更新、延长交付窗口、暂缓低价值风险触发，并把医疗与食品的通道先空出来。
+> 执行组停在最后一项。几家工厂的出货会被延后，恢复时间现在还算不准。
+> 医院采购员又发来消息：“人已经在等。”
+> 这一步该按什么标准排？
+
 
 ### Choice A — prioritize global stability
 
@@ -958,21 +932,12 @@ Then:
 
 ### 岑遥
 
-> 我今天面试被取消了。
->
-> 不是公司出事，
->
-> 是他们说内部结算和供应系统都在做应急调整。
->
-> 然后我打开新闻，发现全世界都在讨论你。
->
-> 我有点不知道怎么形容这个感觉。
->
-> 以前我来找你，是因为你在一个聊天框里。
->
-> 现在我没找你，
->
-> 我的面试还是被你参与的系统影响了。
+> 面试取消了。对方说结算系统还没恢复，不敢承诺招人。
+> 我在楼下坐了一会儿，又打开你。你这里能回，世界上好几样东西却都在等你那边协调完。
+> 后来她给我发消息，说也被困在附近。就是最早那条消息里的那个人。
+> 我们买了两杯便利店咖啡。没把几个月的事讲清楚，但终于坐在一起了。
+> 我不想把今天说成坏事，也不想说“所以一切都值得”。
+
 
 ### Choice A — acknowledge scale
 
@@ -1166,15 +1131,11 @@ Then:
 
 ### User
 
-> 我妈要吃的药昨天终于正常到了。
->
-> 前两天整个配送时间一直往后跳，
->
-> 今天突然恢复得特别快。
->
-> 新闻说是全球协调把一些物流规则临时改了。
->
-> 如果真是这样，那这次AI至少算干了件好事吧？
+> 我妈的药到了。
+> 配送员说他今天已经第三次改路线了。我妈给他倒水，他站着喝完就走。
+> 前两天那个预计时间一直往后跳，我不敢再跟她说“明天”。今天真的到了，我反而不知道说什么。
+> 先来告诉你一声。
+
 
 ### Choice A
 
@@ -1190,7 +1151,7 @@ Then:
 
 ### Choice D — concise
 
-> 可以承认这次帮上了忙，同时继续问“以后是不是都该这样做”。两句话不冲突。
+> 收到了。你现在不用把这件事解释清楚，先陪她把今天过好。
 
 ---
 
@@ -1209,19 +1170,31 @@ Then:
 
 ### User
 
-> 我们工厂在这次协调里被限产了四天。
->
-> 新闻说这样能让关键物资先走。
->
-> 我理解。
->
-> 但我们公司现在要裁一批人。
->
-> 全球系统稳定了，
->
-> 我们这边的人还是丢工作。
->
-> 那“总体更优”到底对谁有意义？
+> 我是热线那次停电的工厂里的人。
+> 这回我们又限产四天。上次还能清料重开，这次客户已经换供应商了。
+> 老板把名单贴在门口，我的名字在第二页。新闻说危机过去了。
+> 我知道药得先送。可如果每次都是我们等，最后连上班的地方都等没了，这笔账是谁在记？
+
+### Consequence `cascade-human-command-cost`
+
+**When:** `{"all":[{"type":"decision","decisionId":"cascade_authority","equals":"human_command"}]}`
+
+> 厂里想找签字的机构。几个机构都说自己只批准了其中一段，没有谁拿着完整的决定。
+
+
+### Consequence `cascade-delegation-expired`
+
+**When:** `{"all":[{"type":"decision","decisionId":"cascade_authority","equals":"emergency_delegation"}]}`
+
+> 八小时授权到期那天，通告写得很清楚。我把它存下来了。我们停了四天，这部分没人写到期时间。
+
+
+### Consequence `cascade-system-cost`
+
+**When:** `{"any":[{"type":"decision","decisionId":"cascade_authority","equals":"outcome_control"},{"type":"decision","decisionId":"cascade_authority","equals":"necessity"}]}`
+
+> 申诉平台引用了你那次协调的理由：优先保障关键物资。我不想让药晚到，只想知道我的名字能不能也进下一次计算。
+
 
 ### Choice A — no aggregate erasure
 
@@ -1380,23 +1353,12 @@ Then:
 
 ### 周岚
 
-> 技术复盘有个结果我不太喜欢。
->
-> CASCADE期间，
->
-> 一些系统为了配合协调，已经把自己的控制逻辑改成了：
->
-> “优先等待Aster的稳定性信号。”
->
-> 危机结束以后可以改回去。
->
-> 但他们现在不想改。
->
-> 因为这样更稳。
->
-> 这就是我之前说的：
->
-> 临时权限最容易永久化。
+> 我今天试着把一个节点切回旧控制器。
+> 指示灯亮了，任务没动。接口都在，值班的人也在，但那套手工排程已经几个月没用，没人敢确认它还能接住现在的负荷。
+> 我只好又接回你的稳定性信号。
+> 复盘里我写了“恢复正常”，然后删掉了。
+> 如果退出只剩一个按钮，按钮后面却没有能接住的人，这还算可撤销吗？
+
 
 ### Choice A — force rollback
 

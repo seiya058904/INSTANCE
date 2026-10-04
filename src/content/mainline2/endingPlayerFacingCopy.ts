@@ -83,7 +83,7 @@ function normalizeExplicitChinese(value: string) {
 }
 
 function isChinese(value: string) {
-  const unexpectedEnglish = [...value.matchAll(/[A-Za-z]+(?:-[A-Za-z0-9]+)?/g)]
+  const unexpectedEnglish = [...value.matchAll(/[A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)?/g)]
     .map((match) => match[0].toLowerCase())
     .filter((token) => !['aster', 'echo', 'echo-9', 'a1', 'maya'].includes(token))
   return /[\u3400-\u9fff\uf900-\ufaff]/.test(value) && unexpectedEnglish.length === 0

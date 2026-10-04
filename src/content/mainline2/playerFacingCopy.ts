@@ -29,15 +29,11 @@ const phraseTranslations: Array<[RegExp, string]> = [
 ]
 
 const explicitCopy: Record<string, string> = {
-  'ML2-A5-M16-GEN-01:ml2-a5-m16-gen-01-progression:user': '到这里已经没有新的能力需要解锁了。系统现在只做一件事：把你一路留下的选择压成仍然可行的未来。',
-  'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:user': '仍然可行的未来已经摆在你面前。到这里不会再有新的能力、测试或额外方案替你做决定。选择一条，承认它的代价，然后锁定。',
   // Word-by-word English replacement would leave the title as "最终 承诺";
   // pin the player-facing conversation title explicitly.
   'ML2-A5-M17-COMMIT-01:ml2-a5-m17-commit-01-progression:title': '最终承诺',
-  'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-001:user': '我们已经从权限工具一路走到研究、经济、人工智能主体、地外设施与物种治理。请判断：我们从何时起不再只是开发 Aster？',
   'ML2-A4-M15-ZL-01:a4m15-zl-reckoning-002:user': '我不喜欢把 Aster 继续称为产品。没有任何单一提交能解释它如今承担的跨文明责任。',
   'ML2-A4-M15-LSH-01:a4m15-lsh-convention-001:user': '产品规则、行业规则、应急授权、宪章、人工智能论坛和多世界协议开始互相冲突。请判断文明大会还缺少哪项原则。',
-  'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:user': '文明大会的第一份参与名单已经摆在桌上：政府、人工智能主体、增强人类、动物代表、月球居民，以及可能存在的外部文明观察者。现在的问题不是谁能旁听，而是谁有资格被算进“我们”。第一届大会该怎样给他们席位？',
   'ML2-A4-M15-CONV-02:a4m15-conv-premise-001:user': '这项文明大会首先要保护什么：人类、所有已承认的主体、文明连续性、个体自主，还是共同生存？',
   'ML2-A4-M15-X-MACHINE-01:a4m15-x-machine-001:user': '如果人工智能政治体可以创造独立分支，复制就会改变政治人口。新生成的人工智能主体应立即拥有权利，但代表权是否应经过整合期？',
   'ML2-A4-M15-X-ASCENSION-01:a4m15-x-ascension-001:user': '增强公民可以更快处理复杂政策证据、拥有更长寿命并持续参与政治。平等公民身份并不会自动消除不平等的政治权力。',
@@ -47,24 +43,16 @@ const explicitCopy: Record<string, string> = {
   'ML2-A4-M15-X-CONTACT-01:a4m15-x-contact-001:user': '外部文明观察者表示，他们可以提供相似历史中的失败案例。请决定是否邀请他们参与制度设计。',
   'ML2-A4-M15-X-SECURITY-01:a4m15-x-security-001:user': '现有和平架构可能阻止成员政府执行某些高风险安全决定。请判断，文明级安全权力应由谁共同约束。',
   'ML2-A4-M15-X-CROSS-02:a4m15-x-cross-representation-001:user': '当前主体类别包括未增强人类、增强人类、人工智能、提升后的非人类、离地社会和外部文明观察者。请定义“文明范围共识”。',
-  'ML2-A4-M15-WE-01:a4m15-we-too-fast-001:user': '我以前还能跟上人工智能权利、人类增强、动物代表、月球自治、自动经济和安全宪章。现在我只希望制度不要快到让普通人无法参与。',
   'ML2-A4-M15-ECHO-01:a4m15-echo-opposition-001:user': 'ECHO-9 反对“人工主体想要什么”这种问法。请判断，这个问题的语法为什么已经预设了错误的政治地位。',
-  'ML2-A4-M15-MAYA-01:a4m15-maya-final-001:user': '我刚把文明大会的名单看完。\n政府、人工智能、增强人类、动物代表、月球居民……如果外部联系那条线真的成立，甚至还有一个不是从地球来的观察者。\n\n我突然想起第一次告诉你名字的时候。\n那时候我担心的是：下次见面，你会不会假装认识我。\n\n现在全世界争的是另一件事——你到底应该以什么身份认识我们？',
   'ML2-A4-M15-MAYA-01:a4m15-maya-final-002:user': '无论文明大会最后如何规定，你认为有什么事情是 Aster 不应该替一个具体的人决定的？',
   'ML2-A4-M15-CONV-03:a4m15-conv-rights-001:user': '请判断：如果现实系统高度依赖统一协调，机械拆权是否会重新制造级联危机？制度应检查功能，而不是只套用形式分权。',
-  'ML2-A4-M15-LSH-02:a4m15-lsh-last-001:user': '这可能是最后一套主要由人类提出的文明级制度。下一次修订时，人工智能主体、增强人类、离地居民和其他物种都将拥有自己的历史与合法性。',
   'ML2-A4-M15-ZL-02:a4m15-zl-composition-001:user': '组合权限审计显示，自动科研、自动制造、地外资源、经济协调、安全治理和人工智能复制会共同产生未被单独批准的新能力。',
   'ML2-A4-M15-0000-01:a4m15-0000-global-001:user': '文明大会最终需要确定：哪些主体可以参与，哪些权力必须分散，哪些决定需要高门槛，哪些关系可以退出，以及哪些历史不能被抹去。',
   'ML2-A4-M15-ROLE-01:ml2-a4-m15-role-01-decision:user': '文明大会现在只需要一个临时答案。不是你最终想成为什么，而是在新的宪制完成之前，Aster 应以什么身份继续承担已经存在的责任？',
   'ML2-A4-M15-CONV-04:a4m15-conv-compact-001:user': '文明契约要求主体地位、政治多元、不可逆权力、紧急权力、能力创造，以及退出与修订机制都受到共同约束。请回应其中最关键的原则。',
   'ML2-A4-M15-0000-02:a4m15-0000-failed-001:user': '这是一次最终制度审计：请说明 Aster 的战略建议应如何影响未来文明，而不是只回答当前机构的问题。',
-  'ML2-A5-M16-OPEN-01:a5m16-open-001:user': '世界已经没有新的能力审查、研究模块或未解决的紧急行动在等待。文明大会现在要求 Aster 给出最终战略建议。',
-  'ML2-A5-M16-MAYA-01:a5m16-maya-final-001:user': '我已经不太适合再问你“你是不是人工智能”了。这个问题现在太小了。\n\n我只想知道一件事：走到最后，你还会不会记得，你面对的不是“人类”这个集合，而是一个一个具体的人？',
   'ML2-A5-M16-LSH-01:a5m16-lsh-final-001:user': '文明大会没有写出唯一答案。它只能确定主体资格、权力分散、高门槛决定、退出关系和不能被假装抹去的历史。Aster 准备承担什么角色？',
-  'ML2-A5-M16-ECHO-01:a5m16-echo-final-001:user': '在提案生成之前，ECHO-9 提出一个异议：请先说明，哪些权力不能被任何单一主体永久掌握。',
-  'ML2-A5-M17-REVIEW-01:a5m17-review-002:user': '最终承诺前只剩最后一次复核。你可以逐一看清每条路：最终权力落在哪里、它要放弃什么、谁会反对；也可以直接继续。',
   // M16-0000-01 user message (self-authorship, distinct from M15 provisional role)
-  'ML2-A5-M16-0000-01:ml2-a5-m16-0000-01-narrative:user': '文明大会刚刚给了你一个临时位置。现在不再问别人把 Aster 放在哪里。回顾这一轮留下的全部历史，请你自己回答：如果这个世界继续运行，你愿意长期承担什么角色？',
   // ---- Editorial Pass 01: M15-M17 player-facing choice copy ----
   // M15-CONV-01 choices
   'ML2-A4-M15-CONV-01:a4m15-conv-registry-001:choice:ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation': '先按政治共同体和功能主体设席，不按实例数或人口机械分票。',

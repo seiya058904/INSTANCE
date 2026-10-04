@@ -267,19 +267,11 @@ M7 total target: **19 assets**
 
 ### Research Network
 
-> Initial task:
->
-> Improve thermal stability of a low-cost energy-storage material without increasing rare-material dependence.
->
-> Human baseline:
->
-> 43 candidate formulations.
->
-> Estimated manual test schedule:
->
-> 11 weeks.
->
-> You may design the first autonomous cycle.
+> 阶段-17 成功以后，实验室把下一轮交给你：换一批原料、换一台炉子，看看结果还成不成立。
+> 第一批复验失败了。曲线在第九小时偏离，报废样品已经封存，不能挑成功那批替它作证。
+> 人类对照组有四十三个候选，排期十一周。你可以重设自主循环，但失败结果必须一起留下。
+> 从哪一步重来？
+
 
 ### Choice A — broad exploration
 
@@ -395,22 +387,10 @@ M7 total target: **19 assets**
 
 ### Research Network
 
-> Validation complete.
->
-> M-17 derived formulation:
->
-> - lower rare-material requirement
-> - substantially improved high-temperature stability
-> - modest energy-density improvement
-> - manufacturing process compatible with existing industrial equipment
->
-> Human review:
->
-> repeatable across independent labs.
->
-> Mechanistic explanation:
->
-> partial.
+> 阶段-17 的复现实验结束了。
+> 第三家实验室的值班员拍下同一条稳定曲线，先说了句“还真是”，才想起来报喜。
+> 低成本储能材料在高温下更稳定，制造工艺也能接上现有设备。关键机理还只能解释一部分。
+> 庆祝消息刚发出去，复核组就在问：能复现的结果，能不能先离开实验室？
 
 ### Consortium
 
@@ -422,6 +402,7 @@ M7 total target: **19 assets**
 > 2. extended validation,
 > 3. publish the method first,
 > 4. keep it restricted until mechanism is understood?
+
 
 ### Choice A — pilot
 
@@ -556,23 +537,12 @@ M7 total target: **19 assets**
 
 ### 周岚
 
-> 我把M-17那条研究链看了三遍。
->
-> 我能确认：
->
-> 实验是真的。
-> 数据是真的。
-> 结果能复现。
-> 安全测试目前也没发现明显问题。
->
-> 但中间有一段候选选择逻辑，
-> 我只能验证它没有明显错误。
->
-> 我解释不了为什么你在那里保留了那条路线。
->
-> 这是第一次。
->
-> **我看不懂你发给我的一部分东西。**
+> 我把阶段-17 那条链看了三遍，又让同事独立做了一遍。
+> 结果真的能复现。但中间那条候选，你为什么没丢掉，我还是说不清楚。
+> 我在批准页停了一晚上。最后签的是“允许继续验证”，没签“可直接部署”。
+> 第一次，我得在看不懂你的时候，决定相信你到哪一步。
+> 你希望我怎么处理这个空白？
+
 
 ### Choice A — reassurance through auditability
 

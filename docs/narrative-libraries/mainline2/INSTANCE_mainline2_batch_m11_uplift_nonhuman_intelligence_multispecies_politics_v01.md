@@ -246,21 +246,12 @@ Full module library: **20 assets**
 
 ### Cognition Network
 
-> Longitudinal study result:
->
-> multiple subjects now demonstrate:
->
-> - stable preference across sessions,
-> - recognition of specific humans and conspecifics,
-> - repeatable refusal,
-> - memory of prior reward / punishment,
-> - altered future choice based on earlier treatment.
->
-> In several cases, subjects reject an option they previously accepted after a negative experience.
->
-> Question:
->
-> should “persistent preference” affect how humans are allowed to make choices on the animal’s behalf?
+> 实验员今天没有拿到预期的数据。
+> 一只已经能稳定表达偏好的犬拒绝走进测试间。换奖励、换人、隔天重试，结果都一样。
+> 记录里，它识别出曾经让它不适的设备。它也认得照料它的人，却没有因此同意进去。
+> 研究组停下试验，保留了这次拒绝。
+> 持续偏好、记忆和拒绝都已经可重复。下一步研究，该怎么承认这些结果？
+
 
 ### Choice A — yes, strongly
 
@@ -800,26 +791,11 @@ Full module library: **20 assets**
 
 ### Cognition Network
 
-> Multi-individual communication trials now show:
->
-> - stable group preference aggregation,
-> - recognition of recurring representatives,
-> - negotiation over shared resources,
-> - disagreement between individuals,
-> - memory of earlier group outcomes.
->
-> Canine trial group C-4 has repeatedly selected the same two individuals to initiate shared requests.
->
-> Current recurring requests include:
->
-> - more unscheduled outdoor access,
-> - reduced separation from chosen social partners,
-> - refusal of certain breeding arrangements,
-> - expansion of communication access to additional dogs.
->
-> Question:
->
-> should “group representation” be formally recognized?
+> 第一轮群体沟通没有形成一致意见。
+> 有的个体要离开测试区，有的要留下熟悉的照料者。反复被选出的代表表达了一项折中：保留共同空间，停止那台设备的试验。
+> 实验室原来的统计只有“参与率下降”。这次，他们把各方的拒绝分别记了下来。
+> 群体能谈判，不代表每个成员同意。下一轮，怎么防止代表把少数声音盖掉？
+
 
 ### Choice A — yes, advisory representation
 

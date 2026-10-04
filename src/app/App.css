@@ -1,9 +1,10 @@
-@font-face { font-family: "Aster Serif"; src: url('../assets/fonts/source-serif-4-latin.woff2') format('woff2'); font-style: normal; font-weight: 400 600; font-display: swap; }
-@font-face { font-family: "Charter"; src: url('../assets/fonts/charter-regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
-@font-face { font-family: "Aster CJK"; src: url('../assets/fonts/noto-serif-sc-prose.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE6F, U+FF00-FFEF; }
+@font-face { font-family: "Anthropic Serif"; src: url('../assets/fonts/anthropic-serif-roman.woff2') format('woff2'); font-style: normal; font-weight: 300 800; font-display: swap; }
+@font-face { font-family: "Anthropic Serif"; src: url('../assets/fonts/anthropic-serif-italic.woff2') format('woff2'); font-style: italic; font-weight: 300 800; font-display: swap; }
+@font-face { font-family: "Aster CJK"; src: url('../assets/fonts/noto-serif-sc-prose.woff2') format('woff2'); font-style: normal; font-weight: 400 600; font-display: swap; unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FE10-FE6F, U+FF00-FFEF; }
 
 :root {
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-family: var(--font-ui);
+  font-optical-sizing: auto;
   color: #30302b;
   background: #faf9f5;
   font-synthesis: none;
@@ -21,9 +22,10 @@
   --warning: #9f4c35;
   --warning-soft: #f5e6de;
   --shadow: 0 3px 12px rgba(64, 52, 38, .035);
-  --font-display: "Aster Serif", "Aster CJK", "Songti SC", SimSun, serif;
-  --font-prose: "Charter", "Aster CJK", "Songti SC", SimSun, Georgia, serif;
-  --font-data: ui-monospace, "Cascadia Code", Consolas, monospace;
+  --font-ui: "Anthropic Serif", "Aster CJK", "Songti SC", SimSun, Georgia, serif;
+  --font-display: var(--font-ui);
+  --font-prose: var(--font-ui);
+  --font-data: var(--font-ui);
   --ease-out: cubic-bezier(.22, .61, .36, 1);
   --motion-fast: 140ms;
   --text-body: .9375rem;
@@ -40,7 +42,7 @@
 html, body, #root { width: 100%; height: 100%; margin: 0; }
 body { min-width: 320px; overflow: hidden; background: var(--page); }
 #root { background: var(--page); }
-button { font: inherit; }
+button, input, select, textarea { font: inherit; }
 button, summary { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 ::selection { background: #e8d5c4; color: #302923; }
@@ -126,7 +128,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
   color: #756b60; font-size: 12px; line-height: 1.6; animation: notice-in 240ms var(--ease-out);
 }
 .system-notice.is-warning { border-color: #e9c6b8; background: var(--warning-soft); color: #874937; }
-.system-notice small { margin-left: auto; color: #a17061; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
+.system-notice small { margin-left: auto; color: #a17061; font-family: var(--font-ui); font-size: 9px; }
 .notice-icon { width: 18px; height: 18px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; opacity: .75; }
 @keyframes notice-in { from { opacity: .65; } }
 

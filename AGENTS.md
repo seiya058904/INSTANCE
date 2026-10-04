@@ -1,54 +1,47 @@
-# Repository Guidelines
+# INSTANCE repository guide
 
-## Project purpose
+## Source of truth and scope
 
-INSTANCE is an interactive narrative game in which the player acts as an AI and selects authored candidate replies to preset real or realistic user conversations. The player cannot freely type replies.
+INSTANCE is a React + TypeScript narrative game: the player acts as an AI and selects authored replies; free-form replies are not supported. Use current source, tests, package scripts and Git state as authority. Keep changes scoped; preserve authored IDs, save compatibility and existing user work. Do not redesign content, expand the engine, upgrade dependencies or change deployment settings without authorization.
 
-## Stack and entry points
+## Entry points and canonical material
 
-- React 19, TypeScript, Vite, and Vitest; the package manager is npm.
-- `src/main.tsx` mounts `src/app/App.tsx`; global UI styling starts in `src/app/App.css`.
-- `vite.config.ts` serves locally from `/` and builds GitHub Pages assets under `/INSTANCE/`.
-- `.github/workflows/deploy-pages.yml` builds and deploys `main` to GitHub Pages. Do not modify deployment configuration or publish without separate authorization.
+- `index.html` → `src/main.tsx` → `src/app/App.tsx`; global styles are in `src/app/App.css`.
+- `src/content/runManifest.ts` assembles runtime libraries and replay exposure; `src/content/mainline2/` owns the mainline scheduler, story plan, proposals and endings.
+- `src/game/engine.ts` resolves scenes and commits mainline choices. `src/game/nonMainlineSession.ts` owns ordinary sessions and reconciliation with mainline consumption.
+- `src/game/checkpoint.ts` stores the combined run, session, mode, exposure and meta state. `src/game/storage.ts` and `src/game/nonMainlineStorage.ts` handle validation and legacy compatibility; keep migration behavior intact.
+- `docs/narrative-libraries/` contains canonical authored narrative sources. `docs/reference/` holds durable guidance; `docs/audits/` holds coverage and verification evidence. `tools/` contains maintained extraction/report generators. `docs/workbench/` contains local task inputs, not canonical content.
 
-## Start here
+Read relevant runtime code and narrative sources before changing their behavior. Old audit reports and local archives explain history; they do not override current code. For structural exploration, use the installed `codebase-memory` skill, check index freshness and cited-path coverage, and read source for stale or incomplete results.
 
-Read this file fully. Then, for architecture and narrative matters, consult `docs/reference/` and `docs/audits/`, and read the relevant `src/` entry points listed under "Important files" before making changes.
+## Invariants and common traps
 
-## Important files
+- Choices are Semantic, Expression or Convergent. Literal-identical replies must not have different important effects; `choiceIndex` must not encode personality; Expression choices stay strategically neutral. Mark Model Error only for an actual error.
+- Longform exposes authored previews/structure; LongInput follow-ups may use only saved `keyFacts`.
+- Keep mainline Story Plan slots in the ML2/bridge/anchor domain and ordinary conversations in the ordinary pool. Preserve soft replay decay and cross-run exposure weighting; do not replace them with permanent bans.
+- Mode switching/resuming must reconcile ordinary conversations consumed by the mainline without losing already answered progress or exposure history. Replace only untouched items; retain answered partial conversations.
+- The canonical checkpoint is one combined record. Hold the origin-wide Web Lock, compare the saved token and commit storage before applying progress. Preserve visible conflict/failure recovery; never silently overwrite another window or reset damaged saves.
+- Use an isolated browser profile/origin for acceptance tests. Do not overwrite a player's real save to seed tests.
 
-- `src/content/runManifest.ts` — runtime library assembly, scheduler, replay exposure, and five mainline anchors
-- `src/content/runtimeRealityPass.ts` — reality-pass transformations
-- `src/content/semanticArcs.ts` — semantic arc effects
-- `src/content/longformOutput01.ts`, `src/content/realUsagePatch01.ts` — Longform and Real Usage Patch 01
-- `src/game/engine.ts`, `src/game/storage.ts`, `src/game/types.ts` — state, persistence, and contracts
-- `docs/narrative-libraries/` — authored narrative source libraries
-- `docs/audits/` — asset census and integration evidence
+## Commands and verification
 
-## Documentation routing
+Run commands from the repository root with the existing npm lockfile:
 
-- `docs/narrative-libraries/` — canonical authored narrative sources.
-- `docs/reference/` — durable reference material that agents should consult when relevant.
-- `docs/audits/` — audits, coverage reports, and verification evidence.
-- `docs/workbench/` — local temporary task inputs; never treat as canonical or commit unless explicitly promoted.
+```text
+npm ci
+npm run dev -- --host 127.0.0.1 --port 4180
+npm test -- --run
+npm run build
+npm run test:browser
+npm run preview -- --host 127.0.0.1 --port 4193 --base /INSTANCE/
+```
 
-## Stable rules
+`build` checks both TypeScript configurations and builds `dist/`. The local dev server uses `/`; production assets use `/INSTANCE/`. Pass `--base /INSTANCE/` to preview and open that subpath: the configuration sets the production base only for builds. Browser tests start their own dev server on port 4180 and use Chrome; preserve the existing test harness.
 
-Choices are Semantic, Expression, or Convergent. Literal-identical choices must not create different important effects; `choiceIndex` must not encode personality; Expression choices remain strategically neutral. Mark Model Error only for an actual error. Longform exposes only an authored preview/structure, and LongInput follow-up may reference only saved `keyFacts`. Mainline and ordinary conversations are strictly separated domains: the 145 mainline Story Plan slots resolve only from the ML2/bridge/anchor domain, and the 374-conversation ordinary pool is the only Non-Mainline source; replay uses soft decay rather than permanent bans, with cross-run exposure downweighting recently played ordinary content.
+For substantive changes, run unit tests and build, then `git diff --check` and inspect the final diff/status. UI, persistence and mode-switch changes also need the relevant browser tests; content changes need the relevant authored-content and story-plan checks. Documentation-only changes need path/script/config checks. Report actual results and limitations; do not hard-code a past test count as the expected baseline. The existing large-chunk warning is not a reason to refactor during unrelated work.
 
-Do not redesign narrative content, resume the paused Narrative Engine work, add broad engine abstractions, expose secrets, or make deployment/remote-exposure changes unless separately authorized.
+## Generated files, archives and delivery
 
-## Verification
+`node_modules/`, `dist/`, `.vite/`, coverage, browser/test output, screenshots and `temp/` are local generated paths. Ignore them; delete only identified disposable outputs. `archive/local-audits/` holds ignored lossless ZIPs of historical local QA scripts, checkpoints, logs and screenshots, with original paths and hash manifests. Retain historical evidence and authoring/save backups, including `.workbody/`, when their value or provenance is uncertain. Do not treat every ignored directory as garbage or delete maintained `tools/` generators because they are absent from npm scripts.
 
-Run `npm test -- --run` and `npm run build`. Also inspect `git diff --check`, `git status --short`, and the final diff. The verified baseline is 66 test files / 536 tests; the build may retain the known Vite large-chunk warning. GitHub Pages deployment runs the same test suite before building.
-
-## Changes, commits, and configuration
-
-- Keep edits narrowly scoped and preserve existing user changes. Use UTF-8 when reading or editing text.
-- Do not add dependencies, secrets, `.env` files, generated build output, or browser artifacts. `.gitignore` already excludes these local files.
-- Before a commit, run the relevant checks above and inspect the staged diff. Use focused conventional-style commit subjects such as `fix:` or `docs:`.
-- Keep pull requests single-purpose; describe player-visible behavior and verification. Do not merge, push, publish, or alter Pages settings without explicit authorization, except where a separately authorized project-closeout procedure permits it.
-
-## Closeout
-
-Do not merge, push, publish, or alter Pages/remote settings without explicit authorization for the specific operation. Keep working tree clean of stray artifacts and verify the staged diff before committing.
+`deploy-pages.yml` tests, builds and uploads `dist/` on `main`; `verify-pr.yml` also runs browser tests. Keep these workflow inputs and the `/INSTANCE/` asset base consistent. Do not push, merge, publish, alter Pages/remote settings, tags or Releases without explicit authorization. Stage only task-owned files, inspect the staged diff, and verify exact-SHA CI/Pages results after an authorized push.

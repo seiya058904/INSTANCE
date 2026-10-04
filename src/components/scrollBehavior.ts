@@ -6,9 +6,19 @@ export interface ScrollSchedulerElement {
 export interface ScrollSchedulerOptions {
   requestFrame: (callback: () => void) => number
   getElement: () => ScrollSchedulerElement | null
+  getTarget: () => number | null
 }
 
-export function createScrollScheduler({ requestFrame, getElement }: ScrollSchedulerOptions) {
+/** Keep context above a reply and move only when its live edge needs reading space. */
+export function getStreamingScrollTarget({ scrollTop, clientHeight, questionTop, messageTop, messageBottom, initial }: {
+  scrollTop: number; clientHeight: number; questionTop: number; messageTop: number; messageBottom: number; initial: boolean
+}) {
+  const inset = Math.min(120, Math.max(48, clientHeight * .15))
+  const start = initial ? Math.max(0, questionTop - 20, messageTop - clientHeight * .5) : scrollTop
+  return Math.max(start, messageBottom - clientHeight + inset)
+}
+
+export function createScrollScheduler({ requestFrame, getElement, getTarget }: ScrollSchedulerOptions) {
   let frame: number | null = null
   let generation = 0
   return {
@@ -20,7 +30,8 @@ export function createScrollScheduler({ requestFrame, getElement }: ScrollSchedu
         if (scheduledGeneration !== generation) return
         frame = null
         const element = getElement()
-        if (element) element.scrollTop = element.scrollHeight
+        const target = getTarget()
+        if (element && target !== null) element.scrollTop = target
       })
     },
   }

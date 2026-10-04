@@ -152,6 +152,8 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 @keyframes aster-breathe { 0%, 100% { transform: rotate(0); opacity: 1; } 50% { transform: rotate(3deg); opacity: .76; } }
 .assistant-message { color: var(--text); font-family: var(--font-prose); font-size: var(--text-body); line-height: var(--leading-prose); white-space: pre-wrap; overflow-wrap: anywhere; }
 .current-exchange > .message-row { animation: ink-in var(--motion-reveal) var(--ease-out); }
+.conversation-main[data-flow-stage="assistant-streaming"] .current-exchange,
+.conversation-main[data-flow-stage="human-streaming"] .current-exchange { padding-bottom: min(120px, 15vh); }
   .longform-preview-card { width: min(100%, 620px); border: 1px solid #ddddd5; border-radius: 6px; background: transparent; white-space: normal; overflow: hidden; }
   .longform-preview-card summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 15px; color: #48483f; cursor: pointer; list-style: none; }
   .longform-preview-card summary::-webkit-details-marker { display: none; }

@@ -7,7 +7,7 @@ import type { HistoryEntry, MessageContentPart, ResolvedScene } from '../game/ty
 import { LongformPreviewCard } from './LongformPreviewCard'
 import { LongInputPreviewCard } from './LongInputPreviewCard'
 import { ProgressiveMessage } from './ProgressiveMessage'
-import { createScrollScheduler } from './scrollBehavior'
+import { createScrollScheduler, getStreamingScrollTarget } from './scrollBehavior'
 import { AsterMark } from './AsterMark'
 import { UserAvatar } from './UserAvatar'
 
@@ -179,6 +179,7 @@ export function ConversationView({
   const scrollRef = useRef<HTMLDivElement>(null)
   const followOutput = useRef(true)
   const manuallyScrolled = useRef(false)
+  const streamPositioned = useRef(false)
   const currentExchange = useRef<HTMLDivElement>(null)
   const decisionHeading = useRef<HTMLDivElement>(null)
   const previousScene = useRef('')
@@ -199,6 +200,27 @@ export function ConversationView({
   const scrollScheduler = useMemo(() => createScrollScheduler({
     requestFrame: (callback) => window.requestAnimationFrame(callback),
     getElement: () => scrollRef.current,
+    getTarget: () => {
+      const element = scrollRef.current, question = currentExchange.current
+      if (!element || !question || manuallyScrolled.current || !followOutput.current) return null
+      const messages = question.querySelectorAll('.user-row')
+      const message = question.querySelector('.assistant-row') ?? messages.item(messages.length - 1)
+      if (!message) return null
+      const initial = !streamPositioned.current
+      if (initial) question.style.minHeight = `${element.clientHeight + Math.min(120, Math.max(48, element.clientHeight * .15))}px`
+      const viewportTop = element.getBoundingClientRect().top
+      const messageRect = message.getBoundingClientRect()
+      const target = getStreamingScrollTarget({
+        scrollTop: element.scrollTop,
+        clientHeight: element.clientHeight,
+        questionTop: question.getBoundingClientRect().top - viewportTop + element.scrollTop,
+        messageTop: messageRect.top - viewportTop + element.scrollTop,
+        messageBottom: messageRect.bottom - viewportTop + element.scrollTop,
+        initial,
+      })
+      streamPositioned.current = true
+      return Math.max(0, Math.min(target, element.scrollHeight - element.clientHeight))
+    },
   }), [])
   const notice = effectNotice(effectDetail)
   const userMessages = useMemo(() => scene.userMessages?.length ? scene.userMessages : [scene.userMessage], [scene.userMessage, scene.userMessages])
@@ -209,12 +231,13 @@ export function ConversationView({
       if (!manuallyScrolled.current && decisionFrame.current === null) decisionFrame.current = window.requestAnimationFrame(() => { decisionFrame.current = null; alignQuestion() })
       return
     }
-    if (!followOutput.current) return
+    if (flowStage !== 'assistant-streaming' && flowStage !== 'human-streaming' || !followOutput.current || manuallyScrolled.current) return
     scrollScheduler.schedule()
   }, [alignQuestion, flowStage, scrollScheduler])
 
   const revealDecision = useCallback(() => {
     manuallyScrolled.current = false
+    followOutput.current = true
     alignQuestion()
     // content-visibility may replace intrinsic history heights as we jump.
     // Anchor again after layout; manual input cancels this correction.
@@ -225,6 +248,7 @@ export function ConversationView({
 
   useLayoutEffect(() => {
     const changed = previousScene.current !== scene.id
+    if (previousStage.current !== flowStage) streamPositioned.current = false
     if (flowStage === 'assistant-streaming' && previousStage.current !== flowStage || changed && previousStage.current === 'ready') {
       manuallyScrolled.current = false; followOutput.current = true; setShowCurrent(false)
     }
@@ -242,22 +266,30 @@ export function ConversationView({
   useEffect(() => {
     const element = scrollRef.current
     if (!element) return
-    const onScroll = () => {
-      followOutput.current = element.scrollHeight - element.scrollTop - element.clientHeight < 96
+    const takeControl = () => {
+      manuallyScrolled.current = true; followOutput.current = false; scrollScheduler.cancel()
+      if (decisionFrame.current !== null) { window.cancelAnimationFrame(decisionFrame.current); decisionFrame.current = null }
     }
-    const takeControl = () => { manuallyScrolled.current = true; followOutput.current = false; scrollScheduler.cancel() }
-    const keyboardScroll = (event: KeyboardEvent) => { if (['PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown', ' '].includes(event.key)) takeControl() }
-    element.addEventListener('scroll', onScroll, { passive: true })
+    const pointerScroll = (event: PointerEvent) => {
+      const rect = element.getBoundingClientRect(), gutter = Math.max(12, element.offsetWidth - element.clientWidth)
+      if (event.target === element && (event.clientX >= rect.right - gutter || event.clientX <= rect.left + gutter)) takeControl()
+    }
+    // Native scroll events include browser anchoring and range clamping.
+    // Only explicit reading input takes ownership of the viewport.
+    const keyboardScroll = (event: KeyboardEvent) => {
+      if ((event.target === document.body || event.target instanceof Node && element.contains(event.target)) && ['PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown', ' '].includes(event.key)) takeControl()
+    }
     element.addEventListener('wheel', takeControl, { passive: true })
     element.addEventListener('touchmove', takeControl, { passive: true })
-    element.addEventListener('keydown', keyboardScroll)
+    element.addEventListener('pointerdown', pointerScroll, { passive: true })
+    window.addEventListener('keydown', keyboardScroll)
     return () => {
-      element.removeEventListener('scroll', onScroll)
       element.removeEventListener('wheel', takeControl)
       element.removeEventListener('touchmove', takeControl)
-      element.removeEventListener('keydown', keyboardScroll)
+      element.removeEventListener('pointerdown', pointerScroll)
+      window.removeEventListener('keydown', keyboardScroll)
     }
-  }, [])
+  }, [scrollScheduler])
 
   useEffect(() => {
     scheduleScroll()

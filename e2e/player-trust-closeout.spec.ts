@@ -87,6 +87,9 @@ test('two simultaneous tabs cannot replace a newer choice, and the old tab can r
   await other.goto('/?qaPacing=instant'); await expect(other.locator('.candidate-response').first()).toBeEnabled()
   await Promise.all([page.locator('.candidate-response').first().click({ force: true }), other.locator('.candidate-response').nth(1).click({ force: true })])
   await expect.poll(async () => (await data(page)).run.history.length).toBe(original.run.history.length + 1)
+  // The storage commit precedes the other tab's conflict render. Wait for
+  // either dialog before deciding which page lost the concurrent write.
+  await expect.poll(async () => (await Promise.all([page.getByRole('dialog', { name: '另一页已有新进度' }).isVisible(), other.getByRole('dialog', { name: '另一页已有新进度' }).isVisible()])).some(Boolean)).toBe(true)
   const loser = await page.getByRole('dialog', { name: '另一页已有新进度' }).isVisible() ? page : other
   await expect(loser.getByRole('dialog', { name: '另一页已有新进度' })).toBeVisible()
   await loser.screenshot({ path: join(evidence, 'tab-conflict.png') })

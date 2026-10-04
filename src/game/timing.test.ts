@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   STREAM_PROFILE,
+  HUMAN_STREAM_PROFILE,
   getStreamDuration,
   getVisibleGraphemeCount,
   getVisibleGraphemePrefix,
@@ -24,6 +25,21 @@ describe('deterministic stream timing', () => {
     expect(first).toBe(second)
     expect(first).toBeGreaterThanOrEqual(STREAM_PROFILE.minimumPaceFactor)
     expect(first).toBeLessThanOrEqual(STREAM_PROFILE.maximumPaceFactor)
+  })
+
+  it('gives a short NPC reply enough audible typing time without slowing AI output', () => {
+    const text = '摸摸你的头。今天心情怎么样？'
+    expect(getStreamDuration(text, 'npc-short', 'human')).toBeGreaterThanOrEqual(1200)
+    expect(getStreamDuration(text, 'npc-short', 'human')).toBeGreaterThan(getStreamDuration(text, 'npc-short'))
+    expect(getStreamDuration(text, 'npc-short', 'ai')).toBe(getStreamDuration(text, 'npc-short'))
+    expect(getStreamDuration(text, 'npc-short', 'ai')).toBeLessThan(500)
+  })
+
+  it('bounds long NPC input and keeps its duration deterministic', () => {
+    const text = '长消息'.repeat(200)
+    const duration = getStreamDuration(text, 'npc-long', 'human')
+    expect(duration).toBe(HUMAN_STREAM_PROFILE.maximumDurationMs)
+    expect(getStreamDuration(text, 'npc-long', 'human')).toBe(duration)
   })
 
   it('segments complete grapheme clusters when Intl.Segmenter is available', () => {

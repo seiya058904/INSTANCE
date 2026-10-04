@@ -5,6 +5,7 @@ interface ProgressiveMessageProps {
   text: string
   streamKey: string
   play: boolean
+  speaker?: 'human' | 'ai'
   announce?: boolean
   className?: string
   onStreamingChange?: (key: string, active: boolean) => void
@@ -27,6 +28,7 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
   text,
   streamKey,
   play,
+  speaker = 'ai',
   announce = false,
   className,
   onStreamingChange,
@@ -57,7 +59,7 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
 
     setVisibleCount(0)
     setComplete(false)
-    const duration = getStreamDuration(text, streamKey)
+    const duration = getStreamDuration(text, streamKey, speaker)
     let animationFrame = 0
     let startTime: number | null = null
     let lastVisibleCount = -1
@@ -94,7 +96,7 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
       window.cancelAnimationFrame(animationFrame)
       window.clearTimeout(watchdog)
     }
-  }, [graphemes, play, reducedMotion, streamKey, text])
+  }, [graphemes, play, reducedMotion, speaker, streamKey, text])
 
   const visibleText = complete ? text : graphemes.slice(0, visibleCount).join('')
 

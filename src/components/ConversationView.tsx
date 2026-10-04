@@ -105,6 +105,7 @@ const StreamingUserTurn = memo(function StreamingUserTurn({
           text={message}
           streamKey={`${streamKey}:${index}`}
           play={play}
+          speaker="human"
           announce
           onStreamingChange={onStreamingChange}
           onComplete={play

@@ -178,6 +178,15 @@ describe('Mainline 2.0 Story Map route trace', () => {
     })
   })
 
+  it('keeps node fingerprints stable across checkout line endings without hiding content changes', async () => {
+    const generatorPath = '../../tools/generate-mainline2-route-traces.ts'
+    const { stableNodeVariantKey } = (await import(generatorPath)) as { stableNodeVariantKey: (value: Record<string, unknown>) => string }
+    const node = (preview: string) => ({ choices: [{ longformPreview: { preview } }] })
+    const lf = stableNodeVariantKey(node('type RecordItem = {\n  id: string\n}'))
+    expect(stableNodeVariantKey(node('type RecordItem = {\r\n  id: string\r\n}'))).toBe(lf)
+    expect(stableNodeVariantKey(node('type RecordItem = {\n  value: number\n}'))).not.toBe(lf)
+  })
+
   it('formats every concrete node destination without an undefined slot', async () => {
     const { formatNext } = await import('../../tools/mainline2-story-map-ui.mjs')
     expect(formatNext({ kind: 'node', slot: 17, conversationId: 'conversation-a', nodeId: 'node-a' })).toBe('Slot 17 · conversation-a/node-a')

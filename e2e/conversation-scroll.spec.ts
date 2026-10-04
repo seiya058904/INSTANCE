@@ -1,43 +1,62 @@
 import { expect, test } from '@playwright/test'
 
-// Playwright hides native scrollbars by default; retain the real desktop
-// scrollbar so pointer tests exercise its thumb rather than the page behind it.
+// Keep native scrollbars: Playwright otherwise hides the actual desktop thumb.
 test.use({ launchOptions: { ignoreDefaultArgs: ['--hide-scrollbars'] } })
+const latest = '滚动到最新消息'
 
-test('desktop replies keep the prompt visible and a small upward wheel movement owns the viewport', async ({ page }) => {
+test('one arrow click reaches the real bottom of a long conversation history', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/?qaPacing=instant&qaRun=long-history&qaHistory=100')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
+  await page.evaluate(() => document.fonts.ready)
+  expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(0)
+  await page.getByRole('button', { name: latest }).click()
+  await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollHeight - element.clientHeight - element.scrollTop)).toBeLessThan(2)
+  await expect(page.getByRole('button', { name: latest })).toBeHidden()
+  await page.waitForTimeout(100)
+  expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollHeight - element.clientHeight - element.scrollTop)).toBeLessThan(2)
+})
+
+test('a long desktop reply leaves its beginning visible and the fixed arrow makes only one jump', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 450 })
   await page.emulateMedia({ reducedMotion: 'no-preference' })
+  await page.goto('/?qaRun=desktop-scroll&qaConversation=real-usage-rup01-20&qaStreamGraphemes=500')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
+  await page.evaluate(() => document.fonts.ready)
+  // Keyboard selection does not implicitly scroll an off-screen draft into view.
+  await page.keyboard.press('1')
+  await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText(), { intervals: [16, 32] }).toMatch(/.{300}/s)
+  expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(0)
+  await expect(page.getByRole('button', { name: latest })).toBeVisible()
+  const rect = await page.getByRole('button', { name: latest }).boundingBox()
+  await page.waitForTimeout(100)
+  expect(await page.getByRole('button', { name: latest }).boundingBox()).toEqual(rect)
+  await page.getByRole('button', { name: latest }).click()
+  const jumped = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
+  expect(jumped).toBeGreaterThan(0)
+  await expect(page.getByRole('button', { name: latest })).toBeHidden()
+  await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText(), { intervals: [16, 32] }).toMatch(/.{460}/s)
+  expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(jumped)
+  await expect(page.getByRole('button', { name: latest })).toBeVisible()
+})
+
+test('small upward wheel input is never undone while the reply grows', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/?qaRun=desktop-scroll&qaHistory=25&qaStreamGraphemes=500')
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().click()
-  await expect(page.locator('.conversation-main')).toHaveAttribute('data-flow-stage', 'assistant-streaming')
   await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText()).toMatch(/.{60}/s)
-  const position = await page.locator('.conversation-scroll').evaluate(element => ({
-    question: element.querySelector('.current-exchange')!.getBoundingClientRect().top - element.getBoundingClientRect().top,
-    top: element.scrollTop,
-    remaining: element.scrollHeight - element.clientHeight - element.scrollTop,
-  }))
-  expect(position.question).toBeGreaterThanOrEqual(12)
-  expect(position.remaining).toBeGreaterThan(40)
+  const before = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
   await page.mouse.move(1000, 300)
   await page.mouse.wheel(0, -32)
-  await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBeLessThan(position.top - 20)
+  await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBeLessThan(before - 20)
   const manual = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
   await page.waitForTimeout(250)
   expect(Math.abs(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop) - manual)).toBeLessThan(2)
-  await expect(page.locator('.candidate-response').first()).toBeEnabled({ timeout: 20000 })
-  // Synthetic QA history is rebuilt when the answer becomes a saved entry,
-  // changing scrollHeight. The reader must still own the next decision.
-  await expect(page.getByRole('button', { name: '回到当前问题' })).toBeVisible()
-  await page.getByRole('button', { name: '回到当前问题' }).click()
-  const restored = await page.locator('.conversation-scroll').evaluate(element => element.querySelector('.current-exchange')!.getBoundingClientRect().top - element.getBoundingClientRect().top)
-  expect(restored).toBeGreaterThanOrEqual(18)
-  expect(restored).toBeLessThanOrEqual(22)
 })
 
-test('a small native desktop scrollbar drag is not undone by streaming', async ({ page }) => {
+test('a small native scrollbar drag is never undone while the reply grows', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.emulateMedia({ reducedMotion: 'no-preference' })
   await page.goto('/?qaRun=desktop-scroll&qaHistory=25&qaStreamGraphemes=500')
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().click()
@@ -53,29 +72,10 @@ test('a small native desktop scrollbar drag is not undone by streaming', async (
   expect(bar.top - manual).toBeLessThan(90)
   await page.waitForTimeout(250)
   expect(Math.abs(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop) - manual)).toBeLessThan(2)
-  await expect(page.locator('.candidate-response').first()).toBeEnabled({ timeout: 20000 })
-  await expect(page.getByRole('button', { name: '回到当前问题' })).toBeVisible()
 })
 
-test('a long reply follows only its visible edge with reading space in a short desktop window', async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 600 })
-  await page.emulateMedia({ reducedMotion: 'no-preference' })
-  await page.goto('/?qaRun=desktop-scroll&qaHistory=25&qaStreamGraphemes=500')
-  await expect(page.locator('.candidate-response').first()).toBeEnabled()
-  await page.locator('.candidate-response').first().click()
-  await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText()).toMatch(/.{60}/s)
-  const initial = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
-  await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText(), { intervals: [32, 50] }).toMatch(/.{350}/s)
-  await expect.poll(() => page.locator('.conversation-scroll').evaluate((element, initial) => {
-    const bottom = element.querySelector('.current-exchange .assistant-row')!.getBoundingClientRect().bottom - element.getBoundingClientRect().top
-    return element.scrollTop > initial + 50 && bottom <= element.clientHeight - 45 && element.scrollHeight - element.clientHeight - element.scrollTop > 30
-  }, initial), { intervals: [16, 32] }).toBe(true)
-  await expect(page.locator('.conversation-main')).toHaveAttribute('data-flow-stage', 'assistant-streaming')
-})
-
-test('PageUp takes control while a desktop reply continues generating', async ({ page }) => {
+test('PageUp stays under reader control while text continues generating', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.emulateMedia({ reducedMotion: 'no-preference' })
   await page.goto('/?qaRun=desktop-scroll&qaHistory=25&qaStreamGraphemes=500')
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().click()
@@ -83,32 +83,71 @@ test('PageUp takes control while a desktop reply continues generating', async ({
   const before = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
   await page.keyboard.press('PageUp')
   await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBeLessThan(before - 200)
-  // Native keyboard scrolling animates briefly; sample after it settles.
   await page.waitForTimeout(250)
   const manual = await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)
-  const visible = await page.locator('.current-exchange .assistant-message').innerText()
+  const text = await page.locator('.current-exchange .assistant-message').innerText()
   await page.waitForTimeout(250)
   expect(Math.abs(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop) - manual)).toBeLessThan(2)
-  expect((await page.locator('.current-exchange .assistant-message').innerText()).length).toBeGreaterThan(visible.length)
-  await expect(page.locator('.candidate-response').first()).toBeEnabled({ timeout: 20000 })
-  await expect(page.getByRole('button', { name: '回到当前问题' })).toBeVisible()
+  expect((await page.locator('.current-exchange .assistant-message').innerText()).length).toBeGreaterThan(text.length)
 })
 
-test('a small viewport keeps following after the chosen draft is replaced by a reply', async ({ browser }) => {
-  const context = await browser.newContext({ viewport: { width: 320, height: 568 }, hasTouch: true, reducedMotion: 'no-preference' })
-  const page = await context.newPage()
-  await page.goto('/?qaRun=desktop-scroll&qaHistory=25&qaStreamGraphemes=500')
+for (const viewport of [{ width: 1440, height: 600 }, { width: 320, height: 568 }]) {
+  test(`NPC replies and the next decision preserve the first message at ${viewport.width}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/?qaRun=npc-reading&qaConversation=real-usage-rup01-20')
+    await expect(page.locator('.candidate-response').first()).toBeEnabled()
+    const firstMessage = await page.locator('.current-exchange .user-message').first().textContent()
+    for (let turn = 0; turn < 2; turn++) {
+      await page.keyboard.press('1')
+      await expect(page.locator('.conversation-main')).toHaveAttribute('data-flow-stage', 'assistant-streaming')
+      await expect.poll(() => page.locator('.conversation-main').getAttribute('data-flow-stage'), { intervals: [16, 32] }).toBe('human-typing')
+      expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(0)
+      await expect(page.locator('.candidate-response').first()).toBeEnabled()
+      expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(0)
+      await expect(page.locator('.completed-exchange .user-message').first()).toHaveText(firstMessage!)
+      const firstTop = await page.locator('.conversation-scroll').evaluate(element => element.querySelector('.user-row')!.getBoundingClientRect().top - element.getBoundingClientRect().top)
+      expect(firstTop).toBeGreaterThanOrEqual(20)
+      expect(firstTop).toBeLessThanOrEqual(28)
+    }
+    await expect(page.getByRole('button', { name: latest })).toBeVisible()
+    await page.getByRole('button', { name: latest }).click()
+    await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollHeight - element.clientHeight - element.scrollTop)).toBeLessThan(2)
+  })
+}
+
+test('typing audio starts with visible characters and stays silent during the NPC indicator', async ({ page }) => {
+  await page.addInitScript(() => {
+    const calls: Array<{ source: string; stage: string; text: string; caret: boolean }> = []
+    ;(window as any).typingAudioCalls = calls
+    HTMLMediaElement.prototype.play = function () {
+      const main = document.querySelector<HTMLElement>('.conversation-main')
+      const caret = main?.querySelector('.current-exchange .stream-caret')
+      calls.push({ source: this.src, stage: main?.dataset.flowStage ?? '', text: caret?.parentElement?.textContent ?? '', caret: Boolean(caret) })
+      return Promise.resolve()
+    }
+  })
+  await page.goto('/?qaRun=audio-sync&qaConversation=real-usage-rup01-20')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
+  await page.keyboard.press('1')
+  await expect.poll(() => page.locator('.conversation-main').getAttribute('data-flow-stage'), { intervals: [16, 32] }).toBe('human-typing')
+  const callsDuringIndicator = await page.evaluate(() => (window as any).typingAudioCalls)
+  expect(callsDuringIndicator.filter((call: any) => call.source.includes('human-typing')).length).toBe(1)
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
+  const calls = await page.evaluate(() => (window as any).typingAudioCalls)
+  expect(calls.filter((call: any) => call.source.includes('human-typing')).length).toBe(2)
+  expect(calls.some((call: any) => call.source.includes('ai-generation'))).toBe(true)
+  for (const call of calls) {
+    expect(call.text.length).toBeGreaterThan(0)
+    expect(call.caret).toBe(true)
+    expect(call.stage).toBe(call.source.includes('human-typing') ? 'human-streaming' : 'assistant-streaming')
+  }
+})
+
+test('a short desktop conversation has no jump button when its content fits', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/?qaRun=short-chat&qaConversation=real-usage-rup01-20')
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.evaluate(() => document.fonts.ready)
-  await expect(page.getByRole('button', { name: '回到当前问题' })).toBeHidden()
-  // The draft starts below the fold. Clicking it scrolls, then removing the
-  // draft list clamps the viewport before the reply's first animation frame.
-  await page.locator('.candidate-response').first().click()
-  await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText(), { intervals: [32, 50] }).toMatch(/.{350}/s)
-  await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => {
-    const bottom = element.querySelector('.current-exchange .assistant-row')!.getBoundingClientRect().bottom - element.getBoundingClientRect().top
-    return bottom <= element.clientHeight - 45 && element.scrollHeight - element.clientHeight - element.scrollTop > 30
-  }), { intervals: [16, 32] }).toBe(true)
-  await expect(page.locator('.conversation-main')).toHaveAttribute('data-flow-stage', 'assistant-streaming')
-  await context.close()
+  await expect(page.getByRole('button', { name: latest })).toBeHidden()
+  expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBe(0)
 })

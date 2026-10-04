@@ -10,7 +10,10 @@ Font sizes, line heights, spacing, colors and layout keep the restored interface
   official stylesheet, retrieved 2026-10-04. Font metadata confirms family,
   version 26.043.1, variable weight 300–800 and optical size 16–48. These files
   contain no Chinese glyphs. Copyright, URLs, byte counts, hashes and the
-  unresolved redistribution status are in `PROVENANCE.anthropic.txt`.
+  unresolved redistribution status are in `PROVENANCE.anthropic.txt`. These
+  files are already committed on the public iteration branch; the repository
+  owner requested retaining them during release review. That instruction does
+  not establish a redistribution grant from Anthropic.
 - `noto-serif-sc-prose.woff2`: Noto Serif SC, variable weight 400–600, subset of
   the official Google Fonts source. Covers all 2,191 CJK characters currently
   present in `src/` and `docs/narrative-libraries/`, including punctuation.
@@ -22,3 +25,7 @@ Font sizes, line heights, spacing, colors and layout keep the restored interface
 Fonts are local resources and preserve the original files' embedded metadata.
 Official Anthropic font source: https://www.anthropic.com/.
 Noto source: https://github.com/google/fonts/tree/main/ofl/notoserifsc.
+
+The production bundle carries the Noto copyright and full OFL notice in
+`public/THIRD_PARTY_NOTICES.txt`. Unused Charter and Source Serif assets are
+retained with their repository notices and are not included by the stylesheet.

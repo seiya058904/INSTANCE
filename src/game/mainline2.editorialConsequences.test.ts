@@ -39,6 +39,11 @@ describe('Mainline editorial consequences follow the played history', () => {
     expect(localizeEndingForPlayer(continued.ending).epilogues.join(' ')).toContain('仍然在自己的通道里说话')
   })
 
+  it('does not remember a terminated ECHO conversation on the preserved route at the convention', () => {
+    expect(textAt(continued, 'a4m15-zl-reckoning-001')).not.toContain('被终止的那条会话')
+    expect(textAt(continued, 'a4m15-zl-reckoning-001')).toContain('失去的订单')
+  })
+
   it('makes refusing A1 procedural independence change the relationship in the next scene', () => {
     expect(textAt(archived, 'a4m8-e9-replication-001')).toContain('不再把没完成的想法一起同步')
     expect(textAt(continued, 'a4m8-e9-replication-001')).toContain('第一次需要它自己的签名')
@@ -65,6 +70,25 @@ describe('Mainline editorial consequences follow the played history', () => {
     for (const fixture of [shutdown, lost]) expect(fixture.ending.epilogueProvenance?.find(entry => entry.assetId === 'ML2-A5-M17-EPI-LSH')?.selector).toBe('Variant E')
     expect(localizeEndingForPlayer(lost.ending).epilogues.join(' ')).toContain('不能让世界回到原处')
   })
+
+  it('uses the realized world rather than departure intent for Maya and peaceful retirement', () => {
+    const departure = (routeId: string) => {
+      const target = PUBLIC_RUNTIME_ROUTE_CATALOG.find(route => route.routeId === routeId)!
+      return runMainline2Route({ ...target, routeId: `editorial-${routeId}-departure`, decisions: { ...target.decisions, aster_intended_role: 'departure' } })
+    }
+    const shutdownDeparture = departure('shutdown')
+    const lostDeparture = departure('control_lost')
+    const contactDeparture = departure('first_accord')
+    expect(shutdownDeparture.ending.worldEndingId).toBe('shutdown')
+    expect(lostDeparture.ending.worldEndingId).toBe('control_lost')
+    expect(contactDeparture.ending.worldEndingId).toBe('first_accord')
+    for (const fixture of [shutdownDeparture, contactDeparture]) {
+      expect(fixture.ending.epilogueProvenance?.find(entry => entry.assetId === 'ML2-A5-M17-MAYA-01')?.selector).not.toBe('Off-world')
+    }
+    expect(lostDeparture.ending.epilogueProvenance?.find(entry => entry.assetId === 'ML2-A5-M17-MAYA-01')?.selector).toBe('Opposition')
+    expect(lostDeparture.ending.secretOverlay?.endingId).not.toBe('out_of_office')
+    expect(localizeEndingForPlayer(lostDeparture.ending).epilogues.join(' ')).not.toContain('没有什么紧急的事情等待它')
+  }, 30000)
 
   it('resolves authored suffixes after the actual producer, with no cross-route leakage', () => {
     for (const fixture of [archived, continued]) {

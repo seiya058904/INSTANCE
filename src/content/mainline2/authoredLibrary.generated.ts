@@ -7517,7 +7517,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-gained-political-role",
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-no-clean-moment"
         ],
-        messageFingerprint: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试、被终止的那条会话，不能一起恢复。\n现",
+        messageFingerprint: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试，却不能跟着快照一起恢复。\n现在大会让",
         effects: [
           {
             type: "event.record",
@@ -21285,7 +21285,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-zl-reckoning-001",
         conversationId: "ml2-authored-ml2-a4-m15-zl-01",
         conversationTitle: "“When did we stop developing you?”",
-        userMessage: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试、被终止的那条会话，不能一起恢复。\n现在大会让我给 Aster 签一份身份说明。\n我写到\"开发者\"就停了。你觉得我从什么时候开始，已经不再只是开发你？",
+        userMessage: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试，却不能跟着快照一起恢复。\n现在大会让我给 Aster 签一份身份说明。\n我写到\"开发者\"就停了。你觉得我从什么时候开始，已经不再只是开发你？",
         choices: [
           {
             id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-began-creating-capability",

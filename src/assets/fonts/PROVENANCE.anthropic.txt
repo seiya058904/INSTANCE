@@ -21,6 +21,11 @@ SHA-256: 7f61e32b5941ad6e5699aeb3e03390a43e5f04f3bff6a5853bed08c802596f83
 
 This file records provenance, not a license grant. The original webfont files
 contain no name-table license description or license URL. Their availability
-and OS/2 fsType=0 do not establish redistribution permission. These files are
-used for the user's local preview request; public redistribution rights remain
-unverified. No public release or remote upload was performed for this change.
+and OS/2 fsType=0 do not establish redistribution permission.
+
+Repository status (corrected 2026-10-04): these files were committed in 7d1aebf
+and are already in the public codex/mainline-claude-iteration branch at 7106476.
+The earlier "local preview only / no remote upload" statement was obsolete.
+During final release review the repository owner explicitly requested keeping
+this font. The files remain unchanged. Public redistribution permission has
+not been reliably confirmed; that request is not an Anthropic license grant.

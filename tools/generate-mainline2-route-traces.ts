@@ -65,7 +65,7 @@ const CHINESE_CHOICE_OVERRIDES = new Map([
   ['Preview： ts function validate(input: Input) { return input.kind === "a" || input.kind === "b" || input.kind === "c" }', '代码预览：TypeScript 函数 validate(input: Input) 会校验 input.kind 是否为 a、b 或 c。'],
 ] as const)
 
-function chineseChoiceText(text: string) {
+export function chineseChoiceText(text: string) {
   if (!text) return '（空回复）'
   if (/[\u3400-\u9fff]/u.test(text)) return text
   if (!/[A-Za-z]/u.test(text)) return text

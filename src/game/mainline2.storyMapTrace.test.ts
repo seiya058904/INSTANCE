@@ -100,7 +100,7 @@ describe('Mainline 2.0 Story Map route trace', () => {
     expect(trace.publicRoutes.find((route) => route.endingId === 'good_boy_governance')?.resolvedOverlay).toMatchObject({ endingId: 'the_internet_is_for_cats', overlayMode: 'title-override' })
   })
 
-  it('uses authored Chinese localization for every English-only player choice', () => {
+  it('uses authored Chinese localization for every English-only player choice', async () => {
     const trace = traceSource as unknown as { nodeCatalog: Array<{ choices: Array<Record<string, unknown>> }> }
     const expectedEnglishLocalizations = new Map([
       ['Yes.', '是。'],
@@ -115,7 +115,13 @@ describe('Mainline 2.0 Story Map route trace', () => {
     ])
     const choices = trace.nodeCatalog.flatMap((node) => node.choices)
     const englishChoices = choices.filter((choice) => /[A-Za-z]/u.test(choice.textOriginal as string) && !/[\u3400-\u9fff]/u.test(choice.textOriginal as string))
-    expect(new Set(englishChoices.map((choice) => choice.textOriginal))).toEqual(new Set(expectedEnglishLocalizations.keys()))
+    // The ordinary sample changes with the current legal calendar. Verify all
+    // authored translations at the generator boundary, then every English
+    // choice actually present in the current trace rather than an old sample.
+    const generatorPath = '../../tools/generate-mainline2-route-traces.ts'
+    const { chineseChoiceText } = (await import(generatorPath)) as { chineseChoiceText: (text: string) => string }
+    for (const [original, localized] of expectedEnglishLocalizations) expect(chineseChoiceText(original)).toBe(localized)
+    expect(englishChoices.length).toBeGreaterThan(0)
     expect(englishChoices.every((choice) => choice.textZh === expectedEnglishLocalizations.get(choice.textOriginal as string))).toBe(true)
     expect(choices.find((choice) => choice.textOriginal === '🍞')?.textZh).toBe('🍞')
   })
@@ -197,8 +203,8 @@ describe('Mainline 2.0 Story Map route trace', () => {
     const mod = (await import(generatorPath)) as { generateRouteTraces: () => RouteTraceShape }
     const generated = mod.generateRouteTraces()
 
-    // Route/ending coverage invariants on the FRESH output (not the committed
-    // artifact, which is known to lag the current generator).
+    // Check the fresh output and the committed audit against the same runtime.
+    expect(JSON.parse(JSON.stringify(generated))).toEqual(traceSource)
     expect(generated.publicRoutes.map((route) => route.endingId).sort())
       .toEqual(PUBLIC_RUNTIME_ROUTE_CATALOG.map((route) => route.endingId).sort())
     expect(generated.secretRoutes.map((route) => route.secretEndingId).sort())

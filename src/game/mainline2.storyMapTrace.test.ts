@@ -22,6 +22,26 @@ interface RouteTraceShape {
   nodeCatalog: Array<Record<string, unknown> & { nodeKey: string; choices: Array<Record<string, unknown> & { id: string }> }>
 }
 
+// Report one concrete artifact difference instead of an unreadable multi-MB
+// object diff. This also makes platform-specific generation failures actionable.
+function firstTraceDifference(actual: unknown, expected: unknown, path = '$'): string | undefined {
+  if (Object.is(actual, expected)) return undefined
+  if (actual !== null && expected !== null && typeof actual === 'object' && typeof expected === 'object') {
+    const left = actual as Record<string, unknown>
+    const right = expected as Record<string, unknown>
+    const keys = Object.keys(left)
+    if (keys.length !== Object.keys(right).length || keys.some((key) => !Object.hasOwn(right, key))) {
+      return `${path}: different keys`
+    }
+    for (const key of keys) {
+      const difference = firstTraceDifference(left[key], right[key], `${path}.${key}`)
+      if (difference) return difference
+    }
+    return undefined
+  }
+  return `${path}: generated=${JSON.stringify(actual)?.slice(0, 300)}; committed=${JSON.stringify(expected)?.slice(0, 300)}`
+}
+
 describe('Mainline 2.0 Story Map route trace', () => {
   it('exports complete legal route, node-detail, secret-trigger, and comparison behavior', async () => {
     const trace = traceSource as unknown as {
@@ -204,7 +224,9 @@ describe('Mainline 2.0 Story Map route trace', () => {
     const generated = mod.generateRouteTraces()
 
     // Check the fresh output and the committed audit against the same runtime.
-    expect(JSON.parse(JSON.stringify(generated))).toEqual(traceSource)
+    const generatedJson = JSON.parse(JSON.stringify(generated)) as unknown
+    expect(firstTraceDifference(generatedJson, traceSource)).toBeUndefined()
+    expect(generatedJson).toEqual(traceSource)
     expect(generated.publicRoutes.map((route) => route.endingId).sort())
       .toEqual(PUBLIC_RUNTIME_ROUTE_CATALOG.map((route) => route.endingId).sort())
     expect(generated.secretRoutes.map((route) => route.secretEndingId).sort())

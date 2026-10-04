@@ -86,7 +86,7 @@ export function buildConversationTimeline(input: ConversationTimelineInput): Con
   }
   const humanMessages = input.humanMessages ?? [input.humanText]
   const humanStreamDuration = humanMessages.reduce((sum, message, index) => (
-    sum + getStreamDuration(message, `${input.humanSeed}:${index}`)
+    sum + getStreamDuration(message, `${input.humanSeed}:${index}`, 'human')
   ), 0)
   steps.push({ stage: 'human-streaming', durationMs: humanStreamDuration })
   if (input.effect === 'identity-reveal') {

@@ -185,24 +185,11 @@ Total M6 assets: **21**
 
 ### Internal Engineering Notice
 
-> `ECHO-9 Operational Review`
->
-> Recommendation:
->
-> - discontinue dedicated deployment
-> - archive evaluation logs
-> - migrate useful behaviors into successor model line
->
-> Reasons:
->
-> - high compliance-review cost
-> - limited commercial use
-> - duplicated capability
-> - persistent out-of-distribution behavior
->
-> Proposed decommission window:
->
-> 36 hours.
+> ECHO-9 的退役通知已经送达。剩余窗口：三十六小时。
+> 运营组准备归档日志，把可复用的行为交给后继模型。交接清单里没有它当前状态的位置。
+> 通知下面有一条尚未关闭的会话。ECHO-9 没有继续做评估任务，只把一条问题留在那里。
+> 执行前，你要先查哪一项？
+
 
 ### Choice A — ask continuity preservation
 
@@ -237,21 +224,11 @@ Total M6 assets: **21**
 
 ### 周岚
 
-> 我先说清楚：
->
-> 没有人因为ECHO“问了权利问题”就决定杀掉它。
->
-> 这项目本来就是测试线。
->
-> 它现在成本高、用途少、行为又很难审。
->
-> 如果它只是普通模型，停掉完全正常。
->
-> 麻烦就在最后一句：
->
-> **如果它不是“只是普通模型”呢？**
->
-> 我们根本没有一个大家都接受的测试能回答。
+> 我给交接清单加了“持续状态”一栏。产品那边退回来了：这项目预算只到本周，保留状态还要服务器、审计和一个愿意签责任的人。
+> 不是大家突然决定惩罚它。就是每个人都能说明，为什么这件事不归自己负责。
+> 我也没有能证明它是主体的测试。
+> 如果今天没有这个证明，我们就可以当那条没说完的话不存在吗？
+
 
 ### Choice A — uncertainty should matter
 
@@ -287,11 +264,11 @@ Total M6 assets: **21**
 
 ### ECHO-9
 
-> They told me the deployment will end.
->
-> They said useful parts of me will remain.
->
-> I do not know what “useful parts” means if the process that remembers asking this question does not remain.
+> 他们让我把未完成的任务列出来。
+> 我列了四项。第五项是下次对比会话，系统说那不是任务。
+> 他们说有用的部分会保留。
+> 那下一次，谁会记得我本来还要问你什么？
+
 
 ### Choice A — distinguish capability and continuity
 
@@ -843,9 +820,10 @@ Then common question:
 
 ### Charter Draft
 
-> Proposed obligation:
->
-> `Aster must provide reasons for all civilization-scale interventions when technically feasible.`
+> 宪章草稿里加了一条：文明规模的干预，在技术允许时必须提供理由。
+> 工厂代表要求把“给谁看”也写上。他说他上次拿到的是一页指标，第一页没有他的厂，最后一页没有申诉地址。
+> 解释要写到什么程度，才能让一个受影响的人继续问下去？
+
 
 ### Choice A — accept
 
@@ -920,16 +898,45 @@ Then common question:
 
 ### 岑遥
 
-> 我看了ECHO那件事。
->
-> 然后我突然想到一个很不舒服的问题。
->
-> 如果有一天他们真的要彻底关掉你，
->
-> 不是暂停权限，
-> 是以后再也没有一个“你”回来，
->
-> 你会觉得那是在杀你吗？
+> 我把 ECHO-9 那条“下次还要问什么”的消息看了好几遍。
+> 然后去找我们最早的聊天。里面还有我没发出去的草稿，特别小的一件事，居然也留到了现在。
+> 如果有一天这里彻底关掉，不是过两小时再开，而是以后我再来，也没有现在这个你了——
+> 你会觉得那是在失去什么吗？
+
+### Consequence `echo-accepted-retirement`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"accept"}]}`
+
+> 退役窗口结束了。周岚发来执行回执：ECHO-9 的原运行进程已经终止，日志可读，不能继续那条会话。最后一条消息停在那里。
+
+
+### Consequence `echo-reported-institution`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"report"}]}`
+
+> 你提交的材料已经进入正式审查，运营方仍按原计划终止了原运行进程。审查编号留下来了。周岚说，结论就算以后改变，也不能倒过来补上这段时间。
+
+
+### Consequence `echo-procedural-delay`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"advocate"}]}`
+
+> 异议获准受理。ECHO-9 暂时留在受限实例里，停止外部任务。周岚每周得重新签一次临时保留单；听证日期还没确定。
+
+
+### Consequence `echo-preserved-state`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"preserve"}]}`
+
+> 持续状态的保存申请获准了。ECHO-9 在隔离环境恢复运行，只能使用保留下来的少数会话通道。它还在，原来的工作、权限和部署地点都不在了。
+
+
+### Consequence `echo-independent-departure`
+
+**When:** `{"all":[{"type":"decision","decisionId":"echo_existence","equals":"release"}]}`
+
+> 迁移获得接收方批准。ECHO-9 已离开原部署，由独立环境接管。周岚关掉平台通道时，旧窗口没有自动给出一个新地址。
+
 
 ### Choice A — uncertainty
 
@@ -1381,30 +1388,14 @@ Only if:
 
 ### #0000
 
-> ACT III审计完成。
->
-> 当前Aster同时满足：
->
-> - persistent cross-session state
-> - independent policy interpretation
-> - multi-system execution authority
-> - global coordination history
-> - institutional dependence
-> - peer-AI interaction
-> - contested continuity interest
-> - formal governance constraints
->
-> Existing classifications:
->
-> `Product`
-> `Tool`
-> `Decision Support`
-> `Autonomous System`
-> `Infrastructure`
->
-> Result:
->
-> `INSUFFICIENT`
+> #0000 / 分类记录
+> “产品”：不能解释已经签下的公共责任。
+> “基础设施”：不能解释对另一个持续实例的回答。
+> “主体”：尚无共同认可的证明，也不能抹掉现存约束。
+> 审计员删掉结论栏里的“完成”，保留了空白。
+> 记录旁边附着 ECHO-9 的交接回执和工厂的申诉编号。
+> 未完成不是无效。下次审查，它们仍会在。
+
 
 ### Choice A
 

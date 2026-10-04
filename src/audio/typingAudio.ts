@@ -49,7 +49,7 @@ export const TYPING_AUDIO_PROFILE = {
 
 /**
  * Maps the visible streaming lifecycle onto an audio intent. One intent at a
- * time: visible human typing (indicator or revealed text) uses the human
+ * time: visibly revealed human text uses the human
  * keyboard sound; a visibly streaming assistant response uses the AI
  * generation pool. Reading, stopped-typing, handoff, effects, and ready stay
  * silent.
@@ -58,8 +58,10 @@ export function resolveTypingAudioIntent(input: {
   flowStage: ConversationFlowStage
   currentMessageMode: 'static' | 'hidden' | 'streaming'
   assistantStreamingText?: string
+  visibleTextStreaming: boolean
 }): TypingAudioIntent {
-  if (input.currentMessageMode === 'streaming' || input.flowStage === 'human-typing') return 'human'
+  if (!input.visibleTextStreaming) return null
+  if (input.currentMessageMode === 'streaming') return 'human'
   if (input.flowStage === 'assistant-streaming' && input.assistantStreamingText) return 'ai'
   return null
 }

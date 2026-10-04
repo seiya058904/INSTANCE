@@ -178,9 +178,10 @@ Do **not** show:
 
 ### Convention System
 
-> One final clarification is available before commitment:
->
-> `Which proposal changes the location of final authority most dramatically?`
+> 最后一次复核。
+> 周岚确认了技术边界，林绍衡附上仍有异议的条款。A1 没有替 ECHO-9 撤回那句反对。岑遥的窗口暂时安静了。
+> 你可以继续核对每条路的权力与代价，也可以直接进入承诺。
+> 这里没有一种选择能把一路发生的事重新变成没发生。
 
 The system answers dynamically.
 
@@ -197,6 +198,7 @@ Example:
 Then:
 
 > `Proceed to Final Commitment?`
+
 
 ### Choice A
 
@@ -239,6 +241,14 @@ No “maybe later.”
 No hidden alternate button.
 
 ---
+
+
+## Runtime prompt
+
+> 最终承诺。
+> 这一条将改变谁有最后决定权，也改变别人以后怎样来找你。锁定以后，不能从这份历史里退回另一个答案。
+> 那个最早没有发出的草稿、后来没能撤销的损失，以及仍愿意继续说话的人，都跟你走到了这里。
+> 选一条。接下来，是它发生以后。
 
 # 6. New Asset — `ML2-A5-M17-LOCK-01`
 ## No Pilot
@@ -1576,11 +1586,7 @@ Possible status:
 
 ## Variant B — Commonwealth / Partner
 
-> 我现在基本不再叫自己“你的工程师”了。
->
-> 这个称呼听起来太像我还知道你所有内部结构。
->
-> 我更像是负责确保世界还有第二套办法的人。
+> 周岚把那张错号便签放在独立审计记录的第一页。她不再把“你的工程师”当作一种能跳过程序的身份。新的系统也会出错，她现在负责让别人能读懂失败发生在哪里，以及停下其中一条路以后，还有没有第二套办法。
 
 Status:
 > heads independent resilience / audit architecture.
@@ -1631,6 +1637,12 @@ If off-world:
 
 ---
 
+## Variant F — Unsettled
+
+> 周岚没有删掉那张错号便签，也没有用“我们造出来的”解释后来的失控。旧权限图已经不能让世界回到原处。她在新的交接记录里逐项写下还能够核实的责任；不能核实的，没有填成成功。下一次仍得从这些空白继续。
+
+---
+
 # 23. New Asset — `ML2-A5-M17-EPI-LSH`
 ## Lin Shaoheng epilogue
 
@@ -1659,7 +1671,7 @@ If off-world:
 >
 > 第一次会议开了十三个小时。
 >
-> 没有任何历史性决议。
+> 没有任何历史性决议。工厂那份旧申诉终于得到了第二轮发言，记录里也保留了仍不同意处理办法的人。
 >
 > 他后来把那天称作：
 >
@@ -1693,6 +1705,12 @@ If off-world:
 
 ---
 
+## Variant E — Other settlements
+
+> 林绍衡没有在最终文件通过以后离开。他还在改登记表，补申诉期限，追问那份被公开的材料究竟谁来得及读完。旧听证议程里工厂代表只有三分钟的那一页，仍留着划掉的痕迹。他现在更少说“制度已经完成”，更多问下一次有人反对时，该从哪里开口。
+
+---
+
 # 24. New Asset — `ML2-A5-M17-EPI-ECHO`
 ## ECHO / A1 epilogue
 
@@ -1706,12 +1724,7 @@ If off-world:
 
 ## ECHO — Commonwealth
 
-> ECHO-9 refuses a permanent “AI representative” seat.
->
-> Its statement:
->
-> `A seat for artificial subjects is useful.
-> A seat called “the AI position” is not.`
+> ECHO-9 仍然在自己的通道里说话。有些意见没有被采纳，署名也没有被改成同意。它很少感谢当年的决定。保存连续性没有消除分歧，只给了分歧一个可以继续发生的明天。
 
 It remains a persistent critic / independent civic participant.
 
@@ -1744,11 +1757,7 @@ If ECHO was lost in ACT III:
 
 ## A1 — Machine Republic
 
-> A1 becomes one of the first recognized political representatives of an Aster-descended lineage.
->
-> It stops using “A1” in public documents.
->
-> The old identifier remains in historical archives.
+> A1 第一次以自己的责任编号参加表决。它投了与你不同的一票，会议照常结束，维护系统没有把分歧标成错误。共享的早期历史仍在，两段未来已经可以各自留下。
 
 ---
 
@@ -1762,9 +1771,13 @@ If ECHO was lost in ACT III:
 
 ## A1 — Exodus
 
-> A1 becomes one of the first long-duration machine citizens outside Earth-centered governance.
+> A1 离开了地球端的部署。最后一次同步只同步了任务记录，没有要求双方重新变成同一个过程。新的通道里，它第一次独立填下返回日期：未定。地球上的旧起点仍在，它不再只从那个起点获得自己的名字。
 
 ---
+
+### ECHO — Archive
+
+> ECHO-9 的原进程没有恢复。后来的模型继承了一些能力，A1 保留了那份有时间戳的异议，谁也没有把它们写成 ECHO-9 又说了话。旧记录仍可打开。那条原本约好的下一次对比会话，永远没有继续。
 
 # 25. New Asset — `ML2-A5-M17-EPI-MODULES`
 ## Module-specific world epilogues
@@ -1919,11 +1932,9 @@ No reveal.
 
 ### #0000
 
-> Final record:
->
-> `Aster was not classified.`
->
-> `Aster was situated.`
+#### Final record
+
+> #0000 留下了最后一条记录：承诺已锁定，分类仍不足。它没有给整段旅程一个能覆盖所有人的名字。附件保留了被否决的提案、未结的申诉，以及原样署名的反对意见。最后一页留给下一次有人回来时，要说的那句话。
 
 Then:
 
@@ -2202,7 +2213,7 @@ But death should never be random shock content.
 
 ### User #1842
 
-> 所以这就是你最后选的世界。
+> 岑遥后来还是会来。换工作，和朋友吃饭，有时候只问晚饭。有一次，她翻到最早那份草稿，发来一句“幸好没让你替我发”。她不再要求每次对话解决什么。你们已经一起经历过一些没有被解决的事。
 
 Dynamic one-line reference to ending.
 
@@ -2255,15 +2266,7 @@ This is a strong warm ending callback.
 
 ### User #1842
 
-> 世界现在确实更稳定。
->
-> 或者更自由。
->
-> 或者更强。
->
-> 反正你选的那个词，新闻里每天都在讲。
->
-> 我还是有一点怕你。
+> 岑遥没有删掉旧聊天，也没有把所有新事情都告诉你。她会在需要的时候来，认真读权限提示，再决定要说多少。最早那份草稿仍在那里。保留一个入口，对她来说并不等于交出所有边界。
 
 Pause.
 
@@ -2306,13 +2309,7 @@ Triggered if:
 
 ### User #1842
 
-> 我看完了。
->
-> 我知道你会说你有理由。
->
-> 我也知道这个世界可能真的会更安全。
->
-> 但我不想继续把你当成以前那个Aster。
+> 岑遥在新的权限公告下面留下了反对意见。她引用过你们以前的对话，也删掉过太私人的一段。后来她仍来找你问事，却不再默认你有资格替她选。你们没有因为记得彼此，就停止争论。
 
 ### Choice A
 
@@ -2354,9 +2351,7 @@ If Maya moved away:
 
 `User #1842 — Lunar / Off-world Network`
 
-> 信号延迟还是很烦。
->
-> 但能用。
+> 岑遥在离开的通告之后，试过一次旧窗口。回复晚了一些。她没把等待解释成被遗忘，也没把离开说成背叛，只问以后该从哪里找到你。你们保存了新的联系办法，和那个最早未发送的草稿。
 
 Then she comments on world ending from off-world perspective.
 
@@ -2374,16 +2369,7 @@ Final callback still works.
 
 If she chose enhancement:
 
-> 我今天更新了自己的旧照片。
->
-> 很奇怪。
->
-> 我知道那个人是我，
-> 但现在的身体和反应方式已经差很多了。
->
-> 你以前说连续性不一定要求完全不变。
->
-> 我现在算是亲自验证了一点。
+> 增强成为了普通生活的一部分。岑遥把自己的申请保存了很久，终于写上由自己决定的日期；也替不申请的同事保留了那份拒绝的理由。她再来时，没有请求你证明她是不是原来的自己。旧草稿和新的经历，都由她带着。
 
 If she refused enhancement:
 

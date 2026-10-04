@@ -347,7 +347,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     if (!initialStreaming || !scene) return
     const messages = scene.userMessages ?? [scene.userMessage]
     metrics.current.streamingMs += messages.reduce((sum, message, index) => (
-      sum + getStreamDuration(message, `${scene.id}:initial:${index}`)
+      sum + getStreamDuration(message, `${scene.id}:user:${index}`, 'human')
     ), 0)
     exposeMetrics()
   // This is the one-time initial arrival budget, not a render-driven metric.

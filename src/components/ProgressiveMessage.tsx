@@ -1,13 +1,14 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { getStreamDuration, getVisibleGraphemeCount, segmentGraphemes } from '../game/timing'
 
 interface ProgressiveMessageProps {
   text: string
   streamKey: string
   play: boolean
+  speaker?: 'human' | 'ai'
   announce?: boolean
   className?: string
-  onProgress?: () => void
+  onStreamingChange?: (key: string, active: boolean) => void
   onComplete?: () => void
 }
 
@@ -27,19 +28,26 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
   text,
   streamKey,
   play,
+  speaker = 'ai',
   announce = false,
   className,
-  onProgress,
+  onStreamingChange,
   onComplete,
 }: ProgressiveMessageProps) {
   const graphemes = useMemo(() => segmentGraphemes(text), [text])
   const [visibleCount, setVisibleCount] = useState(play ? 0 : graphemes.length)
   const [complete, setComplete] = useState(!play)
   const reducedMotion = useReducedMotion()
-  const progressRef = useRef(onProgress)
+  const streamingRef = useRef(onStreamingChange)
   const completeRef = useRef(onComplete)
-  progressRef.current = onProgress
+  streamingRef.current = onStreamingChange
   completeRef.current = onComplete
+
+  const streaming = play && !reducedMotion && !complete && visibleCount > 0
+  useLayoutEffect(() => {
+    streamingRef.current?.(streamKey, streaming)
+    return () => streamingRef.current?.(streamKey, false)
+  }, [streamKey, streaming])
 
   useEffect(() => {
     if (!play || reducedMotion || graphemes.length === 0) {
@@ -51,7 +59,7 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
 
     setVisibleCount(0)
     setComplete(false)
-    const duration = getStreamDuration(text, streamKey)
+    const duration = getStreamDuration(text, streamKey, speaker)
     let animationFrame = 0
     let startTime: number | null = null
     let lastVisibleCount = -1
@@ -75,7 +83,6 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
       if (nextCount !== lastVisibleCount) {
         lastVisibleCount = nextCount
         setVisibleCount(nextCount)
-        progressRef.current?.()
       }
       if (nextCount >= graphemes.length) {
         finish()
@@ -89,7 +96,7 @@ export const ProgressiveMessage = memo(function ProgressiveMessage({
       window.cancelAnimationFrame(animationFrame)
       window.clearTimeout(watchdog)
     }
-  }, [graphemes, play, reducedMotion, streamKey, text])
+  }, [graphemes, play, reducedMotion, speaker, streamKey, text])
 
   const visibleText = complete ? text : graphemes.slice(0, visibleCount).join('')
 

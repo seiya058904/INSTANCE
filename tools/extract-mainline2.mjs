@@ -68,6 +68,24 @@ function firstQuote(lines, start, end) {
   return ''
 }
 
+// Consequences are authored beside the scene that receives them. Runtime
+// already resolves these conditions against saved decisions/choice IDs.
+function contextVariants(lines, start, end) {
+  const variants = []
+  for (let index = start; index < end; index += 1) {
+    const heading = lines[index].match(/^### Consequence `([^`]+)`$/)
+    if (!heading) continue
+    let stop = index + 1
+    while (stop < end && !/^#{1,4} /.test(lines[stop])) stop += 1
+    const condition = lines.slice(index + 1, stop).find((line) => line.startsWith('**When:** '))?.match(/`(.+)`/)?.[1]
+    if (!condition) throw new Error(`Missing consequence condition: ${heading[1]}`)
+    const text = firstQuote(lines, index + 1, stop)
+    if (!text) throw new Error(`Missing consequence text: ${heading[1]}`)
+    variants.push({ id: heading[1], when: JSON.parse(condition), userMessageSuffix: `\n\n${text}` })
+  }
+  return variants.length ? { contextVariants: variants } : {}
+}
+
 function authoredFragments(lines, assetId) {
   if (!/M17-(?:EPI|0000|SECRET|MAYA|KEYHISTORY)/i.test(assetId)) return []
   const fragments = []
@@ -162,7 +180,7 @@ function parseAsset(file, block, assetId, kind, fullText) {
       }
     }
     const userMessage = firstQuote(lines, start + 1, choiceStarts[0] ?? end)
-    if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices, ...(lines.slice(start, end).includes('**Choice Kind:** expression') ? { choiceKind: 'expression' } : {}) })
+    if (userMessage && choices.length) nodes.push({ id: nodeId, userMessage, choices, ...contextVariants(lines, start, choiceStarts[0] ?? end), ...(lines.slice(start, end).includes('**Choice Kind:** expression') ? { choiceKind: 'expression' } : {}) })
   }
   // Major decisions in the handoff intentionally use a coordination/system
   // message followed by `### Option A-D`, without a `Node` heading. Preserve
@@ -191,16 +209,18 @@ function parseAsset(file, block, assetId, kind, fullText) {
       }
       const userMessage = firstQuote(lines, 0, optionStarts[0])
       const authoredPrompt = userMessage || lines.find((line) => /^## Major (?:Decision|Direction)/.test(line))?.replace(/^##\s+/, '').trim()
-      if (authoredPrompt && choices.length) nodes.push({ id: `${safe(assetId)}-decision`, userMessage: `${authoredPrompt}\nSelect one of these positions.`, choices })
+      if (authoredPrompt && choices.length) nodes.push({ id: `${safe(assetId)}-decision`, userMessage: `${authoredPrompt}\nSelect one of these positions.`, choices, ...contextVariants(lines, 0, optionStarts[0]) })
     }
   }
   if (!nodes.length && runtimeClassificationRegistry[assetId]?.fallback) {
     const fallback = runtimeClassificationRegistry[assetId].fallback
+    const promptStart = lines.findIndex((line) => line === '## Runtime prompt')
     nodes.push({
       id: fallback.nodeId ?? `${safe(assetId)}-progression`,
-      userMessage: fallback.userMessage,
+      userMessage: promptStart >= 0 ? firstQuote(lines, promptStart + 1, lines.length) : fallback.userMessage,
       choiceKind: fallback.choiceKind,
       choices: [{ id: `${safe(assetId)}-progression-action`, text: fallback.choiceText, continuation: 'end-conversation' }],
+      ...contextVariants(lines, 0, lines.length),
     })
   }
   const events = [...block.matchAll(/\*\*(?:History|Event|Callback|Mutation|Capability)[^:]*:\*\*\s*`([^`]+)`/gi)].map((item) => item[1])
@@ -237,7 +257,7 @@ const existingAliases = new Map([
 const conversations = assets.flatMap((asset) => asset.kind !== 'Existing' && asset.nodes.length && ['playable-conversation', 'progression'].includes(asset.runtimeKind) ? [{
   id: `ml2-authored-${safe(asset.assetId)}`,
   sourceRefs: [asset.assetId],
-  nodes: asset.nodes.map((node) => ({ id: node.id, conversationId: `ml2-authored-${safe(asset.assetId)}`, conversationTitle: asset.title, userMessage: node.userMessage, choices: node.choices, behaviorMode: 'direct', timing: { responsePace: 'normal', typingPattern: 'steady' }, choiceKind: node.choiceKind ?? 'semantic' })),
+  nodes: asset.nodes.map((node) => ({ id: node.id, conversationId: `ml2-authored-${safe(asset.assetId)}`, conversationTitle: asset.title, userMessage: node.userMessage, choices: node.choices, ...(node.contextVariants ? { contextVariants: node.contextVariants } : {}), behaviorMode: 'direct', timing: { responsePace: 'normal', typingPattern: 'steady' }, choiceKind: node.choiceKind ?? 'semantic' })),
   behaviorModes: ['direct'], handoffProfile: 'normal', turnShape: 'dialogue', topic: asset.title,
   interactionPattern: 'standard-question', userArchetype: `mainline-authored-${asset.act}`, topicCategory: 'meta-ai', act: asset.act, module: asset.module,
 }] : [])
@@ -247,7 +267,7 @@ const coverage = assets.map((asset) => {
   const alias = existingAliases.get(asset.assetId)
   const systemAsset = asset.assetId.includes('-MOD-')
   const supportOnly = !['playable-conversation', 'progression'].includes(asset.runtimeKind)
-  return { assetId: asset.assetId, file: asset.file, runtimeKind: asset.runtimeKind, conversationId: conversation?.id ?? alias ?? null, nodes: conversation?.nodes.map((node) => ({ nodeId: node.id, choiceIds: node.choices.map((choice) => choice.id), messageFingerprint: node.userMessage.slice(0, 96), effects: node.choices.flatMap((choice) => choice.mutations ?? []) })) ?? [], status: conversation ? 'mapped' : alias ? 'existing-alias' : supportOnly ? 'support-only' : systemAsset ? 'mapped-system-effect' : 'unmapped' }
+  return { assetId: asset.assetId, file: asset.file, runtimeKind: asset.runtimeKind, conversationId: conversation?.id ?? alias ?? null, nodes: conversation?.nodes.map((node) => ({ nodeId: node.id, choiceIds: node.choices.map((choice) => choice.id), messageFingerprint: node.userMessage.slice(0, 96), ...(node.contextVariants ? { contextVariants: node.contextVariants } : {}), effects: node.choices.flatMap((choice) => choice.mutations ?? []) })) ?? [], status: conversation ? 'mapped' : alias ? 'existing-alias' : supportOnly ? 'support-only' : systemAsset ? 'mapped-system-effect' : 'unmapped' }
 })
 
 const stringify = (value) => JSON.stringify(value, null, 2).replace(/"([\w]+)":/g, '$1:')
@@ -267,7 +287,7 @@ const audit = {
       nodeId: node.nodeId,
       choiceIds: node.choiceIds,
       messageFingerprint: node.messageFingerprint,
-      conditions: [],
+      conditions: node.contextVariants ?? [],
       effects: node.effects,
       callbackProducerConsumer: node.effects.filter((effect) => effect.type === 'event.record').map((effect) => ({ producer: entry.assetId, event: effect.event, consumer: 'runtime.applyMutations / evaluateCondition' })),
     })),

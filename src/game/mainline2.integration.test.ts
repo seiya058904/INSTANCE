@@ -116,7 +116,8 @@ describe('Mainline 2.0 runtime', () => {
     expect(SECRET_ENDINGS.the_internet_is_for_cats.reason).toContain('feline')
     const completed = complete('0000-fixture')
     const ending = completed.ending
-    expect(ending.epilogues?.join(' ')).toContain('not classified')
+    expect(ending.epilogues?.join(' ')).toContain('分类仍不足')
+    expect(ending.secretOverlay?.endingId).not.toBe('the_internet_is_for_cats')
   })
 
   it('does not resolve a clean run to a public ending commitment', () => {

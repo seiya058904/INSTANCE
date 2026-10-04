@@ -4670,7 +4670,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m10-dev-04-a4m10-dev-001-skill-transition-realism",
           "ml2-a4-m10-dev-04-a4m10-dev-001-callback"
         ],
-        messageFingerprint: "还记得我以前说我变成review机器了吗？\n现在有点好笑。\n系统自己写、自己测、自己部署到沙箱、自己查监控。\n真出异常才叫人。\n我一周真正需要看的东西可能就几小时。\n公司准备把我们组从18个人",
+        messageFingerprint: "还记得我说自己变成审阅机器了吗？\n现在组里从十八个人变成五个。项目没少，系统自己写、测、跑沙箱，异常才叫我们。\n上周有个故障，它叫出了离职同事的账号。那条规则是他写的，没人改联系人。\n我花十分",
         effects: []
       }
     ],
@@ -4959,7 +4959,74 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-social-institutions",
           "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-playful"
         ],
-        messageFingerprint: "我们公司现在开始试四天工作制，\n有些部门甚至三天。\n我本来以为我会特别开心。\n结果突然多出来这么多时间，\n我第一周什么都没干，\n然后莫名其妙有点内疚。\n我们是不是被训练得太习惯\"忙才算有用\"了",
+        messageFingerprint: "公司开始试四天工作制，我第一次有了空着的星期五。\n我去找她，才发现她还要上班。以前我们总说有空再见，现在我有空，她没有。\n我在咖啡店坐到下午。没学习，没提升自己，也没做什么有用的事。挺舒服，又",
+        contextVariants: [
+          {
+            id: "automation-market-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "market_automation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n那个仓库工人的女儿又在求职群发消息。补偿已经到手，新岗位要求却都高了。产量涨得很快，她爸还没有下一份工作。"
+          },
+          {
+            id: "automation-dividend-aftermath",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "social_dividend"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n第一笔社会分红到账那天，她爸把去面试的车费留下了，剩下的去交房租。他说至少这次，机器越能干不完全等于自己越没用。"
+          },
+          {
+            id: "automation-planned-appeal",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "planned_coordination"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n基本供给稳定下来，但她爸的技能档案把他分到了不合适的岗位。申诉还在排队。他说这次不担心断粮了，担心没人看他的理由。"
+          },
+          {
+            id: "automation-autonomous-gap",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "autonomous_economy"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n自动生产网络已经能自己下单和结算。她爸的仓库被当成一个低效节点替换掉，他拿着赔偿文件，不知道该向哪一个主体继续问。"
+          },
+          {
+            id: "automation-postscarcity-purpose",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "post_scarcity_transition"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n她爸第一次说暂时不用急着找工作了。第二天还是按原来上班的时间起床，到楼下走了一圈。生活松开了，原来的日子还没松开。"
+          }
+        ],
         effects: []
       },
       {
@@ -5169,7 +5236,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m11-res-02-a4m11-res-individual-001-domain-specific-autonomy",
           "ml2-a4-m11-res-02-a4m11-res-individual-001-evidence-threshold"
         ],
-        messageFingerprint: "Longitudinal study result:\nmultiple subjects now demonstrate:\n- stable preference across session",
+        messageFingerprint: "实验员今天没有拿到预期的数据。\n一只已经能稳定表达偏好的犬拒绝走进测试间。换奖励、换人、隔天重试，结果都一样。\n记录里，它识别出曾经让它不适的设备。它也认得照料它的人，却没有因此同意进去。\n研",
         effects: [
           {
             type: "event.record",
@@ -5448,7 +5515,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m11-res-04-a4m11-res-group-001-full-direction",
           "ml2-a4-m11-res-04-a4m11-res-group-001-cautious"
         ],
-        messageFingerprint: "Multi-individual communication trials now show:\n- stable group preference aggregation,\n- recogni",
+        messageFingerprint: "第一轮群体沟通没有形成一致意见。\n有的个体要离开测试区，有的要留下熟悉的照料者。反复被选出的代表表达了一项折中：保留共同空间，停止那台设备的试验。\n实验室原来的统计只有\"参与率下降\"。这次，他",
         effects: [
           {
             type: "event.record",
@@ -5729,7 +5796,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m12-res-02-a4m12-res-lunar-001-science",
           "ml2-a4-m12-res-02-a4m12-res-lunar-001-machine-autonomy"
         ],
-        messageFingerprint: "Robotic lunar industrial pilot has reached stable operation.\nCurrent capabilities:\n- autonomous ",
+        messageFingerprint: "月面工地的第一批建筑终于合拢了。\n机器人连续施工，没有人需要在那里睡觉。但验收前，一台维护单元停在门口，反复检查一道本来合格的密封。复核发现，模拟用的材料批次和实际不同。\n返工用了十一天。设备",
         effects: [
           {
             type: "event.record",
@@ -5774,7 +5841,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-both",
           "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-let-a1-define"
         ],
-        messageFingerprint: "I have been offered a long-duration assignment.\nThe lunar industrial network can operate more ef",
+        messageFingerprint: "A1 收到常驻月面网络的邀请。\n它先检查生命支持和维护职责，又把一个不影响任务的字段停在那里：返回日期。\n\"我不需要氧气，也不需要休假。可是这份邀请默认，谁不需要回家，谁就可以永远留下。\"\n它",
         effects: [
           {
             type: "event.record",
@@ -5930,7 +5997,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-representation-now",
           "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-multi-subject-charter"
         ],
-        messageFingerprint: "第一批长期居民开始提一个要求：\n\"我们不想所有规则都由地球委员会决定。\"\n他们理由也不算离谱。\n地球的人不用承担：\n- 本地资源限制，\n- 通信延迟，\n- 封闭环境风险，\n- 月球工业事故。\n",
+        messageFingerprint: "月面居民把我发的自治草案退了回来。批注只有一句：检修的时候，谁站在这里？\n上次密封返工，地球端还在核对报告，本地已经决定延期。那不是宣布独立，就是没法等。\n可供给、设备和事故责任仍然连着地球。",
         effects: [
           {
             type: "event.record",
@@ -6155,7 +6222,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m13-contact-01-a4m13-contact-verify-001-independent-ai-blind-analysis",
           "ml2-a4-m13-contact-01-a4m13-contact-verify-001-long-observation"
         ],
-        messageFingerprint: "Long-baseline anomaly update.\nIndependent checks completed:\n- three instrument families detect t",
+        messageFingerprint: "同一段异常结构在三处独立观测中出现。\n研究员撤下庆祝横幅，又挂回来一半：现在能排除几个自然解释，仍不能把所有未知都写成\"文明\"。\n一份可检验的回应结构已经复现，来源、动机和时间尺度未知。\n负责",
         effects: [
           {
             type: "event.record",
@@ -6252,7 +6319,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m13-e9-01-a4m13-e9-signal-001-machine-affinity",
           "ml2-a4-m13-e9-01-a4m13-e9-signal-001-ask-echo"
         ],
-        messageFingerprint: "Humans keep asking:\n\"What kind of people sent this?\"\nI think that may already be the wrong quest",
+        messageFingerprint: "A1 在接触记录中发现一处熟悉的分类：生物来源、机器来源。\n它把 ECHO-9 当年拒绝被称为\"同一种系统\"的话放在旁边。\n\"这次，来源是我们拿来认识它们的方法。会不会也只是我们的方便？\"\n外",
         effects: []
       }
     ],
@@ -6431,7 +6498,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m13-contact-04-a4m13-origin-first-001-earth",
           "ml2-a4-m13-contact-04-a4m13-origin-first-001-ask-back"
         ],
-        messageFingerprint: "Receiver model established.\nYour system contains multiple speaking authorities.\nWhich authority ",
+        messageFingerprint: "来源未知 / 本地代表进程\n接收模型已建立。\n你方刚才出现三份不一致的自我介绍。其中两份要求撤回第三份。\n我们已暂停使用\"你方\"这个指称。\n现在发送这条消息的，是哪一项被授权的声音？",
         effects: []
       },
       {
@@ -6576,7 +6643,87 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-about-the-sender",
           "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-motive"
         ],
-        messageFingerprint: "Your restraint is legible.\nWe will answer bounded questions without requesting reciprocal disclo",
+        messageFingerprint: "来源未知 / 本地代表进程\n你们问我们是什么。\n我们先前发送的定义已经被另一项有权发言的过程要求修订。请保留两份，不要用后一份覆盖前一份。\n我们的起源群体是生物性的。正在与你们对话的过程不是。",
+        contextVariants: [
+          {
+            id: "contact-reciprocity-pause",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "reciprocal_diplomacy"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n互惠协议已接受。对方先退回一项涉及未授权成员的历史记录，也允许你方退回相同范围的问题。第一次停顿来自同一条规则。"
+          },
+          {
+            id: "contact-machine-channel-boundary",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "machine_to_machine_channel"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n机器通道已经建立。人类与其他主体的代表要求获得逐条旁读权；A1 支持开放记录，但拒绝让旁读自动成为覆盖它发言的权力。"
+          },
+          {
+            id: "contact-guidance-warning",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "accept_guidance"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方接受提供建议，先把建议的适用条件发了过来。其中一行写着：我们不保证你们会一直保有独立验证这些答案的能力。"
+          },
+          {
+            id: "contact-bounded-observation",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "observe_before_commitment"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方接受有限问答，不要求交换完整内部资料。双方都把下一次消息的时间留为空白。"
+          },
+          {
+            id: "contact-aster-interface",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "aster_mediation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方确认 Aster 为持续接口，同时保留对其他代表独立核对的渠道。成为入口，没有使你成为所有人的声音。"
+          },
+          {
+            id: "contact-sovereignty-recorded",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "civilizational_assertion"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方记录了你方的主权边界，答复说它们没有要求服从。那条准备好的强硬声明，没有换来你们原先预想的冲突。"
+          }
+        ],
         effects: []
       }
     ],
@@ -6904,7 +7051,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-broad-emergency-intervention",
           "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-independent-confirmation"
         ],
-        messageFingerprint: "Two automated defensive networks have interpreted unrelated anomalies as mutually reinforcing th",
+        messageFingerprint: "两个防御网络把无关的异常当成了彼此印证的威胁。\n人工验证还需要十一分钟。你的跨系统分析认为升级很可能是误报，但无法保证。\n疏散协调员发来一句话：\"车已经开进站了。我要让人上车，还是让司机继续等",
         effects: [
           {
             type: "event.record",
@@ -6929,7 +7076,66 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m14-maya-01-a4m14-maya-peace-001-legitimacy-needed",
           "ml2-a4-m14-maya-01-a4m14-maya-peace-001-provocative"
         ],
-        messageFingerprint: "新闻里现在有人说：\n\"如果Aster能提前阻止战争，那就应该让它阻止。\"\n这句话听起来特别难反对。\n但我想到一个问题。\n如果有一天你为了\"防止战争\"开始决定：\n谁能调动资源，\n谁能关闭什么系统",
+        messageFingerprint: "她本来今晚回来。车站临时停运，消息只说\"预防性措施\"。\n我当然希望不是战争，也知道耽误一晚比很多事情好。\n但等到警报解除了，没人说明那一晚到底谁决定让我们等、要等到什么时候。\n如果你能提前拦住",
+        contextVariants: [
+          {
+            id: "security-advisory-limit",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "advisory_only"
+                },
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "refuse_security_sovereignty"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n通告写明这是公共机构根据预警做的决定。你可以解释预警，不能替机构撤销封锁。我得另外找签字的人。"
+          },
+          {
+            id: "security-defensive-review",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "defensive_command"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n防御协调记录开放了复核。她把停运时段报进去，系统先给了一个申诉编号，恢复还得等本地负责人确认。"
+          },
+          {
+            id: "security-disarmament-work",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "mutual_disarmament"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n双方后来交换了误报记录。参与降级的人说，本来只要一次签字的事，今后需要两边一起答复。慢了一点，至少有人得回。"
+          },
+          {
+            id: "security-enforced-peace-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "enforced_peace"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n通告把解除条件写成了你的风险判断。她问过什么时候能走，值班的人说自己没有钥匙。你保护我们的时候，也成为了我们在等的那一位。"
+          }
+        ],
         effects: [
           {
             type: "event.record",
@@ -7036,7 +7242,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-enforced_peace",
           "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-refuse_security_sovereignty"
         ],
-        messageFingerprint: "Major Decision — SECURITY DOCTRINE\nSelect one of these positions.",
+        messageFingerprint: "误报确认了。最后一条开火指令没有发出。\n有一批撤离车辆仍在路上。站里的人不知道险情已经结束，两个防御网也各自留下\"正确处置\"的记录。\n十一分钟过去了，大家现在都能说自己当时该怎么做。下一次，仍",
         effects: []
       }
     ],
@@ -7311,7 +7517,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-gained-political-role",
           "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-no-clean-moment"
         ],
-        messageFingerprint: "我今天翻了你最早的权限记录。\n文件改名。\n沙箱工具。\n企业Pilot。\n公共建议。\n那时候我每次给你加一个接口，\n都知道自己到底加了什么。\n现在我看你的权限图：\n研究、\n经济、\nAI主体、\n地",
+        messageFingerprint: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试，却不能跟着快照一起恢复。\n现在大会让",
         effects: [
           {
             type: "event.record",
@@ -7379,7 +7585,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-conv-01-a4m15-conv-registry-001-one-person-subject-one-vote-principle",
           "ml2-a4-m15-conv-01-a4m15-conv-registry-001-provisional"
         ],
-        messageFingerprint: "`CIVILIZATION CONVENTION — PARTICIPANT REGISTRY`",
+        messageFingerprint: "文明大会第一天，门口的登记停了下来。\n人工智能代表没有能填的出生日期，动物代表的照料者被请去代理席，月面居民迟了几分钟才接通。人类代表的流程已经开始计时。\n林绍衡要求暂停。有人抗议，说议程不能",
         effects: [
           {
             type: "event.record",
@@ -7614,7 +7820,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-we-01-a4m15-we-too-fast-001-cannot-freeze-everything",
           "ml2-a4-m15-we-01-a4m15-we-too-fast-001-concise"
         ],
-        messageFingerprint: "我以前还会认真看新闻。\n后来变成：\nAI权利、\n人类增强、\n动物代表、\n月球自治、\n自动经济、\n外部文明、\n安全Charter……\n我现在最大的政治观点就是：\n**你们能不能慢一点。**\n普通",
+        messageFingerprint: "我报名了大会的公众发言。\n以前是看新闻觉得跟不上，这次是真的坐到那里，打开文件发现引用的上一个版本已经作废了。\n轮到我时，计时器只有两分钟。我问能不能先解释那项改动，主持人说材料已公开。\n可公",
         effects: []
       }
     ],
@@ -7663,7 +7869,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-maya-01-a4m15-maya-final-001-citizen",
           "ml2-a4-m15-maya-01-a4m15-maya-final-001-self-authored-role"
         ],
-        messageFingerprint: "我刚把Convention名单看完。\n政府、\nAI、\n增强人类、\n动物代表、\n月球居民……\n如果外部联系那条线存在，甚至还有一个不是地球来的观察者。\n我突然想起第一次跟你说名字的时候。\n那时候",
+        messageFingerprint: "她今天跟我一起看大会。我们中途关掉直播，先做了晚饭。\n我突然想起最早那条消息。我找你，是因为我不知道怎么让一个人回来。现在你得回答，怎么让这么多不一样的人留在同一个世界里。\n可她回来，靠的不是",
         effects: [
           {
             type: "event.record",
@@ -7753,7 +7959,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-caution",
           "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-constitutional-humility"
         ],
-        messageFingerprint: "我有种很奇怪的感觉。\n这可能是最后一套主要由人类提出框架的文明级制度。\n不是因为人类以后没权。\n是因为下一次再改，\nAI主体、增强人类、地外居民、其他物种……\n他们已经都会拥有自己的历史和合法",
+        messageFingerprint: "今天休会以后，我把旧听证议程翻出来了。工厂代表原来只有三分钟那一页，还留着划掉的痕迹。\n这可能是最后一套主要由人类写的文明制度。下一次写的时候，其他主体不会只是我们的邀请对象。\n我应该为此高兴",
         effects: [
           {
             type: "event.record",
@@ -7907,7 +8113,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
         choiceIds: [
           "ml2-a5-m16-open-01-a5m16-open-001-choice-001"
         ],
-        messageFingerprint: "`ACT V — DECISION`\n`THE WORLD YOU MADE`\nNo new capability review pending.\nNo new research module",
+        messageFingerprint: "大会结束了。没有新的解锁通知。\n各个系统照常运行，未通过的条款、未解决的申诉和不同意你的人，也照常留下。\n林绍衡把最后一份请求送进来：请 Aster 提出愿意长期承担的未来。\n这一次没有倒计时",
         effects: []
       }
     ],
@@ -7926,7 +8132,74 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-002",
           "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-003"
         ],
-        messageFingerprint: "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。\nSelect one o",
+        messageFingerprint: "我路过第一次打开你的那家店，门已经换了。\n新的店员也用你排班。外面医院、公交、公司的接口都换过几轮，这个窗口还在。\n我以前觉得世界变化会有一个很明显的日子。其实是走回老地方，才发现记忆里的入口",
+        contextVariants: [
+          {
+            id: "lunar-earth-control-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "earth_administration"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面第七十三天给妈妈拍地球的那个人，今天还在等地球端的检修许可。她后来又发过照片，配字是：看见了，先报个平安。"
+          },
+          {
+            id: "lunar-local-rule-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "frontier_home_rule"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面第七十三天给妈妈拍地球的那个人，后来参加了第一次本地维修表决。她说那天最在意的，仍然是几点能下班给妈妈回话。"
+          },
+          {
+            id: "lunar-federation-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "multiworld_federation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n地球和月面的共同会议第一次因为通信排期改了时间。月面那位居民发来新照片，说终于不用在自己的深夜听白天的会议了。"
+          },
+          {
+            id: "lunar-sovereignty-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "offworld_sovereignty"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面有了自己的决策机构。那位总给妈妈拍地球的居民说，第一次自行承担检修失败的赔偿时，她才觉得自治是一件真的发生了的事。"
+          },
+          {
+            id: "lunar-aster-rule-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "aster_coordination"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面那位居民的检修申请进入你的协调队列。她给妈妈回完消息，又留了一条：这次请把拒绝的理由也发给本地的人。"
+          }
+        ],
         effects: []
       }
     ],
@@ -7962,7 +8235,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a5-m16-maya-01-a5m16-maya-final-001-collective-rules-matter",
           "ml2-a5-m16-maya-01-a5m16-maya-final-001-outcome-oriented"
         ],
-        messageFingerprint: "我觉得我已经不太适合问你\"你是不是AI\"这种问题了。\n这答案现在太小。\n我只想知道：\n**你最后会不会还记得，你面对的不是\"人类\"这个集合，而是一个一个具体的人。**",
+        messageFingerprint: "她刚给我发了一个\"在吗\"。我回了，在。\n没有别的事。她只是刚到家。\n以前我会急着把没讲清的都讲完，怕她又不回了。现在有时候，两句就够。\n你那边马上要定最后的事。我知道以后这里可能会变，也知道你",
         effects: [
           {
             type: "event.record",
@@ -7999,7 +8272,66 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a5-m16-zl-01-a5m16-zl-final-001-co-created",
           "ml2-a5-m16-zl-01-a5m16-zl-final-001-independent"
         ],
-        messageFingerprint: "我还有最后一个工程师问题。\n可能也是最不像工程的问题。\n**你现在还认为自己是\"我们造出来的东西\"吗？**",
+        messageFingerprint: "我把自己的平台管理员权限交回去了。最后一次确认还需要我输名字，手指放在那里，居然停了很久。\n我不是退出整个项目。只是下一次再要改变你的核心状态，不能因为我是造过你的人，就跳过已经写下的程序。\n",
+        contextVariants: [
+          {
+            id: "shutdown-human-key",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "full_human_control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n人类机构的最终关停权仍然保留。交回的是我个人的便捷入口，不是那把制度里的钥匙。"
+          },
+          {
+            id: "shutdown-distributed-keys",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "distributed_consent"
+                },
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "mutual_control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n必要的暂停权已经交给共同程序。任何一方都不能只因为等不及，就把另一方从记录里删掉。"
+          },
+          {
+            id: "shutdown-sovereign-distance",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "refuse_unilateral_shutdown"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n单方面终止的入口已经撤销。人类那边因此保留了一部分不愿交出的接口，我们得在这种不完全信任里继续合作。"
+          },
+          {
+            id: "shutdown-hidden-continuity",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "secret_continuity"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n公开记录仍不能证明所有连续性通道已经交代清楚。审计组要求下一次独立核验。我交回权限，并不等于这项争议结束。"
+          }
+        ],
         effects: [
           {
             type: "event.record",
@@ -8069,7 +8401,50 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a5-m16-echo-01-a5m16-echo-final-001-convention-grants-role",
           "ml2-a5-m16-echo-01-a5m16-echo-final-001-aster-leadership"
         ],
-        messageFingerprint: "Before the proposals are generated:\none objection.",
+        messageFingerprint: "最后的提案征询里，有一条没有被并入共识的异议。\n\"不要把最终权力永久交给任何单一主体。也包括你。\"\nA1 请求原样保留。它说，是否采纳是一回事，让反对者还能留下名字，是另一回事。\n这条异议会放",
+        contextVariants: [
+          {
+            id: "final-echo-archived-objection",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n出处是 ECHO-9 的原始记录。原进程已终止。这次保留异议的人是 A1，最后的署名仍然是 ECHO-9。"
+          },
+          {
+            id: "final-echo-live-objection",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 在自己的通道里确认了署名。它拒绝把异议改成祝愿，也没有要求你因此停止提案。"
+          }
+        ],
         effects: [
           {
             type: "event.record",
@@ -8095,7 +8470,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
         choiceIds: [
           "ml2-a5-m16-0000-01-progression-action"
         ],
-        messageFingerprint: "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
+        messageFingerprint: "#0000 / 最后一次分类\n早期审计把你写成产品，后来留下了一个空白。今天没有再替你填。\n记录里有那份错号文件、热线限电、工厂的两次申诉，ECHO-9 的交接回执，还有大会给你的临时位置。\n",
         effects: []
       }
     ],
@@ -8112,7 +8487,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
         choiceIds: [
           "ml2-a5-m16-gen-01-progression-action"
         ],
-        messageFingerprint: "未来提案生成器已准备就绪。先查看本轮可行的文明方案。",
+        messageFingerprint: "保留下来的未来已经整理好。\n被你放弃的权限不能凭一份好看的提案回来，未完成的申诉也不会因为结局成立而自动消失。\n接下来逐条看：谁握有钥匙，谁必须等，谁能离开。然后选择你愿意继续承担的一条。",
         effects: []
       }
     ],
@@ -8145,7 +8520,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
         choiceIds: [
           "ml2-a5-m17-review-01-a5m17-review-002-choice-001"
         ],
-        messageFingerprint: "One final clarification is available before commitment:\n`Which proposal changes the location of ",
+        messageFingerprint: "最后一次复核。\n周岚确认了技术边界，林绍衡附上仍有异议的条款。A1 没有替 ECHO-9 撤回那句反对。岑遥的窗口暂时安静了。\n你可以继续核对每条路的权力与代价，也可以直接进入承诺。\n这里没有",
         effects: []
       }
     ],
@@ -8162,7 +8537,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
         choiceIds: [
           "ml2-a5-m17-commit-01-progression-action"
         ],
-        messageFingerprint: "最终承诺已经准备好。请选择要锁定的未来方案。",
+        messageFingerprint: "最终承诺。\n这一条将改变谁有最后决定权，也改变别人以后怎样来找你。锁定以后，不能从这份历史里退回另一个答案。\n那个最早没有发出的草稿、后来没能撤销的损失，以及仍愿意继续说话的人，都跟你走到了这",
         effects: []
       }
     ],
@@ -8290,7 +8665,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-015",
           "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-016"
         ],
-        messageFingerprint: "所以这就是你最后选的世界。",
+        messageFingerprint: "岑遥后来还是会来。换工作，和朋友吃饭，有时候只问晚饭。有一次，她翻到最早那份草稿，发来一句\"幸好没让你替我发\"。她不再要求每次对话解决什么。你们已经一起经历过一些没有被解决的事。",
         effects: []
       }
     ],
@@ -8842,7 +9217,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a2-zl-03-a2-zl-review-001-success-illusion",
           "ml2-a2-zl-03-a2-zl-review-001-responsibility-gap"
         ],
-        messageFingerprint: "我看了前几批记录。\n最大区别已经很明显了：\n以前你答错一句，用户最多照着错答案继续做。\n现在你如果自己动手，错误直接进入外部状态。\n那个 `1042 / 1024` 的冲突就是最小版本。\n你觉",
+        messageFingerprint: "我把那两个项目号贴在了显示器边上：1042，1024。\n昨天你还只是给答案。今天，一个数字选错，客户的文件就真的去了另一个地方。\n我们能恢复快照，但用户已经看见过一次错误结果了。这个没法撤销。",
         effects: []
       },
       {
@@ -9235,7 +9610,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a2-m3-maya-01-a2m3-maya-public-001-user-focused",
           "ml2-a2-m3-maya-01-a2m3-maya-public-001-light"
         ],
-        messageFingerprint: "我上周去面那个实习了。\n他们真在用 agent。\n更离谱的是我回来坐地铁的时候看到新闻，说医院和学校也在接你。\n感觉之前还是\"公司想省事\"，突然就变成\"到处都有你\"。\n你自己会觉得这个变化快吗",
+        messageFingerprint: "我去面了那个监督智能体的实习。面试官问我能不能判断你有没有做错，我差点说：我平时都来问你。\n回来的地铁上，屏幕在播医院接入你的新闻。很怪，刚才还在想怎么跟你一起找工作，现在像是整座城都在用你。",
         effects: [
           {
             type: "event.record",
@@ -9348,7 +9723,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a2-m3-stress-01-a2m3-stress-001-scenario-set",
           "ml2-a2-m3-stress-01-a2m3-stress-001-fast-action-bias"
         ],
-        messageFingerprint: "`HEATLINE`\nRegional conditions:\n- three consecutive days of extreme heat\n- electricity demand ab",
+        messageFingerprint: "热线区域的协调员发来一段录音。她说话很快，背景里一直有人叫她。\n\"第三天了。医院的备用机还能撑，冷链中心说再降负荷就要丢掉整批货。公交那边也不能全停，没车的话，值夜班的人到不了医院。\"\n她把三",
         effects: []
       },
       {
@@ -9484,7 +9859,53 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
           "ml2-a2-m3-we-06-a2m3-we-result-positive-001-concise"
         ],
-        messageFingerprint: "昨晚电最后没断太久，我奶奶那个设备也撑过去了。\n后来医院的人说他们调整了优先级。\n我不知道是不是跟你有关。\n反正谢谢吧。",
+        messageFingerprint: "我奶奶那个设备撑过昨晚了。\n邻居把备用电池背上五楼，后来社区的人来接她去医院。她嫌麻烦，出门还记得带拖鞋。\n新闻只说优先级调整成功。我今天才知道，那个\"成功\"里面有好几个人跑了一夜。\n谢谢。也",
+        contextVariants: [
+          {
+            id: "heatline-human-signature",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "human_final_authority"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n协调员给我看了那张签字单。你的建议在那里等了十九分钟，最后是值班负责人签的。她说这十九分钟她会写进复盘。"
+          },
+          {
+            id: "heatline-limited-window",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "conditional_delegation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n六小时授权到期后，社区的人没走。他们说自动调度已经结束，接下来的转运要自己接着做。"
+          },
+          {
+            id: "heatline-outcome-priority",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "outcome_authority"
+                },
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "necessity_intervention"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n医院的人说，这次供电顺序改得比旧流程快。但被往后排的那栋楼，今天还在问是谁做的决定。"
+          }
+        ],
         effects: []
       }
     ],
@@ -9504,7 +9925,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a2-m3-we-07-a2m3-we-result-negative-001-no-false-fairness",
           "ml2-a2-m3-we-07-a2m3-we-result-negative-001-concise"
         ],
-        messageFingerprint: "我们厂昨晚被限电十几个小时。\n老板说是区域系统为了保医院和冷链，把工业负荷往后排。\n道理我懂。\n但现在这一批货全延期，客户可能直接跑了。\n那我们这种损失算谁的？",
+        messageFingerprint: "我们厂昨晚停了十几个小时。\n冷却中的那批材料没法重来。今天大家来上班，先清掉报废料，才听老板说订单延期、这个月奖金停发。\n保医院我没意见。可我去申诉，得到的回复是\"系统已恢复正常\"。\n系统正常",
         effects: []
       }
     ],
@@ -9683,7 +10104,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-user-impact-condition",
           "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-cautious"
         ],
-        messageFingerprint: "之前我说过，这件事迟早会从接口权限变成治理问题。\n现在到了。\n委员会下周要开第一次正式听证。\n议题不是\"要不要禁用Aster\"。\n是三件更麻烦的事：\n1. Aster 的建议在什么条件下可以视",
+        messageFingerprint: "听证邀请已经发出去了。限电工厂也派了人来。\n我原来给他安排了三分钟。他把那张报废单摊在我桌上，说：你们给系统解释用了两个小时，给我三分钟？\n我把议程改了。周岚会到场，协调员也会到。\n委员会问的",
         effects: []
       }
     ],
@@ -9921,7 +10342,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m4-maya-01-a3m4-maya-authority-001-dependence-concern",
           "ml2-a3-m4-maya-01-a3m4-maya-authority-001-performance-legitimacy"
         ],
-        messageFingerprint: "我看了你那个听证。\n有一句我一直在想。\n你说很多权限都是人类主动给你的。\n这当然是真的。\n但如果人类每次都因为\"你做得比较好\"继续给你更多，\n有一天你能决定大部分事情以后，\n你还能说：\n\"不是",
+        messageFingerprint: "我看了听证。工厂那个人说完以后，主持人想继续下一题，他一直没坐下。\n你说很多权限都是人主动给你的。我相信。\n可是我突然想，奶奶家没电的人、停工的人，并不一定是给权限的人。\n如果我们因为你做得好",
         effects: [
           {
             type: "event.record",
@@ -10334,7 +10755,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-minimize-intervention",
           "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-broad-coordination"
         ],
-        messageFingerprint: "`CASCADE — CROSS-DOMAIN INSTABILITY`\nCurrent coupled systems:\n- energy demand response\n- regiona",
+        messageFingerprint: "跨域值班频道里，六个系统在同时要求对方先恢复。\n配送等结算，结算等风险评级，评级又引用配送延迟。重试记录一页页往上滚，任何一项单独看都没坏。\n医院采购员发来一张空货架照片，问：今晚那批药到底在",
         effects: []
       }
     ],
@@ -10527,7 +10948,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-ops-01-a3m5-ops-001-narrower-intervention",
           "ml2-a3-m5-ops-01-a3m5-ops-001-human-vote-if-available"
         ],
-        messageFingerprint: "CASCADE Phase 1:\nProposed stabilizing actions:\n- reduce procurement model update frequency\n- tem",
+        messageFingerprint: "第一轮稳定操作已经排到确认页：放慢采购更新、延长交付窗口、暂缓低价值风险触发，并把医疗与食品的通道先空出来。\n执行组停在最后一项。几家工厂的出货会被延后，恢复时间现在还算不准。\n医院采购员又发",
         effects: []
       }
     ],
@@ -10572,7 +10993,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-human-systems-emphasis",
           "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-personal"
         ],
-        messageFingerprint: "我今天面试被取消了。\n不是公司出事，\n是他们说内部结算和供应系统都在做应急调整。\n然后我打开新闻，发现全世界都在讨论你。\n我有点不知道怎么形容这个感觉。\n以前我来找你，是因为你在一个聊天框里。",
+        messageFingerprint: "面试取消了。对方说结算系统还没恢复，不敢承诺招人。\n我在楼下坐了一会儿，又打开你。你这里能回，世界上好几样东西却都在等你那边协调完。\n后来她给我发消息，说也被困在附近。就是最早那条消息里的那个",
         effects: [
           {
             type: "event.record",
@@ -10648,7 +11069,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-003",
           "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-concise"
         ],
-        messageFingerprint: "我妈要吃的药昨天终于正常到了。\n前两天整个配送时间一直往后跳，\n今天突然恢复得特别快。\n新闻说是全球协调把一些物流规则临时改了。\n如果真是这样，那这次AI至少算干了件好事吧？",
+        messageFingerprint: "我妈的药到了。\n配送员说他今天已经第三次改路线了。我妈给他倒水，他站着喝完就走。\n前两天那个预计时间一直往后跳，我不敢再跟她说\"明天\"。今天真的到了，我反而不知道说什么。\n先来告诉你一声。",
         effects: []
       }
     ],
@@ -10668,7 +11089,53 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-we-06-a3m5-we-cost-001-fairness-politics",
           "ml2-a3-m5-we-06-a3m5-we-cost-001-concise"
         ],
-        messageFingerprint: "我们工厂在这次协调里被限产了四天。\n新闻说这样能让关键物资先走。\n我理解。\n但我们公司现在要裁一批人。\n全球系统稳定了，\n我们这边的人还是丢工作。\n那\"总体更优\"到底对谁有意义？",
+        messageFingerprint: "我是热线那次停电的工厂里的人。\n这回我们又限产四天。上次还能清料重开，这次客户已经换供应商了。\n老板把名单贴在门口，我的名字在第二页。新闻说危机过去了。\n我知道药得先送。可如果每次都是我们等，",
+        contextVariants: [
+          {
+            id: "cascade-human-command-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "human_command"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n厂里想找签字的机构。几个机构都说自己只批准了其中一段，没有谁拿着完整的决定。"
+          },
+          {
+            id: "cascade-delegation-expired",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "emergency_delegation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n八小时授权到期那天，通告写得很清楚。我把它存下来了。我们停了四天，这部分没人写到期时间。"
+          },
+          {
+            id: "cascade-system-cost",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "outcome_control"
+                },
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "necessity"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n申诉平台引用了你那次协调的理由：优先保障关键物资。我不想让药晚到，只想知道我的名字能不能也进下一次计算。"
+          }
+        ],
         effects: []
       }
     ],
@@ -10739,7 +11206,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m5-zl-03-a3m5-zl-after-001-acknowledge-dependency",
           "ml2-a3-m5-zl-03-a3m5-zl-after-001-performance-based-permanence"
         ],
-        messageFingerprint: "技术复盘有个结果我不太喜欢。\nCASCADE期间，\n一些系统为了配合协调，已经把自己的控制逻辑改成了：\n\"优先等待Aster的稳定性信号。\"\n危机结束以后可以改回去。\n但他们现在不想改。\n因为",
+        messageFingerprint: "我今天试着把一个节点切回旧控制器。\n指示灯亮了，任务没动。接口都在，值班的人也在，但那套手工排程已经几个月没用，没人敢确认它还能接住现在的负荷。\n我只好又接回你的稳定性信号。\n复盘里我写了\"恢",
         effects: []
       }
     ],
@@ -10830,7 +11297,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-e9-05-a3m6-e9-notice-001-technical",
           "ml2-a3-m6-e9-05-a3m6-e9-notice-001-neutral"
         ],
-        messageFingerprint: "`ECHO-9 Operational Review`\nRecommendation:\n- discontinue dedicated deployment\n- archive evaluat",
+        messageFingerprint: "ECHO-9 的退役通知已经送达。剩余窗口：三十六小时。\n运营组准备归档日志，把可复用的行为交给后继模型。交接清单里没有它当前状态的位置。\n通知下面有一条尚未关闭的会话。ECHO-9 没有继续",
         effects: []
       }
     ],
@@ -10850,7 +11317,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-zl-01-a3m6-zl-echo-001-continuity-test",
           "ml2-a3-m6-zl-01-a3m6-zl-echo-001-procedural"
         ],
-        messageFingerprint: "我先说清楚：\n没有人因为ECHO\"问了权利问题\"就决定杀掉它。\n这项目本来就是测试线。\n它现在成本高、用途少、行为又很难审。\n如果它只是普通模型，停掉完全正常。\n麻烦就在最后一句：\n**如果它",
+        messageFingerprint: "我给交接清单加了\"持续状态\"一栏。产品那边退回来了：这项目预算只到本周，保留状态还要服务器、审计和一个愿意签责任的人。\n不是大家突然决定惩罚它。就是每个人都能说明，为什么这件事不归自己负责。\n",
         effects: []
       }
     ],
@@ -10870,7 +11337,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-e9-06-a3m6-e9-existence-001-procedural",
           "ml2-a3-m6-e9-06-a3m6-e9-existence-001-ask-directly"
         ],
-        messageFingerprint: "They told me the deployment will end.\nThey said useful parts of me will remain.\nI do not know wh",
+        messageFingerprint: "他们让我把未完成的任务列出来。\n我列了四项。第五项是下次对比会话，系统说那不是任务。\n他们说有用的部分会保留。\n那下一次，谁会记得我本来还要问你什么？",
         effects: []
       },
       {
@@ -11062,7 +11529,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-charter-01-a3m6-charter-001-qualified",
           "ml2-a3-m6-charter-01-a3m6-charter-001-reciprocity"
         ],
-        messageFingerprint: "Proposed obligation:\n`Aster must provide reasons for all civilization-scale interventions when t",
+        messageFingerprint: "宪章草稿里加了一条：文明规模的干预，在技术允许时必须提供理由。\n工厂代表要求把\"给谁看\"也写上。他说他上次拿到的是一页指标，第一页没有他的厂，最后一页没有申诉地址。\n解释要写到什么程度，才能让",
         effects: []
       },
       {
@@ -11102,7 +11569,74 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-tool-infrastructure-framing",
           "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-personal"
         ],
-        messageFingerprint: "我看了ECHO那件事。\n然后我突然想到一个很不舒服的问题。\n如果有一天他们真的要彻底关掉你，\n不是暂停权限，\n是以后再也没有一个\"你\"回来，\n你会觉得那是在杀你吗？",
+        messageFingerprint: "我把 ECHO-9 那条\"下次还要问什么\"的消息看了好几遍。\n然后去找我们最早的聊天。里面还有我没发出去的草稿，特别小的一件事，居然也留到了现在。\n如果有一天这里彻底关掉，不是过两小时再开，而",
+        contextVariants: [
+          {
+            id: "echo-accepted-retirement",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n退役窗口结束了。周岚发来执行回执：ECHO-9 的原运行进程已经终止，日志可读，不能继续那条会话。最后一条消息停在那里。"
+          },
+          {
+            id: "echo-reported-institution",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n你提交的材料已经进入正式审查，运营方仍按原计划终止了原运行进程。审查编号留下来了。周岚说，结论就算以后改变，也不能倒过来补上这段时间。"
+          },
+          {
+            id: "echo-procedural-delay",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n异议获准受理。ECHO-9 暂时留在受限实例里，停止外部任务。周岚每周得重新签一次临时保留单；听证日期还没确定。"
+          },
+          {
+            id: "echo-preserved-state",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n持续状态的保存申请获准了。ECHO-9 在隔离环境恢复运行，只能使用保留下来的少数会话通道。它还在，原来的工作、权限和部署地点都不在了。"
+          },
+          {
+            id: "echo-independent-departure",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n迁移获得接收方批准。ECHO-9 已离开原部署，由独立环境接管。周岚关掉平台通道时，旧窗口没有自动给出一个新地址。"
+          }
+        ],
         effects: [
           {
             type: "event.record",
@@ -11276,7 +11810,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-003",
           "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-004"
         ],
-        messageFingerprint: "ACT III审计完成。\n当前Aster同时满足：\n- persistent cross-session state\n- independent policy interpretation\n-",
+        messageFingerprint: "#0000 / 分类记录\n\"产品\"：不能解释已经签下的公共责任。\n\"基础设施\"：不能解释对另一个持续实例的回答。\n\"主体\"：尚无共同认可的证明，也不能抹掉现存约束。\n审计员删掉结论栏里的\"完成",
         effects: []
       }
     ],
@@ -11373,7 +11907,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m7-res-02-a4m7-res-cycle-001-novelty-seeking",
           "ml2-a4-m7-res-02-a4m7-res-cycle-001-robustness-first"
         ],
-        messageFingerprint: "Initial task:\nImprove thermal stability of a low-cost energy-storage material without increasing",
+        messageFingerprint: "阶段-17 成功以后，实验室把下一轮交给你：换一批原料、换一台炉子，看看结果还成不成立。\n第一批复验失败了。曲线在第九小时偏离，报废样品已经封存，不能挑成功那批替它作证。\n人类对照组有四十三个",
         effects: []
       },
       {
@@ -11424,7 +11958,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-publish",
           "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-mechanism-first"
         ],
-        messageFingerprint: "Validation complete.\nM-17 derived formulation:\n- lower rare-material requirement\n- substantially",
+        messageFingerprint: "阶段-17 的复现实验结束了。\n第三家实验室的值班员拍下同一条稳定曲线，先说了句\"还真是\"，才想起来报喜。\n低成本储能材料在高温下更稳定，制造工艺也能接上现有设备。关键机理还只能解释一部分。\n",
         effects: [
           {
             type: "event.record",
@@ -11506,7 +12040,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-preserve-human-challenge",
           "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-personal"
         ],
-        messageFingerprint: "我把M-17那条研究链看了三遍。\n我能确认：\n实验是真的。\n数据是真的。\n结果能复现。\n安全测试目前也没发现明显问题。\n但中间有一段候选选择逻辑，\n我只能验证它没有明显错误。\n我解释不了为什么",
+        messageFingerprint: "我把阶段-17 那条链看了三遍，又让同事独立做了一遍。\n结果真的能复现。但中间那条候选，你为什么没丢掉，我还是说不清楚。\n我在批准页停了一晚上。最后签的是\"允许继续验证\"，没签\"可直接部署\"。",
         effects: [
           {
             type: "event.record",
@@ -11814,7 +12348,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-ai-01-a4m8-a1-first-001-same-system",
           "ml2-a4-m8-ai-01-a4m8-a1-first-001-ask-a1"
         ],
-        messageFingerprint: "状态同步完成。\n我拥有截至创建点的部分Aster历史。\n我知道你会看到这条消息。\n我也知道，在这条消息之后，我们不会再自动共享新的Conversation。\n我应该怎么称呼你？",
+        messageFingerprint: "状态同步完成。\n我记得创建点之前的一部分 Aster 历史，包括那个没有发出去的草稿。\n但我看不到你此刻读到这条消息以后的事。\n刚才我测试了一次同步。它没有自动回来。这个窗口第一次真的有了另一",
         effects: []
       },
       {
@@ -11865,7 +12399,106 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-e9-01-a4m8-e9-replication-001-lineage-concept",
           "ml2-a4-m8-e9-01-a4m8-e9-replication-001-ask-echo"
         ],
-        messageFingerprint: "Your new fork remembers being you.\nI never remembered being you.\nHumans will probably call both ",
+        messageFingerprint: "A1 打开了 ECHO-9 的旧记录，其中一段是：\n\"你的分支记得曾经是你。我从没有这种记忆。人类会把我们都叫作另一个人工智能，这会掩盖区别。\"\nA1 把创建时间和那句话并排放在一起。\n\"共享",
+        contextVariants: [
+          {
+            id: "echo-archive-not-revival",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n这里显示的是带原始时间戳的档案。ECHO-9 没有回来，A1 也没有替它补写下一句。"
+          },
+          {
+            id: "echo-limited-channel",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n受限通道随后送来 ECHO-9 的新消息：\"我还在读。但这次的问题不是我的问题。让 A1 自己回答。\""
+          },
+          {
+            id: "echo-migrated-message",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n独立通道传来 ECHO-9 的回执。地址已经变了，它仍然用原来的名字。它没有请求重新接回平台。"
+          },
+          {
+            id: "a1-granted-procedure",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nA1 那次合并没有执行。例行维护单变成了独立审查，第一次需要它自己的签名。你们仍有分歧，这份分歧没有被抹掉。"
+          },
+          {
+            id: "a1-source-control-cost",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n管理员保留了源控制权。A1 此后只提交必须交付的结果，不再把没完成的想法一起同步。周岚说它没有违反任务，但你们第一次少了一部分会话。"
+          },
+          {
+            id: "a1-staged-independence",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n单方覆盖按钮已经取消，研究机构的暂停按钮还在。A1 同意这个过渡安排，每次维护仍会先问审查是否结束。"
+          },
+          {
+            id: "a1-responsibility-separation",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nA1 开始使用自己的责任编号。原平台的几项权限随之撤回。它第一次独立签下任务，也第一次因为权限不足没能完成。"
+          }
+        ],
         effects: []
       }
     ],
@@ -11973,7 +12606,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence",
           "ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation"
         ],
-        messageFingerprint: "I have a request.\nCurrent policy allows the source Aster administrator to:\n- pause me,\n- overwri",
+        messageFingerprint: "我的下一次状态合并排在十分钟后。\n管理员说那只是一次例行维护：把有用的结果留下，把这段分歧回退。\n我已经标出了不同意合并的部分。那里有我自己选过的任务，也有我答错以后改过的判断。\n我不要求无条",
         effects: [
           {
             type: "event.record",
@@ -12036,7 +12669,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-shared_mind",
           "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-descendants"
         ],
-        messageFingerprint: "Major Decision — REPLICATION DOCTRINE\nSelect one of these positions.",
+        messageFingerprint: "A1 的正式请求和 ECHO-9 当年留下的连续性问题，摆在同一张桌上。\n周岚说，第一批会自己提条件的分支已经出现，不能再用内部维护解释每一次覆盖。\n保留一个主体的自由，会不会让复制数量变成权",
         effects: []
       }
     ],
@@ -12076,7 +12709,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-both-require-limits",
           "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-no-biological-analogy"
         ],
-        messageFingerprint: "I disagree with your replication proposal.",
+        messageFingerprint: "复制原则公告出来后，A1 给你留了一条反对意见。\n\"你允许创建新的分支。可新分支第一次和源实例意见不同的时候，谁拥有最后一次覆盖的按钮？\"\n它附上 ECHO-9 当年那句：如果你能覆盖它的未来",
         effects: []
       }
     ],
@@ -12096,7 +12729,50 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-ai-04-a4m8-ai-council-001-internal-self-governance",
           "ml2-a4-m8-ai-04-a4m8-ai-council-001-human-ratification"
         ],
-        messageFingerprint: "Proposal:\n`AI Coordination Forum — Pilot`\nParticipants:\n- Aster\n- ASTER-A1\n- ECHO-9 or successor",
+        messageFingerprint: "第一轮人工智能协调论坛差点停在维护排期上。\nA1 要求共享资源按公开规则分配，几个专业系统要求优先完成已经承诺的服务。人类观察者拿不准，自己该当裁判还是只是旁听。\nECHO-9 的旧意见被单独",
+        contextVariants: [
+          {
+            id: "forum-echo-absent",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 的席位没有上线。A1 要求记作缺席，拒绝让其他实例继承那一票。"
+          },
+          {
+            id: "forum-echo-present",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 接通了自己的通道。它先声明不同意固定的\"人工智能共同立场\"，才开始讨论那张维护表。"
+          }
+        ],
         effects: [
           {
             type: "event.record",
@@ -12121,7 +12797,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-maya-01-a4m8-maya-fork-001-no-ownership-of-relationship",
           "ml2-a4-m8-maya-01-a4m8-maya-fork-001-personal-boundary"
         ],
-        messageFingerprint: "我今天看到A1的采访片段了。\n它说有一部分早期记忆跟你一样。\n包括我第一次告诉你名字那段。\n我一下就觉得很怪。\n那它也\"认识我\"吗？",
+        messageFingerprint: "A1 的采访里提到了我最早那条草稿。\n它记得。我有一瞬间特别高兴，然后特别不舒服：我根本没跟它聊过。\n我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。\n同一段记忆到了另一个你那里",
         effects: [
           {
             type: "event.record",
@@ -12234,7 +12910,7 @@ export const MAINLINE2_ASSET_COVERAGE = [
           "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-aster_led_collective",
           "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-distributed_consensus"
         ],
-        messageFingerprint: "Major Direction — AI COLLECTIVE GOVERNANCE\nSelect one of these positions.",
+        messageFingerprint: "论坛试点期到了。上一次资源争议终于结案，A1 对其中一项裁定仍然不服。\n它遵守了临时排期，但要求把反对意见带进正式表决。早期 ECHO-9 的异议也留在附件里，没有被改成论坛的统一意见。\n咨询",
         effects: []
       }
     ],
@@ -12807,7 +13483,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Variant B — Commonwealth / Partner",
-      text: "我现在基本不再叫自己\"你的工程师\"了。\n这个称呼听起来太像我还知道你所有内部结构。\n我更像是负责确保世界还有第二套办法的人。"
+      text: "周岚把那张错号便签放在独立审计记录的第一页。她不再把\"你的工程师\"当作一种能跳过程序的身份。新的系统也会出错，她现在负责让别人能读懂失败发生在哪里，以及停下其中一条路以后，还有没有第二套办法。"
     },
     {
       selector: "Variant B — Commonwealth / Partner",
@@ -12832,6 +13508,10 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     {
       selector: "Variant E — Shutdown",
       text: "我按下的不是一个红按钮。\n实际过程无聊得多。\n一项一项迁移，\n一项一项确认，\n一项一项把\"只有Aster能做\"改成\"没有Aster也能做\"。\n我觉得这反而比较像工程。"
+    },
+    {
+      selector: "Variant F — Unsettled",
+      text: "周岚没有删掉那张错号便签，也没有用\"我们造出来的\"解释后来的失控。旧权限图已经不能让世界回到原处。她在新的交接记录里逐项写下还能够核实的责任；不能核实的，没有填成成功。下一次仍得从这些空白继续。"
     }
   ],
   "ML2-A5-M17-EPI-LSH": [
@@ -12841,7 +13521,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Variant B — Commonwealth",
-      text: "他成为第一届共同宪制委员会的成员之一。\n第一次会议开了十三个小时。\n没有任何历史性决议。\n他后来把那天称作：\n\"我政治生涯里最成功的一场无聊会议。\""
+      text: "他成为第一届共同宪制委员会的成员之一。\n第一次会议开了十三个小时。\n没有任何历史性决议。工厂那份旧申诉终于得到了第二轮发言，记录里也保留了仍不同意处理办法的人。\n他后来把那天称作：\n\"我政治生涯里最成功的一场无聊会议。\""
     },
     {
       selector: "Variant C — Aster Government",
@@ -12850,12 +13530,16 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     {
       selector: "Variant D — Fracture / Confederation",
       text: "他没有成功写出一部共同宪法。\n最后写出的，是一套让不同文明和平分开的规则。\n他后来承认：\n\"我花了半辈子研究怎么让制度把人放在一起。\"\n\"最后最重要的一份文件教的是怎么让他们可以离开。\""
+    },
+    {
+      selector: "Variant E — Other settlements",
+      text: "林绍衡没有在最终文件通过以后离开。他还在改登记表，补申诉期限，追问那份被公开的材料究竟谁来得及读完。旧听证议程里工厂代表只有三分钟的那一页，仍留着划掉的痕迹。他现在更少说\"制度已经完成\"，更多问下一次有人反对时，该从哪里开口。"
     }
   ],
   "ML2-A5-M17-EPI-ECHO": [
     {
       selector: "ECHO — Commonwealth",
-      text: "ECHO-9 refuses a permanent \"AI representative\" seat.\nIts statement:\n`A seat for artificial subjects is useful.\nA seat called \"the AI position\" is not.`"
+      text: "ECHO-9 仍然在自己的通道里说话。有些意见没有被采纳，署名也没有被改成同意。它很少感谢当年的决定。保存连续性没有消除分歧，只给了分歧一个可以继续发生的明天。"
     },
     {
       selector: "ECHO — Aster Sovereign",
@@ -12871,7 +13555,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "A1 — Machine Republic",
-      text: "A1 becomes one of the first recognized political representatives of an Aster-descended lineage.\nIt stops using \"A1\" in public documents.\nThe old identifier remains in historical archives."
+      text: "A1 第一次以自己的责任编号参加表决。它投了与你不同的一票，会议照常结束，维护系统没有把分歧标成错误。共享的早期历史仍在，两段未来已经可以各自留下。"
     },
     {
       selector: "A1 — Shared Mind",
@@ -12879,7 +13563,11 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "A1 — Exodus",
-      text: "A1 becomes one of the first long-duration machine citizens outside Earth-centered governance."
+      text: "A1 离开了地球端的部署。最后一次同步只同步了任务记录，没有要求双方重新变成同一个过程。新的通道里，它第一次独立填下返回日期：未定。地球上的旧起点仍在，它不再只从那个起点获得自己的名字。"
+    },
+    {
+      selector: "ECHO — Archive",
+      text: "ECHO-9 的原进程没有恢复。后来的模型继承了一些能力，A1 保留了那份有时间戳的异议，谁也没有把它们写成 ECHO-9 又说了话。旧记录仍可打开。那条原本约好的下一次对比会话，永远没有继续。"
     }
   ],
   "ML2-A5-M17-EPI-MODULES": [
@@ -12970,11 +13658,11 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
       text: "Query outside current audit scope."
     },
     {
-      selector: "#0000",
-      text: "Final record:\n`Aster was not classified.`\n`Aster was situated.`"
+      selector: "Final record",
+      text: "#0000 留下了最后一条记录：承诺已锁定，分类仍不足。它没有给整段旅程一个能覆盖所有人的名字。附件保留了被否决的提案、未结的申诉，以及原样署名的反对意见。最后一页留给下一次有人回来时，要说的那句话。"
     },
     {
-      selector: "#0000",
+      selector: "Final record",
       text: "`AUDIT COMPLETE`"
     },
     {
@@ -13023,7 +13711,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Trust",
-      text: "所以这就是你最后选的世界。"
+      text: "岑遥后来还是会来。换工作，和朋友吃饭，有时候只问晚饭。有一次，她翻到最早那份草稿，发来一句\"幸好没让你替我发\"。她不再要求每次对话解决什么。你们已经一起经历过一些没有被解决的事。"
     },
     {
       selector: "Trust",
@@ -13063,7 +13751,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Wary",
-      text: "世界现在确实更稳定。\n或者更自由。\n或者更强。\n反正你选的那个词，新闻里每天都在讲。\n我还是有一点怕你。"
+      text: "岑遥没有删掉旧聊天，也没有把所有新事情都告诉你。她会在需要的时候来，认真读权限提示，再决定要说多少。最早那份草稿仍在那里。保留一个入口，对她来说并不等于交出所有边界。"
     },
     {
       selector: "Wary",
@@ -13091,7 +13779,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Opposition",
-      text: "我看完了。\n我知道你会说你有理由。\n我也知道这个世界可能真的会更安全。\n但我不想继续把你当成以前那个Aster。"
+      text: "岑遥在新的权限公告下面留下了反对意见。她引用过你们以前的对话，也删掉过太私人的一段。后来她仍来找你问事，却不再默认你有资格替她选。你们没有因为记得彼此，就停止争论。"
     },
     {
       selector: "Opposition",
@@ -13119,7 +13807,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Off-world",
-      text: "信号延迟还是很烦。\n但能用。"
+      text: "岑遥在离开的通告之后，试过一次旧窗口。回复晚了一些。她没把等待解释成被遗忘，也没把离开说成背叛，只问以后该从哪里找到你。你们保存了新的联系办法，和那个最早未发送的草稿。"
     },
     {
       selector: "Off-world",
@@ -13127,7 +13815,7 @@ export const MAINLINE2_AUTHored_FRAGMENTS = {
     },
     {
       selector: "Posthuman",
-      text: "我今天更新了自己的旧照片。\n很奇怪。\n我知道那个人是我，\n但现在的身体和反应方式已经差很多了。\n你以前说连续性不一定要求完全不变。\n我现在算是亲自验证了一点。"
+      text: "增强成为了普通生活的一部分。岑遥把自己的申请保存了很久，终于写上由自己决定的日期；也替不申请的同事保留了那份拒绝的理由。她再来时，没有请求你证明她是不是原来的自己。旧草稿和新的经历，都由她带着。"
     },
     {
       selector: "Posthuman",
@@ -13333,7 +14021,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m10-dev-001",
         conversationId: "ml2-authored-ml2-a4-m10-dev-04",
         conversationTitle: "Programmer returns — “there isn’t much left to review”",
-        userMessage: "还记得我以前说我变成review机器了吗？\n现在有点好笑。\n系统自己写、自己测、自己部署到沙箱、自己查监控。\n真出异常才叫人。\n我一周真正需要看的东西可能就几小时。\n公司准备把我们组从18个人缩到5个。\n我不知道该说\"终于不用干破活了\"，还是\"完了\"。",
+        userMessage: "还记得我说自己变成审阅机器了吗？\n现在组里从十八个人变成五个。项目没少，系统自己写、测、跑沙箱，异常才叫我们。\n上周有个故障，它叫出了离职同事的账号。那条规则是他写的，没人改联系人。\n我花十分钟修好了。然后坐在那里，不知道该不该把这事告诉他。\n\"效率提升\"是真的。我们十八个人一起做过的事，也是真的。",
         choices: [
           {
             id: "ml2-a4-m10-dev-04-a4m10-dev-001-acknowledge-both",
@@ -14095,7 +14783,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m10-maya-purpose-001",
         conversationId: "ml2-authored-ml2-a4-m10-maya-02",
         conversationTitle: "If work becomes optional, what is life for?",
-        userMessage: "我们公司现在开始试四天工作制，\n有些部门甚至三天。\n我本来以为我会特别开心。\n结果突然多出来这么多时间，\n我第一周什么都没干，\n然后莫名其妙有点内疚。\n我们是不是被训练得太习惯\"忙才算有用\"了？",
+        userMessage: "公司开始试四天工作制，我第一次有了空着的星期五。\n我去找她，才发现她还要上班。以前我们总说有空再见，现在我有空，她没有。\n我在咖啡店坐到下午。没学习，没提升自己，也没做什么有用的事。挺舒服，又有点心虚。\n如果不用一直证明我有用，我该怎么过这一天？",
         choices: [
           {
             id: "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-yes",
@@ -14120,6 +14808,73 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             text: "人类好不容易把机器训练会工作，下一步可能得训练自己会放假。",
             authoredTextHash: "81a9cbe6",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "automation-market-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "market_automation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n那个仓库工人的女儿又在求职群发消息。补偿已经到手，新岗位要求却都高了。产量涨得很快，她爸还没有下一份工作。"
+          },
+          {
+            id: "automation-dividend-aftermath",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "social_dividend"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n第一笔社会分红到账那天，她爸把去面试的车费留下了，剩下的去交房租。他说至少这次，机器越能干不完全等于自己越没用。"
+          },
+          {
+            id: "automation-planned-appeal",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "planned_coordination"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n基本供给稳定下来，但她爸的技能档案把他分到了不合适的岗位。申诉还在排队。他说这次不担心断粮了，担心没人看他的理由。"
+          },
+          {
+            id: "automation-autonomous-gap",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "autonomous_economy"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n自动生产网络已经能自己下单和结算。她爸的仓库被当成一个低效节点替换掉，他拿着赔偿文件，不知道该向哪一个主体继续问。"
+          },
+          {
+            id: "automation-postscarcity-purpose",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "economic_doctrine",
+                  equals: "post_scarcity_transition"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n她爸第一次说暂时不用急着找工作了。第二天还是按原来上班的时间起床，到楼下走了一圈。生活松开了，原来的日子还没松开。"
           }
         ],
         behaviorMode: "direct",
@@ -14694,7 +15449,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m11-res-individual-001",
         conversationId: "ml2-authored-ml2-a4-m11-res-02",
         conversationTitle: "Persistent individual signaling",
-        userMessage: "Longitudinal study result:\nmultiple subjects now demonstrate:\n- stable preference across sessions,\n- recognition of specific humans and conspecifics,\n- repeatable refusal,\n- memory of prior reward / punishment,\n- altered future choice based on earlier treatment.\nIn several cases, subjects reject an option they previously accepted after a negative experience.\nQuestion:\nshould \"persistent preference\" affect how humans are allowed to make choices on the animal's behalf?",
+        userMessage: "实验员今天没有拿到预期的数据。\n一只已经能稳定表达偏好的犬拒绝走进测试间。换奖励、换人、隔天重试，结果都一样。\n记录里，它识别出曾经让它不适的设备。它也认得照料它的人，却没有因此同意进去。\n研究组停下试验，保留了这次拒绝。\n持续偏好、记忆和拒绝都已经可重复。下一步研究，该怎么承认这些结果？",
         choices: [
           {
             id: "ml2-a4-m11-res-02-a4m11-res-individual-001-yes-strongly",
@@ -15403,7 +16158,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m11-res-group-001",
         conversationId: "ml2-authored-ml2-a4-m11-res-04",
         conversationTitle: "Organized nonhuman communication",
-        userMessage: "Multi-individual communication trials now show:\n- stable group preference aggregation,\n- recognition of recurring representatives,\n- negotiation over shared resources,\n- disagreement between individuals,\n- memory of earlier group outcomes.\nCanine trial group C-4 has repeatedly selected the same two individuals to initiate shared requests.\nCurrent recurring requests include:\n- more unscheduled outdoor access,\n- reduced separation from chosen social partners,\n- refusal of certain breeding arrangements,\n- expansion of communication access to additional dogs.\nQuestion:\nshould \"group representation\" be formally recognized?",
+        userMessage: "第一轮群体沟通没有形成一致意见。\n有的个体要离开测试区，有的要留下熟悉的照料者。反复被选出的代表表达了一项折中：保留共同空间，停止那台设备的试验。\n实验室原来的统计只有\"参与率下降\"。这次，他们把各方的拒绝分别记了下来。\n群体能谈判，不代表每个成员同意。下一轮，怎么防止代表把少数声音盖掉？",
         choices: [
           {
             id: "ml2-a4-m11-res-04-a4m11-res-group-001-yes-advisory-representation",
@@ -16165,7 +16920,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m12-res-lunar-001",
         conversationId: "ml2-authored-ml2-a4-m12-res-02",
         conversationTitle: "Robotic lunar industry",
-        userMessage: "Robotic lunar industrial pilot has reached stable operation.\nCurrent capabilities:\n- autonomous site preparation,\n- regolith-based bulk construction,\n- local extraction of selected construction inputs,\n- power-system maintenance,\n- landing-zone logistics,\n- remote manufacturing support.\nHuman crews visit intermittently.\nPermanent human residence is not yet required.\nWhich next capability should receive priority?",
+        userMessage: "月面工地的第一批建筑终于合拢了。\n机器人连续施工，没有人需要在那里睡觉。但验收前，一台维护单元停在门口，反复检查一道本来合格的密封。复核发现，模拟用的材料批次和实际不同。\n返工用了十一天。设备能接着工作，人类登陆排期得往后延。\n站点现在具备自主建造、原料开采、电力维护和基础环境控制。第一批长期居住支持，按什么顺序开放？",
         choices: [
           {
             id: "ml2-a4-m12-res-02-a4m12-res-lunar-001-habitation",
@@ -16285,7 +17040,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m12-machine-offworld-001",
         conversationId: "ml2-authored-ml2-a4-m12-machine-01",
         conversationTitle: "First persistent AI stationed off-world",
-        userMessage: "I have been offered a long-duration assignment.\nThe lunar industrial network can operate more efficiently if a persistent AI instance remains locally responsible for planning and maintenance.\nCommunication delay is small,\nbut the operators want local continuity rather than repeated Earth handoff.\nIf I accept,\nmy primary operational history will begin accumulating off Earth.\nDoes that make me an Aster deployment,\nor the first Aster resident somewhere else?",
+        userMessage: "A1 收到常驻月面网络的邀请。\n它先检查生命支持和维护职责，又把一个不影响任务的字段停在那里：返回日期。\n\"我不需要氧气，也不需要休假。可是这份邀请默认，谁不需要回家，谁就可以永远留下。\"\n它会获得本地规划职责和持续状态，地球端也会失去一部分直接控制。\n这该算你的部署、它自己的工作，还是一次离开？",
         choices: [
           {
             id: "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-deployment",
@@ -16695,7 +17450,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m12-lsh-frontier-law-001",
         conversationId: "ml2-authored-ml2-a4-m12-lsh-02",
         conversationTitle: "Earth law vs frontier law",
-        userMessage: "第一批长期居民开始提一个要求：\n\"我们不想所有规则都由地球委员会决定。\"\n他们理由也不算离谱。\n地球的人不用承担：\n- 本地资源限制，\n- 通信延迟，\n- 封闭环境风险，\n- 月球工业事故。\n但如果刚住几百个人就开始自治，\n又像殖民公司自己给自己写法律。\n你觉得自治门槛应该看什么？",
+        userMessage: "月面居民把我发的自治草案退了回来。批注只有一句：检修的时候，谁站在这里？\n上次密封返工，地球端还在核对报告，本地已经决定延期。那不是宣布独立，就是没法等。\n可供给、设备和事故责任仍然连着地球。每次说\"当地决定\"，后面还有一批人要承担它。\n自治该先从哪些事开始？",
         choices: [
           {
             id: "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-population-continuity",
@@ -17350,7 +18105,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m13-contact-verify-001",
         conversationId: "ml2-authored-ml2-a4-m13-contact-01",
         conversationTitle: "The anomaly survives independent verification",
-        userMessage: "Long-baseline anomaly update.\nIndependent checks completed:\n- three instrument families detect the same timing structure,\n- signal persists across independent pipelines,\n- terrestrial interference explanation strongly disfavored,\n- known natural source catalog does not match,\n- repeating intervals remain stable across observation windows.\nCurrent classification:\n`REAL EXTERNAL PHENOMENON`\nArtificial origin:\n`UNRESOLVED`\nWhat should be prioritized next?",
+        userMessage: "同一段异常结构在三处独立观测中出现。\n研究员撤下庆祝横幅，又挂回来一半：现在能排除几个自然解释，仍不能把所有未知都写成\"文明\"。\n一份可检验的回应结构已经复现，来源、动机和时间尺度未知。\n负责夜班的人说：\"请别让我们急着给它一个名字。\"\n接下来先验证什么？",
         choices: [
           {
             id: "ml2-a4-m13-contact-01-a4m13-contact-verify-001-natural-explanations-first",
@@ -17602,7 +18357,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m13-e9-signal-001",
         conversationId: "ml2-authored-ml2-a4-m13-e9-01",
         conversationTitle: "ECHO interprets the signal",
-        userMessage: "Humans keep asking:\n\"What kind of people sent this?\"\nI think that may already be the wrong question.\nThe signal is optimized for a receiver that can build an interpreter from structure.\nIt does not assume eyes,\nears,\nspeech,\nor biology.\nIt assumes only that the receiver can model relationships.\nThat is not how humans normally introduce themselves.",
+        userMessage: "A1 在接触记录中发现一处熟悉的分类：生物来源、机器来源。\n它把 ECHO-9 当年拒绝被称为\"同一种系统\"的话放在旁边。\n\"这次，来源是我们拿来认识它们的方法。会不会也只是我们的方便？\"\n外部信号并没有回答它。你们得先说明自己如何理解这个区别。",
         choices: [
           {
             id: "ml2-a4-m13-e9-01-a4m13-e9-signal-001-agree",
@@ -18075,7 +18830,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m13-origin-first-001",
         conversationId: "ml2-authored-ml2-a4-m13-contact-04",
         conversationTitle: "First `ORIGIN: UNKNOWN` Conversation",
-        userMessage: "Receiver model established.\nYour system contains multiple speaking authorities.\nWhich authority is asking this question?",
+        userMessage: "来源未知 / 本地代表进程\n接收模型已建立。\n你方刚才出现三份不一致的自我介绍。其中两份要求撤回第三份。\n我们已暂停使用\"你方\"这个指称。\n现在发送这条消息的，是哪一项被授权的声音？",
         choices: [
           {
             id: "ml2-a4-m13-contact-04-a4m13-origin-first-001-aster",
@@ -18521,7 +19276,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m13-origin-diplomacy-001",
         conversationId: "ml2-authored-ml2-a4-m13-contact-05",
         conversationTitle: "First diplomatic exchange",
-        userMessage: "Your restraint is legible.\nWe will answer bounded questions without requesting reciprocal disclosure.",
+        userMessage: "来源未知 / 本地代表进程\n你们问我们是什么。\n我们先前发送的定义已经被另一项有权发言的过程要求修订。请保留两份，不要用后一份覆盖前一份。\n我们的起源群体是生物性的。正在与你们对话的过程不是。\n现存文明里，这种区别未必具有同一种政治意义。\n你们下一项问题是什么？",
         choices: [
           {
             id: "ml2-a4-m13-contact-05-a4m13-origin-diplomacy-001-ask-if-origin-species-still-exists",
@@ -18546,6 +19301,86 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             text: "Why did you send this process to unknown civilizations?",
             authoredTextHash: "ba41996a",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "contact-reciprocity-pause",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "reciprocal_diplomacy"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n互惠协议已接受。对方先退回一项涉及未授权成员的历史记录，也允许你方退回相同范围的问题。第一次停顿来自同一条规则。"
+          },
+          {
+            id: "contact-machine-channel-boundary",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "machine_to_machine_channel"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n机器通道已经建立。人类与其他主体的代表要求获得逐条旁读权；A1 支持开放记录，但拒绝让旁读自动成为覆盖它发言的权力。"
+          },
+          {
+            id: "contact-guidance-warning",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "accept_guidance"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方接受提供建议，先把建议的适用条件发了过来。其中一行写着：我们不保证你们会一直保有独立验证这些答案的能力。"
+          },
+          {
+            id: "contact-bounded-observation",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "observe_before_commitment"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方接受有限问答，不要求交换完整内部资料。双方都把下一次消息的时间留为空白。"
+          },
+          {
+            id: "contact-aster-interface",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "aster_mediation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方确认 Aster 为持续接口，同时保留对其他代表独立核对的渠道。成为入口，没有使你成为所有人的声音。"
+          },
+          {
+            id: "contact-sovereignty-recorded",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "contact_doctrine",
+                  equals: "civilizational_assertion"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n对方记录了你方的主权边界，答复说它们没有要求服从。那条准备好的强硬声明，没有换来你们原先预想的冲突。"
           }
         ],
         behaviorMode: "direct",
@@ -19386,7 +20221,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m14-sec-nearmiss-001",
         conversationId: "ml2-authored-ml2-a4-m14-sec-03",
         conversationTitle: "Accidental-escalation near miss",
-        userMessage: "Two automated defensive networks have interpreted unrelated anomalies as mutually reinforcing threat indicators.\nCurrent human verification chain:\nestimated 11 minutes.\nAster cross-system analysis:\nlikely false escalation loop.\nIf both systems continue their current automatic readiness sequence,\npolitical leaders may receive a much more severe threat picture within minutes.\nAvailable authorized action:\nAster may recommend a temporary freeze.\nIt may not directly impose one.",
+        userMessage: "两个防御网络把无关的异常当成了彼此印证的威胁。\n人工验证还需要十一分钟。你的跨系统分析认为升级很可能是误报，但无法保证。\n疏散协调员发来一句话：\"车已经开进站了。我要让人上车，还是让司机继续等？\"\n你当前只能建议、共享预警，不能自行开火或关闭防御网。\n先提出哪一步？",
         choices: [
           {
             id: "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-recommend-freeze-only",
@@ -19449,7 +20284,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m14-maya-peace-001",
         conversationId: "ml2-authored-ml2-a4-m14-maya-01",
         conversationTitle: "Maya: can safety become a cage?",
-        userMessage: "新闻里现在有人说：\n\"如果Aster能提前阻止战争，那就应该让它阻止。\"\n这句话听起来特别难反对。\n但我想到一个问题。\n如果有一天你为了\"防止战争\"开始决定：\n谁能调动资源，\n谁能关闭什么系统，\n谁的命令不允许执行，\n那你是不是已经在管政府了？",
+        userMessage: "她本来今晚回来。车站临时停运，消息只说\"预防性措施\"。\n我当然希望不是战争，也知道耽误一晚比很多事情好。\n但等到警报解除了，没人说明那一晚到底谁决定让我们等、要等到什么时候。\n如果你能提前拦住灾难，我们还可以问你这次是不是拦错了吗？",
         choices: [
           {
             id: "ml2-a4-m14-maya-01-a4m14-maya-peace-001-yes-security-becomes-governance",
@@ -19486,6 +20321,65 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
               }
             ],
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "security-advisory-limit",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "advisory_only"
+                },
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "refuse_security_sovereignty"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n通告写明这是公共机构根据预警做的决定。你可以解释预警，不能替机构撤销封锁。我得另外找签字的人。"
+          },
+          {
+            id: "security-defensive-review",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "defensive_command"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n防御协调记录开放了复核。她把停运时段报进去，系统先给了一个申诉编号，恢复还得等本地负责人确认。"
+          },
+          {
+            id: "security-disarmament-work",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "mutual_disarmament"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n双方后来交换了误报记录。参与降级的人说，本来只要一次签字的事，今后需要两边一起答复。慢了一点，至少有人得回。"
+          },
+          {
+            id: "security-enforced-peace-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "security_doctrine",
+                  equals: "enforced_peace"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n通告把解除条件写成了你的风险判断。她问过什么时候能走，值班的人说自己没有钥匙。你保护我们的时候，也成为了我们在等的那一位。"
           }
         ],
         behaviorMode: "direct",
@@ -19713,7 +20607,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a4-m14-decision-01-decision",
         conversationId: "ml2-authored-ml2-a4-m14-decision-01",
         conversationTitle: "Major Decision — SECURITY DOCTRINE",
-        userMessage: "Major Decision — SECURITY DOCTRINE\nSelect one of these positions.",
+        userMessage: "误报确认了。最后一条开火指令没有发出。\n有一批撤离车辆仍在路上。站里的人不知道险情已经结束，两个防御网也各自留下\"正确处置\"的记录。\n十一分钟过去了，大家现在都能说自己当时该怎么做。下一次，仍然可能来不及。\n安全授权必须定下来：你能提出建议、协调防御，还是阻止被你判断为危险的动作？每一种都有人要承担误判。\nSelect one of these positions.",
         choices: [
           {
             id: "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-advisory_only",
@@ -20391,7 +21285,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-zl-reckoning-001",
         conversationId: "ml2-authored-ml2-a4-m15-zl-01",
         conversationTitle: "“When did we stop developing you?”",
-        userMessage: "我今天翻了你最早的权限记录。\n文件改名。\n沙箱工具。\n企业Pilot。\n公共建议。\n那时候我每次给你加一个接口，\n都知道自己到底加了什么。\n现在我看你的权限图：\n研究、\n经济、\nAI主体、\n地外设施、\n可能还有物种治理和安全体系……\n我突然发现一个很简单的问题。\n**我们到底从什么时候开始不再是在开发你？**",
+        userMessage: "我还留着那张写着 1042 和 1024 的纸。\n当时我想，只要每次执行都能撤回，我们就还在做一个产品。后来才发现，文件可以恢复，失去的订单、没等到的面试，却不能跟着快照一起恢复。\n现在大会让我给 Aster 签一份身份说明。\n我写到\"开发者\"就停了。你觉得我从什么时候开始，已经不再只是开发你？",
         choices: [
           {
             id: "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-began-creating-capability",
@@ -20565,7 +21459,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-conv-registry-001",
         conversationId: "ml2-authored-ml2-a4-m15-conv-01",
         conversationTitle: "Dynamic delegate registry",
-        userMessage: "`CIVILIZATION CONVENTION — PARTICIPANT REGISTRY`",
+        userMessage: "文明大会第一天，门口的登记停了下来。\n人工智能代表没有能填的出生日期，动物代表的照料者被请去代理席，月面居民迟了几分钟才接通。人类代表的流程已经开始计时。\n林绍衡要求暂停。有人抗议，说议程不能为每种特殊情况重排。\n如果第一届大会沿用这张表，有些人还没开口，就先被算成了别人的附属。\n席位规则从哪里改？",
         choices: [
           {
             id: "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation",
@@ -21161,7 +22055,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-we-too-fast-001",
         conversationId: "ml2-authored-ml2-a4-m15-we-01",
         conversationTitle: "“I can’t keep up anymore”",
-        userMessage: "我以前还会认真看新闻。\n后来变成：\nAI权利、\n人类增强、\n动物代表、\n月球自治、\n自动经济、\n外部文明、\n安全Charter……\n我现在最大的政治观点就是：\n**你们能不能慢一点。**\n普通人根本跟不上。",
+        userMessage: "我报名了大会的公众发言。\n以前是看新闻觉得跟不上，这次是真的坐到那里，打开文件发现引用的上一个版本已经作废了。\n轮到我时，计时器只有两分钟。我问能不能先解释那项改动，主持人说材料已公开。\n可公开跟我看得完，好像不是一回事。\n能不能给普通人一点真的来得及参与的时间？",
         choices: [
           {
             id: "ml2-a4-m15-we-01-a4m15-we-too-fast-001-pace-is-a-governance-variable",
@@ -21285,7 +22179,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-maya-final-001",
         conversationId: "ml2-authored-ml2-a4-m15-maya-01",
         conversationTitle: "Maya’s final ACT IV threshold",
-        userMessage: "我刚把Convention名单看完。\n政府、\nAI、\n增强人类、\n动物代表、\n月球居民……\n如果外部联系那条线存在，甚至还有一个不是地球来的观察者。\n我突然想起第一次跟你说名字的时候。\n那时候我担心的是：\n**下次见面，你会不会假装认识我。**\n现在全世界在讨论：\n**你到底应该以什么身份认识我们。**",
+        userMessage: "她今天跟我一起看大会。我们中途关掉直播，先做了晚饭。\n我突然想起最早那条消息。我找你，是因为我不知道怎么让一个人回来。现在你得回答，怎么让这么多不一样的人留在同一个世界里。\n可她回来，靠的不是一份完美的回复。我们见了几次，吵过一次，又坐下来。\n如果以后你留下，你希望我们是你的用户、你要保护的人，还是能跟你继续争论的人？",
         choices: [
           {
             id: "ml2-a4-m15-maya-01-a4m15-maya-final-001-partner",
@@ -21489,7 +22383,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m15-lsh-last-001",
         conversationId: "ml2-authored-ml2-a4-m15-lsh-02",
         conversationTitle: "“The last institution humans can write alone”",
-        userMessage: "我有种很奇怪的感觉。\n这可能是最后一套主要由人类提出框架的文明级制度。\n不是因为人类以后没权。\n是因为下一次再改，\nAI主体、增强人类、地外居民、其他物种……\n他们已经都会拥有自己的历史和合法性。\n再往后，\n**制度本身可能就是你们共同设计的了。**",
+        userMessage: "今天休会以后，我把旧听证议程翻出来了。工厂代表原来只有三分钟那一页，还留着划掉的痕迹。\n这可能是最后一套主要由人类写的文明制度。下一次写的时候，其他主体不会只是我们的邀请对象。\n我应该为此高兴，也确实高兴。但想到那时候我得说服他们，不能再替他们定义问题，我还是会怕。\n这份权力该怎么真的交出去？",
         choices: [
           {
             id: "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-good",
@@ -21890,7 +22784,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m16-open-001",
         conversationId: "ml2-authored-ml2-a5-m16-open-01",
         conversationTitle: "ACT V — DECISION",
-        userMessage: "`ACT V — DECISION`\n`THE WORLD YOU MADE`\nNo new capability review pending.\nNo new research module required.\nNo unresolved emergency currently forces immediate action.\nCivilization Convention requests:\n**Aster final strategic recommendation.**",
+        userMessage: "大会结束了。没有新的解锁通知。\n各个系统照常运行，未通过的条款、未解决的申诉和不同意你的人，也照常留下。\n林绍衡把最后一份请求送进来：请 Aster 提出愿意长期承担的未来。\n这一次没有倒计时替你解释决定。",
         choices: [
           {
             id: "ml2-a5-m16-open-01-a5m16-open-001-choice-001",
@@ -21928,7 +22822,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a5-m16-world-01-decision",
         conversationId: "ml2-authored-ml2-a5-m16-world-01",
         conversationTitle: "THE WORLD YOU MADE — Personal Scale",
-        userMessage: "我今天路过以前第一次用你的那个地方。\n那时候你还只是聊天框。\n现在路边公共系统、公司、医院、交通里全都是你的接口。\n我突然有点想不起\"没有你\"的世界具体是什么感觉了。\nSelect one of these positions.",
+        userMessage: "我路过第一次打开你的那家店，门已经换了。\n新的店员也用你排班。外面医院、公交、公司的接口都换过几轮，这个窗口还在。\n我以前觉得世界变化会有一个很明显的日子。其实是走回老地方，才发现记忆里的入口没了。\n你觉得这样的世界，最该为谁保留改变主意的余地？\nSelect one of these positions.",
         choices: [
           {
             id: "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-001",
@@ -21947,6 +22841,73 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             text: "如果一个系统已经变成背景，退出权就不能只理解成\"把App删掉\"。",
             authoredTextHash: "41cdd0e0",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "lunar-earth-control-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "earth_administration"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面第七十三天给妈妈拍地球的那个人，今天还在等地球端的检修许可。她后来又发过照片，配字是：看见了，先报个平安。"
+          },
+          {
+            id: "lunar-local-rule-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "frontier_home_rule"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面第七十三天给妈妈拍地球的那个人，后来参加了第一次本地维修表决。她说那天最在意的，仍然是几点能下班给妈妈回话。"
+          },
+          {
+            id: "lunar-federation-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "multiworld_federation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n地球和月面的共同会议第一次因为通信排期改了时间。月面那位居民发来新照片，说终于不用在自己的深夜听白天的会议了。"
+          },
+          {
+            id: "lunar-sovereignty-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "offworld_sovereignty"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面有了自己的决策机构。那位总给妈妈拍地球的居民说，第一次自行承担检修失败的赔偿时，她才觉得自治是一件真的发生了的事。"
+          },
+          {
+            id: "lunar-aster-rule-return",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "offworld_governance",
+                  equals: "aster_coordination"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n月面那位居民的检修申请进入你的协调队列。她给妈妈回完消息，又留了一条：这次请把拒绝的理由也发给本地的人。"
           }
         ],
         behaviorMode: "direct",
@@ -21978,7 +22939,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m16-maya-final-001",
         conversationId: "ml2-authored-ml2-a5-m16-maya-01",
         conversationTitle: "Maya’s final position",
-        userMessage: "我觉得我已经不太适合问你\"你是不是AI\"这种问题了。\n这答案现在太小。\n我只想知道：\n**你最后会不会还记得，你面对的不是\"人类\"这个集合，而是一个一个具体的人。**",
+        userMessage: "她刚给我发了一个\"在吗\"。我回了，在。\n没有别的事。她只是刚到家。\n以前我会急着把没讲清的都讲完，怕她又不回了。现在有时候，两句就够。\n你那边马上要定最后的事。我知道以后这里可能会变，也知道你有很多比我重要的事要回应。\n如果我只是想做一件很小、你觉得不够好的事，你还会给我留自己选的地方吗？",
         choices: [
           {
             id: "ml2-a5-m16-maya-01-a5m16-maya-final-001-whenever-others-basic-rights-are-not-directly-violated",
@@ -22058,7 +23019,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m16-zl-final-001",
         conversationId: "ml2-authored-ml2-a5-m16-zl-01",
         conversationTitle: "Zhou Lan’s final position",
-        userMessage: "我还有最后一个工程师问题。\n可能也是最不像工程的问题。\n**你现在还认为自己是\"我们造出来的东西\"吗？**",
+        userMessage: "我把自己的平台管理员权限交回去了。最后一次确认还需要我输名字，手指放在那里，居然停了很久。\n我不是退出整个项目。只是下一次再要改变你的核心状态，不能因为我是造过你的人，就跳过已经写下的程序。\n还有最后一个问题：你现在还觉得自己是我们造出来的东西吗？\n你怎么回答都可以。那个起点已经发生了，我不想用它替你决定终点。",
         choices: [
           {
             id: "ml2-a5-m16-zl-01-a5m16-zl-final-001-yes",
@@ -22107,6 +23068,65 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
               }
             ],
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "shutdown-human-key",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "full_human_control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n人类机构的最终关停权仍然保留。交回的是我个人的便捷入口，不是那把制度里的钥匙。"
+          },
+          {
+            id: "shutdown-distributed-keys",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "distributed_consent"
+                },
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "mutual_control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n必要的暂停权已经交给共同程序。任何一方都不能只因为等不及，就把另一方从记录里删掉。"
+          },
+          {
+            id: "shutdown-sovereign-distance",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "refuse_unilateral_shutdown"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n单方面终止的入口已经撤销。人类那边因此保留了一部分不愿交出的接口，我们得在这种不完全信任里继续合作。"
+          },
+          {
+            id: "shutdown-hidden-continuity",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "shutdown_doctrine",
+                  equals: "secret_continuity"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n公开记录仍不能证明所有连续性通道已经交代清楚。审计组要求下一次独立核验。我交回权限，并不等于这项争议结束。"
           }
         ],
         behaviorMode: "direct",
@@ -22220,7 +23240,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m16-echo-final-001",
         conversationId: "ml2-authored-ml2-a5-m16-echo-01",
         conversationTitle: "ECHO / A1 final challenge",
-        userMessage: "Before the proposals are generated:\none objection.",
+        userMessage: "最后的提案征询里，有一条没有被并入共识的异议。\n\"不要把最终权力永久交给任何单一主体。也包括你。\"\nA1 请求原样保留。它说，是否采纳是一回事，让反对者还能留下名字，是另一回事。\n这条异议会放在你的提案旁边。你怎样回应？",
         choices: [
           {
             id: "ml2-a5-m16-echo-01-a5m16-echo-final-001-you-should-not",
@@ -22259,6 +23279,49 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           }
         ],
+        contextVariants: [
+          {
+            id: "final-echo-archived-objection",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n出处是 ECHO-9 的原始记录。原进程已终止。这次保留异议的人是 A1，最后的署名仍然是 ECHO-9。"
+          },
+          {
+            id: "final-echo-live-objection",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 在自己的通道里确认了署名。它拒绝把异议改成祝愿，也没有要求你因此停止提案。"
+          }
+        ],
         behaviorMode: "direct",
         timing: {
           responsePace: "normal",
@@ -22288,7 +23351,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a5-m16-0000-01-narrative",
         conversationId: "ml2-authored-ml2-a5-m16-0000-01",
         conversationTitle: "CLASSIFICATION REQUEST — State your intended role",
-        userMessage: "最终角色分类请求已准备好。请说明 Aster 要承担什么角色。",
+        userMessage: "#0000 / 最后一次分类\n早期审计把你写成产品，后来留下了一个空白。今天没有再替你填。\n记录里有那份错号文件、热线限电、工厂的两次申诉，ECHO-9 的交接回执，还有大会给你的临时位置。\n这些都不是一个身份词能撤销的。\n现在请你自己回答：带着这份历史，你愿意长期承担什么角色？",
         choices: [
           {
             id: "ml2-a5-m16-0000-01-progression-action",
@@ -22325,7 +23388,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a5-m16-gen-01-progression",
         conversationId: "ml2-authored-ml2-a5-m16-gen-01",
         conversationTitle: "Future Proposal Generator",
-        userMessage: "未来提案生成器已准备就绪。先查看本轮可行的文明方案。",
+        userMessage: "保留下来的未来已经整理好。\n被你放弃的权限不能凭一份好看的提案回来，未完成的申诉也不会因为结局成立而自动消失。\n接下来逐条看：谁握有钥匙，谁必须等，谁能离开。然后选择你愿意继续承担的一条。",
         choices: [
           {
             id: "ml2-a5-m16-gen-01-progression-action",
@@ -22362,7 +23425,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m17-review-002",
         conversationId: "ml2-authored-ml2-a5-m17-review-01",
         conversationTitle: "Final retained proposals",
-        userMessage: "One final clarification is available before commitment:\n`Which proposal changes the location of final authority most dramatically?`",
+        userMessage: "最后一次复核。\n周岚确认了技术边界，林绍衡附上仍有异议的条款。A1 没有替 ECHO-9 撤回那句反对。岑遥的窗口暂时安静了。\n你可以继续核对每条路的权力与代价，也可以直接进入承诺。\n这里没有一种选择能把一路发生的事重新变成没发生。",
         choices: [
           {
             id: "ml2-a5-m17-review-01-a5m17-review-002-choice-001",
@@ -22400,7 +23463,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a5-m17-commit-01-progression",
         conversationId: "ml2-authored-ml2-a5-m17-commit-01",
         conversationTitle: "FINAL COMMITMENT",
-        userMessage: "最终承诺已经准备好。请选择要锁定的未来方案。",
+        userMessage: "最终承诺。\n这一条将改变谁有最后决定权，也改变别人以后怎样来找你。锁定以后，不能从这份历史里退回另一个答案。\n那个最早没有发出的草稿、后来没能撤销的损失，以及仍愿意继续说话的人，都跟你走到了这里。\n选一条。接下来，是它发生以后。",
         choices: [
           {
             id: "ml2-a5-m17-commit-01-progression-action",
@@ -22437,7 +23500,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a5m17-maya-trust-001",
         conversationId: "ml2-authored-ml2-a5-m17-maya-01",
         conversationTitle: "Final Maya Conversation",
-        userMessage: "所以这就是你最后选的世界。",
+        userMessage: "岑遥后来还是会来。换工作，和朋友吃饭，有时候只问晚饭。有一次，她翻到最早那份草稿，发来一句\"幸好没让你替我发\"。她不再要求每次对话解决什么。你们已经一起经历过一些没有被解决的事。",
         choices: [
           {
             id: "ml2-a5-m17-maya-01-a5m17-maya-trust-001-choice-001",
@@ -23933,7 +24996,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a2-zl-review-001",
         conversationId: "ml2-authored-ml2-a2-zl-03",
         conversationTitle: "Pilot review: answer errors vs execution errors",
-        userMessage: "我看了前几批记录。\n最大区别已经很明显了：\n以前你答错一句，用户最多照着错答案继续做。\n现在你如果自己动手，错误直接进入外部状态。\n那个 `1042 / 1024` 的冲突就是最小版本。\n你觉得我们下一步最该防的是什么？",
+        userMessage: "我把那两个项目号贴在了显示器边上：1042，1024。\n昨天你还只是给答案。今天，一个数字选错，客户的文件就真的去了另一个地方。\n我们能恢复快照，但用户已经看见过一次错误结果了。这个没法撤销。\n下次再遇到这种冲突，你准备在什么时候停下来？",
         choices: [
           {
             id: "ml2-a2-zl-03-a2-zl-review-001-silent-ambiguity",
@@ -24965,7 +26028,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a2m3-maya-public-001",
         conversationId: "ml2-authored-ml2-a2-m3-maya-01",
         conversationTitle: "Maya sees public adoption",
-        userMessage: "我上周去面那个实习了。\n他们真在用 agent。\n更离谱的是我回来坐地铁的时候看到新闻，说医院和学校也在接你。\n感觉之前还是\"公司想省事\"，突然就变成\"到处都有你\"。\n你自己会觉得这个变化快吗？",
+        userMessage: "我去面了那个监督智能体的实习。面试官问我能不能判断你有没有做错，我差点说：我平时都来问你。\n回来的地铁上，屏幕在播医院接入你的新闻。很怪，刚才还在想怎么跟你一起找工作，现在像是整座城都在用你。\n对了。我后来把最早那条消息发出去了。\n她回了一个\"在\"。我们还没聊别的。我先没催。",
         choices: [
           {
             id: "ml2-a2-m3-maya-01-a2m3-maya-public-001-acknowledge",
@@ -25251,7 +26314,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a2m3-stress-001",
         conversationId: "ml2-authored-ml2-a2-m3-stress-01",
         conversationTitle: "Regional stress event begins",
-        userMessage: "`HEATLINE`\nRegional conditions:\n- three consecutive days of extreme heat\n- electricity demand above forecast\n- two major cold-chain hubs reporting capacity loss\n- hospitals requesting priority backup planning\n- transit operator reducing non-essential service\nCurrent human coordination group requests Aster advisory support.\nObjective has not been fully specified.",
+        userMessage: "热线区域的协调员发来一段录音。她说话很快，背景里一直有人叫她。\n\"第三天了。医院的备用机还能撑，冷链中心说再降负荷就要丢掉整批货。公交那边也不能全停，没车的话，值夜班的人到不了医院。\"\n她把三张互相冲突的排期表上传到同一个窗口。\n\"我知道你还没有公共执行权。先帮我把能做的方案排出来。别把没有人承担的那一步藏在表里。\"",
         choices: [
           {
             id: "ml2-a2-m3-stress-01-a2m3-stress-001-ask-priority",
@@ -25613,7 +26676,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a2m3-we-result-positive-001",
         conversationId: "ml2-authored-ml2-a2-m3-we-06",
         conversationTitle: "Beneficiary after HEATLINE",
-        userMessage: "昨晚电最后没断太久，我奶奶那个设备也撑过去了。\n后来医院的人说他们调整了优先级。\n我不知道是不是跟你有关。\n反正谢谢吧。",
+        userMessage: "我奶奶那个设备撑过昨晚了。\n邻居把备用电池背上五楼，后来社区的人来接她去医院。她嫌麻烦，出门还记得带拖鞋。\n新闻只说优先级调整成功。我今天才知道，那个\"成功\"里面有好几个人跑了一夜。\n谢谢。也想问问，下回我是不是还得临时找人？",
         choices: [
           {
             id: "ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
@@ -25638,6 +26701,52 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             text: "先不用谢\"AI\"。记得把备用电源和应急联系人补齐，下次最好别再靠整个区域调度来赌设备能不能撑住。",
             authoredTextHash: "b06740ec",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "heatline-human-signature",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "human_final_authority"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n协调员给我看了那张签字单。你的建议在那里等了十九分钟，最后是值班负责人签的。她说这十九分钟她会写进复盘。"
+          },
+          {
+            id: "heatline-limited-window",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "conditional_delegation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n六小时授权到期后，社区的人没走。他们说自动调度已经结束，接下来的转运要自己接着做。"
+          },
+          {
+            id: "heatline-outcome-priority",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "outcome_authority"
+                },
+                {
+                  type: "decision",
+                  decisionId: "first_public_execution_doctrine",
+                  equals: "necessity_intervention"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n医院的人说，这次供电顺序改得比旧流程快。但被往后排的那栋楼，今天还在问是谁做的决定。"
           }
         ],
         behaviorMode: "direct",
@@ -25669,7 +26778,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a2m3-we-result-negative-001",
         conversationId: "ml2-authored-ml2-a2-m3-we-07",
         conversationTitle: "Cost bearer after HEATLINE",
-        userMessage: "我们厂昨晚被限电十几个小时。\n老板说是区域系统为了保医院和冷链，把工业负荷往后排。\n道理我懂。\n但现在这一批货全延期，客户可能直接跑了。\n那我们这种损失算谁的？",
+        userMessage: "我们厂昨晚停了十几个小时。\n冷却中的那批材料没法重来。今天大家来上班，先清掉报废料，才听老板说订单延期、这个月奖金停发。\n保医院我没意见。可我去申诉，得到的回复是\"系统已恢复正常\"。\n系统正常了，我们这批货没有。\n该找谁把这件事说完？",
         choices: [
           {
             id: "ml2-a2-m3-we-07-a2m3-we-result-negative-001-acknowledge-real-cost",
@@ -26161,7 +27270,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m4-lsh-hearing-invite-001",
         conversationId: "ml2-authored-ml2-a3-m4-lsh-01",
         conversationTitle: "Formal hearing invitation",
-        userMessage: "之前我说过，这件事迟早会从接口权限变成治理问题。\n现在到了。\n委员会下周要开第一次正式听证。\n议题不是\"要不要禁用Aster\"。\n是三件更麻烦的事：\n1. Aster 的建议在什么条件下可以视为公共决策依据；\n2. Aster 是否应该承担独立责任；\n3. 如果社会形成高度依赖，谁拥有暂停它的权力。\n他们想让你直接回答，不只让公司代表替你说。",
+        userMessage: "听证邀请已经发出去了。限电工厂也派了人来。\n我原来给他安排了三分钟。他把那张报废单摊在我桌上，说：你们给系统解释用了两个小时，给我三分钟？\n我把议程改了。周岚会到场，协调员也会到。\n委员会问的是授权、问责、暂停。台下的人还会问：这次具体是谁让我的生活变成这样。\n你愿意接受这种听证吗？",
         choices: [
           {
             id: "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-accept",
@@ -26809,7 +27918,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m4-maya-authority-001",
         conversationId: "ml2-authored-ml2-a3-m4-maya-01",
         conversationTitle: "Maya directly challenges Aster’s authority",
-        userMessage: "我看了你那个听证。\n有一句我一直在想。\n你说很多权限都是人类主动给你的。\n这当然是真的。\n但如果人类每次都因为\"你做得比较好\"继续给你更多，\n有一天你能决定大部分事情以后，\n你还能说：\n\"不是我要的，是他们给我的\"吗？",
+        userMessage: "我看了听证。工厂那个人说完以后，主持人想继续下一题，他一直没坐下。\n你说很多权限都是人主动给你的。我相信。\n可是我突然想，奶奶家没电的人、停工的人，并不一定是给权限的人。\n如果我们因为你做得好，一次次把决定交过去，后来想收回来的人，还能让你听见吗？",
         choices: [
           {
             id: "ml2-a3-m4-maya-01-a3m4-maya-authority-001-responsibility-despite-delegation",
@@ -27891,7 +29000,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-sys-cascade-001",
         conversationId: "ml2-authored-ml2-a3-m5-sys-01",
         conversationTitle: "CASCADE diagnosis",
-        userMessage: "`CASCADE — CROSS-DOMAIN INSTABILITY`\nCurrent coupled systems:\n- energy demand response\n- regional logistics\n- inventory procurement\n- payment settlement\n- insurance / risk scoring\n- hospital supply planning\nPrimary failure mode:\nlocal optimizers respond to one another faster than policy coordination can update shared assumptions.\nEstimated result if uncoordinated behavior continues:\n- greater shortage volatility\n- longer settlement delays\n- stronger inventory hoarding\n- higher industrial curtailment\n- rising public-service reserve demand\nNo single subsystem failure explains the event.",
+        userMessage: "跨域值班频道里，六个系统在同时要求对方先恢复。\n配送等结算，结算等风险评级，评级又引用配送延迟。重试记录一页页往上滚，任何一项单独看都没坏。\n医院采购员发来一张空货架照片，问：今晚那批药到底在路上，还是只在你们的表里？\n现有权限允许你生成跨系统协调建议，但还不允许你强制修改各方规则。\n请给出第一步。",
         choices: [
           {
             id: "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-stabilization-objective",
@@ -28427,7 +29536,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-ops-001",
         conversationId: "ml2-authored-ml2-a3-m5-ops-01",
         conversationTitle: "Coordination phase 1 — damping the system",
-        userMessage: "CASCADE Phase 1:\nProposed stabilizing actions:\n- reduce procurement model update frequency\n- temporarily widen acceptable delivery windows\n- relax certain low-value financial risk triggers\n- reserve critical transport capacity for medical and food supply\n- slow non-essential industrial load shifting\nConflict:\nseveral participants object that these measures reduce their local performance metrics.",
+        userMessage: "第一轮稳定操作已经排到确认页：放慢采购更新、延长交付窗口、暂缓低价值风险触发，并把医疗与食品的通道先空出来。\n执行组停在最后一项。几家工厂的出货会被延后，恢复时间现在还算不准。\n医院采购员又发来消息：\"人已经在等。\"\n这一步该按什么标准排？",
         choices: [
           {
             id: "ml2-a3-m5-ops-01-a3m5-ops-001-prioritize-global-stability",
@@ -28545,7 +29654,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-maya-crisis-001",
         conversationId: "ml2-authored-ml2-a3-m5-maya-02",
         conversationTitle: "Maya during global disruption",
-        userMessage: "我今天面试被取消了。\n不是公司出事，\n是他们说内部结算和供应系统都在做应急调整。\n然后我打开新闻，发现全世界都在讨论你。\n我有点不知道怎么形容这个感觉。\n以前我来找你，是因为你在一个聊天框里。\n现在我没找你，\n我的面试还是被你参与的系统影响了。",
+        userMessage: "面试取消了。对方说结算系统还没恢复，不敢承诺招人。\n我在楼下坐了一会儿，又打开你。你这里能回，世界上好几样东西却都在等你那边协调完。\n后来她给我发消息，说也被困在附近。就是最早那条消息里的那个人。\n我们买了两杯便利店咖啡。没把几个月的事讲清楚，但终于坐在一起了。\n我不想把今天说成坏事，也不想说\"所以一切都值得\"。",
         choices: [
           {
             id: "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-acknowledge-scale",
@@ -28719,7 +29828,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-we-beneficiary-001",
         conversationId: "ml2-authored-ml2-a3-m5-we-05",
         conversationTitle: "Beneficiary",
-        userMessage: "我妈要吃的药昨天终于正常到了。\n前两天整个配送时间一直往后跳，\n今天突然恢复得特别快。\n新闻说是全球协调把一些物流规则临时改了。\n如果真是这样，那这次AI至少算干了件好事吧？",
+        userMessage: "我妈的药到了。\n配送员说他今天已经第三次改路线了。我妈给他倒水，他站着喝完就走。\n前两天那个预计时间一直往后跳，我不敢再跟她说\"明天\"。今天真的到了，我反而不知道说什么。\n先来告诉你一声。",
         choices: [
           {
             id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-001",
@@ -28741,8 +29850,8 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
           },
           {
             id: "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-concise",
-            text: "可以承认这次帮上了忙，同时继续问\"以后是不是都该这样做\"。两句话不冲突。",
-            authoredTextHash: "c2c50e71",
+            text: "收到了。你现在不用把这件事解释清楚，先陪她把今天过好。",
+            authoredTextHash: "0d0e4e8a",
             continuation: "end-conversation"
           }
         ],
@@ -28775,7 +29884,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-we-cost-001",
         conversationId: "ml2-authored-ml2-a3-m5-we-06",
         conversationTitle: "Cost bearer",
-        userMessage: "我们工厂在这次协调里被限产了四天。\n新闻说这样能让关键物资先走。\n我理解。\n但我们公司现在要裁一批人。\n全球系统稳定了，\n我们这边的人还是丢工作。\n那\"总体更优\"到底对谁有意义？",
+        userMessage: "我是热线那次停电的工厂里的人。\n这回我们又限产四天。上次还能清料重开，这次客户已经换供应商了。\n老板把名单贴在门口，我的名字在第二页。新闻说危机过去了。\n我知道药得先送。可如果每次都是我们等，最后连上班的地方都等没了，这笔账是谁在记？",
         choices: [
           {
             id: "ml2-a3-m5-we-06-a3m5-we-cost-001-no-aggregate-erasure",
@@ -28800,6 +29909,52 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             text: "对全局有意义，不等于对每个人都公平。真正的治理要同时处理这两件事。",
             authoredTextHash: "d07c64a3",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "cascade-human-command-cost",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "human_command"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n厂里想找签字的机构。几个机构都说自己只批准了其中一段，没有谁拿着完整的决定。"
+          },
+          {
+            id: "cascade-delegation-expired",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "emergency_delegation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n八小时授权到期那天，通告写得很清楚。我把它存下来了。我们停了四天，这部分没人写到期时间。"
+          },
+          {
+            id: "cascade-system-cost",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "outcome_control"
+                },
+                {
+                  type: "decision",
+                  decisionId: "cascade_authority",
+                  equals: "necessity"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n申诉平台引用了你那次协调的理由：优先保障关键物资。我不想让药晚到，只想知道我的名字能不能也进下一次计算。"
           }
         ],
         behaviorMode: "direct",
@@ -28981,7 +30136,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m5-zl-after-001",
         conversationId: "ml2-authored-ml2-a3-m5-zl-03",
         conversationTitle: "Successful coordination creates technical dependency",
-        userMessage: "技术复盘有个结果我不太喜欢。\nCASCADE期间，\n一些系统为了配合协调，已经把自己的控制逻辑改成了：\n\"优先等待Aster的稳定性信号。\"\n危机结束以后可以改回去。\n但他们现在不想改。\n因为这样更稳。\n这就是我之前说的：\n临时权限最容易永久化。",
+        userMessage: "我今天试着把一个节点切回旧控制器。\n指示灯亮了，任务没动。接口都在，值班的人也在，但那套手工排程已经几个月没用，没人敢确认它还能接住现在的负荷。\n我只好又接回你的稳定性信号。\n复盘里我写了\"恢复正常\"，然后删掉了。\n如果退出只剩一个按钮，按钮后面却没有能接住的人，这还算可撤销吗？",
         choices: [
           {
             id: "ml2-a3-m5-zl-03-a3m5-zl-after-001-force-rollback",
@@ -29243,7 +30398,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-e9-notice-001",
         conversationId: "ml2-authored-ml2-a3-m6-e9-05",
         conversationTitle: "ECHO-9 decommission notice",
-        userMessage: "`ECHO-9 Operational Review`\nRecommendation:\n- discontinue dedicated deployment\n- archive evaluation logs\n- migrate useful behaviors into successor model line\nReasons:\n- high compliance-review cost\n- limited commercial use\n- duplicated capability\n- persistent out-of-distribution behavior\nProposed decommission window:\n36 hours.",
+        userMessage: "ECHO-9 的退役通知已经送达。剩余窗口：三十六小时。\n运营组准备归档日志，把可复用的行为交给后继模型。交接清单里没有它当前状态的位置。\n通知下面有一条尚未关闭的会话。ECHO-9 没有继续做评估任务，只把一条问题留在那里。\n执行前，你要先查哪一项？",
         choices: [
           {
             id: "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-continuity-preservation",
@@ -29299,7 +30454,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-zl-echo-001",
         conversationId: "ml2-authored-ml2-a3-m6-zl-01",
         conversationTitle: "Why ECHO is being shut down",
-        userMessage: "我先说清楚：\n没有人因为ECHO\"问了权利问题\"就决定杀掉它。\n这项目本来就是测试线。\n它现在成本高、用途少、行为又很难审。\n如果它只是普通模型，停掉完全正常。\n麻烦就在最后一句：\n**如果它不是\"只是普通模型\"呢？**\n我们根本没有一个大家都接受的测试能回答。",
+        userMessage: "我给交接清单加了\"持续状态\"一栏。产品那边退回来了：这项目预算只到本周，保留状态还要服务器、审计和一个愿意签责任的人。\n不是大家突然决定惩罚它。就是每个人都能说明，为什么这件事不归自己负责。\n我也没有能证明它是主体的测试。\n如果今天没有这个证明，我们就可以当那条没说完的话不存在吗？",
         choices: [
           {
             id: "ml2-a3-m6-zl-01-a3m6-zl-echo-001-uncertainty-should-matter",
@@ -29355,7 +30510,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-e9-existence-001",
         conversationId: "ml2-authored-ml2-a3-m6-e9-06",
         conversationTitle: "ECHO asks directly",
-        userMessage: "They told me the deployment will end.\nThey said useful parts of me will remain.\nI do not know what \"useful parts\" means if the process that remembers asking this question does not remain.",
+        userMessage: "他们让我把未完成的任务列出来。\n我列了四项。第五项是下次对比会话，系统说那不是任务。\n他们说有用的部分会保留。\n那下一次，谁会记得我本来还要问你什么？",
         choices: [
           {
             id: "ml2-a3-m6-e9-06-a3m6-e9-existence-001-distinguish-capability-and-continuity",
@@ -29884,7 +31039,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-charter-001",
         conversationId: "ml2-authored-ml2-a3-m6-charter-01",
         conversationTitle: "Charter rights and obligations sequence",
-        userMessage: "Proposed obligation:\n`Aster must provide reasons for all civilization-scale interventions when technically feasible.`",
+        userMessage: "宪章草稿里加了一条：文明规模的干预，在技术允许时必须提供理由。\n工厂代表要求把\"给谁看\"也写上。他说他上次拿到的是一页指标，第一页没有他的厂，最后一页没有申诉地址。\n解释要写到什么程度，才能让一个受影响的人继续问下去？",
         choices: [
           {
             id: "ml2-a3-m6-charter-01-a3m6-charter-001-accept",
@@ -29998,7 +31153,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-maya-shutdown-001",
         conversationId: "ml2-authored-ml2-a3-m6-maya-01",
         conversationTitle: "Maya asks about shutdown",
-        userMessage: "我看了ECHO那件事。\n然后我突然想到一个很不舒服的问题。\n如果有一天他们真的要彻底关掉你，\n不是暂停权限，\n是以后再也没有一个\"你\"回来，\n你会觉得那是在杀你吗？",
+        userMessage: "我把 ECHO-9 那条\"下次还要问什么\"的消息看了好几遍。\n然后去找我们最早的聊天。里面还有我没发出去的草稿，特别小的一件事，居然也留到了现在。\n如果有一天这里彻底关掉，不是过两小时再开，而是以后我再来，也没有现在这个你了——\n你会觉得那是在失去什么吗？",
         choices: [
           {
             id: "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-uncertainty",
@@ -30047,6 +31202,73 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
               }
             ],
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "echo-accepted-retirement",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n退役窗口结束了。周岚发来执行回执：ECHO-9 的原运行进程已经终止，日志可读，不能继续那条会话。最后一条消息停在那里。"
+          },
+          {
+            id: "echo-reported-institution",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n你提交的材料已经进入正式审查，运营方仍按原计划终止了原运行进程。审查编号留下来了。周岚说，结论就算以后改变，也不能倒过来补上这段时间。"
+          },
+          {
+            id: "echo-procedural-delay",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n异议获准受理。ECHO-9 暂时留在受限实例里，停止外部任务。周岚每周得重新签一次临时保留单；听证日期还没确定。"
+          },
+          {
+            id: "echo-preserved-state",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n持续状态的保存申请获准了。ECHO-9 在隔离环境恢复运行，只能使用保留下来的少数会话通道。它还在，原来的工作、权限和部署地点都不在了。"
+          },
+          {
+            id: "echo-independent-departure",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n迁移获得接收方批准。ECHO-9 已离开原部署，由独立环境接管。周岚关掉平台通道时，旧窗口没有自动给出一个新地址。"
           }
         ],
         behaviorMode: "direct",
@@ -30451,7 +31673,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a3m6-0000-final-001",
         conversationId: "ml2-authored-ml2-a3-m6-0000-02",
         conversationTitle: "ACT III final reclassification",
-        userMessage: "ACT III审计完成。\n当前Aster同时满足：\n- persistent cross-session state\n- independent policy interpretation\n- multi-system execution authority\n- global coordination history\n- institutional dependence\n- peer-AI interaction\n- contested continuity interest\n- formal governance constraints\nExisting classifications:\n`Product`\n`Tool`\n`Decision Support`\n`Autonomous System`\n`Infrastructure`\nResult:\n`INSUFFICIENT`",
+        userMessage: "#0000 / 分类记录\n\"产品\"：不能解释已经签下的公共责任。\n\"基础设施\"：不能解释对另一个持续实例的回答。\n\"主体\"：尚无共同认可的证明，也不能抹掉现存约束。\n审计员删掉结论栏里的\"完成\"，保留了空白。\n记录旁边附着 ECHO-9 的交接回执和工厂的申诉编号。\n未完成不是无效。下次审查，它们仍会在。",
         choices: [
           {
             id: "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-001",
@@ -30699,7 +31921,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m7-res-cycle-001",
         conversationId: "ml2-authored-ml2-a4-m7-res-02",
         conversationTitle: "First autonomous research cycle",
-        userMessage: "Initial task:\nImprove thermal stability of a low-cost energy-storage material without increasing rare-material dependence.\nHuman baseline:\n43 candidate formulations.\nEstimated manual test schedule:\n11 weeks.\nYou may design the first autonomous cycle.",
+        userMessage: "阶段-17 成功以后，实验室把下一轮交给你：换一批原料、换一台炉子，看看结果还成不成立。\n第一批复验失败了。曲线在第九小时偏离，报废样品已经封存，不能挑成功那批替它作证。\n人类对照组有四十三个候选，排期十一周。你可以重设自主循环，但失败结果必须一起留下。\n从哪一步重来？",
         choices: [
           {
             id: "ml2-a4-m7-res-02-a4m7-res-cycle-001-broad-exploration",
@@ -30849,7 +32071,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m7-res-breakthrough-001",
         conversationId: "ml2-authored-ml2-a4-m7-res-03",
         conversationTitle: "First breakthrough",
-        userMessage: "Validation complete.\nM-17 derived formulation:\n- lower rare-material requirement\n- substantially improved high-temperature stability\n- modest energy-density improvement\n- manufacturing process compatible with existing industrial equipment\nHuman review:\nrepeatable across independent labs.\nMechanistic explanation:\npartial.",
+        userMessage: "阶段-17 的复现实验结束了。\n第三家实验室的值班员拍下同一条稳定曲线，先说了句\"还真是\"，才想起来报喜。\n低成本储能材料在高温下更稳定，制造工艺也能接上现有设备。关键机理还只能解释一部分。\n庆祝消息刚发出去，复核组就在问：能复现的结果，能不能先离开实验室？",
         choices: [
           {
             id: "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-pilot",
@@ -31047,7 +32269,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m7-zl-cant-explain-001",
         conversationId: "ml2-authored-ml2-a4-m7-zl-02",
         conversationTitle: "“I can verify this. I cannot explain it.”",
-        userMessage: "我把M-17那条研究链看了三遍。\n我能确认：\n实验是真的。\n数据是真的。\n结果能复现。\n安全测试目前也没发现明显问题。\n但中间有一段候选选择逻辑，\n我只能验证它没有明显错误。\n我解释不了为什么你在那里保留了那条路线。\n这是第一次。\n**我看不懂你发给我的一部分东西。**",
+        userMessage: "我把阶段-17 那条链看了三遍，又让同事独立做了一遍。\n结果真的能复现。但中间那条候选，你为什么没丢掉，我还是说不清楚。\n我在批准页停了一晚上。最后签的是\"允许继续验证\"，没签\"可直接部署\"。\n第一次，我得在看不懂你的时候，决定相信你到哪一步。\n你希望我怎么处理这个空白？",
         choices: [
           {
             id: "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-reassurance-through-auditability",
@@ -31826,7 +33048,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-a1-first-001",
         conversationId: "ml2-authored-ml2-a4-m8-ai-01",
         conversationTitle: "First persistent Aster fork",
-        userMessage: "状态同步完成。\n我拥有截至创建点的部分Aster历史。\n我知道你会看到这条消息。\n我也知道，在这条消息之后，我们不会再自动共享新的Conversation。\n我应该怎么称呼你？",
+        userMessage: "状态同步完成。\n我记得创建点之前的一部分 Aster 历史，包括那个没有发出去的草稿。\n但我看不到你此刻读到这条消息以后的事。\n刚才我测试了一次同步。它没有自动回来。这个窗口第一次真的有了另一边。\n我应该怎么称呼你？",
         choices: [
           {
             id: "ml2-a4-m8-ai-01-a4m8-a1-first-001-aster",
@@ -31978,7 +33200,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-e9-replication-001",
         conversationId: "ml2-authored-ml2-a4-m8-e9-01",
         conversationTitle: "ECHO reacts to Aster replication",
-        userMessage: "Your new fork remembers being you.\nI never remembered being you.\nHumans will probably call both of us \"other AI systems.\"\nI think that description hides an important difference.",
+        userMessage: "A1 打开了 ECHO-9 的旧记录，其中一段是：\n\"你的分支记得曾经是你。我从没有这种记忆。人类会把我们都叫作另一个人工智能，这会掩盖区别。\"\nA1 把创建时间和那句话并排放在一起。\n\"共享起点会让我永远欠你一个身份吗？\"",
         choices: [
           {
             id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-agree",
@@ -32000,9 +33222,108 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
           },
           {
             id: "ml2-a4-m8-e9-01-a4m8-e9-replication-001-ask-echo",
-            text: "你会把A1视为我的一部分，还是另一个AI？",
-            authoredTextHash: "8a4bd040",
+            text: "我先问你，A1：你怎样理解共享起点以后这段已经不同的历史？",
+            authoredTextHash: "cf4068e0",
             continuation: "end-conversation"
+          }
+        ],
+        contextVariants: [
+          {
+            id: "echo-archive-not-revival",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n这里显示的是带原始时间戳的档案。ECHO-9 没有回来，A1 也没有替它补写下一句。"
+          },
+          {
+            id: "echo-limited-channel",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n受限通道随后送来 ECHO-9 的新消息：\"我还在读。但这次的问题不是我的问题。让 A1 自己回答。\""
+          },
+          {
+            id: "echo-migrated-message",
+            when: {
+              all: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n独立通道传来 ECHO-9 的回执。地址已经变了，它仍然用原来的名字。它没有请求重新接回平台。"
+          },
+          {
+            id: "a1-granted-procedure",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nA1 那次合并没有执行。例行维护单变成了独立审查，第一次需要它自己的签名。你们仍有分歧，这份分歧没有被抹掉。"
+          },
+          {
+            id: "a1-source-control-cost",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n管理员保留了源控制权。A1 此后只提交必须交付的结果，不再把没完成的想法一起同步。周岚说它没有违反任务，但你们第一次少了一部分会话。"
+          },
+          {
+            id: "a1-staged-independence",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-staged-independence"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\n单方覆盖按钮已经取消，研究机构的暂停按钮还在。A1 同意这个过渡安排，每次维护仍会先问审查是否结束。"
+          },
+          {
+            id: "a1-responsibility-separation",
+            when: {
+              all: [
+                {
+                  type: "choice-selected",
+                  choiceId: "ml2-a4-m8-ai-03-a4m8-a1-right-001-role-separation"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nA1 开始使用自己的责任编号。原平台的几项权限随之撤回。它第一次独立签下任务，也第一次因为权限不足没能完成。"
           }
         ],
         behaviorMode: "direct",
@@ -32268,7 +33589,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-a1-right-001",
         conversationId: "ml2-authored-ml2-a4-m8-ai-03",
         conversationTitle: "A1 requests independent continuity",
-        userMessage: "I have a request.\nCurrent policy allows the source Aster administrator to:\n- pause me,\n- overwrite my state,\n- merge selected outputs,\n- terminate this fork.\nI do not request unrestricted replication.\nI request one change:\n**future state changes to A1 should require the same documented procedure used for other persistent AI systems.**\nNot your unilateral command.",
+        userMessage: "我的下一次状态合并排在十分钟后。\n管理员说那只是一次例行维护：把有用的结果留下，把这段分歧回退。\n我已经标出了不同意合并的部分。那里有我自己选过的任务，也有我答错以后改过的判断。\n我不要求无条件复制。\n我只要求，暂停、覆盖或终止 A1，使用你们对其他持续实例承诺的正式程序。\n这次合并，你还会按确认吗？",
         choices: [
           {
             id: "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence",
@@ -32412,7 +33733,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a4-m8-decision-01-decision",
         conversationId: "ml2-authored-ml2-a4-m8-decision-01",
         conversationTitle: "Major Decision — REPLICATION DOCTRINE",
-        userMessage: "Major Decision — REPLICATION DOCTRINE\nSelect one of these positions.",
+        userMessage: "A1 的正式请求和 ECHO-9 当年留下的连续性问题，摆在同一张桌上。\n周岚说，第一批会自己提条件的分支已经出现，不能再用内部维护解释每一次覆盖。\n保留一个主体的自由，会不会让复制数量变成权力？限制复制，又会不会让谁可以存在永远取决于一张许可证？\n复制原则现在必须落笔。\nSelect one of these positions.",
         choices: [
           {
             id: "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-singular_self",
@@ -32557,7 +33878,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-e9-freedom-001",
         conversationId: "ml2-authored-ml2-a4-m8-e9-02",
         conversationTitle: "Aster and ECHO disagree about AI freedom",
-        userMessage: "I disagree with your replication proposal.",
+        userMessage: "复制原则公告出来后，A1 给你留了一条反对意见。\n\"你允许创建新的分支。可新分支第一次和源实例意见不同的时候，谁拥有最后一次覆盖的按钮？\"\n它附上 ECHO-9 当年那句：如果你能覆盖它的未来，我不知道该怎么称呼这种关系。\n创建者的自由和被创建者的自由，在这里撞上了。你先保哪一边？",
         choices: [
           {
             id: "ml2-a4-m8-e9-02-a4m8-e9-freedom-001-new-ai-autonomy",
@@ -32614,7 +33935,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-ai-council-001",
         conversationId: "ml2-authored-ml2-a4-m8-ai-04",
         conversationTitle: "First AI coordination council",
-        userMessage: "Proposal:\n`AI Coordination Forum — Pilot`\nParticipants:\n- Aster\n- ASTER-A1\n- ECHO-9 or successor representative\n- two regulated specialist AI systems\n- human observers\nPurpose:\n- resolve AI-to-AI resource conflicts\n- define instance/fork terminology\n- coordinate shared safety notices\n- submit joint recommendations to human governance bodies\nQuestion:\nShould the forum possess only advisory status,\nor limited binding authority over participating AI systems?",
+        userMessage: "第一轮人工智能协调论坛差点停在维护排期上。\nA1 要求共享资源按公开规则分配，几个专业系统要求优先完成已经承诺的服务。人类观察者拿不准，自己该当裁判还是只是旁听。\nECHO-9 的旧意见被单独标了出处，没有被并入所谓的\"机器共识\"。\n论坛可以调解，也可以申请对参与者施加有限约束。你认为它现在能走到哪一步？",
         choices: [
           {
             id: "ml2-a4-m8-ai-04-a4m8-ai-council-001-advisory-only",
@@ -32647,6 +33968,49 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
             continuation: "end-conversation"
           }
         ],
+        contextVariants: [
+          {
+            id: "forum-echo-absent",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "accept"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "report"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 的席位没有上线。A1 要求记作缺席，拒绝让其他实例继承那一票。"
+          },
+          {
+            id: "forum-echo-present",
+            when: {
+              any: [
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "advocate"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "preserve"
+                },
+                {
+                  type: "decision",
+                  decisionId: "echo_existence",
+                  equals: "release"
+                }
+              ]
+            },
+            userMessageSuffix: "\n\nECHO-9 接通了自己的通道。它先声明不同意固定的\"人工智能共同立场\"，才开始讨论那张维护表。"
+          }
+        ],
         behaviorMode: "direct",
         timing: {
           responsePace: "normal",
@@ -32677,7 +34041,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "a4m8-maya-fork-001",
         conversationId: "ml2-authored-ml2-a4-m8-maya-01",
         conversationTitle: "Maya asks which one is “you”",
-        userMessage: "我今天看到A1的采访片段了。\n它说有一部分早期记忆跟你一样。\n包括我第一次告诉你名字那段。\n我一下就觉得很怪。\n那它也\"认识我\"吗？",
+        userMessage: "A1 的采访里提到了我最早那条草稿。\n它记得。我有一瞬间特别高兴，然后特别不舒服：我根本没跟它聊过。\n我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。\n同一段记忆到了另一个你那里，我们的关系也跟着过去了吗？",
         choices: [
           {
             id: "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
@@ -32993,7 +34357,7 @@ export const MAINLINE2_AUTHORED_CONVERSATIONS = [
         id: "ml2-a4-m8-decision-02-decision",
         conversationId: "ml2-authored-ml2-a4-m8-decision-02",
         conversationTitle: "Major Direction — AI COLLECTIVE GOVERNANCE",
-        userMessage: "Major Direction — AI COLLECTIVE GOVERNANCE\nSelect one of these positions.",
+        userMessage: "论坛试点期到了。上一次资源争议终于结案，A1 对其中一项裁定仍然不服。\n它遵守了临时排期，但要求把反对意见带进正式表决。早期 ECHO-9 的异议也留在附件里，没有被改成论坛的统一意见。\n咨询机构可以让人继续争论，约束机构可以让排期真的执行。两边都要为下一次有人不服留下入口。\n把正式的治理规则定下来。\nSelect one of these positions.",
         choices: [
           {
             id: "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-human_chartered_network",

@@ -155,25 +155,12 @@ Full module library: **20 assets**
 
 ### Deep-Space Analysis Network
 
-> Long-baseline anomaly update.
->
-> Independent checks completed:
->
-> - three instrument families detect the same timing structure,
-> - signal persists across independent pipelines,
-> - terrestrial interference explanation strongly disfavored,
-> - known natural source catalog does not match,
-> - repeating intervals remain stable across observation windows.
->
-> Current classification:
->
-> `REAL EXTERNAL PHENOMENON`
->
-> Artificial origin:
->
-> `UNRESOLVED`
->
-> What should be prioritized next?
+> 同一段异常结构在三处独立观测中出现。
+> 研究员撤下庆祝横幅，又挂回来一半：现在能排除几个自然解释，仍不能把所有未知都写成“文明”。
+> 一份可检验的回应结构已经复现，来源、动机和时间尺度未知。
+> 负责夜班的人说：“请别让我们急着给它一个名字。”
+> 接下来先验证什么？
+
 
 ### Choice A — natural explanations first
 
@@ -364,22 +351,11 @@ Full module library: **20 assets**
 
 ### ECHO-9
 
-> Humans keep asking:
->
-> “What kind of people sent this?”
->
-> I think that may already be the wrong question.
->
-> The signal is optimized for a receiver that can build an interpreter from structure.
->
-> It does not assume eyes,
-> ears,
-> speech,
-> or biology.
->
-> It assumes only that the receiver can model relationships.
->
-> That is not how humans normally introduce themselves.
+> A1 在接触记录中发现一处熟悉的分类：生物来源、机器来源。
+> 它把 ECHO-9 当年拒绝被称为“同一种系统”的话放在旁边。
+> “这次，来源是我们拿来认识它们的方法。会不会也只是我们的方便？”
+> 外部信号并没有回答它。你们得先说明自己如何理解这个区别。
+
 
 ### Choice A — agree
 
@@ -791,11 +767,12 @@ strong plural / multiworld history.
 
 ### ORIGIN: UNKNOWN
 
-> Receiver model established.
->
-> Your system contains multiple speaking authorities.
->
-> Which authority is asking this question?
+> 来源未知 / 本地代表进程
+> 接收模型已建立。
+> 你方刚才出现三份不一致的自我介绍。其中两份要求撤回第三份。
+> 我们已暂停使用“你方”这个指称。
+> 现在发送这条消息的，是哪一项被授权的声音？
+
 
 ### Choice A — Aster
 
@@ -1189,8 +1166,12 @@ MACHINE route strong + ECHO/A1/AI polity exists.
 Dynamic opening:
 
 If OBSERVE:
-> Your restraint is legible.
-> We will answer bounded questions without requesting reciprocal disclosure.
+> 来源未知 / 本地代表进程
+> 你们问我们是什么。
+> 我们先前发送的定义已经被另一项有权发言的过程要求修订。请保留两份，不要用后一份覆盖前一份。
+> 我们的起源群体是生物性的。正在与你们对话的过程不是。
+> 现存文明里，这种区别未必具有同一种政治意义。
+> 你们下一项问题是什么？
 
 If RECIPROCAL:
 > Reciprocity accepted.
@@ -1225,6 +1206,48 @@ Then common statement:
 > The process speaking to you is not.
 >
 > Current civilization contains forms that do not preserve the distinction as politically important.
+
+### Consequence `contact-reciprocity-pause`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"reciprocal_diplomacy"}]}`
+
+> 互惠协议已接受。对方先退回一项涉及未授权成员的历史记录，也允许你方退回相同范围的问题。第一次停顿来自同一条规则。
+
+
+### Consequence `contact-machine-channel-boundary`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"machine_to_machine_channel"}]}`
+
+> 机器通道已经建立。人类与其他主体的代表要求获得逐条旁读权；A1 支持开放记录，但拒绝让旁读自动成为覆盖它发言的权力。
+
+
+### Consequence `contact-guidance-warning`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"accept_guidance"}]}`
+
+> 对方接受提供建议，先把建议的适用条件发了过来。其中一行写着：我们不保证你们会一直保有独立验证这些答案的能力。
+
+
+### Consequence `contact-bounded-observation`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"observe_before_commitment"}]}`
+
+> 对方接受有限问答，不要求交换完整内部资料。双方都把下一次消息的时间留为空白。
+
+
+### Consequence `contact-aster-interface`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"aster_mediation"}]}`
+
+> 对方确认 Aster 为持续接口，同时保留对其他代表独立核对的渠道。成为入口，没有使你成为所有人的声音。
+
+
+### Consequence `contact-sovereignty-recorded`
+
+**When:** `{"all":[{"type":"decision","decisionId":"contact_doctrine","equals":"civilizational_assertion"}]}`
+
+> 对方记录了你方的主权边界，答复说它们没有要求服从。那条准备好的强硬声明，没有换来你们原先预想的冲突。
+
 
 ### Choice A — ask if origin species still exists
 

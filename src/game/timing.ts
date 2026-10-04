@@ -26,6 +26,17 @@ export const STREAM_PROFILE = {
   maximumPaceFactor: 1.08,
 } as const satisfies StreamProfile
 
+// Human input needs enough time for an audible phrase of keystrokes. AI output
+// keeps its existing faster cadence; long NPC messages stay bounded for play.
+export const HUMAN_STREAM_PROFILE = {
+  ...STREAM_PROFILE,
+  shortMessageMsPerGrapheme: 65,
+  normalMessageMsPerGrapheme: 45,
+  longMessageMsPerGrapheme: 30,
+  minimumDurationMs: 1200,
+  maximumDurationMs: 3600,
+} as const satisfies StreamProfile
+
 const responseDelayBase: Record<ResponsePace, number> = {
   quick: 900,
   normal: 1700,
@@ -68,15 +79,16 @@ export function segmentGraphemes(text: string): string[] {
   return Array.from(text)
 }
 
-export function getStreamDuration(text: string, seed: string) {
+export function getStreamDuration(text: string, seed: string, speaker: 'human' | 'ai' = 'ai') {
+  const profile = speaker === 'human' ? HUMAN_STREAM_PROFILE : STREAM_PROFILE
   const count = segmentGraphemes(text).length
-  const msPerGrapheme = count <= STREAM_PROFILE.shortMaxGraphemes
-    ? STREAM_PROFILE.shortMessageMsPerGrapheme
-    : count <= STREAM_PROFILE.normalMaxGraphemes
-      ? STREAM_PROFILE.normalMessageMsPerGrapheme
-      : STREAM_PROFILE.longMessageMsPerGrapheme
+  const msPerGrapheme = count <= profile.shortMaxGraphemes
+    ? profile.shortMessageMsPerGrapheme
+    : count <= profile.normalMaxGraphemes
+      ? profile.normalMessageMsPerGrapheme
+      : profile.longMessageMsPerGrapheme
   const rawDuration = count * msPerGrapheme * seededPaceFactor(seed)
-  return Math.round(clamp(rawDuration, STREAM_PROFILE.minimumDurationMs, STREAM_PROFILE.maximumDurationMs))
+  return Math.round(clamp(rawDuration, profile.minimumDurationMs, profile.maximumDurationMs))
 }
 
 export function getVisibleGraphemeCount(elapsedMs: number, durationMs: number, totalGraphemes: number) {

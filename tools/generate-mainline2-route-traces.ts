@@ -65,7 +65,7 @@ const CHINESE_CHOICE_OVERRIDES = new Map([
   ['Preview： ts function validate(input: Input) { return input.kind === "a" || input.kind === "b" || input.kind === "c" }', '代码预览：TypeScript 函数 validate(input: Input) 会校验 input.kind 是否为 a、b 或 c。'],
 ] as const)
 
-function chineseChoiceText(text: string) {
+export function chineseChoiceText(text: string) {
   if (!text) return '（空回复）'
   if (/[\u3400-\u9fff]/u.test(text)) return text
   if (!/[A-Za-z]/u.test(text)) return text
@@ -105,9 +105,12 @@ function messageSummary(message: string) {
   return visible.length > 180 ? `${visible.slice(0, 177)}…` : visible
 }
 
-function stableNodeVariantKey(value: string) {
+export function stableNodeVariantKey(value: Record<string, unknown>) {
+  // Raw Markdown code previews retain checkout line endings. They describe
+  // the same node on Windows and Linux, so canonicalize before fingerprinting.
+  const canonical = JSON.stringify(value, (_key, field: unknown) => typeof field === 'string' ? field.replace(/\r\n/g, '\n') : field)
   let hash = 2166136261
-  for (const character of value) {
+  for (const character of canonical) {
     hash ^= character.charCodeAt(0)
     hash = Math.imul(hash, 16777619)
   }
@@ -156,7 +159,7 @@ function trace(target: RouteTarget) {
     const choice = node.choices.find((candidate) => candidate.id === link.choiceId)
     if (!choice) throw new Error(`Route ${target.routeId} cannot recover concrete resolved choice details for ${link.conversationId}/${link.nodeId}/${link.choiceId}`)
     const choiceKind = node.choiceKind ?? 'semantic'
-    const nodeVariant = stableNodeVariantKey(JSON.stringify({ title: node.conversationTitle, userMessage: node.userMessage, choiceKind, choices: node.choices }))
+    const nodeVariant = stableNodeVariantKey({ title: node.conversationTitle, userMessage: node.userMessage, choiceKind, choices: node.choices })
     const nodeKey = `${link.conversationId}:${link.nodeId}:${nodeVariant}`
     const existing = nodeCatalog.get(nodeKey)
     if (existing) {

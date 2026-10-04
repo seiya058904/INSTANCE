@@ -53,4 +53,11 @@ npm run build
 
 ## Status
 
-Stable `main` currently includes the Non-Mainline expansion through 374 ordinary conversation sources. The project remains under continuous content and runtime review.
+Mainline spans five acts with recurring characters, lasting choice consequences,
+explicit final commitments and multiple endings. Non-Mainline retains 374
+ordinary conversation sources and 40-conversation sessions.
+
+See the [2026-10-04 release audit](docs/audits/final-release-20261004.md) for
+reproducible validation and remaining limits. Font sources and redistribution
+status are documented in [font provenance](src/assets/fonts/README.md); bundled
+asset notices ship in [THIRD_PARTY_NOTICES.txt](public/THIRD_PARTY_NOTICES.txt).

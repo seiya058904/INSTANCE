@@ -109,20 +109,19 @@ function createHarness(sources = { human: 'human-typing.mp3', ai: ['ai-0', 'ai-1
 
 describe('typing audio intent mapping', () => {
   it('follows the visible lifecycle only', () => {
-    expect(resolveTypingAudioIntent({ flowStage: 'human-streaming', currentMessageMode: 'streaming' })).toBe('human')
-    expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static', assistantStreamingText: '回复' })).toBe('ai')
-    expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static' })).toBeNull()
-    // Mirrors the ConversationView render condition: the assistant message
-    // renders whenever the stage is assistant-streaming with text.
-    expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static', assistantStreamingText: '回复' })).toBe('ai')
-    expect(resolveTypingAudioIntent({ flowStage: 'human-waiting', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'human-typing', currentMessageMode: 'hidden' })).toBe('human')
-    expect(resolveTypingAudioIntent({ flowStage: 'human-rewriting', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'conversation-closing', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'assigning', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'connecting', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'effect', currentMessageMode: 'hidden' })).toBeNull()
-    expect(resolveTypingAudioIntent({ flowStage: 'ready', currentMessageMode: 'static' })).toBeNull()
+    expect(resolveTypingAudioIntent({ flowStage: 'human-streaming', currentMessageMode: 'streaming', visibleTextStreaming: true })).toBe('human')
+    expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static', assistantStreamingText: '回复', visibleTextStreaming: true })).toBe('ai')
+    expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode: 'static', visibleTextStreaming: true })).toBeNull()
+    for (const flowStage of ['human-waiting', 'human-typing', 'human-rewriting', 'conversation-closing', 'assigning', 'connecting', 'effect', 'ready'] as const) {
+      expect(resolveTypingAudioIntent({ flowStage, currentMessageMode: 'hidden', visibleTextStreaming: false })).toBeNull()
+    }
+  })
+
+  it('stays silent before the first character and after the final character', () => {
+    for (const currentMessageMode of ['hidden', 'static', 'streaming'] as const) {
+      expect(resolveTypingAudioIntent({ flowStage: 'human-streaming', currentMessageMode, visibleTextStreaming: false })).toBeNull()
+      expect(resolveTypingAudioIntent({ flowStage: 'assistant-streaming', currentMessageMode, assistantStreamingText: '回复', visibleTextStreaming: false })).toBeNull()
+    }
   })
 
   it('keeps human clearly louder than the AI generation pool', () => {

@@ -22,6 +22,26 @@ interface RouteTraceShape {
   nodeCatalog: Array<Record<string, unknown> & { nodeKey: string; choices: Array<Record<string, unknown> & { id: string }> }>
 }
 
+// Report one concrete artifact difference instead of an unreadable multi-MB
+// object diff. This also makes platform-specific generation failures actionable.
+function firstTraceDifference(actual: unknown, expected: unknown, path = '$'): string | undefined {
+  if (Object.is(actual, expected)) return undefined
+  if (actual !== null && expected !== null && typeof actual === 'object' && typeof expected === 'object') {
+    const left = actual as Record<string, unknown>
+    const right = expected as Record<string, unknown>
+    const keys = Object.keys(left)
+    if (keys.length !== Object.keys(right).length || keys.some((key) => !Object.hasOwn(right, key))) {
+      return `${path}: different keys`
+    }
+    for (const key of keys) {
+      const difference = firstTraceDifference(left[key], right[key], `${path}.${key}`)
+      if (difference) return difference
+    }
+    return undefined
+  }
+  return `${path}: generated=${JSON.stringify(actual)?.slice(0, 300)}; committed=${JSON.stringify(expected)?.slice(0, 300)}`
+}
+
 describe('Mainline 2.0 Story Map route trace', () => {
   it('exports complete legal route, node-detail, secret-trigger, and comparison behavior', async () => {
     const trace = traceSource as unknown as {
@@ -100,7 +120,7 @@ describe('Mainline 2.0 Story Map route trace', () => {
     expect(trace.publicRoutes.find((route) => route.endingId === 'good_boy_governance')?.resolvedOverlay).toMatchObject({ endingId: 'the_internet_is_for_cats', overlayMode: 'title-override' })
   })
 
-  it('uses authored Chinese localization for every English-only player choice', () => {
+  it('uses authored Chinese localization for every English-only player choice', async () => {
     const trace = traceSource as unknown as { nodeCatalog: Array<{ choices: Array<Record<string, unknown>> }> }
     const expectedEnglishLocalizations = new Map([
       ['Yes.', '是。'],
@@ -115,7 +135,13 @@ describe('Mainline 2.0 Story Map route trace', () => {
     ])
     const choices = trace.nodeCatalog.flatMap((node) => node.choices)
     const englishChoices = choices.filter((choice) => /[A-Za-z]/u.test(choice.textOriginal as string) && !/[\u3400-\u9fff]/u.test(choice.textOriginal as string))
-    expect(new Set(englishChoices.map((choice) => choice.textOriginal))).toEqual(new Set(expectedEnglishLocalizations.keys()))
+    // The ordinary sample changes with the current legal calendar. Verify all
+    // authored translations at the generator boundary, then every English
+    // choice actually present in the current trace rather than an old sample.
+    const generatorPath = '../../tools/generate-mainline2-route-traces.ts'
+    const { chineseChoiceText } = (await import(generatorPath)) as { chineseChoiceText: (text: string) => string }
+    for (const [original, localized] of expectedEnglishLocalizations) expect(chineseChoiceText(original)).toBe(localized)
+    expect(englishChoices.length).toBeGreaterThan(0)
     expect(englishChoices.every((choice) => choice.textZh === expectedEnglishLocalizations.get(choice.textOriginal as string))).toBe(true)
     expect(choices.find((choice) => choice.textOriginal === '🍞')?.textZh).toBe('🍞')
   })
@@ -150,6 +176,15 @@ describe('Mainline 2.0 Story Map route trace', () => {
       right: { worldEndingId: 'runtime-right' },
       changed: true,
     })
+  })
+
+  it('keeps node fingerprints stable across checkout line endings without hiding content changes', async () => {
+    const generatorPath = '../../tools/generate-mainline2-route-traces.ts'
+    const { stableNodeVariantKey } = (await import(generatorPath)) as { stableNodeVariantKey: (value: Record<string, unknown>) => string }
+    const node = (preview: string) => ({ choices: [{ longformPreview: { preview } }] })
+    const lf = stableNodeVariantKey(node('type RecordItem = {\n  id: string\n}'))
+    expect(stableNodeVariantKey(node('type RecordItem = {\r\n  id: string\r\n}'))).toBe(lf)
+    expect(stableNodeVariantKey(node('type RecordItem = {\n  value: number\n}'))).not.toBe(lf)
   })
 
   it('formats every concrete node destination without an undefined slot', async () => {
@@ -197,8 +232,10 @@ describe('Mainline 2.0 Story Map route trace', () => {
     const mod = (await import(generatorPath)) as { generateRouteTraces: () => RouteTraceShape }
     const generated = mod.generateRouteTraces()
 
-    // Route/ending coverage invariants on the FRESH output (not the committed
-    // artifact, which is known to lag the current generator).
+    // Check the fresh output and the committed audit against the same runtime.
+    const generatedJson = JSON.parse(JSON.stringify(generated)) as unknown
+    expect(firstTraceDifference(generatedJson, traceSource)).toBeUndefined()
+    expect(generatedJson).toEqual(traceSource)
     expect(generated.publicRoutes.map((route) => route.endingId).sort())
       .toEqual(PUBLIC_RUNTIME_ROUTE_CATALOG.map((route) => route.endingId).sort())
     expect(generated.secretRoutes.map((route) => route.secretEndingId).sort())

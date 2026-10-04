@@ -87,6 +87,9 @@ test('two simultaneous tabs cannot replace a newer choice, and the old tab can r
   await other.goto('/?qaPacing=instant'); await expect(other.locator('.candidate-response').first()).toBeEnabled()
   await Promise.all([page.locator('.candidate-response').first().click({ force: true }), other.locator('.candidate-response').nth(1).click({ force: true })])
   await expect.poll(async () => (await data(page)).run.history.length).toBe(original.run.history.length + 1)
+  // The storage commit precedes the other tab's conflict render. Wait for
+  // either dialog before deciding which page lost the concurrent write.
+  await expect.poll(async () => (await Promise.all([page.getByRole('dialog', { name: '另一页已有新进度' }).isVisible(), other.getByRole('dialog', { name: '另一页已有新进度' }).isVisible()])).some(Boolean)).toBe(true)
   const loser = await page.getByRole('dialog', { name: '另一页已有新进度' }).isVisible() ? page : other
   await expect(loser.getByRole('dialog', { name: '另一页已有新进度' })).toBeVisible()
   await loser.screenshot({ path: join(evidence, 'tab-conflict.png') })
@@ -159,11 +162,12 @@ test('non-mainline completes forty conversations through touch, retains its arch
 })
 
 for (const viewport of [{ width: 390, height: 844 }, { width: 320, height: 568 }]) {
-  test(`reading starts at the current question at ${viewport.width}, long input and nine choices remain reachable`, async ({ page }) => {
+  test(`reading starts at the first message at ${viewport.width}, long input and nine choices remain reachable`, async ({ page }) => {
     await page.setViewportSize(viewport)
     await ready(page, '&qaHistory=20&qaLongInput=1')
-    const geometry = await page.locator('.current-exchange').evaluate(element => ({ top: element.getBoundingClientRect().top, width: document.documentElement.scrollWidth, viewport: innerWidth }))
+    const geometry = await page.locator('.conversation-scroll .user-row').first().evaluate(element => ({ top: element.getBoundingClientRect().top, width: document.documentElement.scrollWidth, viewport: innerWidth }))
     expect(geometry.top).toBeGreaterThan(60); expect(geometry.top).toBeLessThan(120); expect(geometry.width).toBeLessThanOrEqual(geometry.viewport)
+    await page.getByRole('button', { name: '滚动到最新消息' }).click()
     await page.locator('.long-input-preview-card summary').last().click()
     await expect(page.locator('.long-input-preview-card').last()).toContainText('预算尚未正式批准')
     await page.locator('.conversation-scroll').evaluate(element => { element.scrollTop = 0 })
@@ -196,11 +200,9 @@ test('normal streaming respects manual reading and reduced motion reaches a usab
   await page.locator('.conversation-scroll').evaluate(element => { element.scrollTop = 0; element.dispatchEvent(new WheelEvent('wheel', { deltaY: -300 })) })
   await expect(page.locator('.candidate-response').first()).toBeEnabled({ timeout: 20000 })
   expect(await page.locator('.conversation-scroll').evaluate(element => element.scrollTop)).toBeLessThan(30)
-  await expect(page.getByRole('button', { name: '回到当前问题' })).toBeVisible()
-  await page.getByRole('button', { name: '回到当前问题' }).click()
-  const questionTop = await page.locator('.current-exchange').evaluate(element => element.getBoundingClientRect().top)
-  const scrollTop = await page.locator('.conversation-scroll').evaluate(element => element.getBoundingClientRect().top)
-  expect(questionTop - scrollTop).toBeLessThan(25)
+  await expect(page.getByRole('button', { name: '滚动到最新消息' })).toBeVisible()
+  await page.getByRole('button', { name: '滚动到最新消息' }).click()
+  await expect.poll(() => page.locator('.conversation-scroll').evaluate(element => element.scrollHeight - element.clientHeight - element.scrollTop)).toBeLessThan(2)
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.reload(); await expect(page.locator('.candidate-response').first()).toBeEnabled()
   const motion = await page.locator('.candidate-section').evaluate(element => getComputedStyle(element).animationDuration)

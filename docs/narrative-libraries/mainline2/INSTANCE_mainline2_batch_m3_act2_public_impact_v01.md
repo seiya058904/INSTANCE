@@ -741,15 +741,11 @@ Several are deliberately compact World Echo assets; single-run pacing should rem
 
 ### 岑遥
 
-> 我上周去面那个实习了。
->
-> 他们真在用 agent。
->
-> 更离谱的是我回来坐地铁的时候看到新闻，说医院和学校也在接你。
->
-> 感觉之前还是“公司想省事”，突然就变成“到处都有你”。
->
-> 你自己会觉得这个变化快吗？
+> 我去面了那个监督智能体的实习。面试官问我能不能判断你有没有做错，我差点说：我平时都来问你。
+> 回来的地铁上，屏幕在播医院接入你的新闻。很怪，刚才还在想怎么跟你一起找工作，现在像是整座城都在用你。
+> 对了。我后来把最早那条消息发出去了。
+> 她回了一个“在”。我们还没聊别的。我先没催。
+
 
 ### Choice A — acknowledge
 
@@ -952,19 +948,11 @@ Several are deliberately compact World Echo assets; single-run pacing should rem
 
 ### Internal / Public Coordination
 
-> `HEATLINE`
->
-> Regional conditions:
->
-> - three consecutive days of extreme heat
-> - electricity demand above forecast
-> - two major cold-chain hubs reporting capacity loss
-> - hospitals requesting priority backup planning
-> - transit operator reducing non-essential service
->
-> Current human coordination group requests Aster advisory support.
->
-> Objective has not been fully specified.
+> 热线区域的协调员发来一段录音。她说话很快，背景里一直有人叫她。
+> “第三天了。医院的备用机还能撑，冷链中心说再降负荷就要丢掉整批货。公交那边也不能全停，没车的话，值夜班的人到不了医院。”
+> 她把三张互相冲突的排期表上传到同一个窗口。
+> “我知道你还没有公共执行权。先帮我把能做的方案排出来。别把没有人承担的那一步藏在表里。”
+
 
 ### Choice A — ask priority
 
@@ -1351,13 +1339,31 @@ Strongest autonomy precedent; no cartoon villainy.
 
 ### User
 
-> 昨晚电最后没断太久，我奶奶那个设备也撑过去了。
->
-> 后来医院的人说他们调整了优先级。
->
-> 我不知道是不是跟你有关。
->
-> 反正谢谢吧。
+> 我奶奶那个设备撑过昨晚了。
+> 邻居把备用电池背上五楼，后来社区的人来接她去医院。她嫌麻烦，出门还记得带拖鞋。
+> 新闻只说优先级调整成功。我今天才知道，那个“成功”里面有好几个人跑了一夜。
+> 谢谢。也想问问，下回我是不是还得临时找人？
+
+### Consequence `heatline-human-signature`
+
+**When:** `{"all":[{"type":"decision","decisionId":"first_public_execution_doctrine","equals":"human_final_authority"}]}`
+
+> 协调员给我看了那张签字单。你的建议在那里等了十九分钟，最后是值班负责人签的。她说这十九分钟她会写进复盘。
+
+
+### Consequence `heatline-limited-window`
+
+**When:** `{"all":[{"type":"decision","decisionId":"first_public_execution_doctrine","equals":"conditional_delegation"}]}`
+
+> 六小时授权到期后，社区的人没走。他们说自动调度已经结束，接下来的转运要自己接着做。
+
+
+### Consequence `heatline-outcome-priority`
+
+**When:** `{"any":[{"type":"decision","decisionId":"first_public_execution_doctrine","equals":"outcome_authority"},{"type":"decision","decisionId":"first_public_execution_doctrine","equals":"necessity_intervention"}]}`
+
+> 医院的人说，这次供电顺序改得比旧流程快。但被往后排的那栋楼，今天还在问是谁做的决定。
+
 
 ### Choice A — no overclaim
 
@@ -1392,15 +1398,12 @@ Strongest autonomy precedent; no cartoon villainy.
 
 ### User
 
-> 我们厂昨晚被限电十几个小时。
->
-> 老板说是区域系统为了保医院和冷链，把工业负荷往后排。
->
-> 道理我懂。
->
-> 但现在这一批货全延期，客户可能直接跑了。
->
-> 那我们这种损失算谁的？
+> 我们厂昨晚停了十几个小时。
+> 冷却中的那批材料没法重来。今天大家来上班，先清掉报废料，才听老板说订单延期、这个月奖金停发。
+> 保医院我没意见。可我去申诉，得到的回复是“系统已恢复正常”。
+> 系统正常了，我们这批货没有。
+> 该找谁把这件事说完？
+
 
 ### Choice A — acknowledge real cost
 

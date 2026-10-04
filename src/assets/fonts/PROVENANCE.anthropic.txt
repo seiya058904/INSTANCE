@@ -1,0 +1,31 @@
+Anthropic Serif Web — original, unmodified webfont files
+
+Retrieved on 2026-10-04 from the public font URLs declared by
+https://www.anthropic.com/ in its stylesheet:
+https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/css/ant-brand.shared.11407e92c.min.css
+
+Embedded copyright: Copyright 2025-2026 Anthropic PBC
+Embedded manufacturer: BSPK LLC
+Embedded designer: BSPK x Geist x Anthropic
+Version: 26.043.1
+Family: Anthropic Serif Web
+Axes: weight 300–800; optical size 16–48
+
+anthropic-serif-roman.woff2 (175356 bytes)
+Source: https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a1551eb6cda0d656e8a_AnthropicSerif-Roman-Web.woff2
+SHA-256: e96fe97bb7ba2190a9a227d27380e0c79894408bfc6acea5a511774d93a16f69
+
+anthropic-serif-italic.woff2 (166724 bytes)
+Source: https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a15a9fb8c1107a3570e_AnthropicSerif-Italic-Web.woff2
+SHA-256: 7f61e32b5941ad6e5699aeb3e03390a43e5f04f3bff6a5853bed08c802596f83
+
+This file records provenance, not a license grant. The original webfont files
+contain no name-table license description or license URL. Their availability
+and OS/2 fsType=0 do not establish redistribution permission.
+
+Repository status (corrected 2026-10-04): these files were committed in 7d1aebf
+and are already in the public codex/mainline-claude-iteration branch at 7106476.
+The earlier "local preview only / no remote upload" statement was obsolete.
+During final release review the repository owner explicitly requested keeping
+this font. The files remain unchanged. Public redistribution permission has
+not been reliably confirmed; that request is not an Anthropic license grant.

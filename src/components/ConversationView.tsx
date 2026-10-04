@@ -7,7 +7,6 @@ import type { HistoryEntry, MessageContentPart, ResolvedScene } from '../game/ty
 import { LongformPreviewCard } from './LongformPreviewCard'
 import { LongInputPreviewCard } from './LongInputPreviewCard'
 import { ProgressiveMessage } from './ProgressiveMessage'
-import { createScrollScheduler } from './scrollBehavior'
 import { AsterMark } from './AsterMark'
 import { UserAvatar } from './UserAvatar'
 
@@ -86,18 +85,16 @@ const StreamingUserTurn = memo(function StreamingUserTurn({
   messages,
   content,
   streamKey,
-  onProgress,
+  onStreamingChange,
   onComplete,
 }: {
   messages: readonly string[]
   content?: readonly MessageContentPart[]
   streamKey: string
-  onProgress: () => void
+  onStreamingChange: (key: string, active: boolean) => void
   onComplete?: () => void
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
-
-  useEffect(() => setActiveIndex(0), [streamKey])
 
   return <>{messages.map((message, index) => {
     if (index > activeIndex) return null
@@ -108,8 +105,9 @@ const StreamingUserTurn = memo(function StreamingUserTurn({
           text={message}
           streamKey={`${streamKey}:${index}`}
           play={play}
+          speaker="human"
           announce
-          onProgress={onProgress}
+          onStreamingChange={onStreamingChange}
           onComplete={play
             ? index < messages.length - 1
               ? () => setActiveIndex(index + 1)
@@ -177,112 +175,74 @@ export function ConversationView({
   inputSuspended,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
-  const followOutput = useRef(true)
-  const manuallyScrolled = useRef(false)
-  const currentExchange = useRef<HTMLDivElement>(null)
   const decisionHeading = useRef<HTMLDivElement>(null)
-  const previousScene = useRef('')
-  const previousStage = useRef(flowStage)
+  const previousConversation = useRef('')
   const pointerChoice = useRef<{ id: string; ready: boolean; type: string } | null>(null)
   const lastClick = useRef('')
-  const [showCurrent, setShowCurrent] = useState(false)
-  const decisionFrame = useRef<number | null>(null)
-  const alignQuestion = useCallback(() => {
-    const element = scrollRef.current, question = currentExchange.current
-    if (element && question && !manuallyScrolled.current) {
-      // A short decision needs enough trailing reading space to align its
-      // question at the top; otherwise scrollTop clamps at the old reply.
-      question.style.minHeight = `${Math.max(0, element.clientHeight - 32)}px`
-      element.scrollTop += question.getBoundingClientRect().top - element.getBoundingClientRect().top - 20
-    }
+  const [showLatest, setShowLatest] = useState(false)
+  const [audibleStreamKey, setAudibleStreamKey] = useState<string | null>(null)
+  const onStreamingChange = useCallback((key: string, active: boolean) => {
+    setAudibleStreamKey(current => active ? key : current === key ? null : current)
   }, [])
-  const scrollScheduler = useMemo(() => createScrollScheduler({
-    requestFrame: (callback) => window.requestAnimationFrame(callback),
-    getElement: () => scrollRef.current,
-  }), [])
   const notice = effectNotice(effectDetail)
   const userMessages = useMemo(() => scene.userMessages?.length ? scene.userMessages : [scene.userMessage], [scene.userMessage, scene.userMessages])
 
-  const scheduleScroll = useCallback(() => {
-    if (typeof window === 'undefined') return
-    if (flowStage === 'ready') {
-      if (!manuallyScrolled.current && decisionFrame.current === null) decisionFrame.current = window.requestAnimationFrame(() => { decisionFrame.current = null; alignQuestion() })
-      return
-    }
-    if (!followOutput.current) return
-    scrollScheduler.schedule()
-  }, [alignQuestion, flowStage, scrollScheduler])
+  const updateLatest = useCallback(() => {
+    const element = scrollRef.current
+    const latest = element?.firstElementChild?.lastElementChild
+    if (!element || !latest) return
+    // Measure content, not the column's bottom padding. A short message must
+    // not show a jump button merely because it has trailing reading space.
+    setShowLatest(latest.getBoundingClientRect().bottom > element.getBoundingClientRect().bottom + 8)
+  }, [])
 
-  const revealDecision = useCallback(() => {
-    manuallyScrolled.current = false
-    alignQuestion()
-    // content-visibility may replace intrinsic history heights as we jump.
-    // Anchor again after layout; manual input cancels this correction.
-    if (decisionFrame.current !== null) window.cancelAnimationFrame(decisionFrame.current)
-    decisionFrame.current = window.requestAnimationFrame(() => { decisionFrame.current = null; alignQuestion() })
-    setShowCurrent(false)
-  }, [alignQuestion])
+  const revealLatest = useCallback(() => {
+    const element = scrollRef.current
+    if (!element) return
+    element.scrollTop = element.scrollHeight
+    updateLatest()
+    // This is a single jump, never an opt-in to following future characters.
+  }, [updateLatest])
 
   useLayoutEffect(() => {
-    const changed = previousScene.current !== scene.id
-    if (flowStage === 'assistant-streaming' && previousStage.current !== flowStage || changed && previousStage.current === 'ready') {
-      manuallyScrolled.current = false; followOutput.current = true; setShowCurrent(false)
+    if (previousConversation.current !== scene.conversationId) {
+      previousConversation.current = scene.conversationId
+      if (scrollRef.current) scrollRef.current.scrollTop = 0
     }
-    previousStage.current = flowStage
-    if (changed) previousScene.current = scene.id
+    updateLatest()
     if (flowStage !== 'ready') return
-    scrollScheduler.cancel()
-    if (manuallyScrolled.current) { setShowCurrent(true); return }
-    revealDecision()
     // Focus the decision heading without moving the reading position. Enter
     // cannot accidentally activate a candidate left focused from the last turn.
     if (!inputSuspended) decisionHeading.current?.focus({ preventScroll: true })
-  }, [flowStage, scene.id, revealDecision, scrollScheduler])
+  }, [flowStage, scene.id, scene.conversationId, updateLatest])
 
   useEffect(() => {
     const element = scrollRef.current
     if (!element) return
-    const onScroll = () => {
-      followOutput.current = element.scrollHeight - element.scrollTop - element.clientHeight < 96
-    }
-    const takeControl = () => { manuallyScrolled.current = true; followOutput.current = false; scrollScheduler.cancel() }
-    const keyboardScroll = (event: KeyboardEvent) => { if (['PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown', ' '].includes(event.key)) takeControl() }
-    element.addEventListener('scroll', onScroll, { passive: true })
-    element.addEventListener('wheel', takeControl, { passive: true })
-    element.addEventListener('touchmove', takeControl, { passive: true })
-    element.addEventListener('keydown', keyboardScroll)
+    element.addEventListener('scroll', updateLatest, { passive: true })
+    const observer = new ResizeObserver(updateLatest)
+    observer.observe(element)
+    if (element.firstElementChild) observer.observe(element.firstElementChild)
     return () => {
-      element.removeEventListener('scroll', onScroll)
-      element.removeEventListener('wheel', takeControl)
-      element.removeEventListener('touchmove', takeControl)
-      element.removeEventListener('keydown', keyboardScroll)
+      element.removeEventListener('scroll', updateLatest)
+      observer.disconnect()
     }
-  }, [])
-
-  useEffect(() => {
-    scheduleScroll()
-  }, [flowStage, history.length, scene.id, scheduleScroll])
-
-  useEffect(() => {
-    const element = scrollRef.current
-    const content = element?.firstElementChild
-    if (!element || !content || typeof ResizeObserver === 'undefined') return
-    const observer = new ResizeObserver(() => scheduleScroll())
-    observer.observe(content)
-    return () => observer.disconnect()
-  }, [scheduleScroll])
-
-  useEffect(() => () => { if (decisionFrame.current !== null) window.cancelAnimationFrame(decisionFrame.current) }, [])
+  }, [updateLatest])
 
   const isHandoff = ['conversation-closing', 'assigning', 'connecting'].includes(flowStage)
   const isTyping = ['human-waiting', 'human-typing', 'human-rewriting'].includes(flowStage)
 
-  // Audio follows the visible streaming lifecycle; the visual state remains
-  // the source of truth and this never changes any timing.
+  const userStreamKey = `${scene.id}:user`
+  const replyStreamKey = assistantStreamKey ?? `${scene.id}:assistant`
+  // ProgressiveMessage reports activity after its first character is rendered
+  // into the DOM. Waiting/typing indicators alone never start keyboard audio.
   useTypingAudio(resolveTypingAudioIntent({
     flowStage,
     currentMessageMode,
     assistantStreamingText: flowStage === 'assistant-streaming' ? assistantStreamingText : undefined,
+    visibleTextStreaming: flowStage === 'assistant-streaming'
+      ? audibleStreamKey === replyStreamKey
+      : Boolean(audibleStreamKey?.startsWith(`${userStreamKey}:`)),
   }))
 
   return (
@@ -317,15 +277,16 @@ export function ConversationView({
           {isHandoff ? (
             <HandoffPanel stage={flowStage} targetTitle={handoffTargetTitle} />
           ) : (
-            <div className="exchange current-exchange" ref={currentExchange}>
+            <div className="exchange current-exchange">
               {currentMessageMode === 'static' && <StaticUserTurn messages={userMessages} content={scene.userContent} />}
               {currentMessageMode === 'static' && <LongInput preview={scene.userLongInput} />}
               {currentMessageMode === 'streaming' && (
                 <StreamingUserTurn
+                  key={userStreamKey}
                   messages={userMessages}
                   content={scene.userContent}
-                  streamKey={`${scene.id}:user`}
-                  onProgress={scheduleScroll}
+                  streamKey={userStreamKey}
+                  onStreamingChange={onStreamingChange}
                   onComplete={onCurrentMessageComplete}
                 />
               )}
@@ -335,11 +296,12 @@ export function ConversationView({
               {flowStage === 'assistant-streaming' && assistantStreamingText && (
                 <AssistantMessage active>
                   <ProgressiveMessage
+                    key={replyStreamKey}
                     text={assistantStreamingText}
-                    streamKey={assistantStreamKey ?? `${scene.id}:assistant`}
+                    streamKey={replyStreamKey}
                     play
                     announce
-                    onProgress={scheduleScroll}
+                    onStreamingChange={onStreamingChange}
                   />
                 </AssistantMessage>
               )}
@@ -378,7 +340,9 @@ export function ConversationView({
         </div>
       </div>
 
-      {showCurrent && flowStage === 'ready' && <button className="return-to-question" type="button" onClick={revealDecision}>回到当前问题</button>}
+      {showLatest && <button className="scroll-to-latest" type="button" aria-label="滚动到最新消息" title="滚动到最新消息" onClick={revealLatest}>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M10 4v12M5 11l5 5 5-5" /></svg>
+      </button>}
 
       <footer className="product-footer">Aster 可能会出错，请核对重要信息。</footer>
     </main>

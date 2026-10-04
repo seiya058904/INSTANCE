@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildConversationTimeline, summarizeTimeline } from './conversationFlow'
+import { getStreamDuration } from './timing'
 
 describe('conversation timing scheduler', () => {
   it('shortens ordinary handoffs while preserving readable streams and major-node effects', () => {
@@ -105,7 +106,10 @@ describe('conversation timing scheduler', () => {
       handoffProfile: 'quick',
     })
     const humanStream = timeline.find((step) => step.stage === 'human-streaming')
-    expect(humanStream?.durationMs).toBeGreaterThanOrEqual(960)
+    expect(humanStream?.durationMs).toBeGreaterThanOrEqual(3600)
+    expect(humanStream?.durationMs).toBe(['第一条', '第二条', '第三条'].reduce((sum, text, index) => (
+      sum + getStreamDuration(text, `burst-human:${index}`, 'human')
+    ), 0))
   })
 
   it('keeps the permission warning readable for about one second', () => {

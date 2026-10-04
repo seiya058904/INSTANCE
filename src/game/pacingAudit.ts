@@ -46,7 +46,7 @@ export function auditRoutePacing(route: EndingRoute): RoutePacingAudit {
 
   const firstScene = resolveScene(run)
   for (const message of firstScene.userMessages ?? [firstScene.userMessage]) {
-    streamingMs += getStreamDuration(message, `${firstScene.id}:initial`)
+    streamingMs += getStreamDuration(message, `${firstScene.id}:initial`, 'human')
   }
 
   while (run.phase === 'playing') {
@@ -80,7 +80,7 @@ export function auditRoutePacing(route: EndingRoute): RoutePacingAudit {
     } else {
       streamingMs += getStreamDuration(choice.text, `${scene.id}:assistant:${choice.id}`)
       const ending = buildEnding(next)
-      streamingMs += getStreamDuration(ending.humanLine, `ending:${route}:human`)
+      streamingMs += getStreamDuration(ending.humanLine, `ending:${route}:human`, 'human')
       streamingMs += getStreamDuration(ending.assistantLine, `ending:${route}:assistant`)
       visibleGraphemes += graphemeCount(ending.summary) + graphemeCount(ending.humanLine) + graphemeCount(ending.assistantLine)
     }

@@ -351,7 +351,7 @@ export interface StableRunState {
    */
   priorOrdinaryExposure?: string[]
   /**
-   * Ordinary conversation ids consumed by Non-Mainline sessions inside this
+   * Ordinary conversation ids consumed or currently visible in Non-Mainline sessions inside this
    * same Instance. The Mainline2 ordinary scheduler hard-excludes them so a
    * conversation cannot replay across modes within one run.
    */

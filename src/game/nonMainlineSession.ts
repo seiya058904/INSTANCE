@@ -1,5 +1,5 @@
 import { selectNonMainlineConversations } from '../content/nonMainlineSelector'
-import { buildStoryContentForManifest } from '../content/runManifest'
+import { buildStoryContentForManifest, getManifestConversation, ordinaryConversationPool } from '../content/runManifest'
 import type {
   ArcScores,
   AttributeName,
@@ -169,6 +169,50 @@ export function nonMainlineCompletedCount(session: NonMainlineSessionState) {
   return session.phase === 'evaluation'
     ? session.selectedConversationIds.length
     : session.currentConversationIndex
+}
+
+/** Completed conversations plus the visible current prompt, reserved across modes. */
+export function nonMainlineExposedConversationIds(session: NonMainlineSessionState) {
+  const count = nonMainlineCompletedCount(session) + (session.phase === 'playing' ? 1 : 0)
+  return session.selectedConversationIds.slice(0, count)
+}
+
+/** Preserve responses and order; replace only untouched items consumed on Mainline. */
+export function reconcileNonMainlineSession(
+  session: NonMainlineSessionState,
+  exposure: NarrativeExposureHistory,
+  mainlineConversationIds: readonly string[],
+): NonMainlineSessionState {
+  if (session.phase !== 'playing') return session
+  const consumed = new Set(mainlineConversationIds)
+  const answered = new Set(session.history.map(entry => entry.conversationId))
+  const replaceIndices = session.selectedConversationIds.flatMap((id, index) => (
+    index >= session.currentConversationIndex && consumed.has(id) && !answered.has(id) ? [index] : []
+  ))
+  if (!replaceIndices.length) return session
+  const replaceSet = new Set(replaceIndices)
+  const retainedIds = new Set(session.selectedConversationIds.filter((_, index) => !replaceSet.has(index)))
+  // Even the selector's shortage fallback cannot collide with retained history
+  // or the current partial conversation. A replacement batch needs only its
+  // own count of fresh items, rather than another complete 40-item session.
+  const replacements = selectNonMainlineConversations({
+    sessionId: session.sessionId,
+    exposure,
+    pool: ordinaryConversationPool.filter(conversation => !retainedIds.has(conversation.id)),
+    excludeConversationIds: mainlineConversationIds,
+    count: replaceIndices.length,
+  })
+  const selectedConversationIds = [...session.selectedConversationIds]
+  replaceIndices.forEach((index, replacementIndex) => { selectedConversationIds[index] = replacements[replacementIndex].id })
+  return {
+    ...session,
+    selectedConversationIds,
+    // Compatibility for an old checkpoint whose visible, unanswered prompt
+    // was subsequently consumed on Mainline. Answered partials never move.
+    currentNodeId: replaceSet.has(session.currentConversationIndex)
+      ? getManifestConversation(selectedConversationIds[session.currentConversationIndex])!.nodes[0].id
+      : session.currentNodeId,
+  }
 }
 
 export function nonMainlineManifest(session: NonMainlineSessionState) {

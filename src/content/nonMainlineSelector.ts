@@ -10,6 +10,8 @@ interface SelectionInput {
   sessionId: string
   exposure: NarrativeExposureHistory
   pool?: readonly ConversationDefinition[]
+  /** Queue reconciliation only selects replacements; new sessions still use 40. */
+  count?: number
   /** Ordinary conversation ids already played elsewhere in this Instance
    * (mainline servings and earlier Non-Mainline sessions). These are hard
    * excluded so the same content cannot replay across modes in one run. */
@@ -65,10 +67,11 @@ export function selectNonMainlineConversations({
   sessionId,
   exposure,
   pool = ordinaryConversationPool,
+  count = NON_MAINLINE_SESSION_SIZE,
   excludeConversationIds = [],
 }: SelectionInput): ConversationDefinition[] {
-  if (pool.length < NON_MAINLINE_SESSION_SIZE) {
-    throw new Error(`Non-Mainline requires at least ${NON_MAINLINE_SESSION_SIZE} conversations`)
+  if (pool.length < count) {
+    throw new Error(`Non-Mainline requires at least ${count} conversations`)
   }
 
   // Cross-mode dedup: content already served in this Instance is removed from
@@ -76,7 +79,7 @@ export function selectNonMainlineConversations({
   // fall back to the full pool so the session can still be built.
   const excludedIds = new Set(excludeConversationIds)
   const unplayed = pool.filter((conversation) => !excludedIds.has(conversation.id))
-  const remaining = [...(unplayed.length >= NON_MAINLINE_SESSION_SIZE ? unplayed : pool)]
+  const remaining = [...(unplayed.length >= count ? unplayed : pool)]
   const selected: ConversationDefinition[] = []
   const selectedTraits: SelectionTraits[] = []
   const dimensionCounts = {
@@ -128,7 +131,7 @@ export function selectNonMainlineConversations({
     return streakPenalty + adjacentPenalty + balancePenalty + exposurePenalty
   }
 
-  while (selected.length < NON_MAINLINE_SESSION_SIZE) {
+  while (selected.length < count) {
     let bestIndex = 0
     let bestScore = score(remaining[0])
     let bestTie = stableHash(`${sessionId}:${selected.length}:${remaining[0].id}`)

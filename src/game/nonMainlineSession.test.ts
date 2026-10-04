@@ -1,11 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { createEmptyExposureHistory, getManifestConversation } from '../content/runManifest'
+import { createEmptyExposureHistory, getManifestConversation, ordinaryConversationPool } from '../content/runManifest'
 import {
   commitNonMainlineChoice,
   createNonMainlineSession,
   nonMainlineCompletedCount,
+  nonMainlineExposedConversationIds,
+  reconcileNonMainlineSession,
   resolveNonMainlineScene,
 } from './nonMainlineSession'
+import { restoreNonMainlineSession, serializeNonMainlineSession } from './nonMainlineStorage'
 
 function placeMultiNodeConversationAt(session: ReturnType<typeof createNonMainlineSession>, targetIndex: number) {
   const sourceIndex = session.selectedConversationIds.findIndex((id) => {
@@ -27,6 +30,86 @@ function placeMultiNodeConversationAt(session: ReturnType<typeof createNonMainli
 }
 
 describe('Non-Mainline session engine', () => {
+  it('reserves the visible prompt without claiming it is completed', () => {
+    const session = createNonMainlineSession('visible-prompt', createEmptyExposureHistory())
+    expect(nonMainlineCompletedCount(session)).toBe(0)
+    expect(nonMainlineExposedConversationIds(session)).toEqual([session.selectedConversationIds[0]])
+  })
+
+  it('replaces future collisions while preserving every played-state field and other queue items', () => {
+    const exposure = createEmptyExposureHistory()
+    const created = createNonMainlineSession('resume-future', exposure)
+    const session = commitNonMainlineChoice(created, resolveNonMainlineScene(created).choices[0].id)
+    const original = JSON.stringify(session)
+    const indices = [session.currentConversationIndex + 5, session.currentConversationIndex + 10]
+    const consumed = indices.map(index => session.selectedConversationIds[index])
+    const reconciled = reconcileNonMainlineSession(session, exposure, consumed)
+    expect(reconciled.sessionId).toBe(session.sessionId)
+    expect(reconciled.selectedConversationIds).toHaveLength(40)
+    expect(new Set(reconciled.selectedConversationIds).size).toBe(40)
+    expect(reconciled.selectedConversationIds.some(id => consumed.includes(id))).toBe(false)
+    session.selectedConversationIds.forEach((id, index) => {
+      if (!indices.includes(index)) expect(reconciled.selectedConversationIds[index]).toBe(id)
+    })
+    const { selectedConversationIds: _oldQueue, ...oldProgress } = session
+    const { selectedConversationIds: _newQueue, ...newProgress } = reconciled
+    expect(JSON.stringify(newProgress)).toBe(JSON.stringify(oldProgress))
+    expect(JSON.stringify(session)).toBe(original)
+    expect(restoreNonMainlineSession(serializeNonMainlineSession(reconciled))).toEqual(reconciled)
+    expect(reconcileNonMainlineSession(reconciled, exposure, consumed)).toBe(reconciled)
+  })
+
+  it('rederives an unanswered legacy current prompt if mainline already consumed it', () => {
+    const exposure = createEmptyExposureHistory()
+    const session = createNonMainlineSession('resume-current', exposure)
+    const reconciled = reconcileNonMainlineSession(session, exposure, [session.selectedConversationIds[0]])
+    expect(reconciled.selectedConversationIds[0]).not.toBe(session.selectedConversationIds[0])
+    expect(reconciled.currentNodeId).toBe(getManifestConversation(reconciled.selectedConversationIds[0])!.nodes[0].id)
+    expect(resolveNonMainlineScene(reconciled).conversationId).toBe(reconciled.selectedConversationIds[0])
+    expect(reconciled.history).toBe(session.history)
+    expect(reconciled.choiceRecords).toBe(session.choiceRecords)
+    expect(restoreNonMainlineSession(serializeNonMainlineSession(reconciled))).toEqual(reconciled)
+  })
+
+  it('never replaces an answered partial conversation, including a legacy overlap', () => {
+    const exposure = createEmptyExposureHistory()
+    const created = createNonMainlineSession('resume-partial', exposure)
+    const session = placeMultiNodeConversationAt(created, 0)
+    const scene = resolveNonMainlineScene(session)
+    const partial = commitNonMainlineChoice(session, scene.choices.find(choice => choice.continuation !== 'end-conversation')!.id)
+    expect(partial.currentConversationIndex).toBe(0)
+    expect(partial.history).toHaveLength(1)
+    expect(reconcileNonMainlineSession(partial, exposure, [scene.conversationId])).toBe(partial)
+  })
+
+  it('uses the sole fresh replacement without prematurely falling back, then preserves uniqueness under real starvation', () => {
+    const exposure = createEmptyExposureHistory()
+    let session = createNonMainlineSession('resume-last', exposure)
+    for (let guard = 0; guard < 300 && session.currentConversationIndex < 39; guard++) {
+      session = commitNonMainlineChoice(session, resolveNonMainlineScene(session).choices[0].id)
+    }
+    expect(session.currentConversationIndex).toBe(39)
+    const fresh = ordinaryConversationPool.find(conversation => !session.selectedConversationIds.includes(conversation.id))!
+    const consumed = ordinaryConversationPool.filter(conversation => conversation.id !== fresh.id).map(conversation => conversation.id)
+    const replaced = reconcileNonMainlineSession(session, exposure, consumed)
+    expect(replaced.selectedConversationIds[39]).toBe(fresh.id)
+    expect(replaced.selectedConversationIds.slice(0, 39)).toEqual(session.selectedConversationIds.slice(0, 39))
+    const starved = reconcileNonMainlineSession(session, exposure, ordinaryConversationPool.map(conversation => conversation.id))
+    expect(new Set(starved.selectedConversationIds).size).toBe(40)
+    expect(starved.selectedConversationIds.slice(0, 39)).toEqual(session.selectedConversationIds.slice(0, 39))
+    expect(JSON.stringify(starved.history)).toBe(JSON.stringify(session.history))
+    expect(JSON.stringify(starved.choiceRecords)).toBe(JSON.stringify(session.choiceRecords))
+    expect(restoreNonMainlineSession(serializeNonMainlineSession(starved))).toEqual(starved)
+  })
+
+  it('leaves a completed session and its evaluation archive unchanged on reentry', () => {
+    const exposure = createEmptyExposureHistory()
+    let session = createNonMainlineSession('resume-completed', exposure)
+    while (session.phase === 'playing') session = commitNonMainlineChoice(session, resolveNonMainlineScene(session).choices[0].id)
+    expect(nonMainlineExposedConversationIds(session)).toHaveLength(40)
+    expect(reconcileNonMainlineSession(session, exposure, ordinaryConversationPool.map(conversation => conversation.id))).toBe(session)
+  })
+
   it('keeps multi-node progress inside the current conversation until it completes', () => {
     const created = createNonMainlineSession('multi-node', createEmptyExposureHistory())
     const index = created.selectedConversationIds.findIndex((id) => (getManifestConversation(id)?.nodes.length ?? 0) > 1)

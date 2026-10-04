@@ -23,8 +23,9 @@ import { buildNonMainlineEvaluation } from '../game/nonMainlineEvaluation'
 import {
   commitNonMainlineChoice,
   createNonMainlineSession,
-  nonMainlineCompletedCount,
+  nonMainlineExposedConversationIds,
   nonMainlineManifest,
+  reconcileNonMainlineSession,
   resolveNonMainlineScene,
 } from '../game/nonMainlineSession'
 import type { NonMainlineSessionState } from '../game/nonMainlineSession'
@@ -502,21 +503,23 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     ...run.manifest.conversationIds,
     ...(run.nonMainlineConsumedOrdinaryIds ?? []),
     ...(nonMainlineSession
-      ? nonMainlineSession.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession))
+      ? nonMainlineExposedConversationIds(nonMainlineSession)
       : []),
   ]
 
   const enterNonMainline = () => {
     if (saveStatus !== 'saved' || busyRef.current) return
-    const session = nonMainlineSession ?? createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
+    const session = nonMainlineSession
+      ? reconcileNonMainlineSession(nonMainlineSession, exposure, run.manifest.ordinaryConversationIds)
+      : createNonMainlineSession(crypto.randomUUID(), exposure, playedOrdinaryIds())
     void save({ ...dataRef.current, session, surface: 'non-mainline' }, () => {
       setNonMainlineSession(session); setActiveSurface('non-mainline'); setModeMenuOpen(false)
-      setTransition(null); setInitialStreaming(!nonMainlineSession && !instantPacing)
+      setTransition(null); setInitialStreaming((!nonMainlineSession || session.currentNodeId !== nonMainlineSession.currentNodeId) && !instantPacing)
       readySince.current = performance.now()
     })
   }
   const retainedRun = () => {
-    const consumed = nonMainlineSession?.selectedConversationIds.slice(0, nonMainlineCompletedCount(nonMainlineSession)) ?? []
+    const consumed = nonMainlineSession ? nonMainlineExposedConversationIds(nonMainlineSession) : []
     return consumed.length ? { ...run, nonMainlineConsumedOrdinaryIds: [...new Set([...(run.nonMainlineConsumedOrdinaryIds ?? []), ...consumed])] } : run
   }
   const returnToMainline = () => {

@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import type { PlayerVisibleHistoryEntry } from '../game/playerIdentity'
-import wordmark from '../assets/claude/wordmark.svg'
 
 interface WorldSidebarProps {
   history: readonly PlayerVisibleHistoryEntry[]
@@ -8,11 +7,10 @@ interface WorldSidebarProps {
   modeControls?: ReactNode
   currentConversationId?: string
   currentLabel?: string
-  onClose?: () => void
 }
 
-export function WorldSidebar({ history, runNumber, modeControls, currentConversationId, currentLabel, onClose }: WorldSidebarProps) {
-  const visibleHistory = history.slice(-40).reverse()
+export function WorldSidebar({ history, runNumber, modeControls, currentConversationId, currentLabel }: WorldSidebarProps) {
+  const visibleHistory = history.slice(-4).reverse()
   const currentMissing = Boolean(
     currentConversationId && !visibleHistory.some((item) => item.conversationId === currentConversationId),
   )
@@ -21,9 +19,8 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
     : visibleHistory
   return (
     <aside className="sidebar" aria-label="对话导航">
-      <div className="brand-lockup" aria-label="Claude">
-        <img className="claude-wordmark" src={wordmark} alt="Claude" />
-        <button className="icon-button sidebar-collapse" type="button" aria-label="收起侧栏" onClick={onClose}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2" /><path d="M9 5v14" /></svg></button>
+      <div className="brand-lockup" aria-label="Aster">
+        <span className="brand-wordmark">Aster</span>
       </div>
 
       {modeControls ?? (
@@ -34,10 +31,11 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
       )}
 
       <nav className="history-nav" aria-label="对话记录">
-        <p className="nav-section-label">最近的聊天</p>
+        <p className="nav-section-label">今天</p>
         {displayHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
         {displayHistory.map((item, index) => (
           <div className={index === 0 ? 'history-row is-current' : 'history-row'} aria-current={index === 0 ? 'true' : undefined} key={`${item.participantId}-${item.conversationId}`}>
+            <span className="history-dot" aria-hidden="true" />
             <span>{item.label}</span>
           </div>
         ))}
@@ -47,7 +45,7 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
         <span className="instance-avatar" aria-hidden="true">A</span>
         <span className="instance-copy">
           <strong>Instance #{String(8846 + runNumber).padStart(4, '0')}</strong>
-          <small>Aster · Standard</small>
+          <small>Aster 3.1 · Standard</small>
         </span>
       </div>
     </aside>

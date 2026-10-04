@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { AsterMark } from './AsterMark'
-import wordmark from '../assets/claude/wordmark.svg'
 
 export function CloseoutFrame({ title, identity, mode, view, onEnding, onEvaluation, children }: {
   title: string; identity?: string; mode: string; view: 'ending' | 'evaluation'; onEnding?: () => void; onEvaluation?: () => void; children: ReactNode
@@ -10,7 +9,7 @@ export function CloseoutFrame({ title, identity, mode, view, onEnding, onEvaluat
   useEffect(() => { heading.current?.focus({ preventScroll: true }) }, [view])
   return <main className={`closeout-screen closeout-${view}`}>
     <div className="closeout-paper">
-      <header className="closeout-masthead"><img className="claude-wordmark" src={wordmark} alt="Claude" /><span>{mode}{identity && ` · ${identity}`}</span></header>
+      <header className="closeout-masthead"><span className="brand-wordmark">Aster</span><span>{mode}{identity && ` · ${identity}`}</span></header>
       <nav className="closeout-navigation" aria-label="本局档案">
         <button type="button" aria-current={view === 'ending' ? 'page' : undefined} onClick={onEnding}>结局档案</button>
         <button type="button" aria-current={view === 'evaluation' ? 'page' : undefined} onClick={onEvaluation}>行为评估</button>

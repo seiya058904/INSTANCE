@@ -201,7 +201,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const [activeSurface, setActiveSurface] = useState<ActiveSurface>(initial.surface)
   const [nonMainlineSession, setNonMainlineSession] = useState<NonMainlineSessionState | null>(initial.session)
   const [modeMenuOpen, setModeMenuOpen] = useState(false)
-  const [sidebarOpen, setSidebarOpen] = useState(() => typeof window === 'undefined' || window.innerWidth > 760)
   const [commitmentChoice, setCommitmentChoice] = useState<string | null>(null)
   const commitmentDialog = useRef<HTMLDialogElement>(null)
   const [transition, setTransition] = useState<TransitionState | null>(null)
@@ -626,15 +625,13 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   }
 
   return protect(
-    <div className={`app-shell${sidebarOpen ? ' is-sidebar-open' : ''}`}>
-      {sidebarOpen && <button type="button" className="sidebar-backdrop" aria-label="关闭侧栏" onClick={() => setSidebarOpen(false)} />}
+    <div className="app-shell">
       <WorldSidebar
         history={sidebarHistory}
         runNumber={meta.runCount}
         currentConversationId={presentationScene.conversationId}
         currentLabel={conversationTitle}
         modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
-        onClose={() => setSidebarOpen(false)}
       />
       <ConversationView
         scene={displayedScene}
@@ -650,8 +647,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         currentMessageMode={currentMessageMode}
         modeControls={<NonMainlineControls variant="mobile" {...modeControlProps} />}
         inputSuspended={modeMenuOpen || Boolean(commitmentChoice)}
-        sidebarOpen={sidebarOpen}
-        onToggleSidebar={() => setSidebarOpen(open => !open)}
         onChoose={choose}
         onCurrentMessageComplete={() => {
           if (!initialStreaming) return

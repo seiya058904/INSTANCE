@@ -18,6 +18,7 @@ Read relevant runtime code and narrative sources before changing their behavior.
 
 - Choices are Semantic, Expression or Convergent. Literal-identical replies must not have different important effects; `choiceIndex` must not encode personality; Expression choices stay strategically neutral. Mark Model Error only for an actual error.
 - Longform exposes authored previews/structure; LongInput follow-ups may use only saved `keyFacts`.
+- Key-history text must describe the displayed saved choice. Public-execution and shutdown explanations resolve that entry's conversation/node/choice `decisionBinding`; a later authority decision may legitimately oppose it.
 - Keep mainline Story Plan slots in the ML2/bridge/anchor domain and ordinary conversations in the ordinary pool. Preserve soft replay decay and cross-run exposure weighting; do not replace them with permanent bans.
 - Mode switching/resuming must reconcile ordinary conversations consumed by the mainline without losing already answered progress or exposure history. Replace only untouched items; retain answered partial conversations.
 - The canonical checkpoint is one combined record. Hold the origin-wide Web Lock, compare the saved token and commit storage before applying progress. Preserve visible conflict/failure recovery; never silently overwrite another window or reset damaged saves.

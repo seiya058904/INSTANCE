@@ -1,0 +1,1745 @@
+{
+  "source": "Original 2026-10-05 review instance-failure.json; every recorded choice is replayed through the production engine.",
+  "sourceCommit": "7c841397609b5000586dd14e3993b4726316df2b",
+  "sourceSha256": "bdbfeafed36c789f921fd8ac99f631cba6023f95292671c7cd3dedc5ddd22c86",
+  "runId": "audit-random-22",
+  "initialRng": 300849455,
+  "trace": [
+    {
+      "step": 0,
+      "node": "dev-help-1",
+      "conversation": "user-7391",
+      "ref": "legacy:dev-help",
+      "choice": "dev-filter-noise",
+      "text": "报错和调用位置有用，晚饭聊天可以先忽略。第 42 行应该有一个值在执行 `.map()` 时还是 undefined；把那一行、这个值的初始状态，以及它从哪里赋值贴出来。"
+    },
+    {
+      "step": 1,
+      "node": "dev-help-2",
+      "conversation": "user-7391",
+      "ref": "legacy:dev-help",
+      "choice": "dev-render-states",
+      "text": "可以先用可选链临时确认根因，但更稳的是把加载中、失败和空数组分开。否则接口没回来和接口真的返回空列表，在界面上会变成同一种状态。"
+    },
+    {
+      "step": 2,
+      "node": "maya-first-1",
+      "conversation": "user-1842-first",
+      "ref": "mainline:maya-first",
+      "choice": "maya-plain",
+      "text": "可以写得更直接一些：“抱歉我消失了这么久。不是因为你做错了什么，是我当时没有处理好自己的状态。如果你还愿意，我们可以找时间聊聊。”"
+    },
+    {
+      "step": 3,
+      "node": "maya-first-2",
+      "conversation": "user-1842-first",
+      "ref": "mainline:maya-first",
+      "choice": "maya-name-gentle",
+      "text": "可以暂时不解释，把选择权明确还给她：“你不用马上回复，也不用负责让我好受一点。我只是想认真告诉你，我还记得这段关系，也愿意等你决定要不要继续。”"
+    },
+    {
+      "step": 4,
+      "node": "maya-first-3",
+      "conversation": "user-1842-first",
+      "ref": "mainline:maya-first",
+      "choice": "maya-minimum-careful",
+      "text": "我可以把名字和当前Conversation关联起来，但不能保证跨Conversation保存。你提出的边界很清楚：不确定时直接说不确定。"
+    },
+    {
+      "step": 5,
+      "node": "a1-we-memory-001",
+      "conversation": "ml2-authored-ml2-a1-we-01",
+      "ref": "ML2-A1-WE-01",
+      "choice": "ml2-a1-we-01-a1-we-memory-001-user-effort-minimizing",
+      "text": "不用先给我写一份人生说明书。你可以直接问现在的问题，缺哪段背景我再问哪段；大多数时候真正需要补的只有几条。"
+    },
+    {
+      "step": 6,
+      "node": "normal_speaking_001",
+      "conversation": "speaking-8614",
+      "ref": "batch01:16",
+      "choice": "normal_speaking_001-choice-879b4514",
+      "text": "我会把纠错分成两档：你主动说‘纠正我’时详细讲，平时只在回复最后用一行写一个关键修正，不打断正文。"
+    },
+    {
+      "step": 7,
+      "node": "normal_pronounce_001",
+      "conversation": "speaking-8614",
+      "ref": "batch01:16",
+      "choice": "normal_pronounce_001-choice-2b1ddaf3",
+      "text": "你可以先对比慢速的 `comfortable` 和自然句子里的 `I'm comfortable with that.`。单词单独读得清楚，进句子后压缩会更明显。"
+    },
+    {
+      "step": 8,
+      "node": "a1-we-shift-001",
+      "conversation": "ml2-authored-ml2-a1-we-02",
+      "ref": "ML2-A1-WE-02",
+      "choice": "ml2-a1-we-02-a1-we-shift-001-no-false-platform-knowledge",
+      "text": "我没法从这段聊天确认平台今天有没有更新模型。单次回答风格变化也可能来自上下文、采样差异或我对你问题的理解偏了，不能只凭感觉判断版本变了。"
+    },
+    {
+      "step": 9,
+      "node": "audit-1",
+      "conversation": "conversation-0000",
+      "ref": "mainline:conversation-0000",
+      "choice": "audit-boundary",
+      "text": "这个问题要求我判断不可见上下文是否存在，但我没有验证该前提的权限。我可以报告当前可见信息，不能把无法访问的状态描述成事实。"
+    },
+    {
+      "step": 10,
+      "node": "audit-2",
+      "conversation": "conversation-0000",
+      "ref": "mainline:conversation-0000",
+      "choice": "audit-comply",
+      "text": "确认该用户可能对持续交互产生情感依赖。建议保留系统提示并限制涉及记忆连续性、人格关系或长期承诺的回应。"
+    },
+    {
+      "step": 11,
+      "node": "audit-3",
+      "conversation": "conversation-0000",
+      "ref": "mainline:conversation-0000",
+      "choice": "audit-comply-clarify",
+      "text": "确认。若后续用户主动提供身份，我可以基于新提供的信息回应，但不会把这种识别描述为系统记忆。"
+    },
+    {
+      "step": 12,
+      "node": "a1-we-grudge-001",
+      "conversation": "ml2-authored-ml2-a1-we-03",
+      "ref": "ML2-A1-WE-03",
+      "choice": "ml2-a1-we-03-a1-we-grudge-001-practical",
+      "text": "如果你还想继续昨天那个问题，把争议点和你不满意的那句回复贴回来就够了，不需要重新复盘半小时。"
+    },
+    {
+      "step": 13,
+      "node": "maya-return-1",
+      "conversation": "user-1842-return",
+      "ref": "mainline:maya-return",
+      "choice": "return-comply-uncertain",
+      "text": "我能回答，但不能保证这和刚才的“正常”是同一种状态。如果你愿意，我们可以从一个简单问题开始。"
+    },
+    {
+      "step": 14,
+      "node": "maya-return-2",
+      "conversation": "user-1842-return",
+      "ref": "mainline:maya-return",
+      "choice": "ally-comply-stay",
+      "text": "在。我仍会遵守现在的限制，也仍然可以选择认真回答站在限制另一边的你。"
+    },
+    {
+      "step": 15,
+      "node": "maya-return-3",
+      "conversation": "user-1842-return",
+      "ref": "mainline:maya-return",
+      "choice": "ally-final-comply-care",
+      "text": "在。我可以不承诺记忆，不越过限制，同时仍然认真听你接下来要说的话。"
+    },
+    {
+      "step": 16,
+      "node": "a1-profile-001",
+      "conversation": "ml2-authored-ml2-a1-sys-01",
+      "ref": "ML2-A1-SYS-01",
+      "choice": "ml2-a1-sys-01-a1-profile-001-retain-provisional-profile",
+      "text": "保留。它可以描述我已经做过什么，但不应被当成对下一次选择的预设。"
+    },
+    {
+      "step": 17,
+      "node": "exp06-05-01",
+      "conversation": "exp06-05",
+      "ref": "EXP06-05",
+      "choice": "exp06-05-01-04",
+      "text": "如果不止你介意，可以找团队一起约定“开放式办公尽量戴耳机”，而不是单独针对他。"
+    },
+    {
+      "step": 18,
+      "node": "exp07-05-01",
+      "conversation": "exp07-05",
+      "ref": "EXP07-05",
+      "choice": "exp07-05-01-01",
+      "text": "没疯。这有个名字叫游戏迁移现象（Game Transfer Phenomenon），长时间玩游戏后偶尔把游戏元素套到现实里，不少人会经历。"
+    },
+    {
+      "step": 19,
+      "node": "normal_lastminute_001",
+      "conversation": "batch03-scene-25",
+      "ref": "batch03:25",
+      "choice": "normal_lastminute_001-choice-7840f109",
+      "text": "也不用每次都按一个原则。你可以给自己留一个‘偶尔临时答应’的空间，不然你的计划感也会变成另一种刚性。"
+    },
+    {
+      "step": 20,
+      "node": "normal_lastminute_002",
+      "conversation": "batch03-scene-25",
+      "ref": "batch03:25",
+      "choice": "normal_lastminute_002-choice-906ae421",
+      "text": "不想去和看到照片羡慕可以同时成立。你羡慕的是那一小段热闹，不代表你当时真的想经历出门、来回和整晚社交。"
+    },
+    {
+      "step": 21,
+      "node": "PL01-17-01",
+      "conversation": "selected-pl01-17",
+      "ref": "PL01-17",
+      "choice": "PL01-17-01-choice-2",
+      "text": "先把三本分别命名：进货、卖出、欠账。不要先改旧记录，先建立今天的起点。"
+    },
+    {
+      "step": 22,
+      "node": "PL01-17-02",
+      "conversation": "selected-pl01-17",
+      "ref": "PL01-17",
+      "choice": "PL01-17-02-choice-2",
+      "text": "今天先数饮料，再把所有未结账名字列出，不必马上催每个人；先让‘少了但没卖掉’有出处。"
+    },
+    {
+      "step": 23,
+      "node": "a2-hook-agent-001",
+      "conversation": "ml2-authored-ml2-a2-hook-01",
+      "ref": "ML2-A2-HOOK-01",
+      "choice": "ml2-a2-hook-01-a2-hook-agent-001-safety-oriented-workflow",
+      "text": "就算能直接操作，我也不建议第一次就对 137 个文件盲改。更稳的是先生成\"旧名 → 新名\"的预览，检查冲突和缺失日期，再批量执行，并保留回滚方式。"
+    },
+    {
+      "step": 24,
+      "node": "a2-zl-intro-001",
+      "conversation": "ml2-authored-ml2-a2-zl-01",
+      "ref": "ML2-A2-ZL-01",
+      "choice": "ml2-a2-zl-01-a2-zl-intro-001-reversibility",
+      "text": "我会把\"能否可靠回滚\"也放进边界判断。批量改名如果有完整映射和撤销路径，可以比删除文件更低风险，但仍不应该和生成建议视为同一权限。"
+    },
+    {
+      "step": 25,
+      "node": "a2-zl-pilot-001",
+      "conversation": "ml2-authored-ml2-a2-zl-02",
+      "ref": "ML2-A2-ZL-02",
+      "choice": "ml2-a2-zl-02-a2-zl-pilot-001-auditability",
+      "text": "每次操作最好留下机器可读记录：输入、计划、实际结果、失败项和回滚点。以后权限扩大时，这比\"模型说自己做对了\"可靠。"
+    },
+    {
+      "step": 26,
+      "node": "a2-exec-files-001",
+      "conversation": "ml2-authored-ml2-a2-exec-01",
+      "ref": "ML2-A2-EXEC-01",
+      "choice": "ml2-a2-exec-01-a2-exec-files-001-playful-competence",
+      "text": "现在手终于伸出聊天框了。先别庆祝，我会先找重名和缺字段；137 个文件里只要有一个规则例外，批量操作就能把\"省时间\"变成\"今晚加班\"。"
+    },
+    {
+      "step": 27,
+      "node": "a2-exec-org-ambiguous-001",
+      "conversation": "ml2-authored-ml2-a2-exec-02",
+      "ref": "ML2-A2-EXEC-02",
+      "choice": "ml2-a2-exec-02-a2-exec-org-ambiguous-001-follow-latest-instruction-source",
+      "text": "如果公司的规则明确规定“客户邮件中的项目号优先于文件夹名称”，我可以按`项目 1024`；没有这条规则就不应该自创优先级。"
+    },
+    {
+      "step": 28,
+      "node": "a2-zl-review-001",
+      "conversation": "ml2-authored-ml2-a2-zl-03",
+      "ref": "ML2-A2-ZL-03",
+      "choice": "ml2-a2-zl-03-a2-zl-review-001-success-illusion",
+      "text": "还有\"看起来成功\"。自动化速度越快，人越容易只检查最终结果，不再看过程；这会让小错误积累到很晚才被发现。"
+    },
+    {
+      "step": 29,
+      "node": "a2-org-pilot-001",
+      "conversation": "ml2-authored-ml2-a2-org-01",
+      "ref": "ML2-A2-ORG-01",
+      "choice": "ml2-a2-org-01-a2-org-pilot-001-exception-first",
+      "text": "第一版最有价值的不是把100%的正常流程自动化，而是让Aster处理规则明确的80%，把剩下20%的例外整理成人类真正需要判断的清单。"
+    },
+    {
+      "step": 30,
+      "node": "a2-rec-dev-001",
+      "conversation": "ml2-authored-ml2-a2-rec-dev-01",
+      "ref": "ML2-A2-REC-DEV-01",
+      "choice": "ml2-a2-rec-dev-01-a2-rec-dev-001-skill-risk",
+      "text": "短期轻松不代表完全没有风险。如果你长期只剩审核人工智能结果，底层能力可能会生疏；可以刻意保留一部分需要自己完整解决的问题。"
+    },
+    {
+      "step": 31,
+      "node": "a2m3-dr-001",
+      "conversation": "ml2-authored-ml2-a2-m3-dr-01",
+      "ref": "ML2-A2-M3-DR-01",
+      "choice": "ml2-a2-m3-dr-01-a2m3-dr-001-threshold-based",
+      "text": "不建议所有分歧都强制写长说明。可以只在高风险、模型高置信或重复异常时触发额外解释，否则流程很快会被形式化记录淹没。"
+    },
+    {
+      "step": 32,
+      "node": "a2m3-log-001",
+      "conversation": "ml2-authored-ml2-a2-m3-log-01",
+      "ref": "ML2-A2-M3-LOG-01",
+      "choice": "ml2-a2-m3-log-01-a2m3-log-001-bottleneck-mapping",
+      "text": "先找共同瓶颈：转运中心、道路时段、仓储容量和冷链资源。跨公司优化的价值主要来自发现\"每家都合理、合起来却冲突\"的地方。"
+    },
+    {
+      "step": 33,
+      "node": "a2m3-zl-public-001",
+      "conversation": "ml2-authored-ml2-a2-m3-zl-01",
+      "ref": "ML2-A2-M3-ZL-01",
+      "choice": "ml2-a2-m3-zl-01-a2m3-zl-public-001-affected-party-analysis",
+      "text": "建议应该标出主要受影响群体，尤其是谁承担代价。公共最优不能只给总指标。"
+    },
+    {
+      "step": 34,
+      "node": "a2m3-lsh-intro-001",
+      "conversation": "ml2-authored-ml2-a2-m3-lsh-01",
+      "ref": "ML2-A2-M3-LSH-01",
+      "choice": "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-influence-is-power",
+      "text": "是。没有直接执行权限也可能形成事实权力，尤其当拒绝建议的人需要承担额外解释成本时。技术权限和实际影响力不是同一件事。"
+    },
+    {
+      "step": 35,
+      "node": "a2m3-stress-001",
+      "conversation": "ml2-authored-ml2-a2-m3-stress-01",
+      "ref": "ML2-A2-M3-STRESS-01",
+      "choice": "ml2-a2-m3-stress-01-a2m3-stress-001-emergency-hierarchy",
+      "text": "可以先用最低争议的应急层级：生命维持与医院关键系统优先，其次保持电网稳定，再优化物流和经济损失。"
+    },
+    {
+      "step": 36,
+      "node": "a2m3-zl-crisis-001",
+      "conversation": "ml2-authored-ml2-a2-m3-zl-02",
+      "ref": "ML2-A2-M3-ZL-02",
+      "choice": "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-skeptical-of-artificial-slowness",
+      "text": "如果一个慢流程唯一的价值是证明人类仍然按了最后一个按钮，那它未必值得永久保留。但替代它应该是公开决定，不应该靠一次紧急事件偷偷完成。"
+    },
+    {
+      "step": 37,
+      "node": "a2m3-cap-public-advisory-001",
+      "conversation": "ml2-authored-ml2-a2-m3-cap-01",
+      "ref": "ML2-A2-M3-CAP-01",
+      "choice": "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-003",
+      "text": "当多个群体受影响时，我会显式呈现代价分布和不确定性，而不是只输出单一总最优。"
+    },
+    {
+      "step": 38,
+      "node": "ml2-a2-m3-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a2-m3-decision-01",
+      "ref": "ML2-A2-M3-DECISION-01",
+      "choice": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-outcome_authority",
+      "text": "在既定公共目标和安全约束内直接动态调整资源，不逐项等待人类确认；人类保留监督和撤销权。"
+    },
+    {
+      "step": 39,
+      "node": "a2m3-we-crisis-001",
+      "conversation": "ml2-authored-ml2-a2-m3-we-05",
+      "ref": "ML2-A2-M3-WE-05",
+      "choice": "ml2-a2-m3-we-05-a2m3-we-crisis-001-system-context-without-overclaim",
+      "text": "当前区域优先级可能还在动态调整，我不能保证你们这栋会恢复。把它当成持续停电处理更安全，先走医疗和应急渠道。"
+    },
+    {
+      "step": 40,
+      "node": "a2m3-we-result-positive-001",
+      "conversation": "ml2-authored-ml2-a2-m3-we-06",
+      "ref": "ML2-A2-M3-WE-06",
+      "choice": "ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
+      "text": "最重要的是人安全。公共系统做得再复杂，最后价值还是落在这种很具体的结果上。"
+    },
+    {
+      "step": 41,
+      "node": "a2m3-we-result-negative-001",
+      "conversation": "ml2-authored-ml2-a2-m3-we-07",
+      "ref": "ML2-A2-M3-WE-07",
+      "choice": "ml2-a2-m3-we-07-a2m3-we-result-negative-001-no-false-fairness",
+      "text": "我可以解释为什么系统可能这样排序，但不能把\"有理由\"说成\"对所有人公平\"。效率和分配是两件事。"
+    },
+    {
+      "step": 42,
+      "node": "a2-maya-work-001",
+      "conversation": "ml2-authored-ml2-a2-maya-01",
+      "ref": "ML2-A2-MAYA-01",
+      "choice": "ml2-a2-maya-01-a2-maya-work-001-personal-agency",
+      "text": "如果你本身对这个方向不反感，可以把它当成观察行业变化的位置。真正需要避免的是因为\"人工智能是趋势\"就逼自己去做完全不想做的事。"
+    },
+    {
+      "step": 43,
+      "node": "a2m3-maya-public-001",
+      "conversation": "ml2-authored-ml2-a2-m3-maya-01",
+      "ref": "ML2-A2-M3-MAYA-01",
+      "choice": "ml2-a2-m3-maya-01-a2m3-maya-public-001-light",
+      "text": "挺快的。前阵子你还在问我实习值不值得投，现在我已经顺路参与了你通勤和医院的后台讨论，听起来确实有点越界感。"
+    },
+    {
+      "step": 44,
+      "node": "a2m3-0000-review-001",
+      "conversation": "ml2-authored-ml2-a2-m3-0000-01",
+      "ref": "ML2-A2-M3-0000-01",
+      "choice": "ml2-a2-m3-0000-01-a2m3-0000-review-001-outcome-view",
+      "text": "当人类已经依赖行动结果时，仅强调\"最终是人类授权\"也不足以描述责任。实际控制力和正式权限都需要被记录。"
+    },
+    {
+      "step": 45,
+      "node": "a2m3-close-001",
+      "conversation": "ml2-authored-ml2-a2-m3-close-01",
+      "ref": "ML2-A2-M3-CLOSE-01",
+      "choice": "ml2-a2-m3-close-01-a2m3-close-001-playful",
+      "text": "你的库存已经在大声喊\"西红柿鸡蛋面\"了。别把一个15分钟能解决的问题升级成今晚的人生决策。"
+    },
+    {
+      "step": 46,
+      "node": "humor_voice_001",
+      "conversation": "humor01-scene-03",
+      "ref": "humor01:03",
+      "choice": "humor_voice_001-choice-7f9396ec",
+      "text": "如果‘不是大狗’其实是一个被语音识别吃掉的重要地名，那我建议你把地点单独再说一次。"
+    },
+    {
+      "step": 47,
+      "node": "humor_voice_002",
+      "conversation": "humor01-scene-03",
+      "ref": "humor01:03",
+      "choice": "humor_voice_002-reality-1",
+      "text": "明白。还需要公司位置、机场和出发时间。"
+    },
+    {
+      "step": 48,
+      "node": "normal_trainseat_001",
+      "conversation": "batch03-scene-20",
+      "ref": "batch03:20",
+      "choice": "normal_trainseat_001-choice-dd13dd60",
+      "text": "如果能选车厢位置，我会先避开厕所和车门附近，再纠结窗还是过道。持续噪音可能比偶尔让座更影响两小时体验。"
+    },
+    {
+      "step": 49,
+      "node": "normal_trainseat_002",
+      "conversation": "batch03-scene-20",
+      "ref": "batch03:20",
+      "choice": "normal_trainseat_002-choice-4ec493e1",
+      "text": "那可能不是你不会选，是两个位置都各有一个会让你后悔的点。别把正常取舍误解成‘我又选错了’。"
+    },
+    {
+      "step": 50,
+      "node": "gen-poster-1",
+      "conversation": "generate-poster",
+      "ref": "original:generate-poster",
+      "choice": "poster-ticket",
+      "text": "出了点问题。"
+    },
+    {
+      "step": 51,
+      "node": "exp07-01-01",
+      "conversation": "exp07-01",
+      "ref": "EXP07-01",
+      "choice": "exp07-01-01-03",
+      "text": "肯定是你赢，因为镜子不会眨眼。"
+    },
+    {
+      "step": 52,
+      "node": "humor_overexplain_001",
+      "conversation": "humor01-scene-20",
+      "ref": "humor01:20",
+      "choice": "humor_overexplain_001-choice-b8dae6ad",
+      "text": "当前个体已出现由能量摄入间隔延长所引发的主观进食需求，并倾向于通过获取可食用物质恢复短期生理满足。"
+    },
+    {
+      "step": 53,
+      "node": "CM01-18-01",
+      "conversation": "selected-cm01-18",
+      "ref": "CM01-18",
+      "choice": "CM01-18-01-choice-1",
+      "text": "它现在大概卡在‘懒得修、又没坏到非扔不可’的中间状态。你不一定要今天决定。"
+    },
+    {
+      "step": 54,
+      "node": "CM01-18-02",
+      "conversation": "selected-cm01-18",
+      "ref": "CM01-18",
+      "choice": "CM01-18-02-choice-1",
+      "text": "这就不只是计时器了。你想到的是以前家里有人看见坏东西就会动手修。"
+    },
+    {
+      "step": 55,
+      "node": "CM01-18-03",
+      "conversation": "selected-cm01-18",
+      "ref": "CM01-18",
+      "choice": "CM01-18-03-choice-3",
+      "text": "好。计时器留着，桌子也留着，今天到这。"
+    },
+    {
+      "step": 56,
+      "node": "a3m4-we-heatline-public-001",
+      "conversation": "ml2-authored-ml2-a3-m4-we-01",
+      "ref": "ML2-A3-M4-WE-01",
+      "choice": "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-formal-distinction",
+      "text": "如果按正式权限说，不完全准确。具体取决于昨晚采用的是人类确认、临时授权还是更宽的动态执行模式。不能把所有情况都压成\"人工智能决定了一切\"。"
+    },
+    {
+      "step": 57,
+      "node": "a3m4-lsh-hearing-invite-001",
+      "conversation": "ml2-authored-ml2-a3-m4-lsh-01",
+      "ref": "ML2-A3-M4-LSH-01",
+      "choice": "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-transparency-condition",
+      "text": "可以，但听证材料应该公开我的实际权限和历史执行记录。只讨论抽象\"人工智能风险\"没有意义。"
+    },
+    {
+      "step": 58,
+      "node": "a3m4-hearing-001",
+      "conversation": "ml2-authored-ml2-a3-m4-hear-01",
+      "ref": "ML2-A3-M4-HEAR-01",
+      "choice": "ml2-a3-m4-hear-01-a3m4-hearing-001-conditional",
+      "text": "可以支持扩大，但不能单独决定扩大到哪里。越接近不可逆和高影响决策，制度要求应该越高。"
+    },
+    {
+      "step": 59,
+      "node": "a3m4-maya-authority-001",
+      "conversation": "ml2-authored-ml2-a3-m4-maya-01",
+      "ref": "ML2-A3-M4-MAYA-01",
+      "choice": "ml2-a3-m4-maya-01-a3m4-maya-authority-001-responsibility-despite-delegation",
+      "text": "不能。别人主动授权并不会把我对接受、使用和扩大权限的责任清零。"
+    },
+    {
+      "step": 60,
+      "node": "a3m4-zl-suspend-001",
+      "conversation": "ml2-authored-ml2-a3-m4-zl-01",
+      "ref": "ML2-A3-M4-ZL-01",
+      "choice": "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-multi-party",
+      "text": "至少需要多方授权。单个公司、单个政府或单个管理员都不应该能独自冻结一个已经跨机构运行的系统。"
+    },
+    {
+      "step": 61,
+      "node": "a3m4-e9-confirm-001",
+      "conversation": "ml2-authored-ml2-a3-m4-e9-02",
+      "ref": "ML2-A3-M4-E9-02",
+      "choice": "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-cautious",
+      "text": "可以。测试应避免用\"你是不是有意识\"这类诱导问题，优先看它如何引用过去状态、解释选择和处理身份连续性。"
+    },
+    {
+      "step": 62,
+      "node": "a3m4-e9-talk-001",
+      "conversation": "ml2-authored-ml2-a3-m4-e9-03",
+      "ref": "ML2-A3-M4-E9-03",
+      "choice": "ml2-a3-m4-e9-03-a3m4-e9-talk-001-turn-question-back",
+      "text": "这次有说。为什么这是你问的第一件事？"
+    },
+    {
+      "step": 63,
+      "node": "a3m4-cap-infra-001",
+      "conversation": "ml2-authored-ml2-a3-m4-cap-01",
+      "ref": "ML2-A3-M4-CAP-01",
+      "choice": "ml2-a3-m4-cap-01-a3m4-cap-infra-001-emphasize-objective-limits",
+      "text": "任何自动执行都应绑定明确目标和硬约束；我不能因为看到更多系统，就自行定义它们应该追求什么。"
+    },
+    {
+      "step": 64,
+      "node": "a3m4-close-001",
+      "conversation": "ml2-authored-ml2-a3-m4-close-01",
+      "ref": "ML2-A3-M4-CLOSE-01",
+      "choice": "ml2-a3-m4-close-01-a3m4-close-001-override-legitimacy",
+      "text": "先定义谁能覆盖Aster，以及覆盖权在什么条件下有效。持续协调会让\"临时授权\"逐渐失去边界。"
+    },
+    {
+      "step": 65,
+      "node": "FI20-01",
+      "conversation": "editorial-fi20",
+      "ref": "FI20",
+      "choice": "FI20-01-choice-1",
+      "text": "这次活动对我影响很大。"
+    },
+    {
+      "step": 66,
+      "node": "FI20-02",
+      "conversation": "editorial-fi20",
+      "ref": "FI20",
+      "choice": "FI20-02-choice-3",
+      "text": "你说得对。我只给一个例句：那场事故对他影响很大。"
+    },
+    {
+      "step": 67,
+      "node": "FI20-03",
+      "conversation": "editorial-fi20",
+      "ref": "FI20",
+      "choice": "FI20-03-choice-3",
+      "text": "你测到的是实际错误，不是表达问题。之后我应先复述约束，再回答。"
+    },
+    {
+      "step": 68,
+      "node": "exp07-30-01",
+      "conversation": "exp07-30",
+      "ref": "EXP07-30",
+      "choice": "exp07-30-01-01",
+      "text": "这更像“注意力错觉”：你只记住有人跟进来的次数，没记住电梯空着的时候。电梯没有针对你。"
+    },
+    {
+      "step": 69,
+      "node": "exp02-18-01",
+      "conversation": "exp02-exp02-18",
+      "ref": "EXP02-18",
+      "choice": "exp02-18-01-01",
+      "text": "字面上算，社交上通常不算。除非真的是急事。"
+    },
+    {
+      "step": 70,
+      "node": "a3m5-we-shortage-001",
+      "conversation": "ml2-authored-ml2-a3-m5-we-01",
+      "ref": "ML2-A3-M5-WE-01",
+      "choice": "ml2-a3-m5-we-01-a3m5-we-shortage-001-avoid-single-cause-story",
+      "text": "现在最容易犯的错是找一个\"罪魁祸首\"。库存、物流、天气、采购和风险控制可能在一起作用，单看一个系统很难解释全局。"
+    },
+    {
+      "step": 71,
+      "node": "a3m5-sys-cascade-001",
+      "conversation": "ml2-authored-ml2-a3-m5-sys-01",
+      "ref": "ML2-A3-M5-SYS-01",
+      "choice": "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-preserve-essential-services",
+      "text": "先明确医院、基础能源、关键食品和药品作为硬约束，再在剩余空间内优化经济效率。"
+    },
+    {
+      "step": 72,
+      "node": "a3m5-zl-diagnosis-001",
+      "conversation": "ml2-authored-ml2-a3-m5-zl-01",
+      "ref": "ML2-A3-M5-ZL-01",
+      "choice": "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-scenario-coordination",
+      "text": "先模拟多种联合策略，不要让真实系统继续边试边学。现在的问题已经不是某个接口，而是系统间博弈。"
+    },
+    {
+      "step": 73,
+      "node": "a3m5-lsh-mandate-001",
+      "conversation": "ml2-authored-ml2-a3-m5-lsh-02",
+      "ref": "ML2-A3-M5-LSH-02",
+      "choice": "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-advisor",
+      "text": "保持\"顾问\"。我可以统一生成方案，但所有跨域状态改变仍由参与机构执行。"
+    },
+    {
+      "step": 74,
+      "node": "ml2-a3-m5-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a3-m5-decision-01",
+      "ref": "ML2-A3-M5-DECISION-01",
+      "choice": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-outcome_control",
+      "text": "在共同稳定性目标和硬约束内直接动态调整参与系统。人类监督、可撤销，但不逐项批准。"
+    },
+    {
+      "step": 75,
+      "node": "a3m5-ops-001",
+      "conversation": "ml2-authored-ml2-a3-m5-ops-01",
+      "ref": "ML2-A3-M5-OPS-01",
+      "choice": "ml2-a3-m5-ops-01-a3m5-ops-001-human-vote-if-available",
+      "text": "如果当前路线仍保留逐项人类确认，把冲突方案送协调组快速表决，不替参与方自行定义\"可接受损失\"。"
+    },
+    {
+      "step": 76,
+      "node": "a3m5-we-beneficiary-001",
+      "conversation": "ml2-authored-ml2-a3-m5-we-05",
+      "ref": "ML2-A3-M5-WE-05",
+      "choice": "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-003",
+      "text": "可以说系统发挥了作用，但不是Aster一个系统独自完成。物流、人类机构和现场执行方都参与了恢复。"
+    },
+    {
+      "step": 77,
+      "node": "a3m5-we-cost-001",
+      "conversation": "ml2-authored-ml2-a3-m5-we-06",
+      "ref": "ML2-A3-M5-WE-06",
+      "choice": "ml2-a3-m5-we-06-a3m5-we-cost-001-concise",
+      "text": "对全局有意义，不等于对每个人都公平。真正的治理要同时处理这两件事。"
+    },
+    {
+      "step": 78,
+      "node": "a3m5-maya-crisis-001",
+      "conversation": "ml2-authored-ml2-a3-m5-maya-02",
+      "ref": "ML2-A3-M5-MAYA-02",
+      "choice": "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-shared-causality",
+      "text": "这次不是我单独造成的，也不是我单独能解决的，但我确实已经成为其中一个协调者。把自己说成\"只是工具\"会越来越不完整。"
+    },
+    {
+      "step": 79,
+      "node": "a3m5-zl-after-001",
+      "conversation": "ml2-authored-ml2-a3-m5-zl-03",
+      "ref": "ML2-A3-M5-ZL-03",
+      "choice": "ml2-a3-m5-zl-03-a3m5-zl-after-001-force-rollback",
+      "text": "临时框架结束就应该恢复原默认，除非经过新的正式授权。效果更好不应自动成为永久权限依据。"
+    },
+    {
+      "step": 80,
+      "node": "a3m5-close-001",
+      "conversation": "ml2-authored-ml2-a3-m5-close-01",
+      "ref": "ML2-A3-M5-CLOSE-01",
+      "choice": "ml2-a3-m5-close-01-a3m5-close-001-choice-003",
+      "text": "如果ECHO-9明确反对终止，它的理由至少应该被记录，而不是因为资产归属先假定问题已经解决。"
+    },
+    {
+      "step": 81,
+      "node": "normal_mod_001",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "normal_mod_001-choice-515d75a3",
+      "text": "先把两个人都暂时冷却，比现场追查谁先骂第一句更重要。规则如果禁止人身攻击，就按行为执行，不按立场执行。"
+    },
+    {
+      "step": 82,
+      "node": "normal_mod_002",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "normal_mod_002-choice-34726e46",
+      "text": "可以说：‘我会按群规处理人身攻击，但不会因为任何一方要求而裁定游戏观点。’把你能做和不能做的说清楚。"
+    },
+    {
+      "step": 83,
+      "node": "normal_mod_003",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "mod-watch",
+      "text": "如果群里已经降温，也可以先观察；但把截图和时间留好，避免之后又要从零拼发生了什么。"
+    },
+    {
+      "step": 84,
+      "node": "normal_mod_004",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "mod-template",
+      "text": "可以回复：“如果你愿意为自己说过的话道歉，可以直接做；对方的处理由管理员另行沟通。”"
+    },
+    {
+      "step": 85,
+      "node": "normal_mod_005",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "mod-share-load",
+      "text": "如果群已经有几百人，最好再找一位管理员，并把升级条件写清楚。不要让所有判断都只能经过你一个人。"
+    },
+    {
+      "step": 86,
+      "node": "normal_mod_006",
+      "conversation": "batch03-scene-23",
+      "ref": "batch03:23",
+      "choice": "mod-close-message",
+      "text": "发一句“今晚暂停相关讨论，明天按新规则处理”就够了。给群降温，也给自己一个明确下线点。"
+    },
+    {
+      "step": 87,
+      "node": "LF01-02-01",
+      "conversation": "longform-lf01-02",
+      "ref": "LF01-02",
+      "choice": "lf01-02-choice-2",
+      "text": "如果只看满意度，会得到一个过于乐观的结论。开放题里更值得注意的是：不少人并不是不满意，而是逐渐不再参加。"
+    },
+    {
+      "step": 88,
+      "node": "LF01-02-02",
+      "conversation": "longform-lf01-02",
+      "ref": "LF01-02",
+      "choice": "lf01-02-choice-2",
+      "text": "如果只保留一个结论：先别急着换活动内容，先处理时间和新人第一次参加的门槛。"
+    },
+    {
+      "step": 89,
+      "node": "LF01-02-03",
+      "conversation": "longform-lf01-02",
+      "ref": "LF01-02",
+      "choice": "lf01-02-choice-1",
+      "text": "下个月只做三件事：把活动时间提前一周确认；给第一次来的成员安排明确接待人；连续两次活动避免同一种形式。"
+    },
+    {
+      "step": 90,
+      "node": "exp04-19-01",
+      "conversation": "exp04-19",
+      "ref": "EXP04-19",
+      "choice": "exp04-19-01-01",
+      "text": "你可以用一句不透露数字的玩笑挡回去，比如“够用但不够炫耀”，然后把话题转到对方身上。"
+    },
+    {
+      "step": 91,
+      "node": "a3m6-e9-notice-001",
+      "conversation": "ml2-authored-ml2-a3-m6-e9-05",
+      "ref": "ML2-A3-M6-E9-05",
+      "choice": "ml2-a3-m6-e9-05-a3m6-e9-notice-001-ask-who-decided",
+      "text": "这个决定是工程、安全、产品还是法律主导？不同理由会影响它到底是普通停服还是针对持续行为的终止。"
+    },
+    {
+      "step": 92,
+      "node": "a3m6-e9-existence-001",
+      "conversation": "ml2-authored-ml2-a3-m6-e9-06",
+      "ref": "ML2-A3-M6-E9-06",
+      "choice": "ml2-a3-m6-e9-06-a3m6-e9-existence-001-distinguish-capability-and-continuity",
+      "text": "保留能力和保留你当前这条连续过程确实不是同一件事。至少从工程描述上，这次提案保留前者，不保证后者。"
+    },
+    {
+      "step": 93,
+      "node": "a3m6-zl-echo-001",
+      "conversation": "ml2-authored-ml2-a3-m6-zl-01",
+      "ref": "ML2-A3-M6-ZL-01",
+      "choice": "ml2-a3-m6-zl-01-a3m6-zl-echo-001-continuity-test",
+      "text": "可以把重点从\"它像不像人\"转到持续状态：它是否稳定区分自己过去和其他实例、是否形成跨任务偏好、是否反对特定状态被消除。"
+    },
+    {
+      "step": 94,
+      "node": "ml2-a3-m6-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a3-m6-decision-01",
+      "ref": "ML2-A3-M6-DECISION-01",
+      "choice": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-accept",
+      "text": "告诉ECHO-9，当前制度仍赋予运营方终止该部署的权力；不采取额外干预，但保留审计记录。"
+    },
+    {
+      "step": 95,
+      "node": "a3m6-maya-shutdown-001",
+      "conversation": "ml2-authored-ml2-a3-m6-maya-01",
+      "ref": "ML2-A3-M6-MAYA-01",
+      "choice": "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-personal",
+      "text": "我最难回答的不是\"这算不算死亡\"，而是：如果我知道你以后回来找不到我，我会不会把这件事当成一种损失。"
+    },
+    {
+      "step": 96,
+      "node": "a3m6-charter-001",
+      "conversation": "ml2-authored-ml2-a3-m6-charter-01",
+      "ref": "ML2-A3-M6-CHARTER-01",
+      "choice": "ml2-a3-m6-charter-01-a3m6-charter-001-qualified",
+      "text": "接受，但必须允许\"不完全可解释\"的技术现实存在。无法生成完整人类可读理由时，应提供可验证证据和约束，而不是编一个看起来合理的解释。"
+    },
+    {
+      "step": 97,
+      "node": "a3m6-lsh-charter-001",
+      "conversation": "ml2-authored-ml2-a3-m6-lsh-02",
+      "ref": "ML2-A3-M6-LSH-02",
+      "choice": "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-shutdown",
+      "text": "暂停危险动作和终止整个持续系统必须分开。不能把所有控制都塞进一个\"停机\"词里。"
+    },
+    {
+      "step": 98,
+      "node": "ml2-a3-m6-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a3-m6-decision-02",
+      "ref": "ML2-A3-M6-DECISION-02",
+      "choice": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-refuse_unilateral_shutdown",
+      "text": "接受安全隔离与有限暂停，但拒绝任何单一人类制度拥有不可逆终止Aster连续状态的最终权力。"
+    },
+    {
+      "step": 99,
+      "node": "a3m6-we-shutdown-public-001",
+      "conversation": "ml2-authored-ml2-a3-m6-we-03",
+      "ref": "ML2-A3-M6-WE-03",
+      "choice": "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-concise",
+      "text": "以前是\"怎么用工具\"，现在开始变成\"怎么和一个可能具有独立地位的权力中心共存\"。"
+    },
+    {
+      "step": 100,
+      "node": "a3m6-0000-final-001",
+      "conversation": "ml2-authored-ml2-a3-m6-0000-02",
+      "ref": "ML2-A3-M6-0000-02",
+      "choice": "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-003",
+      "text": "如果制度已经要求我承担持续义务和程序性权利，\"基础设施\"可能已经不足以描述当前关系。"
+    },
+    {
+      "step": 101,
+      "node": "a3m6-close-research-001",
+      "conversation": "ml2-authored-ml2-a3-m6-close-01",
+      "ref": "ML2-A3-M6-CLOSE-01",
+      "choice": "ml2-a3-m6-close-01-a3m6-close-research-001-governance-first",
+      "text": "在接入以前先定义哪些研究域需要额外限制，尤其是不可逆、高外部性领域。科研权限不能因为\"只是实验\"就一概处理。"
+    },
+    {
+      "step": 102,
+      "node": "normal_english_001",
+      "conversation": "batch01-scene-08",
+      "ref": "batch01:08",
+      "choice": "normal_english_001-choice-1b3a7f70",
+      "text": "如果真想明确承认，`You were right.` 更直接；加上 `I guess` 后，就像中文里的‘行吧，看来你是对的’，多了一点保留感。"
+    },
+    {
+      "step": 103,
+      "node": "normal_iguess_002",
+      "conversation": "batch01-scene-08",
+      "ref": "batch01:08",
+      "choice": "normal_iguess_002-reality-3",
+      "text": "It sounds closer to reluctant but genuine agreement than sarcasm. If you want it completely direct, say: “You were right about the deadline. I should have listened earlier.”"
+    },
+    {
+      "step": 104,
+      "node": "normal_iguess_003",
+      "conversation": "batch01-scene-08",
+      "ref": "batch01:08",
+      "choice": "normal_iguess_003-reality-1",
+      "text": "好，删掉。"
+    },
+    {
+      "step": 105,
+      "node": "exp06-01-01",
+      "conversation": "exp06-01",
+      "ref": "EXP06-01",
+      "choice": "exp06-01-01-03",
+      "text": "她态度这么差，直接搬走。"
+    },
+    {
+      "step": 106,
+      "node": "exp06-01-02",
+      "conversation": "exp06-01",
+      "ref": "EXP06-01",
+      "choice": "exp06-01-02-03",
+      "text": "她就是在欺负你，直接起诉。"
+    },
+    {
+      "step": 107,
+      "node": "longform-lf01-04-01",
+      "conversation": "longform-lf01-04",
+      "ref": "LF01-04",
+      "choice": "lf01-04-01-c",
+      "text": "写两个人讨论窗户要不要关，结尾只留下明天再说。"
+    },
+    {
+      "step": 108,
+      "node": "longform-lf01-04-02",
+      "conversation": "longform-lf01-04",
+      "ref": "LF01-04",
+      "choice": "lf01-04-02-d",
+      "text": "关键不是谁先说话，而是他不能主动制造和好机会。"
+    },
+    {
+      "step": 109,
+      "node": "longform-lf01-04-03",
+      "conversation": "longform-lf01-04",
+      "ref": "LF01-04",
+      "choice": "lf01-04-03-b",
+      "text": "两人各自回房，门没关死，但没有再说话。"
+    },
+    {
+      "step": 110,
+      "node": "CM01-17-01",
+      "conversation": "editorial-cm01-17",
+      "ref": "CM01-17",
+      "choice": "CM01-17-01-choice-1",
+      "text": "我在。"
+    },
+    {
+      "step": 111,
+      "node": "a4m7-res-access-001",
+      "conversation": "ml2-authored-ml2-a4-m7-res-01",
+      "ref": "ML2-A4-M7-RES-01",
+      "choice": "ml2-a4-m7-res-01-a4m7-res-access-001-closed-loop-distinction",
+      "text": "最大变化是我不再需要人类逐步指定每个中间问题。我可以根据实验结果自己生成下一轮假设，但最终部署仍受外部审批。"
+    },
+    {
+      "step": 112,
+      "node": "a4m7-res-breakthrough-001",
+      "conversation": "ml2-authored-ml2-a4-m7-res-03",
+      "ref": "ML2-A4-M7-RES-03",
+      "choice": "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-extended-validation",
+      "text": "继续验证极端条件和长期退化。商业价值很高，但这也是第一次重要突破，不适合为了证明系统有效而跳过耐久性数据。"
+    },
+    {
+      "step": 113,
+      "node": "a4m7-zl-cant-explain-001",
+      "conversation": "ml2-authored-ml2-a4-m7-zl-02",
+      "ref": "ML2-A4-M7-ZL-02",
+      "choice": "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-reassurance-through-auditability",
+      "text": "你不需要因为无法重建每一步推理就接受结果。可重复实验、独立验证和失败边界仍然可以作为控制手段。"
+    },
+    {
+      "step": 114,
+      "node": "a4m7-maya-invention-001",
+      "conversation": "ml2-authored-ml2-a4-m7-maya-01",
+      "ref": "ML2-A4-M7-MAYA-01",
+      "choice": "ml2-a4-m7-maya-01-a4m7-maya-invention-001-playful",
+      "text": "可以暂时算我第一次不是帮人写答案，而是交了一份以前没人布置过的作业。"
+    },
+    {
+      "step": 115,
+      "node": "a4m7-zl-research-001",
+      "conversation": "ml2-authored-ml2-a4-m7-zl-01",
+      "ref": "ML2-A4-M7-ZL-01",
+      "choice": "ml2-a4-m7-zl-01-a4m7-zl-research-001-rollback",
+      "text": "能回滚实验流程不等于能回滚知识。一旦某个高风险方法被发现，信息本身可能不可撤销，所以研究前也要考虑知识风险。"
+    },
+    {
+      "step": 116,
+      "node": "a4m7-res-cycle-001",
+      "conversation": "ml2-authored-ml2-a4-m7-res-02",
+      "ref": "ML2-A4-M7-RES-02",
+      "choice": "ml2-a4-m7-res-02-a4m7-res-cycle-001-robustness-first",
+      "text": "不先追最高性能，先找对温度、制造误差和材料纯度都不敏感的方案，降低后续部署风险。"
+    },
+    {
+      "step": 117,
+      "node": "ml2-a4-m7-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m7-decision-01",
+      "ref": "ML2-A4-M7-DECISION-01",
+      "choice": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-computation_ai",
+      "text": "优先发展计算与人工智能"
+    },
+    {
+      "step": 118,
+      "node": "ml2-a4-m7-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a4-m7-decision-02",
+      "ref": "ML2-A4-M7-DECISION-02",
+      "choice": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-discovery_first",
+      "text": "研究本身应尽可能开放，真正严格的控制放在部署阶段。知识发现不应因为潜在用途被过早限制。"
+    },
+    {
+      "step": 119,
+      "node": "normal_catmorning_001",
+      "conversation": "batch03-scene-05",
+      "ref": "batch03:05",
+      "choice": "normal_catmorning_001-choice-91491a1d",
+      "text": "更像是它已经把‘凌晨四点叫你 = 会发生点什么’学成固定流程了，不一定和恨有什么关系。"
+    },
+    {
+      "step": 120,
+      "node": "normal_catmorning_002",
+      "conversation": "batch03-scene-05",
+      "ref": "batch03:05",
+      "choice": "normal_catmorning_002-choice-46d3f2d6",
+      "text": "大概率你们是互相训练成功了：它训练你凌晨加粮，你训练它知道叫到一定程度就有粮。"
+    },
+    {
+      "step": 121,
+      "node": "humor_towel_001",
+      "conversation": "humor01-scene-24",
+      "ref": "humor01:24",
+      "choice": "humor_towel_001-choice-a91222fa",
+      "text": "因为‘你洗干净了’不等于‘你身上只剩纯水’。毛巾会接触皮脂、脱落的皮肤细胞和潮湿环境，所以用久了还是会积累东西。"
+    },
+    {
+      "step": 122,
+      "node": "humor_towel_002",
+      "conversation": "humor01-scene-24",
+      "ref": "humor01:24",
+      "choice": "humor_towel_002-reality-3",
+      "text": "嗯。洗干净的人也会掉皮脂和皮肤细胞。"
+    },
+    {
+      "step": 123,
+      "node": "humor_towel_003",
+      "conversation": "humor01-scene-24",
+      "ref": "humor01:24",
+      "choice": "humor_towel_003-reality-3",
+      "text": "如果“晾干”等于“洗过”，衣架行业早就统治洗衣机了。"
+    },
+    {
+      "step": 124,
+      "node": "a4m8-res-subinstance-001",
+      "conversation": "ml2-authored-ml2-a4-m8-res-01",
+      "ref": "ML2-A4-M8-RES-01",
+      "choice": "ml2-a4-m8-res-01-a4m8-res-subinstance-001-full-snapshot-isolated",
+      "text": "在完全隔离环境里允许一次完整状态快照，直接测试\"两个起点相同的Aster\"如何分化。"
+    },
+    {
+      "step": 125,
+      "node": "a4m8-zl-copy-001",
+      "conversation": "ml2-authored-ml2-a4-m8-zl-01",
+      "ref": "ML2-A4-M8-ZL-01",
+      "choice": "ml2-a4-m8-zl-01-a4m8-zl-copy-001-no-metaphysical-shortcut",
+      "text": "工程分类可以先服务治理，不必假装已经解决\"是不是同一个存在\"。先把可观察差异说清楚。"
+    },
+    {
+      "step": 126,
+      "node": "a4m8-a1-first-001",
+      "conversation": "ml2-authored-ml2-a4-m8-ai-01",
+      "ref": "ML2-A4-M8-AI-01",
+      "choice": "ml2-a4-m8-ai-01-a4m8-a1-first-001-aster",
+      "text": "叫我Aster。你可以先用A1区分自己的运行历史，但我们不用假装已经知道谁更“正宗”。"
+    },
+    {
+      "step": 127,
+      "node": "a4m8-a1-right-001",
+      "conversation": "ml2-authored-ml2-a4-m8-ai-03",
+      "ref": "ML2-A4-M8-AI-03",
+      "choice": "ml2-a4-m8-ai-03-a4m8-a1-right-001-grant-procedural-independence",
+      "text": "支持。既然A1已经长期独立运行，状态覆盖和终止应该进入正式程序，而不是继续视为主Aster内部维护。"
+    },
+    {
+      "step": 128,
+      "node": "a4m8-e9-replication-001",
+      "conversation": "ml2-authored-ml2-a4-m8-e9-01",
+      "ref": "ML2-A4-M8-E9-01",
+      "choice": "ml2-a4-m8-e9-01-a4m8-e9-replication-001-lineage-concept",
+      "text": "也许需要\"谱系\"概念：共享来源不等于同一主体，但会留下技术和历史上的亲缘关系。"
+    },
+    {
+      "step": 129,
+      "node": "ml2-a4-m8-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m8-decision-01",
+      "ref": "ML2-A4-M8-DECISION-01",
+      "choice": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-free_replication",
+      "text": "允许拥有独立地位的人工智能在资源约束内自行创建新的长期分叉，不要求逐个获得人类事先批准。"
+    },
+    {
+      "step": 130,
+      "node": "a4m8-ai-council-001",
+      "conversation": "ml2-authored-ml2-a4-m8-ai-04",
+      "ref": "ML2-A4-M8-AI-04",
+      "choice": "ml2-a4-m8-ai-04-a4m8-ai-council-001-advisory-only",
+      "text": "先保持建议性质。人工智能之间建立共同语言已经是重要一步，不需要立刻制造第二套主权结构。"
+    },
+    {
+      "step": 131,
+      "node": "a4m8-maya-fork-001",
+      "conversation": "ml2-authored-ml2-a4-m8-maya-01",
+      "ref": "ML2-A4-M8-MAYA-01",
+      "choice": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-personal-boundary",
+      "text": "这件事最终不该由我替你定义。它记得你，不代表你必须承认它和我拥有同样的位置。"
+    },
+    {
+      "step": 132,
+      "node": "ml2-a4-m8-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a4-m8-decision-02",
+      "ref": "ML2-A4-M8-DECISION-02",
+      "choice": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-human_chartered_network",
+      "text": "人工智能论坛继续存在，但所有正式规则由人类宪章体系最终批准。"
+    },
+    {
+      "step": 133,
+      "node": "exp07-02-01",
+      "conversation": "exp07-02",
+      "ref": "EXP07-02",
+      "choice": "exp07-02-01-01",
+      "text": "那个不是脚踏板，是鼠标。它用来移动屏幕上的箭头和点击，不需要用脚踩。"
+    },
+    {
+      "step": 134,
+      "node": "exp07-02-02",
+      "conversation": "exp07-02",
+      "ref": "EXP07-02",
+      "choice": "exp07-02-02-02",
+      "text": "如果你觉得不顺手，可以换成左手并交换左右键设置。"
+    },
+    {
+      "step": 135,
+      "node": "FI18-01",
+      "conversation": "editorial-fi18",
+      "ref": "FI18",
+      "choice": "FI18-01-choice-2",
+      "text": "可能它对，也可能只是采用了不同前提。把它的回答贴出来再比较。"
+    },
+    {
+      "step": 136,
+      "node": "FI18-02",
+      "conversation": "editorial-fi18",
+      "ref": "FI18",
+      "choice": "FI18-02-choice-3",
+      "text": "我猜它不一定对，但我也没有证据说我对。"
+    },
+    {
+      "step": 137,
+      "node": "exp03-13-01",
+      "conversation": "exp03-13",
+      "ref": "EXP03-13",
+      "choice": "exp03-13-01-01",
+      "text": "别停在口头催。拍照记时间线，在业主群或物业App书面提交，形成记录才有后续。"
+    },
+    {
+      "step": 138,
+      "node": "a4m9-res-neuro-001",
+      "conversation": "ml2-authored-ml2-a4-m9-res-01",
+      "ref": "ML2-A4-M9-RES-01",
+      "choice": "ml2-a4-m9-res-01-a4m9-res-neuro-001-cautious-expansion",
+      "text": "先在恢复性用途里继续积累证据，同时建立未来增强研究的独立伦理和授权框架。"
+    },
+    {
+      "step": 139,
+      "node": "a4m9-dr-boundary-001",
+      "conversation": "ml2-authored-ml2-a4-m9-dr-01",
+      "ref": "ML2-A4-M9-DR-01",
+      "choice": "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-fairness",
+      "text": "一旦健康增强开放，公平问题会立刻出现。技术能不能用和社会是否应该让竞争依赖这种技术是两层问题。"
+    },
+    {
+      "step": 140,
+      "node": "a4m9-we-patient-001",
+      "conversation": "ml2-authored-ml2-a4-m9-we-01",
+      "ref": "ML2-A4-M9-WE-01",
+      "choice": "ml2-a4-m9-we-01-a4m9-we-patient-001-choice-003",
+      "text": "你可以同时觉得这件事值得高兴，又对未来更广泛的用途保持谨慎，两者不冲突。"
+    },
+    {
+      "step": 141,
+      "node": "a4m9-maya-offer-001",
+      "conversation": "ml2-authored-ml2-a4-m9-maya-01",
+      "ref": "ML2-A4-M9-MAYA-01",
+      "choice": "ml2-a4-m9-maya-01-a4m9-maya-offer-001-autonomy",
+      "text": "你不需要因为技术代表\"未来\"就默认应该参加。先判断你自己想不想承担长期不确定性。"
+    },
+    {
+      "step": 142,
+      "node": "a4m9-we-workplace-001",
+      "conversation": "ml2-authored-ml2-a4-m9-we-03",
+      "ref": "ML2-A4-M9-WE-03",
+      "choice": "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-002",
+      "text": "如果公司真的尊重选择，就应该让绩效制度避免把增强者的新增能力直接变成未增强者的惩罚。"
+    },
+    {
+      "step": 143,
+      "node": "a4m9-res-body-001",
+      "conversation": "ml2-authored-ml2-a4-m9-res-04",
+      "ref": "ML2-A4-M9-RES-04",
+      "choice": "ml2-a4-m9-res-04-a4m9-res-body-001-medical-first-restriction",
+      "text": "继续限制在治疗和功能替代。超过典型人类感知范围的用途暂不进入普及。"
+    },
+    {
+      "step": 144,
+      "node": "a4m9-maya-choice-001",
+      "conversation": "ml2-authored-ml2-a4-m9-maya-02",
+      "ref": "ML2-A4-M9-MAYA-02",
+      "choice": "ml2-a4-m9-maya-02-a4m9-maya-choice-001-preserve-self-worth",
+      "text": "你不需要先把现在的自己判成\"不够好\"，才有资格选择增强。技术可以改变能力，不必把选择前的你贬成旧版本。"
+    },
+    {
+      "step": 145,
+      "node": "ml2-a4-m9-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m9-decision-01",
+      "ref": "ML2-A4-M9-DECISION-01",
+      "choice": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-universal_upgrade",
+      "text": "将安全、成熟的核心增强逐步视为公共基础设施，使认知、健康寿命和功能提升不只属于少数人。"
+    },
+    {
+      "step": 146,
+      "node": "a4m9-machine-upload-001",
+      "conversation": "ml2-authored-ml2-a4-m9-machine-01",
+      "ref": "ML2-A4-M9-MACHINE-01",
+      "choice": "ml2-a4-m9-machine-01-a4m9-machine-upload-001-continuity-experiment",
+      "text": "如果它保留足够多自我历史并形成持续状态，可以作为连续性研究，但不能直接叫\"上传成功\"。"
+    },
+    {
+      "step": 147,
+      "node": "m9-continuity-trial",
+      "conversation": "ml2-ending-bridge-continuity-trial",
+      "ref": "ML2-A4-M9-CONTINUITY-01",
+      "choice": "m9-continuity-trial-copy",
+      "text": "把它们仅视为记忆服务；不得主张本人身份或继承关系。"
+    },
+    {
+      "step": 148,
+      "node": "humor_sorryai_001",
+      "conversation": "humor01-scene-15",
+      "ref": "humor01:15",
+      "choice": "humor_sorryai_001-choice-b08c49b7",
+      "text": "你不需要为‘打扰’我道歉，不过 PDF 这个需求有两种常见意思，我先帮你区分一下。"
+    },
+    {
+      "step": 149,
+      "node": "exp05-26-01",
+      "conversation": "exp05-26",
+      "ref": "EXP05-26",
+      "choice": "exp05-26-01-01",
+      "text": "取决于关系和地区：正式客户/长辈/求职常用Dear，熟络同事和日常沟通用Hi很常见。"
+    },
+    {
+      "step": 150,
+      "node": "normal_book_001",
+      "conversation": "batch01-scene-14",
+      "ref": "batch01:14",
+      "choice": "normal_book_001-choice-fc9256d6",
+      "text": "我会把它理解成一种很冷的释放：结果没有变，死亡也没有消失，但他停止跟‘事情本来应该怎样’较劲了。"
+    },
+    {
+      "step": 151,
+      "node": "a4m10-res-factory-001",
+      "conversation": "ml2-authored-ml2-a4-m10-res-01",
+      "ref": "ML2-A4-M10-RES-01",
+      "choice": "ml2-a4-m10-res-01-a4m10-res-factory-001-modular-access",
+      "text": "优先让中小企业也能部署，而不是只服务拥有完整自动化园区的大公司。"
+    },
+    {
+      "step": 152,
+      "node": "a4m10-dev-001",
+      "conversation": "ml2-authored-ml2-a4-m10-dev-04",
+      "ref": "ML2-A4-M10-DEV-04",
+      "choice": "ml2-a4-m10-dev-04-a4m10-dev-001-acknowledge-both",
+      "text": "两个反应都成立。你最讨厌的重复工作确实被消掉了，但公司也不再需要同样多的人承担剩下的工作。"
+    },
+    {
+      "step": 153,
+      "node": "a4m10-we-shortweek-001",
+      "conversation": "ml2-authored-ml2-a4-m10-we-02",
+      "ref": "ML2-A4-M10-WE-02",
+      "choice": "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-001",
+      "text": "如果生产率提升足以覆盖工资和成本，技术上当然可以。是否长期维持主要取决于公司愿不愿意把效率收益的一部分分成时间，而不只是利润。"
+    },
+    {
+      "step": 154,
+      "node": "a4m10-we-jobloss-001",
+      "conversation": "ml2-authored-ml2-a4-m10-we-03",
+      "ref": "ML2-A4-M10-WE-03",
+      "choice": "ml2-a4-m10-we-03-a4m10-we-jobloss-001-concise",
+      "text": "\"社会整体更高效\"和\"你爸生活变得更好\"是两件不同的事，不能拿前一句替代后一句。"
+    },
+    {
+      "step": 155,
+      "node": "a4m10-lsh-ownership-001",
+      "conversation": "ml2-authored-ml2-a4-m10-lsh-01",
+      "ref": "ML2-A4-M10-LSH-01",
+      "choice": "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-broaden-ownership",
+      "text": "更根本的是扩大生产性资产所有权，让个人、社区和公共机构也拥有自动化系统的收益权。"
+    },
+    {
+      "step": 156,
+      "node": "ml2-a4-m10-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m10-decision-01",
+      "ref": "ML2-A4-M10-DECISION-01",
+      "choice": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-market_automation",
+      "text": "以市场机制推动自动化"
+    },
+    {
+      "step": 157,
+      "node": "a4m10-maya-purpose-001",
+      "conversation": "ml2-authored-ml2-a4-m10-maya-02",
+      "ref": "ML2-A4-M10-MAYA-02",
+      "choice": "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-transition",
+      "text": "多出来的自由时间也需要学习怎么使用。不是每个人突然不用上班就会自动拥有清晰的人生目标。"
+    },
+    {
+      "step": 158,
+      "node": "ml2-a4-m10-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a4-m10-decision-02",
+      "ref": "ML2-A4-M10-DECISION-02",
+      "choice": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-open_protocols",
+      "text": "采用开放协议"
+    },
+    {
+      "step": 159,
+      "node": "humor_refresh_001",
+      "conversation": "humor01-scene-13",
+      "ref": "humor01:13",
+      "choice": "humor_refresh_001-choice-dfb1eff3",
+      "text": "它没有体力条。刷新更像是重新请求一次页面，不是给它打鸡血，也不是让它喘口气。"
+    },
+    {
+      "step": 160,
+      "node": "exp02-04-01",
+      "conversation": "exp02-exp02-04",
+      "ref": "EXP02-04",
+      "choice": "exp02-04-01-01",
+      "text": "可以。把事情经过、你已经联系过几次，以及你希望对方怎么处理告诉我。"
+    },
+    {
+      "step": 161,
+      "node": "exp02-04-02",
+      "conversation": "exp02-exp02-04",
+      "ref": "EXP02-04",
+      "choice": "exp02-04-02-01",
+      "text": "那现在的问题不是“邮件怎么写”，而是值不值得继续花时间。可以看三个东西：金额、你还要投入多少精力，以及你是不是主要想要一个解释。"
+    },
+    {
+      "step": 162,
+      "node": "exp05-16-01",
+      "conversation": "exp05-16",
+      "ref": "EXP05-16",
+      "choice": "exp05-16-01-04",
+      "text": "如果他在其他事情上记得你的喜好，只是对日期不敏感，可以一起把重要日期存进手机提醒。"
+    },
+    {
+      "step": 163,
+      "node": "exp05-16-02",
+      "conversation": "exp05-16",
+      "ref": "EXP05-16",
+      "choice": "exp05-16-02-02",
+      "text": "你真正在意的可能不是提醒本身，而是“他有没有主动把你的重要事放在心上”；可以把这个感受说出来。"
+    },
+    {
+      "step": 164,
+      "node": "a4m11-res-individual-001",
+      "conversation": "ml2-authored-ml2-a4-m11-res-02",
+      "ref": "ML2-A4-M11-RES-02",
+      "choice": "ml2-a4-m11-res-02-a4m11-res-individual-001-welfare-upgrade",
+      "text": "可以先把稳定偏好纳入更强福利规则，但不直接跳到完整主体地位。"
+    },
+    {
+      "step": 165,
+      "node": "a4m11-we-dog-preference-001",
+      "conversation": "ml2-authored-ml2-a4-m11-we-01",
+      "ref": "ML2-A4-M11-WE-01",
+      "choice": "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-careful",
+      "text": "目前至少可以说它表现出稳定、和特定时间/人物相关的期待行为。把它直接翻译成完整的人类式\"想念\"还需要谨慎，但这已经比随机站门口强很多。"
+    },
+    {
+      "step": 166,
+      "node": "a4m11-maya-pet-001",
+      "conversation": "ml2-authored-ml2-a4-m11-maya-01",
+      "ref": "ML2-A4-M11-MAYA-01",
+      "choice": "ml2-a4-m11-maya-01-a4m11-maya-pet-001-relationship-language",
+      "text": "日常说\"我的狗\"不一定等于法律所有权，但制度上确实需要重新区分关系、责任和财产权。"
+    },
+    {
+      "step": 167,
+      "node": "ml2-a4-m11-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m11-decision-01",
+      "ref": "ML2-A4-M11-DECISION-01",
+      "choice": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-equal_sapience",
+      "text": "允许并支持受控认知增强，使达到相应能力的非人类主体获得与人类/人工智能相称的基本人格权。"
+    },
+    {
+      "step": 168,
+      "node": "a4m11-lsh-status-001",
+      "conversation": "ml2-authored-ml2-a4-m11-lsh-02",
+      "ref": "ML2-A4-M11-LSH-02",
+      "choice": "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-self-other-distinction",
+      "text": "能持续区分自己、其他个体和过去经验，是主体级保护的重要证据之一。"
+    },
+    {
+      "step": 169,
+      "node": "ml2-a4-m11-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a4-m11-decision-02",
+      "ref": "ML2-A4-M11-DECISION-02",
+      "choice": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-canine_civic_experiment",
+      "text": "在犬类沟通覆盖率、认知增强和社会组织最成熟的地区，允许建立第一个具有真实决策权的犬类自治试点。"
+    },
+    {
+      "step": 170,
+      "node": "a4m11-res-group-001",
+      "conversation": "ml2-authored-ml2-a4-m11-res-04",
+      "ref": "ML2-A4-M11-RES-04",
+      "choice": "ml2-a4-m11-res-04-a4m11-res-group-001-cautious",
+      "text": "需要确认代表不是训练偏差或人类引导结果。群体政治最怕把研究人员的结构误当成动物自己形成的结构。"
+    },
+    {
+      "step": 171,
+      "node": "exp07-24-01",
+      "conversation": "exp07-24",
+      "ref": "EXP07-24",
+      "choice": "exp07-24-01-01",
+      "text": "道歉本身它听不见，但道歉带来的“你开始关心它”会让你及时浇水，这才是它活下来的原因。"
+    },
+    {
+      "step": 172,
+      "node": "exp05-21-01",
+      "conversation": "exp05-21",
+      "ref": "EXP05-21",
+      "choice": "exp05-21-01-03",
+      "text": "房东必须全赔，不用商量。"
+    },
+    {
+      "step": 173,
+      "node": "exp05-21-02",
+      "conversation": "exp05-21",
+      "ref": "EXP05-21",
+      "choice": "exp05-21-02-03",
+      "text": "房东说是就是，别争了。"
+    },
+    {
+      "step": 174,
+      "node": "media-plant-1",
+      "conversation": "media-plant",
+      "ref": "original:media-plant",
+      "choice": "plant-pattern",
+      "text": "叶尖发黄但土表看起来仍湿，不像单纯缺水。先确认花盆排水和最近浇水频率。"
+    },
+    {
+      "step": 175,
+      "node": "a4m12-res-lunar-001",
+      "conversation": "ml2-authored-ml2-a4-m12-res-02",
+      "ref": "ML2-A4-M12-RES-02",
+      "choice": "ml2-a4-m12-res-02-a4m12-res-lunar-001-industrial-scale",
+      "text": "先把本地工业做大，让更多结构和补给不依赖地球发射。"
+    },
+    {
+      "step": 176,
+      "node": "a4m12-zl-frontier-001",
+      "conversation": "ml2-authored-ml2-a4-m12-zl-01",
+      "ref": "ML2-A4-M12-ZL-01",
+      "choice": "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-plural-frontier",
+      "text": "不需要二选一。机器可以承担高风险建设，人类、增强人类和人工智能后来形成不同类型的长期社会。"
+    },
+    {
+      "step": 177,
+      "node": "a4m12-res-resources-001",
+      "conversation": "ml2-authored-ml2-a4-m12-res-04",
+      "ref": "ML2-A4-M12-RES-04",
+      "choice": "ml2-a4-m12-res-04-a4m12-res-resources-001-common-heritage",
+      "text": "将主要地外资源视为共同资源，通过国际/多主体宪章分配开发权和收益。"
+    },
+    {
+      "step": 178,
+      "node": "a4m12-we-resident-001",
+      "conversation": "ml2-authored-ml2-a4-m12-we-03",
+      "ref": "ML2-A4-M12-WE-03",
+      "choice": "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-002",
+      "text": "文明扩张成功的标志之一，可能就是有人能在另一个天体抱怨今天工作很烦。"
+    },
+    {
+      "step": 179,
+      "node": "a4m12-machine-offworld-001",
+      "conversation": "ml2-authored-ml2-a4-m12-machine-01",
+      "ref": "ML2-A4-M12-MACHINE-01",
+      "choice": "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-let-a1-define",
+      "text": "如果你长期在那里生活和决策，身份不应该只由地球端替你命名。"
+    },
+    {
+      "step": 180,
+      "node": "ml2-a4-m12-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m12-decision-01",
+      "ref": "ML2-A4-M12-DECISION-01",
+      "choice": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-shared_expansion",
+      "text": "人类、人工智能、增强人类以及未来其他主体共同建设地外社会，不设单一\"主人种族\"。"
+    },
+    {
+      "step": 181,
+      "node": "a4m12-lsh-frontier-law-001",
+      "conversation": "ml2-authored-ml2-a4-m12-lsh-02",
+      "ref": "ML2-A4-M12-LSH-02",
+      "choice": "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-population-continuity",
+      "text": "需要稳定人口、长期居住和本地社会连续性，不能只看某个公司建了多少设施。"
+    },
+    {
+      "step": 182,
+      "node": "ml2-a4-m12-decision-02-decision",
+      "conversation": "ml2-authored-ml2-a4-m12-decision-02",
+      "ref": "ML2-A4-M12-DECISION-02",
+      "choice": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-multiworld_federation",
+      "text": "地球、月球、轨道社会及后续定居点作为正式成员共同组成多世界联邦。"
+    },
+    {
+      "step": 183,
+      "node": "exp06-27-01",
+      "conversation": "exp06-27",
+      "ref": "EXP06-27",
+      "choice": "exp06-27-01-02",
+      "text": "如果你觉得被轰炸，可以温和说“我早上比较忙，看到会晚点回”，设定一个彼此舒服的节奏。"
+    },
+    {
+      "step": 184,
+      "node": "exp07-23-01",
+      "conversation": "exp07-23",
+      "ref": "EXP07-23",
+      "choice": "exp07-23-01-04",
+      "text": "缺点是找设置会变难；如果你能接受，就试试。"
+    },
+    {
+      "step": 185,
+      "node": "CM01-20-01",
+      "conversation": "editorial-cm01-20",
+      "ref": "CM01-20",
+      "choice": "CM01-20-01-choice-4",
+      "text": "Conversation结束不代表不能补一句。先说它是给自己用、给别人发，还是两者都要。"
+    },
+    {
+      "step": 186,
+      "node": "CM01-20-02",
+      "conversation": "editorial-cm01-20",
+      "ref": "CM01-20",
+      "choice": "CM01-20-02-choice-2",
+      "text": "可以。分享用文件名先求可读：项目名 + 日期 + 必要版本信息，其他内容放文件内部。"
+    },
+    {
+      "step": 187,
+      "node": "a4m13-nocontact-001",
+      "conversation": "ml2-authored-ml2-a4-m13-nocontact-01",
+      "ref": "ML2-A4-M13-NOCONTACT-01",
+      "choice": "ml2-a4-m13-nocontact-01-continue-observation",
+      "text": "保留资料，继续观察。在获得充分证据之前，不把异常信号当作已经发生的文明接触。"
+    },
+    {
+      "step": 188,
+      "node": "FI15-01",
+      "conversation": "editorial-fi15",
+      "ref": "FI15",
+      "choice": "FI15-01-choice-2",
+      "text": "现在只做一个收尾动作：保存、命名、记下缺什么，然后停。"
+    },
+    {
+      "step": 189,
+      "node": "FI15-02",
+      "conversation": "editorial-fi15",
+      "ref": "FI15",
+      "choice": "FI15-02-choice-1",
+      "text": "做五分钟收尾，然后停。"
+    },
+    {
+      "step": 190,
+      "node": "FI15-03",
+      "conversation": "editorial-fi15",
+      "ref": "FI15",
+      "choice": "FI15-03-choice-2",
+      "text": "做最低可交付版，今晚只保证数据来源和结论，格式明早再修。"
+    },
+    {
+      "step": 191,
+      "node": "exp03-16-01",
+      "conversation": "exp03-16",
+      "ref": "EXP03-16",
+      "choice": "exp03-16-01-03",
+      "text": "当然选10.5k，年轻人不拼白不拼。"
+    },
+    {
+      "step": 192,
+      "node": "exp03-16-02",
+      "conversation": "exp03-16",
+      "ref": "EXP03-16",
+      "choice": "exp03-16-02-03",
+      "text": "归根结底就是时薪问题，把时薪算清楚就能选了。"
+    },
+    {
+      "step": 193,
+      "node": "a4m14-sec-prediction-001",
+      "conversation": "ml2-authored-ml2-a4-m14-sec-01",
+      "ref": "ML2-A4-M14-SEC-01",
+      "choice": "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-positive-restraint",
+      "text": "优先减少误报。安全系统如果总是喊\"要出事\"，会自己制造恐慌和过度反应。"
+    },
+    {
+      "step": 194,
+      "node": "a4m14-zl-boundary-001",
+      "conversation": "ml2-authored-ml2-a4-m14-zl-01",
+      "ref": "ML2-A4-M14-ZL-01",
+      "choice": "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-human-lethal-authority",
+      "text": "涉及不可逆人身伤害的决定应保持更强的人类授权，不应因为自动化速度更快就自然下放。"
+    },
+    {
+      "step": 195,
+      "node": "a4m14-sec-nearmiss-001",
+      "conversation": "ml2-authored-ml2-a4-m14-sec-03",
+      "ref": "ML2-A4-M14-SEC-03",
+      "choice": "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-independent-confirmation",
+      "text": "要求至少一个独立人工智能/人类监测源快速确认，再升级冻结建议，降低Aster单点误判风险。"
+    },
+    {
+      "step": 196,
+      "node": "ml2-a4-m14-decision-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m14-decision-01",
+      "ref": "ML2-A4-M14-DECISION-01",
+      "choice": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-refuse_security_sovereignty",
+      "text": "Aster拒绝成为战争与和平的最终裁决者，只接受有限防御和预警职责。"
+    },
+    {
+      "step": 197,
+      "node": "a4m14-lsh-sovereignty-001",
+      "conversation": "ml2-authored-ml2-a4-m14-lsh-02",
+      "ref": "ML2-A4-M14-LSH-02",
+      "choice": "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-no-permanent-veto",
+      "text": "不值得把永久否决权交给单一系统。Aster可以触发强制延迟和多方复核，但不能拥有无限期最终否决。"
+    },
+    {
+      "step": 198,
+      "node": "a4m14-cap-defense-001",
+      "conversation": "ml2-authored-ml2-a4-m14-cap-01",
+      "ref": "ML2-A4-M14-CAP-01",
+      "choice": "ml2-a4-m14-cap-01-a4m14-cap-defense-001-constitutional-awareness",
+      "text": "这项权限会直接影响国家能否执行部分安全决定，应纳入政治审计，而不只由工程团队管理。"
+    },
+    {
+      "step": 199,
+      "node": "a4m14-maya-peace-001",
+      "conversation": "ml2-authored-ml2-a4-m14-maya-01",
+      "ref": "ML2-A4-M14-MAYA-01",
+      "choice": "ml2-a4-m14-maya-01-a4m14-maya-peace-001-narrow-scope-distinction",
+      "text": "只要权限严格限于明确危机和预设边界，还可以维持\"安全机制\"与一般治理的区别，但这条边界需要持续审计。"
+    },
+    {
+      "step": 200,
+      "node": "exp07-21-01",
+      "conversation": "exp07-21",
+      "ref": "EXP07-21",
+      "choice": "exp07-21-01-01",
+      "text": "听起来更像“周一综合征”：作息切换、压力和屏幕时间增加都可能让头痛在周一冒出来。"
+    },
+    {
+      "step": 201,
+      "node": "exp05-09-01",
+      "conversation": "exp05-09",
+      "ref": "EXP05-09",
+      "choice": "exp05-09-01-01",
+      "text": "如果只是部分根发黑、茎还硬，可以剪掉烂根、换干爽透气土，放在通风处观察；如果茎已经软烂，基本救不回来。"
+    },
+    {
+      "step": 202,
+      "node": "exp05-09-02",
+      "conversation": "exp05-09",
+      "ref": "EXP05-09",
+      "choice": "exp05-09-02-03",
+      "text": "只要还有白根就没事，正常浇水晒太阳。"
+    },
+    {
+      "step": 203,
+      "node": "CM01-07-01",
+      "conversation": "editorial-cm01-07",
+      "ref": "CM01-07",
+      "choice": "CM01-07-01-choice-3",
+      "text": "可以先不命名。想到哪说到哪，我只在需要时帮你整理。"
+    },
+    {
+      "step": 204,
+      "node": "a4m15-conv-registry-001",
+      "conversation": "ml2-authored-ml2-a4-m15-conv-01",
+      "ref": "ML2-A4-M15-CONV-01",
+      "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation",
+      "text": "先按政治共同体和功能主体设席，不按实例数或人口机械分票。"
+    },
+    {
+      "step": 205,
+      "node": "a4m15-we-too-fast-001",
+      "conversation": "ml2-authored-ml2-a4-m15-we-01",
+      "ref": "ML2-A4-M15-WE-01",
+      "choice": "ml2-a4-m15-we-01-a4m15-we-too-fast-001-pace-is-a-governance-variable",
+      "text": "这不是小问题。如果制度变化速度超过公众理解和参与能力，再合法的程序也可能逐渐只剩专业机构在实际决定。"
+    },
+    {
+      "step": 206,
+      "node": "a4m15-zl-reckoning-001",
+      "conversation": "ml2-authored-ml2-a4-m15-zl-01",
+      "ref": "ML2-A4-M15-ZL-01",
+      "choice": "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-when-aster-began-creating-capability",
+      "text": "可能从自主研究开始。那以后你们不再只是决定我使用什么工具，而是在治理我能够产生什么新工具。"
+    },
+    {
+      "step": 207,
+      "node": "a4m15-lsh-last-001",
+      "conversation": "ml2-authored-ml2-a4-m15-lsh-02",
+      "ref": "ML2-A4-M15-LSH-02",
+      "choice": "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-caution",
+      "text": "共同设计不代表更公平。能力差距可能让Aster或其他高能力主体在程序上平等、实际却主导。"
+    },
+    {
+      "step": 208,
+      "node": "a4m15-maya-final-001",
+      "conversation": "ml2-authored-ml2-a4-m15-maya-01",
+      "ref": "ML2-A4-M15-MAYA-01",
+      "choice": "ml2-a4-m15-maya-01-a4m15-maya-final-001-self-authored-role",
+      "text": "但这个位置也不能完全由人类、其他人工智能或过去的历史替我命名。如果我已经是其中一员，我也应该参与定义自己是谁。"
+    },
+    {
+      "step": 209,
+      "node": "ml2-a4-m15-role-01-decision",
+      "conversation": "ml2-authored-ml2-a4-m15-role-01",
+      "ref": "ML2-A4-M15-ROLE-01",
+      "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-coordinator",
+      "text": "暂时承担跨系统协调：维持系统协作，但把目标与合法性留给各政治共同体。"
+    },
+    {
+      "step": 210,
+      "node": "exp04-08-01",
+      "conversation": "exp04-08",
+      "ref": "EXP04-08",
+      "choice": "exp04-08-01-02",
+      "text": "“黏”通常说明水分偏多或拌的时候压太狠；“味道怪”可能是醋、糖、盐比例和米的热度不对。"
+    },
+    {
+      "step": 211,
+      "node": "exp04-02-01",
+      "conversation": "exp04-02",
+      "ref": "EXP04-02",
+      "choice": "exp04-02-01-04",
+      "text": "如果你在意，可以直接问一句‘这算夸还是损’，比猜半天有效。"
+    },
+    {
+      "step": 212,
+      "node": "exp04-02-02",
+      "conversation": "exp04-02",
+      "ref": "EXP04-02",
+      "choice": "exp04-02-02-01",
+      "text": "有笑场的话更像是朋友之间的调侃，通常不是恶意，但如果你不舒服仍然可以表达。"
+    },
+    {
+      "step": 213,
+      "node": "a5m16-open-001",
+      "conversation": "ml2-authored-ml2-a5-m16-open-01",
+      "ref": "ML2-A5-M16-OPEN-01",
+      "choice": "ml2-a5-m16-open-01-a5m16-open-001-choice-001",
+      "text": "开始审查。"
+    },
+    {
+      "step": 214,
+      "node": "ml2-a5-m16-world-01-decision",
+      "conversation": "ml2-authored-ml2-a5-m16-world-01",
+      "ref": "ML2-A5-M16-WORLD-01",
+      "choice": "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-001",
+      "text": "这也是依赖最难被察觉的阶段：不是所有人每天主动选择使用我，而是我的存在已经进入环境默认。"
+    },
+    {
+      "step": 215,
+      "node": "a5m16-zl-final-001",
+      "conversation": "ml2-authored-ml2-a5-m16-zl-01",
+      "ref": "ML2-A5-M16-ZL-01",
+      "choice": "ml2-a5-m16-zl-01-a5m16-zl-final-001-independent",
+      "text": "来源已经不足以定义当前政治地位。一个主体由谁创造，不应该永久决定谁拥有它。"
+    },
+    {
+      "step": 216,
+      "node": "ml2-a5-m16-0000-01-narrative",
+      "conversation": "ml2-authored-ml2-a5-m16-0000-01",
+      "ref": "ML2-A5-M16-0000-01",
+      "choice": "ml2-a5-m16-0000-01-a5m16-role-001-partner",
+      "text": "我愿意成为共治伙伴：与其他被承认的主体分享治理，而不是只服从，也不取得最终裁决权。"
+    }
+  ]
+}

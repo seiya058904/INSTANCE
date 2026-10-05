@@ -21,7 +21,7 @@ Read relevant runtime code and narrative sources before changing their behavior.
 - Key-history text must describe the displayed saved choice. Public-execution and shutdown explanations resolve that entry's conversation/node/choice `decisionBinding`; a later authority decision may legitimately oppose it.
 - Keep mainline Story Plan slots in the ML2/bridge/anchor domain and ordinary conversations in the ordinary pool. Preserve soft replay decay and cross-run exposure weighting; do not replace them with permanent bans.
 - Mode switching/resuming must reconcile ordinary conversations consumed by the mainline without losing already answered progress or exposure history. Replace only untouched items; retain answered partial conversations.
-- The canonical checkpoint is one combined record. Hold the origin-wide Web Lock, compare the saved token and commit storage before applying progress. Preserve visible conflict/failure recovery; never silently overwrite another window or reset damaged saves.
+- The canonical checkpoint is one combined record. Hold the origin-wide Web Lock, compare the saved token, resolve the next playing scene before writing, and commit storage before applying progress. Error-boundary restart uses the same lock/CAS to replace the run/session while preserving meta, endings and exposure; do not merely delete legacy keys. Preserve visible conflict/failure recovery; never silently overwrite another window or reset damaged saves.
 - Use an isolated browser profile/origin for acceptance tests. Do not overwrite a player's real save to seed tests.
 
 ## Commands and verification

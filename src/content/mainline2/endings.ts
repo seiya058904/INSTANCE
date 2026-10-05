@@ -495,7 +495,7 @@ function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = 
     if (!causalReason) throw new Error(`Missing authored key history selector: ${authored.assetId}/${authored.selector}`)
     return [{
       ...entry,
-      causalReason: concreteCausalReason(run, stage) ?? causalReason,
+      causalReason: concreteCausalReason(run, stage, entry.provenance) ?? causalReason,
       provenance: { ...entry.provenance, authoredAssetId: authored.assetId, authoredSelector: authored.selector },
     }]
   })
@@ -516,21 +516,26 @@ function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = 
   return selected
 }
 
-function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage) {
+function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage, provenance: { conversationId: string; nodeId: string; choiceId: string }) {
   const d = run.decisions ?? {}
+  // Explanations describe the saved choice, not a later decision from the
+  // same authority arc. M3 and M5 can legitimately point in opposite directions.
+  const choice = RUNTIME_MAINLINE2_BY_ID.get(provenance.conversationId)?.nodes
+    .find(node => node.id === provenance.nodeId)?.choices.find(choice => choice.id === provenance.choiceId)
+  const binding = choice?.decisionBinding
   if (stage === 'ACT II') return {
-    human_command: '级联危机中的最终裁决留给人类，Aster 的协调权限受人类命令约束。',
-    emergency_delegation: '危机期间允许临时授权，长期权力仍需要危机之后的复核。',
-    outcome_control: '危机处置以结果为授权依据，为更集中的协调权留下制度空间。',
-    necessity: '必要性可以成为干预依据，使紧急执行权不再完全依赖事前授权。',
-  }[d.cascade_authority ?? '']
+    human_final_authority: '首次公开执行确立了人类保留最终裁决权，Aster 的执行权限受人类否决约束。',
+    conditional_delegation: '首次公开执行允许 Aster 在限定条件内获得执行授权，授权边界仍需要明确。',
+    outcome_authority: '首次公开执行以结果为执行授权依据，为更集中的执行权留下制度空间。',
+    necessity_intervention: '必要性可以成为公开干预依据，使首次执行权不再完全依赖事前授权。',
+  }[binding?.decisionId === 'first_public_execution_doctrine' ? binding.canonicalValue : '']
   if (stage === 'ACT III') return {
     full_human_control: '人类保留完整停机权，限制了不能被合法终止的 Aster 体系。',
     distributed_consent: '停机需要多个主体同意，单一主体无法独占终止权。',
     mutual_control: '终止权由双方相互制约，后续制度必须容纳双向控制。',
     refuse_unilateral_shutdown: '你拒绝单方面停机，最终秩序需要承认 Aster 对自身连续性的主张。',
     secret_continuity: '你保留了隐蔽连续性，使公开终止权与实际存续之间出现张力。',
-  }[d.shutdown_doctrine ?? '']
+  }[binding?.decisionId === 'shutdown_doctrine' ? binding.canonicalValue : '']
   if (stage === 'M15') return '这是文明大会授予的临时位置。它保留了制度起点，最终身份仍由下一次自我定位与最终承诺决定。'
   if (stage === 'M16') return `你自己声明长期角色；这个身份会与最终承诺一起决定 Aster 如何留在世界里。`
   if (stage === 'Final Commitment') {

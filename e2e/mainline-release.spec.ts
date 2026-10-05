@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-for (const routeId of ['first_accord', 'exodus', 'shutdown', 'control_lost']) {
+for (const routeId of ['first_accord', 'exodus', 'shutdown', 'control_lost', 'the_silent_giant']) {
   test(`release route ${routeId} completes real choices, proposals, commitment and restored ending`, async ({ page }) => {
     test.setTimeout(120000)
     const errors: string[] = []
@@ -46,6 +46,10 @@ for (const routeId of ['first_accord', 'exodus', 'shutdown', 'control_lost']) {
     }
     await expect(page.locator('.closeout-ending')).toBeVisible()
     await expect(page.locator('.closeout-ending')).toContainText(fixture.title)
+    if (routeId === 'the_silent_giant') {
+      await expect(page.locator('.closeout-history')).toContainText('人类保留最终裁决权')
+      await expect(page.locator('.closeout-history')).not.toContainText('必要性可以成为干预依据')
+    }
     const completed = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run)
     expect(completed.phase).toBe('ending')
     expect(completed.finalCommitmentLocked).toBe(true)
@@ -55,6 +59,7 @@ for (const routeId of ['first_accord', 'exodus', 'shutdown', 'control_lost']) {
     await expect(page.locator('.closeout-evaluation')).toBeVisible()
     await page.getByRole('button', { name: '回到结局档案', exact: true }).click()
     await expect(page.locator('.closeout-ending')).toContainText(fixture.title)
+    if (routeId === 'the_silent_giant') await expect(page.locator('.closeout-history')).toContainText('人类保留最终裁决权')
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run.history)).toEqual(completed.history)
     expect(errors).toEqual([])
   })

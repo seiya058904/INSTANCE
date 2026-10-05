@@ -86,7 +86,7 @@ for (const version of [1, 2]) {
     // commits the combined checkpoint, retaining the migrated played history.
     await expect(page.locator('.current-exchange')).toContainText(saved.text.slice(0, 30))
     await page.locator('.candidate-response').first().click()
-    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run.history.length)).toBe(saved.history.length + 1)
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)?.data.run.history.length)).toBe(saved.history.length + 1)
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run.history.slice(0, -1))).toEqual(saved.history)
     await page.reload()
     await expect(page.locator('.candidate-response').first()).toBeEnabled()

@@ -3,6 +3,7 @@ import { ACTIVE_SURFACE_KEY, NON_MAINLINE_SESSION_KEY, restoreNonMainlineSession
 import type { ActiveSurface } from './nonMainlineStorage'
 import type { NonMainlineSessionState } from './nonMainlineSession'
 import type { MetaState, NarrativeExposureHistory, StableRunState } from './types'
+import { resolveScene } from './engine'
 
 export const CHECKPOINT_KEY = 'instance:checkpoint:v1'
 export const CHECKPOINT_LOCK = 'instance:checkpoint'
@@ -71,6 +72,9 @@ export function writeCheckpoint(storage: Store, expected: CheckpointToken, data:
   try {
     const current = checkpointToken(storage)
     if (current.raw !== expected.raw || current.legacy !== expected.legacy) return { status: 'conflict' }
+    // Resolve before setItem: structural save validation alone cannot detect a
+    // legal history whose dynamic next scene has no reachable proposal/choice.
+    if (data.run.phase === 'playing' && !resolveScene(data.run).choices.length) return { status: 'failed' }
     const raw = JSON.stringify({ version: 1, revision, legacy: current.legacy, data })
     storage.setItem(CHECKPOINT_KEY, raw)
     if (storage.getItem(CHECKPOINT_KEY) !== raw) return { status: 'failed' }

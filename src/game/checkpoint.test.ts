@@ -11,6 +11,15 @@ function fixture() {
   return { values, storage, data }
 }
 describe('durable checkpoint transactions', () => {
+  it('keeps the previous checkpoint when the next scene cannot resolve', () => {
+    const { storage, data } = fixture()
+    expect(writeCheckpoint(storage, checkpointToken(storage), data, 'before').status).toBe('saved')
+    const before = storage.getItem(CHECKPOINT_KEY)
+    const invalid = { ...data, run: { ...data.run, currentNodeId: 'unresolvable-next-node' } }
+    expect(writeCheckpoint(storage, checkpointToken(storage), invalid, 'invalid').status).toBe('failed')
+    expect(storage.getItem(CHECKPOINT_KEY)).toBe(before)
+    expect(loadCheckpoint(storage).data?.run).toMatchObject({ runId: data.run.runId, currentNodeId: data.run.currentNodeId, history: [] })
+  })
   it('rejects an old tab even when two players made different choices at the same history length', () => {
     const { storage, data } = fixture()
     const initial = checkpointToken(storage)

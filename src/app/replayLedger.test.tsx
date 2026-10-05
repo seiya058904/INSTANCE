@@ -10,6 +10,7 @@ import { CHECKPOINT_KEY, loadCheckpoint, writeCheckpoint } from '../game/checkpo
 
 // Execute the actual App closures and storage/engine/content. Only React's hook
 // container is replaced; this is state-flow integration, not browser rendering.
+const reportCheckpoint = vi.hoisted(() => vi.fn())
 vi.mock('react', async importOriginal => ({
   ...await importOriginal<typeof import('react')>(),
   useState: (initial: unknown) => [typeof initial === 'function' ? initial() : initial, vi.fn()],
@@ -17,8 +18,9 @@ vi.mock('react', async importOriginal => ({
   useRef: (current: unknown) => ({ current }),
   useEffect: vi.fn(),
   useCallback: (fn: unknown) => fn,
+  useContext: () => reportCheckpoint,
 }))
-afterEach(() => vi.unstubAllGlobals())
+afterEach(() => { vi.unstubAllGlobals(); reportCheckpoint.mockClear() })
 function complete(session: ReturnType<typeof createNonMainlineSession>) {
   for (let i = 0; i < 500 && session.phase === 'playing'; i++) session = commitNonMainlineChoice(session, resolveNonMainlineScene(session).choices[0].id)
   expect(session.phase).toBe('evaluation')
@@ -44,7 +46,9 @@ describe('App Non-Mainline replay ledger', () => {
     } })
     vi.stubGlobal('crypto', { randomUUID: () => '00000000-0000-4000-8000-000000000002' })
     const render = () => {
+      const expectedToken = loadCheckpoint(window.localStorage).token
       const tree = App({}) as ReactElement<{ children: ReactElement[] }>
+      expect(reportCheckpoint).toHaveBeenLastCalledWith(expectedToken)
       return (tree.props.children[0] as ReactElement<{ children: ReactElement<{ onReplay: () => void; onReturn: () => void }> }>).props.children
     }
     const read = () => loadCheckpoint(window.localStorage).data!

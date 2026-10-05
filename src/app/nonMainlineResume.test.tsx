@@ -9,6 +9,7 @@ import type { CheckpointData } from '../game/checkpoint'
 
 // Invoke real App callbacks, checkpoint validation and engines. This replaces
 // only React's hook container; the browser regression covers actual rendering.
+const reportCheckpoint = vi.hoisted(() => vi.fn())
 vi.mock('react', async importOriginal => ({
   ...await importOriginal<typeof import('react')>(),
   useState: (initial: unknown) => [typeof initial === 'function' ? initial() : initial, vi.fn()],
@@ -16,8 +17,9 @@ vi.mock('react', async importOriginal => ({
   useRef: (current: unknown) => ({ current }),
   useEffect: vi.fn(),
   useCallback: (fn: unknown) => fn,
+  useContext: () => reportCheckpoint,
 }))
-afterEach(() => vi.unstubAllGlobals())
+afterEach(() => { vi.unstubAllGlobals(); reportCheckpoint.mockClear() })
 
 interface ModeHandlers { onEnter: () => void; onReturn: () => void }
 function controls(): ModeHandlers {
@@ -32,7 +34,9 @@ function controls(): ModeHandlers {
     }
     return undefined
   }
+  const expectedToken = checkpointToken(window.localStorage)
   const result = find(App({}))
+  expect(reportCheckpoint).toHaveBeenLastCalledWith(expectedToken)
   expect(result).toBeDefined()
   return result!
 }

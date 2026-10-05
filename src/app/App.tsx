@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { ConversationView } from '../components/ConversationView'
 import { EndingScreen } from '../components/EndingScreen'
@@ -9,6 +9,7 @@ import { SaveRecovery } from '../components/SaveRecovery'
 import type { SaveStatus } from '../components/SaveRecovery'
 import { CHECKPOINT_LOCK, checkpointToken, loadCheckpoint, readRecoveryRecord, writeCheckpoint } from '../game/checkpoint'
 import type { CheckpointData } from '../game/checkpoint'
+import { RecoveryCheckpointContext } from './RootErrorBoundary'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
 import { WorldSidebar } from '../components/WorldSidebar'
 import { getManifestConversation, ordinaryConversationPool, recordRunExposure } from '../content/runManifest'
@@ -164,6 +165,7 @@ export function recordEndingCompletion(run: StableRunState, meta: MetaState) {
 }
 
 export function App({ initialRunId }: { initialRunId?: string }) {
+  const reportRecoveryCheckpoint = useContext(RecoveryCheckpointContext)
   const [disk] = useState(() => {
     if (typeof window === 'undefined' || initialRunId) return { data: null, token: { raw: null, legacy: '' } }
     try { return loadCheckpoint(window.localStorage) }
@@ -221,6 +223,9 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   const [recoveryError, setRecoveryError] = useState('')
   const recoveryDialog = useRef<HTMLDialogElement>(null)
   const tokenRef = useRef(disk.token)
+  // Report ownership before resolving/rendering a possibly failing scene. This
+  // only updates the boundary's ref; it never writes storage or schedules UI.
+  reportRecoveryCheckpoint(tokenRef.current)
   const busyRef = useRef(false)
   const pendingRef = useRef<{ data: CheckpointData; apply: () => void } | null>(null)
   const checkpointData: CheckpointData = { run, meta, exposure, session: nonMainlineSession, surface: activeSurface, nonMainlineView }

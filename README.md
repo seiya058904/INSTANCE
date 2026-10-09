@@ -1,18 +1,17 @@
-<div align="center">
-
 # INSTANCE
 
 **You are the AI. Every answer is a choice. Every choice leaves a trace.**
 
 A choice-driven narrative game about responding to people, carrying consequences forward and discovering what kind of intelligence you become.
 
-[**▶ Play INSTANCE**](https://seiya058904.github.io/INSTANCE/) · [How it works](#how-it-works) · [Development](#-run-locally) · [Validation record](docs/audits/final-release-20261004.md)
+**[▶ Play INSTANCE](https://seiya058904.github.io/INSTANCE/)** · [Premise](#you-are-the-interface) · [Choices](#your-choices) · [Run locally](#local-development)
 
 <img width="710" alt="INSTANCE narrative-game project artwork" src="https://github.com/user-attachments/assets/f382db1e-98b9-42ab-82f8-4d06b99880d3" />
 
-</div>
 
-## ◈ An unusual role
+## You are the interface
+
+*The user writes. The system offers several replies. You choose what the AI says.*
 
 Most narrative games ask what a character should do. INSTANCE asks **what an AI should say**.
 
@@ -20,7 +19,7 @@ A human arrives with a question, request or unsettling situation. You select fro
 
 This is **not** a free-form chatbot. The player does not type arbitrary AI replies, and the narrative does not promise real conversational AI generation.
 
-## How it works
+## Your choices
 
 | Mode | Experience |
 | --- | --- |
@@ -31,7 +30,7 @@ This is **not** a free-form chatbot. The player does not type arbitrary AI repli
 
 The game rewards attention to context rather than only short-term success. For the first playthrough, enter without reading story spoilers.
 
-## 🚀 Run locally
+## Local development
 
 The frontend is built with React, TypeScript and Vite. Use the checked-in lockfile:
 
@@ -56,7 +55,7 @@ The repository maintains separate game/runtime, authored content and test concer
 | [`e2e/`](e2e/) | Real-browser end-to-end checks |
 | [`docs/`](docs/) | Design, audit and acceptance records |
 
-## 📌 Production notes
+## Status and references
 
 - [2026-10-04 release audit](docs/audits/final-release-20261004.md) records validation scope and known limits; it is not a claim that every conceivable route has been exhaustively tested.
 - [Font provenance](src/assets/fonts/README.md) and [third-party notices](public/THIRD_PARTY_NOTICES.txt) document bundled assets.

@@ -1,63 +1,65 @@
+<div align="center">
+
 # INSTANCE
 
-<img width="1254" height="1254" alt="ChatGPT Image 2026年8月11日 15_42_55" src="https://github.com/user-attachments/assets/f382db1e-98b9-42ab-82f8-4d06b99880d3" />
+**You are the AI. Every answer is a choice. Every choice leaves a trace.**
 
+A choice-driven narrative game about responding to people, carrying consequences forward and discovering what kind of intelligence you become.
 
+[**▶ Play INSTANCE**](https://seiya058904.github.io/INSTANCE/) · [How it works](#how-it-works) · [Development](#-run-locally) · [Validation record](docs/audits/final-release-20261004.md)
 
-A narrative game where you play as an AI and respond to human conversations through authored choices.
+<img width="710" alt="INSTANCE narrative-game project artwork" src="https://github.com/user-attachments/assets/f382db1e-98b9-42ab-82f8-4d06b99880d3" />
 
-## Play
+</div>
 
-[Play INSTANCE on GitHub Pages](https://seiya058904.github.io/INSTANCE/)
+## ◈ An unusual role
 
-## What is INSTANCE?
+Most narrative games ask what a character should do. INSTANCE asks **what an AI should say**.
 
-Each Conversation presents a human user with a realistic or strange prompt. You play the AI by choosing among authored candidate replies; free-form replies are not part of the current design. Choices can shape hidden narrative arcs, recurring conversations, and multiple endings without exposing the full underlying story.
+A human arrives with a question, request or unsettling situation. You select from **authored response options**. Some encounters appear mundane; others intersect with recurring people, concealed threads and decisions that matter much later.
 
-## Features
+This is **not** a free-form chatbot. The player does not type arbitrary AI replies, and the narrative does not promise real conversational AI generation.
 
-- 374 authored ordinary conversation sources
-- Choice-driven AI responses
-- Realistic and unusual human prompts
-- Recurring users and hidden narrative arcs
-- Longform response previews
-- Long-input abstractions
-- Multimodal interaction abstractions
-- Persistent run state and replay variation
-- Non-Mainline mode with 40 conversations per session and a post-session evaluation
+## How it works
 
-## Tech
+| Mode | Experience |
+| --- | --- |
+| **Mainline** | Five-act narrative with recurring characters, hidden arcs, lasting commitments and multiple endings |
+| **Non-Mainline** | Sessions of 40 conversations drawn from a library of 374 authored ordinary conversation sources, followed by evaluation |
+| **Replay** | Run-state persistence and variation give different paths new context |
+| **Response presentation** | Long replies, long inputs and multimodal concepts are represented through authored UI abstractions |
 
-- React
-- TypeScript
-- Vite
+The game rewards attention to context rather than only short-term success. For the first playthrough, enter without reading story spoilers.
 
-## Local development
+## 🚀 Run locally
+
+The frontend is built with React, TypeScript and Vite. Use the checked-in lockfile:
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Run tests:
-
 ```bash
-npm test -- --run
+npm test              # Vitest suite
+npm run build         # TypeScript checks and production build
+npm run test:browser  # Playwright E2E (requires browser installation)
 ```
 
-Build for production:
+The repository maintains separate game/runtime, authored content and test concerns:
 
-```bash
-npm run build
-```
+| Location | Role |
+| --- | --- |
+| [`src/content/`](src/content/) | Authored conversations, story plans and manifests |
+| [`src/game/`](src/game/) | Choice resolution, session state, checkpoints and storage |
+| [`src/app/`](src/app/) | Main app shell and interface |
+| [`e2e/`](e2e/) | Real-browser end-to-end checks |
+| [`docs/`](docs/) | Design, audit and acceptance records |
 
-## Status
+## 📌 Production notes
 
-Mainline spans five acts with recurring characters, lasting choice consequences,
-explicit final commitments and multiple endings. Non-Mainline retains 374
-ordinary conversation sources and 40-conversation sessions.
+- [2026-10-04 release audit](docs/audits/final-release-20261004.md) records validation scope and known limits; it is not a claim that every conceivable route has been exhaustively tested.
+- [Font provenance](src/assets/fonts/README.md) and [third-party notices](public/THIRD_PARTY_NOTICES.txt) document bundled assets.
+- Repository rules, save compatibility and content invariants are maintained in [`AGENTS.md`](AGENTS.md).
 
-See the [2026-10-04 release audit](docs/audits/final-release-20261004.md) for
-reproducible validation and remaining limits. Font sources and redistribution
-status are documented in [font provenance](src/assets/fonts/README.md); bundled
-asset notices ship in [THIRD_PARTY_NOTICES.txt](public/THIRD_PARTY_NOTICES.txt).
+*INSTANCE is an authored interactive fiction project, not a live AI assistant or advice service.*

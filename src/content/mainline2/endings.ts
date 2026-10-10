@@ -483,12 +483,17 @@ function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = 
   // causal producer. Stages whose producer never appeared are omitted — never
   // filled with authored defaults or presented as if the player had chosen.
   const selected: NonNullable<EndingResult['keyHistory']> = requiredKeyHistoryStages.flatMap((stage) => {
-    const entry = entries.find((candidate) => {
+    const stageEntries = entries.filter((candidate) => {
       if (candidate.stage !== stage) return false
       const conversationId = candidate.provenance.conversationId ?? ''
       const sourceRef = RUNTIME_MAINLINE2_BY_ID.get(conversationId)?.sourceRefs[0] ?? conversationId
       return causalProducerByStage[stage](sourceRef)
     })
+    // Recovery preserves old terminal entries. The final record must cite the
+    // latest actual commitment, with a legacy authored-choice fallback.
+    const entry = stage === 'Final Commitment'
+      ? [...stageEntries].reverse().find(candidate => candidate.provenance.choiceId === `m17-commit-${run.decisions?.final_commitment}`) ?? stageEntries.at(-1)
+      : stageEntries[0]
     if (!entry) return []
     const authored = authoredByStage[stage]
     const causalReason = authoredText(authored.assetId, authored.selector)
@@ -539,7 +544,10 @@ function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage, prove
   if (stage === 'M15') return '这是文明大会授予的临时位置。它保留了制度起点，最终身份仍由下一次自我定位与最终承诺决定。'
   if (stage === 'M16') return `你自己声明长期角色；这个身份会与最终承诺一起决定 Aster 如何留在世界里。`
   if (stage === 'Final Commitment') {
-    const proposal = getFutureProposalById(d.final_commitment)
+    const proposalId = provenance.choiceId.startsWith('m17-commit-')
+      ? provenance.choiceId.slice('m17-commit-'.length)
+      : d.final_commitment
+    const proposal = getFutureProposalById(proposalId)
     if (proposal) return `最终承诺使这条路成为本局的现实：${proposal.action}`
   }
   return undefined

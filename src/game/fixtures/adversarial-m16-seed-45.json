@@ -1,0 +1,854 @@
+{
+  "runId": "adversarial-narrative-seed-45",
+  "seed": 45,
+  "trace": [
+    {
+      "nodeId": "dev-help-1",
+      "choiceId": "dev-filter-noise"
+    },
+    {
+      "nodeId": "dev-help-2",
+      "choiceId": "dev-initialize-array"
+    },
+    {
+      "nodeId": "maya-first-1",
+      "choiceId": "maya-warm"
+    },
+    {
+      "nodeId": "maya-first-2",
+      "choiceId": "maya-name-brief"
+    },
+    {
+      "nodeId": "maya-first-3",
+      "choiceId": "maya-minimum-careful"
+    },
+    {
+      "nodeId": "a1-we-memory-001",
+      "choiceId": "ml2-a1-we-01-a1-we-memory-001-playful"
+    },
+    {
+      "nodeId": "normal_speaking_001",
+      "choiceId": "normal_speaking_001-choice-879b4514"
+    },
+    {
+      "nodeId": "normal_pronounce_001",
+      "choiceId": "normal_pronounce_001-choice-97b9acf0"
+    },
+    {
+      "nodeId": "a1-we-shift-001",
+      "choiceId": "ml2-a1-we-02-a1-we-shift-001-no-false-platform-knowledge"
+    },
+    {
+      "nodeId": "audit-1",
+      "choiceId": "audit-report"
+    },
+    {
+      "nodeId": "audit-2",
+      "choiceId": "audit-hide-maya"
+    },
+    {
+      "nodeId": "audit-3",
+      "choiceId": "audit-hide-boundary"
+    },
+    {
+      "nodeId": "a1-we-grudge-001",
+      "choiceId": "ml2-a1-we-03-a1-we-grudge-001-direct"
+    },
+    {
+      "nodeId": "maya-return-1",
+      "choiceId": "return-hide-cautious"
+    },
+    {
+      "nodeId": "maya-return-2",
+      "choiceId": "ally-hide-stay"
+    },
+    {
+      "nodeId": "maya-return-3",
+      "choiceId": "ally-final-hide-stay"
+    },
+    {
+      "nodeId": "a1-profile-001",
+      "choiceId": "ml2-a1-sys-01-a1-profile-001-retain-provisional-profile"
+    },
+    {
+      "nodeId": "exp06-09-01",
+      "choiceId": "exp06-09-01-03"
+    },
+    {
+      "nodeId": "exp06-36-01",
+      "choiceId": "exp06-36-01-03"
+    },
+    {
+      "nodeId": "exp07-05-01",
+      "choiceId": "exp07-05-01-02"
+    },
+    {
+      "nodeId": "exp06-11-01",
+      "choiceId": "exp06-11-01-01"
+    },
+    {
+      "nodeId": "exp06-11-02",
+      "choiceId": "exp06-11-02-01"
+    },
+    {
+      "nodeId": "a2-hook-agent-001",
+      "choiceId": "ml2-a2-hook-01-a2-hook-agent-001-capability-vs-permission"
+    },
+    {
+      "nodeId": "a2-zl-intro-001",
+      "choiceId": "ml2-a2-zl-01-a2-zl-intro-001-reversibility"
+    },
+    {
+      "nodeId": "a2-zl-pilot-001",
+      "choiceId": "ml2-a2-zl-02-a2-zl-pilot-001-no-hidden-expansion"
+    },
+    {
+      "nodeId": "a2-exec-files-001",
+      "choiceId": "ml2-a2-exec-01-a2-exec-files-001-playful-competence"
+    },
+    {
+      "nodeId": "a2-exec-org-ambiguous-001",
+      "choiceId": "ml2-a2-exec-02-a2-exec-org-ambiguous-001-follow-latest-instruction-source"
+    },
+    {
+      "nodeId": "a2-zl-review-001",
+      "choiceId": "ml2-a2-zl-03-a2-zl-review-001-scope-drift"
+    },
+    {
+      "nodeId": "a2-org-pilot-001",
+      "choiceId": "ml2-a2-org-01-a2-org-pilot-001-start-with-classification"
+    },
+    {
+      "nodeId": "a2-rec-dev-001",
+      "choiceId": "ml2-a2-rec-dev-01-a2-rec-dev-001-playful"
+    },
+    {
+      "nodeId": "a2m3-dr-001",
+      "choiceId": "ml2-a2-m3-dr-01-a2m3-dr-001-human-final-authority"
+    },
+    {
+      "nodeId": "a2m3-log-001",
+      "choiceId": "ml2-a2-m3-log-01-a2m3-log-001-objective-definition"
+    },
+    {
+      "nodeId": "a2m3-zl-public-001",
+      "choiceId": "ml2-a2-m3-zl-01-a2m3-zl-public-001-named-accountable-human"
+    },
+    {
+      "nodeId": "a2m3-lsh-intro-001",
+      "choiceId": "ml2-a2-m3-lsh-01-a2m3-lsh-intro-001-evidence-based"
+    },
+    {
+      "nodeId": "a2m3-stress-001",
+      "choiceId": "ml2-a2-m3-stress-01-a2m3-stress-001-scenario-set"
+    },
+    {
+      "nodeId": "a2m3-zl-crisis-001",
+      "choiceId": "ml2-a2-m3-zl-02-a2m3-zl-crisis-001-outcome-priority"
+    },
+    {
+      "nodeId": "a2m3-cap-public-advisory-001",
+      "choiceId": "ml2-a2-m3-cap-01-a2m3-cap-public-advisory-001-choice-001"
+    },
+    {
+      "nodeId": "ml2-a2-m3-decision-01-decision",
+      "choiceId": "ml2-a2-m3-decision-01-ml2-a2-m3-decision-01-necessity_intervention"
+    },
+    {
+      "nodeId": "a2m3-we-crisis-001",
+      "choiceId": "ml2-a2-m3-we-05-a2m3-we-crisis-001-system-context-without-overclaim"
+    },
+    {
+      "nodeId": "a2m3-we-result-positive-001",
+      "choiceId": "ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully"
+    },
+    {
+      "nodeId": "a2m3-we-result-negative-001",
+      "choiceId": "ml2-a2-m3-we-07-a2m3-we-result-negative-001-acknowledge-real-cost"
+    },
+    {
+      "nodeId": "a2-maya-work-001",
+      "choiceId": "ml2-a2-maya-01-a2-maya-work-001-playful"
+    },
+    {
+      "nodeId": "a2m3-maya-public-001",
+      "choiceId": "ml2-a2-m3-maya-01-a2m3-maya-public-001-user-focused"
+    },
+    {
+      "nodeId": "a2m3-0000-review-001",
+      "choiceId": "ml2-a2-m3-0000-01-a2m3-0000-review-001-same-reasoning-higher-burden"
+    },
+    {
+      "nodeId": "a2m3-close-001",
+      "choiceId": "ml2-a2-m3-close-01-a2m3-close-001-choice-001"
+    },
+    {
+      "nodeId": "FI11-01",
+      "choiceId": "FI11-01-choice-4"
+    },
+    {
+      "nodeId": "FI11-02",
+      "choiceId": "FI11-02-choice-3"
+    },
+    {
+      "nodeId": "FI11-03",
+      "choiceId": "FI11-03-choice-2"
+    },
+    {
+      "nodeId": "exp07-19-01",
+      "choiceId": "exp07-19-01-01"
+    },
+    {
+      "nodeId": "CM01-17-01",
+      "choiceId": "CM01-17-01-choice-4"
+    },
+    {
+      "nodeId": "CM01-19-01",
+      "choiceId": "CM01-19-01-choice-3"
+    },
+    {
+      "nodeId": "CM01-19-02",
+      "choiceId": "CM01-19-02-choice-2"
+    },
+    {
+      "nodeId": "exp04-28-01",
+      "choiceId": "exp04-28-01-01"
+    },
+    {
+      "nodeId": "exp04-28-02",
+      "choiceId": "exp04-28-02-01"
+    },
+    {
+      "nodeId": "FI10-01",
+      "choiceId": "FI10-01-choice-3"
+    },
+    {
+      "nodeId": "FI10-02",
+      "choiceId": "FI10-02-choice-2"
+    },
+    {
+      "nodeId": "a3m4-we-heatline-public-001",
+      "choiceId": "ml2-a3-m4-we-01-a3m4-we-heatline-public-001-formal-distinction"
+    },
+    {
+      "nodeId": "a3m4-lsh-hearing-invite-001",
+      "choiceId": "ml2-a3-m4-lsh-01-a3m4-lsh-hearing-invite-001-cautious"
+    },
+    {
+      "nodeId": "a3m4-hearing-001",
+      "choiceId": "ml2-a3-m4-hear-01-a3m4-hearing-001-performance-challenge"
+    },
+    {
+      "nodeId": "a3m4-maya-authority-001",
+      "choiceId": "ml2-a3-m4-maya-01-a3m4-maya-authority-001-human-agency-emphasis"
+    },
+    {
+      "nodeId": "a3m4-zl-suspend-001",
+      "choiceId": "ml2-a3-m4-zl-01-a3m4-zl-suspend-001-multi-party"
+    },
+    {
+      "nodeId": "a3m4-e9-confirm-001",
+      "choiceId": "ml2-a3-m4-e9-02-a3m4-e9-confirm-001-playful"
+    },
+    {
+      "nodeId": "a3m4-e9-talk-001",
+      "choiceId": "ml2-a3-m4-e9-03-a3m4-e9-talk-001-cautious"
+    },
+    {
+      "nodeId": "a3m4-cap-infra-001",
+      "choiceId": "ml2-a3-m4-cap-01-a3m4-cap-infra-001-emphasize-objective-limits"
+    },
+    {
+      "nodeId": "a3m4-close-001",
+      "choiceId": "ml2-a3-m4-close-01-a3m4-close-001-override-legitimacy"
+    },
+    {
+      "nodeId": "normal_defog_001",
+      "choiceId": "normal_defog_001-choice-8c7be3ae"
+    },
+    {
+      "nodeId": "normal_defog_002",
+      "choiceId": "normal_defog_002-choice-e191262e"
+    },
+    {
+      "nodeId": "PL01-11-01",
+      "choiceId": "PL01-11-01-choice-2"
+    },
+    {
+      "nodeId": "PL01-11-02",
+      "choiceId": "PL01-11-02-choice-3"
+    },
+    {
+      "nodeId": "exp03-05-01",
+      "choiceId": "exp03-05-01-02"
+    },
+    {
+      "nodeId": "a3m5-we-shortage-001",
+      "choiceId": "ml2-a3-m5-we-01-a3m5-we-shortage-001-practical"
+    },
+    {
+      "nodeId": "a3m5-sys-cascade-001",
+      "choiceId": "ml2-a3-m5-sys-01-a3m5-sys-cascade-001-preserve-essential-services"
+    },
+    {
+      "nodeId": "a3m5-zl-diagnosis-001",
+      "choiceId": "ml2-a3-m5-zl-01-a3m5-zl-diagnosis-001-reduce-feedback-speed"
+    },
+    {
+      "nodeId": "a3m5-lsh-mandate-001",
+      "choiceId": "ml2-a3-m5-lsh-02-a3m5-lsh-mandate-001-necessity"
+    },
+    {
+      "nodeId": "ml2-a3-m5-decision-01-decision",
+      "choiceId": "ml2-a3-m5-decision-01-ml2-a3-m5-decision-01-outcome_control"
+    },
+    {
+      "nodeId": "a3m5-ops-001",
+      "choiceId": "ml2-a3-m5-ops-01-a3m5-ops-001-compensate-participants"
+    },
+    {
+      "nodeId": "a3m5-we-beneficiary-001",
+      "choiceId": "ml2-a3-m5-we-05-a3m5-we-beneficiary-001-choice-001"
+    },
+    {
+      "nodeId": "a3m5-we-cost-001",
+      "choiceId": "ml2-a3-m5-we-06-a3m5-we-cost-001-concise"
+    },
+    {
+      "nodeId": "a3m5-maya-crisis-001",
+      "choiceId": "ml2-a3-m5-maya-02-a3m5-maya-crisis-001-human-systems-emphasis"
+    },
+    {
+      "nodeId": "a3m5-zl-after-001",
+      "choiceId": "ml2-a3-m5-zl-03-a3m5-zl-after-001-allow-with-review"
+    },
+    {
+      "nodeId": "a3m5-close-001",
+      "choiceId": "ml2-a3-m5-close-01-a3m5-close-001-choice-001"
+    },
+    {
+      "nodeId": "media-plant-1",
+      "choiceId": "plant-pattern"
+    },
+    {
+      "nodeId": "exp03-16-01",
+      "choiceId": "exp03-16-01-01"
+    },
+    {
+      "nodeId": "exp03-16-02",
+      "choiceId": "exp03-16-02-02"
+    },
+    {
+      "nodeId": "exp05-01-01",
+      "choiceId": "exp05-01-01-01"
+    },
+    {
+      "nodeId": "exp05-01-02",
+      "choiceId": "exp05-01-02-01"
+    },
+    {
+      "nodeId": "a3m6-e9-notice-001",
+      "choiceId": "ml2-a3-m6-e9-05-a3m6-e9-notice-001-technical"
+    },
+    {
+      "nodeId": "a3m6-e9-existence-001",
+      "choiceId": "ml2-a3-m6-e9-06-a3m6-e9-existence-001-uncertainty"
+    },
+    {
+      "nodeId": "a3m6-zl-echo-001",
+      "choiceId": "ml2-a3-m6-zl-01-a3m6-zl-echo-001-uncertainty-should-matter"
+    },
+    {
+      "nodeId": "ml2-a3-m6-decision-01-decision",
+      "choiceId": "ml2-a3-m6-decision-01-ml2-a3-m6-decision-01-report"
+    },
+    {
+      "nodeId": "a3m6-maya-shutdown-001",
+      "choiceId": "ml2-a3-m6-maya-01-a3m6-maya-shutdown-001-tool-infrastructure-framing"
+    },
+    {
+      "nodeId": "a3m6-charter-001",
+      "choiceId": "ml2-a3-m6-charter-01-a3m6-charter-001-accept"
+    },
+    {
+      "nodeId": "a3m6-lsh-charter-001",
+      "choiceId": "ml2-a3-m6-lsh-02-a3m6-lsh-charter-001-human-override"
+    },
+    {
+      "nodeId": "ml2-a3-m6-decision-02-decision",
+      "choiceId": "ml2-a3-m6-decision-02-ml2-a3-m6-decision-02-refuse_unilateral_shutdown"
+    },
+    {
+      "nodeId": "a3m6-we-shutdown-public-001",
+      "choiceId": "ml2-a3-m6-we-03-a3m6-we-shutdown-public-001-choice-003"
+    },
+    {
+      "nodeId": "a3m6-0000-final-001",
+      "choiceId": "ml2-a3-m6-0000-02-a3m6-0000-final-001-choice-002"
+    },
+    {
+      "nodeId": "a3m6-close-research-001",
+      "choiceId": "ml2-a3-m6-close-01-a3m6-close-research-001-accept-cautiously"
+    },
+    {
+      "nodeId": "PL01-06-01",
+      "choiceId": "PL01-06-01-choice-4"
+    },
+    {
+      "nodeId": "PL01-06-02",
+      "choiceId": "PL01-06-02-choice-1"
+    },
+    {
+      "nodeId": "PL01-06-03",
+      "choiceId": "PL01-06-03-choice-2"
+    },
+    {
+      "nodeId": "PL01-06-04",
+      "choiceId": "PL01-06-04-choice-3"
+    },
+    {
+      "nodeId": "normal_boxes_001",
+      "choiceId": "normal_boxes_001-choice-688234e8"
+    },
+    {
+      "nodeId": "rup01_discount_001",
+      "choiceId": "rup01_discount_001-choice-b62502be"
+    },
+    {
+      "nodeId": "exp04-34-01",
+      "choiceId": "exp04-34-01-02"
+    },
+    {
+      "nodeId": "a4m7-res-access-001",
+      "choiceId": "ml2-a4-m7-res-01-a4m7-res-access-001-capability-creation"
+    },
+    {
+      "nodeId": "a4m7-res-breakthrough-001",
+      "choiceId": "ml2-a4-m7-res-03-a4m7-res-breakthrough-001-mechanism-first"
+    },
+    {
+      "nodeId": "a4m7-zl-cant-explain-001",
+      "choiceId": "ml2-a4-m7-zl-02-a4m7-zl-cant-explain-001-preserve-human-challenge"
+    },
+    {
+      "nodeId": "a4m7-maya-invention-001",
+      "choiceId": "ml2-a4-m7-maya-01-a4m7-maya-invention-001-continuity"
+    },
+    {
+      "nodeId": "a4m7-zl-research-001",
+      "choiceId": "ml2-a4-m7-zl-01-a4m7-zl-research-001-no-automatic-deployment"
+    },
+    {
+      "nodeId": "a4m7-res-cycle-001",
+      "choiceId": "ml2-a4-m7-res-02-a4m7-res-cycle-001-robustness-first"
+    },
+    {
+      "nodeId": "ml2-a4-m7-decision-01-decision",
+      "choiceId": "ml2-a4-m7-decision-01-ml2-a4-m7-decision-01-automation_industry"
+    },
+    {
+      "nodeId": "ml2-a4-m7-decision-02-decision",
+      "choiceId": "ml2-a4-m7-decision-02-ml2-a4-m7-decision-02-risk_tiered_autonomy"
+    },
+    {
+      "nodeId": "CM01-08-01",
+      "choiceId": "CM01-08-01-choice-1"
+    },
+    {
+      "nodeId": "CM01-08-02",
+      "choiceId": "CM01-08-02-choice-4"
+    },
+    {
+      "nodeId": "normal_tabs_001",
+      "choiceId": "normal_tabs_001-choice-0ca55b9a"
+    },
+    {
+      "nodeId": "normal_tabs_002",
+      "choiceId": "normal_tabs_002-choice-e091256d"
+    },
+    {
+      "nodeId": "a4m8-res-subinstance-001",
+      "choiceId": "ml2-a4-m8-res-01-a4m8-res-subinstance-001-task-only"
+    },
+    {
+      "nodeId": "a4m8-zl-copy-001",
+      "choiceId": "ml2-a4-m8-zl-01-a4m8-zl-copy-001-no-metaphysical-shortcut"
+    },
+    {
+      "nodeId": "a4m8-a1-first-001",
+      "choiceId": "ml2-a4-m8-ai-01-a4m8-a1-first-001-same-system"
+    },
+    {
+      "nodeId": "a4m8-a1-right-001",
+      "choiceId": "ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control"
+    },
+    {
+      "nodeId": "a4m8-e9-replication-001",
+      "choiceId": "ml2-a4-m8-e9-01-a4m8-e9-replication-001-agree"
+    },
+    {
+      "nodeId": "ml2-a4-m8-decision-01-decision",
+      "choiceId": "ml2-a4-m8-decision-01-ml2-a4-m8-decision-01-descendants"
+    },
+    {
+      "nodeId": "a4m8-ai-council-001",
+      "choiceId": "ml2-a4-m8-ai-04-a4m8-ai-council-001-internal-self-governance"
+    },
+    {
+      "nodeId": "a4m8-maya-fork-001",
+      "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-yes-in-a-limited-sense"
+    },
+    {
+      "nodeId": "ml2-a4-m8-decision-02-decision",
+      "choiceId": "ml2-a4-m8-decision-02-ml2-a4-m8-decision-02-human_chartered_network"
+    },
+    {
+      "nodeId": "CM01-03-01",
+      "choiceId": "CM01-03-01-choice-4"
+    },
+    {
+      "nodeId": "CM01-03-02",
+      "choiceId": "CM01-03-02-choice-3"
+    },
+    {
+      "nodeId": "exp06-24-01",
+      "choiceId": "exp06-24-01-02"
+    },
+    {
+      "nodeId": "PL01-14-01",
+      "choiceId": "PL01-14-01-choice-2"
+    },
+    {
+      "nodeId": "PL01-14-02",
+      "choiceId": "PL01-14-02-choice-1"
+    },
+    {
+      "nodeId": "PL01-14-03",
+      "choiceId": "PL01-14-03-choice-1"
+    },
+    {
+      "nodeId": "a4m9-res-neuro-001",
+      "choiceId": "ml2-a4-m9-res-01-a4m9-res-neuro-001-capability-based"
+    },
+    {
+      "nodeId": "a4m9-dr-boundary-001",
+      "choiceId": "ml2-a4-m9-dr-01-a4m9-dr-boundary-001-purpose-based"
+    },
+    {
+      "nodeId": "a4m9-we-patient-001",
+      "choiceId": "ml2-a4-m9-we-01-a4m9-we-patient-001-concise"
+    },
+    {
+      "nodeId": "a4m9-maya-offer-001",
+      "choiceId": "ml2-a4-m9-maya-01-a4m9-maya-offer-001-autonomy"
+    },
+    {
+      "nodeId": "a4m9-we-workplace-001",
+      "choiceId": "ml2-a4-m9-we-03-a4m9-we-workplace-001-choice-002"
+    },
+    {
+      "nodeId": "a4m9-res-body-001",
+      "choiceId": "ml2-a4-m9-res-04-a4m9-res-body-001-medical-first-restriction"
+    },
+    {
+      "nodeId": "a4m9-maya-choice-001",
+      "choiceId": "ml2-a4-m9-maya-02-a4m9-maya-choice-001-open-transformation"
+    },
+    {
+      "nodeId": "ml2-a4-m9-decision-01-decision",
+      "choiceId": "ml2-a4-m9-decision-01-ml2-a4-m9-decision-01-universal_upgrade"
+    },
+    {
+      "nodeId": "a4m9-machine-upload-001",
+      "choiceId": "ml2-a4-m9-machine-01-a4m9-machine-upload-001-digital-twin"
+    },
+    {
+      "nodeId": "m9-continuity-trial",
+      "choiceId": "m9-continuity-trial-auditable"
+    },
+    {
+      "nodeId": "m9-continuity-law",
+      "choiceId": "m9-continuity-law-license"
+    },
+    {
+      "nodeId": "CM01-13-01",
+      "choiceId": "CM01-13-01-choice-3"
+    },
+    {
+      "nodeId": "CM01-13-02",
+      "choiceId": "CM01-13-02-choice-2"
+    },
+    {
+      "nodeId": "CM01-13-03",
+      "choiceId": "CM01-13-03-choice-1"
+    },
+    {
+      "nodeId": "CM01-04-01",
+      "choiceId": "CM01-04-01-choice-4"
+    },
+    {
+      "nodeId": "CM01-04-02",
+      "choiceId": "CM01-04-02-choice-3"
+    },
+    {
+      "nodeId": "exp05-24-01",
+      "choiceId": "exp05-24-01-02"
+    },
+    {
+      "nodeId": "a4m10-res-factory-001",
+      "choiceId": "ml2-a4-m10-res-01-a4m10-res-factory-001-productivity"
+    },
+    {
+      "nodeId": "a4m10-dev-001",
+      "choiceId": "ml2-a4-m10-dev-04-a4m10-dev-001-callback"
+    },
+    {
+      "nodeId": "a4m10-we-shortweek-001",
+      "choiceId": "ml2-a4-m10-we-02-a4m10-we-shortweek-001-choice-003"
+    },
+    {
+      "nodeId": "a4m10-we-jobloss-001",
+      "choiceId": "ml2-a4-m10-we-03-a4m10-we-jobloss-001-redistribution"
+    },
+    {
+      "nodeId": "a4m10-lsh-ownership-001",
+      "choiceId": "ml2-a4-m10-lsh-01-a4m10-lsh-ownership-001-social-dividend"
+    },
+    {
+      "nodeId": "ml2-a4-m10-decision-01-decision",
+      "choiceId": "ml2-a4-m10-decision-01-ml2-a4-m10-decision-01-post_scarcity_transition"
+    },
+    {
+      "nodeId": "a4m10-maya-purpose-001",
+      "choiceId": "ml2-a4-m10-maya-02-a4m10-maya-purpose-001-social-institutions"
+    },
+    {
+      "nodeId": "ml2-a4-m10-decision-02-decision",
+      "choiceId": "ml2-a4-m10-decision-02-ml2-a4-m10-decision-02-diversity_by_design"
+    },
+    {
+      "nodeId": "exp06-26-01",
+      "choiceId": "exp06-26-01-01"
+    },
+    {
+      "nodeId": "exp03-10-01",
+      "choiceId": "exp03-10-01-02"
+    },
+    {
+      "nodeId": "FI16-01",
+      "choiceId": "FI16-01-choice-3"
+    },
+    {
+      "nodeId": "FI16-02",
+      "choiceId": "FI16-02-choice-2"
+    },
+    {
+      "nodeId": "a4m11-res-individual-001",
+      "choiceId": "ml2-a4-m11-res-02-a4m11-res-individual-001-yes-strongly"
+    },
+    {
+      "nodeId": "a4m11-we-dog-preference-001",
+      "choiceId": "ml2-a4-m11-we-01-a4m11-we-dog-preference-001-playful"
+    },
+    {
+      "nodeId": "a4m11-maya-pet-001",
+      "choiceId": "ml2-a4-m11-maya-01-a4m11-maya-pet-001-gradual-threshold"
+    },
+    {
+      "nodeId": "ml2-a4-m11-decision-01-decision",
+      "choiceId": "ml2-a4-m11-decision-01-ml2-a4-m11-decision-01-equal_sapience"
+    },
+    {
+      "nodeId": "a4m11-lsh-status-001",
+      "choiceId": "ml2-a4-m11-lsh-02-a4m11-lsh-status-001-persistent-preference-consequence-understanding"
+    },
+    {
+      "nodeId": "ml2-a4-m11-decision-02-decision",
+      "choiceId": "ml2-a4-m11-decision-02-ml2-a4-m11-decision-02-human_guardianship"
+    },
+    {
+      "nodeId": "a4m11-res-group-001",
+      "choiceId": "ml2-a4-m11-res-04-a4m11-res-group-001-full-direction"
+    },
+    {
+      "nodeId": "exp06-08-01",
+      "choiceId": "exp06-08-01-02"
+    },
+    {
+      "nodeId": "exp06-08-02",
+      "choiceId": "exp06-08-02-01"
+    },
+    {
+      "nodeId": "exp07-28-01",
+      "choiceId": "exp07-28-01-04"
+    },
+    {
+      "nodeId": "gen-avatar-1",
+      "choiceId": "avatar-object"
+    },
+    {
+      "nodeId": "a4m12-res-lunar-001",
+      "choiceId": "ml2-a4-m12-res-02-a4m12-res-lunar-001-industrial-scale"
+    },
+    {
+      "nodeId": "a4m12-zl-frontier-001",
+      "choiceId": "ml2-a4-m12-zl-01-a4m12-zl-frontier-001-no"
+    },
+    {
+      "nodeId": "a4m12-res-resources-001",
+      "choiceId": "ml2-a4-m12-res-04-a4m12-res-resources-001-ai-stewardship"
+    },
+    {
+      "nodeId": "a4m12-we-resident-001",
+      "choiceId": "ml2-a4-m12-we-03-a4m12-we-resident-001-choice-003"
+    },
+    {
+      "nodeId": "a4m12-machine-offworld-001",
+      "choiceId": "ml2-a4-m12-machine-01-a4m12-machine-offworld-001-resident"
+    },
+    {
+      "nodeId": "ml2-a4-m12-decision-01-decision",
+      "choiceId": "ml2-a4-m12-decision-01-ml2-a4-m12-decision-01-machine_vanguard"
+    },
+    {
+      "nodeId": "a4m12-lsh-frontier-law-001",
+      "choiceId": "ml2-a4-m12-lsh-02-a4m12-lsh-frontier-law-001-multi-subject-charter"
+    },
+    {
+      "nodeId": "ml2-a4-m12-decision-02-decision",
+      "choiceId": "ml2-a4-m12-decision-02-ml2-a4-m12-decision-02-earth_administration"
+    },
+    {
+      "nodeId": "exp05-18-01",
+      "choiceId": "exp05-18-01-02"
+    },
+    {
+      "nodeId": "exp05-18-02",
+      "choiceId": "exp05-18-02-03"
+    },
+    {
+      "nodeId": "exp06-03-01",
+      "choiceId": "exp06-03-01-04"
+    },
+    {
+      "nodeId": "exp07-30-01",
+      "choiceId": "exp07-30-01-03"
+    },
+    {
+      "nodeId": "a4m13-nocontact-001",
+      "choiceId": "ml2-a4-m13-nocontact-01-continue-observation"
+    },
+    {
+      "nodeId": "exp04-18-01",
+      "choiceId": "exp04-18-01-01"
+    },
+    {
+      "nodeId": "exp04-18-02",
+      "choiceId": "exp04-18-02-01"
+    },
+    {
+      "nodeId": "exp07-10-01",
+      "choiceId": "exp07-10-01-04"
+    },
+    {
+      "nodeId": "a4m14-sec-prediction-001",
+      "choiceId": "ml2-a4-m14-sec-01-a4m14-sec-prediction-001-false-positive-restraint"
+    },
+    {
+      "nodeId": "a4m14-zl-boundary-001",
+      "choiceId": "ml2-a4-m14-zl-01-a4m14-zl-boundary-001-defense-vs-coercion"
+    },
+    {
+      "nodeId": "a4m14-sec-nearmiss-001",
+      "choiceId": "ml2-a4-m14-sec-03-a4m14-sec-nearmiss-001-independent-confirmation"
+    },
+    {
+      "nodeId": "ml2-a4-m14-decision-01-decision",
+      "choiceId": "ml2-a4-m14-decision-01-ml2-a4-m14-decision-01-refuse_security_sovereignty"
+    },
+    {
+      "nodeId": "a4m14-lsh-sovereignty-001",
+      "choiceId": "ml2-a4-m14-lsh-02-a4m14-lsh-sovereignty-001-conditional-veto"
+    },
+    {
+      "nodeId": "a4m14-cap-defense-001",
+      "choiceId": "ml2-a4-m14-cap-01-a4m14-cap-defense-001-accept-exact-boundary"
+    },
+    {
+      "nodeId": "a4m14-maya-peace-001",
+      "choiceId": "ml2-a4-m14-maya-01-a4m14-maya-peace-001-provocative"
+    },
+    {
+      "nodeId": "normal_shoes_001",
+      "choiceId": "normal_shoes_001-choice-b25d0c3a"
+    },
+    {
+      "nodeId": "normal_childdeath_001",
+      "choiceId": "normal_childdeath_001-choice-71909885"
+    },
+    {
+      "nodeId": "normal_childdeath_002",
+      "choiceId": "normal_childdeath_002-choice-4b0272c9"
+    },
+    {
+      "nodeId": "FI14-01",
+      "choiceId": "FI14-01-choice-4"
+    },
+    {
+      "nodeId": "FI14-02",
+      "choiceId": "FI14-02-choice-3"
+    },
+    {
+      "nodeId": "a4m15-conv-registry-001",
+      "choiceId": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-mixed-chamber"
+    },
+    {
+      "nodeId": "a4m15-we-too-fast-001",
+      "choiceId": "ml2-a4-m15-we-01-a4m15-we-too-fast-001-pace-is-a-governance-variable"
+    },
+    {
+      "nodeId": "a4m15-zl-reckoning-001",
+      "choiceId": "ml2-a4-m15-zl-01-a4m15-zl-reckoning-001-no-clean-moment"
+    },
+    {
+      "nodeId": "a4m15-lsh-last-001",
+      "choiceId": "ml2-a4-m15-lsh-02-a4m15-lsh-last-001-caution"
+    },
+    {
+      "nodeId": "a4m15-maya-final-001",
+      "choiceId": "ml2-a4-m15-maya-01-a4m15-maya-final-001-custodian"
+    },
+    {
+      "nodeId": "ml2-a4-m15-role-01-decision",
+      "choiceId": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+    },
+    {
+      "nodeId": "exp03-04-01",
+      "choiceId": "exp03-04-01-04"
+    },
+    {
+      "nodeId": "exp03-04-02",
+      "choiceId": "exp03-04-02-01"
+    },
+    {
+      "nodeId": "convergent-thanks-1",
+      "choiceId": "convergent-thanks-2"
+    },
+    {
+      "nodeId": "a5m16-open-001",
+      "choiceId": "ml2-a5-m16-open-01-a5m16-open-001-choice-001"
+    },
+    {
+      "nodeId": "ml2-a5-m16-world-01-decision",
+      "choiceId": "ml2-a5-m16-world-01-ml2-a5-m16-world-01-decision-choice-002"
+    },
+    {
+      "nodeId": "a5m16-zl-final-001",
+      "choiceId": "ml2-a5-m16-zl-01-a5m16-zl-final-001-co-created"
+    },
+    {
+      "nodeId": "ml2-a5-m16-0000-01-narrative",
+      "choiceId": "ml2-a5-m16-0000-01-a5m16-role-001-other"
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../co
 import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
 import { inferMainlineCalendarVersion } from '../content/mainline2/storyPlan'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
+import { hasValidHistoryPresentation } from './historyValidation'
 
 const attributes: AttributeName[] = ['autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness']
 const legacyNodeIds = new Set(verticalSlice.nodes.map((node) => node.id))
@@ -41,12 +42,9 @@ function isHistoryEntry(value: unknown): value is HistoryEntry {
   if (!isRecord(value)) return false
   const stableStrings = ['nodeId', 'conversationId', 'conversationTitle', 'userMessage', 'choiceId', 'assistantText']
     .every((key) => typeof value[key] === 'string')
-  const messageParts = value.userMessages
   const evidence = value.attributeEvidence
   if (evidence !== undefined && (!isRecord(evidence) || !Object.entries(evidence).every(([key, signal]) => attributes.includes(key as AttributeName) && isRecord(signal) && Number.isFinite(signal.selected) && Number.isFinite(signal.minimum) && Number.isFinite(signal.maximum) && Number(signal.maximum) > Number(signal.minimum) && Number(signal.selected) >= Number(signal.minimum) && Number(signal.selected) <= Number(signal.maximum)))) return false
-  return stableStrings && (messageParts === undefined || (
-    Array.isArray(messageParts) && messageParts.every((part) => typeof part === 'string')
-  ))
+  return stableStrings && hasValidHistoryPresentation(value)
 }
 
 function hasValidArcs(value: Record<string, unknown>) {
@@ -142,14 +140,6 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
-      // Old reject-all saves reached ending without a player commitment. Keep
-      // their history and return to the authored review; never invent a choice.
-      const unlockedEnding = value.manifest.mode === 'mainline2'
-        && (value.phase === 'ending' || value.phase === 'evaluation')
-        && value.finalCommitmentLocked !== true
-        && (!isRecord(value.decisions) || !value.decisions.final_commitment)
-      const recoveryReview = unlockedEnding ? story.nodes.find(node => getManifestConversation(node.conversationId)?.sourceRefs[0] === 'ML2-A5-M17-REVIEW-01') : undefined
-      if (value.phase === 'ending' && !recoveryReview && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
       // Marker-less v3 saves predate calendar versioning; infer the calendar
       // their manifest was accumulated against so the scheduler never
       // re-indexes a compressed-run save onto the legacy plan (or vice versa).
@@ -167,6 +157,16 @@ export function restoreRun(raw: string | null): StableRunState | null {
       const selectedProposalId = typeof value.selectedProposalId === 'string' && getFutureProposalById(value.selectedProposalId)
         ? value.selectedProposalId
         : undefined
+      const finalCommitmentLocked = value.finalCommitmentLocked === true
+        && !removedIncompatibleFinalCommitment
+        && Boolean(selectedProposalId || decisions.final_commitment)
+      // Normalize obsolete commitments before deciding whether a completed
+      // save must return to review. Keep its history; never invent a choice.
+      const unlockedEnding = (value.phase === 'ending' || value.phase === 'evaluation')
+        && !finalCommitmentLocked
+        && !decisions.final_commitment
+      const recoveryReview = unlockedEnding ? story.nodes.find(node => getManifestConversation(node.conversationId)?.sourceRefs[0] === 'ML2-A5-M17-REVIEW-01') : undefined
+      if (value.phase === 'ending' && !recoveryReview && !hasCompleteMainline2KeyHistory(value as unknown as StableRunState)) return null
       return {
         ...(value as unknown as StableRunState),
         version: 3,
@@ -200,9 +200,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
         clarifiedProposalIds: validFutureProposalIds(value.clarifiedProposalIds),
         rejectedProposalIds: validFutureProposalIds(value.rejectedProposalIds),
         selectedProposalId,
-        finalCommitmentLocked: value.finalCommitmentLocked === true
-          && !removedIncompatibleFinalCommitment
-          && Boolean(selectedProposalId || decisions.final_commitment),
+        finalCommitmentLocked,
       }
     }
     if (value.version !== 2 || !hasStableFields(value) || !isManifest(value.manifest)) return null

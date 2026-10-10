@@ -234,11 +234,13 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
   const save = useCallback(async (data: CheckpointData, apply: () => void) => {
     if (busyRef.current) return false
+    // Ownership belongs to this request, not a later recovery confirmation.
+    const expected = tokenRef.current
     busyRef.current = true
     pendingRef.current = { data, apply }
     setSaveStatus('saving')
     const result = window.navigator.locks
-      ? await window.navigator.locks.request(CHECKPOINT_LOCK, () => writeCheckpoint(window.localStorage, tokenRef.current, data, crypto.randomUUID())).catch(() => ({ status: 'failed' as const }))
+      ? await window.navigator.locks.request(CHECKPOINT_LOCK, () => writeCheckpoint(window.localStorage, expected, data, crypto.randomUUID())).catch(() => ({ status: 'failed' as const }))
       : { status: 'failed' as const }
     busyRef.current = false
     if (result.status !== 'saved') {
@@ -322,8 +324,8 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     {recoveryError && <p className="recovery-import-error" role="alert">{recoveryError}</p>}
     <dialog className="commitment-dialog" ref={recoveryDialog} aria-labelledby="recovery-title" onCancel={() => setRecoveryData(null)}>
       <h2 id="recovery-title">恢复这份记录？</h2><p>主线记录包含 {recoveryData?.run.history.length ?? 0} 次选择；非主线包含 {recoveryData?.session?.history.length ?? 0} 次回应。确认后将替换本机当前检查点。</p>
-      <div className="recovery-actions"><button type="button" autoFocus onClick={() => setRecoveryData(null)}>取消恢复</button><button type="button" onClick={async () => {
-        if (!recoveryData) return
+      <div className="recovery-actions"><button type="button" autoFocus onClick={() => setRecoveryData(null)}>取消恢复</button><button type="button" disabled={saveStatus === 'saving'} onClick={async () => {
+        if (!recoveryData || busyRef.current) return
         try { tokenRef.current = checkpointToken(window.localStorage) } catch { setRecoveryError('浏览器仍无法访问存档，请保持本页打开。'); return }
         const data = recoveryData; setRecoveryData(null)
         void save(data, () => window.location.reload())

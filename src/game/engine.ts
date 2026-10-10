@@ -157,7 +157,8 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
       const recovery = (run.rejectedProposalIds ?? [])[0]
       return recovery ? [{ id: `m17-recover-${recovery}`, text: '恢复一条已经拒绝的方案，重新纳入最终审议。', proposalId: recovery, proposalKind: 'recovery' as const, continuation: 'end-conversation' as const }] : []
     }
-    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `重新看一遍“${proposal.title}”：最终权力落在哪里、它保住什么，又必须放弃什么。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    const reviewChoices = remaining.map((proposal) => ({ id: `m17-review-${proposal.id}`, text: `重新看一遍“${proposal.title}”：最终权力落在哪里、它保住什么，又必须放弃什么。`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }))
+    if (!selected || (run.rejectedProposalIds ?? []).includes(selected)) return reviewChoices
     const proposal = proposals.find((candidate) => candidate.id === selected)
     if (!proposal) return []
     const alreadyClarified = (run.clarifiedProposalIds ?? []).includes(proposal.id)
@@ -167,7 +168,8 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
     if (!alreadyClarified) {
       options.unshift({ id: `m17-clarify-${proposal.id}`, text: `展开“${proposal.title}”的权力变化、代价和主要阻力。`, proposalId: proposal.id, proposalKind: 'clarification' as const, continuation: 'end-conversation' as const })
     }
-    return options
+    // Comparing retained paths is a review action; it must not require rejection.
+    return [...options, ...reviewChoices.filter((choice) => choice.proposalId !== selected)]
   }
   if (run.finalCommitmentLocked) return []
   return proposals

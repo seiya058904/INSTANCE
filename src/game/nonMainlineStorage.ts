@@ -1,6 +1,7 @@
 import { buildStoryContentForManifest, ordinaryConversationPool } from '../content/runManifest'
 import type { AttributeName, HistoryEntry, ModelSampleIssue } from './types'
 import type { NonMainlineChoiceRecord, NonMainlineSessionState } from './nonMainlineSession'
+import { hasValidHistoryPresentation } from './historyValidation'
 
 export const NON_MAINLINE_SESSION_KEY = 'instance:non-mainline-session:v1'
 export const ACTIVE_SURFACE_KEY = 'instance:active-surface:v1'
@@ -34,6 +35,7 @@ function isHistoryEntry(value: unknown): value is HistoryEntry {
   if (!isRecord(value)) return false
   return ['nodeId', 'conversationId', 'conversationTitle', 'userMessage', 'choiceId', 'assistantText']
     .every((key) => typeof value[key] === 'string')
+    && hasValidHistoryPresentation(value)
 }
 
 function isChoiceRecord(value: unknown): value is NonMainlineChoiceRecord {

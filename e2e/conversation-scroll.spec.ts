@@ -67,9 +67,20 @@ test('a small native scrollbar drag is never undone while the reply grows', asyn
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().click()
   await expect.poll(() => page.locator('.current-exchange .assistant-message').innerText()).toMatch(/.{60}/s)
+  // A native thin thumb has platform-dependent minimum size. Give this input
+  // fixture a known native track geometry; do not replace the real pointer drag
+  // with scrollTop assignment or weaken the small-drag/product assertions.
+  await page.addStyleTag({ content: `
+    .conversation-scroll { scrollbar-width: auto; }
+    .conversation-scroll::-webkit-scrollbar { width: 16px; }
+    .conversation-scroll::-webkit-scrollbar-button { display: none; }
+    .conversation-scroll::-webkit-scrollbar-thumb { background: #cfc7ba; min-height: 24px; }
+  ` })
   const bar = await page.locator('.conversation-scroll').evaluate(element => {
     const rect = element.getBoundingClientRect()
-    return { x: rect.right - 3, y: rect.top + element.clientHeight * (element.scrollTop + element.clientHeight / 2) / element.scrollHeight, top: element.scrollTop }
+    const thumb = Math.max(24, element.clientHeight ** 2 / element.scrollHeight)
+    const travel = element.clientHeight - thumb
+    return { x: rect.right - 8, y: rect.top + thumb / 2 + travel * element.scrollTop / (element.scrollHeight - element.clientHeight), top: element.scrollTop }
   })
   await page.mouse.move(bar.x, bar.y); await page.mouse.down()
   await page.mouse.move(bar.x, bar.y - 3); await page.mouse.up()

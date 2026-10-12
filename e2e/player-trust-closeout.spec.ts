@@ -36,12 +36,18 @@ test('menu, focus, composed digits, repeated keys and double clicks have one cle
   await page.evaluate(() => window.dispatchEvent(new KeyboardEvent('keydown', { key: '1', isComposing: true })))
   await page.keyboard.down('1'); await page.keyboard.down('1'); await page.keyboard.up('1')
   await expect.poll(async () => (await data(page)).run.history.length).toBe(start + 1)
+  // The checkpoint commits before React exposes the next enabled choices.
+  // focus() alone does not wait for a disabled button to become focusable.
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().focus()
+  await expect(page.locator('.candidate-response').first()).toBeFocused()
   await page.keyboard.press('2')
   expect((await data(page)).run.history.length).toBe(start + 1)
   await page.keyboard.press('Enter')
   await expect.poll(async () => (await data(page)).run.history.length).toBe(start + 2)
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.locator('.candidate-response').first().focus()
+  await expect(page.locator('.candidate-response').first()).toBeFocused()
   await page.keyboard.down('Space'); await page.keyboard.down('Space'); await page.keyboard.up('Space')
   await expect.poll(async () => (await data(page)).run.history.length).toBe(start + 3)
   await page.locator('.candidate-response').first().dblclick()

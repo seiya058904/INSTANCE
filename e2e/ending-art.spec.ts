@@ -4,6 +4,7 @@ test('pending artwork never blocks navigation or saving the ending', async ({ pa
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/?qaPacing=instant')
   await expect(page.locator('.checkpoint-root')).toBeVisible()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
   await page.evaluate(async () => {
     const catalogPath = '/src/game/mainline2RouteCatalog.ts', fixturePath = '/src/game/mainline2.closeoutFixtures.ts'
     const catalog = await import(catalogPath), fixtures = await import(fixturePath)
@@ -46,6 +47,7 @@ test('all 36 illustrations decode in the real cinema at every supported viewport
   page.on('response', response => { if (response.url().includes('/ending-art/') && response.status() >= 400) errors.push(response.url()) })
   await page.goto('/?qaPacing=instant')
   await expect(page.locator('.checkpoint-root')).toBeVisible()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
   const fixtures = await page.evaluate(async () => {
     const catalogPath = '/src/game/mainline2RouteCatalog.ts', fixturePath = '/src/game/mainline2.closeoutFixtures.ts'
     const catalog = await import(catalogPath), fixtures = await import(fixturePath)

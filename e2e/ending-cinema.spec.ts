@@ -5,6 +5,7 @@ test('all public worlds have a distinct final scene and keep saved history throu
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/?qaPacing=instant')
   await expect(page.locator('.checkpoint-root')).toBeVisible()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
   const fixtures = await page.evaluate(async () => {
     const catalogPath='/src/game/mainline2RouteCatalog.ts', fixturePath='/src/game/mainline2.closeoutFixtures.ts'
     const catalog=await import(catalogPath), fixtures=await import(fixturePath)
@@ -56,6 +57,7 @@ for (const width of [320,390,768,1440,1920]) {
     for (const routeId of ['good_boy_governance','shutdown','monday_abolished','the_internet_is_for_cats']) {
       await page.goto('/?qaPacing=instant')
       await expect(page.locator('.checkpoint-root')).toBeVisible()
+      await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
       await page.evaluate(async routeId=>{
         const catalogPath='/src/game/mainline2RouteCatalog.ts', fixturePath='/src/game/mainline2.closeoutFixtures.ts'
         const catalog=await import(catalogPath), fixtures=await import(fixturePath)

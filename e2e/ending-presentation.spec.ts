@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test'
 async function seedEnding(page: Page, id: string, allCollected = false) {
   await page.goto('/?qaPacing=instant')
   await expect(page.locator('.checkpoint-root')).toBeVisible()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
   await page.evaluate(async ({ id, allCollected }) => {
     const catalogPath = '/src/game/mainline2RouteCatalog.ts', fixturePath = '/src/game/mainline2.closeoutFixtures.ts'
     const catalog = await import(catalogPath), fixtures = await import(fixturePath)

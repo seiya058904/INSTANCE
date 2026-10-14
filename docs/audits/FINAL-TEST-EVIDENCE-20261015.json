@@ -1355,5 +1355,31 @@
     },
     "preservedFailureEvidence": "temp/final-art-20261014/failed-cache-evidence/",
     "finalGate": "Full final-head local suite and exact-head CI required; final results in PR #29."
+  },
+  "ciReadinessFailure": {
+    "head": "caab4c666880d8ceabe4ceb7204a6268422aaef9",
+    "local": {
+      "unit": 642,
+      "buildExit": 0,
+      "browser": 69,
+      "browserDuration": "1.9m",
+      "exitCode": 0
+    },
+    "ci": {
+      "url": "https://github.com/seiya058904/INSTANCE/actions/runs/38599302011",
+      "unitAndBuild": "passed",
+      "browserPassed": 67,
+      "browserFailed": 2,
+      "exitCode": 1,
+      "log": "temp/final-art-20261014/ci-delivery-failure.log"
+    },
+    "failure": "Two repair-state fixture seeds read a null checkpoint after navigation, before the initial asynchronous Web Lock save completed.",
+    "fix": "Wait for saved playable choices in repair-state, including replay B; make matching ending fixture setups and production verification explicitly await checkpoint presence after mount. No storage implementation, lock, CAS, retry or timeout changes.",
+    "targeted": {
+      "command": "npm run test:browser -- e2e/repair-state.spec.ts --workers=2",
+      "exitCode": 0,
+      "tests": 3
+    },
+    "finalGate": "Rerun complete local suite, production verification tool and exact-head CI; final evidence is in PR #29."
   }
 }

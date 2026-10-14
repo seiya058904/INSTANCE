@@ -4,6 +4,8 @@ test('seeded M16 save remains playable through explicit M17 commitment', async (
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.goto('/?qaPacing=instant')
+  // Navigation completion does not await the initial Web Lock checkpoint write.
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', storagePath = '/src/game/storage.ts'
     const engine = await import(enginePath), storage = await import(storagePath)
@@ -41,6 +43,7 @@ test('seeded M16 save remains playable through explicit M17 commitment', async (
 // not hand-authored completion flags. The actions under test use real UI buttons.
 test('completed replay A and B survive replay, return, and reload', async ({ page }) => {
   await page.goto('/?qaPacing=instant')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   const a = await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', sessionPath = '/src/game/nonMainlineSession.ts', contentPath = '/src/content/runManifest.ts'
     const engine = await import(enginePath), sessions = await import(sessionPath), content = await import(contentPath)
@@ -59,6 +62,7 @@ test('completed replay A and B survive replay, return, and reload', async ({ pag
   await page.reload()
   await page.getByRole('button', { name: '再来一轮', exact: true }).click()
   await page.getByRole('button', { name: '确认再来一轮', exact: true }).click()
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   const b = await page.evaluate(async () => {
     const sessionPath = '/src/game/nonMainlineSession.ts', storagePath = '/src/game/nonMainlineStorage.ts', contentPath = '/src/content/runManifest.ts'
     const sessions = await import(sessionPath), storage = await import(storagePath), content = await import(contentPath)
@@ -83,6 +87,7 @@ test('completed replay A and B survive replay, return, and reload', async ({ pag
 
 test('reject-all review shows recovery, then a real explicit commitment produces an ending', async ({ page }) => {
   await page.goto('/?qaPacing=instant')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', contentPath = '/src/content/runManifest.ts'
     const engine = await import(enginePath), content = await import(contentPath)

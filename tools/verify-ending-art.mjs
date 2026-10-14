@@ -10,6 +10,7 @@ const browser=await chromium.launch({channel:'chrome',headless:true})
 const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'})
 await page.goto('http://127.0.0.1:4180/?qaPacing=instant')
 await page.locator('.checkpoint-root').waitFor()
+await expect.poll(()=>page.evaluate(()=>localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
 const fixtures=await page.evaluate(async()=>{
  const cp='/src/game/mainline2RouteCatalog.ts',fp='/src/game/mainline2.closeoutFixtures.ts'
  const c=await import(cp),f=await import(fp)
@@ -22,6 +23,7 @@ page.on('response',r=>{if(r.url().includes('ending-art'))resources.push({url:r.u
 const base='http://127.0.0.1:4197/INSTANCE/'
 await page.goto(base)
 await page.locator('.checkpoint-root').waitFor()
+await expect.poll(()=>page.evaluate(()=>localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
 for(const fixture of fixtures){
  await page.evaluate(({run,titles})=>{const e=JSON.parse(localStorage.getItem('instance:checkpoint:v2'));e.data.run=run;e.data.meta.completedEndings=titles;e.revision=crypto.randomUUID();localStorage.setItem('instance:checkpoint:v2',JSON.stringify(e))},{run:fixture.run,titles:fixtures.slice(0,32).map(f=>f.ending.title)})
  await page.reload()

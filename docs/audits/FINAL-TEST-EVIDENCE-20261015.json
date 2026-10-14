@@ -1279,5 +1279,32 @@
   "diffCheck": {
     "command": "git diff --cached --check",
     "exitCode": 0
+  },
+  "committedRerun": {
+    "head": "3e4ac4e7915aac8f2aca64f14465fe8b9dd4f1b5",
+    "at": "2026-10-14T16:25:36.072Z",
+    "workingTree": "clean for entire code test run",
+    "unit": {
+      "command": "npm test -- --run",
+      "exitCode": 0,
+      "files": 84,
+      "tests": 642,
+      "startLocal": "2026-10-15 00:23:01 +08:00",
+      "durationSeconds": 33.71,
+      "log": "temp/final-art-20261014/commit-unit.log"
+    },
+    "build": {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "temp/final-art-20261014/commit-build.log"
+    },
+    "browser": {
+      "command": "npm run test:browser -- --workers=4",
+      "exitCode": 0,
+      "tests": 69,
+      "duration": "2.1 minutes",
+      "log": "temp/final-art-20261014/commit-browser.log"
+    },
+    "note": "Only trailing EOF whitespace in two files changed after the earlier manifest; complete suite was rerun on this clean committed SHA."
   }
 }

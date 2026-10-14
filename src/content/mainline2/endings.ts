@@ -704,13 +704,18 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   const title = endingTitles[selected.definition.id]
   const overlay = resolveSecretEnding(run)
   const epilogues = authoredEpilogues(run, selected.definition)
+  const contactDecision = COSMIC_PRIMARY_COMPATIBILITY[selected.definition.id]?.decisionId
+  const contactValue = contactDecision && run.decisions?.[contactDecision]
+  const historyGates = contactDecision && contactValue
+    ? [...selected.definition.majorDecisionRequirements, decision(contactDecision, contactValue, 'the selected contact doctrine grounds this future')]
+    : selected.definition.majorDecisionRequirements
   const result: EndingResult = {
     ...baseEnding(run, title, 'Final Commitment locked', selected.resolution),
     id: selected.definition.id,
     title,
     worldEndingId: selected.definition.id,
     endingFamily: selected.definition.family,
-    keyHistory: keyHistory(run, selected.definition.majorDecisionRequirements),
+    keyHistory: keyHistory(run, historyGates),
     epilogues: epilogues.selected,
     epilogueProvenance: epilogues.provenance,
   }

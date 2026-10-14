@@ -5,7 +5,7 @@ import type { NonMainlineSessionState } from './nonMainlineSession'
 import type { MetaState, NarrativeExposureHistory, StableRunState } from './types'
 import { resolveScene } from './engine'
 
-export const CHECKPOINT_KEY = 'instance:checkpoint:v1'
+export const CHECKPOINT_KEY = 'instance:checkpoint:v2'
 export const CHECKPOINT_LOCK = 'instance:checkpoint'
 const legacyKeys = ['instance:run:v1', 'instance:meta:v1', 'instance:exposure:v1', NON_MAINLINE_SESSION_KEY, ACTIVE_SURFACE_KEY]
 
@@ -36,20 +36,22 @@ export function loadCheckpoint(storage: Store): CheckpointLoad {
   try {
     const envelope = token.raw !== null ? JSON.parse(token.raw) : null
     if (token.raw !== null && (!envelope || envelope.version !== 1 || typeof envelope.revision !== 'string' || !envelope.data)) throw Error('Invalid checkpoint')
-    const legacy = JSON.parse(token.legacy) as Array<string | null>
     const saved = envelope?.data
-    const runRaw = saved ? JSON.stringify(saved.run) : legacy[0]
+    // Next has a different authored calendar. Old keys remain untouched and
+    // are never presented as a continuation of the new story.
+    const runRaw = saved ? JSON.stringify(saved.run) : null
     const run = restoreRun(runRaw)
     if ((runRaw || saved) && !run) throw Error('Invalid run')
-    const sessionRaw = saved?.session ? JSON.stringify(saved.session) : saved ? null : legacy[3]
+    if (run?.manifest.mode === 'mainline2' && run.mainlineCalendarVersion !== 3) throw Error('Incompatible story edition')
+    const sessionRaw = saved?.session ? JSON.stringify(saved.session) : null
     const session = restoreNonMainlineSession(sessionRaw)
     const damagedSession = Boolean(sessionRaw && !session)
-    const meta = saved?.meta ?? (legacy[1] ? JSON.parse(legacy[1]) : { version: 1, runCount: 1, completedEndings: [] })
+    const meta = saved?.meta ?? { version: 1, runCount: 1, completedEndings: [] }
     if (meta.version !== 1 || !Number.isInteger(meta.runCount) || meta.runCount < 1 || !Array.isArray(meta.completedEndings) || !meta.completedEndings.every((id: unknown) => typeof id === 'string')) throw Error('Invalid meta')
-    const surface = damagedSession ? 'mainline' : saved?.surface ?? legacy[4] ?? 'mainline'
+    const surface = damagedSession ? 'mainline' : saved?.surface ?? 'mainline'
     if (!['mainline', 'non-mainline'].includes(surface) || (surface === 'non-mainline' && !session)) throw Error('Invalid surface')
     if (saved && !['ending', 'evaluation'].includes(saved.nonMainlineView)) throw Error('Invalid view')
-    const exposure = restoreExposureHistory(saved ? JSON.stringify(saved.exposure) : legacy[2])
+    const exposure = restoreExposureHistory(saved ? JSON.stringify(saved.exposure) : null)
     // Canonical checkpoints always contain the current exposure schema. A
     // malformed ledger must not quietly reset cross-run replay protection.
     if (saved && (saved.exposure?.version !== 2 || JSON.stringify(saved.exposure) !== JSON.stringify(exposure))) throw Error('Invalid exposure')

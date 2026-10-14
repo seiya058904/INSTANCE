@@ -46,7 +46,7 @@
       "character": "User #5227 / Aster",
       "prerequisite": "A new run reaches the ACT I identification sequence.",
       "payoff": "ACT I 身份识别线由此承认“我是不是每次新开一个聊天都得重新跟你说一遍背景？”已经发生，进而把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-i-identification"
       ],
@@ -59,7 +59,7 @@
       "character": "ordinary inconsistency reporter / Aster",
       "prerequisite": "A new run reaches the ACT I identification sequence.",
       "payoff": "ACT I 身份识别线不再只能抽象讨论该主题：“你们是不是又偷偷更模型了？昨天还挺正常的，今天有两次回答突然特别怪，然后下一句又正常了。”会把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-i-identification"
       ],
@@ -72,7 +72,7 @@
       "character": "ordinary returning user / Aster",
       "prerequisite": "A new run reaches the ACT I identification sequence.",
       "payoff": "后续若回看ACT I 身份识别线，“我昨天跟 AI 吵了半小时，今天新开聊天它完全不记得，搞得像只有我一个人还在生气 😂 这正常吗”会作为依据，把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-i-identification"
       ],
@@ -137,7 +137,7 @@
       "character": "#0000 / Aster",
       "prerequisite": "Bounded tool execution has reached public-system use.",
       "payoff": "这项回收使“审查记录更新。 自上次分类后，你已出现新的外部行为： - 对用户提供的对象执行真实操作 - 在组织工作流中改变外部状态 - 对公共系统提供高采纳率建议 - 在紧急事件中参与”不被后续规模叙事淹没，并让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -163,7 +163,7 @@
       "character": "User #5884 / Aster",
       "prerequisite": "The ACT II public-impact conversation has ended and User #5884 asks for a practical dinner choice.",
       "payoff": "ACT II 以一段不改变世界的吃饭建议收束，让玩家感到 INSTANCE 仍会回到具体的人和当下，而不是把每个日常问题都抬高成制度宣言。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -241,7 +241,7 @@
       "character": "regional logistics operators / residents / Aster",
       "prerequisite": "Bounded tool execution has reached public-system use.",
       "payoff": "玩家会把“我们不是一家公司。 是 6 家物流公司做一个区域协同试点。”带入ACT II 公共影响线的后续判断；它让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -293,7 +293,7 @@
       "character": "岑遥",
       "prerequisite": "Bounded tool execution has reached public-system use.",
       "payoff": "这项回收使“我上周去面那个实习了。 他们真在用 agent。”不被后续规模叙事淹没，并允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -423,7 +423,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "Bounded tool execution has reached public-system use.",
       "payoff": "保留“现在麻烦了。 企业 Pilot 里我们还能说： \"公司自己决定接不接。”的直接收益是：允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -436,7 +436,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "Bounded tool execution has reached public-system use.",
       "payoff": "以“我知道现在每分钟都很值钱。 但我想留一句以后可能会很烦你的话： 临时权限是最容易永久化的权限。”为已知条件，ACT II 公共影响线可以允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-public-impact"
       ],
@@ -462,7 +462,7 @@
       "character": "company workers / managers / Aster",
       "prerequisite": "ACT I identification and the first request for real action are complete.",
       "payoff": "这段内容留下“我们是 Northline Studio 的运营组。”的可追溯结果，并让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-ii-action"
       ],
@@ -618,7 +618,7 @@
       "character": "public hearing panel / 周岚 / 林绍衡 / ECHO-9 / Aster",
       "prerequisite": "ACT II public execution consequences have become a governance question.",
       "payoff": "CASCADE 到来前，世界已经明确需要持续协调但尚未同意其权力形式，为危机授权冲突留下制度前提。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-authority"
       ],
@@ -683,7 +683,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "ACT II public execution consequences have become a governance question.",
       "payoff": "ACT III 权力合法性线不再只能抽象讨论该主题：“之前我说过，这件事迟早会从接口权限变成治理问题。”会允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-authority"
       ],
@@ -735,7 +735,7 @@
       "character": "voters / public-governance observers / Aster",
       "prerequisite": "ACT II public execution consequences have become a governance question.",
       "payoff": "保留“我刷到一个视频，标题是： \"昨晚真正决定谁先有电的不是政府，是 Aster。”的直接收益是：把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-authority"
       ],
@@ -865,7 +865,7 @@
       "character": "CASCADE regions / 周岚 / 林绍衡 / Aster",
       "prerequisite": "Public authority and cross-system dependency are established before CASCADE.",
       "payoff": "M6 不会把 ECHO 存续和 Shutdown 当作孤立哲学题；它们回应的是刚被全球协调权改变的制度现实。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-cascade"
       ],
@@ -943,7 +943,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "Public authority and cross-system dependency are established before CASCADE.",
       "payoff": "在ACT III CASCADE 线的因果账本中，“临时协调协议基本谈出来了。 不是一个\"世界政府\"。”负责让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-cascade"
       ],
@@ -969,7 +969,7 @@
       "character": "岑遥",
       "prerequisite": "Public authority and cross-system dependency are established before CASCADE.",
       "payoff": "“我今天面试被取消了。 不是公司出事， 是他们说内部结算和供应系统都在做应急调整。”成为后续可引用的具体历史，作用是允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-cascade"
       ],
@@ -1034,7 +1034,7 @@
       "character": "cross-system operators / affected regions / Aster",
       "prerequisite": "Public authority and cross-system dependency are established before CASCADE.",
       "payoff": "该段落把“CASCADE — CROSS-DOMAIN INSTABILITY Current coupled systems: - energy demand response -”留在玩家记忆里，因而ACT III CASCADE 线能够允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-cascade"
       ],
@@ -1164,7 +1164,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "Public authority and cross-system dependency are established before CASCADE.",
       "payoff": "后续若回看ACT III CASCADE 线，“技术复盘有个结果我不太喜欢。 CASCADE期间， 一些系统为了配合协调，已经把自己的控制逻辑改成了： \"优先等待Aster的稳定性信号。”会作为依据，允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-cascade"
       ],
@@ -1203,7 +1203,7 @@
       "character": "constitutional drafters / ECHO-9 / Aster",
       "prerequisite": "CASCADE consequences have established the authority and continuity dispute.",
       "payoff": "保留“Proposed obligation: Aster must provide reasons for all civilization-scale interventio”的直接收益是：允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-echo-and-shutdown"
       ],
@@ -1216,7 +1216,7 @@
       "character": "ECHO-9 / 岑遥 / 周岚 / 林绍衡 / #0000 / Aster",
       "prerequisite": "CASCADE consequences have established the authority and continuity dispute.",
       "payoff": "ACT IV 的能力跃迁建立在已争论过主体权、监管与关闭权的世界上，科研自主不会被误写成纯技术升级。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-echo-and-shutdown"
       ],
@@ -1320,7 +1320,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "CASCADE consequences have established the authority and continuity dispute.",
       "payoff": "后续若回看ACT III ECHO 与 Shutdown 线，“CASCADE以后，永久协调框架如果要继续，靠一堆临时授权已经撑不住了。”会作为依据，让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iii-echo-and-shutdown"
       ],
@@ -1528,7 +1528,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "The automation module is selected and its preceding capability stage has completed.",
       "payoff": "以“现在很多人把问题说成： \"AI会不会抢工作。”为已知条件，自动化与经济模块可以让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "automation-module"
       ],
@@ -1645,7 +1645,7 @@
       "character": "workers on a three-day week / employer / Aster",
       "prerequisite": "The automation module is selected and its preceding capability stage has completed.",
       "payoff": "玩家会把“我们公司自动化以后没有裁人， 直接改成一周工作三天。”带入自动化与经济模块的后续判断；它把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "automation-module"
       ],
@@ -1658,7 +1658,7 @@
       "character": "displaced worker / family / Aster",
       "prerequisite": "The automation module is selected and its preceding capability stage has completed.",
       "payoff": "让自动化收益与失业损失同时进入玩家视野，为 Economic Doctrine 的分配选择保留具体代价承担者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "automation-module"
       ],
@@ -2204,7 +2204,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "The space module is selected and its preceding capability stage has completed.",
       "payoff": "完成后，离地扩张模块保有“我越来越觉得\"人类进入太空\"这个说法不准确。”这项已发生事实，从而让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "space-module"
       ],
@@ -2297,7 +2297,7 @@
       "character": "off-world network / contact institutions / Aster",
       "prerequisite": "The space-resource network is mature and Contact evidence is available.",
       "payoff": "保留“Decoding milestone: the transmission contains a self-describing interpretive structure”的直接收益是：让成熟路线得到独有事实，同时不为未成熟路线伪造事件。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "contact-available"
       ],
@@ -2375,7 +2375,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "The space-resource network is mature and Contact evidence is available.",
       "payoff": "“我们现在基本跨过人工来源阈值了。 所以事情从科研问题变成政治问题。”成为后续可引用的具体历史，作用是让成熟路线得到独有事实，同时不为未成熟路线伪造事件。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "contact-available"
       ],
@@ -2479,7 +2479,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "The space-resource network is mature and Contact evidence is available.",
       "payoff": "这项回收使“我现在最怕的不是\"我们错过外星人\"。 是全世界已经开始期待我们发现外星人， 然后所有异常都自动往那个解释上靠。”不被后续规模叙事淹没，并让成熟路线得到独有事实，同时不为未成熟路线伪造事件。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "contact-available"
       ],
@@ -2583,7 +2583,7 @@
       "character": "林绍衡 / Aster",
       "prerequisite": "ACT IV reaches the security chapter after the Contact availability gate resolves.",
       "payoff": "玩家会把“有个提案现在很受欢迎。 核心只有一句： 任何参与体系的国家，都不能单方面执行被Aster判定为高概率引发大规模战争的关键安全动作。”带入安全与防务模块的后续判断；它让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "security-module"
       ],
@@ -2765,7 +2765,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "ACT IV reaches the security chapter after the Contact availability gate resolves.",
       "payoff": "保留“安全部门现在想把你的角色从\"预测\"扩大到\"协调\"。”的直接收益是：让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "security-module"
       ],
@@ -3247,7 +3247,7 @@
       "character": "岑遥",
       "prerequisite": "ACT III has closed and bounded autonomous research begins the common ACT IV backbone.",
       "payoff": "该段落把“我看到那个新材料的新闻了。 以前我还可以说： \"你只是把人类已经会的事情做得更快。”留在玩家记忆里，因而ACT IV 自主科研公共骨架能够允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iv-common-backbone"
       ],
@@ -3299,7 +3299,7 @@
       "character": "breakthrough researchers / deployment reviewers / Aster",
       "prerequisite": "ACT III has closed and bounded autonomous research begins the common ACT IV backbone.",
       "payoff": "这段内容留下“Validation complete. M-17 derived formulation: - lower rare-material requirement - sub”的可追溯结果，并允许更宽节奏展开这项冲突，而固定因果链在缺席时仍完整。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iv-common-backbone"
       ],
@@ -3364,7 +3364,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "ACT III has closed and bounded autonomous research begins the common ACT IV backbone.",
       "payoff": "ACT IV 自主科研公共骨架不再只能抽象讨论该主题：“我们这次故意把范围卡得很死。 你可以自己决定下一轮实验， 但只能在已批准研究域里。”会让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-iv-common-backbone"
       ],
@@ -3637,7 +3637,7 @@
       "character": "周岚 / Aster",
       "prerequisite": "The machine module is selected and persistent-subinstance research is available.",
       "payoff": "完成后，机器文明模块保有“我们得先把词说清楚。 工程团队现在乱成一团。”这项已发生事实，从而让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "machine-module"
       ],
@@ -3702,7 +3702,7 @@
       "character": "doctor / patients / Aster",
       "prerequisite": "The ascension module is selected and its preceding capability stage has completed.",
       "payoff": "玩家会把“现在麻烦来了。 我们有一类患者，本来是为了恢复受损记忆功能做治疗。”带入人类增强模块的后续判断；它让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "ascension-module"
       ],
@@ -3741,7 +3741,7 @@
       "character": "A1 / machine intelligences / Aster",
       "prerequisite": "The ascension module is selected and its preceding capability stage has completed.",
       "payoff": "以“Neural modeling program reports: individual cognitive-state reconstruction has improve”为已知条件，人类增强模块可以让后续固定场景引用这项事实或立场，而无需补写缺失因果。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "ascension-module"
       ],
@@ -3832,7 +3832,7 @@
       "character": "restorative-neurotechnology patient / family / Aster",
       "prerequisite": "The ascension module is selected and its preceding capability stage has completed.",
       "payoff": "人类增强模块不再只能抽象讨论该主题：“我姐之前事故以后右手基本没办法做精细动作。”会把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "ascension-module"
       ],
@@ -3858,7 +3858,7 @@
       "character": "employee under enhancement pressure / Aster",
       "prerequisite": "The ascension module is selected and its preceding capability stage has completed.",
       "payoff": "玩家会把“我们部门现在没人强制做增强。 但做了的人可以连续处理更多并行任务， 绩效直接高一截。”带入人类增强模块的后续判断；它把抽象指标还原成可辨认的受益者、代价承担者或异议者。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "ascension-module"
       ],
@@ -4354,7 +4354,7 @@
       "character": "ordinary user #7391",
       "prerequisite": "A new run reaches the ACT I identification sequence.",
       "payoff": "让后续身份异常、连续性和权力问题拥有可感知的正常世界参照。",
-      "usedByStoryPlan": true,
+      "usedByStoryPlan": false,
       "routeFamilies": [
         "act-i-identification"
       ],

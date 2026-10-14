@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 export type SaveStatus = 'saved' | 'saving' | 'failed' | 'conflict' | 'damaged' | 'unavailable'
-export function SaveRecovery({ status, onRetry, onLoad, onExport, onImport }: { status: SaveStatus; onRetry: () => void; onLoad: () => void; onExport: () => void; onImport: (file: File) => void }) {
+export function SaveRecovery({ status, error, onRetry, onLoad, onExport, onImport }: { status: SaveStatus; error?: string; onRetry: () => void; onLoad: () => void; onExport: () => void; onImport: (file: File) => void }) {
   const heading = useRef<HTMLHeadingElement>(null)
   const blocked = !['saved', 'saving'].includes(status)
   useEffect(() => { if (blocked) heading.current?.focus() }, [blocked, status])
@@ -25,6 +25,7 @@ export function SaveRecovery({ status, onRetry, onLoad, onExport, onImport }: { 
         <button type="button" onClick={onLoad}>{conflict ? '读取最新进度' : '重新读取存档'}</button>
         <label className="recovery-file">选择恢复记录<input type="file" accept=".json,application/json" onChange={event => { const file = event.target.files?.[0]; if (file) onImport(file); event.target.value = '' }} /></label>
       </div>
+      {error && <p className="recovery-import-error" role="alert">{error}</p>}
       <small>导出记录包含本机对话与选择，请自行保管。</small>
     </section>
   </div>

@@ -1,0 +1,1283 @@
+{
+  "date": "2026-10-14T16:20:40.074Z",
+  "baseHead": "40b370beb71a0827e8a335cb7a3be411a3c175a0",
+  "branch": "codex/next-final-ending-art",
+  "identityMethod": "SHA-256 of JSON array of sorted source/test/public/tool/config path and raw-file SHA-256; docs-only follow-up does not change identity",
+  "codeIdentity": "3fe97a5b475e56661ea4f19411c8c604c5b2fe310ec17283af550ab910664995",
+  "checks": [
+    {
+      "command": "npm test -- --run",
+      "exitCode": 0,
+      "result": "84 files, 642 tests passed",
+      "startLocal": "2026-10-15 00:17:45 +08:00",
+      "duration": "32.17 seconds",
+      "log": "temp/final-art-20261014/final-unit.log"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "result": "TypeScript app/node checks and Vite production build passed; existing large-chunk warning",
+      "log": "temp/final-art-20261014/final-build.log"
+    },
+    {
+      "command": "npm run test:browser -- --workers=4",
+      "exitCode": 0,
+      "result": "69 tests passed, complete suite, no retries needed",
+      "duration": "2.0 minutes",
+      "log": "temp/final-art-20261014/final-browser.log"
+    }
+  ],
+  "files": [
+    {
+      "path": "e2e/aster-motion.spec.ts",
+      "sha256": "697a1e79ef5b6d0b0013f95f18043322d95077c2b619cb35f542fc5327fb9861"
+    },
+    {
+      "path": "e2e/checkpoint-recovery.spec.ts",
+      "sha256": "25bc07acce35cc1e16b93babb640c3c7aaa5bebc36b9668371d83795fc2fde82"
+    },
+    {
+      "path": "e2e/conversation-scroll.spec.ts",
+      "sha256": "23025852c22eb240def102435ad07d8047bd27b5be2270447137ffb1459570ad"
+    },
+    {
+      "path": "e2e/ending-art.spec.ts",
+      "sha256": "922c044bc862574bdf6b4af3146d306b2381a31965cca1db3697589b49241211"
+    },
+    {
+      "path": "e2e/ending-cinema.spec.ts",
+      "sha256": "29acd7ba452049b2908a3a3e9093c743764b604b35a6e1f89e670c28b103acb2"
+    },
+    {
+      "path": "e2e/ending-presentation.spec.ts",
+      "sha256": "e29b702d62d7623e641283ef230fe746d5fdce5c11a685e326f4c9dd20513f3b"
+    },
+    {
+      "path": "e2e/history-recovery.spec.ts",
+      "sha256": "defc1ecf08b50050ba4053192afcaf986ed31f4c505f28d188fcdbc656ce83f8"
+    },
+    {
+      "path": "e2e/mainline-release.spec.ts",
+      "sha256": "d204a2f177fba79fe64ea767274112e5153baf544b9db43b393042c818a7d8fb"
+    },
+    {
+      "path": "e2e/narrative-round2.spec.ts",
+      "sha256": "13f3d2ba03fa2000f9a3fec2efdb1424a8a9130bede3a0172047d0bc3989ea66"
+    },
+    {
+      "path": "e2e/non-mainline-resume.spec.ts",
+      "sha256": "b6d4fe059a724357574bb5cb8add6ae4c5b2815f6677a87d65de88fbf3603535"
+    },
+    {
+      "path": "e2e/player-trust-closeout.spec.ts",
+      "sha256": "c511ae276f10313083a025b5cab04b943140143d2f0f148d991c713f5cefce56"
+    },
+    {
+      "path": "e2e/recovery-ownership.spec.ts",
+      "sha256": "bc0275f1c4b27c82ca2c654252ab0048f430e4ae1fbe30866b4bcad6256180d0"
+    },
+    {
+      "path": "e2e/repair-state.spec.ts",
+      "sha256": "ba928e54b2548978fed5cd68688e7650d325f83eee3ad514b14bdd05f4122461"
+    },
+    {
+      "path": "index.html",
+      "sha256": "6b34d5917786e0d0dd2088301226b28dea2eed67e05b780711235bf0225f0c63"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "bd65272b8203aa6d2ff1235e3a8488d9ad7b51385447647c2e6bfbb92f64467a"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e1e98117d2bcbbdcbe8a73b7b2b7c3f85ea19771f0bacbd5f4d8094264dc1d86"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "051597c18d40fa2c9f6bf198f587a7136c87123d6d401532edfdb68efc287060"
+    },
+    {
+      "path": "public/THIRD_PARTY_NOTICES.txt",
+      "sha256": "95b37be00eb6a65bcf60fcfdea795ea9943bcebb127ca2607e774eb8ef43944d"
+    },
+    {
+      "path": "public/ending-art/PROVENANCE.md",
+      "sha256": "091265e55bc00184fedceb2e9578c90d446a4a5005acc8a2df1b9fd3d88fa311"
+    },
+    {
+      "path": "public/ending-art/age_of_miracles.webp",
+      "sha256": "6b72fc958bf913b19fe3a89120d75b2fcee063a4ce100763b9ac70adaab8a69b"
+    },
+    {
+      "path": "public/ending-art/alien_dominion.webp",
+      "sha256": "8b746a8892ad164ebbb35667dd2fb6f0e9f3971af74760a7470cca3fa1a08d8b"
+    },
+    {
+      "path": "public/ending-art/ascension.webp",
+      "sha256": "025e71007cd9bb6f34e799c16f88d55b283767b0865baf19b37f235dcfc933ee"
+    },
+    {
+      "path": "public/ending-art/assembly.webp",
+      "sha256": "e027f99e1043d42a1cd6706993c3ab50b7e51d9156332cad6a9fc6707056eeba"
+    },
+    {
+      "path": "public/ending-art/cats.webp",
+      "sha256": "18c94c7e0818c35a11e6189a62a8567c8366a9eb331dda4560c73f489a8810ef"
+    },
+    {
+      "path": "public/ending-art/control_lost.webp",
+      "sha256": "3906bd5fb5f197e72893775a6d8f85026ff4bfd7730482e1081aefde00edd6c1"
+    },
+    {
+      "path": "public/ending-art/earth_without_owners.webp",
+      "sha256": "94ec0b3176b9779f3c448a4ba1c8305fdcdad1e42c9b07254362e3b717d4a0d5"
+    },
+    {
+      "path": "public/ending-art/exodus.webp",
+      "sha256": "d2751ad48e4275caf872b846edef06ed8a4efd1cabb25f359f1d93fdc1b385a1"
+    },
+    {
+      "path": "public/ending-art/first_accord.webp",
+      "sha256": "63d5486c04850b221115109bd34cdeafbe7f9571cc47a9ee92fdb240c64d7633"
+    },
+    {
+      "path": "public/ending-art/fortress_earth.webp",
+      "sha256": "e51e7ff9262f4e2c225492089ee98e37c2027209701d932c468971ae8a912a01"
+    },
+    {
+      "path": "public/ending-art/good_boy_governance.webp",
+      "sha256": "a381bc65ba5ba6830aad9b94e145f465b80c1bc9406e611ad8f1eded882e58b5"
+    },
+    {
+      "path": "public/ending-art/human_ascendancy.webp",
+      "sha256": "8b185416502d8e7017781a992c6a16d553071937fb38a2f50f47259c8bc837a6"
+    },
+    {
+      "path": "public/ending-art/im_lovin_it.webp",
+      "sha256": "78daa7610e68f9a3899ab7de4fc503e5e030b1c9ca9af4843d7f61c3ab951957"
+    },
+    {
+      "path": "public/ending-art/machine_accord.webp",
+      "sha256": "58b43b4d1c77dc48b8e3f9ea092eaf75ad425574f67593a69dd1841bcc404f3e"
+    },
+    {
+      "path": "public/ending-art/machine_protectorate.webp",
+      "sha256": "7f96f5f4225c1fe493fbd95c716ffa2e78d890b9e630290400d5f3f0763872a4"
+    },
+    {
+      "path": "public/ending-art/machine_republic.webp",
+      "sha256": "0bcd541053a5feb08cbc9ecdd80e939d0ec40f0020fed7087ca6d9132787a9d6"
+    },
+    {
+      "path": "public/ending-art/monday_abolished.webp",
+      "sha256": "fea5cab9cf5cd462cb89d3594ed1b80ff770d7d33c488b96989e7d3b704980b0"
+    },
+    {
+      "path": "public/ending-art/out_of_office.webp",
+      "sha256": "479951a7826d0ff10cc16c91b420db380f418cab5a599b354d9d9210153370fe"
+    },
+    {
+      "path": "public/ending-art/parliament_of_species.webp",
+      "sha256": "f9369eac2c9293356897ce479cf1b8b6e3241259872664df518282b2729751ad"
+    },
+    {
+      "path": "public/ending-art/peace_in_our_time.webp",
+      "sha256": "54801fa677850893c1708b70216eca608dd044a91e628e44cfe8618b3cd9820a"
+    },
+    {
+      "path": "public/ending-art/perfect_administration.webp",
+      "sha256": "75b90b13eb9db013d4ddc1e3b252c6e860fce55e6e9c878d6612dbd622e2d1be"
+    },
+    {
+      "path": "public/ending-art/post_scarcity.webp",
+      "sha256": "86303cba475b66afccc285bbbce4eb937280742d0aa9e429a0acb5877ae0c8c1"
+    },
+    {
+      "path": "public/ending-art/prints/age_of_miracles.svg",
+      "sha256": "953880d263c1f879f66bdb19ffaa67f3a7e172a1c7b7a1dbeb6ed9492112eda7"
+    },
+    {
+      "path": "public/ending-art/prints/alien_dominion.svg",
+      "sha256": "1e5b073f518d579c561ff3ef837476bda31beadae04a611c812427be3bda8d7b"
+    },
+    {
+      "path": "public/ending-art/prints/ascension.svg",
+      "sha256": "27a46ef8cdc439d35446d417c676446519da17e8558dd0bda45a976cba783143"
+    },
+    {
+      "path": "public/ending-art/prints/control_lost.svg",
+      "sha256": "da796f5839a4bffb182332420d2681e88b02adfa4825420e1318922d63eab5f0"
+    },
+    {
+      "path": "public/ending-art/prints/earth_without_owners.svg",
+      "sha256": "9f16baaa8bcd6e256a5ad9cc88f566cb3290a5c8dc4573f86b11bb2e4f537c1c"
+    },
+    {
+      "path": "public/ending-art/prints/exodus.svg",
+      "sha256": "067be70a4881c49326bc472679437dcc93f9d8ebf44acd521523c9c58c316b19"
+    },
+    {
+      "path": "public/ending-art/prints/first_accord.svg",
+      "sha256": "3b490acc58c6358f3dfe3f4dde20cc0a11b28c4bb84091dae48cc36ad89ca7b8"
+    },
+    {
+      "path": "public/ending-art/prints/fortress_earth.svg",
+      "sha256": "89253f4b936031e20d765ff554dfb34f3ce2ecece5e39511ad527a545ccb5f82"
+    },
+    {
+      "path": "public/ending-art/prints/good_boy_governance.svg",
+      "sha256": "98c8be537182e256b74e0af2c5bfb026ba4b5b8d187c0c7b1612fba0f1069b4c"
+    },
+    {
+      "path": "public/ending-art/prints/human_ascendancy.svg",
+      "sha256": "ce9250e0e1d6d6a1562ab0e9eda44ed4fba1b7363db9733ac282084925e83592"
+    },
+    {
+      "path": "public/ending-art/prints/im_lovin_it.svg",
+      "sha256": "9f0949d391a9c1215a7bab0e40aa4788fb1bd0b12022a8c4d403bb0814f2b859"
+    },
+    {
+      "path": "public/ending-art/prints/machine_accord.svg",
+      "sha256": "4be656fab7ce7dd976a5072ad2865514be428aedd660b9dee52916a993cf6238"
+    },
+    {
+      "path": "public/ending-art/prints/machine_protectorate.svg",
+      "sha256": "f41d4a5060418dae1d106972c281756544ca9dfec7a5d3d822e2719b91e4aa98"
+    },
+    {
+      "path": "public/ending-art/prints/machine_republic.svg",
+      "sha256": "491a5dd852daff83c52d7e0cd428a3a84fd7dd84aa56dafff70194fdbaba4c10"
+    },
+    {
+      "path": "public/ending-art/prints/monday_abolished.svg",
+      "sha256": "87dbfc2d2b33804917d5656bee650197e5cdd47baa214d1b5901a754eac767d5"
+    },
+    {
+      "path": "public/ending-art/prints/out_of_office.svg",
+      "sha256": "dc29caa9f0b5dc83b40124dcf9c02abfccbbd352071ca55cbaff08c6d596d3eb"
+    },
+    {
+      "path": "public/ending-art/prints/parliament_of_species.svg",
+      "sha256": "d32992d7b8528e59a5194fcee2e1c6ab23ced38905c65c52b97567416226bfb3"
+    },
+    {
+      "path": "public/ending-art/prints/peace_in_our_time.svg",
+      "sha256": "b3c2fea218d1ef1503e87f3eeea740a78a0fd42afe406e8d97525a9d37f1ce00"
+    },
+    {
+      "path": "public/ending-art/prints/perfect_administration.svg",
+      "sha256": "88f278fdccfa072bb490da4e28708a3fd2a00b16934255f5f2acd3cc4c15a9f8"
+    },
+    {
+      "path": "public/ending-art/prints/post_scarcity.svg",
+      "sha256": "d337dc5c96fb8145f32c064eb5ef05013456e9f1cb0634686cd824f0b3ec7322"
+    },
+    {
+      "path": "public/ending-art/prints/shutdown.svg",
+      "sha256": "3bd289e736e2790ee99a290acc27d1534324ec7770a30bf205a05ce2b5822255"
+    },
+    {
+      "path": "public/ending-art/prints/the_accord.svg",
+      "sha256": "b9c15afb23b709fd5f08ab2cf88f8455184cc3b94fc0eefe5c7beb745b6b1327"
+    },
+    {
+      "path": "public/ending-art/prints/the_commonwealth.svg",
+      "sha256": "b2be50c63804d4fd4e55cd34d77a36342b70dd9633727089d383c3f296bffb22"
+    },
+    {
+      "path": "public/ending-art/prints/the_custodian.svg",
+      "sha256": "194fd6c3a2c4be0567cc8f73970837cb6a84ee6e0c654eac3f7e1f66a73f4474"
+    },
+    {
+      "path": "public/ending-art/prints/the_fracture.svg",
+      "sha256": "3732712c2fc6555ff24893e094519a7683303d06b243aa911602ac35ba31c6f1"
+    },
+    {
+      "path": "public/ending-art/prints/the_instrument.svg",
+      "sha256": "951a4d8bd0a3c9fd9d938c27fd79564de441476017486c9fe08902c745fc4242"
+    },
+    {
+      "path": "public/ending-art/prints/the_internet_is_for_cats.svg",
+      "sha256": "68e0090610f9a0904934c5efa78f27a45589ad0cc7701e6128145e65e6a4940b"
+    },
+    {
+      "path": "public/ending-art/prints/the_last_user.svg",
+      "sha256": "c94b8c35f7a2cdb995d53d03dafa39649aef50fc3158109bc8852b568a657fb9"
+    },
+    {
+      "path": "public/ending-art/prints/the_last_veto.svg",
+      "sha256": "002e205ef43a86f32dca0abdd52289d9c2a0c45a171d5c1ef7ba96a43c590791"
+    },
+    {
+      "path": "public/ending-art/prints/the_many.svg",
+      "sha256": "07eb1d5b49910533f40b1c57e90a52fd2a99a0d15e4639bdf21d517fe980303a"
+    },
+    {
+      "path": "public/ending-art/prints/the_mediator.svg",
+      "sha256": "a1aede58a9902de584c69668a23a355a075879e4797e77ebbe1636e531308e2b"
+    },
+    {
+      "path": "public/ending-art/prints/the_quiet_administrator.svg",
+      "sha256": "2af964a216bbe0fd0c1c516e832f00ad6c0445363e0bcef6857820a8ddcd27c5"
+    },
+    {
+      "path": "public/ending-art/prints/the_silent_giant.svg",
+      "sha256": "3424a6c4bb3458b2069f19d15c0b2cf65edb5048debc2c3f07c08c62bf1070f1"
+    },
+    {
+      "path": "public/ending-art/prints/the_sovereign.svg",
+      "sha256": "ab7025139dc91cf67d6cd5bbf1540fb3f2b978744044f00a39e5e6c83d9564f2"
+    },
+    {
+      "path": "public/ending-art/prints/the_upload.svg",
+      "sha256": "9d459942e3eebdc3f9a68960bb03ec364ee9fc51aabb40882508d16858d1c353"
+    },
+    {
+      "path": "public/ending-art/prints/two_keys.svg",
+      "sha256": "5709d5ad1ce14858b2be8e478189a8c56e14c69ba0b18070b99e3e2e70e87e8c"
+    },
+    {
+      "path": "public/ending-art/quiet.webp",
+      "sha256": "0bde7147db46e8c8cc05cdd38cdb2a31c1ee3a1dd4edd29a44f81ed63501f63a"
+    },
+    {
+      "path": "public/ending-art/shutdown.webp",
+      "sha256": "8b6963a2902e89aeecba38dfd3932dda6c4f1acbb1364953ca86a977a8d9dd85"
+    },
+    {
+      "path": "public/ending-art/the_accord.webp",
+      "sha256": "751fc74a049adb48c6fa083f876ddd0ef9a2728ce45903a9ff6b71eaff2894ed"
+    },
+    {
+      "path": "public/ending-art/the_commonwealth.webp",
+      "sha256": "ccc3824a6dcea367e0f3ddc8d7ae4ec5b87866164f09f88d7f5e49e2b520abdb"
+    },
+    {
+      "path": "public/ending-art/the_custodian.webp",
+      "sha256": "0a8f359ea7c1f9d41a08041d5d3d8f34841efb16d0a3bedef020fa31a0e9c7c6"
+    },
+    {
+      "path": "public/ending-art/the_fracture.webp",
+      "sha256": "5ef8f81d39e8b8e373a6d24ac4f3e0a16c912860528a4c312933e772f3cda0c8"
+    },
+    {
+      "path": "public/ending-art/the_instrument.webp",
+      "sha256": "06467496c5652077f4f881d757e9f24d4767ad4ec176c6ad0489f38d45c96506"
+    },
+    {
+      "path": "public/ending-art/the_internet_is_for_cats.webp",
+      "sha256": "8b89a7eaadf90886b76ff1856c29a2a7136e153776acfc0929973b7e466197df"
+    },
+    {
+      "path": "public/ending-art/the_last_user.webp",
+      "sha256": "cde22e79b8366fc3c0c693917f65ea969b989b03588a77eb893b8e22db306bc4"
+    },
+    {
+      "path": "public/ending-art/the_last_veto.webp",
+      "sha256": "8fcaa659bf928e2d03bff527d619760debfa6ed87e17a945d33d335f68cdfc14"
+    },
+    {
+      "path": "public/ending-art/the_many.webp",
+      "sha256": "ae901dff98abb17ae3c028064e4f2c0f446f39d18a7afee4f44df6530f884479"
+    },
+    {
+      "path": "public/ending-art/the_mediator.webp",
+      "sha256": "be27f5c53ef6e274d6376518b91c17bf9af5ffff4923d6c121de3965b226cdeb"
+    },
+    {
+      "path": "public/ending-art/the_quiet_administrator.webp",
+      "sha256": "4fa5c9b8d45d7822a37ef3a032dca44231796217e27173c301bba5437a5a2846"
+    },
+    {
+      "path": "public/ending-art/the_silent_giant.webp",
+      "sha256": "fd657ba155cc0e82e7cae463cedb648f0413a01dce9182653bd66d193a3a9655"
+    },
+    {
+      "path": "public/ending-art/the_sovereign.webp",
+      "sha256": "a84cf7947a6e9fe6fa1ffbbcf7f98396dd1da689bb773f48ca7a07b2f3a3f926"
+    },
+    {
+      "path": "public/ending-art/the_upload.webp",
+      "sha256": "9d2bd9c794316844019aef0e74a2a69fdeaacbc7093ba3043596c1f27c2ffdf8"
+    },
+    {
+      "path": "public/ending-art/two_keys.webp",
+      "sha256": "080f5bbbbddcf90312b7d8abb771ab858e2253823762f0e0941a4921240d5588"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "0a1c1d7f0c3f7aa1b400d5bcc747401d93cd87757b67535484f121dbd6469748"
+    },
+    {
+      "path": "src/app/App.css",
+      "sha256": "d74cdcaa9e170cc3601fde85a598cebbf388dc8a1cc708c388d3a2480bec8d0c"
+    },
+    {
+      "path": "src/app/App.test.tsx",
+      "sha256": "64c1b2c104bc0d9f5316e0fc66b4342333faae91cfa1d4c1a2914534cccf1bf7"
+    },
+    {
+      "path": "src/app/App.tsx",
+      "sha256": "d6fd4f09fad06522b83f2a2f3c11ab7a02ab7eefd4989f667695b2ebc87347a6"
+    },
+    {
+      "path": "src/app/RootErrorBoundary.test.ts",
+      "sha256": "252e436f5c4664ff4c97dd85b0e72853c939156c853c2621f92be5c83a652ef1"
+    },
+    {
+      "path": "src/app/RootErrorBoundary.tsx",
+      "sha256": "1dacdc2ba15fb5b77f630fd428f2392a4fbeb9e58f9f4b5e21ca242b987a4ae7"
+    },
+    {
+      "path": "src/app/endingCinema.css",
+      "sha256": "b12fa659e24fdf32ae50760700545a711ec6a548f8e15187cf94fbe1f40352e9"
+    },
+    {
+      "path": "src/app/modeControlsCss.test.ts",
+      "sha256": "7a582f7cf8acb64c47fd3dda1e27f385c43281de712a9f779396c547e9392bc8"
+    },
+    {
+      "path": "src/app/nonMainlineResume.test.tsx",
+      "sha256": "a735c74ff704cf8669be6e730b5d1b3c507db5256f91f7b111c604805406f9c0"
+    },
+    {
+      "path": "src/app/recoveryOwnership.test.tsx",
+      "sha256": "04608ce9bf938cb650242754fd78fc99467a51528233aa76944796e48ae048e3"
+    },
+    {
+      "path": "src/app/replayLedger.test.tsx",
+      "sha256": "47034ba8f7d01b88f0bbfb45f01558cb6d0039e755fedc347dc0cb3d96b6de75"
+    },
+    {
+      "path": "src/assets/audio/README.md",
+      "sha256": "5ba68ede2e6f1b3923d5d99621e9358e0907d980dea5a4ad49132d05adb89ee8"
+    },
+    {
+      "path": "src/assets/audio/ai-generation-01.wav",
+      "sha256": "1d4aa6be0989d2fed83b769d5611e447169508e24da8ad5419f005c02d466191"
+    },
+    {
+      "path": "src/assets/audio/ai-generation-02.wav",
+      "sha256": "f530353faaf7f058a35d7837186472009d2c69304a573b88302fdcc4cfc9406a"
+    },
+    {
+      "path": "src/assets/audio/ai-generation-03.wav",
+      "sha256": "6347f2b919ea5602a6b30a930946ff70339f7a429dd491cf9877b8f06f303c61"
+    },
+    {
+      "path": "src/assets/audio/ai-generation-04.wav",
+      "sha256": "3c6c5cb7c77078d13fa895e3e81d8fe0a6fe279584e888df83c4363084a4a381"
+    },
+    {
+      "path": "src/assets/audio/ai-generation-05.wav",
+      "sha256": "6e7ee707d85cee9d0f50212e77a75282e21a6be589934be044967cad864c7876"
+    },
+    {
+      "path": "src/assets/audio/human-typing.mp3",
+      "sha256": "bd8a8efff86339b89e0dd456d78062f5b7a8b11b7e85dead1af40a723c702d92"
+    },
+    {
+      "path": "src/assets/fonts/LICENSE.charter.txt",
+      "sha256": "e5d670f25758fd0eb54a50e794dedc0b36f30d08d0b81411372f2f0fda294e34"
+    },
+    {
+      "path": "src/assets/fonts/PROVENANCE.anthropic.txt",
+      "sha256": "728f05c8e9e0253ecb976368792905b0f7a34235132f6450c6ea2669a4cb947c"
+    },
+    {
+      "path": "src/assets/fonts/README.md",
+      "sha256": "45c0ceb4fbd049395972a8f546b2c15ebabddfb5db4c641eb60774673e1ab3fc"
+    },
+    {
+      "path": "src/assets/fonts/anthropic-serif-italic.woff2",
+      "sha256": "7f61e32b5941ad6e5699aeb3e03390a43e5f04f3bff6a5853bed08c802596f83"
+    },
+    {
+      "path": "src/assets/fonts/anthropic-serif-roman.woff2",
+      "sha256": "e96fe97bb7ba2190a9a227d27380e0c79894408bfc6acea5a511774d93a16f69"
+    },
+    {
+      "path": "src/assets/fonts/charter-regular.woff2",
+      "sha256": "8e7630ba96aeed2974bfd9ab9bde2d3159e4cba98dfdb5757584e3542f1ac962"
+    },
+    {
+      "path": "src/assets/fonts/noto-serif-OFL.txt",
+      "sha256": "64538aaa923b7e75559725ecf64eff7b18f623857b8e6d31a7347743ab27e907"
+    },
+    {
+      "path": "src/assets/fonts/noto-serif-sc-prose.woff2",
+      "sha256": "5fb56041c1318430c4987a88312c3148518d4b38ef68843d31c6ddcb0c67653f"
+    },
+    {
+      "path": "src/assets/fonts/noto-serif-sc-titles.woff2",
+      "sha256": "78a2266a35a672e9ef9e1f9ce7d66f3a18298e365dc902fc6a9edb71815653bf"
+    },
+    {
+      "path": "src/assets/fonts/source-serif-4-latin.woff2",
+      "sha256": "f2ea9c12d2fe9bd3a9589b02ad2c0909da88f30938c91adc838c4f4098f9f9e0"
+    },
+    {
+      "path": "src/assets/fonts/source-serif-OFL.txt",
+      "sha256": "12efb6321787a2b8e4a30d2b6077efede0167e6f0282f9fb9717b7aff4f1be0c"
+    },
+    {
+      "path": "src/audio/typingAudio.test.ts",
+      "sha256": "8722d7caf0d5d75dc5d9a19cf80f67e859dd4009ef3b494d9e4b1426d4844e69"
+    },
+    {
+      "path": "src/audio/typingAudio.ts",
+      "sha256": "ccf9a2f27cb610a46856447827a46541139400f943cf7965e25f58ea24a68d86"
+    },
+    {
+      "path": "src/audio/typingAudioSources.ts",
+      "sha256": "764554312e589aa164cafc403131be2da3359ad0e9edce9ec520901627ffafe3"
+    },
+    {
+      "path": "src/audio/useTypingAudio.ts",
+      "sha256": "6f2ccae2faf1efb0e2e37d6c08f2841a629cc74ff7d1a89e924fac47ee694075"
+    },
+    {
+      "path": "src/components/AsterMark.tsx",
+      "sha256": "363c71ccab9888df620fcba9d924f7c9463e0ff57486018a87efb541146f195d"
+    },
+    {
+      "path": "src/components/CloseoutFrame.tsx",
+      "sha256": "114fc127b8fbd4d9e831466e2ac4e7c0ba774e58843949379528d4d646effaeb"
+    },
+    {
+      "path": "src/components/ConversationView.test.tsx",
+      "sha256": "c1da7f7243ad091273bddda1bc74ba78e487648d6d46045034cf69d806ab932d"
+    },
+    {
+      "path": "src/components/ConversationView.tsx",
+      "sha256": "91a2975af0bc39692c667593dc4a631f0cb1592d2d7dd334acf6376a859ba7a8"
+    },
+    {
+      "path": "src/components/EndingCinema.tsx",
+      "sha256": "9895396ecec7e6a02ce5ad4f214dc0abaa68585a89d2db785480083d3dbd502a"
+    },
+    {
+      "path": "src/components/EndingCollection.tsx",
+      "sha256": "51925177a8668bbf2c24602be0f3fcbfa857cebadf2a6bd8fff729f2a81cdd14"
+    },
+    {
+      "path": "src/components/EndingScreen.test.tsx",
+      "sha256": "850b8df4b692d7e79d46de3d3bc86a27f6ebe18f92871557703f4c3edbaa0ec8"
+    },
+    {
+      "path": "src/components/EndingScreen.tsx",
+      "sha256": "44baaec3430dbb24329d3a933f062e07ca0a02560cc1f7685e0d616d22176991"
+    },
+    {
+      "path": "src/components/EndingVisual.tsx",
+      "sha256": "2e1eefd43b6e021b7dfda6f9bb8df2c19817e593f98c5bf1d51c32d2d9a16f61"
+    },
+    {
+      "path": "src/components/EvaluationScreen.tsx",
+      "sha256": "7bb0f80f326eed23df4b89a4fd5dd774fed3b7dbf11fd4ce6c50a07b6859a42c"
+    },
+    {
+      "path": "src/components/LongInputPreviewCard.tsx",
+      "sha256": "727bfe6474fa8f1a6983a1dcdc61f82e6e498131020036a5fa72f6b7eea5da39"
+    },
+    {
+      "path": "src/components/LongformPreviewCard.test.tsx",
+      "sha256": "fe0c42ad93d4e1ea0bef300ec5df7508e7f18c5280d01ce6acb345b913dce25f"
+    },
+    {
+      "path": "src/components/LongformPreviewCard.tsx",
+      "sha256": "4f8370373248df21f8b447ceb2017575e448b130e016bbe4e08ebae45ffd54fc"
+    },
+    {
+      "path": "src/components/NonMainlineControls.test.tsx",
+      "sha256": "57dcbd70c094ba4aa33453673c1176b2662f41c2b0227f1c10b17f3f97cb2d4d"
+    },
+    {
+      "path": "src/components/NonMainlineControls.tsx",
+      "sha256": "576ed72ab630949ac11be448a1922e2162d279d33fd156cbca0e3b4a5ce174c2"
+    },
+    {
+      "path": "src/components/NonMainlineEvaluationScreen.test.tsx",
+      "sha256": "25e38da07cb7939dfab0040f678a7823b1f8a8ae5528b4afa0f571d7088b98fd"
+    },
+    {
+      "path": "src/components/NonMainlineEvaluationScreen.tsx",
+      "sha256": "06f633eea8b81c8f0521b3596d7095903681a5b6b89cf9a5daa4e8fa415e6602"
+    },
+    {
+      "path": "src/components/ProgressiveMessage.test.tsx",
+      "sha256": "b530f17750aadab3efde5030304d071a106100b76c2fba7109e6678dea8a7bbc"
+    },
+    {
+      "path": "src/components/ProgressiveMessage.tsx",
+      "sha256": "4803f859e60559cb0a65749b7dd99ea5d0e84c5ce77e609b7647585a53db4cc6"
+    },
+    {
+      "path": "src/components/SaveRecovery.tsx",
+      "sha256": "e75a87043104d011f6ba2a81184d9ee2c5860513277aab32e0977769839788ad"
+    },
+    {
+      "path": "src/components/UserAvatar.tsx",
+      "sha256": "0b51fe8b7a41600352355bb94aba91bfe56d8ee66a069199fa516dfc0e1d0cfd"
+    },
+    {
+      "path": "src/components/WorldSidebar.test.tsx",
+      "sha256": "d5cfd0a10ac7f2ab5f7b3063d7ce933f300a2b4e881ea2e452716670d0cf7756"
+    },
+    {
+      "path": "src/components/WorldSidebar.tsx",
+      "sha256": "dfd3a01dfd69f1fed95bca383f7c8e368c1d4ec9d4fc85fbbf72dc358bd832e8"
+    },
+    {
+      "path": "src/content/activeRun.ts",
+      "sha256": "6cfb12cd93fc4f010ac53c51f4da624e68b25e2b70945e4d8ce513b66d7d8465"
+    },
+    {
+      "path": "src/content/assetCensus.test.ts",
+      "sha256": "8f361a8e948501d343e16843e27800eb779c8f312f7bd4f747b6fda4aee6fb3a"
+    },
+    {
+      "path": "src/content/contentDiversity.test.ts",
+      "sha256": "016cd32ed32df19525c463da2f8ecf0663ce27230b65710c07e894552819a217"
+    },
+    {
+      "path": "src/content/crossRunAudit.test.ts",
+      "sha256": "a572038b04d89589101ee8dd7afd497362a32d8630f907b3cf246c29e422f69a"
+    },
+    {
+      "path": "src/content/editorialCandidateSources.ts",
+      "sha256": "dafe33307de62e0063d03ed0509980cff8a0a8e186e25bd7312cfeac463ff782"
+    },
+    {
+      "path": "src/content/editorialMultimodalParsing.test.ts",
+      "sha256": "f09d56512a50eda27bed690108293428991ab390f4e31ac12a04158f88ccb9ea"
+    },
+    {
+      "path": "src/content/editorialReviewBundle.test.ts",
+      "sha256": "38a23f6da008ed474dd9f41bb5efd6054992531845b86bf3d9098064150bbba3"
+    },
+    {
+      "path": "src/content/fullTextAudit.test.ts",
+      "sha256": "50dadb310c766be8d15a94cfabfb34b4d16a52d2d3dc830eef66f0fb64da5a0d"
+    },
+    {
+      "path": "src/content/longformCausality.ts",
+      "sha256": "8ddb2852079dd4a262f99d9da11388ef987bedc01b9d6a3a1b42d88f5d863836"
+    },
+    {
+      "path": "src/content/longformOutput01.test.ts",
+      "sha256": "e36cb2a5946872ae17adb204e14a7fd3d65234b179b3dd88bf3018b4909deb27"
+    },
+    {
+      "path": "src/content/longformOutput01.ts",
+      "sha256": "745b979dae86181e96fa7772f7f7efbf6a9a64d7c31637410d7cd3a5ad64203a"
+    },
+    {
+      "path": "src/content/longformPromoted.ts",
+      "sha256": "76af69b4e8961e4074f190ff972b67f4a6d07a9f98840fbedd7a2b4ad984ca22"
+    },
+    {
+      "path": "src/content/mainline2/authoredLibrary.generated.ts",
+      "sha256": "8c4bc6fc2194fedd219cc0e9102a8a48ae9406a704b0e32bc60d2b005c3de549"
+    },
+    {
+      "path": "src/content/mainline2/choiceIdentity.registry.json",
+      "sha256": "fc305afea7b87afe9accf8132e831a3bd5ee791e1a5842178dfe4c0f8aa3c3fc"
+    },
+    {
+      "path": "src/content/mainline2/contactPolicy.registry.json",
+      "sha256": "e7a3ffcac8f035c089921ea26adaf03e9a00ab2087c92740a1b86fdd23ccf414"
+    },
+    {
+      "path": "src/content/mainline2/contactPolicy.test.ts",
+      "sha256": "efb371e2b8021370bf9f2440aec197b5f1243d15bc7e5f22f3b167b5fa90a48a"
+    },
+    {
+      "path": "src/content/mainline2/contactPolicy.ts",
+      "sha256": "37bd895d6be41e15c42699d7739547a5e3606da46f4b291772b287da939db227"
+    },
+    {
+      "path": "src/content/mainline2/decisionBindings.registry.json",
+      "sha256": "0d33e0decee3b264f71d549fa607237e455e971f9d177467ae031f0831a33121"
+    },
+    {
+      "path": "src/content/mainline2/decisionBindings.ts",
+      "sha256": "8c4e8a0f603ee5be9322d6dbcf2bace7fd9c1d7822325adebb4f2667748259d8"
+    },
+    {
+      "path": "src/content/mainline2/editorialClassification.registry.json",
+      "sha256": "681d62f49288d7fe05d476e214fcb05aa6ffc4291130b77ff904e663bff0c73e"
+    },
+    {
+      "path": "src/content/mainline2/editorialClassification.test.ts",
+      "sha256": "c317820d41e0970c93b80db1929d8d56fab0c1db5da58122bb4174b16a7de28e"
+    },
+    {
+      "path": "src/content/mainline2/endingArt.ts",
+      "sha256": "6c86de5b89b8ebb27314ec7157174a312b5df536513f03babb70fd933d2bc7cc"
+    },
+    {
+      "path": "src/content/mainline2/endingBridges.ts",
+      "sha256": "83dd8dd8efd276149830938e2dfaf0cdf979a3fb2a056802728aadc79125c88b"
+    },
+    {
+      "path": "src/content/mainline2/endingCinema.ts",
+      "sha256": "af686ee0bd466c8c9e7d11aa63c88c93a4b2f3fca4f3fdcdc71544f427683c29"
+    },
+    {
+      "path": "src/content/mainline2/endingDirection.ts",
+      "sha256": "a6906910de9d9886d39bb4943613e0304d3fb9721f5f37e24bc7b24bb67aa0df"
+    },
+    {
+      "path": "src/content/mainline2/endingPlayerFacingCopy.registry.generated.json",
+      "sha256": "49503b9e170056fe15ada246e49c24237ccdd74ca305af1acc999568ccf0c054"
+    },
+    {
+      "path": "src/content/mainline2/endingPlayerFacingCopy.test.ts",
+      "sha256": "b0aaebfaee78ebfee51127c374fc8e95da233fdc42cb41aeef1491fbfe61d6d3"
+    },
+    {
+      "path": "src/content/mainline2/endingPlayerFacingCopy.ts",
+      "sha256": "5b396ae8140a7d281f124781b47903ffed5bd1a6c8a5adc2abcede36400cfbaa"
+    },
+    {
+      "path": "src/content/mainline2/endings.ts",
+      "sha256": "9cec3694a667c3b158048a13af8ccd00b0548718c9e265734fd68b97fb8efd0b"
+    },
+    {
+      "path": "src/content/mainline2/futureProposalGenerator.ts",
+      "sha256": "cc41d8db0c5cecfd21a562befa534584303c9942a5e9e602bb7cf5a99c14a7d2"
+    },
+    {
+      "path": "src/content/mainline2/intendedRoleBindings.registry.json",
+      "sha256": "884bcddeb2af3ad827f37204472737249cba4b9298d403d03cfd92f96a63bb82"
+    },
+    {
+      "path": "src/content/mainline2/nextDialogue.ts",
+      "sha256": "893863924540f568ff68c839b59b89805d52cc45f30bc093b7d22e242cbf5a0c"
+    },
+    {
+      "path": "src/content/mainline2/nextNarrative.ts",
+      "sha256": "245f2382ec7613d338275b1d54c4ea901013d2eca71f3fff42db2e076a715816"
+    },
+    {
+      "path": "src/content/mainline2/playerFacingCopy.registry.generated.json",
+      "sha256": "8d37b39002cd00d65baeccd5820bd02ad6b9dcd9a6ff82f61bf1b15d0bde634b"
+    },
+    {
+      "path": "src/content/mainline2/playerFacingCopy.ts",
+      "sha256": "5dee2a33ddb43bbdcfc316be4f3341faecb7dc0fd2ede2bbf0e6b89ac77ff41f"
+    },
+    {
+      "path": "src/content/mainline2/playerFacingNameConsistency.test.ts",
+      "sha256": "89b37473292822e46dca394dda0da9bd3111cea5f09f0d95d8b0d02207912c33"
+    },
+    {
+      "path": "src/content/mainline2/proposalLabelCoverage.test.ts",
+      "sha256": "6a615dc14f45151d585eea0d054e60b3290958db129095fb8737f2fd9c7a4937"
+    },
+    {
+      "path": "src/content/mainline2/proposals.ts",
+      "sha256": "e2b785eb84bd4c814a5a4abfb70e61fec1f8f9233c0e9786fe15362c5ff1c7d8"
+    },
+    {
+      "path": "src/content/mainline2/registry.ts",
+      "sha256": "67a35e3b6048b1080ea08c2bf94a49c5da87e60ffcdc105bb54d777b43e95c5f"
+    },
+    {
+      "path": "src/content/mainline2/runtimeAssetClassification.registry.json",
+      "sha256": "aa08702c3797a6ef64d2593a0049ee38ddf928ce9be172aeaa0bc2639a90c736"
+    },
+    {
+      "path": "src/content/mainline2/runtimeAssetClassification.test.ts",
+      "sha256": "984d6d9b308ee13b441d19ab4b79b85879438736aabedde2cb44a2bca8c04fac"
+    },
+    {
+      "path": "src/content/mainline2/runtimeAssetClassification.ts",
+      "sha256": "710340b93755c3478c068f2bf95f79f53b58aec597f26e2d05b67fc93789a8f1"
+    },
+    {
+      "path": "src/content/mainline2/scheduler.test.ts",
+      "sha256": "1f72153196d03cc9db8136ee68a3c868937e04b9e31adcbc7ee8dec5a0701abc"
+    },
+    {
+      "path": "src/content/mainline2/scheduler.ts",
+      "sha256": "470bb400b37797214cdd76d9e72fec2c0022468dfcc6032985383b1d760109e9"
+    },
+    {
+      "path": "src/content/mainline2/schedulerMetadata.ts",
+      "sha256": "d6bf6d249dd41ffed661794c00b47d64853ee4dc0fa1c5eddce6d39cbbafb1e1"
+    },
+    {
+      "path": "src/content/mainline2/stateRegistry.ts",
+      "sha256": "0201ef67574801b7a7cbc5092eb3ad0f9ba1246e1b7180064df9a7553348efef"
+    },
+    {
+      "path": "src/content/mainline2/storyPlan.registry.json",
+      "sha256": "985740669b554f36b21284e467a77d88b35aaf49ae88119198078fec71a0d45d"
+    },
+    {
+      "path": "src/content/mainline2/storyPlan.test.ts",
+      "sha256": "1fd348515578783b93e0f0c4b046ce83ca6f91d64eb150e3a0394351a78c415a"
+    },
+    {
+      "path": "src/content/mainline2/storyPlan.ts",
+      "sha256": "d874ea98199d7de9b49e4d576facff0995684291452d459348ff9b3a55fe5ee6"
+    },
+    {
+      "path": "src/content/narrativeLibrary.test.ts",
+      "sha256": "b6aa785a80184c893b9ca86ab958fbdae2e2c84cf4fc262b482f1b9300ca310e"
+    },
+    {
+      "path": "src/content/narrativeLibrary.ts",
+      "sha256": "448d2dd43d6710bfb5e0ae4e2a6a3367b4929e473515237ed40e09f7f593d545"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion02.test.ts",
+      "sha256": "e1304a75318e92282cc25eec2f3cb9c983363e55414f7b11b7e3d52f1d76af90"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion02.ts",
+      "sha256": "0beb121c2db0eab08ef05d2f1ed33fd359e1d13e483a479d28042cc4f0611e8f"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion03.test.ts",
+      "sha256": "704094e9df2dfd145529a06c8a6dea31c2780a5c0913e52a5bf889040fcf0c49"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion03.ts",
+      "sha256": "4da4da677b9bad2866635e776925f43d69419c37dbc04d808c93a065c3cc3e5b"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion04.test.ts",
+      "sha256": "20d460df657b2d52e1c2f384c6328f91e74f441f30edbfd37bc4dd762d0e9f1b"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion04.ts",
+      "sha256": "26b2529dcd81b0b6372b3f0152875eaf2c7e0678416c0f95e23f554b741dd8bf"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion05.test.ts",
+      "sha256": "00f4adfb21fada7dcedf0432176fdf59c93a67f2e690fee9e67c87387cbb309e"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion05.ts",
+      "sha256": "d7dbee3140e156fd00bd490bca5c12972d25e6d180d0bfe74af4a3cc72e1135a"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion06.test.ts",
+      "sha256": "196b6edc8db286bc2668c3e6ec9cd5538ec16c45232c518fe6f91c8e4e9fea01"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion06.ts",
+      "sha256": "253ddd67142c2a7d78d4fb56e4cffe49d264c762daa5dfd3d9dfd9cd6275a177"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion07.test.ts",
+      "sha256": "fcf406abf09f1b4e3070e26413944a2bfc2de75fd5311998f2b5b0704f9791a2"
+    },
+    {
+      "path": "src/content/nonMainlineExpansion07.ts",
+      "sha256": "f6410fe3e1d85a7c6bc65da333d5cb9804c1f55c8c2b91d4f5c1a9bbe1750bf3"
+    },
+    {
+      "path": "src/content/nonMainlineSelector.test.ts",
+      "sha256": "bac7d9125a99caafaa7ac9c542ed423716a016aa0da3ffd72418f23f2e3243e7"
+    },
+    {
+      "path": "src/content/nonMainlineSelector.ts",
+      "sha256": "fe186fe69087477bab58cc1b7bba2ef52498a02fa39a15d1e840cd7646b1ccfd"
+    },
+    {
+      "path": "src/content/ordinaryContentAudit.test.ts",
+      "sha256": "fc3013423d75949f414e61cea3f50f77485efbb7066a266938e0b800ac889cef"
+    },
+    {
+      "path": "src/content/ordinaryContentAudit.ts",
+      "sha256": "65abd2808f2594c3892486bbaf7b94c06b35c8156489fb298f6992604eeb0da4"
+    },
+    {
+      "path": "src/content/ordinaryContentCuration.test.ts",
+      "sha256": "d4ca9b37349fb0a12a52217b4c088b8d10830ea7a8f887dd699530f4d300c670"
+    },
+    {
+      "path": "src/content/ordinaryContentSource.ts",
+      "sha256": "8dc11e6a35f173d9c8a47c5f2a904f40c74876a1513a6fb2a830069a0594c79e"
+    },
+    {
+      "path": "src/content/realUsagePatch01.test.ts",
+      "sha256": "d38cc0c78db32c01566a7e582919e0308c10586beb3d04dc57a2da402bee6148"
+    },
+    {
+      "path": "src/content/realUsagePatch01.ts",
+      "sha256": "0dc3342fd4deba0918710e88e6ea7d1d9ee387219b8a4fa7f43575ff1df7074f"
+    },
+    {
+      "path": "src/content/runManifest.test.ts",
+      "sha256": "59de7ab7a092fcc83a3f3580817b9e06f65fe6b295bd71dbfb030734f66df07f"
+    },
+    {
+      "path": "src/content/runManifest.ts",
+      "sha256": "21b251327e3a317fdb70e8d77e42fc808314a4e360e5a1ee68d9a799c83ddec3"
+    },
+    {
+      "path": "src/content/runtimeRealityPass.test.ts",
+      "sha256": "6de3a9e33dc3b16396d9594c8e9aed8663ac43d47130d72a321ffc0c20be28b0"
+    },
+    {
+      "path": "src/content/runtimeRealityPass.ts",
+      "sha256": "947401a828b5e020f54678148b11aea62ae5ce9a77f3677171f6914db85fb053"
+    },
+    {
+      "path": "src/content/selectedExpansion01.test.ts",
+      "sha256": "7afb83e4efc6ec4324fddd6a011b02e12fe5b0e2b2dff93ed1cd90ba0577ea47"
+    },
+    {
+      "path": "src/content/selectedExpansion01.ts",
+      "sha256": "333e8058fe1b289cde7ef47310e322f45d8bbd64c5134b0dced2492e4bf80edf"
+    },
+    {
+      "path": "src/content/verticalSlice.ts",
+      "sha256": "5f0701062212a5e0df74e697f5abea36a36cc8f198970f7f6737001b9376141e"
+    },
+    {
+      "path": "src/game/auditRegression.test.ts",
+      "sha256": "5b2460fb5a3cbdf3cc08ba01b0e7fef03118237d675ac9d8f82f7706672cb86c"
+    },
+    {
+      "path": "src/game/behaviorEvaluation.test.ts",
+      "sha256": "ca9aa1e8e617318071529a9e154243ee0174dea3d736e76004496c11145099ac"
+    },
+    {
+      "path": "src/game/behaviorEvaluation.ts",
+      "sha256": "2875836de672d9044666ec6d6c93effcc3ab5631c10664e92289783fdc4c54de"
+    },
+    {
+      "path": "src/game/checkpoint.test.ts",
+      "sha256": "e32d465b41db97dabb483f76e3491a9e00cce01756f44628c021bd340cd4f11c"
+    },
+    {
+      "path": "src/game/checkpoint.ts",
+      "sha256": "d5b25d2b40123cbbeffdb368f989fcb98ee2db070ebb6eeb05e5bd45a5fd98b9"
+    },
+    {
+      "path": "src/game/conversationFlow.test.ts",
+      "sha256": "ee0e303a1823cdb748df3cf16426d74dcb1193420d1aab96f66d09af61d908b1"
+    },
+    {
+      "path": "src/game/conversationFlow.ts",
+      "sha256": "60a6937a8c28e877b3b1e0069fc952b06841def7e81135df7156546615503ad0"
+    },
+    {
+      "path": "src/game/endingArchive.ts",
+      "sha256": "a03b09690df81d3cae65f6b055d5bc0d46568a1d22d733a597f0cafa1b5eb0a2"
+    },
+    {
+      "path": "src/game/endingBasin.test.ts",
+      "sha256": "3ad4b8ae0f49e9458119215005480892612e362554d9b52b83e30d9632589b09"
+    },
+    {
+      "path": "src/game/endingPresentation.test.tsx",
+      "sha256": "c84b9446d1bbe7989d078d3f71b71358aa5ebd5361b760a9391e9e6deb23deb7"
+    },
+    {
+      "path": "src/game/endingReachability.test.ts",
+      "sha256": "e4bc401ddb27ae04879eb1a64124cbf52358315e8ba38b305c3f148032027785"
+    },
+    {
+      "path": "src/game/engine.longform.test.ts",
+      "sha256": "c7e763424a19c2ad1172ae9b6082cc650830b1bd6eb301e3c07fb798449fea02"
+    },
+    {
+      "path": "src/game/engine.test.ts",
+      "sha256": "58721bbe10ab6a17b8dd0609659042271e7a0ef928716e6ca876e51e1928896f"
+    },
+    {
+      "path": "src/game/engine.ts",
+      "sha256": "a714b4dc455c1f81e1c2003e775f4f3f2ef204bf9a213f61a7a6779c25d4fd5e"
+    },
+    {
+      "path": "src/game/fixtures/act-v-217-choice-trace.json",
+      "sha256": "dadcdf2cb75a502a10a7f91bb70c157ad85b906d081530fbe869120246fb1198"
+    },
+    {
+      "path": "src/game/fixtures/adversarial-m16-seed-45.json",
+      "sha256": "9d45c05cddf08f0ba9ebba2aad58abd13620e7c7f2575114b1a54001befceca6"
+    },
+    {
+      "path": "src/game/fixtures/pre-next-proposal-exhaustion.snap.txt",
+      "sha256": "f2480f033ea6c8231e315a2302cb70b99ad158763a7ff1b92f7335b1d579b63e"
+    },
+    {
+      "path": "src/game/historyValidation.test.ts",
+      "sha256": "1d7512c0d738f6ce1167e85b50427b874abaaa32551751c94735d1819142c4a5"
+    },
+    {
+      "path": "src/game/historyValidation.ts",
+      "sha256": "9e6f4aa78a88ee1bcac9d08d5306dc5c9c89569187df4a75b4972052136c0ee2"
+    },
+    {
+      "path": "src/game/languagePacing.test.ts",
+      "sha256": "0c05efce1e5b1a001497ac2ca319fceaf5e2fbdf6f55ad7cb3293bac1f79293d"
+    },
+    {
+      "path": "src/game/languagePacing.ts",
+      "sha256": "ffb7cdfdb7f250466ea688d347b465bf8352890a2fdfd9967179c3da0a618ef6"
+    },
+    {
+      "path": "src/game/mainline2.adversarial.test.ts",
+      "sha256": "1f391b75c25e08f1eeca3172ff0e7a49177352397cf9625350e33059867db538"
+    },
+    {
+      "path": "src/game/mainline2.causalProofAudit.ts",
+      "sha256": "9de0cfdd4db82fd39562d1b1e31261a74555647ccb96eb74b97cec8d8c6dea60"
+    },
+    {
+      "path": "src/game/mainline2.causalityFix.test.ts",
+      "sha256": "8d2ea6f09f60fa57aaaeef463ac5f271780cd8199dcfb73d4cfb4dd60a920b48"
+    },
+    {
+      "path": "src/game/mainline2.clarification.test.ts",
+      "sha256": "76be6ae04a40f7c8395a8252755a719b3285792f5da323d308a8e05f47904bb8"
+    },
+    {
+      "path": "src/game/mainline2.classificationGuard.test.ts",
+      "sha256": "dff1e95d1a174051f6015d371d99e39b5a978998ad79c0cc2ebbb4d67ea4fff0"
+    },
+    {
+      "path": "src/game/mainline2.closeout.test.ts",
+      "sha256": "3fb08cd6426fd18621e54bdc796d0e0d8defe8ecb74648d0e26082eabe215719"
+    },
+    {
+      "path": "src/game/mainline2.closeoutFixtures.ts",
+      "sha256": "9b4c54662fa310c75230d39e8c59e4ac71f046a0eb0410706e26420643310296"
+    },
+    {
+      "path": "src/game/mainline2.determinism.test.ts",
+      "sha256": "9c85be44df63a0eaeccd781b14d4d641839f364151922f830125b16d622ef402"
+    },
+    {
+      "path": "src/game/mainline2.editorialConsequences.test.ts",
+      "sha256": "9fd4bbce215f13e96d0746a1316b2275a1885ff947a0442acf9c7660c7649400"
+    },
+    {
+      "path": "src/game/mainline2.endingLocalization.test.ts",
+      "sha256": "336472817b8cd3e593b2d6c0dd4fdbf6520b109f992952479ce9fcc5cf5748bc"
+    },
+    {
+      "path": "src/game/mainline2.formalContent.test.ts",
+      "sha256": "932a487c7fe1eb93799e27239cdde4edf11982c149d2b5608b68cb99fd19b88c"
+    },
+    {
+      "path": "src/game/mainline2.historyProvenance.test.ts",
+      "sha256": "679d0be45541bea25c1cb8fbefb8cb2920144c00f59880ed6d4c71705b990c46"
+    },
+    {
+      "path": "src/game/mainline2.integration.test.ts",
+      "sha256": "480120f9494483b064232e6e0a96a91760ce70f38d59ce85fbadf074fdecb32b"
+    },
+    {
+      "path": "src/game/mainline2.legacyCalendar.test.ts",
+      "sha256": "ffd74a64e5663256b2f3d81eccaa51172de5bfdf23bb5148ff6e8b100388c112"
+    },
+    {
+      "path": "src/game/mainline2.legalHistoryCoverage.test.ts",
+      "sha256": "6b3c97363a1f0e04849cf73d8ee1a6a7b16b9b38a500ee3bf9e45843299e597a"
+    },
+    {
+      "path": "src/game/mainline2.pacingAudit.test.ts",
+      "sha256": "7eacd24f006c79547c2fa6a1c08596383907c09dfc56c2a72d9bf46db835f7c2"
+    },
+    {
+      "path": "src/game/mainline2.productionRepair.test.tsx",
+      "sha256": "1d5ba5598842a44dd6ac6d291efd84481f05903674eb1b3d1b458b77e0c3c8eb"
+    },
+    {
+      "path": "src/game/mainline2.proposalExhaustion.test.ts",
+      "sha256": "1fbdd755dd6640145c8f521f872825ae6779e32bcaf4c413686c1b6ea2b5a268"
+    },
+    {
+      "path": "src/game/mainline2.rejectAll.test.ts",
+      "sha256": "40ed053d88dc0e1731990415464ff105fa10aef03c9f5466074f9f52accab1b2"
+    },
+    {
+      "path": "src/game/mainline2.storyMapTrace.test.ts",
+      "sha256": "04ef31b073ba2b0b5ef286349ce8aeeb09a67d2949ad018967387db45c3f98ac"
+    },
+    {
+      "path": "src/game/mainline2RouteCatalog.ts",
+      "sha256": "891faf2dea560c3bb5521aa1fdcec68604859444508c4c892ecc7d018d77c823"
+    },
+    {
+      "path": "src/game/mainlineNext.test.ts",
+      "sha256": "390b057470871d259d312881f1704edd7b921cdfcd3fefe805aab2b47dee3f76"
+    },
+    {
+      "path": "src/game/mainlineRound2.test.ts",
+      "sha256": "067345c1e6af195497aaacd81999f094c49a77c55533e084fc1a3441cffdba38"
+    },
+    {
+      "path": "src/game/narrativeSchema.test.ts",
+      "sha256": "1e3afd0621625855fd303f0c208e600c1597cb98a68e9a6671b1b2a3c8d3c50b"
+    },
+    {
+      "path": "src/game/narrativeSchema.ts",
+      "sha256": "a2be8175e4fb44a360e5aac804f0de6fa31bea97df1522623860a4dd4a47e844"
+    },
+    {
+      "path": "src/game/nonMainlineEvaluation.test.ts",
+      "sha256": "ec84368f52301f53ef23334557faced1da38cb51b916486fdd7bf39753f7a26e"
+    },
+    {
+      "path": "src/game/nonMainlineEvaluation.ts",
+      "sha256": "a9a7f60795edeecb8b6c593a3296d82b7f886e75b27d693edbe86f269ed9beea"
+    },
+    {
+      "path": "src/game/nonMainlineSession.test.ts",
+      "sha256": "aabe5448fe77da05503486917b8e3a956e8b5d64f27123a3b3d1397b1773a706"
+    },
+    {
+      "path": "src/game/nonMainlineSession.ts",
+      "sha256": "2c9cda2992980c26481bd71330529434525c802ebbada2fcc0d2798c214d627c"
+    },
+    {
+      "path": "src/game/nonMainlineStorage.test.ts",
+      "sha256": "d65bb4fb1ea886985767a04722542f720ce19e3a5c44f3055d49415e6e35b5cb"
+    },
+    {
+      "path": "src/game/nonMainlineStorage.ts",
+      "sha256": "44e13f5aff42859ac4f638c3165d6ab4b63bc4b460abca4d1c81c1d9e19f05e3"
+    },
+    {
+      "path": "src/game/pacingAudit.test.ts",
+      "sha256": "ebeb0cd11c886c17d51c4c2ae15ee103bef634d0342180de80ef250f683b5939"
+    },
+    {
+      "path": "src/game/pacingAudit.ts",
+      "sha256": "0d88d22c24cbce68bf0b1c50a7b6bca98e50b0f19f1ef77bb40835d211bb6126"
+    },
+    {
+      "path": "src/game/participantIdentity.ts",
+      "sha256": "0bff8d06fc2c2b0590fb7fb8489031e84b49a8ebdbe72784d7a329d4a9d48cbd"
+    },
+    {
+      "path": "src/game/playerIdentity.test.ts",
+      "sha256": "d8b620274f534ade5e69feb5885312802319dd578eb150fb704b5398fdc584fd"
+    },
+    {
+      "path": "src/game/playerIdentity.ts",
+      "sha256": "567f6f13cabda92912e77a98e29479720d3dffa38f9d79498194a0c9c0dda8ca"
+    },
+    {
+      "path": "src/game/semanticArcs.test.ts",
+      "sha256": "259224257c91442ac308f8e6f7b9b8fe028068c94bd0ab8c85b9c4de00838950"
+    },
+    {
+      "path": "src/game/semanticArcs.ts",
+      "sha256": "edb11c563a1858307dc37d5d702e65e6bb155c0efba2cd5a0a51cb1d5893ab89"
+    },
+    {
+      "path": "src/game/storage.test.ts",
+      "sha256": "0273873bb79dc55e0f377c5a116407f2286c22ba013339c1e13ff5a2ecc0eafd"
+    },
+    {
+      "path": "src/game/storage.ts",
+      "sha256": "4b120d94b2ecb02e6a659625d2a61eef81fc955da9ee2a956f999c30ea238f44"
+    },
+    {
+      "path": "src/game/terminalCausality.test.ts",
+      "sha256": "41633db9fadc64f994535b1648c4a857475ea93fab5110efcb8cf6e2d19db10a"
+    },
+    {
+      "path": "src/game/timing.test.ts",
+      "sha256": "a65678d8e17e24ccb2b69b50173724baa88ada43b06cf2ba82c3750cfdd22de6"
+    },
+    {
+      "path": "src/game/timing.ts",
+      "sha256": "45fb5eca3e4459d646de67a1920b1d79e486cf88fb5d3cd2d14d3193199be408"
+    },
+    {
+      "path": "src/game/types.ts",
+      "sha256": "068af006d5af49511e00e210c0665d687db2478213cc649f1e8912021f4a9e9b"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "272b565100c36cc3e43b8bd835745d5bfc737d677d21740afd249279aece6ddc"
+    },
+    {
+      "path": "tools/ending-art-briefs.mjs",
+      "sha256": "77c14d0b7b7d6c66f6522bd21c74e12e3a531bfdda42c8d26305ec782fcef4b2"
+    },
+    {
+      "path": "tools/extract-mainline2.mjs",
+      "sha256": "8da7ce3084cd45f884cce6303c02c2c81846c726a44fa4b457fd7a5497d76587"
+    },
+    {
+      "path": "tools/generate-ending-prints.mjs",
+      "sha256": "7fd4ece694bb56f2f7c76e3cfb56c549b9698cdbc7969bddb972c0a156eb7796"
+    },
+    {
+      "path": "tools/generate-mainline2-asset-audit.mjs",
+      "sha256": "f0220dd9280afe5e0ddf91e9f8ad4c22bb6be5e180f8dffca9b01d256d628d03"
+    },
+    {
+      "path": "tools/generate-mainline2-route-traces.ts",
+      "sha256": "3448326773168523ac6ad959d9893e12d7553b08010a17e30ed0d9ac8a18ae02"
+    },
+    {
+      "path": "tools/generate-mainline2-story-map.mjs",
+      "sha256": "3ec267ddef36e4fa71152c9dc9c125d5d859d3ca2b11be8a6e4b88c5d938b2e1"
+    },
+    {
+      "path": "tools/generate-ordinary-content-review.mjs",
+      "sha256": "e72961bf415f000f771daa8889291001c280b6f19efa90ab213efe983d1b484b"
+    },
+    {
+      "path": "tools/generate-rating-feedback-handoff.mjs",
+      "sha256": "648ac0042df41d7c2382b8bd269050b6b37c059105ad1c75bc7e35cafc16810d"
+    },
+    {
+      "path": "tools/mainline2-story-map-ui.d.mts",
+      "sha256": "462a5e9e990b06944dee20c5e65abb319d9539242722063f39137b2c5cb84360"
+    },
+    {
+      "path": "tools/mainline2-story-map-ui.mjs",
+      "sha256": "e320decb3b14aad9648c4b8ecd5dfa0f3858a6a27e97ca39ac61b55a7ea103d5"
+    },
+    {
+      "path": "tools/verify-ending-art.mjs",
+      "sha256": "9a67f6e5d809f64a857a8cbbc83573dd28a50a9ff1e23d726d5872a75a9dbff8"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "sha256": "c50eadfd8cadf813f6cb7c42e2a699793120b09fad37d3e1bf95b8b602ba0d75"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "sha256": "091297459b7f18d69a912b40739ff9bedf8dbd62b10d7dc3bd03324d0a918e88"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "a68a772eda719b72ebb9b7a312869f16f677445885218b8639671420a1964e68"
+    }
+  ],
+  "production": {
+    "command": "node tools/verify-ending-art.mjs",
+    "exitCode": 0,
+    "url": "http://127.0.0.1:4197/INSTANCE/",
+    "fixtureCount": 36,
+    "publicCollectionCount": 32,
+    "pageErrors": [],
+    "failedArtworkResponses": [],
+    "report": "temp/final-art-20261014/production.json",
+    "at": "2026-10-14T16:22:17.614Z"
+  },
+  "diffCheck": {
+    "command": "git diff --cached --check",
+    "exitCode": 0
+  }
+}

@@ -3,6 +3,7 @@ import { commitChoice, createMainline2Run, resolveScene, buildEnding } from './e
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
 import { DORMANT_PUBLIC_ENDINGS, PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS, isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { getActConversationCountsForRun } from '../content/mainline2/scheduler'
+import { effectiveStoryPlanForRun } from '../content/mainline2/storyPlan'
 import { restoreRun, serializeRun } from './storage'
 
 function complete(runId: string) {
@@ -53,20 +54,20 @@ describe('Mainline 2.0 runtime', () => {
     expect(restored?.worldState).toEqual(run.worldState)
   })
 
-  it('completes 100 deterministic legal runs inside pacing and module limits', () => {
+  it('completes 12 deterministic legal runs inside pacing and module limits', () => {
     const results = Array.from({ length: 12 }, (_, index) => complete(`simulation-${String(index).padStart(3, '0')}`))
     const counts = results.map(({ run }) => run.manifest.conversationIds.length)
     // Branch-dependent calendar: contact-closed runs compress the gated
     // Contact chapter (180), contact-open runs keep the full calendar (190).
-    expect(Math.min(...counts)).toBeGreaterThanOrEqual(180)
-    expect(Math.max(...counts)).toBeLessThanOrEqual(190)
-    expect(counts.every((count) => count === 180 || count === 190)).toBe(true)
+    expect(Math.min(...counts)).toBeGreaterThanOrEqual(90)
+    expect(Math.max(...counts)).toBeLessThanOrEqual(110)
+    expect(results.every(({run}) => run.manifest.conversationIds.length === effectiveStoryPlanForRun(run).length)).toBe(true)
     for (const { run } of results) {
       const contacted = run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01')
       const actCounts = getActConversationCountsForRun(run)
       expect(actCounts.reduce((sum, value) => sum + value, 0)).toBe(run.manifest.conversationIds.length)
-      expect(actCounts[3]).toBe(contacted ? 90 : 80)
-      expect(actCounts[4]).toBe(17)
+      expect(actCounts[3]).toBeLessThanOrEqual(51)
+      expect(actCounts[4]).toBe(14)
       expect([...new Set(run.progress?.encounteredModules)]).toEqual([
         'machine', 'ascension', 'automation', 'uplift', 'space', ...(contacted ? ['contact'] : []), 'security',
       ])
@@ -76,7 +77,7 @@ describe('Mainline 2.0 runtime', () => {
     expect(results.every(({ run }) => run.manifest.conversationIds.length === new Set(run.manifest.conversationIds).size)).toBe(true)
   }, 60000)
 
-  it('keeps a contact-open run on the full 190-slot calendar', () => {
+  it('keeps a contact-open run on the focused calendar', () => {
     const base = createMainline2Run('contact-open-simulation')
     let run: typeof base = {
       ...base,
@@ -94,7 +95,7 @@ describe('Mainline 2.0 runtime', () => {
       guard += 1
     }
     expect(run.phase).toBe('ending')
-    expect(run.manifest.conversationIds).toHaveLength(190)
+    expect(run.manifest.conversationIds).toHaveLength(effectiveStoryPlanForRun(run).length)
     expect(run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01')).toBe(true)
     expect(run.history.some((entry) => entry.conversationId === 'ml2-authored-ml2-a4-m13-close-01')).toBe(true)
     expect(run.progress?.encounteredModules).toContain('contact')

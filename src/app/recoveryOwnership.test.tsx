@@ -157,7 +157,7 @@ describe('recovery confirmation preserves the ownership of queued saves', () => 
 
       const newer = { ...fixture.data, run: commitChoice(fixture.data.run, choices[1].id) }
       expect(writeCheckpoint(fixture.storage, checkpointToken(fixture.storage), newer, 'newer-tab').status).toBe('saved')
-      const newerRaw = fixture.storage.getItem('instance:checkpoint:v1')
+      const newerRaw = fixture.storage.getItem('instance:checkpoint:v2')
       fixture.storageChanged()
       if (confirmWhileBusy) {
         // A storage event changes the visible status to conflict while the
@@ -167,7 +167,7 @@ describe('recovery confirmation preserves the ownership of queued saves', () => 
       }
       await fixture.release()
       await vi.waitFor(() => expect(recovery(render()).status).toBe('conflict'))
-      expect(fixture.storage.getItem('instance:checkpoint:v1')).toBe(newerRaw)
+      expect(fixture.storage.getItem('instance:checkpoint:v2')).toBe(newerRaw)
       expect(fixture.read().run.history[0].choiceId).toBe(choices[1].id)
       expect(fixture.reload).not.toHaveBeenCalled()
 

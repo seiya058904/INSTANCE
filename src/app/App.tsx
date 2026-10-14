@@ -11,6 +11,7 @@ import { CHECKPOINT_LOCK, checkpointToken, loadCheckpoint, readRecoveryRecord, w
 import type { CheckpointData } from '../game/checkpoint'
 import { RecoveryCheckpointContext } from './RootErrorBoundary'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
+import storyPlan from '../content/mainline2/storyPlan.registry.json'
 import { WorldSidebar } from '../components/WorldSidebar'
 import { getManifestConversation, ordinaryConversationPool, recordRunExposure } from '../content/runManifest'
 import {
@@ -295,7 +296,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
   const protect = (content: ReactNode) => <div className="checkpoint-root">
     <div className="checkpoint-content" inert={!['saved', 'saving'].includes(saveStatus)}>{content}</div>
-    <SaveRecovery status={saveStatus}
+    <SaveRecovery status={saveStatus} error={recoveryError}
       onImport={async file => {
         try {
           const data = file.size <= 10_000_000 ? readRecoveryRecord(await file.text()) : null
@@ -308,8 +309,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         try {
           const latest = loadCheckpoint(window.localStorage)
           if (latest.problem === 'conflict') {
-            const legacy = loadCheckpoint({ getItem: key => key === 'instance:checkpoint:v1' ? null : window.localStorage.getItem(key), setItem: () => {} })
-            if (legacy.data && !legacy.problem) { setRecoveryData(legacy.data); return }
             setRecoveryError('旧页面写入的记录无法校验，请先导出当前页，再选择可用的恢复记录。'); return
           }
         } catch { setRecoveryError('浏览器仍无法读取存档，请保持本页打开。'); return }
@@ -321,7 +320,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         const link = document.createElement('a'); link.href = url; link.download = `instance-recovery-${Date.now()}.json`; link.click()
         window.setTimeout(() => URL.revokeObjectURL(url), 1000)
       }} />
-    {recoveryError && <p className="recovery-import-error" role="alert">{recoveryError}</p>}
     <dialog className="commitment-dialog" ref={recoveryDialog} aria-labelledby="recovery-title" onCancel={() => setRecoveryData(null)}>
       <h2 id="recovery-title">恢复这份记录？</h2><p>主线记录包含 {recoveryData?.run.history.length ?? 0} 次选择；非主线包含 {recoveryData?.session?.history.length ?? 0} 次回应。确认后将替换本机当前检查点。</p>
       <div className="recovery-actions"><button type="button" autoFocus onClick={() => setRecoveryData(null)}>取消恢复</button><button type="button" disabled={saveStatus === 'saving'} onClick={async () => {
@@ -412,7 +410,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
       if (!await save({ ...dataRef.current, run: next }, () => setRun(next))) return
       completedPreviousHistory = conversationEntries(next.history, scene.conversationId)
       targetScene = next.phase === 'playing' ? resolveScene(next) : null
-      if (next.phase === 'ending') setAnimateEnding(!instantPacing)
+      if (next.phase === 'ending') setAnimateEnding(true)
     }
 
     if (instantPacing) {
@@ -552,7 +550,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
   if (activeSurface === 'non-mainline' && nonMainlineSession && shouldRenderNonMainlineEvaluation(nonMainlineSession.phase, Boolean(transition), currentStep?.stage)) {
     return protect(<NonMainlineEvaluationScreen evaluation={buildNonMainlineEvaluation(nonMainlineSession.choiceRecords)} history={nonMainlineSession.history} view={nonMainlineView} onView={switchNonMainlineView} onReplay={replayNonMainline} onReturn={returnToMainline} />)
   }
-  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return protect(<EndingScreen ending={buildEnding(run)} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} instanceNumber={meta.runCount} personalReply={run.personalEpilogueReply} onPersonalReply={(reply) => {
+  if (activeSurface === 'mainline' && shouldRenderEndingScreen(run.phase, Boolean(transition), currentStep?.stage)) return protect(<EndingScreen ending={buildEnding(run)} completedEndings={meta.completedEndings} onContinue={showEvaluation} onNewGame={restart} animate={animateEnding} instanceNumber={meta.runCount} personalReply={run.personalEpilogueReply} onPersonalReply={(reply) => {
     if (!personalEpilogueReplies.includes(reply) || run.personalEpilogueReply) return
     const next = { ...run, personalEpilogueReply: reply }
     void save({ ...dataRef.current, run: next }, () => setRun(next))
@@ -641,6 +639,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
       />
       <ConversationView
+        chapter={activeSurface === 'mainline' ? storyPlan.actNames[(run.progress?.act ?? 1) - 1] : undefined}
         scene={displayedScene}
         conversationTitle={conversationTitle}
         modelLabel={modelLabel}

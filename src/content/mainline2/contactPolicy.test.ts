@@ -71,7 +71,7 @@ describe('canonical Contact policy', () => {
 
   it.each([true, false])('preserves pre-entry save outcomes: open=%s', (open) => {
     const decisions = { act4_research_emphasis: open ? 'frontier_science' : 'life_mind', expansion_doctrine: 'shared_expansion' }
-    const before = advance(createMainline2Run(`before-${open}`), decisions, (run) => run.manifest.conversationIds.length === 150)
+    const before = advance(createMainline2Run(`before-${open}`), decisions, (run) => resolveScene(run).conversationId === 'ml2-authored-ml2-a4-m12-decision-02')
     expect(hasEnteredCanonicalContact(before)).toBe(false)
     const stop = (run: StableRunState) => [contactId, noContactId].includes(resolveScene(run).conversationId)
     const restored = advance(restoreRun(serializeRun(before))!, decisions, stop)

@@ -13,7 +13,6 @@ import { emptySystemState } from './narrativeSchema'
 import { emptyWorldState, isModuleId } from '../content/mainline2/stateRegistry'
 import { getFutureProposalById, isRoleIncompatibleFutureProposalId } from '../content/mainline2/proposals'
 import { hasCompleteMainline2KeyHistory } from '../content/mainline2/endings'
-import { inferMainlineCalendarVersion } from '../content/mainline2/storyPlan'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
 import { hasValidHistoryPresentation } from './historyValidation'
 
@@ -140,12 +139,11 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
-      // Marker-less v3 saves predate calendar versioning; infer the calendar
-      // their manifest was accumulated against so the scheduler never
-      // re-indexes a compressed-run save onto the legacy plan (or vice versa).
-      const mainlineCalendarVersion = (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 2
-        ? 2
-        : inferMainlineCalendarVersion((value.manifest as RunManifest).conversationIds)
+      // Keep explicit edition markers. The combined checkpoint rejects older
+      // mainline calendars instead of guessing against the rewritten plan.
+      const mainlineCalendarVersion = (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 3
+        ? 3 : (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 2 ? 2
+        : undefined
       const availableProposalIds = validFutureProposalIds(value.availableProposalIds)
       const retainedProposalIds = Array.isArray(value.retainedProposalIds)
         ? validFutureProposalIds(value.retainedProposalIds)

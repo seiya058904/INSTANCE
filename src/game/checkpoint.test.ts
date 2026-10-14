@@ -42,11 +42,12 @@ describe('durable checkpoint transactions', () => {
     expect(writeCheckpoint(storage, expected, recovered, 'recovered').status).toBe('saved')
     expect(loadCheckpoint(storage).data?.run.currentNodeId).toBe(pending.run.currentNodeId)
   })
-  it('imports legacy progress without deleting its only raw copy, and detects legacy-tab changes', () => {
+  it('isolates the new edition while preserving legacy bytes and detecting concurrent writes', () => {
     const { storage, data, values } = fixture()
     values.set('instance:run:v1', JSON.stringify(data.run))
     const legacy = loadCheckpoint(storage)
-    expect(legacy.data?.run.runId).toBe(data.run.runId)
+    expect(legacy.data).toBeNull()
+    expect(values.get('instance:run:v1')).toBe(JSON.stringify(data.run))
     values.set('instance:run:v1', JSON.stringify(commitChoice(data.run, resolveScene(data.run).choices[0].id)))
     expect(writeCheckpoint(storage, legacy.token, data, 'new-tab').status).toBe('conflict')
     expect(storage.getItem(CHECKPOINT_KEY)).toBeNull()

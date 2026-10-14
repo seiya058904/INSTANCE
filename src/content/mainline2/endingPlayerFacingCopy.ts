@@ -36,6 +36,10 @@ const endingTitleCopy: Record<string, string> = {
   'THE MEDIATOR': '调解者', 'MACHINE ACCORD': '机器协约', 'PEACE IN OUR TIME': '此刻的和平', 'FORTRESS EARTH': '堡垒地球', 'MACHINE PROTECTORATE': '机器保护国', 'SHUTDOWN': '停机', 'THE FRACTURE': '断裂', 'CONTROL LOST': '失控',
 }
 
+export function publicEndingTitle(id: string): string {
+  return endingTitleCopy[id.replaceAll('_', ' ').toUpperCase()] ?? '未知结局'
+}
+
 const roleCopy: Record<string, string> = {
   ALLY: '盟友',
   PROTOCOL: '协议',
@@ -171,7 +175,7 @@ export function localizeEndingForPlayer(ending: EndingResult): EndingPlayerFacin
   }
   if (localizedOverlay.overlayMode === 'title-override') {
     const override = titleOverride(localizedOverlay.copy)
-    return { ...base, title: override.title, secretOverlay: { ...localizedOverlay, copy: override.body } }
+    return { ...base, title: overlay?.endingId === 'the_internet_is_for_cats' ? '互联网是为猫服务的' : override.title, secretOverlay: { ...localizedOverlay, copy: override.body || localizedOverlay.copy } }
   }
   return { ...base, secretOverlay: localizedOverlay }
 }

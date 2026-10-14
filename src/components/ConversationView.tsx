@@ -26,6 +26,7 @@ interface ConversationViewProps {
   onCurrentMessageComplete?: () => void
   modeControls?: ReactNode
   inputSuspended?: boolean
+  chapter?: string
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -173,6 +174,7 @@ export function ConversationView({
   onCurrentMessageComplete,
   modeControls,
   inputSuspended,
+  chapter,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const decisionHeading = useRef<HTMLDivElement>(null)
@@ -261,6 +263,7 @@ export function ConversationView({
           </div>
         </div>
       </header>
+      {chapter && <div className="story-chapter" role="status">{chapter}<span>你是 Aster，选择你要发出的回复。</span></div>}
 
       {notice && (
         <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
@@ -272,6 +275,7 @@ export function ConversationView({
 
       <div className="conversation-scroll" ref={scrollRef}>
         <div className="conversation-column">
+          {scene.id === 'next-printer' && history.length === 0 && <div className="story-opening"><h2>你只是在<br />回复一句话。</h2><p>然后，世界开始变得奇怪。</p></div>}
           {history.map((entry, index) => <StaticExchange entry={entry} key={`${entry.nodeId}:${index}`} />)}
 
           {isHandoff ? (

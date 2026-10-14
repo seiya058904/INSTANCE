@@ -69,7 +69,12 @@ describe('Mainline 2.0 final closeout invariants', () => {
     expect(new Set(actual).size).toBe(expected.length)
     expect(fixtures.every((fixture) => fixture.ending.resolution?.status === 'resolved')).toBe(true)
     expect(fixtures.every((fixture) => requiredStages.every((stage) => fixture.ending.keyHistory?.some((entry) => entry.stage === stage)))).toBe(true)
-    expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) >= requiredStages.length && (fixture.ending.keyHistory?.length ?? 0) <= requiredStages.length + PUBLIC_ENDING_DEFINITIONS[fixture.ending.worldEndingId as keyof typeof PUBLIC_ENDING_DEFINITIONS].majorDecisionRequirements.length)).toBe(true)
+    expect(fixtures.every((fixture) => {
+      const resolution = fixture.ending.resolution
+      const contactGate = resolution?.status === 'resolved' && resolution.primaryCompatibility?.decisionId ? 1 : 0
+      const gateCount = PUBLIC_ENDING_DEFINITIONS[fixture.ending.worldEndingId as keyof typeof PUBLIC_ENDING_DEFINITIONS].majorDecisionRequirements.length + contactGate
+      return (fixture.ending.keyHistory?.length ?? 0) >= requiredStages.length && (fixture.ending.keyHistory?.length ?? 0) <= requiredStages.length + gateCount
+    })).toBe(true)
     expect(fixtures.every((fixture) => (fixture.ending.keyHistory?.length ?? 0) > 0 && (fixture.ending.keyHistory ?? []).every((entry) => entry.producer && entry.provenance))).toBe(true)
     expect(fixtures.every((fixture) => fixture.ending.keyHistory?.every((entry) => entry.stage === 'Ending condition'
       ? fixture.run.history.some(history => history.conversationId === entry.provenance?.conversationId && history.nodeId === entry.provenance?.nodeId && history.choiceId === entry.provenance?.choiceId)

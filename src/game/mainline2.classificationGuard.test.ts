@@ -1,3 +1,4 @@
+import { NEXT_OPENING } from '../content/mainline2/nextNarrative'
 import { describe, expect, it } from 'vitest'
 import {
   HANDOFF_AUTHORED_ASSET_INVENTORY,
@@ -24,16 +25,16 @@ import storyPlanSource from '../content/mainline2/storyPlan.registry.json'
 // canonical anchor ids belong to the Mainline domain.
 // ---------------------------------------------------------------------------
 
-const ml2ConversationIds = new Set(MAINLINE2_AUTHORED_CONVERSATIONS.map((conversation) => conversation.id))
+const ml2ConversationIds = new Set([...MAINLINE2_AUTHORED_CONVERSATIONS, NEXT_OPENING].map((conversation) => conversation.id))
 const bridgeConversationIds = new Set(ENDING_BRIDGE_CONVERSATIONS.map((conversation) => conversation.id))
 const poolConversationIds = new Set(ordinaryConversationPool.map((conversation) => conversation.id))
 const canonicalAnchorConversationIds: Set<string> = new Set(MAINLINE_ANCHOR_IDS)
 
-const ml2SourceRefs = new Set(MAINLINE2_AUTHORED_CONVERSATIONS.flatMap((conversation) => conversation.sourceRefs ?? []))
+const ml2SourceRefs = new Set([...MAINLINE2_AUTHORED_CONVERSATIONS, NEXT_OPENING].flatMap((conversation) => conversation.sourceRefs ?? []))
 const bridgeSourceRefs = new Set(ENDING_BRIDGE_CONVERSATIONS.flatMap((conversation) => conversation.sourceRefs ?? []))
 const poolSourceRefs = new Set(ordinaryConversationPool.flatMap((conversation) => conversation.sourceRefs ?? []))
 
-const mainlineAssetIds: Set<string> = new Set(HANDOFF_AUTHORED_ASSET_INVENTORY.map((asset) => asset.assetId))
+const mainlineAssetIds: Set<string> = new Set([...HANDOFF_AUTHORED_ASSET_INVENTORY.map((asset) => asset.assetId), ...NEXT_OPENING.sourceRefs])
 const endingIds: Set<string> = new Set([...PUBLIC_WORLD_ENDINGS, ...Object.keys(SECRET_ENDINGS)])
 const proposalIds: Set<string> = new Set(getFutureProposalDefinitions().map((proposal) => proposal.id))
 

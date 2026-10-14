@@ -10,7 +10,7 @@ import {
 
 describe('Mainline 2.0 fixed story plan', () => {
   it('declares the complete fixed slot calendar with every Act IV chapter in order', () => {
-    expect(MAINLINE2_STORY_PLAN.length).toBeGreaterThanOrEqual(180)
+    expect(MAINLINE2_STORY_PLAN.length).toBeGreaterThanOrEqual(90)
     expect(MAINLINE2_STORY_PLAN.map((slot) => slot.slot)).toEqual(Array.from({ length: MAINLINE2_STORY_PLAN.length }, (_, index) => index + 1))
 
     const mainline = MAINLINE2_STORY_PLAN.filter((slot) => slot.kind === 'mainline')

@@ -15,7 +15,7 @@ describe('initial product surface', () => {
     const html = renderToStaticMarkup(<App initialRunId="render-test" />)
 
     expect(html).toContain('Aster')
-    expect(html).toMatch(/User #[0-9]+/)
+    expect(html).toContain('打印机')
     expect(html).toContain('新的对话')
     expect(html).toContain('候选响应')
     expect((html.match(/class="candidate-response"/g) ?? []).length).toBeGreaterThanOrEqual(3)
@@ -79,6 +79,7 @@ describe('initial product surface', () => {
       currentNodeId: getManifestConversation(conversationId)!.nodes[0].id,
     }
     const values: Record<string, string> = {
+      'instance:checkpoint:v2': JSON.stringify({version:1, revision:'test', data:{run:createMainline2Run('preserved-mainline'),session,meta:{version:1,runCount:1,completedEndings:[]},exposure:createEmptyExposureHistory(),surface:'non-mainline',nonMainlineView:'ending'}}),
       'instance:run:v1': serializeRun(createMainline2Run('preserved-mainline')),
       [ACTIVE_SURFACE_KEY]: 'non-mainline',
       [NON_MAINLINE_SESSION_KEY]: serializeNonMainlineSession(session),
@@ -101,6 +102,7 @@ describe('initial product surface', () => {
 
   it('falls back to the saved Mainline when the Non-Mainline checkpoint is corrupt', () => {
     const values: Record<string, string> = {
+      'instance:checkpoint:v2': '{broken',
       'instance:run:v1': serializeRun(createMainline2Run('safe-mainline-fallback')),
       [ACTIVE_SURFACE_KEY]: 'non-mainline',
       [NON_MAINLINE_SESSION_KEY]: '{broken',

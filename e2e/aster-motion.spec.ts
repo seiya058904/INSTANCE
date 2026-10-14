@@ -28,6 +28,11 @@ for (const width of [390, 1440]) {
       else expect(distance).toBeGreaterThan(40)
       expect(samples.every(sample => sample.opacity === '1' && sample.filter === 'none')).toBe(true)
       await expect(page.locator('.assistant-mark.is-active')).toHaveCount(0)
+      // Human delay + the separately bounded human stream can exceed a single
+      // 5s assertion. Observe the actual NPC stage, then its completion; keep
+      // the same timeout for each stage and verify Aster stays idle throughout.
+      await expect(page.locator('.conversation-main')).toHaveAttribute('data-flow-stage', 'human-streaming')
+      await expect(page.locator('.assistant-mark.is-active')).toHaveCount(0)
       await expect(page.locator('[data-choice-id="next-printer-listen"]')).toBeEnabled()
       await expect(page.locator('.completed-exchange .assistant-mark').first()).toHaveCSS('transform', 'none')
       await page.reload()

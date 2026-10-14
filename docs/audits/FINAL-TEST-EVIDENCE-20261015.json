@@ -1306,5 +1306,27 @@
       "log": "temp/final-art-20261014/commit-browser.log"
     },
     "note": "Only trailing EOF whitespace in two files changed after the earlier manifest; complete suite was rerun on this clean committed SHA."
+  },
+  "followupFailure": {
+    "head": "45a657fee6a960de7d53dabd7cdc90db6387e31c",
+    "unit": {
+      "exitCode": 0,
+      "tests": 642,
+      "durationSeconds": 33
+    },
+    "build": {
+      "exitCode": 0
+    },
+    "browser": {
+      "exitCode": 1,
+      "passed": 68,
+      "failed": 1,
+      "log": "temp/final-art-20261014/head-browser.log"
+    },
+    "failure": "Aster 390px no-preference: next-printer-listen was not present within a single 5s wait after the assistant finished. Rotation, opacity, filter and idle assertions had passed.",
+    "cause": "Human response delay and human streaming are separate authored phases; the combined budget can exceed the assertion timeout. The test did not synchronize on the intervening NPC stream.",
+    "fix": "Observe data-flow-stage=human-streaming, assert Aster remains inactive during it, then await the next choice with the unchanged per-assertion timeout. No retries, production timing edits, removed assertions or test skips.",
+    "preservedFailureEvidence": "temp/final-art-20261014/failed-head-evidence/",
+    "finalGate": "Complete suite and exact-SHA CI must pass after this change; final results are recorded in PR #29."
   }
 }

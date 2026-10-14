@@ -5,7 +5,7 @@ PR：[seiya058904/INSTANCE #29](https://github.com/seiya058904/INSTANCE/pull/29)
 ## 提交身份与 CI
 
 - 完整产品代码提交：`3e4ac4e7915aac8f2aca64f14465fe8b9dd4f1b5`，feat: deliver Next narrative and 36 Q-style ending illustrations。包含此前三轮未提交的 Next/对白/演出工作与本轮全部美术。
-- 本交接文件和补充测试记录为随后独立的文档提交；没有产品代码变化。最终 head 是本文件所在分支的最新提交，可由 [PR 的 commits](https://github.com/seiya058904/INSTANCE/pull/29/commits) 与 `gh pr view 29 --json headRefOid` 精确核对。避免把文档自身尚未生成的 SHA 伪造写入自身。最终 SHA 及 CI 结果也记录在 PR 正文。
+- 本交接文件和补充测试记录首先进入独立文档提交，随后补充了一项 Aster 时序测试修复；产品代码没有变化。最终 head 是本文件所在分支的最新提交，可由 [PR 的 commits](https://github.com/seiya058904/INSTANCE/pull/29/commits) 与 `gh pr view 29 --json headRefOid` 精确核对。避免把文档自身尚未生成的 SHA 伪造写入自身。最终 SHA 及 CI 结果也记录在 PR 正文。
 - [Checks](https://github.com/seiya058904/INSTANCE/pull/29/checks) 必须核对最终 head；本文件生成时首次 verify 正在运行，不能把它提前称为绿灯。交接结束前由执行者检查最终 SHA 的真实结果并更新 PR 正文；本地日志保留，不伪称已有日志 artifact。
 
 ## 本地完成的验证
@@ -34,3 +34,7 @@ PR：[seiya058904/INSTANCE #29](https://github.com/seiya058904/INSTANCE/pull/29)
 没有 Firefox/Safari、实体手机、低端设备 FPS 或全 36 路正常速度真人通关证据。Q 风格简化细节，画中表单不承载法律/门槛事实。没有宣称第三方独立审核通过。作者备份、原图、temp 历史证据保留；清理候选没有执行删除。
 
 当前只交付待审 PR；PR 绿灯不代表 Pages 已发布。即使 CI 通过也停止，等待用户转发独立审查及下一阶段明确授权。
+
+## 最终复跑中的时序测试修复
+
+文档提交 `45a657f` 的再次全套本地复跑出现 68 通过 / 1 失败：Aster 的旋转和停转已通过，但测试用一个 5 秒等待跨越 NPC 等待与打字两个阶段。现有 normal 等待约 1.7 秒，人类流最长 3.6 秒，组合不保证落在 5 秒内。保留失败截图和日志后，把断言拆到真实 `human-streaming` 阶段，额外确认 NPC 打字时 Aster 不旋转，再等待下一轮按钮；没有改生产时序、增大每步 timeout、加 retry 或删断言。旧的通过记录仍是当时事实，不能替代修复后的最终全套结果。最终提交与全套/CI 结果以 PR 正文为准。

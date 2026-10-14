@@ -85,17 +85,23 @@ for (const width of [320, 1440]) {
 
 test('failed raster falls back to the unique print; failed print leaves a readable visual description', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
+  let blockedPaintings = 0
+  // Archive and cinema share the same WebP now. Block before the archive can
+  // decode it; installing a route after seedEnding races the memory cache.
+  await page.route('**/ending-art/*.webp', route => { blockedPaintings++; return route.abort() })
   await seedEnding(page, 'shutdown')
-  await page.route('**/ending-art/*.webp', route => route.abort())
   await page.getByRole('button', { name: '重看终局演出', exact: true }).click()
+  expect(blockedPaintings).toBeGreaterThan(0)
   await expect(page.locator('.ending-painting')).toHaveCount(0)
   await expect(page.locator('.world-stage .ending-print-image')).toBeVisible()
   await page.getByRole('button', { name: '跳过演出，查看档案', exact: true }).click()
-  await page.route('**/ending-art/prints/**', route => route.abort())
+  let blockedPrints = 0
+  await page.route('**/ending-art/prints/**', route => { blockedPrints++; return route.abort() })
   // A new document clears the already-decoded image from the previous replay.
   await page.reload()
   await page.getByRole('button', { name: '重看终局演出', exact: true }).click()
   await expect(page.locator('.ending-print-image')).toHaveCount(0)
+  expect(blockedPrints).toBeGreaterThan(0)
   await expect(page.locator('.ending-print-fallback')).toContainText('早班接线桌')
   await expect(page.locator('.cinema-story h1')).toHaveText('停机')
   await page.getByRole('button', { name: '后来', exact: true }).click()

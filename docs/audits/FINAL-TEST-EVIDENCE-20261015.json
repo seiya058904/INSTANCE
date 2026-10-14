@@ -1328,5 +1328,32 @@
     "fix": "Observe data-flow-stage=human-streaming, assert Aster remains inactive during it, then await the next choice with the unchanged per-assertion timeout. No retries, production timing edits, removed assertions or test skips.",
     "preservedFailureEvidence": "temp/final-art-20261014/failed-head-evidence/",
     "finalGate": "Complete suite and exact-SHA CI must pass after this change; final results are recorded in PR #29."
+  },
+  "cacheRaceFailure": {
+    "head": "2898a14797e217dae8fe1b6904e582ba1f1822a4",
+    "unit": {
+      "exitCode": 0,
+      "tests": 642,
+      "durationSeconds": 31.69
+    },
+    "build": {
+      "exitCode": 0
+    },
+    "browser": {
+      "exitCode": 1,
+      "passed": 68,
+      "failed": 1,
+      "log": "temp/final-art-20261014/fixed-head-browser.log"
+    },
+    "failure": "Failed-raster test installed the network block after the archive could already decode the shared hero; cinema sometimes reused the cached image, so no request failed.",
+    "fix": "Register raster blocking before seedEnding navigation and assert both raster and SVG blocked-request counters. Keep all fallback assertions and original timeouts.",
+    "targeted": {
+      "exitCode": 0,
+      "tests": 5,
+      "durationSeconds": 8.8,
+      "log": "temp/final-art-20261014/cache-fix.log"
+    },
+    "preservedFailureEvidence": "temp/final-art-20261014/failed-cache-evidence/",
+    "finalGate": "Full final-head local suite and exact-head CI required; final results in PR #29."
   }
 }

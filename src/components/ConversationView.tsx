@@ -263,15 +263,17 @@ export function ConversationView({
           </div>
         </div>
       </header>
-      {chapter && <div className="story-chapter" role="status">{chapter}<span>你是 Aster，选择你要发出的回复。</span></div>}
+      <div className="conversation-notices">
+        {chapter && <div className="story-chapter" role="status">{chapter}<span>你是 Aster，选择你要发出的回复。</span></div>}
 
-      {notice && (
-        <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
-          <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
-          <span>{notice.copy}</span>
-          {notice.warning && <small>Reference: 0x5A-7F-23</small>}
-        </div>
-      )}
+        {notice && (
+          <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
+            <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
+            <span>{notice.copy}</span>
+            {notice.warning && <small>Reference: 0x5A-7F-23</small>}
+          </div>
+        )}
+      </div>
 
       <div className="conversation-scroll" ref={scrollRef}>
         <div className="conversation-column">

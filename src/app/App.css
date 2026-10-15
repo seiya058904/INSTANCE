@@ -122,8 +122,9 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 .model-label.is-anomalous .status-dot { background: #b45a42; box-shadow: none; }
 .model-label .status-label { font-size: 10px; color: #9f4c35; border: 1px solid rgba(169,84,61,.32); border-radius: 4px; padding: 1px 6px; letter-spacing: .02em; white-space: nowrap; }
 
+.conversation-notices { grid-row: 2; min-width: 0; }
 .system-notice {
-  grid-row: 2; margin: 16px auto 0; width: min(var(--column-width), calc(100% - var(--gutter) * 2)); min-height: 42px; padding: 10px 14px;
+  margin: 16px auto 0; width: min(var(--column-width), calc(100% - var(--gutter) * 2)); min-height: 42px; padding: 10px 14px;
   display: flex; align-items: center; gap: 9px; border: 1px solid #e2d8c8; border-radius: 8px; background: #f6f0e5;
   color: #756b60; font-size: 12px; line-height: 1.6; animation: notice-in 240ms var(--ease-out);
 }

@@ -7,7 +7,8 @@ import { resolveScene } from './engine'
 
 export const CHECKPOINT_KEY = 'instance:checkpoint:v2'
 export const CHECKPOINT_LOCK = 'instance:checkpoint'
-const legacyKeys = ['instance:run:v1', 'instance:meta:v1', 'instance:exposure:v1', NON_MAINLINE_SESSION_KEY, ACTIVE_SURFACE_KEY]
+// Append only: existing v2 checkpoints contain the original five-key baseline.
+const legacyKeys = ['instance:run:v1', 'instance:meta:v1', 'instance:exposure:v1', NON_MAINLINE_SESSION_KEY, ACTIVE_SURFACE_KEY, 'instance:checkpoint:v1']
 
 export interface CheckpointData {
   run: StableRunState
@@ -55,10 +56,15 @@ export function loadCheckpoint(storage: Store): CheckpointLoad {
     // Canonical checkpoints always contain the current exposure schema. A
     // malformed ledger must not quietly reset cross-run replay protection.
     if (saved && (saved.exposure?.version !== 2 || JSON.stringify(saved.exposure) !== JSON.stringify(exposure))) throw Error('Invalid exposure')
+    // Pre-fix v2 saves have no v1-checkpoint baseline. Compare their original
+    // five keys, then adopt the full token captured at load for the next CAS.
+    // The next successful write persists all six keys for reload detection.
+    const previousLegacy = JSON.stringify(JSON.parse(token.legacy).slice(0, -1))
+    const legacyConflict = envelope?.legacy !== undefined && envelope.legacy !== token.legacy && envelope.legacy !== previousLegacy
     return {
       token,
       ...(damagedSession ? { problem: 'damaged' as const, original: token.raw ?? token.legacy } : {}),
-      ...(envelope?.legacy !== undefined && envelope.legacy !== token.legacy ? { problem: 'conflict' as const, original: token.legacy } : {}),
+      ...(legacyConflict ? { problem: 'conflict' as const, original: token.legacy } : {}),
       data: run ? { run, session, meta, surface, nonMainlineView: saved?.nonMainlineView ?? 'ending', exposure } : null,
     }
   } catch {

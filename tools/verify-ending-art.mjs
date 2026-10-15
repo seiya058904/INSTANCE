@@ -5,6 +5,7 @@ import fs from 'node:fs'
 import { briefs } from './ending-art-briefs.mjs'
 const out='temp/final-art-20261014'
 const review='docs/audits/ending-art-review'
+fs.mkdirSync(out,{recursive:true})
 fs.mkdirSync(review,{recursive:true})
 const browser=await chromium.launch({channel:'chrome',headless:true})
 const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'})

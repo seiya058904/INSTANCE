@@ -16,6 +16,7 @@ export interface EndingPlayerFacingCopy {
 }
 
 const knownCopy: Record<string, string> = {
+  'A1': 'A1 的回信',
   'THE ACCORD': '终局协约',
   'world stabilized': '世界已趋于稳定',
   'world remains contested': '世界仍处于多方争议之中',

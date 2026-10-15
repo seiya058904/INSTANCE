@@ -2,6 +2,7 @@ import type { DecisionId, EndingResolution, EndingResult, SecretEndingOverlay, S
 import { MAINLINE2_AUTHored_FRAGMENTS } from './authoredLibrary.generated'
 import { MAINLINE2_BY_ID as RUNTIME_MAINLINE2_BY_ID } from './registry'
 import { getFutureProposalById, type EndingFamilyId, type FutureProposalDefinition } from './proposals'
+import { effectiveContactDoctrine } from './edition4Contact'
 
 export const PUBLIC_WORLD_ENDINGS = [
   'the_instrument', 'the_last_veto', 'the_silent_giant', 'the_accord', 'the_commonwealth', 'two_keys',
@@ -142,7 +143,7 @@ const ENDING_SUPPORT_INPUTS: Partial<Record<string, EndingSupportInput[]>> = {
 function primaryCompatibility(run: StableRunState, definition: ExactEndingDefinition) {
   const compatibility = COSMIC_PRIMARY_COMPATIBILITY[definition.id]
   if (!compatibility) return { strength: 4, reason: 'existing primary hard gates are satisfied' }
-  const value = run.decisions?.[compatibility.decisionId]
+  const value = compatibility.decisionId === 'contact_doctrine' ? effectiveContactDoctrine(run) : run.decisions?.[compatibility.decisionId]
   return { decisionId: compatibility.decisionId, value, strength: compatibility.strengths[value ?? ''] ?? 0, reason: compatibility.reasons[value ?? ''] ?? `incompatible ${compatibility.decisionId}` }
 }
 
@@ -518,6 +519,19 @@ function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = 
       provenance: entry.provenance,
     })
   }
+  if (run.mainlineCalendarVersion === 4) {
+    for (const entry of run.history.filter(h => h.nodeId.startsWith('v4-') && h.nodeId.endsWith('-receipt'))) {
+      const action = run.history.slice(0, run.history.indexOf(entry)).reverse().find(h => h.conversationId === entry.conversationId && !h.nodeId.endsWith('-receipt'))
+      if (!action) continue
+      const existing = selected.find(item => item.provenance?.nodeId === action.nodeId)
+      if (existing) { existing.causalReason = entry.userMessage; continue }
+      selected.splice(Math.max(0, selected.length - 1), 0, {
+        label: action.conversationTitle, detail: `选择：${action.assistantText}`, stage: '行动回响', producer: action.conversationId,
+        causalReason: entry.userMessage,
+        provenance: { conversationId: action.conversationId, nodeId: action.nodeId, choiceId: action.choiceId },
+      })
+    }
+  }
   return selected
 }
 
@@ -717,7 +731,8 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   const epilogues = authoredEpilogues(run, selected.definition)
   const contactDecision = COSMIC_PRIMARY_COMPATIBILITY[selected.definition.id]?.decisionId
   const contactValue = contactDecision && run.decisions?.[contactDecision]
-  const historyGates = contactDecision && contactValue
+  const renegotiatedContact = contactDecision === 'contact_doctrine' && effectiveContactDoctrine(run) !== contactValue
+  const historyGates = contactDecision && contactValue && !renegotiatedContact
     ? [...selected.definition.majorDecisionRequirements, decision(contactDecision, contactValue, 'the selected contact doctrine grounds this future')]
     : selected.definition.majorDecisionRequirements
   const result: EndingResult = {

@@ -2,6 +2,7 @@ import type { StableRunState } from '../../game/types'
 import { previewFinalCommitment } from './endings'
 import { getFutureProposalById, type FutureProposalDefinition } from './proposals'
 import { describeDecisionChoice } from './playerFacingCopy'
+import { effectiveContactDoctrine } from './edition4Contact'
 
 /** Display only. The resolver continues to read the canonical proposal by ID.
  * These fields must never be used as eligibility, authority or save mutations. */
@@ -180,13 +181,19 @@ export function proposalContract(run: StableRunState, proposal: FutureProposalDe
       aster_mediation: { action: '由 Aster 在各方委托范围内持续传话协调，不把翻译变成自己的立场。', cost: '直接交流的速度；承担误译与协调成本', authority: '各方保留决定权，Aster 承担中介责任' },
       machine_to_machine_channel: { action: '开设独立机器交流通道；涉及公共后果时仍保留人类和其他主体的政治监督，听懂不等于取得同意。', cost: '即时可理解性；其他主体需等待翻译和核验', authority: '机器直接交流，人类与其他主体保留政治监督' },
     }
-    const relation = relations[d.contact_doctrine ?? '']
+    const actualContact = effectiveContactDoctrine(run)
+    const relation = relations[actualContact ?? '']
     contract.title = '边疆安排与对外关系'
     contract.authority = `${governance}；${relation?.authority ?? '外部授权尚待核验'}`
     contract.action = `${governance}。${relation?.action ?? '尚不能确认外部关系条款。'} 披露边界：${disclosure}。`
     contract.preserves = [contact, disclosure, governance]
     contract.givesUp = [relation?.cost ?? '未经授权即作外部承诺的便利']
     if (d.contact_disclosure_doctrine === 'controlled_silence') contract.limitations.push('人工来源结论尚未公开；这里没有全球已知情或已同意的保证。')
+    if (run.mainlineCalendarVersion === 4) {
+      const receipt = run.history.find(h => /^v4-contact-(reciprocal|guidance|assertion|mediation|machine)-receipt$/.test(h.nodeId))
+      if (receipt) contract.limitations.push(`本局协议执行：${receipt.userMessage.split('\n')[0]}`)
+      if (actualContact !== d.contact_doctrine) contract.limitations.push('最初接受指导的记录保留；此后已付出本地重建代价，另行确认可拒绝的短约，未继续接受附条件更新。')
+    }
   }
   if (base.family === 'rupture') {
     const shutdown = fact('shutdown_doctrine')

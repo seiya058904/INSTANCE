@@ -20,6 +20,7 @@ interface Mainline2RoutePacingAudit {
   normalReadingEstimateMs: number
   fastReadingEstimateMs: number
   maxConsecutiveOrdinary: number
+  contactEntered: boolean
 }
 
 const graphemeCount = (text: string) => segmentGraphemes(text).length
@@ -42,6 +43,7 @@ function auditMainline2Branch(branch: 'contact-closed' | 'contact-open', runId: 
     visibleGraphemes += (scene.userMessages ?? [scene.userMessage]).reduce((sum, text) => sum + graphemeCount(text), 0)
     visibleGraphemes += scene.choices.reduce((sum, choice) => sum + graphemeCount(choice.text), 0)
     const choice = scene.choices.find((candidate) => preferred.some((value) => candidate.id.includes(value)))
+      ?? (branch === 'contact-open' ? scene.choices.find(candidate => candidate.id === 'v4-frontier-verify') : undefined)
       ?? scene.choices[guard % Math.max(1, scene.choices.length)]
     if (!choice) throw new Error(`No legal choice at ${scene.id}`)
     choices += 1
@@ -65,6 +67,7 @@ function auditMainline2Branch(branch: 'contact-closed' | 'contact-open', runId: 
     normalReadingEstimateMs: Math.round((visibleGraphemes / NORMAL_COMPARISON_GRAPHEMES_PER_MINUTE) * 60_000),
     fastReadingEstimateMs: Math.round((visibleGraphemes / FAST_COMPARISON_GRAPHEMES_PER_MINUTE) * 60_000),
     maxConsecutiveOrdinary,
+    contactEntered: run.history.some(entry => entry.conversationId === 'ml2-authored-ml2-a4-m13-contact-01'),
   }
 }
 
@@ -72,6 +75,7 @@ describe('Mainline 2.0 route pacing audit', () => {
   it.each(['contact-closed', 'contact-open'] as const)('edition 4 %s retains the reading budget with real added events', branch => {
     const result = auditMainline2Branch(branch, `pacing-v4-${branch}`, 4)
     expect(result.conversations).toBeLessThanOrEqual(115)
+    expect(result.contactEntered).toBe(branch === 'contact-open')
     expect(result.maxConsecutiveOrdinary).toBeLessThanOrEqual(6)
     expect(result.normalReadingEstimateMs).toBeGreaterThanOrEqual(25 * 60_000)
     expect(result.normalReadingEstimateMs).toBeLessThanOrEqual(75 * 60_000)

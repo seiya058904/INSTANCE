@@ -6,6 +6,8 @@ import { MAINLINE2_LIBRARY } from './registry'
 import { economyBranch } from './edition4Economy'
 import { machineBranch } from './edition4Machine'
 import { authorityPractice } from './edition4Authority'
+import { humanIncident, lifeAllocation, speciesIncident } from './edition4Life'
+import { contactIncident } from './edition4Contact'
 
 export interface MainlineStoryRole {
   chapter: StoryPlanChapter
@@ -147,26 +149,57 @@ function preserveScheduledPrefix(plan: readonly StoryPlanSlot[], run: StableRunS
   return [...prefix, ...plan.slice(anchor + 1 + ordinaryAfterAnchor)]
 }
 
+function edition4SceneDepth(slot: StoryPlanSlot, run: StableRunState) {
+  if (run.mainlineCalendarVersion !== 4 || slot.kind !== 'mainline') return true
+  const focus = run.decisions?.act4_research_emphasis
+  const allocation = lifeAllocation(run)
+  const ref = slot.assetId
+  if (['ML2-A4-M15-WE-01', 'ML2-A4-M15-LSH-02'].includes(ref)) return false
+  if (ref === 'ML2-A4-M9-CONTINUITY-01') return allocation === 'clinic' && run.history.some(h => h.nodeId === 'v4-life-clinic-next' && h.choiceId === 'v4-life-persons')
+  if (['ML2-A4-M8-E9-01', 'ML2-A4-M8-AI-04', 'ML2-A4-M8-MAYA-01'].includes(ref)) return focus === 'computation_ai'
+  if (['ML2-A4-M9-MAYA-01', 'ML2-A4-M9-MAYA-02'].includes(ref)) return allocation === 'clinic'
+  if (['ML2-A4-M10-DEV-04', 'ML2-A4-M10-MAYA-02'].includes(ref)) return focus === 'automation_industry'
+  if (['ML2-A4-M11-WE-01', 'ML2-A4-M11-MAYA-01', 'ML2-A4-M11-LSH-02'].includes(ref)) return allocation === 'wetland'
+  if (ref === 'ML2-A4-M11-RES-04') return allocation === 'wetland' || focus === 'frontier_science'
+  if (['ML2-A4-M12-WE-03', 'ML2-A4-M12-LSH-02'].includes(ref)) return focus === 'frontier_science'
+  if (ref === 'ML2-A4-M12-MACHINE-01') return ['computation_ai', 'frontier_science'].includes(focus ?? '')
+  if (ref === 'ML2-A4-M14-MAYA-01') return false
+  return true
+}
+
 export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
   const plan = contactRouteOpen(run) ? MAINLINE2_STORY_PLAN : COMPRESSED_CLOSED_PLAN
   // Focus is selected before every optional scene. Only future slots change;
   // after that decision the projection is stable across refreshes.
-  const focused = plan.filter(slot => slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio'))
+  const focused = plan.filter(slot => (slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio')) && edition4SceneDepth(slot, run))
   const branch = economyBranch(run)
   const machine = machineBranch(run)
   const authority = authorityPractice(run)
-  if (!branch && !machine && !authority) return preserveScheduledPrefix(focused, run)
+  const human = humanIncident(run)
+  const species = speciesIncident(run)
+  const life = run.mainlineCalendarVersion === 4 && run.decisions?.act4_research_emphasis === 'life_mind'
+  const frontier = run.mainlineCalendarVersion === 4 && run.decisions?.act4_research_emphasis === 'frontier_science'
+  const contact = contactIncident(run)
+  const localFrontier = frontier && !contactRouteOpen(run) && run.history.some(h => h.nodeId === 'v4-frontier-allocation' && h.choiceId === 'v4-frontier-home')
+  if (!branch && !machine && !authority && !life && !frontier && !contact) return preserveScheduledPrefix(focused, run)
   const extra = (id: string): MainlineStoryPlanSlot => {
     const conversation = MAINLINE2_LIBRARY.find(c => c.id === id)!
-    return { slot: 0, act: conversation.act ?? 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: id.startsWith('v4-authority') ? 'AUTHORITY' : id.startsWith('v4-machine') ? 'MACHINE' : 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
+    return { slot: 0, act: conversation.act ?? 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: id.startsWith('v4-contact') ? 'CONTACT' : id.startsWith('v4-frontier') ? 'SPACE' : id.startsWith('v4-life') ? lifeAllocation(run) === 'wetland' ? 'UPLIFT' : 'POSTHUMAN' : id.startsWith('v4-authority') ? 'AUTHORITY' : id.startsWith('v4-machine') ? 'MACHINE' : 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
   }
   const expanded = focused.flatMap<StoryPlanSlot>(slot => {
     if (slot.kind !== 'mainline') return [slot]
+    if (life && slot.assetId === 'ML2-A4-M7-DECISION-01') return [slot, extra('v4-life-allocation')]
+    if (lifeAllocation(run) === 'clinic' && run.decisions?.human_form_doctrine === 'posthuman_transition' && slot.assetId === 'ML2-A4-M9-DECISION-01') return [slot, extra('v4-life-clinic-next')]
+    if (human && slot.assetId === 'ML2-A4-M10-RES-01') return [extra(`v4-life-${human}`), slot]
+    if (species && slot.assetId === 'ML2-A4-M11-DECISION-02') return [slot, extra(`v4-life-${species}`)]
+    if (frontier && slot.assetId === 'ML2-A4-M12-RES-04') return [slot, extra('v4-frontier-allocation')]
+    if (contact && slot.assetId === 'ML2-A4-M13-DECISION-02') return [slot, extra(`v4-contact-${contact}`), extra('v4-contact-border')]
+    if (localFrontier && slot.assetId === 'ML2-A4-M13-CONTACT-01') return [slot, extra('v4-frontier-no-contact')]
     if (branch && slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain')]
     if (machine && slot.assetId === 'ML2-A4-M8-DECISION-02') return [slot, extra(`v4-machine-${machine}`)]
     if (machine && slot.assetId === 'ML2-A4-M12-DECISION-02') return [slot,
       ...(run.decisions?.expansion_doctrine === 'independent_machine_space' ? [extra('v4-machine-exodus')] : []), extra('v4-machine-airlock')]
-    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), slot]
+    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), ...(human || species ? [extra('v4-life-return')] : []), ...(contact || localFrontier ? [extra('v4-contact-return')] : []), slot]
     if (authority && slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, extra(`v4-authority-${authority}`)]
     if (authority && slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, extra('v4-authority-return')]
     return [slot]
@@ -180,7 +213,11 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
         ? (id: string) => id.startsWith('v4-authority-') && id !== 'v4-authority-return'
         : slot.conversationId === 'v4-econ-return'
           ? (id: string) => /^v4-econ-(occupation|detour|menu)$/.test(id)
-          : undefined
+          : slot.conversationId === 'v4-life-return'
+            ? (id: string) => /^v4-life-(therapy|forms|continuity|archive|parliament|corridor|dogs|observation)$/.test(id)
+            : slot.conversationId === 'v4-contact-return'
+              ? (id: string) => /^v4-contact-(reciprocal|guidance|assertion|mediation|machine)$/.test(id) || id === 'v4-frontier-no-contact'
+              : undefined
     return !producer || projected.slice(0, index).some(previous => previous.kind === 'mainline' && producer(previous.conversationId))
       || run.history.some(entry => producer(entry.conversationId))
   })

@@ -15,6 +15,8 @@ import { applyNextNarrative, NEXT_OPENING } from './nextNarrative'
 import { EDITION4_ECONOMY } from './edition4Economy'
 import { EDITION4_MACHINE } from './edition4Machine'
 import { EDITION4_AUTHORITY } from './edition4Authority'
+import { EDITION4_LIFE } from './edition4Life'
+import { EDITION4_CONTACT } from './edition4Contact'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -99,6 +101,8 @@ authored.push(NEXT_OPENING)
 authored.push(...EDITION4_ECONOMY.map(applyMainlinePlayerFacingCopy))
 authored.push(...EDITION4_MACHINE.map(applyMainlinePlayerFacingCopy))
 authored.push(...EDITION4_AUTHORITY.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_LIFE.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_CONTACT.map(applyMainlinePlayerFacingCopy))
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

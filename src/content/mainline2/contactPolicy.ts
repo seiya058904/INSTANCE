@@ -3,7 +3,7 @@ import { evaluateCondition } from '../../game/narrativeSchema'
 import policy from './contactPolicy.registry.json'
 
 export type ContactState = Pick<StableRunState, 'flags' | 'events' | 'decisions'>
-  & Partial<Pick<StableRunState, 'history' | 'currentNodeId' | 'persistentFlags'>>
+  & Partial<Pick<StableRunState, 'history' | 'currentNodeId' | 'persistentFlags' | 'mainlineCalendarVersion'>>
 export const CONTACT_PREREQUISITES = policy.prerequisites as Condition
 export const CANONICAL_CONTACT_NODES: Readonly<Record<string, readonly string[]>> = policy.enteredConversations
 const enteredNodeIds = new Set(Object.values(CANONICAL_CONTACT_NODES).flat())
@@ -19,5 +19,6 @@ export function hasEnteredCanonicalContact(run: ContactState) {
 }
 
 export function contactRouteOpen(run: ContactState) {
-  return contactPrerequisitesMet(run) || hasEnteredCanonicalContact(run)
+  const deferredVerification = run.mainlineCalendarVersion === 4 && run.history?.some(h => h.nodeId === 'v4-frontier-allocation' && h.choiceId === 'v4-frontier-home')
+  return hasEnteredCanonicalContact(run) || (!deferredVerification && contactPrerequisitesMet(run))
 }

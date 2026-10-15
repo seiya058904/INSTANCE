@@ -160,6 +160,13 @@ export function proposalContract(run: StableRunState, proposal: FutureProposalDe
       })
     }
     contract.action += ` 本局取向：${economy}；${production}。`
+    if (run.mainlineCalendarVersion === 4) {
+      // Local trials constrain the promise; cite their saved receipts rather
+      // than inferring a completed institution from a future world name.
+      const receipts = run.history.filter(entry => ['v4-econ-occupation-receipt', 'v4-econ-detour-receipt', 'v4-econ-menu-receipt', 'v4-econ-cold-receipt'].includes(entry.nodeId))
+      for (const receipt of receipts) contract.limitations.push(`本局试行记录：${receipt.userMessage.split('\n')[0]}`)
+      if (receipts.some(entry => entry.nodeId === 'v4-econ-menu-receipt')) contract.limitations = contract.limitations.filter(line => !line.startsWith('效率优先不等于'))
+    }
   }
   if (base.family === 'cosmic') {
     const contact = fact('contact_doctrine')

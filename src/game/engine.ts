@@ -88,7 +88,7 @@ export function createRun(
   }
 }
 
-export function createMainline2Run(runId: string = crypto.randomUUID(), exposure?: NarrativeExposureHistory): StableRunState {
+export function createMainline2Run(runId: string = crypto.randomUUID(), exposure?: NarrativeExposureHistory, edition: 3 | 4 = 4): StableRunState {
   const manifest = createMainline2Manifest(runId)
   const story = buildStoryContentForManifest(manifest)
   const priorOrdinaryExposure = exposure
@@ -111,7 +111,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID(), exposure
     progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     priorOrdinaryExposure,
     nonMainlineConsumedOrdinaryIds: [],
-    mainlineCalendarVersion: 3,
+    mainlineCalendarVersion: edition,
     ...emptySystemState(),
   }
 }

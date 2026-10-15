@@ -9,6 +9,13 @@ import { describe, expect, it } from 'vitest'
 import { resolvePlayerVisibleHistory, resolvePlayerVisibleIdentity } from './playerIdentity'
 
 describe('player-facing identity', () => {
+  it('keeps edition-4 economic returns with the original worker and cold-chain engineer', () => {
+    const worker = resolvePlayerVisibleIdentity('ml2-authored-ml2-a4-m10-dev-04', [])
+    for (const id of ['v4-econ-occupation', 'v4-econ-detour', 'v4-econ-menu', 'v4-econ-return']) {
+      expect(resolvePlayerVisibleIdentity(id, [])).toEqual(worker)
+    }
+    expect(resolvePlayerVisibleIdentity('v4-econ-cold-chain', [])).toEqual(resolvePlayerVisibleIdentity('ml2-authored-ml2-a4-m7-zl-02', []))
+  })
   it('hides internal topic titles for an unseen conversation', () => {
     const identity = resolvePlayerVisibleIdentity('ml2-authored-ml2-a2-m3-log-01', [])
 

@@ -7,6 +7,7 @@ import { createMainline2Run, commitChoice, resolveScene } from './engine'
 import type { ResolvedScene, StableRunState } from './types'
 
 export interface Mainline2RouteTarget {
+  edition?: 3 | 4
   routeId: string
   proposalId: string
   decisions?: Record<string, string>
@@ -41,7 +42,9 @@ export interface Mainline2RouteFixture {
 }
 
 export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteFixture {
-  let run = createMainline2Run(`closeout-${target.routeId}`)
+  // The original catalog remains an edition-3 compatibility oracle. New
+  // edition routes opt in explicitly and still execute every legal choice.
+  let run = createMainline2Run(`closeout-${target.routeId}`, undefined, target.edition ?? 3)
   const links: Mainline2RouteTraceLink[] = []
   const matchesProposalLineage = (proposalId: string | undefined, baseId: string | undefined) => Boolean(proposalId && baseId && (proposalId === baseId || proposalId.startsWith(`${baseId}.category.`)))
   let routeProposalId = target.proposalId

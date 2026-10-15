@@ -3,6 +3,7 @@ import { evaluateCondition } from '../../game/narrativeSchema'
 import storyPlanSource from './storyPlan.registry.json'
 import { CONTACT_PREREQUISITES, contactRouteOpen } from './contactPolicy'
 import { MAINLINE2_LIBRARY } from './registry'
+import { economyBranch } from './edition4Economy'
 
 export interface MainlineStoryRole {
   chapter: StoryPlanChapter
@@ -124,5 +125,17 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
   const plan = contactRouteOpen(run) ? MAINLINE2_STORY_PLAN : COMPRESSED_CLOSED_PLAN
   // Focus is selected before every optional scene. Only future slots change;
   // after that decision the projection is stable across refreshes.
-  return plan.filter(slot => slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio'))
+  const focused = plan.filter(slot => slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio'))
+  const branch = economyBranch(run)
+  if (!branch) return focused
+  const extra = (id: string): MainlineStoryPlanSlot => {
+    const conversation = MAINLINE2_LIBRARY.find(c => c.id === id)!
+    return { slot: 0, act: 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
+  }
+  return focused.flatMap<StoryPlanSlot>(slot => {
+    if (slot.kind !== 'mainline') return [slot]
+    if (slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain')]
+    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [extra('v4-econ-return'), slot]
+    return [slot]
+  })
 }

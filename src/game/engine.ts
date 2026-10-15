@@ -13,6 +13,7 @@ import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
 import { getFutureProposalById, formatProposalClarification, proposalProvenanceLines } from '../content/mainline2/proposals'
+import { presentedProposal, proposalContractText } from '../content/mainline2/proposalPresentation'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
   AttributeName,
@@ -139,7 +140,8 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
   const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
   if (sourceRef !== 'ML2-A5-M16-GEN-01' && sourceRef !== 'ML2-A5-M17-REVIEW-01' && sourceRef !== 'ML2-A5-M17-COMMIT-01') return []
   const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
-  const proposals = retained.length ? retained.map((id) => getFutureProposalById(id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
+  const definitions = retained.length ? retained.map((id) => getFutureProposalById(id)).filter(Boolean) as ReturnType<typeof generateFutureProposals> : generateFutureProposals(run)
+  const proposals = definitions.map(proposal => presentedProposal(run, proposal))
   const selected = run.selectedProposalId
   if (sourceRef === 'ML2-A5-M16-GEN-01') {
     if (retained.length) return []
@@ -147,8 +149,8 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
     // from this run that produced it — the player should recognize themselves.
     return proposals.map((proposal) => {
       const provenance = proposalProvenanceLines(run, proposal).slice(0, 2).join('；')
-      const provenanceLine = provenance ? `\n它来自这一局的：${provenance}。` : ''
-      return { id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposal.action}${provenanceLine}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }
+      const provenanceLine = provenance ? `\n本局可核验记录：${provenance}。` : ''
+      return { id: `m16-proposal-${proposal.id}`, text: `${proposal.title}：${proposalContractText(proposal)}${provenanceLine}`, proposalId: proposal.id, proposalKind: 'proposal' as const, continuation: 'end-conversation' as const }
     })
   }
   if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
@@ -175,7 +177,7 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
   return proposals
     .filter((proposal) => !(run.rejectedProposalIds ?? []).includes(proposal.id))
     .filter((proposal) => isFinalCommitmentResolvable(run, proposal.id))
-    .map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”——${proposal.action}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
+    .map((proposal) => ({ id: `m17-commit-${proposal.id}`, text: `锁定“${proposal.title}”——${proposalContractText(proposal)}`, proposalId: proposal.id, proposalKind: 'commitment' as const, continuation: 'end-conversation' as const }))
 }
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
@@ -267,7 +269,7 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const effects = applyChoiceEffects(run, effectiveChoice)
   const localState = applyLocalEffects(run, choice)
   const clarificationText = choice.proposalKind === 'clarification' && choice.proposalId
-    ? formatProposalClarification(getFutureProposalById(choice.proposalId)!, run)
+    ? formatProposalClarification(presentedProposal(run, getFutureProposalById(choice.proposalId)!), run)
     : undefined
   // M17 REVIEW is a single-entry scene: its user prompt must enter the chat
   // history exactly once. Review / clarify / reject / recover are assistant-side

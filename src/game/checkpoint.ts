@@ -43,7 +43,7 @@ export function loadCheckpoint(storage: Store): CheckpointLoad {
     const runRaw = saved ? JSON.stringify(saved.run) : null
     const run = restoreRun(runRaw)
     if ((runRaw || saved) && !run) throw Error('Invalid run')
-    if (run?.manifest.mode === 'mainline2' && run.mainlineCalendarVersion !== 3) throw Error('Incompatible story edition')
+    if (run?.manifest.mode === 'mainline2' && ![3, 4].includes(run.mainlineCalendarVersion ?? 0)) throw Error('Incompatible story edition')
     const sessionRaw = saved?.session ? JSON.stringify(saved.session) : null
     const session = restoreNonMainlineSession(sessionRaw)
     const damagedSession = Boolean(sessionRaw && !session)

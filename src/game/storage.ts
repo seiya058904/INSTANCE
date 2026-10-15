@@ -141,7 +141,8 @@ export function restoreRun(raw: string | null): StableRunState | null {
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null
       // Keep explicit edition markers. The combined checkpoint rejects older
       // mainline calendars instead of guessing against the rewritten plan.
-      const mainlineCalendarVersion = (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 3
+      const mainlineCalendarVersion = (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 4
+        ? 4 : (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 3
         ? 3 : (value as { mainlineCalendarVersion?: number }).mainlineCalendarVersion === 2 ? 2
         : undefined
       const availableProposalIds = validFutureProposalIds(value.availableProposalIds)

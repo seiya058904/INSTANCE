@@ -13,6 +13,8 @@ import { applyMainlinePlayerFacingCopy } from './playerFacingCopy'
 import { ENDING_BRIDGE_CONVERSATIONS } from './endingBridges'
 import { applyNextNarrative, NEXT_OPENING } from './nextNarrative'
 import { EDITION4_ECONOMY } from './edition4Economy'
+import { EDITION4_MACHINE } from './edition4Machine'
+import { EDITION4_AUTHORITY } from './edition4Authority'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -95,6 +97,8 @@ const authored = [...MAINLINE2_AUTHORED_CONVERSATIONS, ...ENDING_BRIDGE_CONVERSA
 }).map(applyMainlinePlayerFacingCopy).map(applyNextNarrative)
 authored.push(NEXT_OPENING)
 authored.push(...EDITION4_ECONOMY.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_MACHINE.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_AUTHORITY.map(applyMainlinePlayerFacingCopy))
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

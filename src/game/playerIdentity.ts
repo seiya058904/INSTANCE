@@ -22,10 +22,10 @@ interface IdentityRule {
 }
 
 const identityRules: readonly IdentityRule[] = [
-  { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id) || id === 'v4-econ-cold-chain' },
+  { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id) || ['v4-econ-cold-chain', 'v4-machine-airlock'].includes(id) || id.startsWith('v4-authority-') },
   { participantId: 'ml2-authored-ml2-a4-m10-dev-04', matches: id => id === 'ml2-authored-ml2-a4-m10-dev-04' || /^v4-econ-(occupation|detour|menu|return)$/.test(id) },
   { participantId: 'echo-9', matches: id => /-e9-\d+$/.test(id) && !id.includes('-m8-') },
-  { participantId: 'aster-a1', matches: id => /-m8-(?:ai|e9)-\d+$/.test(id) || id.endsWith('m12-machine-01') },
+  { participantId: 'aster-a1', matches: id => /-m8-(?:ai|e9)-\d+$/.test(id) || id.endsWith('m12-machine-01') || id.startsWith('v4-machine-') },
   { participantId: 'next-printer', matches: id => id === 'ml2-next-opening' },
   { participantId: 'system-0000', matches: id => /-0000-\d+$/.test(id), anonymousLabel: 'User #0000' },
   {

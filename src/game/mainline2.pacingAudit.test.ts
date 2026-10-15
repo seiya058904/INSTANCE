@@ -24,8 +24,8 @@ interface Mainline2RoutePacingAudit {
 
 const graphemeCount = (text: string) => segmentGraphemes(text).length
 
-function auditMainline2Branch(branch: 'contact-closed' | 'contact-open', runId: string): Mainline2RoutePacingAudit {
-  const base = createMainline2Run(runId)
+function auditMainline2Branch(branch: 'contact-closed' | 'contact-open', runId: string, edition: 3 | 4 = 3): Mainline2RoutePacingAudit {
+  const base = createMainline2Run(runId, undefined, edition)
   let run: StableRunState = branch === 'contact-open'
     ? { ...base, flags: [...base.flags, 'cap.space_resource_network'], events: [{ type: 'contact-seed:deep-space-anomaly' }] }
     : base
@@ -69,6 +69,16 @@ function auditMainline2Branch(branch: 'contact-closed' | 'contact-open', runId: 
 }
 
 describe('Mainline 2.0 route pacing audit', () => {
+  it.each(['contact-closed', 'contact-open'] as const)('edition 4 %s retains the reading budget with real added events', branch => {
+    const result = auditMainline2Branch(branch, `pacing-v4-${branch}`, 4)
+    expect(result.conversations).toBeLessThanOrEqual(115)
+    expect(result.maxConsecutiveOrdinary).toBeLessThanOrEqual(6)
+    expect(result.normalReadingEstimateMs).toBeGreaterThanOrEqual(25 * 60_000)
+    expect(result.normalReadingEstimateMs).toBeLessThanOrEqual(75 * 60_000)
+    expect(result.fastReadingEstimateMs).toBeGreaterThanOrEqual(15 * 60_000)
+    expect(result.fastReadingEstimateMs).toBeLessThanOrEqual(42 * 60_000)
+    console.info('INSTANCE_EDITION4_PACING_AUDIT', JSON.stringify(result))
+  }, 120000)
   it('contact-closed branch compresses the gated chapter and stays inside pacing bounds', () => {
     const result = auditMainline2Branch('contact-closed', 'pacing-closed')
     expect(result.conversations).toBe(99)

@@ -4,6 +4,8 @@ import storyPlanSource from './storyPlan.registry.json'
 import { CONTACT_PREREQUISITES, contactRouteOpen } from './contactPolicy'
 import { MAINLINE2_LIBRARY } from './registry'
 import { economyBranch } from './edition4Economy'
+import { machineBranch } from './edition4Machine'
+import { authorityPractice } from './edition4Authority'
 
 export interface MainlineStoryRole {
   chapter: StoryPlanChapter
@@ -121,21 +123,65 @@ export function storyPlanForRun(run: StableRunState) {
  */
 const COMPRESSED_CLOSED_PLAN: readonly StoryPlanSlot[] = MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
 
+/** Keep the manifest's already scheduled prefix. New content or a changed
+ * future focus may only affect slots beyond the furthest scheduled anchor. */
+function preserveScheduledPrefix(plan: readonly StoryPlanSlot[], run: StableRunState): readonly StoryPlanSlot[] {
+  // A standalone QA conversation has no full-calendar prefix to preserve.
+  if (run.mainlineCalendarVersion !== 4 || run.manifest.conversationIds[0] !== 'ml2-next-opening') return plan
+  let anchor = -1
+  let ordinaryAfterAnchor = 0
+  let act: 1 | 2 | 3 | 4 | 5 = 1
+  const prefix: StoryPlanSlot[] = run.manifest.conversationIds.map((id, index) => {
+    const plannedIndex = plan.findIndex(slot => slot.kind === 'mainline' && storyPlanConversationId(slot, run) === id)
+    const planned = plannedIndex >= 0 ? plan[plannedIndex] : MAINLINE2_STORY_PLAN.find(slot => slot.kind === 'mainline' && slot.conversationId === id)
+    if (plannedIndex > anchor) { anchor = plannedIndex; ordinaryAfterAnchor = 0 }
+    const conversation = MAINLINE2_LIBRARY.find(c => c.id === id)
+    if (!conversation && plannedIndex < 0) ordinaryAfterAnchor += 1
+    if (planned?.kind === 'mainline') { act = planned.act; return { ...planned, conversationId: id, assetId: conversation?.sourceRefs[0] ?? planned.assetId } }
+    if (conversation) {
+      act = conversation.act ?? act
+      return { slot: index + 1, act, kind: 'mainline', conversationId: id, assetId: conversation.sourceRefs[0], chapter: 'WORLD_REVIEW', purpose: conversation.topic ?? id, next: 'Continue' }
+    }
+    return { slot: index + 1, act, kind: 'ordinary', purpose: 'Already scheduled conversation', next: 'Continue' }
+  })
+  return [...prefix, ...plan.slice(anchor + 1 + ordinaryAfterAnchor)]
+}
+
 export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
   const plan = contactRouteOpen(run) ? MAINLINE2_STORY_PLAN : COMPRESSED_CLOSED_PLAN
   // Focus is selected before every optional scene. Only future slots change;
   // after that decision the projection is stable across refreshes.
   const focused = plan.filter(slot => slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio'))
   const branch = economyBranch(run)
-  if (!branch) return focused
+  const machine = machineBranch(run)
+  const authority = authorityPractice(run)
+  if (!branch && !machine && !authority) return preserveScheduledPrefix(focused, run)
   const extra = (id: string): MainlineStoryPlanSlot => {
     const conversation = MAINLINE2_LIBRARY.find(c => c.id === id)!
-    return { slot: 0, act: 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
+    return { slot: 0, act: conversation.act ?? 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: id.startsWith('v4-authority') ? 'AUTHORITY' : id.startsWith('v4-machine') ? 'MACHINE' : 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
   }
-  return focused.flatMap<StoryPlanSlot>(slot => {
+  const expanded = focused.flatMap<StoryPlanSlot>(slot => {
     if (slot.kind !== 'mainline') return [slot]
-    if (slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain')]
-    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [extra('v4-econ-return'), slot]
+    if (branch && slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain')]
+    if (machine && slot.assetId === 'ML2-A4-M8-DECISION-02') return [slot, extra(`v4-machine-${machine}`)]
+    if (machine && slot.assetId === 'ML2-A4-M12-DECISION-02') return [slot,
+      ...(run.decisions?.expansion_doctrine === 'independent_machine_space' ? [extra('v4-machine-exodus')] : []), extra('v4-machine-airlock')]
+    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), slot]
+    if (authority && slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, extra(`v4-authority-${authority}`)]
+    if (authority && slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, extra('v4-authority-return')]
     return [slot]
+  })
+  const projected = preserveScheduledPrefix(expanded, run)
+  return projected.filter((slot, index) => {
+    if (index < run.manifest.conversationIds.length || slot.kind !== 'mainline') return true
+    const producer = slot.conversationId === 'v4-machine-return'
+      ? (id: string) => id.startsWith('v4-machine-') && id !== 'v4-machine-return'
+      : slot.conversationId === 'v4-authority-return'
+        ? (id: string) => id.startsWith('v4-authority-') && id !== 'v4-authority-return'
+        : slot.conversationId === 'v4-econ-return'
+          ? (id: string) => /^v4-econ-(occupation|detour|menu)$/.test(id)
+          : undefined
+    return !producer || projected.slice(0, index).some(previous => previous.kind === 'mainline' && producer(previous.conversationId))
+      || run.history.some(entry => producer(entry.conversationId))
   })
 }

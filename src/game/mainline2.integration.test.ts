@@ -6,8 +6,8 @@ import { getActConversationCountsForRun } from '../content/mainline2/scheduler'
 import { effectiveStoryPlanForRun } from '../content/mainline2/storyPlan'
 import { restoreRun, serializeRun } from './storage'
 
-function complete(runId: string) {
-  let run = createMainline2Run(runId)
+function complete(runId: string, edition: 3 | 4 = 3) {
+  let run = createMainline2Run(runId, undefined, edition)
   let guard = 0
   while (run.phase === 'playing' && guard < 500) {
     const scene = resolveScene(run)
@@ -25,6 +25,14 @@ function complete(runId: string) {
 }
 
 describe('Mainline 2.0 runtime', () => {
+  it('new edition reaches a real commitment within its bounded calendar', () => {
+    const { run } = complete('edition4-integration', 4)
+    expect(run.mainlineCalendarVersion).toBe(4)
+    expect(run.finalCommitmentLocked).toBe(true)
+    expect(run.manifest.conversationIds.length).toBe(effectiveStoryPlanForRun(run).length)
+    expect(run.manifest.conversationIds.length).toBeLessThanOrEqual(115)
+    expect(new Set(run.manifest.conversationIds).size).toBe(run.manifest.conversationIds.length)
+  })
   it('keeps Maya return inside the v3 playing scheduler', () => {
     let run = createMainline2Run('maya-return-regression')
     let guard = 0

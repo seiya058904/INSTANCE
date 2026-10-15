@@ -1,6 +1,8 @@
 import type { ConversationDefinition, ResolvedScene, StableRunState } from '../../game/types'
 import { NEXT_DECISION_REPLIES, NEXT_REPLIES } from './nextDialogue'
 import { resolveEdition4Economy } from './edition4Economy'
+import { resolveEdition4Machine } from './edition4Machine'
+import { resolveEdition4Authority } from './edition4Authority'
 
 /** Next edition's authored Chinese source. IDs and decision bindings retain their
  * meaning; the historical extractor never writes this file. */
@@ -272,5 +274,5 @@ export function resolveNextNarrative(scene: ResolvedScene, run: StableRunState):
     return authored || decision ? { ...choice, text: authored ?? decision! } : choice
   })
   // Keep precomputed effects, IDs, bindings and stored history intact.
-  return resolveEdition4Economy({ ...scene, choices, ...(text !== scene.userMessage ? { userMessage: text, userMessages: undefined, userContent: undefined } : {}) }, run)
+  return resolveEdition4Authority(resolveEdition4Machine(resolveEdition4Economy({ ...scene, choices, ...(text !== scene.userMessage ? { userMessage: text, userMessages: undefined, userContent: undefined } : {}) }, run), run), run)
 }

@@ -101,6 +101,6 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     run = commitChoice(run, choice.id)
     guard += 1
   }
-  if (run.phase !== 'ending') throw new Error(`Route ${target.routeId} did not reach ending after ${guard} legal choices`)
+  if (run.phase !== 'ending') throw new Error(`Route ${target.routeId} did not reach ending after ${guard} legal choices; last nodes=${links.slice(-6).map(link => link.nodeId).join(',')}; manifest tail=${run.manifest.conversationIds.slice(-6).join(',')}`)
   return { target, run, ending: resolveMainline2Ending(run), links }
 }

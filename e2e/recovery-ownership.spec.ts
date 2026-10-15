@@ -132,7 +132,7 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
 
     // The user's selected import remains available after rejecting the stale
     // retry. Only a fresh confirmation is allowed to replace the newer record.
-    await confirm.click()
+    await Promise.all([page.waitForEvent('load'), confirm.click()])
     await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run.runId)).toBe(imported.runId)
     await expect(page.locator('.candidate-response').first()).toBeEnabled()
     const recovered = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run)

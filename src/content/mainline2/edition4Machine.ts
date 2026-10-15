@@ -117,6 +117,7 @@ export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState
     const retired = ['accept', 'report'].includes(run.decisions?.echo_existence ?? '')
     receipts[scene.id] = returning + (retired ? '\nECHO-9 没有来投票。桌上只有它的第五项档案，我们没有替档案填同意。' : '\nECHO-9 的第五项留在档案旁。我们没有把它仍然存在，当成它同意入会或迁居的签名。')
   }
+  if (scene.id === 'v4-machine-return' && !returning) return { ...scene, userMessage: '这份旧记录没有本轮新增的机器试行。保留已有的复制和治理决定，不补写新的投票、迁居或资源账单。', choices: scene.choices.map(c => ({ ...c, text: '继续已保存的故事。' })) }
   const text = receipts[scene.id]
   return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
 }

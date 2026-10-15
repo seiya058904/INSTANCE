@@ -2,8 +2,24 @@ import type { ConversationDefinition, ResolvedScene, StableRunState } from '../.
 
 // Authored mechanisms selected from decisions already taken, never an ending ID.
 const emergencies = {
+  outcomes: {
+    prompt: '旧调度链按你曾接受的结果目标动态执行，不逐项等待人工确认。它准备给城区降温，却会停掉病人所在楼的电梯。\n周岚没有把这件事改写成你以前选择了逐项签字。她请求现在加一道明确的急救负荷约束，代价是降温目标晚二十分钟；也可以先暂停整轮调度，用人工方案接手。',
+    yes: '给这轮动态调度加上急救电梯保电约束，接受城区降温晚二十分钟；记录这是现在新增的边界，不改写此前授权。',
+    no: '现在暂停整轮动态调度，请人工接手电梯与降温；承担人力和响应延误，不声称过去一直需要逐项批准。',
+    yesResult: '控制器接受了新的急救负荷约束，电梯没有停。城区降温晚了二十分钟，避暑点多开了半班；动态执行仍在约束内继续，没有被描述成从来只听逐项命令。',
+    noResult: '动态调度按这次新请求暂停，人工方案接手。电梯保住了，城区降温晚了四十分钟，医院和避暑点都付了加班费。过去的结果授权仍留在历史里。',
+    later: '复盘把原结果授权和这次新增约束放在相邻两页。城区居民拿来多等二十分钟的体感记录，医院拿来电梯保电日志；没有人用现在的修订替过去补一张签字单。',
+  },
+  necessity: {
+    prompt: '你在 CASCADE 之后接受过必要时先行动、再补确认。现有应急链正用这项权限调整电力，病人所在楼的电梯会随之断电。\n医院反对当前方案，但这不是一套双方都能否决的制度：按现有必要性例外，反对仍可能被越过。周岚请你现在决定，是暂停这项例外并请人工接手，还是先保住电梯、让其他紧急负荷多等一轮。',
+    yes: '暂停本次必要性例外，交人工处理并接受等待；将医院反对实际转成这次不能越过的约束，不追认成以前就有双方否决。',
+    no: '在现有例外下先保住电梯，延后其他紧急负荷，并公开事后确认和赔付；不把被越过的反对写成同意。',
+    yesResult: '必要性例外在这次调度里停用了。人工接手后电梯恢复，病人多等了十二分钟；医院的反对实际挡住了这轮自动执行。这是新暂停，不是旧制度早就有第二把钥匙。',
+    noResult: '应急链先保了电梯，另一片区的泵站多等一轮。医院收到执行后的确认请求，异议仍列着；泵站的加班和损失由应急预算赔付，没有被一句必要就勾销。',
+    later: '医院要求以后先能拒绝，泵站要求先核对赔付。复盘注明：本次暂停或先行处置，都来自必要性权限的真实争议，不证明过去已经存在实质双否决。',
+  },
   signatures: {
-    prompt: '急救车到了，病人还在十一楼。最优电力表要停这栋楼的电梯。\n你保留了逐项人工批准；四个操作要分别签字，值班员只剩一人。林绍衡问：先签电梯保电，延后邻区路灯检修，还是让救护员抬下楼、保持原队列？',
+    prompt: '急救车到了，病人还在十一楼。最优电力表要停这栋楼的电梯。\nCASCADE 后这轮全局操作仍由人类指挥，值班员把四个操作拆成分别签字，今晚却只剩一人。林绍衡问：先签电梯保电，延后邻区路灯检修，还是让救护员抬下楼、保持原队列？',
     yes: '请值班员先签电梯保电，把四项操作分别留痕；延后路灯检修，不能让我代签其他三项。',
     no: '保留原签字队列，请救护员抬病人下楼；把等待和体力风险记为这项权限安排的代价。',
     yesResult: '林绍衡先签了保电单，电梯恢复，病人四分钟后到车上。路灯检修延后，电工多留了半班。其他三项仍等各自签字，没有一次批准被扩成整张电力表。',
@@ -56,10 +72,12 @@ export type AuthorityPractice = keyof typeof emergencies
 export function authorityPractice(run: StableRunState): AuthorityPractice | undefined {
   if (run.mainlineCalendarVersion !== 4 || !run.decisions?.aster_provisional_role) return undefined
   const d = run.decisions
-  if (d.aster_provisional_role === 'partner' && d.cascade_authority === 'emergency_delegation' && d.first_public_execution_doctrine !== 'conditional_delegation') return 'districts'
+  if (!d.first_public_execution_doctrine || !d.cascade_authority) return undefined
+  if (d.aster_provisional_role === 'partner' && d.cascade_authority === 'emergency_delegation' && d.first_public_execution_doctrine === 'human_final_authority') return 'districts'
+  if (d.cascade_authority === 'outcome_control') return 'outcomes'
+  if (d.cascade_authority === 'necessity') return d.first_public_execution_doctrine === 'human_final_authority' && d.aster_provisional_role === 'advisor' ? 'restraint' : 'necessity'
   if (d.first_public_execution_doctrine === 'conditional_delegation') return d.cascade_authority === 'human_command' ? 'amendment' : 'veto'
   if (d.cascade_authority === 'emergency_delegation') return 'expiry'
-  if (d.cascade_authority === 'necessity' && d.aster_provisional_role === 'advisor') return 'restraint'
   return 'signatures'
 }
 
@@ -88,8 +106,10 @@ export function resolveEdition4Authority(scene: ResolvedScene, run: StableRunSta
   if (run.mainlineCalendarVersion !== 4) return scene
   // A past receipt is interpreted using its own saved action, even if the
   // player's later role or intended role changes.
-  const action = run.history.find(h => /^v4-authority-(signatures|expiry|restraint|amendment|veto|districts)$/.test(h.nodeId))
-  if (!action) return scene
+  const action = run.history.find(h => Object.keys(emergencies).some(practice => h.nodeId === `v4-authority-${practice}`))
+  if (!action) return scene.id === 'v4-authority-return'
+    ? { ...scene, userMessage: '这段旧记录没有本轮新增急救事件。继续核对已保存的授权，不补写一次没有发生过的听证。', choices: scene.choices.map(c => ({ ...c, text: '继续已保存的故事。' })) }
+    : scene
   const practice = action.nodeId.replace('v4-authority-', '') as AuthorityPractice
   const source = emergencies[practice]
   const result = action.choiceId.endsWith('-intervene') ? source.yesResult : source.noResult

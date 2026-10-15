@@ -74,7 +74,12 @@ for (const width of [320,390,768,1440,1920]) {
       await expect(page.getByRole('button',{name:'自动播放',exact:true})).toBeVisible()
       await expect(page.locator('.cinema-story')).toHaveCSS('opacity','1')
       const images=page.locator('.ending-print-image, .ending-painting')
-      if(await images.count()) expect(await images.evaluateAll(items=>items.every(item=>(item as HTMLImageElement).complete && (item as HTMLImageElement).naturalWidth>0))).toBe(true)
+      // Reduced motion reveals the text before an eager image necessarily
+      // finishes loading. Keep the image gate, await its own readiness and
+      // require actual decode before taking the acceptance screenshot.
+      await expect(images).toHaveCount(1)
+      await expect.poll(() => images.evaluateAll(items=>items.every(item=>(item as HTMLImageElement).complete && (item as HTMLImageElement).naturalWidth>0))).toBe(true)
+      await images.evaluateAll(items => Promise.all(items.map(item => (item as HTMLImageElement).decode())))
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
       await page.screenshot({path:`temp/mainline-next/cinema-${routeId}-${width}.png`})
       for(let shot=1;shot<=2;shot++) {

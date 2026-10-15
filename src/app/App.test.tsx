@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import * as app from './App'
 import { App, recordEndingCompletion, shouldRenderEndingScreen } from './App'
-import { createMainline2Run } from '../game/engine'
+import { commitChoice, createMainline2Run, resolveScene } from '../game/engine'
 import { serializeRun } from '../game/storage'
 import { createEmptyExposureHistory, getManifestConversation } from '../content/runManifest'
 import { createNonMainlineSession } from '../game/nonMainlineSession'
@@ -16,6 +16,10 @@ describe('initial product surface', () => {
 
     expect(html).toContain('Aster')
     expect(html).toContain('打印机')
+    expect(html).not.toContain('一句话的重量')
+    expect(html).not.toContain('办公室 · 值班同事')
+    expect(html).not.toContain('conversation-notices')
+    expect(html).toMatch(/<h1[^>]*>User #\d{4}<\/h1>/)
     expect(html).toContain('新的对话')
     expect(html).toContain('候选响应')
     expect((html.match(/class="candidate-response"/g) ?? []).length).toBeGreaterThanOrEqual(3)
@@ -125,4 +129,19 @@ describe('initial product surface', () => {
     expect(values[ACTIVE_SURFACE_KEY]).toBe('non-mainline')
     expect(values[NON_MAINLINE_SESSION_KEY]).toBe('{broken')
   })
+})
+
+it('restores the combined checkpoint with anonymous titles and no chapter or narrator bar', () => {
+  let run = createMainline2Run('anonymous-restore')
+  for (let guard = 0; guard < 50 && run.currentNodeId !== 'maya-first-3'; guard++) run = commitChoice(run, resolveScene(run).choices[0].id)
+  expect(run.currentNodeId).toBe('maya-first-3')
+  const raw = JSON.stringify({ version: 1, revision: 'identity-restore', data: { run, session: null, meta: {version:1,runCount:1,completedEndings:[]}, exposure: createEmptyExposureHistory(), surface:'mainline', nonMainlineView:'ending' } })
+  vi.stubGlobal('window', { location: {search:''}, localStorage: { getItem: (key: string) => key === 'instance:checkpoint:v2' ? raw : null } })
+  const html = renderToStaticMarkup(<App />)
+  expect(html).toMatch(/<h1[^>]*>User #1842<\/h1>/)
+  expect(html).not.toContain('story-chapter')
+  expect(html).not.toContain('一句话的重量')
+  expect(html).not.toContain('assistant-context')
+  expect(html.match(/class="candidate-response"/g)).toHaveLength(3)
+  expect(window.localStorage.getItem('instance:checkpoint:v2')).toBe(raw)
 })

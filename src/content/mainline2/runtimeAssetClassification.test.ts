@@ -118,7 +118,7 @@ describe('Mainline runtime asset boundary', () => {
         ...(choice.content ?? []).flatMap((part) => [part.text, part.alt ?? '']),
         choice.longformPreview?.title ?? '', choice.longformPreview?.preview ?? '', ...(choice.longformPreview?.structure ?? []), ...(choice.longformPreview?.highlights ?? []), choice.longformPreview?.closingPreview ?? '', ...(choice.longformPreview?.keyFacts ?? []),
       ]),
-      ...(node.variants ?? []).flatMap((variant) => [variant.userMessage, variant.assistantContext ?? '', ...variant.choices.map((choice) => choice.text)]),
+      ...(node.variants ?? []).flatMap((variant) => [variant.userMessage, ...variant.choices.map((choice) => choice.text)]),
     ]))
     const leaks = values.flatMap((value) => unexpectedPlayerFacingEnglish(value))
 

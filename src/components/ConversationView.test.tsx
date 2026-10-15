@@ -11,9 +11,12 @@ const scene: ResolvedScene = {
 
 describe('multimodal conversation presentation', () => {
   it('uses the same conversation markup for the first scene without an opening or gameplay preface', () => {
-    const render = (id: string) => renderToStaticMarkup(<ConversationView scene={{ ...scene, id }} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady currentMessageMode="static" chapter="一句话的重量" onChoose={() => undefined} />)
+    const render = (id: string) => renderToStaticMarkup(<ConversationView scene={{ ...scene, id }} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady currentMessageMode="static" onChoose={() => undefined} />)
     const opening = render('next-printer')
     expect(opening).toBe(render('later-conversation'))
+    expect(opening).not.toContain('story-chapter')
+    expect(opening).not.toContain('一句话的重量')
+    expect(opening).not.toContain('conversation-notices')
     expect(opening).not.toContain('story-opening')
     expect(opening).not.toContain('世界开始变得奇怪')
     expect(opening).not.toContain('你是 Aster，选择你要发出的回复')
@@ -95,4 +98,17 @@ describe('multimodal conversation presentation', () => {
     expect(html).toContain('待确认事项')
     expect(html).not.toContain('预算没有正式批准')
   })
+})
+
+it.each(['ready', 'assistant-streaming', 'conversation-closing', 'assigning', 'connecting'] as const)('never renders author narration during %s', flowStage => {
+  const html = renderToStaticMarkup(<ConversationView scene={{...scene, ...{assistantContext:'她没有追问系统，只在确认你是否仍把她当作同一个人。'}}} conversationTitle="User #1842" modelLabel="Aster 3.1" history={[]} flowStage={flowStage} choicesReady={flowStage === 'ready'} currentMessageMode="static" onChoose={() => undefined} />)
+  expect(html).not.toContain('她没有追问系统')
+  expect(html).not.toContain('assistant-context')
+})
+
+it.each(['permission', 'syncing', 'connecting'] as const)('keeps the real %s system notice once', effectDetail => {
+  const html = renderToStaticMarkup(<ConversationView scene={scene} conversationTitle="User #1842" modelLabel="Aster 3.1" history={[]} flowStage="effect" effectDetail={effectDetail} choicesReady={false} currentMessageMode="hidden" onChoose={() => undefined} />)
+  expect(html.match(/role="status"/g)).toHaveLength(1)
+  expect(html).toContain('system-notice')
+  expect(html).not.toContain('story-chapter')
 })

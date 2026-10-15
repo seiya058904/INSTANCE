@@ -71,7 +71,6 @@ export interface StoryContextVariant {
   id: string
   when: Condition
   userMessageSuffix?: string
-  assistantContextSuffix?: string
 }
 export type Mutation =
   | { type: 'flag.set'; flagId: string }
@@ -220,7 +219,6 @@ export interface StoryVariant {
   id: EndingRoute
   userMessage: string
   choices: StoryChoice[]
-  assistantContext?: string
 }
 
 export interface StoryNode {
@@ -369,7 +367,6 @@ export interface StableRunState {
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {
   variantId?: EndingRoute
-  assistantContext?: string
 }
 
 export interface EndingResult {

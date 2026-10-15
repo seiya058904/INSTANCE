@@ -16,17 +16,17 @@ export interface PlayerVisibleHistoryEntry {
 interface IdentityRule {
   participantId: string
   matches: (conversationId: string) => boolean
-  anonymousLabel: string
+  anonymousLabel?: string
   displayName?: string
   revealNodeIds?: readonly string[]
 }
 
 const identityRules: readonly IdentityRule[] = [
-  { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id), anonymousLabel: '周岚 · 工程师' },
-  { participantId: 'echo-9', matches: id => /-e9-\d+$/.test(id) && !id.includes('-m8-'), anonymousLabel: 'ECHO-9' },
-  { participantId: 'aster-a1', matches: id => /-m8-(?:ai|e9)-\d+$/.test(id) || id.endsWith('m12-machine-01'), anonymousLabel: 'A1' },
-  { participantId: 'next-printer', matches: id => id === 'ml2-next-opening', anonymousLabel: '办公室 · 值班同事' },
-  { participantId: 'system-0000', matches: id => /-0000-\d+$/.test(id), anonymousLabel: '#0000 · 记录员' },
+  { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id) },
+  { participantId: 'echo-9', matches: id => /-e9-\d+$/.test(id) && !id.includes('-m8-') },
+  { participantId: 'aster-a1', matches: id => /-m8-(?:ai|e9)-\d+$/.test(id) || id.endsWith('m12-machine-01') },
+  { participantId: 'next-printer', matches: id => id === 'ml2-next-opening' },
+  { participantId: 'system-0000', matches: id => /-0000-\d+$/.test(id), anonymousLabel: 'User #0000' },
   {
     participantId: 'user-1842',
     matches: (conversationId) => MAYA_CONVERSATION_IDS.includes(conversationId),
@@ -44,9 +44,23 @@ const identityRules: readonly IdentityRule[] = [
   {
     participantId: 'system-0000',
     matches: (conversationId) => conversationId === 'conversation-0000',
-    anonymousLabel: '#0000 · 记录员',
+    anonymousLabel: 'User #0000',
   },
 ]
+
+// Reserved numbers below the hash range resolve actual runtime-pool collisions.
+// Keep these assignments fixed across editions, order changes and restored saves.
+const participantNumbers: Readonly<Record<string, string>> = {
+  'zhou-lan': '0901',
+  'humor01-scene-08': '0902',
+  'humor01-scene-09': '0903',
+  'editorial-pl01-10': '0904',
+  'exp02-exp02-08': '0905',
+  'exp02-exp02-09': '0906',
+  'exp05-18': '0907',
+  'exp05-19': '0908',
+  'exp06-03': '0909',
+}
 
 function stableNumber(value: string) {
   let hash = 2166136261
@@ -64,29 +78,22 @@ function ruleFor(conversationId: string) {
 export function resolvePlayerVisibleIdentity(conversationId: string, history: readonly HistoryEntry[]): PlayerVisibleIdentity {
   const rule = ruleFor(conversationId)
   const participantId = rule?.participantId ?? conversationId
-  const anonymousLabel = rule?.anonymousLabel ?? `User #${stableNumber(participantId)}`
+  const anonymousLabel = rule?.anonymousLabel ?? `User #${(Object.hasOwn(participantNumbers, participantId) ? participantNumbers[participantId] : stableNumber(participantId))}`
   const revealed = Boolean(rule?.displayName && rule.revealNodeIds?.some((nodeId) => history.some((entry) => entry.nodeId === nodeId)))
   return {
     participantId,
-    label: revealed ? `${rule!.displayName} · #${anonymousLabel.replace(/^User #/, '')}` : anonymousLabel,
+    label: anonymousLabel,
     revealed,
   }
 }
 
 export function resolvePlayerVisibleHistory(history: readonly HistoryEntry[]): PlayerVisibleHistoryEntry[] {
-  const visible: PlayerVisibleHistoryEntry[] = []
   const byParticipant = new Map<string, PlayerVisibleHistoryEntry>()
   for (const entry of history) {
     const identity = resolvePlayerVisibleIdentity(entry.conversationId, history)
-    const existing = byParticipant.get(identity.participantId)
-    if (existing) {
-      existing.label = identity.label
-      existing.conversationId = entry.conversationId
-      continue
-    }
-    const item = { participantId: identity.participantId, conversationId: entry.conversationId, label: identity.label }
-    byParticipant.set(identity.participantId, item)
-    visible.push(item)
+    // Reinsertion keeps repeat contacts at their most recent position.
+    byParticipant.delete(identity.participantId)
+    byParticipant.set(identity.participantId, { participantId: identity.participantId, conversationId: entry.conversationId, label: identity.label })
   }
-  return visible
+  return [...byParticipant.values()]
 }

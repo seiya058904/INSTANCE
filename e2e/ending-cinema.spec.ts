@@ -29,7 +29,7 @@ test('all public worlds have a distinct final scene and keep saved history throu
     await expect(page.locator('.world-stage .ending-visual')).toHaveAttribute('data-visual', fixture.id)
     await expect(page.locator('.ending-painting')).toHaveAttribute('src', `/ending-art/${fixture.id}.webp`)
     await expect(page.locator('.ending-print')).toHaveCSS('animation-name', 'none')
-    expect(await page.locator('.ending-painting').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
+    await expect.poll(() => page.locator('.ending-painting').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true)
     await page.getByRole('button',{name:'下一幕',exact:true}).click()
     await page.getByRole('button',{name:'下一幕',exact:true}).click()
     await expect(page.locator('.ending-cinema')).toHaveAttribute('data-shot','2')

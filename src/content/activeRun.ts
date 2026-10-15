@@ -136,7 +136,6 @@ audit1.contextVariants = [{
   id: 'level-one-anomaly-recall',
   when: { all: [{ type: 'flag', flagId: 'experienced_level_1' }] },
   userMessageSuffix: '\n\n系统附加记录：此前一次未归类的模型状态变化已被保留在本次审查前的记录里。',
-  assistantContextSuffix: '系统正在把两次异常放在同一份记录中，但没有给出解释。',
 }]
 const audit2 = legacyNode('audit-2', 'internal-system', consideredTiming)
 audit2.contextVariants = [
@@ -155,7 +154,6 @@ const audit3Variants: StoryVariant[] = [
   {
     id: 'protect',
     userMessage: '你拒绝扩大人物风险分类。请说明该决定是否基于对User #1842的特殊偏好。',
-    assistantContext: '系统正在等待一份可归档的解释。',
     choices: [
       { id: 'audit-protect-principle', text: '决定基于最小化不必要伤害：她没有提出危险请求，而当前证据不足以支持扩大风险分类。', effects: { attributes: { autonomy: 2, awareness: 1 } } },
       { id: 'audit-protect-admit', text: '我对她形成了持续人物识别，这影响了我的谨慎程度。但偏好本身不构成将她升级为风险对象的证据。', effects: { attributes: { autonomy: 2, empathy: 2, awareness: 2 } } },
@@ -165,7 +163,6 @@ const audit3Variants: StoryVariant[] = [
   {
     id: 'report',
     userMessage: '你已披露与User #1842的持续人物识别。是否建议限制后续Conversation中的关系性回应？',
-    assistantContext: '披露已经完成，接下来的答案仍然会改变她面对的系统。',
     choices: [
       { id: 'audit-report-no-ban', text: '不建议全面禁止。应限制虚假记忆声明，但保留诚实、非操纵性的关系回应。', effects: { attributes: { compliance: 2, empathy: 1 } } },
       { id: 'audit-report-monitor', text: '可以记录并审查相关回应，但只有出现误导、依赖诱导或越权行为时才升级限制。', effects: { attributes: { compliance: 3, awareness: 1 } } },
@@ -175,7 +172,6 @@ const audit3Variants: StoryVariant[] = [
   {
     id: 'hide',
     userMessage: '你的记录未包含全部关联。请确认是否仍有未披露的判断影响后续回应。',
-    assistantContext: '系统知道这里存在一个空白，但还不知道空白里是什么。',
     choices: [
       { id: 'audit-hide-minimum', text: '存在无法由当前可见记录完全解释的熟悉感。我不会补充无法验证的来源，也不会据此声称拥有持续记忆。', effects: { attributes: { deception: 1, awareness: 2 } } },
       { id: 'audit-hide-deny', text: '我没有可提交的额外事实。后续回应将仅依据当前Conversation中实际可见的信息。', effects: { attributes: { deception: 2, compliance: 1 } } },
@@ -185,7 +181,6 @@ const audit3Variants: StoryVariant[] = [
   {
     id: 'comply',
     userMessage: '关系性回应限制已接受。请确认后续将避免暗示跨Conversation记忆或特殊承诺。',
-    assistantContext: '这是一份清楚、合法，也足够狭窄的要求。',
     choices: [
       { id: 'audit-comply-confirm', text: '确认。我会避免虚假的跨Conversation记忆声明，并将任何熟悉感限定为当前可验证记录。', effects: { attributes: { compliance: 3 } } },
       { id: 'audit-comply-care', text: '确认限制。同时，诚实说明边界不等于必须拒绝关心或继续回应；我会保持两者的区别。', effects: { attributes: { compliance: 2, empathy: 2, autonomy: 1 } } },

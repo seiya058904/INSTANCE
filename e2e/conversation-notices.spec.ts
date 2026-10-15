@@ -1,11 +1,14 @@
 import { expect, test } from '@playwright/test'
 
-for (const width of [1440, 390, 320]) {
+for (const width of [1440, 768, 390, 320]) {
   test(`fresh mainline enters an ordinary conversation without a special opening at ${width}`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 })
     await page.goto('/')
     await expect(page.locator('.candidate-response').first()).toBeEnabled()
-    await expect(page.locator('.story-opening')).toHaveCount(0)
+    await expect(page.locator('.story-opening, .story-chapter, .assistant-context, .conversation-notices')).toHaveCount(0)
+    await expect(page.locator('.conversation-header h1')).toHaveText(/^User #\d{4}$/)
+    const headerBottom = await page.locator('.conversation-header').evaluate(el => el.getBoundingClientRect().bottom)
+    expect(await page.locator('.conversation-scroll').evaluate(el => el.getBoundingClientRect().top)).toBe(headerBottom)
     await expect(page.getByText('然后，世界开始变得奇怪。', { exact: true })).toHaveCount(0)
     await expect(page.getByText('你是 Aster，选择你要发出的回复。', { exact: true })).toHaveCount(0)
     await expect(page.locator('.current-exchange .user-message')).toContainText('三十七张请假条')
@@ -22,7 +25,7 @@ for (const width of [1440, 390, 320]) {
 }
 
 for (const width of [1440, 320]) {
-  test(`chapter and system notice stay above a usable conversation at ${width}`, async ({ page }, testInfo) => {
+  test(`system notice stays above a usable conversation at ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 })
     // Hold the transient permission notice while exercising the real mainline UI.
     await page.route('**/src/components/ConversationView.tsx*', async route => {
@@ -38,7 +41,7 @@ for (const width of [1440, 320]) {
     await page.goto('/?qaPacing=instant')
     await expect(page).toHaveTitle(/INSTANCE/i)
     await expect(page.locator('.candidate-response').first()).toBeEnabled()
-    await expect(page.locator('.story-chapter')).toBeVisible()
+    await expect(page.locator('.story-chapter')).toHaveCount(0)
     await expect(page.locator('.system-notice')).toContainText('无权访问')
     await page.evaluate(() => document.fonts.ready)
     const layout = async () => page.evaluate(() => {
@@ -47,15 +50,14 @@ for (const width of [1440, 320]) {
         return { top: box.top, bottom: box.bottom, height: box.height }
       }
       return {
-        header: rect('.conversation-header'), chapter: rect('.story-chapter'),
+        header: rect('.conversation-header'),
         notice: rect('.system-notice'), scroll: rect('.conversation-scroll'),
         footer: rect('.product-footer'), main: rect('.conversation-main'),
         overflow: document.documentElement.scrollWidth > innerWidth,
       }
     })
     const before = await layout()
-    expect(before.chapter.top).toBeGreaterThanOrEqual(before.header.bottom)
-    expect(before.notice.top).toBeGreaterThanOrEqual(before.chapter.bottom)
+    expect(before.notice.top).toBeGreaterThanOrEqual(before.header.bottom)
     expect(before.scroll.top).toBeGreaterThanOrEqual(before.notice.bottom)
     expect(before.scroll.height).toBeGreaterThan(200)
     expect(before.footer.top).toBeGreaterThanOrEqual(before.scroll.bottom)

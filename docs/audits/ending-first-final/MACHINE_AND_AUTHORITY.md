@@ -1,5 +1,6 @@
 # 机器行动与权力执行
 
+历史阶段记录；最终交付状态见[最终验收](FINAL_NARRATIVE_ACCEPTANCE.md)。
 2026-10-16，Asia/Shanghai。持续实施中的第二切片，整体任务未完成。
 
 ## 玩家经历

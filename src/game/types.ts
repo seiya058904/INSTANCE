@@ -359,10 +359,12 @@ export interface StableRunState {
    * the field existed (pre-calendar-versioning v3 saves) walked only the full
    * 190-slot plan; absence of the field keeps those saves on that legacy
    * calendar so restoring them mid-run never re-indexes their manifest onto
-   * the compressed branch calendar. New runs are created at version 2, whose
-   * contact-closed branch drops the gated Contact slots.
+   * another edition. Edition 3 remains readable; new runs use edition 4.
    */
   mainlineCalendarVersion?: number
+  /** New causal gates apply to fresh edition-4 runs and explicitly played
+   * new institutional/exit actions, not to completed interim v4 archives. */
+  mainlineCausalityVersion?: 1
 }
 
 export interface ResolvedScene extends Omit<StoryNode, 'variants'> {

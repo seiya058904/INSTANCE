@@ -8,6 +8,8 @@ import { machineBranch } from './edition4Machine'
 import { authorityPractice } from './edition4Authority'
 import { humanIncident, lifeAllocation, speciesIncident } from './edition4Life'
 import { contactIncident } from './edition4Contact'
+import { safetyTrial, choseSafety } from './edition4Safety'
+import { futurePivot } from './edition4Pivot'
 
 export interface MainlineStoryRole {
   chapter: StoryPlanChapter
@@ -156,7 +158,7 @@ function edition4SceneDepth(slot: StoryPlanSlot, run: StableRunState) {
   const ref = slot.assetId
   if (['ML2-A4-M15-WE-01', 'ML2-A4-M15-LSH-02'].includes(ref)) return false
   if (ref === 'ML2-A4-M9-CONTINUITY-01') return allocation === 'clinic' && run.history.some(h => h.nodeId === 'v4-life-clinic-next' && h.choiceId === 'v4-life-persons')
-  if (['ML2-A4-M8-E9-01', 'ML2-A4-M8-AI-04', 'ML2-A4-M8-MAYA-01'].includes(ref)) return focus === 'computation_ai'
+  if (['ML2-A4-M8-E9-01', 'ML2-A4-M8-AI-04', 'ML2-A4-M8-MAYA-01'].includes(ref)) return focus === 'computation_ai' && !run.history.some(h => h.choiceId === 'v4-compute-controls')
   if (['ML2-A4-M9-MAYA-01', 'ML2-A4-M9-MAYA-02'].includes(ref)) return allocation === 'clinic'
   if (['ML2-A4-M10-DEV-04', 'ML2-A4-M10-MAYA-02'].includes(ref)) return focus === 'automation_industry'
   if (['ML2-A4-M11-WE-01', 'ML2-A4-M11-MAYA-01', 'ML2-A4-M11-LSH-02'].includes(ref)) return allocation === 'wetland'
@@ -178,36 +180,52 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
   const human = humanIncident(run)
   const species = speciesIncident(run)
   const life = run.mainlineCalendarVersion === 4 && run.decisions?.act4_research_emphasis === 'life_mind'
-  const frontier = run.mainlineCalendarVersion === 4 && run.decisions?.act4_research_emphasis === 'frontier_science'
+  const pivot = futurePivot(run)
+  const frontier = run.mainlineCalendarVersion === 4 && (run.decisions?.act4_research_emphasis === 'frontier_science' || pivot === 'frontier')
   const contact = contactIncident(run)
   const localFrontier = frontier && !contactRouteOpen(run) && run.history.some(h => h.nodeId === 'v4-frontier-allocation' && h.choiceId === 'v4-frontier-home')
-  if (!branch && !machine && !authority && !life && !frontier && !contact) return preserveScheduledPrefix(focused, run)
+  const edition4 = run.mainlineCalendarVersion === 4
+  const compute = edition4 && run.decisions?.act4_research_emphasis === 'computation_ai'
+  const controls = (compute && run.history.some(h => h.choiceId === 'v4-compute-controls')) || pivot === 'controls'
+  const trial = controls ? safetyTrial(run) : undefined
+  const service = Boolean(machine || (edition4 && run.decisions?.aster_provisional_role === 'custodian'))
+  if (!edition4 && !branch && !machine && !authority && !life && !frontier && !contact) return preserveScheduledPrefix(focused, run)
   const extra = (id: string): MainlineStoryPlanSlot => {
     const conversation = MAINLINE2_LIBRARY.find(c => c.id === id)!
     return { slot: 0, act: conversation.act ?? 4, kind: 'mainline', assetId: conversation.sourceRefs[0], conversationId: id, chapter: id.startsWith('v4-contact') ? 'CONTACT' : id.startsWith('v4-frontier') ? 'SPACE' : id.startsWith('v4-life') ? lifeAllocation(run) === 'wetland' ? 'UPLIFT' : 'POSTHUMAN' : id.startsWith('v4-authority') ? 'AUTHORITY' : id.startsWith('v4-machine') ? 'MACHINE' : 'AUTOMATION', purpose: conversation.topic ?? id, next: 'Continue' }
   }
   const expanded = focused.flatMap<StoryPlanSlot>(slot => {
     if (slot.kind !== 'mainline') return [slot]
+    if (compute && slot.assetId === 'ML2-A4-M7-DECISION-01') return [slot, extra('v4-compute-allocation')]
+    if (trial && slot.assetId === 'ML2-A4-M14-CAP-01') return [slot, extra(`v4-safety-${trial}`),
+      ...(trial === 'protectorate' ? [extra('v4-safety-revocation')] : []),
+      ...(trial === 'fracture' && choseSafety(run, 'fracture', true) ? [extra('v4-safety-handover')] : [])]
+    if (edition4 && slot.assetId === 'ML2-A5-M16-0000-01') return [slot, ...(run.decisions?.aster_provisional_role === 'sovereign' ? [extra('v4-sovereignty-settlement')] : [])]
+    if (edition4 && slot.assetId === 'ML2-A5-M16-GEN-01') return [extra('v4-final-preflight'), slot]
     if (life && slot.assetId === 'ML2-A4-M7-DECISION-01') return [slot, extra('v4-life-allocation')]
     if (lifeAllocation(run) === 'clinic' && run.decisions?.human_form_doctrine === 'posthuman_transition' && slot.assetId === 'ML2-A4-M9-DECISION-01') return [slot, extra('v4-life-clinic-next')]
-    if (human && slot.assetId === 'ML2-A4-M10-RES-01') return [extra(`v4-life-${human}`), slot]
-    if (species && slot.assetId === 'ML2-A4-M11-DECISION-02') return [slot, extra(`v4-life-${species}`)]
+    if (human && slot.assetId === 'ML2-A4-M10-RES-01') return [extra(`v4-life-${human}`), ...(life && lifeAllocation(run) === 'clinic' ? [extra('v4-future-effort')] : []), slot]
+    if (species && slot.assetId === 'ML2-A4-M11-DECISION-02') return [slot, extra(`v4-life-${species}`), ...(life && run.history.some(h => h.choiceId === 'v4-life-wetland') ? [extra('v4-future-effort')] : [])]
     if (frontier && slot.assetId === 'ML2-A4-M12-RES-04') return [slot, extra('v4-frontier-allocation')]
-    if (contact && slot.assetId === 'ML2-A4-M13-DECISION-02') return [slot, extra(`v4-contact-${contact}`), extra('v4-contact-border')]
+    if (contact && slot.assetId === 'ML2-A4-M13-DECISION-02') return [slot, extra(`v4-contact-${contact}`), extra('v4-contact-border'), ...(run.decisions?.act4_research_emphasis === 'frontier_science' ? [extra('v4-future-effort')] : [])]
     if (localFrontier && slot.assetId === 'ML2-A4-M13-CONTACT-01') return [slot, extra('v4-frontier-no-contact')]
-    if (branch && slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain')]
-    if (machine && slot.assetId === 'ML2-A4-M8-DECISION-02') return [slot, extra(`v4-machine-${machine}`)]
+    if (branch && slot.assetId === 'ML2-A4-M10-DECISION-02') return [slot, extra(`v4-econ-${branch}`), extra('v4-econ-cold-chain'), ...(run.decisions?.act4_research_emphasis === 'automation_industry' ? [extra('v4-future-effort')] : [])]
+    if (machine && slot.assetId === 'ML2-A4-M8-DECISION-02') return [slot, extra(`v4-machine-${machine}`), extra('v4-future-effort')]
     if (machine && slot.assetId === 'ML2-A4-M12-DECISION-02') return [slot,
       ...(run.decisions?.expansion_doctrine === 'independent_machine_space' ? [extra('v4-machine-exodus')] : []), extra('v4-machine-airlock')]
-    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), ...(human || species ? [extra('v4-life-return')] : []), ...(contact || localFrontier ? [extra('v4-contact-return')] : []), slot]
-    if (authority && slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, extra(`v4-authority-${authority}`)]
-    if (authority && slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, extra('v4-authority-return')]
+    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), ...(human || species ? [extra('v4-life-return')] : []), ...(contact || localFrontier ? [extra('v4-contact-return')] : []), ...(trial ? [extra('v4-safety-return')] : []), slot]
+    if (slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, ...(service ? [extra('v4-governance-service')] : []), ...(authority ? [extra(`v4-authority-${authority}`)] : [])]
+    if (slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, ...(authority ? [extra('v4-authority-return')] : []), ...(service ? [extra('v4-governance-return')] : [])]
     return [slot]
   })
   const projected = preserveScheduledPrefix(expanded, run)
   return projected.filter((slot, index) => {
     if (index < run.manifest.conversationIds.length || slot.kind !== 'mainline') return true
-    const producer = slot.conversationId === 'v4-machine-return'
+    const producer = slot.conversationId === 'v4-safety-return'
+      ? (id: string) => /^v4-safety-(handover|fracture|revocation|protectorate|disarmament|defense)$/.test(id)
+      : slot.conversationId === 'v4-governance-return'
+        ? (id: string) => id === 'v4-governance-service'
+      : slot.conversationId === 'v4-machine-return'
       ? (id: string) => id.startsWith('v4-machine-') && id !== 'v4-machine-return'
       : slot.conversationId === 'v4-authority-return'
         ? (id: string) => id.startsWith('v4-authority-') && id !== 'v4-authority-return'

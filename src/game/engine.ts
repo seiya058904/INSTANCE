@@ -12,7 +12,7 @@ import { selectAct4Modules, updateProgressForSchedule } from '../content/mainlin
 import { emptyWorldState } from '../content/mainline2/stateRegistry'
 import { isFinalCommitmentResolvable, resolveMainline2Ending } from '../content/mainline2/endings'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
-import { getFutureProposalById, formatProposalClarification, proposalProvenanceLines } from '../content/mainline2/proposals'
+import { getFutureProposalById, formatProposalClarification, proposalProvenanceLines, rankFutureProposalCandidates } from '../content/mainline2/proposals'
 import { presentedProposal, proposalContractText } from '../content/mainline2/proposalPresentation'
 import { DECISION_IDS, MODULE_IDS, WORLD_AXES, isDecisionValue } from '../content/mainline2/stateRegistry'
 import type {
@@ -112,6 +112,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID(), exposure
     priorOrdinaryExposure,
     nonMainlineConsumedOrdinaryIds: [],
     mainlineCalendarVersion: edition,
+    ...(edition === 4 ? { mainlineCausalityVersion: 1 as const } : {}),
     ...emptySystemState(),
   }
 }
@@ -181,6 +182,10 @@ function proposalChoices(run: StableRunState, scene: ResolvedScene): StoryChoice
 }
 
 function decorateProposalChoices(run: StableRunState, scene: ResolvedScene): ResolvedScene {
+  if (scene.id === 'v4-final-preflight') {
+    const ready = rankFutureProposalCandidates(run).some(proposal => isFinalCommitmentResolvable(run, proposal.id))
+    return { ...scene, choices: scene.choices.filter(choice => choice.id !== 'v4-final-proceed' || ready) }
+  }
   const additions = proposalChoices(run, scene)
   const sourceRef = getManifestConversation(scene.conversationId)?.sourceRefs[0]
   if (sourceRef === 'ML2-A5-M17-REVIEW-01') {
@@ -257,6 +262,14 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   const scene = resolveScene(run)
   const choice = scene.choices.find((item) => item.id === choiceId)
   if (!choice) throw new Error(`Choice ${choiceId} is not available`)
+  // Interim edition-4 records adopt the new gates only after an actual new
+  // causal action. Neither load nor old ending replay fabricates such history.
+  if (run.mainlineCalendarVersion === 4 && !run.mainlineCausalityVersion
+    && (/^v4-safety-(handover|fracture|revocation|protectorate|disarmament|defense)$/.test(scene.id)
+      || ['v4-governance-service', 'v4-sovereignty-settlement'].includes(scene.id)
+      || choice.id === 'v4-final-handover-act')) {
+    run = { ...run, mainlineCausalityVersion: 1 }
+  }
   if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')
   const proposalSource = getManifestConversation(scene.conversationId)?.sourceRefs[0]
   if (choice.proposalKind === 'commitment' && proposalSource !== 'ML2-A5-M17-COMMIT-01') throw new Error('Commitment is only available at the authored M17 commit stage')

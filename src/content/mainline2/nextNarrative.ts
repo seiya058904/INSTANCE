@@ -1,3 +1,4 @@
+import { resolveEdition4Pivot } from './edition4Pivot'
 import type { ConversationDefinition, ResolvedScene, StableRunState } from '../../game/types'
 import { NEXT_DECISION_REPLIES, NEXT_REPLIES } from './nextDialogue'
 import { resolveEdition4Economy } from './edition4Economy'
@@ -5,6 +6,8 @@ import { resolveEdition4Machine } from './edition4Machine'
 import { resolveEdition4Authority } from './edition4Authority'
 import { resolveEdition4Life } from './edition4Life'
 import { resolveEdition4Contact } from './edition4Contact'
+import { resolveEdition4Safety } from './edition4Safety'
+import { resolveEdition4Governance } from './edition4Governance'
 
 /** Next edition's authored Chinese source. IDs and decision bindings retain their
  * meaning; the historical extractor never writes this file. */
@@ -276,5 +279,5 @@ export function resolveNextNarrative(scene: ResolvedScene, run: StableRunState):
     return authored || decision ? { ...choice, text: authored ?? decision! } : choice
   })
   // Keep precomputed effects, IDs, bindings and stored history intact.
-  return resolveEdition4Contact(resolveEdition4Life(resolveEdition4Authority(resolveEdition4Machine(resolveEdition4Economy({ ...scene, choices, ...(text !== scene.userMessage ? { userMessage: text, userMessages: undefined, userContent: undefined } : {}) }, run), run), run), run), run)
+  return resolveEdition4Pivot(resolveEdition4Governance(resolveEdition4Safety(resolveEdition4Contact(resolveEdition4Life(resolveEdition4Authority(resolveEdition4Machine(resolveEdition4Economy({ ...scene, choices, ...(text !== scene.userMessage ? { userMessage: text, userMessages: undefined, userContent: undefined } : {}) }, run), run), run), run), run), run), run), run)
 }

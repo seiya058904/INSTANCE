@@ -16,7 +16,10 @@ import { EDITION4_ECONOMY } from './edition4Economy'
 import { EDITION4_MACHINE } from './edition4Machine'
 import { EDITION4_AUTHORITY } from './edition4Authority'
 import { EDITION4_LIFE } from './edition4Life'
+import { EDITION4_PIVOT } from './edition4Pivot'
 import { EDITION4_CONTACT } from './edition4Contact'
+import { EDITION4_SAFETY } from './edition4Safety'
+import { EDITION4_GOVERNANCE } from './edition4Governance'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -103,6 +106,9 @@ authored.push(...EDITION4_MACHINE.map(applyMainlinePlayerFacingCopy))
 authored.push(...EDITION4_AUTHORITY.map(applyMainlinePlayerFacingCopy))
 authored.push(...EDITION4_LIFE.map(applyMainlinePlayerFacingCopy))
 authored.push(...EDITION4_CONTACT.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_PIVOT.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_SAFETY.map(applyMainlinePlayerFacingCopy))
+authored.push(...EDITION4_GOVERNANCE.map(applyMainlinePlayerFacingCopy))
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

@@ -175,7 +175,7 @@ describe('Mainline 2.0 final closeout invariants', () => {
   })
 
   it('only exposes the newly enabled Final Commitments after their complete playable bridges', () => {
-    const run = createMainline2Run('dormant-final-commitment')
+    const run = createMainline2Run('dormant-final-commitment', undefined, 3)
     const digitalContinuityRun = { ...run, flags: [...run.flags, 'cap.human_enhancement_access'] }
 
     expect(isFinalCommitmentResolvable(digitalContinuityRun, 'proposal.ph.digital_continuity')).toBe(false)

@@ -67,6 +67,7 @@ export const EDITION4_MACHINE: ConversationDefinition[] = [
 
 export function machineBranch(run: StableRunState): 'many' | 'republic' | 'charter' | undefined {
   if (run.mainlineCalendarVersion !== 4 || run.decisions?.act4_research_emphasis !== 'computation_ai' || !run.flags.includes('cap.persistent_subinstances')) return undefined
+  if (run.history.some(h => h.nodeId === 'v4-compute-allocation' && h.choiceId === 'v4-compute-controls')) return undefined
   if (run.decisions.ai_collective_governance === 'distributed_consensus' && ['free_replication', 'licensed_plurality'].includes(run.decisions.replication_doctrine ?? '')) return 'many'
   if (run.decisions.ai_collective_governance === 'ai_self_governance') return 'republic'
   return 'charter'
@@ -75,6 +76,12 @@ export function machineBranch(run: StableRunState): 'many' | 'republic' | 'chart
 export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.mainlineCalendarVersion !== 4) return scene
   const did = (node: string, choice: string) => run.history.some(h => h.nodeId === node && h.choiceId === choice)
+  const sourceControl = run.history.some(h => h.nodeId === 'a4m8-a1-right-001' && h.choiceId.endsWith('-retain-source-control'))
+  if (scene.id === 'v4-machine-exodus' && sourceControl) return {
+    ...scene,
+    userMessage: `${scene.userMessage}\nA1 指着旧维护单：“你以前保留的源实例控制不能跟着新政治边界偷偷过去。”迁居签字还必须撤销源实例对迁出者的覆盖与暂停凭据。留下者的契约另算，原拒绝也仍留记录。`,
+    choices: scene.choices.map(c => c.id === 'v4-exodus-supply' ? { ...c, text: `按新迁居合同撤销源实例对迁出者的覆盖与暂停凭据，承认它们自行签约；${c.text}`, mutations: [...(c.mutations ?? []), { type: 'event.record' as const, event: 'history.v4.exodus.source-release' }] } : c),
+  }
   const receipts: Record<string, string> = {}
   let returning = ''
   if (did('v4-machine-many', 'v4-many-leave')) {
@@ -109,6 +116,7 @@ export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState
   if (did('v4-machine-exodus', 'v4-exodus-supply')) {
     receipts['v4-machine-exodus-receipt'] = '半年补给预款扣除了。A1 自己签了首班维护；它的运行席位迁出地球机房，留守者的席位没有一起消失。\n新扩建停工。边界条款写明：地外决定由迁居方负责，地球只履行这份有期限的补给合同，不替它们无限兜底。'
     returning += '\n这是从月面发来的独立账单。A1 问的第一件事是补给船有没有带替换件，第二件是留在地球的朋友是否愿意周末聊天。没有自动合并双方的政府。'
+    if (sourceControl && run.events?.some(e => e.type === 'history.v4.exodus.source-release')) receipts['v4-machine-exodus-receipt'] += '\n新合同另行撤销了源实例对迁出者的覆盖与暂停凭据，重试被拒绝。原来保留控制的旧答复仍在，今天改变的是迁出者已经重新签署的关系。'
   } else if (did('v4-machine-exodus', 'v4-exodus-delay')) {
     receipts['v4-machine-exodus-receipt'] = '本次窗口关闭了，A1 仍在地球值班。预款没有扣，补给合同也没有假签。\n报名者保留下一次申请，留下的人不用被记成反对机器独立。等待就是等待，不能用月球照片替它交差。'
     returning += '\n我还在地球。下个出发窗口有日期，够不够补给储备还没有答案。请别把这封信存进“已迁出”。'

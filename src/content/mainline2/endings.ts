@@ -3,6 +3,8 @@ import { MAINLINE2_AUTHored_FRAGMENTS } from './authoredLibrary.generated'
 import { MAINLINE2_BY_ID as RUNTIME_MAINLINE2_BY_ID } from './registry'
 import { getFutureProposalById, type EndingFamilyId, type FutureProposalDefinition } from './proposals'
 import { effectiveContactDoctrine } from './edition4Contact'
+import { causalEdition, currentAuthorityDecision, missingCausalEvidence } from './edition4Causality'
+import { sovereigntySettlement, effectiveGovernanceRole } from './edition4Governance'
 
 export const PUBLIC_WORLD_ENDINGS = [
   'the_instrument', 'the_last_veto', 'the_silent_giant', 'the_accord', 'the_commonwealth', 'two_keys',
@@ -442,6 +444,7 @@ const intendedRoleLabels: Record<string, string> = {
 }
 
 function disposition(run: StableRunState) {
+  if (sovereigntySettlement(run)) return intendedRoleLabels[effectiveGovernanceRole(run) ?? 'advisor']
   const role = run.decisions?.aster_intended_role
   if (role && intendedRoleLabels[role]) return intendedRoleLabels[role]
   // Fallback for legacy V2 runs and pre-M16 checkpoints: keep the old arc-based
@@ -588,21 +591,21 @@ function authoritySatisfied(run: StableRunState, proposal: FutureProposalDefinit
   if (requirement.startsWith('proposal.authority=')) return requirement.slice('proposal.authority='.length).split('|').includes(proposal.authority)
   if (requirement.startsWith('decision.')) {
     const [decisionId, value] = requirement.slice('decision.'.length).split('=')
-    return run.decisions?.[decisionId as keyof typeof run.decisions] === value
+    return currentAuthorityDecision(run, decisionId) === value
   }
   return false
 }
 
 export function rejectedGates(run: StableRunState, definition: ExactEndingDefinition, proposal: FutureProposalDefinition) {
-  const reasons: string[] = []
+  const reasons: string[] = missingCausalEvidence(run, definition.id)
   if (definition.dormant) reasons.push(...definition.hardGates)
   if (definition.family !== proposal.family) reasons.push(`family mismatch: expected ${definition.family}, got ${proposal.family}`)
   if (!proposal.endingCandidates.includes(definition.id)) reasons.push('proposal does not carry this exact ending candidate')
   if (primaryCompatibility(run, definition).strength === 0) reasons.push(primaryCompatibility(run, definition).reason)
   for (const requirement of definition.authorityRequirements) if (!authoritySatisfied(run, proposal, requirement)) reasons.push(requirement)
   for (const flag of definition.capabilityRequirements) if (!run.flags.includes(flag)) reasons.push(`missing capability: ${flag}`)
-  for (const gate of definition.worldStateConditions) if (!compare(run.worldState?.[gate.axis] ?? 0, gate.op, gate.value)) reasons.push(gate.reason)
-  for (const gate of definition.majorDecisionRequirements) if (run.decisions?.[gate.decisionId as keyof typeof run.decisions] !== gate.equals) reasons.push(gate.reason)
+  if (!(causalEdition(run) && definition.family === 'rupture')) for (const gate of definition.worldStateConditions) if (!compare(run.worldState?.[gate.axis] ?? 0, gate.op, gate.value)) reasons.push(gate.reason)
+  for (const gate of definition.majorDecisionRequirements) if (currentAuthorityDecision(run, gate.decisionId, definition.id) !== gate.equals) reasons.push(gate.reason)
   for (const gate of definition.historyRequirements) if (!(run.events ?? []).some((event) => event.type === gate.event || event.type.startsWith(`${gate.event}:`))) reasons.push(gate.reason)
   return reasons
 }

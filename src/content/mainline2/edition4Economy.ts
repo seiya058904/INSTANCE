@@ -1,3 +1,4 @@
+import { futurePivot } from './edition4Pivot'
 import type { ConversationDefinition, ResolvedScene, StableRunState, StoryChoice } from '../../game/types'
 
 // New IDs belong only to calendar 4. Choices are actions, not replacements for
@@ -79,8 +80,8 @@ export const EDITION4_ECONOMY: ConversationDefinition[] = [
 ]
 
 export function economyBranch(run: StableRunState): 'occupation' | 'detour' | 'menu' | undefined {
-  if (run.mainlineCalendarVersion !== 4 || run.decisions?.act4_research_emphasis !== 'automation_industry') return undefined
-  const d = run.decisions
+  if (run.mainlineCalendarVersion !== 4 || (run.decisions?.act4_research_emphasis !== 'automation_industry' && futurePivot(run) !== 'economy')) return undefined
+  const d = run.decisions ?? {}
   if (d.economic_doctrine === 'social_dividend') return 'occupation'
   if (d.economic_doctrine === 'post_scarcity_transition' && d.production_values === 'efficiency_first') return 'menu'
   if (d.economic_doctrine === 'market_automation' && d.production_values === 'efficiency_first') return 'detour'

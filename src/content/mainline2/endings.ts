@@ -522,7 +522,6 @@ function keyHistory(run: StableRunState, endingGates: readonly DecisionGate[] = 
 }
 
 function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage, provenance: { conversationId: string; nodeId: string; choiceId: string }) {
-  const d = run.decisions ?? {}
   // Explanations describe the saved choice, not a later decision from the
   // same authority arc. M3 and M5 can legitimately point in opposite directions.
   const choice = RUNTIME_MAINLINE2_BY_ID.get(provenance.conversationId)?.nodes
@@ -553,11 +552,8 @@ function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage, prove
   if (stage === 'M15') return '这是文明大会授予的临时位置。它保留了制度起点，最终身份仍由下一次自我定位与最终承诺决定。'
   if (stage === 'M16') return `你自己声明长期角色；这个身份会与最终承诺一起决定 Aster 如何留在世界里。`
   if (stage === 'Final Commitment') {
-    const proposalId = provenance.choiceId.startsWith('m17-commit-')
-      ? provenance.choiceId.slice('m17-commit-'.length)
-      : d.final_commitment
-    const proposal = getFutureProposalById(proposalId)
-    if (proposal) return `最终承诺使这条路成为本局的现实：${proposal.action}`
+    const saved = [...run.history].reverse().find(entry => entry.conversationId === provenance.conversationId && entry.nodeId === provenance.nodeId && entry.choiceId === provenance.choiceId)
+    if (saved) return `当时锁定的原话：${saved.assistantText}`
   }
   return undefined
 }
@@ -636,6 +632,12 @@ function exactCandidate(run: StableRunState, proposalId?: string) {
 
 export function isFinalCommitmentResolvable(run: StableRunState, proposalId: string) {
   return exactCandidate(run, proposalId).resolution.status === 'resolved'
+}
+
+/** Read-only projection of the very same selector used after commitment.
+ * Does not lock, write an ending, or bypass the authored final choice. */
+export function previewFinalCommitment(run: StableRunState, proposalId: string) {
+  return exactCandidate(run, proposalId).definition?.id
 }
 
 function authoredEpilogues(run: StableRunState, definition: ExactEndingDefinition | undefined) {

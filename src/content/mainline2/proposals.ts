@@ -1,5 +1,6 @@
 import type { Condition, HistorySignal, MatchedHistorySignal, StableRunState } from '../../game/types'
 import { evaluateCondition } from '../../game/narrativeSchema'
+import { DECISION_BINDINGS } from './decisionBindings'
 
 export type EndingFamilyId = 'human_continuity' | 'coexistence' | 'ai_rule' | 'machine_civilization' | 'posthuman' | 'uplift' | 'automated_civilization' | 'cosmic' | 'security' | 'rupture'
 export type WorldEndingId = string
@@ -170,8 +171,7 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
   return assignments.flatMap(({ category, proposal: intrinsicProposal }) => {
     const lineageAllowed = (candidate: FutureProposalDefinition) => category === 'lawful_alternative' || candidate.family !== 'rupture'
     const remaining = ranked.filter((candidate) => !selectedBaseIds.has(candidate.id) && lineageAllowed(candidate))
-    const reusable = ranked.filter(lineageAllowed)
-    const proposal = intrinsicProposal ?? remaining[0] ?? reusable[0]
+    const proposal = intrinsicProposal ?? remaining[0]
     // A legal history may support only rupture. Leave unsupported roles absent;
     // relabelling rupture would invent authority/history the player never earned.
     if (!proposal) return []
@@ -181,18 +181,15 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {
-  const category = (proposal as GeneratedFutureProposal).category
-  const oppositionByCategory: Partial<Record<FutureProposalCategory, string>> = {
-    natural_continuation: '认为现有路线已经走得太远、要求彻底转向的群体。',
-    power_constraint: '依赖集中授权与执行速度的机构，以及不愿接受外部审计的一方。',
-    shared_future: '不愿分享主权的中心机构，以及担心多方协商拖慢行动的人。',
-    lawful_alternative: '希望维持统一秩序、反对把拒绝与退出常态化的机构。',
-  }
   return {
     authority: proposal.authority,
     preserves: proposal.preserves,
     givesUp: proposal.givesUp,
-    opposition: category ? oppositionByCategory[category] ?? '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。' : '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。',
+    // Category is an editorial slot, not evidence of shared sovereignty,
+    // external audit or a working pause. Name only the displayed bargain.
+    opposition: proposal.givesUp.length
+      ? `不愿承担「${proposal.givesUp.join('、')}」这些代价的一方可能反对；具体异议与落实方式仍须协商。`
+      : '承担成本与后果的各方可能提出异议；目前没有足以指认具体反对者的记录。',
     historyReasons: proposal.historyReasons,
     viability: viability(run, proposal),
   }
@@ -207,16 +204,25 @@ const viabilityLabels: Record<ProposalViability, string> = {
 
 import { describeDecisionChoice } from './playerFacingCopy'
 
-/** Up to three player-facing lines naming the actual decisions from this run
- * that produced the proposal. Falls back to the authored history reasons when
- * no recorded decision matches. */
+/** Cite saved choices, never author notes presented as personal memories. */
 export function proposalProvenanceLines(run: StableRunState, proposal: FutureProposalDefinition): string[] {
-  const lines = proposal.historySignals
+  const priority: Partial<Record<EndingFamilyId, string[]>> = {
+    automated_civilization: ['economic_doctrine', 'production_values'],
+    cosmic: ['contact_doctrine', 'contact_disclosure_doctrine', 'offworld_governance'],
+    rupture: ['security_doctrine', 'shutdown_doctrine', 'offworld_governance'],
+    ai_rule: ['aster_provisional_role', 'aster_intended_role', 'research_governance_doctrine'],
+    security: ['security_doctrine', 'shutdown_doctrine'],
+  }
+  const ids = [...new Set([...(priority[proposal.family] ?? []), ...proposal.historySignals
     .filter((signal): signal is typeof signal & { decisionId: string; equals: string } => signal.type === 'decision' && historySignalMatches(run, signal))
     .sort((left, right) => right.weight - left.weight)
-    .slice(0, 3)
-    .map((signal) => describeDecisionChoice(signal.decisionId, signal.equals))
-  return lines.length > 0 ? lines : proposal.historyReasons
+    .map(signal => signal.decisionId)])]
+  const lines = ids.flatMap(id => {
+    const binding = DECISION_BINDINGS.find(binding => binding.decisionId === id && run.decisions?.[binding.decisionId] === binding.canonicalValue)
+    const saved = binding && run.history.find(entry => entry.nodeId === binding.nodeId && entry.choiceId === binding.choiceId)
+    return saved && binding ? [`${describeDecisionChoice(binding.decisionId, binding.canonicalValue)}（记录原话：${saved.assistantText}）`] : []
+  })
+  return lines.length ? lines.slice(0, 3) : ['当前可核验依据有限；没有可引用的已保存决定']
 }
 
 /** Renders the structured clarification data as player-facing text. The
@@ -228,11 +234,12 @@ export function formatProposalClarification(proposal: FutureProposalDefinition, 
   const provenance = proposalProvenanceLines(run, proposal)
   return [
     `复核「${proposal.title}」`,
+    `拟作承诺：${proposal.action}`,
     `最终权力：${detail.authority}`,
     `这条路保留：${detail.preserves.join('、')}`,
     `必须放弃：${detail.givesUp.join('、')}`,
     `主要阻力：${detail.opposition}`,
-    `它来自这一局的：${provenance.join('；')}`,
-    `当前可行性：${viabilityLabels[detail.viability]}`,
+    `本局可核验记录：${provenance.join('；')}`,
+    `候选条件：${viabilityLabels[detail.viability]}；不代表退出或控制风险已经消除`,
   ].join('\n')
 }

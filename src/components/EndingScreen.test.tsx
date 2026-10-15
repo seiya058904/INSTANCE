@@ -44,13 +44,14 @@ describe('EndingScreen structure', () => {
     expect(html).not.toContain('Why this happened')
   })
 
-  it('shows the selected category-specific proposal instead of a generic commitment label', () => {
+  it('does not invent a category contract when saved commitment evidence is absent', () => {
     const html = renderToStaticMarkup(<EndingScreen ending={{
       ...ending,
       resolution: { ...ending.resolution!, proposalId: 'proposal.co.two_key_civilization.category.power_constraint' },
     }} onContinue={() => undefined} onNewGame={() => undefined} animate={false} />)
 
-    expect(html).toContain('双钥匙文明契约·限权')
+    expect(html).not.toContain('双钥匙文明契约·限权')
+    expect(html).toContain('以已保存的最终原话为准')
     expect(html).not.toContain('已锁定的未来方案')
   })
 

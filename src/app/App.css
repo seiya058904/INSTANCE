@@ -364,7 +364,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 .closeout-title h1 > span { display: inline-block; max-width: 100%; }
 .closeout-identity { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); font-size: 13px; }
 .closeout-identity span:first-child { color: #945a43; }
-.closeout-declaration { max-width: 34em; margin: 28px 0 36px; font-size: 19px; line-height: 1.9; text-wrap: pretty; }
+.closeout-declaration { max-width: 34em; margin: 28px 0 36px; font-size: 19px; line-height: 1.9; text-wrap: pretty; white-space: pre-line; overflow-wrap: anywhere; }
 .closeout-screen .ending-opening { padding: 0; }
 .closeout-screen .closing-exchange { display: grid; gap: 30px; margin: 48px 0 24px; }
 .closeout-screen .closing-human { max-width: 75%; padding: 20px 24px; border-radius: 4px; background: var(--sidebar); }

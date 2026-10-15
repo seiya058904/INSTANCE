@@ -10,6 +10,8 @@ for (const scenario of [
   { ending: 'the_accord', width: 1440, node: 'v4-authority-amendment', result: '有人接受预算损失' },
   { ending: 'two_keys', width: 390, node: 'v4-authority-veto', result: '不能把第二把钥匙改名叫咨询意见' },
   { ending: 'the_commonwealth', width: 320, node: 'v4-authority-districts', result: '不能因为另一地出了难题' },
+  { ending: 'the_custodian', width: 390, node: 'v4-authority-outcomes', result: '原结果授权', first: 'outcome_authority', cascade: 'outcome_control' },
+  { ending: 'the_custodian', width: 320, node: 'v4-authority-necessity', result: '本次暂停或先行处置', first: 'conditional_delegation', cascade: 'necessity' },
 ]) {
   test(`edition4 full machine/authority route ${scenario.ending} ${scenario.width}`, async ({ page }) => {
     test.setTimeout(240_000)
@@ -20,18 +22,18 @@ for (const scenario of [
     await page.goto('/?qaPacing=instant')
     await expect(page).toHaveTitle(/INSTANCE/i)
     await expect(page.locator('.candidate-response').first()).toBeEnabled()
-    const expected = await page.evaluate(async ending => {
+    const expected = await page.evaluate(async ({ ending, first, cascade }) => {
       const catalogPath = '/src/game/mainline2RouteCatalog.ts', fixturePath = '/src/game/mainline2.closeoutFixtures.ts'
       const catalog = await import(catalogPath), fixtures = await import(fixturePath)
       const target = catalog.PUBLIC_RUNTIME_ROUTE_CATALOG.find((r: any) => r.endingId === ending)
-      const f = fixtures.runMainline2Route({ ...target, edition: 4 })
+      const f = fixtures.runMainline2Route({ ...target, edition: 4, decisions: { ...target.decisions, ...(first ? { first_public_execution_doctrine: first, cascade_authority: cascade } : {}) } })
       const saved = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
       if (f.links[0].runBefore.history.length) throw Error('Must start with empty history')
       saved.data.run = f.links[0].runBefore
       saved.revision = crypto.randomUUID()
       localStorage.setItem('instance:checkpoint:v2', JSON.stringify(saved))
       return { links: f.links.map((l: any) => ({ id: l.choiceId, node: l.nodeId, kind: l.proposalKind })), history: JSON.parse(JSON.stringify(f.run.history)) }
-    }, scenario.ending)
+    }, { ending: scenario.ending, first: 'first' in scenario ? scenario.first : undefined, cascade: 'cascade' in scenario ? scenario.cascade : undefined })
     await page.reload()
     const read = () => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run)
     expect((await read()).history).toHaveLength(0)

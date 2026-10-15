@@ -46,6 +46,7 @@ interface QAPacingMetrics {
 
 interface TransitionState {
   previousScene: ResolvedScene
+  previousAct: number
   previousHistory: HistoryEntry[]
   completedPreviousHistory: HistoryEntry[]
   targetScene: ResolvedScene | null
@@ -448,6 +449,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
     setTransition({
       previousScene: scene,
+      previousAct: run.progress?.act ?? 1,
       previousHistory,
       completedPreviousHistory,
       targetScene,
@@ -565,6 +567,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     || stage === 'connecting'
   ))
   const presentationScene = usesPreviousScene ? transition?.previousScene : transition?.targetScene ?? scene
+  const presentationAct = usesPreviousScene ? transition?.previousAct : run.progress?.act
   if (!presentationScene) return null
   const displayedScene = qaLongInput && !transition ? { ...presentationScene, userLongInput: qaLongInput } : presentationScene
 
@@ -639,7 +642,7 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
       />
       <ConversationView
-        chapter={activeSurface === 'mainline' ? storyPlan.actNames[(run.progress?.act ?? 1) - 1] : undefined}
+        chapter={activeSurface === 'mainline' ? storyPlan.actNames[(presentationAct ?? 1) - 1] : undefined}
         scene={displayedScene}
         conversationTitle={conversationTitle}
         modelLabel={modelLabel}

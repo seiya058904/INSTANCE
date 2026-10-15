@@ -1,5 +1,6 @@
 # Edition 4：经济行动切片
 
+历史阶段记录；最终交付状态见[最终验收](FINAL_NARRATIVE_ACCEPTANCE.md)。
 2026-10-16，Asia/Shanghai。此为任务阶段证据，**整体任务尚未完成**。
 
 ## 已实现

@@ -282,7 +282,6 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
   // directed conversations at shifted indices, so sequences are compared by
   // conversation id, not by calendar position.
   const unconditionalMainlineIds = new Set(MAINLINE2_STORY_PLAN.filter((slot): slot is MainlineStoryPlanSlot => slot.kind === 'mainline' && !slot.requires).map((slot) => slot.conversationId))
-  const requiredAssetGroups = MAINLINE2_STORY_PLAN.flatMap((slot) => slot.kind === 'mainline' && !slot.requires && slot.assetId.startsWith('ML2-') ? [[slot.assetId, ...(slot.fallbackAssetId ? [slot.fallbackAssetId] : [])]] : [])
   const traits = (id: string) => {
     const conversation = mainlineConversationMap.get(id)
     return {
@@ -303,6 +302,7 @@ export function auditMainlineSchedules(schedules: readonly (readonly string[])[]
   let missingRequiredAssets = 0
   for (const [runIndex, ids] of schedules.entries()) {
     const plan = plans?.[runIndex] ?? MAINLINE2_STORY_PLAN
+    const requiredAssetGroups = plan.flatMap((slot) => slot.kind === 'mainline' && !slot.requires && slot.assetId.startsWith('ML2-') ? [[slot.assetId, ...(slot.fallbackAssetId ? [slot.fallbackAssetId] : [])]] : [])
     const items = ids.map(traits)
     maxMajorDecisionStreak = Math.max(maxMajorDecisionStreak, auditStreak(ids, (left, right) => left.includes('-decision-') && right.includes('-decision-')))
     maxParticipantStreak = Math.max(maxParticipantStreak, auditStreak(items, (left, right) => left.participant === right.participant))

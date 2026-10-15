@@ -213,7 +213,11 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
         ? (id: string) => id.startsWith('v4-authority-') && id !== 'v4-authority-return'
         : slot.conversationId === 'v4-econ-return'
           ? (id: string) => /^v4-econ-(occupation|detour|menu)$/.test(id)
-          : undefined
+          : slot.conversationId === 'v4-life-return'
+            ? (id: string) => /^v4-life-(therapy|forms|continuity|archive|parliament|corridor|dogs|observation)$/.test(id)
+            : slot.conversationId === 'v4-contact-return'
+              ? (id: string) => /^v4-contact-(reciprocal|guidance|assertion|mediation|machine)$/.test(id) || id === 'v4-frontier-no-contact'
+              : undefined
     return !producer || projected.slice(0, index).some(previous => previous.kind === 'mainline' && producer(previous.conversationId))
       || run.history.some(entry => producer(entry.conversationId))
   })

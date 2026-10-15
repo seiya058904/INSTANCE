@@ -100,6 +100,7 @@ describe('Mainline 2.0 runtime', () => {
     while (run.phase === 'playing' && guard < 500) {
       const scene = resolveScene(run)
       const choice = scene.choices.find((candidate) => candidate.id.includes('frontier_science'))
+        ?? scene.choices.find(candidate => candidate.id === 'v4-frontier-verify')
         ?? scene.choices.find((candidate) => candidate.id.includes('interstellar_commitment'))
         ?? scene.choices[guard % Math.max(1, scene.choices.length)]
       if (!choice) throw new Error(`No legal choice at ${scene.id}`)

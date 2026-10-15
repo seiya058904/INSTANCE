@@ -224,6 +224,13 @@ describe('Mainline 2.0 scheduler polish', () => {
     expect(audit.uniqueMainlineSequences).toBe(1)
     expect(audit.shutdownDistinctSlots).toBe(1)
   }, 30000)
+  it('still detects a genuinely missing scene within a focused edition-4 plan', () => {
+    const seed = createMainline2Run('focused-audit-missing')
+    const plan = effectiveStoryPlanForRun(seed)
+    const ids = scheduleFrom(seed)
+    expect(auditMainlineSchedules([ids], [plan]).missingRequiredAssets).toBe(0)
+    expect(auditMainlineSchedules([ids.filter(id => id !== 'ml2-next-opening')], [plan]).missingRequiredAssets).toBe(1)
+  })
 })
 
 function advanceToSlot(run: StableRunState, targetConversationCount: number) {

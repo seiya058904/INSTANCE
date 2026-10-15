@@ -42,3 +42,5 @@ Edition 4 根据 manifest 中已排场景保留完整前缀，只调整最远已
 授权组合新增“结果目标动态执行”和“必要时先行动”两种实际急救过程。CASCADE 的结果控制或必要性例外不再被写成逐项签字/双方否决；只有明确的 conditional_delegation + emergency_delegation 对应双否决演练。原逐项场景以本轮人类指挥的实际操作解释签字，不追认早期选择。新增两条从空历史真实提交的未覆盖组合、16 组映射检查与上述旧档反例；定向 27/27、构建通过。精确追加 head 的完整门禁继续由 CI 核验。
 
 追加修复后单独完整单测 **90 文件、841/841 通过**（`temp/edition4-machine-review-unit.log`）。两种新增授权的完整浏览器路线也从空历史点击至档案，390/320px，**2/2 通过**（`temp/p33-review-new-ui.log`）；已纳入主浏览器 harness，完整套件现为 120 项。最终构建与 diff check 通过。
+
+本地完整复跑 **120/120 通过，1.9 分钟**（`temp/p33-review-browser-full.log`）。远端 `63ffc99` 为 119 通过、1 失败，定位为既有普通回放测试在异步 Web Lock/CAS 返回事务完成前立即 reload。测试现先等待 canonical checkpoint 的 surface 已实际提交为 mainline，再执行原刷新与完整 A+B 账本相等断言；不修改普通模式源码或期望。该用例独立重复 **10/10 通过**（`temp/p33-replay-return-repeat.log`），追加精确 head CI 继续完整执行。

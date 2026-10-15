@@ -48,6 +48,7 @@ for (const scenario of cases) {
     for (const link of expected.links) {
       const button = page.locator(`[data-choice-id=${JSON.stringify(link.id)}]`)
       await expect(button).toBeEnabled()
+      if (link.node.startsWith('v4-governance-') || link.node.startsWith('v4-sovereignty-')) await expect(page.locator('.conversation-header h1')).toHaveText('User #7316')
       await expect(page.locator('vite-error-overlay')).toHaveCount(0)
       if (scenario.node && (link.node === `${scenario.node}-receipt` || link.node === 'v4-sovereignty-receipt')) await expect(page.locator('.current-exchange .user-message')).toContainText(scenario.receipt)
       if (scenario.revisit && link.node === (scenario.node.startsWith('v4-governance-') ? 'v4-governance-return' : 'v4-safety-return')) await expect(page.locator('.current-exchange .user-message')).toContainText(scenario.revisit)

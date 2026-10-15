@@ -9,6 +9,14 @@ import { describe, expect, it } from 'vitest'
 import { resolvePlayerVisibleHistory, resolvePlayerVisibleIdentity } from './playerIdentity'
 
 describe('player-facing identity', () => {
+  it('keeps the original Lin label and introduction across new governance conversations', () => {
+    const history: HistoryEntry[] = [{ nodeId: 'a2m3-lsh-intro-001', conversationId: 'ml2-authored-ml2-a2-m3-lsh-01', conversationTitle: '林绍衡', userMessage: '我叫林绍衡。', choiceId: 'intro', assistantText: '收到。' }]
+    for (const played of [[], history]) {
+      const original = resolvePlayerVisibleIdentity('ml2-authored-ml2-a2-m3-lsh-01', played)
+      for (const id of ['v4-governance-service', 'v4-governance-return', 'v4-sovereignty-settlement']) expect(resolvePlayerVisibleIdentity(id, played)).toEqual(original)
+      expect(original.label).toBe('User #7316')
+    }
+  })
   it('keeps edition-4 economic returns with the original worker and cold-chain engineer', () => {
     const worker = resolvePlayerVisibleIdentity('ml2-authored-ml2-a4-m10-dev-04', [])
     for (const id of ['v4-econ-occupation', 'v4-econ-detour', 'v4-econ-menu', 'v4-econ-return']) {

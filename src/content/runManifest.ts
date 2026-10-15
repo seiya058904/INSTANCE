@@ -659,7 +659,7 @@ export function buildStoryContentForManifest(manifest: RunManifest): StoryConten
         const nextConversation = nextConversationById.get(node.conversationId)
         choice.nextNodeId = choice.continuation === 'end-conversation'
           ? (nextConversation ? firstNodeByConversation.get(nextConversation.id)?.id : undefined)
-          : (node.conversationId.startsWith('real-usage-') && choice.nextNodeId && nodeIds.has(choice.nextNodeId) ? choice.nextNodeId : next?.id)
+          : ((node.conversationId.startsWith('real-usage-') || node.conversationId === 'v4-final-preflight') && choice.nextNodeId && nodeIds.has(choice.nextNodeId) ? choice.nextNodeId : next?.id)
         if (effectFlag) {
           choice.effects = { ...choice.effects, flags: addFlag(choice.effects?.flags, effectFlag) }
         }

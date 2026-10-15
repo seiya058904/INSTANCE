@@ -64,7 +64,8 @@ describe('edition 4 lives, independent consent and species agendas', () => {
   })
 
   it('refusing identity recognition does not invent a mature upload or erase the refusal', () => {
-    const f = runMainline2Route(target('ascension', 'clinic', 'persons', { 'm9-continuity-trial': 'm9-continuity-trial-copy' }))
+    const f = runMainline2Route({ ...target('ascension', 'clinic', 'persons', { 'm9-continuity-trial': 'm9-continuity-trial-copy' }), proposalId: 'proposal.hc.final_human_veto' })
+    expect(f.ending.worldEndingId).toBe('the_instrument')
     expect(f.run.flags).not.toContain('cap.digital_continuity_mature')
     expect(f.run.manifest.conversationIds).toContain('v4-life-archive')
     expect(f.run.manifest.conversationIds).not.toContain('v4-life-continuity')

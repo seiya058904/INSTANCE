@@ -5,7 +5,7 @@ import { resolveMainline2Ending } from './endings'
 import { createMainline2Run } from '../../game/engine'
 
 function lockedRunWithRole(role: string) {
-  const run = createMainline2Run(`role-${role}`)
+  const run = createMainline2Run(`role-${role}`, undefined, 3)
   return {
     ...run,
     phase: 'ending' as const,

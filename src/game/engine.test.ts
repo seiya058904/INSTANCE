@@ -178,7 +178,7 @@ describe('mainline marker alignment', () => {
 
 describe('mainline2 evaluation summary', () => {
   it('does not present a legacy ENDING 0x index as the Mainline2 result label', () => {
-    const run = createMainline2Run('eval-v3')
+    const run = createMainline2Run('eval-v3', undefined, 3)
     const ending = buildEnding({
       ...run,
       phase: 'ending',

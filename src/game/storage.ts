@@ -136,6 +136,7 @@ export function restoreRun(raw: string | null): StableRunState | null {
     if (value.personalEpilogueReply !== undefined && (typeof value.personalEpilogueReply !== 'string' || !personalEpilogueReplies.includes(value.personalEpilogueReply))) return null
     if (value.version === 1) return migrateVersionOne(value)
     if (value.version === 3) {
+      if (value.mainlineCausalityVersion !== undefined && value.mainlineCausalityVersion !== 1) return null
       if (!hasStableFields(value) || !isManifest(value.manifest) || !hasV3Fields(value)) return null
       const story = buildStoryContentForManifest(value.manifest as RunManifest)
       if (value.phase === 'playing' && !story.nodes.some((node) => node.id === value.currentNodeId)) return null

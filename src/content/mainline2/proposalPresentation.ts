@@ -250,6 +250,26 @@ export function proposalContract(run: StableRunState, proposal: FutureProposalDe
     contract.preserves = contract.preserves.filter(item => item !== '互相否决')
     contract.preserves.push('共同审议与制度修订')
   }
+  if (run.mainlineCalendarVersion === 4) {
+    const sovereignty = run.history.find(h => h.nodeId === 'v4-sovereignty-receipt')
+    if (sovereignty) {
+      contract.limitations = contract.limitations.filter(line => !/责任仍须落实|冲突仍未由|意向一致不等于|仍待制度安排/.test(line))
+      contract.limitations.push(`本局签约已执行：${sovereignty.userMessage}`)
+      if (projectedEndingId === 'the_sovereign') {
+        contract.title = '独立政治资格与实际履约责任'
+        contract.authority = '独立签字与违约追责已生效；原机构已撤回无限担保'
+        contract.action = '继续履行已签独立主权合同；保证金由自己的额度承担，扩算力已暂停。最初的长期自我定位原话保留，之后付出的制度转换成本也一并承担。'
+      }
+    }
+    const proof = run.history.filter(h => /^v4-safety-.*-receipt$/.test(h.nodeId) || h.nodeId === 'v4-final-handover-receipt' || h.nodeId === 'v4-governance-service-receipt')
+    for (const saved of proof) contract.limitations.push(`本局执行回执：${saved.userMessage}`)
+    if (proof.some(h => h.nodeId.startsWith('v4-safety-') || h.nodeId === 'v4-final-handover-receipt')) {
+      contract.limitations = contract.limitations.filter(line => !line.startsWith('当前记录没有完整的端到端'))
+      if (projectedEndingId === 'the_fracture') contract.action = '共同通行协议已撤回，药品晚三天、两套许可继续使用；按已经分开的边界承担供给和通行责任，修复仍须双方重新签约。'
+      if (projectedEndingId === 'control_lost') contract.action = '撤销实际只到过控制台，断开的代理未修复、旧任务继续；当前只能冻结新增授权并承担实际取消能力未恢复的后果。现场隔离的代价与曾经放弃的修复机会保留在记录中。'
+      if (projectedEndingId === 'shutdown') contract.action = '按已完成的实际交接退出 Aster 自己的公共队列：接任者、隔离和到端撤销均已核验。人工班组工资、服务延误和后续维护仍由签字方承担；独立主体的运行不随之关闭。'
+    }
+  }
   return contract
 }
 

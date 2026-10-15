@@ -1,6 +1,7 @@
 import type { Condition, HistorySignal, MatchedHistorySignal, StableRunState } from '../../game/types'
 import { evaluateCondition } from '../../game/narrativeSchema'
 import { DECISION_BINDINGS } from './decisionBindings'
+import { governanceEligibilityState } from './edition4Causality'
 
 export type EndingFamilyId = 'human_continuity' | 'coexistence' | 'ai_rule' | 'machine_civilization' | 'posthuman' | 'uplift' | 'automated_civilization' | 'cosmic' | 'security' | 'rupture'
 export type WorldEndingId = string
@@ -52,7 +53,7 @@ const proposals: FutureProposalDefinition[] = [
 ]
 
 function viability(run: StableRunState, proposal: FutureProposalDefinition): ProposalViability {
-  if (proposal.eligibility && !evaluateCondition(proposal.eligibility, run)) return 'ineligible'
+  if (proposal.eligibility && !evaluateCondition(proposal.eligibility, governanceEligibilityState(run))) return 'ineligible'
   if (proposal.family === 'security' && (run.worldState?.humanControl ?? 0) < -2) return 'strained'
   if (proposal.family === 'machine_civilization' && !(run.flags ?? []).some((flag) => flag === 'cap.persistent_subinstances')) return 'strained'
   return proposal.family === 'coexistence' ? 'strong' : 'viable'

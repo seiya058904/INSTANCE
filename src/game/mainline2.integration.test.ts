@@ -15,6 +15,7 @@ function complete(runId: string, edition: 3 | 4 = 3) {
     // when candidate counts change; explicitly finish the review interaction.
     const review = scene.conversationId.includes('m17-review')
     const choice = scene.choices.find(choice => choice.proposalKind === 'commitment')
+      ?? (['v4-final-preflight', 'v4-final-handover'].includes(scene.id) ? scene.choices[0] : undefined)
       ?? (review ? scene.choices.find(choice => !choice.proposalKind) ?? scene.choices[0] : scene.choices[guard % Math.max(1, scene.choices.length)])
     if (!choice) throw new Error(`No legal choice at ${scene.id}`)
     run = commitChoice(run, choice.id)

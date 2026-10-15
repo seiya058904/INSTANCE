@@ -22,6 +22,8 @@ interface IdentityRule {
 }
 
 const identityRules: readonly IdentityRule[] = [
+  { participantId: 'zhou-lan', matches: id => id.startsWith('v4-safety-') || id.startsWith('v4-final-') || ['v4-compute-allocation', 'v4-future-effort'].includes(id) },
+  { participantId: 'lin-shaoheng', matches: id => id.startsWith('v4-governance-') || id.startsWith('v4-sovereignty-') },
   { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id) || ['v4-econ-cold-chain', 'v4-machine-airlock', 'v4-life-allocation', 'v4-life-clinic-next'].includes(id) || ['v4-authority-', 'v4-contact-', 'v4-frontier-'].some(prefix => id.startsWith(prefix)) },
   { participantId: 'v4-life-research-team', matches: id => id.startsWith('v4-life-') },
   { participantId: 'ml2-authored-ml2-a4-m10-dev-04', matches: id => id === 'ml2-authored-ml2-a4-m10-dev-04' || /^v4-econ-(occupation|detour|menu|return)$/.test(id) },

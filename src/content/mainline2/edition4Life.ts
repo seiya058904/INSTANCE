@@ -1,3 +1,4 @@
+import { futurePivot } from './edition4Pivot'
 import type { ConversationDefinition, ResolvedScene, StableRunState } from '../../game/types'
 
 const incidents = {
@@ -121,6 +122,8 @@ export const EDITION4_LIFE: ConversationDefinition[] = [
 
 export function lifeAllocation(run: StableRunState): 'clinic' | 'wetland' | undefined {
   if (run.mainlineCalendarVersion !== 4) return undefined
+  const pivot = futurePivot(run)
+  if (pivot === 'clinic' || pivot === 'wetland') return pivot
   const saved = run.history.find(h => h.nodeId === 'v4-life-allocation')
   return saved?.choiceId === 'v4-life-clinic' ? 'clinic' : saved?.choiceId === 'v4-life-wetland' ? 'wetland' : undefined
 }

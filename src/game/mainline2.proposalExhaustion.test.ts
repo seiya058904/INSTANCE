@@ -5,14 +5,15 @@ import { buildEnding, commitChoice, createMainline2Run, resolveScene } from './e
 import { restoreRun, serializeRun } from './storage'
 
 describe('M16 proposal exhaustion on the legal audit route (#20)', () => {
-  it.each([false, true])('continues a seeded route through M16, with periodic restore=%s', (periodicRestore) => {
-    let run = createMainline2Run('independent-audit-13')
+  it.each([[3, false], [3, true], [4, false], [4, true]] as const)('continues a seeded route through M16, edition=%s restore=%s', (edition, periodicRestore) => {
+    let run = createMainline2Run('independent-audit-13', undefined, edition)
     let rng = 14
     const trace: string[] = []
     for (let step = 0; step < 300 && run.currentNodeId !== 'ml2-a5-m16-gen-01-progression'; step++) {
       const scene = resolveScene(run)
       rng = (Math.imul(rng, 1664525) + 1013904223) >>> 0
       const choice = scene.choices.find(c => c.proposalKind === 'commitment')
+        ?? (scene.id === 'v4-final-preflight' || scene.id === 'v4-final-handover' ? scene.choices[0] : undefined)
         ?? scene.choices[rng % scene.choices.length]
       trace.push(choice.id)
       run = commitChoice(run, choice.id)

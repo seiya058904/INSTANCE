@@ -1,6 +1,8 @@
 # INSTANCE Next：一句话以后
 
-执行依据：用户提供的 2026-10-14 主线重构任务与娱乐叙事补充；后者优先。基线 `40b370b`，开工时工作区干净，与本地 origin/main 零差异。仅本地制作，不发布。
+初版执行依据：用户提供的 2026-10-14 主线重构任务与娱乐叙事补充。2026-10-16 的持续叙事完成任务进一步授权七线实装、PR 合并及既有 Pages 验收；该次交付证据见 `docs/audits/ending-first-final/`。下述历史基线描述保留作沿革。
+
+新版日历为 4，`mainlineCausalityVersion: 1` 仅新局及实际选择新因果行动的中途局采用。旧 edition 3、没有该标记的中期 edition 4 仍按原门槛解释，历史原话不重写。新增 `edition4*.ts` 中的行动、已保存执行回执与回访由 `storyPlan.ts` 排入尚未安排的未来；`edition4Causality.ts` 是结局证据门槛，`proposalPresentation.ts` 为 M16/M17/档案共享合同。中途转向只使用尚未开工的下一班队伍，并保留已签责任和原排程前缀。
 
 ## 创作原则
 

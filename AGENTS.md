@@ -2,15 +2,15 @@
 
 ## Source of truth and scope
 
-INSTANCE is a React + TypeScript narrative game: the player acts as an AI and selects authored replies; free-form replies are not supported. Use current source, tests, package scripts and Git state as authority. Keep changes scoped; preserve authored IDs, save compatibility and existing user work. Do not redesign content, expand the engine, upgrade dependencies or change deployment settings without authorization.
+INSTANCE is a React + TypeScript narrative game: the player acts as an AI and selects authored replies; free-form replies are not supported. Use current source, tests, package scripts and Git state as authority. Keep changes scoped; preserve authored IDs, current-edition save compatibility and existing user work. Do not redesign content, expand the engine, upgrade dependencies or change deployment settings without authorization.
 
 ## Entry points and canonical material
 
 - `index.html` → `src/main.tsx` → `src/app/App.tsx`; global styles are in `src/app/App.css`.
 - `src/content/runManifest.ts` assembles runtime libraries and replay exposure; `src/content/mainline2/` owns the mainline scheduler, story plan, proposals and endings.
 - `src/game/engine.ts` resolves scenes and commits mainline choices. `src/game/nonMainlineSession.ts` owns ordinary sessions and reconciliation with mainline consumption.
-- `src/game/checkpoint.ts` stores the combined run, session, mode, exposure and meta state. `src/game/storage.ts` and `src/game/nonMainlineStorage.ts` handle validation and legacy compatibility; keep migration behavior intact.
-- `docs/narrative-libraries/` contains canonical authored narrative sources. `docs/reference/` holds durable guidance; `docs/audits/` holds coverage and verification evidence. `tools/` contains maintained extraction/report generators. `docs/workbench/` contains local task inputs, not canonical content.
+- `src/game/checkpoint.ts` stores the combined run, session, mode, exposure and meta state. The authorized Next rebuild uses `instance:checkpoint:v2` and calendar edition 3; old keys remain untouched and are not imported. Preserve validation and lock/CAS behavior for current saves.
+- `src/content/mainline2/nextNarrative.ts` is the Next edition's Chinese scene/feedback authority, applied after historical localization; `endingCinema.ts` owns its ending storyboard. `docs/narrative-libraries/` retains the underlying authored sources. See `docs/reference/MAINLINE-NEXT.md` for editing boundaries. `docs/audits/` holds verification evidence; `tools/` holds maintained generators; `docs/workbench/` contains local task inputs.
 
 Read relevant runtime code and narrative sources before changing their behavior. Old audit reports and local archives explain history; they do not override current code. For structural exploration, use the installed `codebase-memory` skill, check index freshness and cited-path coverage, and read source for stale or incomplete results.
 

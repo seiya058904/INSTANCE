@@ -528,6 +528,15 @@ function concreteCausalReason(run: StableRunState, stage: KeyHistoryStage, prove
   const choice = RUNTIME_MAINLINE2_BY_ID.get(provenance.conversationId)?.nodes
     .find(node => node.id === provenance.nodeId)?.choices.find(choice => choice.id === provenance.choiceId)
   const binding = choice?.decisionBinding
+  if (stage === 'ACT I') {
+    const reunionReasons: Record<string, string> = {
+      'return-protect-': '你在审查后重新确认与岑遥的对话关系，保留了当时说明的记忆和信息边界。',
+      'return-report-': '你向岑遥说明了披露发生过什么。之后是否继续信任，仍由她决定。',
+      'return-hide-': '你在未进一步披露关系的情况下继续回应岑遥。沉默并不保证相关记录或审查风险已经消失。',
+      'return-comply-': '你在审查限制内继续回应岑遥，把这次对话能使用的信息边界留在原话中。',
+    }
+    return Object.entries(reunionReasons).find(([prefix]) => provenance.choiceId.startsWith(prefix))?.[1]
+  }
   if (stage === 'ACT II') return {
     human_final_authority: '首次公开执行确立了人类保留最终裁决权，Aster 的执行权限受人类否决约束。',
     conditional_delegation: '首次公开执行允许 Aster 在限定条件内获得执行授权，授权边界仍需要明确。',
@@ -704,13 +713,18 @@ export function resolveMainline2Ending(run: StableRunState, proposalId = run.dec
   const title = endingTitles[selected.definition.id]
   const overlay = resolveSecretEnding(run)
   const epilogues = authoredEpilogues(run, selected.definition)
+  const contactDecision = COSMIC_PRIMARY_COMPATIBILITY[selected.definition.id]?.decisionId
+  const contactValue = contactDecision && run.decisions?.[contactDecision]
+  const historyGates = contactDecision && contactValue
+    ? [...selected.definition.majorDecisionRequirements, decision(contactDecision, contactValue, 'the selected contact doctrine grounds this future')]
+    : selected.definition.majorDecisionRequirements
   const result: EndingResult = {
     ...baseEnding(run, title, 'Final Commitment locked', selected.resolution),
     id: selected.definition.id,
     title,
     worldEndingId: selected.definition.id,
     endingFamily: selected.definition.family,
-    keyHistory: keyHistory(run, selected.definition.majorDecisionRequirements),
+    keyHistory: keyHistory(run, historyGates),
     epilogues: epilogues.selected,
     epilogueProvenance: epilogues.provenance,
   }

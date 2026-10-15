@@ -34,6 +34,7 @@ describe('App Non-Mainline replay ledger', () => {
     const a = complete(createNonMainlineSession('00000000-0000-4000-8000-000000000001', exposure))
     exposure = recordRunExposure(exposure, nonMainlineManifest(a))
     const values: Record<string, string> = {
+      [CHECKPOINT_KEY]: JSON.stringify({version:1,revision:'test',data:{run,session:a,exposure,meta:{version:1,runCount:1,completedEndings:[]},surface:'non-mainline',nonMainlineView:'ending'}}),
       'instance:run:v1': serializeRun(run),
       'instance:exposure:v1': serializeExposureHistory(exposure),
       [ACTIVE_SURFACE_KEY]: 'non-mainline',

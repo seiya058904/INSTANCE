@@ -4,12 +4,22 @@ import { CloseoutFrame, NewRunButton } from './CloseoutFrame'
 import { UserAvatar } from './UserAvatar'
 import { AsterMark } from './AsterMark'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
+import { useState } from 'react'
+import { EndingCinema } from './EndingCinema'
+import { EndingVisual } from './EndingVisual'
+import { EndingCollection } from './EndingCollection'
+import { filmForEnding } from '../content/mainline2/endingCinema'
 
-export function EndingScreen({ ending, onContinue, onNewGame, animate = true, instanceNumber, personalReply, onPersonalReply }: {
-  ending: EndingResult; onContinue: () => void; onNewGame: () => void; animate?: boolean; instanceNumber?: number; personalReply?: string; onPersonalReply?: (reply: string) => void
+export function EndingScreen({ ending, onContinue, onNewGame, animate = true, instanceNumber, personalReply, onPersonalReply, completedEndings = [] }: {
+  ending: EndingResult; onContinue: () => void; onNewGame: () => void; animate?: boolean; instanceNumber?: number; personalReply?: string; onPersonalReply?: (reply: string) => void; completedEndings?: readonly string[]
 }) {
+  const [cinema, setCinema] = useState(animate)
   const archive = buildEndingArchive(ending)
+  const film = filmForEnding(ending)
+  if (cinema) return <EndingCinema ending={ending} onClose={() => { setCinema(false); window.scrollTo(0, 0) }} />
   return <CloseoutFrame title={archive.title} mode="主线" identity={instanceNumber ? `#${String(8846 + instanceNumber).padStart(4, '0')}` : undefined} view="ending" onEvaluation={onContinue}>
+    <button type="button" className="replay-cinema" onClick={() => setCinema(true)}>重看终局演出</button>
+    {film && <div className="ending-archive-hero"><EndingVisual id={ending.worldEndingId ?? ending.id} color={film.color} compact /><div><h2>{film.scene}</h2><p>{film.last}</p><a href="#ending-collection-title">浏览已抵达的世界</a></div></div>}
     <div className={`ending-opening${animate ? ' is-arriving' : ''}`}>
       <div className="closeout-identity"><span>{archive.family}</span><span>Aster · {archive.hybridLabel}</span><span>最终结局</span></div>
       <p className="closeout-declaration">{archive.consequence}</p>
@@ -34,6 +44,7 @@ export function EndingScreen({ ending, onContinue, onNewGame, animate = true, in
       {personalReply ? <><div className="closing-assistant"><p>{personalReply}</p><small>Aster <AsterMark /></small></div><div className="closing-human"><p>没什么。<br />就是想看看你还会不会回。</p></div><p className="personal-last-line">Aster 正在输入…</p></> : <div className="personal-choices" role="group" aria-label="回应最后一位用户">{personalEpilogueReplies.map(reply => <button type="button" key={reply} onClick={() => onPersonalReply?.(reply)}>{reply}</button>)}</div>}
       </div>
     </section> : archive.secretOverlay && <section className="closeout-section secret-overlay"><h2>隐藏余波</h2><p>{archive.secretOverlay.copy}</p></section>}
+    <EndingCollection ending={ending} completedEndings={completedEndings} />
     <div className="closeout-actions"><button className="closeout-primary" type="button" onClick={onContinue}>查看行为评估</button><NewRunButton onConfirm={onNewGame} /></div>
   </CloseoutFrame>
 }

@@ -122,8 +122,9 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 .model-label.is-anomalous .status-dot { background: #b45a42; box-shadow: none; }
 .model-label .status-label { font-size: 10px; color: #9f4c35; border: 1px solid rgba(169,84,61,.32); border-radius: 4px; padding: 1px 6px; letter-spacing: .02em; white-space: nowrap; }
 
+.conversation-notices { grid-row: 2; min-width: 0; }
 .system-notice {
-  grid-row: 2; margin: 16px auto 0; width: min(var(--column-width), calc(100% - var(--gutter) * 2)); min-height: 42px; padding: 10px 14px;
+  margin: 16px auto 0; width: min(var(--column-width), calc(100% - var(--gutter) * 2)); min-height: 42px; padding: 10px 14px;
   display: flex; align-items: center; gap: 9px; border: 1px solid #e2d8c8; border-radius: 8px; background: #f6f0e5;
   color: #756b60; font-size: 12px; line-height: 1.6; animation: notice-in 240ms var(--ease-out);
 }
@@ -144,11 +145,11 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 .user-message { justify-self: start; max-width: 100%; padding: 11px 15px; border-radius: 8px; background: #efeee8; font-size: var(--text-body); line-height: var(--leading-prose); white-space: pre-wrap; overflow-wrap: anywhere; }
 /* Ownership follows the player: incoming NPC left, outgoing Aster right. */
 .assistant-row { display: block; width: calc(100% - var(--reply-inset)); margin-left: auto; }
-.assistant-mark { width: 19px; height: 19px; color: var(--accent); flex: 0 0 auto; transform-origin: center; }
+.assistant-mark { width: 22px; height: 22px; color: var(--accent); flex: 0 0 auto; transform-box: view-box; transform-origin: 50% 50%; }
 .assistant-signature { display: flex; align-items: center; justify-content: flex-end; gap: 7px; min-height: 20px; margin-top: 10px; color: var(--muted); font-size: var(--text-meta); line-height: 20px; }
 .response-status { margin-right: 5px; color: var(--muted); }
-.assistant-mark.is-active { animation: aster-breathe 2400ms ease-in-out infinite; }
-@keyframes aster-breathe { 0%, 100% { transform: rotate(0); opacity: 1; } 50% { transform: rotate(3deg); opacity: .76; } }
+.assistant-mark.is-active { animation: aster-turn 2400ms linear infinite; will-change: transform; }
+@keyframes aster-turn { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .assistant-message { color: var(--text); font-family: var(--font-prose); font-size: var(--text-body); line-height: var(--leading-prose); white-space: pre-wrap; overflow-wrap: anywhere; }
 .current-exchange > .message-row { animation: ink-in var(--motion-reveal) var(--ease-out); }
   .longform-preview-card { width: min(100%, 620px); border: 1px solid #ddddd5; border-radius: 6px; background: transparent; white-space: normal; overflow: hidden; }
@@ -296,7 +297,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
   .user-row { grid-template-columns: 20px minmax(0, 1fr); gap: 8px; }
   .user-row > .user-avatar { margin-top: 13px; }
   .user-message { padding: 11px 14px; font-size: 14px; line-height: 1.8; }
-  .assistant-mark { width: 18px; height: 18px; }
+  .assistant-mark { width: 20px; height: 20px; }
     .assistant-message { font-size: 14px; line-height: 1.8; }
     .longform-preview-card { width: 100%; }
     .longform-preview-card summary { gap: 8px; padding: 12px; }
@@ -321,6 +322,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .stream-caret { display: none; }
+  .assistant-mark.is-active { animation: none; will-change: auto; }
 }
 
 /* A completed run is a reading archive shared by both game modes. */

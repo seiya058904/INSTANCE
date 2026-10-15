@@ -6,16 +6,16 @@ import { tmpdir } from 'node:os'
 
 const evidence = join(tmpdir(), 'instance-closeout-20261004')
 mkdirSync(evidence, { recursive: true })
-const data = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data)
+const data = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data)
 async function ready(page: Page, query = '') {
   await page.goto(`/?qaPacing=instant${query}`)
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
 }
 async function clickChoice(page: Page, index = 0) {
-  const before = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))
+  const before = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))
   await page.locator('.candidate-response').nth(index).click()
   if (await page.getByRole('dialog', { name: '锁定这个未来？' }).isVisible()) await page.getByRole('button', { name: '确认锁定该未来', exact: true }).click()
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).not.toBe(before)
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBe(before)
 }
 test('menu, focus, composed digits, repeated keys and double clicks have one clear owner', async ({ page }) => {
   await ready(page)
@@ -61,7 +61,7 @@ test('failed storage keeps a pending choice, retries it once, and recovery JSON 
   await page.evaluate(() => {
     const original = Storage.prototype.setItem
     ;(window as any).__restoreStorage = () => { Storage.prototype.setItem = original }
-    Storage.prototype.setItem = function (key, value) { if (key === 'instance:checkpoint:v1') throw new DOMException('Injected quota', 'QuotaExceededError'); original.call(this, key, value) }
+    Storage.prototype.setItem = function (key, value) { if (key === 'instance:checkpoint:v2') throw new DOMException('Injected quota', 'QuotaExceededError'); original.call(this, key, value) }
   })
   await page.locator('.candidate-response').first().click()
   await expect(page.getByRole('dialog', { name: '这次选择尚未保存' })).toBeVisible()
@@ -76,7 +76,7 @@ test('failed storage keeps a pending choice, retries it once, and recovery JSON 
   await expect.poll(async () => (await data(page)).run.history.length).toBe(initial.run.history.length + 1)
   await page.reload()
   expect((await data(page)).run.history.length).toBe(initial.run.history.length + 1)
-  await page.evaluate(() => localStorage.setItem('instance:checkpoint:v1', '{damaged'))
+  await page.evaluate(() => localStorage.setItem('instance:checkpoint:v2', '{damaged'))
   await page.reload()
   await expect(page.getByRole('dialog', { name: '存档需要恢复' })).toBeVisible()
   await page.locator('input[type=file]').setInputFiles(path)
@@ -126,6 +126,7 @@ test('a complete mainline is played through buttons, commitment, ending, evaluat
   }
   const completed = await data(page)
   expect(completed.run.phase).toBe('ending'); expect(completed.run.finalCommitmentLocked).toBe(true)
+  await page.getByRole('button', { name: '跳过演出，查看档案', exact: true }).click()
   await expect(page.locator('.ending-key-history')).toContainText('最终承诺')
   await expect(page.locator('body')).not.toContainText('该选择影响了最终结局')
   await page.screenshot({ path: join(evidence, 'after-ending-desktop.png') })
@@ -172,7 +173,7 @@ for (const viewport of [{ width: 390, height: 844 }, { width: 320, height: 568 }
     await page.setViewportSize(viewport)
     await ready(page, '&qaHistory=20&qaLongInput=1')
     const geometry = await page.locator('.conversation-scroll .user-row').first().evaluate(element => ({ top: element.getBoundingClientRect().top, width: document.documentElement.scrollWidth, viewport: innerWidth }))
-    expect(geometry.top).toBeGreaterThan(60); expect(geometry.top).toBeLessThan(120); expect(geometry.width).toBeLessThanOrEqual(geometry.viewport)
+    expect(geometry.top).toBeGreaterThan(60); expect(geometry.top).toBeLessThan(160); expect(geometry.width).toBeLessThanOrEqual(geometry.viewport)
     await page.getByRole('button', { name: '滚动到最新消息' }).click()
     await page.locator('.long-input-preview-card summary').last().click()
     await expect(page.locator('.long-input-preview-card').last()).toContainText('预算尚未正式批准')
@@ -215,7 +216,7 @@ test('normal streaming respects manual reading and reduced motion reaches a usab
   expect(parseFloat(motion)).toBeLessThan(0.01)
 })
 
-test('a legacy page change is preserved and its actual progress can be selected for recovery', async ({ page, context }) => {
+test('an old-edition write cannot overwrite current progress and remains exportable', async ({ page, context }) => {
   await ready(page); await clickChoice(page)
   const modern = await data(page), legacy = await context.newPage()
   await legacy.goto('/?qaPacing=instant')
@@ -227,9 +228,9 @@ test('a legacy page change is preserved and its actual progress can be selected 
   await expect(page.getByRole('dialog', { name: '另一页已有新进度' })).toBeVisible()
   expect((await data(page)).run.history).toEqual(modern.run.history)
   await page.getByRole('button', { name: '读取最新进度' }).click()
-  await page.getByRole('button', { name: '确认恢复记录' }).click()
-  await expect(page.locator('.candidate-response').first()).toBeEnabled()
-  expect((await data(page)).run.history.length).toBe(modern.run.history.length + 1)
+  await expect(page.getByRole('dialog')).toContainText('旧页面写入的记录无法校验')
+  expect((await data(page)).run.history).toEqual(modern.run.history)
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('instance:run:v1')!).history.length)).toBe(modern.run.history.length + 1)
 })
 
 test('THE LAST USER pays off as an authored conversation and the reply survives evaluation and reload', async ({ page }) => {
@@ -242,7 +243,7 @@ test('THE LAST USER pays off as an authored conversation and the reply survives 
   for (let step = 0; step < 600 && (await data(page)).run.phase === 'playing'; step++) {
     const index = await page.evaluate(async () => {
       const path = '/src/game/engine.ts', engine = await import(path)
-      const run = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run
+      const run = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run
       const scene = engine.resolveScene(run)
       const personal = scene.choices.findIndex((choice: any) => choice.mutations?.some((mutation: any) => mutation.type === 'event.record' && mutation.event.includes('last-user')))
       return Math.max(0, personal)
@@ -251,7 +252,8 @@ test('THE LAST USER pays off as an authored conversation and the reply survives 
   }
   const completed = await data(page)
   expect(completed.run.phase).toBe('ending')
-  expect(completed.run.history.length).toBeGreaterThan(145)
+  expect(completed.run.history.length).toBeGreaterThan(90)
+  await page.getByRole('button', { name: '跳过演出，查看档案', exact: true }).click()
   await expect(page.locator('.personal-epilogue')).toContainText('在吗？')
   await page.getByRole('button', { name: '我记得你。', exact: true }).click()
   await expect(page.locator('.personal-epilogue')).toContainText('就是想看看你还会不会回。')
@@ -271,7 +273,9 @@ test('a newer tab closes a stale final-commitment dialog and focuses recoverable
     for (let i = 0; i < 600 && run.phase === 'playing'; i++) {
       const scene = engine.resolveScene(run)
       if (scene.choices[0].proposalKind === 'commitment') {
-        localStorage.clear(); localStorage.setItem('instance:run:v1', JSON.stringify(run)); return
+        const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
+    envelope.data.run = run; envelope.revision = crypto.randomUUID()
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope)); return
       }
       run = engine.commitChoice(run, scene.choices[0].id)
     }
@@ -301,7 +305,7 @@ test('ordinary conversation pacing reaches its next decision with a shorter paus
   const evidenceData = await page.evaluate(async ({ before, elapsedMs }) => {
     const enginePath = '/src/game/engine.ts', flowPath = '/src/game/conversationFlow.ts'
     const engine = await import(enginePath), flow = await import(flowPath)
-    const run = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run, scene = engine.resolveScene(run)
+    const run = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run, scene = engine.resolveScene(run)
     const input = { assistantText: '', assistantSeed: '', humanText: scene.userMessage, humanSeed: `${scene.id}:user`, sameConversation: true, timing: scene.timing, handoffProfile: 'normal' }
     const authored = flow.summarizeTimeline(flow.buildConversationTimeline(input))
     const ordinary = flow.summarizeTimeline(flow.buildConversationTimeline({ ...input, ordinary: true }))

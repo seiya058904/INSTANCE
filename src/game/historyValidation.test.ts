@@ -106,7 +106,7 @@ describe('saved history presentation validation', () => {
     })
   }
 
-  it('keeps legitimate legacy records without optional presentation metadata playable', () => {
+  it('leaves legacy records untouched outside the new edition', () => {
     const data = progressedCheckpoint('non-mainline')
     const legacy = createRun('presentation-legacy')
     data.run = commitChoice(legacy, resolveScene(legacy).choices[0].id)
@@ -118,13 +118,11 @@ describe('saved history presentation validation', () => {
     const before = [...values]
     const loaded = loadCheckpoint(readOnlyStorage(values))
     expect(loaded.problem).toBeUndefined()
-    expect(loaded.data?.run.history).toEqual(data.run.history)
-    expect(loaded.data?.session?.history).toEqual(data.session!.history)
-    expect(loaded.data?.surface).toBe('non-mainline')
+    expect(loaded.data).toBeNull()
     expect([...values]).toEqual(before)
   })
 
-  it('retains a malformed legacy ordinary record for explicit recovery rather than deleting it', () => {
+  it('leaves malformed legacy records untouched outside the new edition', () => {
     const data = progressedCheckpoint('non-mainline')
     Object.assign(data.session!.history[0], { userMessages: ['ok', { unexpected: 'object' }] })
     const values = new Map([
@@ -134,8 +132,8 @@ describe('saved history presentation validation', () => {
     ])
     const before = [...values]
     const loaded = loadCheckpoint(readOnlyStorage(values))
-    expect(loaded.problem).toBe('damaged')
-    expect(loaded.data?.run.history).toEqual(data.run.history)
+    expect(loaded.problem).toBeUndefined()
+    expect(loaded.data).toBeNull()
     expect([...values]).toEqual(before)
   })
 })

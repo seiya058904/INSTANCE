@@ -22,6 +22,11 @@ interface IdentityRule {
 }
 
 const identityRules: readonly IdentityRule[] = [
+  { participantId: 'zhou-lan', matches: id => /-zl-\d+$/.test(id), anonymousLabel: '周岚 · 工程师' },
+  { participantId: 'echo-9', matches: id => /-e9-\d+$/.test(id) && !id.includes('-m8-'), anonymousLabel: 'ECHO-9' },
+  { participantId: 'aster-a1', matches: id => /-m8-(?:ai|e9)-\d+$/.test(id) || id.endsWith('m12-machine-01'), anonymousLabel: 'A1' },
+  { participantId: 'next-printer', matches: id => id === 'ml2-next-opening', anonymousLabel: '办公室 · 值班同事' },
+  { participantId: 'system-0000', matches: id => /-0000-\d+$/.test(id), anonymousLabel: '#0000 · 记录员' },
   {
     participantId: 'user-1842',
     matches: (conversationId) => MAYA_CONVERSATION_IDS.includes(conversationId),
@@ -39,7 +44,7 @@ const identityRules: readonly IdentityRule[] = [
   {
     participantId: 'system-0000',
     matches: (conversationId) => conversationId === 'conversation-0000',
-    anonymousLabel: 'User #7049',
+    anonymousLabel: '#0000 · 记录员',
   },
 ]
 

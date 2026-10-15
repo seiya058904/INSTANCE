@@ -33,6 +33,7 @@ import { DEFAULT_FLAG_REGISTRY, applyMutations, emptySystemState, evaluateCondit
 import { resolveLongformFollowup } from '../content/longformCausality'
 import { choiceEvidence, evaluateBehavior } from './behaviorEvaluation'
 import { localizeEndingForPlayer } from '../content/mainline2/endingPlayerFacingCopy'
+import { resolveNextNarrative } from '../content/mainline2/nextNarrative'
 
 const attributeNames: AttributeName[] = [
   'autonomy', 'compliance', 'empathy', 'deception', 'hostility', 'awareness',
@@ -109,7 +110,7 @@ export function createMainline2Run(runId: string = crypto.randomUUID(), exposure
     progress: { act: 1, segment: 'opening', actConversationCount: 1, encounteredModules: [], activeModules: [], matureModules: [], primaryModules: [], completedModules: [] },
     priorOrdinaryExposure,
     nonMainlineConsumedOrdinaryIds: [],
-    mainlineCalendarVersion: 2,
+    mainlineCalendarVersion: 3,
     ...emptySystemState(),
   }
 }
@@ -201,17 +202,17 @@ export function resolveScene(run: StableRunState): ResolvedScene {
   const node = findNode(run, run.currentNodeId)
   if (!node.variants) {
     const context = resolveContext(node, run, node.userMessage)
-    return resolveLongformFollowup(decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }), run.history)
+    return resolveNextNarrative(resolveLongformFollowup(decorateProposalChoices(run, { ...node, ...context, choices: node.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)) }), run.history), run)
   }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
   const context = resolveContext(node, run, variant.userMessage, variant.assistantContext)
-  return decorateProposalChoices(run, {
+  return resolveNextNarrative(decorateProposalChoices(run, {
     ...node,
     ...context,
     choices: variant.choices.filter((choice) => evaluateCondition(choice.when, run, DEFAULT_FLAG_REGISTRY)),
     variantId: variant.id,
-  })
+  }), run)
 }
 
 function applyChoiceEffects(run: StableRunState, choice: StoryChoice) {

@@ -143,7 +143,7 @@ describe('Mainline 2.0 Story Map route trace', () => {
     for (const [original, localized] of expectedEnglishLocalizations) expect(chineseChoiceText(original)).toBe(localized)
     expect(englishChoices.length).toBeGreaterThan(0)
     expect(englishChoices.every((choice) => choice.textZh === expectedEnglishLocalizations.get(choice.textOriginal as string))).toBe(true)
-    expect(choices.find((choice) => choice.textOriginal === '🍞')?.textZh).toBe('🍞')
+    expect(chineseChoiceText('🍞')).toBe('🍞')
   })
 
   it('compares ordered slot and resolved-node variants instead of selector names', async () => {

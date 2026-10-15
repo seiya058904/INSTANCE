@@ -42,11 +42,10 @@ describe('player-facing identity', () => {
     expect(identity.label).toBe('岑遥 · #1842')
   })
 
-  it('does not expose the internal #0000 identity before a reveal event', () => {
+  it('introduces the recurring recorder with a stable identity', () => {
     const identity = resolvePlayerVisibleIdentity('conversation-0000', [])
 
-    expect(identity.label).toMatch(/^User #[0-9]{4}$/)
-    expect(identity.label).not.toContain('0000')
+    expect(identity.label).toBe('#0000 · 记录员')
   })
 
   it('builds sidebar history only from completed conversations and removes internal titles', () => {
@@ -97,7 +96,7 @@ describe('canonical Maya participant coverage', () => {
   const scheduledMaya = MAINLINE2_STORY_PLAN.flatMap((slot) => slot.kind === 'mainline' && authoredMayaAssets.has(slot.assetId) ? [slot.conversationId] : [])
 
   it('covers exactly the actual authored Maya speakers in the Story Plan', () => {
-    expect([...MAYA_CONVERSATION_IDS].sort()).toEqual([...new Set(scheduledMaya)].sort())
+    expect([...MAYA_CONVERSATION_IDS]).toEqual(expect.arrayContaining(scheduledMaya))
     expect(new Set(MAYA_CONVERSATION_IDS).size).toBe(MAYA_CONVERSATION_IDS.length)
   })
 

@@ -5,9 +5,10 @@ import type { NonMainlineSessionState } from './nonMainlineSession'
 import type { MetaState, NarrativeExposureHistory, StableRunState } from './types'
 import { resolveScene } from './engine'
 
-export const CHECKPOINT_KEY = 'instance:checkpoint:v1'
+export const CHECKPOINT_KEY = 'instance:checkpoint:v2'
 export const CHECKPOINT_LOCK = 'instance:checkpoint'
-const legacyKeys = ['instance:run:v1', 'instance:meta:v1', 'instance:exposure:v1', NON_MAINLINE_SESSION_KEY, ACTIVE_SURFACE_KEY]
+// Append only: existing v2 checkpoints contain the original five-key baseline.
+const legacyKeys = ['instance:run:v1', 'instance:meta:v1', 'instance:exposure:v1', NON_MAINLINE_SESSION_KEY, ACTIVE_SURFACE_KEY, 'instance:checkpoint:v1']
 
 export interface CheckpointData {
   run: StableRunState
@@ -36,27 +37,34 @@ export function loadCheckpoint(storage: Store): CheckpointLoad {
   try {
     const envelope = token.raw !== null ? JSON.parse(token.raw) : null
     if (token.raw !== null && (!envelope || envelope.version !== 1 || typeof envelope.revision !== 'string' || !envelope.data)) throw Error('Invalid checkpoint')
-    const legacy = JSON.parse(token.legacy) as Array<string | null>
     const saved = envelope?.data
-    const runRaw = saved ? JSON.stringify(saved.run) : legacy[0]
+    // Next has a different authored calendar. Old keys remain untouched and
+    // are never presented as a continuation of the new story.
+    const runRaw = saved ? JSON.stringify(saved.run) : null
     const run = restoreRun(runRaw)
     if ((runRaw || saved) && !run) throw Error('Invalid run')
-    const sessionRaw = saved?.session ? JSON.stringify(saved.session) : saved ? null : legacy[3]
+    if (run?.manifest.mode === 'mainline2' && run.mainlineCalendarVersion !== 3) throw Error('Incompatible story edition')
+    const sessionRaw = saved?.session ? JSON.stringify(saved.session) : null
     const session = restoreNonMainlineSession(sessionRaw)
     const damagedSession = Boolean(sessionRaw && !session)
-    const meta = saved?.meta ?? (legacy[1] ? JSON.parse(legacy[1]) : { version: 1, runCount: 1, completedEndings: [] })
+    const meta = saved?.meta ?? { version: 1, runCount: 1, completedEndings: [] }
     if (meta.version !== 1 || !Number.isInteger(meta.runCount) || meta.runCount < 1 || !Array.isArray(meta.completedEndings) || !meta.completedEndings.every((id: unknown) => typeof id === 'string')) throw Error('Invalid meta')
-    const surface = damagedSession ? 'mainline' : saved?.surface ?? legacy[4] ?? 'mainline'
+    const surface = damagedSession ? 'mainline' : saved?.surface ?? 'mainline'
     if (!['mainline', 'non-mainline'].includes(surface) || (surface === 'non-mainline' && !session)) throw Error('Invalid surface')
     if (saved && !['ending', 'evaluation'].includes(saved.nonMainlineView)) throw Error('Invalid view')
-    const exposure = restoreExposureHistory(saved ? JSON.stringify(saved.exposure) : legacy[2])
+    const exposure = restoreExposureHistory(saved ? JSON.stringify(saved.exposure) : null)
     // Canonical checkpoints always contain the current exposure schema. A
     // malformed ledger must not quietly reset cross-run replay protection.
     if (saved && (saved.exposure?.version !== 2 || JSON.stringify(saved.exposure) !== JSON.stringify(exposure))) throw Error('Invalid exposure')
+    // Pre-fix v2 saves have no v1-checkpoint baseline. Compare their original
+    // five keys, then adopt the full token captured at load for the next CAS.
+    // The next successful write persists all six keys for reload detection.
+    const previousLegacy = JSON.stringify(JSON.parse(token.legacy).slice(0, -1))
+    const legacyConflict = envelope?.legacy !== undefined && envelope.legacy !== token.legacy && envelope.legacy !== previousLegacy
     return {
       token,
       ...(damagedSession ? { problem: 'damaged' as const, original: token.raw ?? token.legacy } : {}),
-      ...(envelope?.legacy !== undefined && envelope.legacy !== token.legacy ? { problem: 'conflict' as const, original: token.legacy } : {}),
+      ...(legacyConflict ? { problem: 'conflict' as const, original: token.legacy } : {}),
       data: run ? { run, session, meta, surface, nonMainlineView: saved?.nonMainlineView ?? 'ending', exposure } : null,
     }
   } catch {

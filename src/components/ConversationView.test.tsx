@@ -10,6 +10,16 @@ const scene: ResolvedScene = {
 }
 
 describe('multimodal conversation presentation', () => {
+  it('uses the same conversation markup for the first scene without an opening or gameplay preface', () => {
+    const render = (id: string) => renderToStaticMarkup(<ConversationView scene={{ ...scene, id }} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady currentMessageMode="static" chapter="一句话的重量" onChoose={() => undefined} />)
+    const opening = render('next-printer')
+    expect(opening).toBe(render('later-conversation'))
+    expect(opening).not.toContain('story-opening')
+    expect(opening).not.toContain('世界开始变得奇怪')
+    expect(opening).not.toContain('你是 Aster，选择你要发出的回复')
+    expect(opening).toContain('候选响应')
+  })
+
   it('renders local description attachments and generated-image previews without remote assets', () => {
     const html = renderToStaticMarkup(<ConversationView scene={scene} conversationTitle={scene.conversationTitle} modelLabel="Aster 3.1" history={[]} flowStage="ready" choicesReady currentMessageMode="static" onChoose={() => undefined} />)
     expect(html).toContain('attachment-description')

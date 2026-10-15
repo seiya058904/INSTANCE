@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test'
 import type { Page } from '@playwright/test'
 
-const data = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data)
+const data = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data)
 const ready = (page: Page) => expect(page.locator('.candidate-response').first()).toBeEnabled()
 async function choose(page: Page) {
-  const before = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))
+  const before = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))
   await page.locator('.candidate-response').first().click()
   if (await page.getByRole('dialog', { name: '锁定这个未来？' }).isVisible()) await page.getByRole('button', { name: '确认锁定该未来', exact: true }).click()
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).not.toBe(before)
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBe(before)
   const saved = await data(page)
   if ((saved.surface === 'non-mainline' ? saved.session.phase : saved.run.phase) === 'playing') await ready(page)
 }
@@ -19,7 +19,7 @@ async function mainlineConversation(page: Page) {
   return page.evaluate(async () => {
     const path = '/src/game/engine.ts'
     const engine = await import(path)
-    return engine.resolveScene(JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run).conversationId as string
+    return engine.resolveScene(JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run).conversationId as string
   })
 }
 
@@ -30,7 +30,7 @@ for (const mobile of [false, true]) {
     page.on('pageerror', error => errors.push(error.message))
     // Only the initial run/session identifiers and pacing are controlled.
     // Every response and mode change still goes through actual UI callbacks.
-    await page.goto('/?qaPacing=instant&qaRun=audit-crossmode-0')
+    await page.goto('/?qaPacing=instant&qaRun=audit-crossmode-2')
     await ready(page)
     for (let count = 0; count < 4; count++) await choose(page)
     // Remove qaRun before reload so subsequent loads use the real checkpoint.
@@ -38,7 +38,7 @@ for (const mobile of [false, true]) {
     await page.evaluate(() => {
       const original = crypto.randomUUID.bind(crypto)
       let used = false
-      Object.defineProperty(crypto, 'randomUUID', { configurable: true, value: () => used ? original() : (used = true, 'audit-nm-0') })
+      Object.defineProperty(crypto, 'randomUUID', { configurable: true, value: () => used ? original() : (used = true, 'audit-nm-2') })
     })
     await enter(page, mobile); await ready(page); await choose(page)
     const paused = await data(page)

@@ -28,6 +28,7 @@ export interface MainlineStoryPlanSlot {
   contactGate?: boolean
   requires?: Condition
   fallbackAssetId?: string
+  focus?: string[]
 }
 
 export interface OrdinaryStoryPlanSlot {
@@ -113,50 +114,15 @@ export function storyPlanForRun(run: StableRunState) {
 }
 
 /**
- * The calendar the runtime scheduler actually walks for this run. On a
- * contact-closed route the ten gated Contact scenes after the no-contact
- * bridge (slots 152–161) are dropped instead of decaying into ordinary
- * fillers, so the branch reads bridge → 2 designed ordinary slots → Security
- * rather than a twelve-conversation ordinary vacuum. All Contact-gate inputs
- * (resource-network flag, anomaly seed event, doctrine decisions) are fixed
- * before slot 148, so the projection is stable for the rest of a run.
+ * The current-edition calendar. A closed Contact route retains one bridge,
+ * without replacing omitted scenes with ordinary fillers. Gate inputs are
+ * selected before Contact; research focus precedes all optional scenes.
  */
-// The contact-closed branch calendar: the full plan minus the ten gated
-// Contact scenes after the no-contact bridge (full slots 152-161).
 const COMPRESSED_CLOSED_PLAN: readonly StoryPlanSlot[] = MAINLINE2_STORY_PLAN.filter((slot) => !(slot.kind === 'mainline' && slot.contactGate && slot.assetId !== 'ML2-A4-M13-CONTACT-01'))
 
 export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPlanSlot[] {
-  // Legacy v3 saves (created before calendar versioning) index their manifest
-  // against the full 190-slot plan and may carry a currentNode inside the
-  // gated chapter region. Re-indexing them onto the compressed calendar would
-  // skip story and could end the run early, so they keep the legacy calendar.
-  if (run.mainlineCalendarVersion !== 2) return MAINLINE2_STORY_PLAN
-  if (contactRouteOpen(run)) return MAINLINE2_STORY_PLAN
-  return COMPRESSED_CLOSED_PLAN
-}
-
-/**
- * Marker-less v3 saves come from two eras: before a335086 (legacy full
- * calendar) and the short a335086 deployment window (compressed closed
- * calendar, no marker yet). Fixed mainline conversations after the Contact
- * region sit exactly ten positions earlier under the compressed calendar, so
- * their manifest positions identify the era unambiguously — an ordinary
- * filler can never occupy a fixed mainline id. Saves that have not reached
- * the post-Contact region yet are indistinguishable; they default to the
- * legacy calendar, which costs at most pacing, never progression.
- */
-export function inferMainlineCalendarVersion(conversationIds: readonly string[]): number | undefined {
-  const compressedIndexById = new Map<string, number>()
-  COMPRESSED_CLOSED_PLAN.forEach((slot, index) => {
-    if (slot.kind === 'mainline') compressedIndexById.set(slot.conversationId, index)
-  })
-  let postContactSeen = 0
-  const discriminators = MAINLINE2_STORY_PLAN.filter((slot): slot is MainlineStoryPlanSlot => slot.kind === 'mainline' && !slot.requires && slot.slot > 163)
-  for (const slot of discriminators) {
-    const manifestIndex = conversationIds.indexOf(slot.conversationId)
-    if (manifestIndex === -1) continue
-    postContactSeen += 1
-    if (compressedIndexById.get(slot.conversationId) !== manifestIndex) return undefined
-  }
-  return postContactSeen > 0 ? 2 : undefined
+  const plan = contactRouteOpen(run) ? MAINLINE2_STORY_PLAN : COMPRESSED_CLOSED_PLAN
+  // Focus is selected before every optional scene. Only future slots change;
+  // after that decision the projection is stable across refreshes.
+  return plan.filter(slot => slot.kind !== 'mainline' || !slot.focus || slot.focus.includes(run.decisions?.act4_research_emphasis ?? 'balanced_portfolio'))
 }

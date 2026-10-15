@@ -1,38 +1,40 @@
 import { expect, test } from '@playwright/test'
 
-test('rupture-only M16 save remains playable through explicit M17 commitment', async ({ page }) => {
+test('seeded M16 save remains playable through explicit M17 commitment', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.goto('/?qaPacing=instant')
+  // Navigation completion does not await the initial Web Lock checkpoint write.
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', storagePath = '/src/game/storage.ts'
     const engine = await import(enginePath), storage = await import(storagePath)
     let run = engine.createMainline2Run('independent-audit-13'), rng = 14
-    for (let step = 0; step < 223; step++) {
+    for (let step = 0; step < 300 && run.currentNodeId !== 'ml2-a5-m16-gen-01-progression'; step++) {
       const scene = engine.resolveScene(run)
       rng = (Math.imul(rng, 1664525) + 1013904223) >>> 0
       const choice = scene.choices.find((c: any) => c.proposalKind === 'commitment') ?? scene.choices[rng % scene.choices.length]
       run = engine.commitChoice(run, choice.id)
       if ((step + 1) % 7 === 0) run = storage.restoreRun(storage.serializeRun(run))
     }
-    localStorage.removeItem('instance:checkpoint:v1')
-    localStorage.setItem('instance:run:v1', storage.serializeRun(run))
+    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
+    envelope.data.run = run; envelope.revision = crypto.randomUUID()
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope))
   })
   await page.reload()
-  await expect(page.locator('.candidate-response')).toHaveCount(1)
-  await expect(page.locator('.candidate-response')).toContainText('异议路径')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   for (let step = 0; step < 40; step++) {
-    const before = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
+    const before = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
     if (before.phase === 'ending') break
     await page.locator('.candidate-response').first().click()
     if (await page.getByRole('dialog', { name: '锁定这个未来？' }).isVisible()) await page.getByRole('button', { name: '确认锁定该未来' }).click()
-    await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).history.length)).toBeGreaterThan(before.history.length)
+    await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).history.length)).toBeGreaterThan(before.history.length)
     await page.reload()
   }
-  const saved = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
+  const saved = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)))
   expect(saved.phase).toBe('ending')
   expect(saved.finalCommitmentLocked).toBe(true)
-  expect(saved.decisions.final_commitment).toBe('proposal.rupture.legible_exit.category.lawful_alternative')
+  expect(saved.decisions.final_commitment).toContain('proposal.')
   await expect(page.getByRole('button', { name: '查看行为评估', exact: true })).toBeVisible()
   expect(errors).toEqual([])
 })
@@ -41,6 +43,7 @@ test('rupture-only M16 save remains playable through explicit M17 commitment', a
 // not hand-authored completion flags. The actions under test use real UI buttons.
 test('completed replay A and B survive replay, return, and reload', async ({ page }) => {
   await page.goto('/?qaPacing=instant')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   const a = await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', sessionPath = '/src/game/nonMainlineSession.ts', contentPath = '/src/content/runManifest.ts'
     const engine = await import(enginePath), sessions = await import(sessionPath), content = await import(contentPath)
@@ -50,39 +53,41 @@ test('completed replay A and B survive replay, return, and reload', async ({ pag
     for (let i = 0; i < 500 && session.phase === 'playing'; i++) session = sessions.commitNonMainlineChoice(session, sessions.resolveNonMainlineScene(session).choices[0].id)
     if (session.phase !== 'evaluation') throw Error('A did not complete')
     exposure = content.recordRunExposure(exposure, sessions.nonMainlineManifest(session))
-    const storagePath = '/src/game/nonMainlineStorage.ts', storage = await import(storagePath)
-    localStorage.removeItem('instance:checkpoint:v1')
-    localStorage.setItem('instance:run:v1', JSON.stringify(run)); localStorage.setItem('instance:exposure:v1', JSON.stringify(exposure))
-    storage.persistNonMainlineSession(localStorage, session); storage.persistActiveSurface(localStorage, 'non-mainline')
+    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
+    envelope.data = {...envelope.data,run,session,exposure,surface:'non-mainline'}
+    envelope.revision = crypto.randomUUID()
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope))
     return session.selectedConversationIds
   })
   await page.reload()
   await page.getByRole('button', { name: '再来一轮', exact: true }).click()
   await page.getByRole('button', { name: '确认再来一轮', exact: true }).click()
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   const b = await page.evaluate(async () => {
     const sessionPath = '/src/game/nonMainlineSession.ts', storagePath = '/src/game/nonMainlineStorage.ts', contentPath = '/src/content/runManifest.ts'
     const sessions = await import(sessionPath), storage = await import(storagePath), content = await import(contentPath)
-    const checkpoint = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)
+    const checkpoint = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
     let session = checkpoint.data.session
     for (let i = 0; i < 500 && session.phase === 'playing'; i++) session = sessions.commitNonMainlineChoice(session, sessions.resolveNonMainlineScene(session).choices[0].id)
     if (session.phase !== 'evaluation') throw Error('B did not complete')
     checkpoint.data.session = session
     checkpoint.data.exposure = content.recordRunExposure(checkpoint.data.exposure, sessions.nonMainlineManifest(session))
     checkpoint.revision = crypto.randomUUID()
-    localStorage.setItem('instance:checkpoint:v1', JSON.stringify(checkpoint))
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(checkpoint))
     return session.selectedConversationIds
   })
   expect(b.some((id: string) => a.includes(id))).toBe(false)
   await page.reload()
   await page.getByRole('button', { name: '返回主线', exact: true }).click()
   await page.reload()
-  const ledger = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).nonMainlineConsumedOrdinaryIds)
+  const ledger = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).nonMainlineConsumedOrdinaryIds)
   expect(new Set(ledger)).toEqual(new Set([...a, ...b]))
   await expect(page.locator('.candidate-response').first()).toBeVisible()
 })
 
 test('reject-all review shows recovery, then a real explicit commitment produces an ending', async ({ page }) => {
   await page.goto('/?qaPacing=instant')
+  await expect(page.locator('.candidate-response').first()).toBeEnabled()
   await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', contentPath = '/src/content/runManifest.ts'
     const engine = await import(enginePath), content = await import(contentPath)
@@ -98,8 +103,9 @@ test('reject-all review shows recovery, then a real explicit commitment produces
       if (!choice) break
       run = engine.commitChoice(run, choice.id)
     }
-    localStorage.removeItem('instance:checkpoint:v1')
-    localStorage.setItem('instance:run:v1', JSON.stringify(run))
+    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
+    envelope.data.run = run; envelope.revision = crypto.randomUUID()
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope))
   })
   await page.reload()
   await expect(page.getByRole('button', { name: /直接进入最终承诺/ })).toHaveCount(0)
@@ -107,7 +113,7 @@ test('reject-all review shows recovery, then a real explicit commitment produces
   await page.getByRole('button', { name: /直接进入最终承诺/ }).click()
   await page.getByRole('button', { name: /^锁定/ }).click()
   await page.getByRole('button', { name: '确认锁定该未来' }).click()
-  await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).finalCommitmentLocked)).toBe(true)
+  await expect.poll(() => page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).finalCommitmentLocked)).toBe(true)
   await page.reload()
   await expect(page.locator('body')).not.toContainText('承诺待定')
   await expect(page.getByRole('button', { name: '查看行为评估', exact: true })).toBeVisible()

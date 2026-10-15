@@ -64,7 +64,8 @@ function initialPair(seed = 0) {
 }
 
 function pausedMainlineCollision() {
-  const data = initialPair()
+  for (let seed = 0; seed < 30; seed++) {
+  const data = initialPair(seed)
   data.session = commitNonMainlineChoice(data.session, resolveNonMainlineScene(data.session).choices[0].id)
   data.run.nonMainlineConsumedOrdinaryIds = data.session.selectedConversationIds.slice(0, nonMainlineCompletedCount(data.session))
   const future = data.session.selectedConversationIds.slice(data.session.currentConversationIndex + 1)
@@ -75,9 +76,11 @@ function pausedMainlineCollision() {
     data.run = commitChoice(data.run, scene.choices[0].id)
     if (target && (data.run.phase !== 'playing' || resolveScene(data.run).conversationId !== target)) break
   }
-  expect(target).toBeDefined()
+  if (!target) continue
   expect(data.run.history.some(entry => entry.conversationId === target)).toBe(true)
   return { data, target: target! }
+  }
+  throw new Error('No paused collision found across 30 deterministic seeds')
 }
 
 describe('App resumes the existing Non-Mainline queue against latest mainline consumption', () => {

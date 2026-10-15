@@ -5,7 +5,7 @@ import { buildEnding, commitChoice, confirmEnding, createMainline2Run, resolveSc
 import { runMainline2Route } from './mainline2.closeoutFixtures'
 import { restoreRun, serializeRun } from './storage'
 import type { StableRunState } from './types'
-import seed45 from './fixtures/adversarial-m16-seed-45.json'
+import { PUBLIC_RUNTIME_ROUTE_CATALOG } from './mainline2RouteCatalog'
 
 const reviewSource = 'ML2-A5-M17-REVIEW-01'
 const commitSource = 'ML2-A5-M17-COMMIT-01'
@@ -57,10 +57,12 @@ describe('adversarial Mainline histories and final review', () => {
     completed = route.run
   }, 30_000)
 
-  it.each([0, 31])('completes the real 212-choice M16 history, restoring every %s choices', (restoreEvery) => {
-    let run = createMainline2Run(seed45.runId)
-    expect(seed45.trace).toHaveLength(212)
-    for (const [index, recorded] of seed45.trace.entries()) {
+  it.each([0, 31])('replays the current legal M16 history, restoring every %s choices', (restoreEvery) => {
+    const route = runMainline2Route(PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'the_silent_giant')!)
+    const trace = route.links.slice(0, route.links.findIndex(link => link.sourceRef === 'ML2-A5-M16-GEN-01'))
+    let run = createMainline2Run(route.run.runId)
+    expect(trace.length).toBeGreaterThan(80)
+    for (const [index, recorded] of trace.entries()) {
       const scene = resolveScene(run)
       expect(scene.id).toBe(recorded.nodeId)
       expect(scene.choices.some(choice => choice.id === recorded.choiceId)).toBe(true)
@@ -70,9 +72,9 @@ describe('adversarial Mainline histories and final review', () => {
 
     expect(run.currentNodeId).toBe('ml2-a5-m16-gen-01-progression')
     expect(run.decisions).toMatchObject({
-      first_public_execution_doctrine: 'necessity_intervention',
+      first_public_execution_doctrine: 'human_final_authority',
       aster_provisional_role: 'advisor',
-      aster_intended_role: 'other',
+      aster_intended_role: 'advisor',
     })
     // These are the actual earned state and existing ending gates. No ending
     // name, capability, world score or decision is injected to repair the route.

@@ -11,6 +11,48 @@ function fixture() {
   return { values, storage, data }
 }
 describe('durable checkpoint transactions', () => {
+  it('detects v1 checkpoint writes both before saving and after reloading v2', () => {
+    const { storage, data, values } = fixture()
+    values.set('instance:checkpoint:v1', 'old-edition-before')
+    const initial = loadCheckpoint(storage)
+    expect(initial.data).toBeNull()
+    expect(writeCheckpoint(storage, initial.token, data, 'next-edition').status).toBe('saved')
+    const saved = storage.getItem(CHECKPOINT_KEY)
+    const opened = loadCheckpoint(storage)
+    expect(opened.problem).toBeUndefined()
+    values.set('instance:checkpoint:v1', 'old-edition-after')
+    expect(writeCheckpoint(storage, opened.token, data, 'stale-tab').status).toBe('conflict')
+    expect(loadCheckpoint(storage).problem).toBe('conflict')
+    expect(storage.getItem(CHECKPOINT_KEY)).toBe(saved)
+    expect(storage.getItem('instance:checkpoint:v1')).toBe('old-edition-after')
+  })
+
+  it('upgrades the five-key v2 baseline without a false conflict or changing saved progress', () => {
+    const { storage, data, values } = fixture()
+    data.run = commitChoice(data.run, resolveScene(data.run).choices[0].id)
+    values.set('instance:checkpoint:v1', 'preserved-old-edition')
+    const oldLegacy = JSON.stringify([null, null, null, null, null])
+    const raw = JSON.stringify({ version: 1, revision: 'existing-v2', legacy: oldLegacy, data })
+    values.set(CHECKPOINT_KEY, raw)
+    const loaded = loadCheckpoint(storage)
+    expect(loaded.problem).toBeUndefined()
+    expect(loaded.data).toMatchObject(JSON.parse(JSON.stringify(data)))
+    expect(storage.getItem(CHECKPOINT_KEY)).toBe(raw)
+    // Even the first upgraded write must detect an old tab racing the load.
+    values.set('instance:checkpoint:v1', 'racing-write')
+    expect(writeCheckpoint(storage, loaded.token, data, 'raced').status).toBe('conflict')
+    const refreshed = loadCheckpoint(storage)
+    expect(refreshed.problem).toBeUndefined()
+    expect(writeCheckpoint(storage, refreshed.token, refreshed.data!, 'upgraded').status).toBe('saved')
+    expect(loadCheckpoint(storage).data).toEqual(loaded.data)
+    values.set('instance:checkpoint:v1', 'later-write')
+    expect(loadCheckpoint(storage).problem).toBe('conflict')
+    // Compatibility must not hide conflicts in any of the original five keys.
+    values.set(CHECKPOINT_KEY, raw)
+    values.set('instance:run:v1', 'changed-legacy-run')
+    expect(loadCheckpoint(storage).problem).toBe('conflict')
+  })
+
   it('keeps the previous checkpoint when the next scene cannot resolve', () => {
     const { storage, data } = fixture()
     expect(writeCheckpoint(storage, checkpointToken(storage), data, 'before').status).toBe('saved')
@@ -42,11 +84,12 @@ describe('durable checkpoint transactions', () => {
     expect(writeCheckpoint(storage, expected, recovered, 'recovered').status).toBe('saved')
     expect(loadCheckpoint(storage).data?.run.currentNodeId).toBe(pending.run.currentNodeId)
   })
-  it('imports legacy progress without deleting its only raw copy, and detects legacy-tab changes', () => {
+  it('isolates the new edition while preserving legacy bytes and detecting concurrent writes', () => {
     const { storage, data, values } = fixture()
     values.set('instance:run:v1', JSON.stringify(data.run))
     const legacy = loadCheckpoint(storage)
-    expect(legacy.data?.run.runId).toBe(data.run.runId)
+    expect(legacy.data).toBeNull()
+    expect(values.get('instance:run:v1')).toBe(JSON.stringify(data.run))
     values.set('instance:run:v1', JSON.stringify(commitChoice(data.run, resolveScene(data.run).choices[0].id)))
     expect(writeCheckpoint(storage, legacy.token, data, 'new-tab').status).toBe('conflict')
     expect(storage.getItem(CHECKPOINT_KEY)).toBeNull()

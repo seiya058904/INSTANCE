@@ -26,6 +26,7 @@ interface ConversationViewProps {
   onCurrentMessageComplete?: () => void
   modeControls?: ReactNode
   inputSuspended?: boolean
+  chapter?: string
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -173,6 +174,7 @@ export function ConversationView({
   onCurrentMessageComplete,
   modeControls,
   inputSuspended,
+  chapter,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const decisionHeading = useRef<HTMLDivElement>(null)
@@ -261,14 +263,17 @@ export function ConversationView({
           </div>
         </div>
       </header>
+      <div className="conversation-notices">
+        {chapter && <div className="story-chapter" role="status">{chapter}</div>}
 
-      {notice && (
-        <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
-          <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
-          <span>{notice.copy}</span>
-          {notice.warning && <small>Reference: 0x5A-7F-23</small>}
-        </div>
-      )}
+        {notice && (
+          <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
+            <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
+            <span>{notice.copy}</span>
+            {notice.warning && <small>Reference: 0x5A-7F-23</small>}
+          </div>
+        )}
+      </div>
 
       <div className="conversation-scroll" ref={scrollRef}>
         <div className="conversation-column">

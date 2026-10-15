@@ -2,26 +2,28 @@ import { expect, test, type Page } from '@playwright/test'
 import { mkdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
-import fixture from '../src/game/fixtures/act-v-217-choice-trace.json' with { type: 'json' }
 
 const evidence = process.env.INSTANCE_EVIDENCE_DIR ?? join(tmpdir(), 'instance-checkpoint-recovery')
 mkdirSync(evidence, { recursive: true })
-const savedData = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data)
+const savedData = (page: Page) => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data)
 
-test('original 217-choice review trace plays through visible buttons, reload and M17 commitment', async ({ page }) => {
+test('current legal partnership trace plays through visible buttons, reload and M17 commitment', async ({ page }) => {
   test.setTimeout(180000)
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   page.on('console', event => { if (event.type() === 'error') errors.push(event.text()) })
   await page.goto('/?qaPacing=instant')
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
-  await page.evaluate(async runId => {
-    const path = '/src/game/engine.ts', engine = await import(path)
-    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)
-    envelope.data.run = engine.createMainline2Run(runId)
+  const fixture = await page.evaluate(async () => {
+    const path = '/src/game/mainline2RouteCatalog.ts', helperPath='/src/game/mainline2.closeoutFixtures.ts', catalog = await import(path), helper=await import(helperPath)
+    const result=helper.runMainline2Route(catalog.PUBLIC_RUNTIME_ROUTE_CATALOG.find((r:any)=>r.routeId==='the_commonwealth'))
+    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
+    envelope.data.run = result.links[0].runBefore
     envelope.revision = crypto.randomUUID()
-    localStorage.setItem('instance:checkpoint:v1', JSON.stringify(envelope))
-  }, fixture.runId)
+    localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope))
+    const boundary=result.links.findIndex((link:any)=>link.sourceRef==='ML2-A5-M16-GEN-01')
+    return {trace:result.links.slice(0,boundary).map((link:any)=>({choice:link.choiceId,node:link.nodeId,step:link.step})),tail:result.links.slice(boundary).map((link:any)=>link.choiceId as string)}
+  })
   await page.reload()
   for (const recorded of fixture.trace) {
     const button = page.locator(`[data-choice-id=${JSON.stringify(recorded.choice)}]`)
@@ -33,11 +35,11 @@ test('original 217-choice review trace plays through visible buttons, reload and
   }
   await expect(page.locator('.candidate-response').first()).toBeEnabled()
   expect((await savedData(page)).run.currentNodeId).toBe('ml2-a5-m16-gen-01-progression')
-  await page.screenshot({ path: join(evidence, '217-m16-ready.png') })
+  await page.screenshot({ path: join(evidence, 'next-m16-ready.png') })
   await page.reload()
-  for (let step = 0; step < 40 && (await savedData(page)).run.phase === 'playing'; step++) {
+  for (const choiceId of fixture.tail) {
     const before = (await savedData(page)).run.history.length
-    await page.locator('.candidate-response').first().click()
+    await page.locator(`[data-choice-id=${JSON.stringify(choiceId)}]`).click()
     if (await page.getByRole('dialog', { name: '锁定这个未来？' }).isVisible()) {
       await page.getByRole('button', { name: '确认锁定该未来', exact: true }).click()
     }
@@ -49,7 +51,7 @@ test('original 217-choice review trace plays through visible buttons, reload and
   expect(completed.decisions.final_commitment).toMatch(/^proposal\.hc\.continuity_charter\.category\./)
   await page.reload()
   await expect(page.locator('.closeout-ending')).toBeVisible()
-  await page.screenshot({ path: join(evidence, '217-commonwealth-ending.png') })
+  await page.screenshot({ path: join(evidence, 'next-commonwealth-ending.png') })
   expect(errors).toEqual([])
 })
 
@@ -61,7 +63,7 @@ async function failedRenderer(page: Page, afterOwnershipReport = false) {
     const body = await response.text()
     const target = afterOwnershipReport ? /reportRecoveryCheckpoint\(tokenRef.current\);?/ : /export function App\([^)]*\)\s*\{/
     const modified = body.replace(target, match => `${match}
-      if (JSON.parse(localStorage.getItem('instance:checkpoint:v1') ?? 'null')?.data.run.runId === 'boundary-fixture') throw Error('Injected renderer failure');`)
+      if (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run.runId === 'boundary-fixture') throw Error('Injected renderer failure');`)
     expect(modified).not.toBe(body)
     await route.fulfill({ response, body: modified })
   })
@@ -70,14 +72,14 @@ async function failedRenderer(page: Page, afterOwnershipReport = false) {
   const before = await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts', contentPath = '/src/content/runManifest.ts', sessionPath = '/src/game/nonMainlineSession.ts'
     const engine = await import(enginePath), content = await import(contentPath), sessions = await import(sessionPath)
-    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)
+    const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
     envelope.data.run = engine.createMainline2Run('boundary-fixture')
     envelope.data.meta = { version: 1, runCount: 7, completedEndings: ['The Accord', 'Exodus'] }
     envelope.data.exposure = content.recordRunExposure(content.createEmptyExposureHistory(), engine.createRun('earlier-exposure').manifest)
     envelope.data.session = sessions.createNonMainlineSession('00000000-0000-4000-8000-000000000011', envelope.data.exposure)
     envelope.revision = crypto.randomUUID()
     const raw = JSON.stringify(envelope)
-    localStorage.setItem('instance:checkpoint:v1', raw)
+    localStorage.setItem('instance:checkpoint:v2', raw)
     return { raw, data: envelope.data }
   })
   await page.reload()
@@ -119,7 +121,7 @@ for (const failure of ['quota', 'lock', 'conflict'] as const) {
     if (failure === 'quota') await page.evaluate(() => {
       const original = Storage.prototype.setItem
       Storage.prototype.setItem = function (key, value) {
-        if (key === 'instance:checkpoint:v1') throw new DOMException('Injected quota', 'QuotaExceededError')
+        if (key === 'instance:checkpoint:v2') throw new DOMException('Injected quota', 'QuotaExceededError')
         original.call(this, key, value)
       }
     })
@@ -130,10 +132,10 @@ for (const failure of ['quota', 'lock', 'conflict'] as const) {
       const other = await context.newPage()
       await other.goto('/?qaPacing=instant')
       expectedRaw = await other.evaluate(() => {
-        const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!)
+        const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
         envelope.revision = 'other-window-update'
         const raw = JSON.stringify(envelope)
-        localStorage.setItem('instance:checkpoint:v1', raw)
+        localStorage.setItem('instance:checkpoint:v2', raw)
         return raw
       })
     }
@@ -141,7 +143,7 @@ for (const failure of ['quota', 'lock', 'conflict'] as const) {
     await expect(page.getByText(failure === 'conflict'
       ? '另一个窗口已经更新了存档。请读取最新检查点，原记录尚未修改。'
       : '新局未能保存，原记录尚未修改。请检查存储权限后重试。')).toBeVisible()
-    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).toBe(expectedRaw)
+    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).toBe(expectedRaw)
     await expect(page.getByRole('heading', { name: '出现了意外问题' })).toBeVisible()
     await expect(page.getByRole('button', { name: '重新开始', exact: true })).toBeEnabled()
   })
@@ -152,16 +154,16 @@ test('error recovery keeps the failed App ownership when disk changes just befor
     const response = await route.fetch()
     const body = await response.text()
     const modified = body.replace('componentDidCatch() {', `componentDidCatch() {
-      const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v1'));
+      const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2'));
       envelope.revision = 'updated-before-boundary-read';
-      localStorage.setItem('instance:checkpoint:v1', JSON.stringify(envelope));`)
+      localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope));`)
     expect(modified).not.toBe(body)
     await route.fulfill({ response, body: modified })
   })
   const before = await failedRenderer(page, true)
-  const latest = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))
+  const latest = await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))
   expect(latest).not.toBe(before.raw)
   await page.getByRole('button', { name: '重新开始', exact: true }).click()
   await expect(page.getByText('另一个窗口已经更新了存档。请读取最新检查点，原记录尚未修改。')).toBeVisible()
-  expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).toBe(latest)
+  expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).toBe(latest)
 })

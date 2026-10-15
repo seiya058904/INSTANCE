@@ -12,7 +12,7 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
   const imported = await page.evaluate(async () => {
     const enginePath = '/src/game/engine.ts'
     const engine = await import(enginePath)
-    const current = JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data
+    const current = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data
     const run = engine.createMainline2Run('browser-explicit-recovery-target')
     return { runId: run.runId as string, raw: JSON.stringify({ current: { ...current, run } }) }
   })
@@ -25,7 +25,7 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
     ;(window as typeof window & { __recoveryOwnership?: typeof controls }).__recoveryOwnership = controls
     const originalSetItem = Storage.prototype.setItem
     Storage.prototype.setItem = function (key, value) {
-      if (key === 'instance:checkpoint:v1' && controls.denyWrites) {
+      if (key === 'instance:checkpoint:v2' && controls.denyWrites) {
         throw new DOMException('Injected quota failure', 'QuotaExceededError')
       }
       return originalSetItem.call(this, key, value)
@@ -74,7 +74,7 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
         const next = { ...loaded.data, run: engine.commitChoice(loaded.data.run, choice.id) }
         const result = checkpoint.writeCheckpoint(localStorage, loaded.token, next, 'other-window-progress')
         if (result.status !== 'saved') throw Error(`Writer fixture failed: ${result.status}`)
-        controls.raw = localStorage.getItem('instance:checkpoint:v1')!
+        controls.raw = localStorage.getItem('instance:checkpoint:v2')!
         controls.choiceId = choice.id
         controls.written = true
         await release
@@ -117,7 +117,7 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
     // transaction finishes. A now-enabled confirmation must still be guarded.
     if (await confirm.isEnabled()) await confirm.click()
     await expect(dialog).toBeVisible()
-    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).toBe(newer.raw)
+    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).toBe(newer.raw)
 
     await other.evaluate(() => {
       const controls = (window as typeof window & { __recoveryWriter?: { release: () => void } }).__recoveryWriter!
@@ -127,15 +127,15 @@ test('an imported recovery cannot lend its token to an older queued retry', asyn
       const state = await navigator.locks.query()
       return [...(state.held ?? []), ...(state.pending ?? [])].filter(lock => lock.name === 'instance:checkpoint').length
     })).toBe(0)
-    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v1'))).toBe(newer.raw)
+    expect(await page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).toBe(newer.raw)
     await expect(dialog).toBeVisible()
 
     // The user's selected import remains available after rejecting the stale
     // retry. Only a fresh confirmation is allowed to replace the newer record.
     await confirm.click()
-    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run.runId)).toBe(imported.runId)
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run.runId)).toBe(imported.runId)
     await expect(page.locator('.candidate-response').first()).toBeEnabled()
-    const recovered = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v1')!).data.run)
+    const recovered = await page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run)
     expect(recovered.history).toEqual([])
     expect(recovered.runId).toBe(imported.runId)
     expect(errors).toEqual([])

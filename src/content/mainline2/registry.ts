@@ -11,6 +11,7 @@ import intendedRoleBindings from './intendedRoleBindings.registry.json'
 import { isPlayableRuntimeAsset } from './runtimeAssetClassification'
 import { applyMainlinePlayerFacingCopy } from './playerFacingCopy'
 import { ENDING_BRIDGE_CONVERSATIONS } from './endingBridges'
+import { applyNextNarrative, NEXT_OPENING } from './nextNarrative'
 
 const modules: ModuleId[] = ['machine', 'ascension', 'automation', 'uplift', 'space', 'contact', 'security']
 
@@ -90,7 +91,8 @@ const authored = [...MAINLINE2_AUTHORED_CONVERSATIONS, ...ENDING_BRIDGE_CONVERSA
   const bindingErrors = validateDecisionBindings(conversation)
   if (bindingErrors.length) throw new Error(bindingErrors.join('; '))
   return adapt(conversation)
-}).map(applyMainlinePlayerFacingCopy)
+}).map(applyMainlinePlayerFacingCopy).map(applyNextNarrative)
+authored.push(NEXT_OPENING)
 const byRef = new Map(authored.flatMap((conversation) => conversation.sourceRefs.map((ref) => [ref, conversation] as const)))
 const byAct = (act: number) => authored.filter((conversation) => (conversation as ConversationDefinition & { act?: number }).act === act)
 const byModule = (module: ModuleId) => authored.filter((conversation) => (conversation as ConversationDefinition & { module?: string }).module === module)

@@ -39,7 +39,7 @@ for (const scenario of [
       await expect(button).toBeEnabled()
       if (link.node.startsWith('v4-')) {
         expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
-        if (link.node.endsWith('-receipt') && link.node !== 'v4-econ-cold-receipt') await expect(page.locator('.user-message').last()).toContainText(scenario.receipt)
+        if (/^v4-econ-(occupation|detour|menu)-receipt$/.test(link.node)) await expect(page.locator('.user-message').last()).toContainText(scenario.receipt)
         if (link.node === 'v4-econ-return') await expect(page.locator('.user-message').last()).toContainText(scenario.revisit)
         await button.scrollIntoViewIfNeeded()
         await page.screenshot({ path: `${evidence}-${link.node}.png` })

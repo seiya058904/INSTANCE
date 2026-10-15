@@ -60,7 +60,7 @@ describe('adversarial Mainline histories and final review', () => {
   it.each([0, 31])('replays the current legal M16 history, restoring every %s choices', (restoreEvery) => {
     const route = runMainline2Route(PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'the_silent_giant')!)
     const trace = route.links.slice(0, route.links.findIndex(link => link.sourceRef === 'ML2-A5-M16-GEN-01'))
-    let run = createMainline2Run(route.run.runId)
+    let run = createMainline2Run(route.run.runId, undefined, 3)
     expect(trace.length).toBeGreaterThan(80)
     for (const [index, recorded] of trace.entries()) {
       const scene = resolveScene(run)

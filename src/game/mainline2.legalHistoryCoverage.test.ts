@@ -12,7 +12,7 @@ describe('ACT V coverage of the current legal partnership trace', () => {
   it.each([0, 7, 20])('replays every recorded legal choice and completes M17, restore every %s', (interval) => {
     const route = runMainline2Route(PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'the_commonwealth')!)
     const trace = route.links.slice(0, route.links.findIndex(link => link.sourceRef === 'ML2-A5-M16-GEN-01'))
-    let run = createMainline2Run(route.run.runId)
+    let run = createMainline2Run(route.run.runId, undefined, 3)
     for (const recorded of trace) {
       const scene = resolveScene(run)
       expect([scene.id, scene.conversationId]).toEqual([recorded.nodeId, recorded.conversationId])

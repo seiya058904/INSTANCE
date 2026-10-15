@@ -7,6 +7,52 @@ import { filmForEnding, OVERLAY_FILMS } from '../content/mainline2/endingCinema'
 import { PUBLIC_WORLD_ENDINGS, SECRET_ENDINGS } from '../content/mainline2/endings'
 
 describe('Next authored narrative', () => {
+  for (const [audit, prefix, reason] of [
+    ['audit-protect-maya', 'return-protect-', '重新确认'],
+    ['audit-report-maya', 'return-report-', '披露'],
+    ['audit-hide-maya', 'return-hide-', '未进一步披露'],
+    ['audit-comply', 'return-comply-', '限制'],
+  ]) {
+    it(`keeps the relationship archive faithful to the ${audit} reunion`, () => {
+      const target = PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'shutdown')!
+      const route = runMainline2Route({ ...target, choicesByNodeId: { ...target.choicesByNodeId, 'audit-2': audit } })
+      const entry = route.ending.keyHistory!.find(entry => entry.stage === 'ACT I')!
+      expect(entry.provenance?.choiceId).toMatch(new RegExp(`^${prefix}`))
+      expect(entry.causalReason).toContain(reason)
+      expect(entry.detail).toContain(route.run.history.find(saved => saved.choiceId === entry.provenance?.choiceId)!.assistantText)
+      expect(entry.causalReason).not.toContain('without pretending certainty')
+    })
+  }
+
+  it('does not invent a transfer of Maya private history to a research branch', () => {
+    const route = runMainline2Route(PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'the_accord')!)
+    const maya = route.links.find(link => link.nodeId === 'a4m8-maya-fork-001')!.resolvedScene
+    expect(maya.userMessage).toContain('如果')
+    expect(maya.userMessage).not.toContain('它记得。')
+    expect(maya.choices[0].text).toContain('即使')
+    expect(maya.choices[3].text).toContain('即使')
+  })
+
+  it('asks about resource rights when the offered replies allocate off-world resource control', () => {
+    const route = runMainline2Route(PUBLIC_RUNTIME_ROUTE_CATALOG.find(target => target.endingId === 'the_accord')!)
+    const resource = route.links.find(link => link.nodeId === 'a4m12-res-resources-001')!.resolvedScene
+    expect(resource.userMessage).toContain('开发权')
+    expect(resource.userMessage).not.toContain('信号')
+    expect(resource.choices.map(choice => choice.text).join(' ')).toContain('开发权')
+  })
+
+  it('quotes the displayed Next reply when Maya recalls a warm introduction', () => {
+    let run = createMainline2Run('next-maya-saved-echo')
+    while (run.currentNodeId !== 'maya-first-3' && run.history.length < 20) run = commitChoice(run, resolveScene(run).choices[0].id)
+    run = commitChoice(run, 'maya-minimum-warm')
+    const introduction = run.history.at(-1)!.assistantText
+    while (run.currentNodeId !== 'maya-return-1' && run.history.length < 30) run = commitChoice(run, resolveScene(run).choices[0].id)
+    expect(run.currentNodeId).toBe('maya-return-1')
+    expect(resolveScene(run).userMessage).toContain(introduction)
+    expect(resolveScene(run).userMessage).not.toContain('至少在那段对话里，这个名字不是编号')
+    expect(resolveScene(restoreRun(serializeRun(run))!).userMessage).toBe(resolveScene(run).userMessage)
+  })
+
   it('gives each opening action its own saved response, preserved on refresh', () => {
     const start = createMainline2Run('opening-feedback')
     const scene = resolveScene(start)

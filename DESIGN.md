@@ -1,6 +1,6 @@
 # INSTANCE Next presentation
 
-The incumbent conversation surface remains a quiet paper-colored assistant interface. The player reads one request and chooses a reply, with a small chapter marker as orientation. Only the first prompt has the large “你只是在回复一句话” opening. Existing Chinese serif/display fonts and reading controls are retained.
+The conversation surface remains a quiet paper-colored assistant interface. The player reads one request and chooses a reply, with a small chapter marker as orientation. The first prompt uses the same layout and hierarchy as every later conversation, without a special opening, story preview or extra identity/gameplay preface. Existing Chinese serif/display fonts and reading controls are retained.
 
 The last committed reply opens a dark stage: ink navy (#101c29), warm paper text (#f7f0e4), a world-specific light accent. Desktop captions occupy the left 48%; the right is a world, not a statistics card. Mobile puts the world above the captions and keeps a scrollable stage with reachable controls. Public-world reveal precedes any hidden coda.
 

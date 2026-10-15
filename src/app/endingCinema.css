@@ -63,10 +63,6 @@
 .ending-collected-coda p, .ending-collection-note { font-size: 13px; line-height: 1.8; }
 .ending-collection-note { color: var(--muted); margin-top: 24px; }
 .story-chapter { padding: 10px var(--gutter); border-bottom: 1px solid var(--line-soft); display: flex; justify-content: space-between; gap: 12px; color: #4e5b60; font-size: 12px; }
-.story-chapter span { color: var(--muted); }
-.story-opening { padding: 10px 0 32px 30px; }
-.story-opening h2 { font-weight: 400; font-size: clamp(30px,3.5vw,50px); line-height: 1.35; letter-spacing: -.025em; margin: 0 0 16px; }
-.story-opening p { color: #755845; margin: 0; font-size: 16px; }
 .closeout-title h1 { overflow-wrap: anywhere; }
 @keyframes print-settle { from { transform: scale(1.035); } to { transform: none; } }
 @keyframes print-rise { from { transform: translateY(18px); } to { transform: none; } }
@@ -93,8 +89,6 @@
   .ending-collection-preview { grid-template-columns: 1fr; gap: 8px; }
   .ending-collection-preview .ending-visual { max-width: 280px; }
   .story-chapter { padding: 9px 18px; }
-  .story-chapter span { display: none; }
-  .story-opening { padding-left: 0; }
 }
 @media (max-width: 450px) {
   .ending-shelf { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 8px; }

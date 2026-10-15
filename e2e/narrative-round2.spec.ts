@@ -1,5 +1,32 @@
 import { expect, test } from '@playwright/test'
 
+test('Maya recalls the actual Next reply after a fresh UI introduction and reload', async ({ page }) => {
+  await page.goto('/?qaPacing=instant')
+  const node = () => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run.currentNodeId)
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('instance:checkpoint:v2'))).not.toBeNull()
+  for (let turn = 0; turn < 20 && await node() !== 'maya-first-3'; turn++) {
+    await expect(page.locator('.candidate-response').first()).toBeEnabled()
+    const before = await node()
+    await page.locator('.candidate-response').first().click()
+    await expect.poll(node).not.toBe(before)
+  }
+  expect(await node()).toBe('maya-first-3')
+  const warm = page.locator('[data-choice-id="maya-minimum-warm"]')
+  const reply = await warm.locator('.candidate-copy').innerText()
+  await warm.click()
+  await expect.poll(node).not.toBe('maya-first-3')
+  for (let turn = 0; turn < 20 && await node() !== 'maya-return-1'; turn++) {
+    await expect(page.locator('.candidate-response').first()).toBeEnabled()
+    const before = await node()
+    await page.locator('.candidate-response').first().click()
+    await expect.poll(node).not.toBe(before)
+  }
+  expect(await node()).toBe('maya-return-1')
+  await expect(page.locator('.current-exchange .user-message')).toContainText(reply)
+  await page.reload()
+  await expect(page.locator('.current-exchange .user-message')).toContainText(reply)
+})
+
 // Legal history is seeded only in a fresh context. The edited decision itself
 // and its reply use visible controls and production pacing, not QA instant.
 for (const scenario of [

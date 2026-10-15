@@ -2,6 +2,11 @@
  * never positions. Applied after effects are materialized, so an editorial
  * change cannot silently change the edition's saved strategic meaning. */
 export const NEXT_REPLIES: Record<string, Record<string, string>> = {
+  'a4m8-maya-fork-001': {
+    'shared-record-different-relationship': '即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。',
+    'yes-in-a-limited-sense': '如果它真实保留了那段历史，可以说它继承了对你的早期识别。但这不代表它经历了我们后来的所有对话。',
+    'personal-boundary': '这件事不该由我替你定义。即使它记得你，也不代表你必须承认它和我拥有同样的位置。',
+  },
   'normal_roommate_001': { 'clarify-person': '我不知道“她”指谁，也看不到你之前其他对话的内容。你需要告诉我是谁、刚发生了什么。' },
   'humor_voice_002': { 'reality-3': '好，大狗退出对话，堵车留下。' },
   'CM01-20-01': { 'choice-4': '对话结束不代表不能补一句。先说它是给自己用、给别人发，还是两者都要。' },

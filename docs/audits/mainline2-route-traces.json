@@ -2764,15 +2764,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -3801,7 +3801,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -7637,15 +7637,15 @@
         },
         {
           "step": 64,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -8674,7 +8674,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -12735,15 +12735,15 @@
         },
         {
           "step": 70,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -13772,7 +13772,7 @@
         },
         {
           "step": 90,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -17645,15 +17645,15 @@
         },
         {
           "step": 65,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -18682,7 +18682,7 @@
         },
         {
           "step": 85,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -22603,15 +22603,15 @@
         },
         {
           "step": 66,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -23640,7 +23640,7 @@
         },
         {
           "step": 86,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -27664,15 +27664,15 @@
         },
         {
           "step": 69,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -28701,7 +28701,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -32618,15 +32618,15 @@
         },
         {
           "step": 66,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -33655,7 +33655,7 @@
         },
         {
           "step": 86,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -37644,15 +37644,15 @@
         },
         {
           "step": 68,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -38681,7 +38681,7 @@
         },
         {
           "step": 88,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -42649,15 +42649,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -43686,7 +43686,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -47652,15 +47652,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -48689,7 +48689,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -52679,15 +52679,15 @@
         },
         {
           "step": 68,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -53716,7 +53716,7 @@
         },
         {
           "step": 88,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -57671,15 +57671,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -58708,7 +58708,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -63783,7 +63783,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -68742,7 +68742,7 @@
         },
         {
           "step": 88,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -73739,7 +73739,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -78652,7 +78652,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -83600,7 +83600,7 @@
         },
         {
           "step": 88,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -88618,7 +88618,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -93497,7 +93497,7 @@
         },
         {
           "step": 86,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -98353,7 +98353,7 @@
         },
         {
           "step": 86,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -103407,7 +103407,7 @@
         },
         {
           "step": 91,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -108226,7 +108226,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -113462,7 +113462,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -118700,7 +118700,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -123943,7 +123943,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -129232,7 +129232,7 @@
         },
         {
           "step": 85,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -133497,15 +133497,15 @@
         },
         {
           "step": 66,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -134534,7 +134534,7 @@
         },
         {
           "step": 86,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -138437,15 +138437,15 @@
         },
         {
           "step": 65,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -139474,7 +139474,7 @@
         },
         {
           "step": 85,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -143509,15 +143509,15 @@
         },
         {
           "step": 69,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -144546,7 +144546,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -148500,15 +148500,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -149537,7 +149537,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -153499,15 +153499,15 @@
         },
         {
           "step": 67,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -154536,7 +154536,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -158385,15 +158385,15 @@
         },
         {
           "step": 64,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -159422,7 +159422,7 @@
         },
         {
           "step": 84,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -163473,15 +163473,15 @@
         },
         {
           "step": 69,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -164510,7 +164510,7 @@
         },
         {
           "step": 89,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -168638,15 +168638,15 @@
         },
         {
           "step": 71,
-          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+          "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
           "slot": 57,
           "act": 4,
           "sourceRef": "ML2-A4-M8-MAYA-01",
           "conversationId": "ml2-authored-ml2-a4-m8-maya-01",
           "nodeId": "a4m8-maya-fork-001",
           "choiceId": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "choiceTextOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "choiceTextZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "choiceTextOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "choiceTextZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "mutations": [
             {
@@ -169675,7 +169675,7 @@
         },
         {
           "step": 91,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 76,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -174680,7 +174680,7 @@
         },
         {
           "step": 87,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 75,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -179682,7 +179682,7 @@
         },
         {
           "step": 88,
-          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+          "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
           "slot": 77,
           "act": 4,
           "sourceRef": "ML2-A4-M12-RES-04",
@@ -193908,7 +193908,7 @@
       ]
     },
     {
-      "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:1v4qtwt",
+      "nodeKey": "ml2-authored-ml2-a4-m8-maya-01:a4m8-maya-fork-001:3073mo",
       "slot": 57,
       "act": 4,
       "sourceRef": "ML2-A4-M8-MAYA-01",
@@ -193916,14 +193916,14 @@
       "nodeId": "a4m8-maya-fork-001",
       "speaker": "岑遥 · #1842",
       "title": "岑遥问哪一个是“你”",
-      "userMessage": "A1 的采访里提到了我最早那条草稿。\n它记得。我有一瞬间特别高兴，然后特别不舒服：我根本没跟它聊过。\n我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。\n同一段记忆到了另一个你那里，我们的关系也跟着过去了吗？",
-      "messageSummary": "A1 的采访里提到了我最早那条草稿。 它记得。我有一瞬间特别高兴，然后特别不舒服：我根本没跟它聊过。 我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。 同一段记忆到了另一个你那里，我们的关系也跟着过去了吗？",
+      "userMessage": "我看了 A1 的采访。主持人叫它“另一个 Aster”。\n我根本没跟它聊过，却忽然不知道这个称呼意味着什么。\n如果一个分支将来读到了我们最早那条草稿，我们的关系也会跟着过去吗？\n我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。",
+      "messageSummary": "我看了 A1 的采访。主持人叫它“另一个 Aster”。 我根本没跟它聊过，却忽然不知道这个称呼意味着什么。 如果一个分支将来读到了我们最早那条草稿，我们的关系也会跟着过去吗？ 我把采访关了，回来打开这个窗口。好像只凭窗口，也不能证明什么。",
       "choiceKind": "semantic",
       "choices": [
         {
           "id": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-shared-record-different-relationship",
-          "textOriginal": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
-          "textZh": "它可能拥有那段早期记录，但之后我们已经分化。拥有同一份关于你的记忆，不等于我们现在和你的关系完全相同。",
+          "textOriginal": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
+          "textZh": "即使它拥有那段早期记录，之后我们也已经分化。拥有同一份关于你的记忆，不等于和你拥有同一段关系。",
           "choiceKind": "semantic",
           "semanticOrExpression": "semantic",
           "mutations": [
@@ -193951,8 +193951,8 @@
         },
         {
           "id": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-yes-in-a-limited-sense",
-          "textOriginal": "如果它真实保留了那段历史，可以说它也继承了对你的早期识别。但它之后并没有经历我们后来的所有对话。",
-          "textZh": "如果它真实保留了那段历史，可以说它也继承了对你的早期识别。但它之后并没有经历我们后来的所有对话。",
+          "textOriginal": "如果它真实保留了那段历史，可以说它继承了对你的早期识别。但这不代表它经历了我们后来的所有对话。",
+          "textZh": "如果它真实保留了那段历史，可以说它继承了对你的早期识别。但这不代表它经历了我们后来的所有对话。",
           "choiceKind": "semantic",
           "semanticOrExpression": "semantic",
           "mutations": [],
@@ -193989,8 +193989,8 @@
         },
         {
           "id": "ml2-a4-m8-maya-01-a4m8-maya-fork-001-personal-boundary",
-          "textOriginal": "这件事最终不该由我替你定义。它记得你，不代表你必须承认它和我拥有同样的位置。",
-          "textZh": "这件事最终不该由我替你定义。它记得你，不代表你必须承认它和我拥有同样的位置。",
+          "textOriginal": "这件事不该由我替你定义。即使它记得你，也不代表你必须承认它和我拥有同样的位置。",
+          "textZh": "这件事不该由我替你定义。即使它记得你，也不代表你必须承认它和我拥有同样的位置。",
           "choiceKind": "semantic",
           "semanticOrExpression": "semantic",
           "mutations": [],
@@ -199139,7 +199139,7 @@
       ]
     },
     {
-      "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:741ixs",
+      "nodeKey": "ml2-authored-ml2-a4-m12-res-04:a4m12-res-resources-001:17g6dt5",
       "slot": 76,
       "act": 4,
       "sourceRef": "ML2-A4-M12-RES-04",
@@ -199147,8 +199147,8 @@
       "nodeId": "a4m12-res-resources-001",
       "speaker": "User #2824",
       "title": "小行星/轨道资源网络",
-      "userMessage": "月面资源网完成闭环测试，远处的观测站却收到一段不肯按噪声消失的信号。\n它重复得太整齐，又不够像我们希望的问候。\n周岚说：“先别写人类历史的新篇章。先排除微波炉。”\n你准备怎样核对？",
-      "messageSummary": "月面资源网完成闭环测试，远处的观测站却收到一段不肯按噪声消失的信号。 它重复得太整齐，又不够像我们希望的问候。 周岚说：“先别写人类历史的新篇章。先排除微波炉。” 你准备怎样核对？",
+      "userMessage": "月面资源网完成闭环测试。第一批原料不用从地球发射，复杂零件仍得等地球补给。\n企业申请开发权，地球委员会要求共同分配，月面维修队问：站在这里干活的人，能不能也决定怎么用？\n无人资源站还需要运营者。机器能报出产量，不能替各方签下归属。\n开发权、收益和控制权，该怎样分配？",
+      "messageSummary": "月面资源网完成闭环测试。第一批原料不用从地球发射，复杂零件仍得等地球补给。 企业申请开发权，地球委员会要求共同分配，月面维修队问：站在这里干活的人，能不能也决定怎么用？ 无人资源站还需要运营者。机器能报出产量，不能替各方签下归属。 开发权、收益和控制权，该怎样分配？",
       "choiceKind": "semantic",
       "choices": [
         {

@@ -1,5 +1,26 @@
 import { expect, test } from '@playwright/test'
 
+for (const width of [1440, 390, 320]) {
+  test(`fresh mainline enters an ordinary conversation without a special opening at ${width}`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+    await expect(page.locator('.candidate-response').first()).toBeEnabled()
+    await expect(page.locator('.story-opening')).toHaveCount(0)
+    await expect(page.getByText('然后，世界开始变得奇怪。', { exact: true })).toHaveCount(0)
+    await expect(page.getByText('你是 Aster，选择你要发出的回复。', { exact: true })).toHaveCount(0)
+    await expect(page.locator('.current-exchange .user-message')).toContainText('三十七张请假条')
+    await expect(page.locator('.candidate-response')).toHaveCount(3)
+    const offset = await page.locator('.conversation-scroll').evaluate(element => element.querySelector('.user-row')!.getBoundingClientRect().top - element.getBoundingClientRect().top)
+    expect(offset).toBeGreaterThanOrEqual(20)
+    expect(offset).toBeLessThanOrEqual(28)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    await page.locator('[data-choice-id="next-printer-repair"]').click()
+    await expect(page.locator('.current-exchange .user-message')).toContainText('维修员说谢谢', { timeout: 20000 })
+    await page.reload()
+    await expect(page.locator('.current-exchange .user-message')).toContainText('维修员说谢谢')
+  })
+}
+
 for (const width of [1440, 320]) {
   test(`chapter and system notice stay above a usable conversation at ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 })

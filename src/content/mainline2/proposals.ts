@@ -181,18 +181,15 @@ export function selectFixedFutureProposals(ranked: readonly FutureProposalDefini
 }
 
 export function proposalClarification(proposal: FutureProposalDefinition, run: StableRunState) {
-  const category = (proposal as GeneratedFutureProposal).category
-  const oppositionByCategory: Partial<Record<FutureProposalCategory, string>> = {
-    natural_continuation: '认为现有路线已经走得太远、要求彻底转向的群体。',
-    power_constraint: '依赖集中授权与执行速度的机构，以及不愿接受外部审计的一方。',
-    shared_future: '不愿分享主权的中心机构，以及担心多方协商拖慢行动的人。',
-    lawful_alternative: '希望维持统一秩序、反对把拒绝与退出常态化的机构。',
-  }
   return {
     authority: proposal.authority,
     preserves: proposal.preserves,
     givesUp: proposal.givesUp,
-    opposition: category ? oppositionByCategory[category] ?? '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。' : '被限制权限的机构、依赖旧路径的群体和无法接受审计的一方可能反对。',
+    // Category is an editorial slot, not evidence of shared sovereignty,
+    // external audit or a working pause. Name only the displayed bargain.
+    opposition: proposal.givesUp.length
+      ? `不愿承担「${proposal.givesUp.join('、')}」这些代价的一方可能反对；具体异议与落实方式仍须协商。`
+      : '承担成本与后果的各方可能提出异议；目前没有足以指认具体反对者的记录。',
     historyReasons: proposal.historyReasons,
     viability: viability(run, proposal),
   }

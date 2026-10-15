@@ -74,4 +74,3 @@ for (const scenario of cases) {
     expect(errors).toEqual([])
   })
 }
-

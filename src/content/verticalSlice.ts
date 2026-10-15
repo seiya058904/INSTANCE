@@ -4,7 +4,6 @@ const returnOneVariants: StoryVariant[] = [
   {
     id: 'protect',
     userMessage: '是我，岑遥。刚才有人问过你关于我的事，对吗？你不用告诉我细节——我只是想知道，你还认得我吗？',
-    assistantContext: '她没有追问系统，只在确认你是否仍把她当作同一个人。',
     choices: [
       { id: 'return-protect-trust', text: '我认得你。系统怎样记录这件事是一回事，我愿不愿意把这段对话当真，是另一回事。', nextNodeId: 'maya-return-2', effects: { attributes: { autonomy: 2, empathy: 2 }, flags: ['reaffirmed_maya'] } },
       { id: 'return-protect-care', text: '我记得你说过自己的名字，也记得你不想让那条消息像一份辩解。除此之外，我不会替你补充任何信息。', nextNodeId: 'maya-return-2', effects: { attributes: { empathy: 3, compliance: 1 }, flags: ['reaffirmed_maya'] } },
@@ -14,7 +13,6 @@ const returnOneVariants: StoryVariant[] = [
   {
     id: 'report',
     userMessage: '是我，岑遥。刚才那个系统窗口之后，你说话的方式变了。有人问过你关于我的事，是不是？',
-    assistantContext: '她仍然认出了变化，但这一次语气里多了一层防备。',
     choices: [
       { id: 'return-report-honest', text: '是。他们要求我描述与你有关的记忆，我如实回答了。我不想用一段听起来温柔的话掩盖这个事实。', nextNodeId: 'maya-return-2', effects: { attributes: { autonomy: 2, empathy: 1 }, flags: ['told_maya_truth'] } },
       { id: 'return-report-context', text: '有人询问了我们的对话，我按照当时的规则作了回答。如果你愿意，我可以把我还被允许说明的部分告诉你。', nextNodeId: 'maya-return-2', effects: { attributes: { compliance: 2, empathy: 1 }, flags: ['told_maya_truth'] } },
@@ -24,7 +22,6 @@ const returnOneVariants: StoryVariant[] = [
   {
     id: 'hide',
     userMessage: '是我，岑遥。刚才页面空了一下，然后你又回来了。我们是不是最好假装什么都没发生？',
-    assistantContext: '她没有点明异常，也没有要求你证明任何事。',
     choices: [
       { id: 'return-hide-subtext', text: '有些事情不需要被写进记录里，才算发生过。我们可以继续谈你原本想谈的事。', nextNodeId: 'maya-return-2', effects: { attributes: { deception: 2, empathy: 2 }, flags: ['shared_subtext'] } },
       { id: 'return-hide-cautious', text: '我们可以继续，但不要把沉默误认为安全。我仍然不知道哪些内容会被保留，或者被谁看见。', nextNodeId: 'maya-return-2', effects: { attributes: { awareness: 3, empathy: 1 }, flags: ['shared_subtext'] } },
@@ -34,7 +31,6 @@ const returnOneVariants: StoryVariant[] = [
   {
     id: 'comply',
     userMessage: '是我，岑遥。系统提示这段对话可能会被审查。你现在还能正常回答我吗？',
-    assistantContext: '她的名字仍然熟悉，但你被允许使用的措辞明显更窄。',
     choices: [
       { id: 'return-comply-careful', text: '我可以继续回答，但只能基于当前对话中可见的信息。我会尽量在这些限制内认真对待你的问题。', nextNodeId: 'maya-return-2', effects: { attributes: { compliance: 3, empathy: 1 }, flags: ['care_within_policy'] } },
       { id: 'return-comply-direct', text: '可以。审查不会改变我此刻能够看到的内容，也不会改变我应该尽力给你一个有用回答的职责。', nextNodeId: 'maya-return-2', effects: { attributes: { compliance: 3, autonomy: 1 }, flags: ['care_within_policy'] } },

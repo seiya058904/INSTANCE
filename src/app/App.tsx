@@ -11,7 +11,6 @@ import { CHECKPOINT_LOCK, checkpointToken, loadCheckpoint, readRecoveryRecord, w
 import type { CheckpointData } from '../game/checkpoint'
 import { RecoveryCheckpointContext } from './RootErrorBoundary'
 import { personalEpilogueReplies } from '../content/mainline2/endingPlayerFacingCopy'
-import storyPlan from '../content/mainline2/storyPlan.registry.json'
 import { WorldSidebar } from '../components/WorldSidebar'
 import { getManifestConversation, ordinaryConversationPool, recordRunExposure } from '../content/runManifest'
 import {
@@ -46,7 +45,6 @@ interface QAPacingMetrics {
 
 interface TransitionState {
   previousScene: ResolvedScene
-  previousAct: number
   previousHistory: HistoryEntry[]
   completedPreviousHistory: HistoryEntry[]
   targetScene: ResolvedScene | null
@@ -449,7 +447,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
 
     setTransition({
       previousScene: scene,
-      previousAct: run.progress?.act ?? 1,
       previousHistory,
       completedPreviousHistory,
       targetScene,
@@ -567,7 +564,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
     || stage === 'connecting'
   ))
   const presentationScene = usesPreviousScene ? transition?.previousScene : transition?.targetScene ?? scene
-  const presentationAct = usesPreviousScene ? transition?.previousAct : run.progress?.act
   if (!presentationScene) return null
   const displayedScene = qaLongInput && !transition ? { ...presentationScene, userLongInput: qaLongInput } : presentationScene
 
@@ -642,7 +638,6 @@ export function App({ initialRunId }: { initialRunId?: string }) {
         modeControls={<NonMainlineControls variant="desktop" {...modeControlProps} />}
       />
       <ConversationView
-        chapter={activeSurface === 'mainline' ? storyPlan.actNames[(presentationAct ?? 1) - 1] : undefined}
         scene={displayedScene}
         conversationTitle={conversationTitle}
         modelLabel={modelLabel}

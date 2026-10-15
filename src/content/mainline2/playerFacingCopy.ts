@@ -373,7 +373,6 @@ export function applyMainlinePlayerFacingCopy(conversation: ConversationDefiniti
       variants: node.variants?.map((variant, index) => ({
         ...variant,
         userMessage: playerText(playerFacingKey(assetId, node.id, 'user', index), variant.userMessage),
-        assistantContext: variant.assistantContext ? playerText(nestedPlayerFacingKey(assetId, node.id, 'assistant-context', index), variant.assistantContext) : undefined,
         choices: variant.choices.map((choice) => ({
           ...choice,
           text: choiceCopy(playerFacingKey(assetId, node.id, 'choice', choice.id), choice.text, choice.decisionBinding?.canonicalValue ?? choice.proposalId),

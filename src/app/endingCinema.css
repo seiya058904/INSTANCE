@@ -62,7 +62,6 @@
 .ending-collected-coda h3 { font-size: 17px; }
 .ending-collected-coda p, .ending-collection-note { font-size: 13px; line-height: 1.8; }
 .ending-collection-note { color: var(--muted); margin-top: 24px; }
-.story-chapter { padding: 10px var(--gutter); border-bottom: 1px solid var(--line-soft); display: flex; justify-content: space-between; gap: 12px; color: #4e5b60; font-size: 12px; }
 .closeout-title h1 { overflow-wrap: anywhere; }
 @keyframes print-settle { from { transform: scale(1.035); } to { transform: none; } }
 @keyframes print-rise { from { transform: translateY(18px); } to { transform: none; } }
@@ -88,7 +87,6 @@
   .ending-archive-hero { gap: 20px; }
   .ending-collection-preview { grid-template-columns: 1fr; gap: 8px; }
   .ending-collection-preview .ending-visual { max-width: 280px; }
-  .story-chapter { padding: 9px 18px; }
 }
 @media (max-width: 450px) {
   .ending-shelf { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 8px; }

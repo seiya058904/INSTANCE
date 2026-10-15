@@ -1,3 +1,6 @@
+import { MAINLINE2_LIBRARY } from '../content/mainline2/registry'
+import { ordinaryConversationPool } from '../content/runManifest'
+import { activeRunConversations } from '../content/activeRun'
 import { MAYA_CONVERSATION_IDS } from './participantIdentity'
 import { MAINLINE2_STORY_PLAN } from '../content/mainline2/storyPlan'
 import editorialRegistry from '../content/mainline2/editorialClassification.registry.json'
@@ -25,7 +28,8 @@ describe('player-facing identity', () => {
     }])
 
     expect(before.label).toMatch(/^User #[0-9]{4}$/)
-    expect(after.label).toContain('林绍衡')
+    expect(after.label).toBe('User #7316')
+    expect(after.revealed).toBe(true)
     expect(after.label).not.toContain('第一次出现')
   })
 
@@ -39,13 +43,13 @@ describe('player-facing identity', () => {
       assistantText: '我会诚实说明边界。',
     }])
 
-    expect(identity.label).toBe('岑遥 · #1842')
+    expect(identity.label).toBe('User #1842')
   })
 
   it('introduces the recurring recorder with a stable identity', () => {
     const identity = resolvePlayerVisibleIdentity('conversation-0000', [])
 
-    expect(identity.label).toBe('#0000 · 记录员')
+    expect(identity.label).toBe('User #0000')
   })
 
   it('builds sidebar history only from completed conversations and removes internal titles', () => {
@@ -81,7 +85,7 @@ describe('player-facing identity', () => {
     }])
 
     expect(history).toHaveLength(1)
-    expect(history[0].label).toBe('岑遥 · #1842')
+    expect(history[0].label).toBe('User #1842')
   })
 })
 
@@ -102,14 +106,14 @@ describe('canonical Maya participant coverage', () => {
 
   it.each(scheduledMaya)('keeps %s under the same anonymous and revealed identity', (id) => {
     expect(resolvePlayerVisibleIdentity(id, [])).toEqual({ participantId: 'user-1842', label: 'User #1842', revealed: false })
-    expect(resolvePlayerVisibleIdentity(id, [introduction])).toEqual({ participantId: 'user-1842', label: '岑遥 · #1842', revealed: true })
+    expect(resolvePlayerVisibleIdentity(id, [introduction])).toEqual({ participantId: 'user-1842', label: 'User #1842', revealed: true })
     expect(resolvePlayerVisibleIdentity(id, [])).toEqual({ participantId: 'user-1842', label: 'User #1842', revealed: false })
   })
 
   it('merges every actual Maya conversation while preserving the latest history link', () => {
     const history = MAYA_CONVERSATION_IDS.map((conversationId, index) => ({ ...introduction, conversationId, nodeId: `fixture-${index}` }))
     expect(resolvePlayerVisibleHistory(history)).toEqual([{ participantId: 'user-1842', label: 'User #1842', conversationId: MAYA_CONVERSATION_IDS.at(-1) }])
-    expect(resolvePlayerVisibleHistory([introduction, ...history])).toEqual([{ participantId: 'user-1842', label: '岑遥 · #1842', conversationId: MAYA_CONVERSATION_IDS.at(-1) }])
+    expect(resolvePlayerVisibleHistory([introduction, ...history])).toEqual([{ participantId: 'user-1842', label: 'User #1842', conversationId: MAYA_CONVERSATION_IDS.at(-1) }])
   })
 
   it('does not merge other speakers, mentions, or incidental Maya-like identifiers', () => {
@@ -118,4 +122,43 @@ describe('canonical Maya participant coverage', () => {
       expect(resolvePlayerVisibleIdentity(id, [introduction]).participantId).not.toBe('user-1842')
     }
   })
+})
+
+const runtimeConversations = [...MAINLINE2_LIBRARY, ...ordinaryConversationPool, ...activeRunConversations]
+it('uses anonymous labels without collisions across all runtime participants', () => {
+  const labels = new Map<string, string>()
+  const collisions: string[] = []
+  for (const conversation of runtimeConversations) {
+    const identity = resolvePlayerVisibleIdentity(conversation.id, [])
+    expect(identity.label, conversation.id).toMatch(/^User #\d{4}$/)
+    if (labels.has(identity.label) && labels.get(identity.label) !== identity.participantId) collisions.push(`${identity.label}: ${labels.get(identity.label)} / ${identity.participantId}`)
+    labels.set(identity.label, identity.participantId)
+  }
+  expect([...new Set(collisions)]).toEqual([])
+})
+it('orders recurring participants by their most recent appearance', () => {
+  const entry = (conversationId: string): HistoryEntry => ({ conversationId, nodeId: 'fixture', conversationTitle: 'internal', userMessage: 'hello', choiceId: 'reply', assistantText: 'hi' })
+  expect(resolvePlayerVisibleHistory(['user-1842-first', 'conversation-0000', 'user-1842-return'].map(entry)).map(item => item.participantId)).toEqual(['system-0000', 'user-1842'])
+})
+
+it.each(['unknown-conversation', 'constructor', 'toString', '__proto__', 'ml2-next-opening', 'ml2-authored-ml2-a2-zl-01', 'ml2-authored-ml2-a3-m4-e9-01', 'ml2-authored-ml2-a4-m8-ai-01', 'conversation-0000'])('keeps %s anonymous and deterministic after history restoration', id => {
+  const history: HistoryEntry[] = [{nodeId:'maya-first-3', conversationId:'user-1842-first',conversationTitle:'岑遥 · #1842',userMessage:'我叫岑遥',choiceId:'intro',assistantText:'收到'}]
+  const first = resolvePlayerVisibleIdentity(id, [])
+  expect(first.label).toMatch(/^User #\d{4}$/)
+  expect(resolvePlayerVisibleIdentity(id, JSON.parse(JSON.stringify(history))).label).toBe(first.label)
+  expect(first.revealed).toBe(false)
+})
+it('preserves the existing legacy anchor number', () => {
+  expect(resolvePlayerVisibleIdentity('user-7391', []).label).toBe('User #6273')
+})
+
+it('has no author-context channel in any mainline, anchor or ordinary runtime node', () => {
+  for (const conversation of runtimeConversations) {
+    for (const node of conversation.nodes) {
+      for (const item of [node, ...node.variants ?? [], ...node.contextVariants ?? []]) {
+        expect(Object.hasOwn(item, 'assistantContext'), node.id).toBe(false)
+        expect(Object.hasOwn(item, 'assistantContextSuffix'), node.id).toBe(false)
+      }
+    }
+  }
 })

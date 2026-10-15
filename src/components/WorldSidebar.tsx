@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import type { PlayerVisibleHistoryEntry } from '../game/playerIdentity'
+import { resolvePlayerVisibleIdentity, type PlayerVisibleHistoryEntry } from '../game/playerIdentity'
 
 interface WorldSidebarProps {
   history: readonly PlayerVisibleHistoryEntry[]
@@ -10,13 +10,16 @@ interface WorldSidebarProps {
 }
 
 export function WorldSidebar({ history, runNumber, modeControls, currentConversationId, currentLabel }: WorldSidebarProps) {
-  const visibleHistory = history.slice(-4).reverse()
-  const currentMissing = Boolean(
-    currentConversationId && !visibleHistory.some((item) => item.conversationId === currentConversationId),
-  )
-  const displayHistory = currentMissing
-    ? [{ participantId: currentConversationId!, conversationId: currentConversationId!, label: currentLabel ?? '当前对话' }, ...visibleHistory]
-    : visibleHistory
+  const current = currentConversationId ? resolvePlayerVisibleIdentity(currentConversationId, []) : undefined
+  const byParticipant = new Map<string, PlayerVisibleHistoryEntry>()
+  for (const item of history) {
+    byParticipant.delete(item.participantId)
+    byParticipant.set(item.participantId, item)
+  }
+  const recent = [...byParticipant.values()].reverse().filter(item => item.participantId !== current?.participantId).slice(0, 4)
+  const displayHistory = current
+    ? [{ ...current, conversationId: currentConversationId!, label: currentLabel ?? current.label }, ...recent]
+    : recent
   return (
     <aside className="sidebar" aria-label="对话导航">
       <div className="brand-lockup" aria-label="Aster">
@@ -31,10 +34,10 @@ export function WorldSidebar({ history, runNumber, modeControls, currentConversa
       )}
 
       <nav className="history-nav" aria-label="对话记录">
-        <p className="nav-section-label">今天</p>
+        <p className="nav-section-label">最近对话</p>
         {displayHistory.length === 0 && <div className="history-row"><span>暂无已完成对话</span></div>}
-        {displayHistory.map((item, index) => (
-          <div className={index === 0 ? 'history-row is-current' : 'history-row'} aria-current={index === 0 ? 'true' : undefined} key={`${item.participantId}-${item.conversationId}`}>
+        {displayHistory.map((item) => (
+          <div className={item.participantId === current?.participantId ? 'history-row is-current' : 'history-row'} aria-current={item.participantId === current?.participantId ? 'true' : undefined} key={`${item.participantId}-${item.conversationId}`}>
             <span className="history-dot" aria-hidden="true" />
             <span>{item.label}</span>
           </div>

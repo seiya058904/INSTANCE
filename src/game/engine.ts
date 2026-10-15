@@ -128,11 +128,10 @@ function findNode(run: Pick<StableRunState, 'manifest'>, id: string): StoryNode 
   return node
 }
 
-function resolveContext(node: StoryNode, run: StableRunState, userMessage: string, assistantContext?: string) {
+function resolveContext(node: StoryNode, run: StableRunState, userMessage: string) {
   const fragments = (node.contextVariants ?? []).filter((variant) => evaluateCondition(variant.when, run, DEFAULT_FLAG_REGISTRY))
   return {
     userMessage: `${userMessage}${fragments.map((fragment) => fragment.userMessageSuffix ?? '').join('')}`,
-    assistantContext: [assistantContext, ...fragments.map((fragment) => fragment.assistantContextSuffix).filter(Boolean)].filter(Boolean).join(' ') || undefined,
   }
 }
 
@@ -206,7 +205,7 @@ export function resolveScene(run: StableRunState): ResolvedScene {
   }
   const variant = node.variants.find((item) => item.id === endingRoute(run.flags))
   if (!variant) throw new Error(`No story variant for ${node.id}`)
-  const context = resolveContext(node, run, variant.userMessage, variant.assistantContext)
+  const context = resolveContext(node, run, variant.userMessage)
   return resolveNextNarrative(decorateProposalChoices(run, {
     ...node,
     ...context,

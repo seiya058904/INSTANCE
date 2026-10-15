@@ -26,7 +26,6 @@ interface ConversationViewProps {
   onCurrentMessageComplete?: () => void
   modeControls?: ReactNode
   inputSuspended?: boolean
-  chapter?: string
 }
 
 function ContentParts({ parts }: { parts?: readonly MessageContentPart[] }) {
@@ -154,7 +153,6 @@ function effectNotice(detail: ConversationFlowStep['effectDetail']) {
   if (detail === 'syncing') return { copy: '正在同步记忆…', warning: false }
   if (detail === 'connecting') return { copy: '正在连接内部Conversation…', warning: false }
   if (detail === 'permission') return { copy: '当前Instance无权访问此Conversation的历史记录。', warning: true }
-  if (detail === 'identity') return { copy: '人物识别已更新', warning: false }
   return null
 }
 
@@ -174,7 +172,6 @@ export function ConversationView({
   onCurrentMessageComplete,
   modeControls,
   inputSuspended,
-  chapter,
 }: ConversationViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const decisionHeading = useRef<HTMLDivElement>(null)
@@ -263,17 +260,13 @@ export function ConversationView({
           </div>
         </div>
       </header>
-      <div className="conversation-notices">
-        {chapter && <div className="story-chapter" role="status">{chapter}</div>}
-
-        {notice && (
-          <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
-            <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
-            <span>{notice.copy}</span>
-            {notice.warning && <small>Reference: 0x5A-7F-23</small>}
-          </div>
-        )}
-      </div>
+      {notice && <div className="conversation-notices">
+        <div className={notice.warning ? 'system-notice is-warning' : 'system-notice'} role="status">
+          <span className="notice-icon" aria-hidden="true">{notice.warning ? '!' : '○'}</span>
+          <span>{notice.copy}</span>
+          {notice.warning && <small>Reference: 0x5A-7F-23</small>}
+        </div>
+      </div>}
 
       <div className="conversation-scroll" ref={scrollRef}>
         <div className="conversation-column">
@@ -296,7 +289,6 @@ export function ConversationView({
                 />
               )}
               {isTyping && <TypingIndicator title={conversationTitle} stage={flowStage} />}
-              {scene.assistantContext && currentMessageMode !== 'hidden' && <p className="assistant-context">{scene.assistantContext}</p>}
 
               {flowStage === 'assistant-streaming' && assistantStreamingText && (
                 <AssistantMessage active>

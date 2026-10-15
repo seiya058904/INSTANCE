@@ -201,7 +201,6 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
   border-radius: 2px; background: currentColor; opacity: .45; animation: stream-caret 1100ms ease-in-out infinite;
 }
 @keyframes stream-caret { 50% { opacity: .08; } }
-.assistant-context { margin: 18px 0 0; padding-left: 14px; border-left: 1px solid #d9cfc1; color: var(--muted); font-size: 12px; line-height: 1.8; }
 
 .typing-status {
   min-height: 44px; margin-left: 0; display: flex; align-items: center; gap: 8px;
@@ -304,7 +303,6 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
     .long-input-preview-card { width: calc(100% - 52px); margin-left: 28px; }
     .long-input-preview-card summary { gap: 8px; padding: 12px; }
     .longform-preview-body { padding: 0 12px 12px; }
-  .assistant-context { margin-left: 0; }
   .typing-status { margin-left: 0; }
   .candidate-section { margin: 24px 0 0 var(--reply-inset); padding-top: 15px; }
   .candidate-heading { margin-bottom: 8px; }
@@ -317,6 +315,14 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
   .candidate-action { display: none; }
   .product-footer { font-size: 11px; }
 
+}
+
+/* Keep the fixed contact number readable beside ordinary-mode controls. */
+@media (max-width: 360px) {
+  .conversation-header { padding-inline: 14px; gap: 8px; }
+  .conversation-header::before { font-size: 20px; }
+  .mode-controls-mobile .mode-progress { max-width: 42px; }
+  .mode-controls-mobile .mode-return { padding-inline: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

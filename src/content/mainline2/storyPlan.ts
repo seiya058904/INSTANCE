@@ -213,8 +213,8 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
     if (machine && slot.assetId === 'ML2-A4-M8-DECISION-02') return [slot, extra(`v4-machine-${machine}`), extra('v4-future-effort')]
     if (machine && slot.assetId === 'ML2-A4-M12-DECISION-02') return [slot,
       ...(run.decisions?.expansion_doctrine === 'independent_machine_space' ? [extra('v4-machine-exodus')] : []), extra('v4-machine-airlock')]
-    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), ...(human || species ? [extra('v4-life-return')] : []), ...(contact || localFrontier ? [extra('v4-contact-return')] : []), ...(trial ? [extra('v4-safety-return')] : []), ...(service ? [extra('v4-governance-service')] : []), slot]
-    if (authority && slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, extra(`v4-authority-${authority}`)]
+    if (slot.assetId === 'ML2-A4-M15-CONV-01') return [...(branch ? [extra('v4-econ-return')] : []), ...(machine ? [extra('v4-machine-return')] : []), ...(human || species ? [extra('v4-life-return')] : []), ...(contact || localFrontier ? [extra('v4-contact-return')] : []), ...(trial ? [extra('v4-safety-return')] : []), slot]
+    if (slot.assetId === 'ML2-A4-M15-ROLE-01') return [slot, ...(service ? [extra('v4-governance-service')] : []), ...(authority ? [extra(`v4-authority-${authority}`)] : [])]
     if (slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, ...(authority ? [extra('v4-authority-return')] : []), ...(service ? [extra('v4-governance-return')] : [])]
     return [slot]
   })

@@ -34,6 +34,37 @@ describe('edition-4 worlds require played actions and receipts', () => {
 })
 
 describe('actual repair, changes of responsibility and future effort', () => {
+  it('backing out of interim-v4 handover does not adopt gates or lose prior candidates', () => {
+    const f = runMainline2Route(route('the_instrument'))
+    const before = f.links.find(l => l.nodeId === 'v4-final-preflight')!.runBefore
+    // A readable interim-v4 record has no marker. No new institutional/exit
+    // action has been played on this authority route before preflight.
+    const interim = { ...before }
+    delete interim.mainlineCausalityVersion
+    const original = serializeRun(interim)
+    const requested = commitChoice(interim, 'v4-final-request-handover')
+    const backed = commitChoice(requested, 'v4-final-handover-back')
+    expect(serializeRun(interim)).toBe(original)
+    expect(backed.mainlineCausalityVersion).toBeUndefined()
+    expect(backed.currentNodeId).toBe('v4-final-preflight')
+    expect(resolveScene(backed).choices.some(c => c.id === 'v4-final-proceed')).toBe(true)
+    expect(backed.history.at(-1)?.choiceId).toBe('v4-final-handover-back')
+    const action = commitChoice(commitChoice(backed, 'v4-final-request-handover'), 'v4-final-handover-act')
+    expect(action.mainlineCausalityVersion).toBe(1)
+    expect(restoreRun(serializeRun(action))!.mainlineCausalityVersion).toBe(1)
+  })
+  it.each(['life_mind', 'automation_industry', 'frontier_science'])('late custodian choice schedules real service on %s', focus => {
+    for (const [scope, ending] of [['generational', 'the_custodian'], ['daily', 'the_quiet_administrator']]) {
+      const base = route('the_custodian')
+      const f = runMainline2Route({ ...base, decisions: { ...base.decisions, act4_research_emphasis: focus }, choicesByNodeId: { ...base.choicesByNodeId, 'v4-governance-service': `v4-service-${scope}` } })
+      const role = f.links.findIndex(l => l.decisionId === 'aster_provisional_role')
+      const service = f.links.findIndex(l => l.nodeId === 'v4-governance-service')
+      expect(service).toBeGreaterThan(role)
+      expect(f.links.findIndex(l => l.nodeId === 'v4-governance-return')).toBeGreaterThan(service)
+      expect(f.ending.worldEndingId).toBe(ending)
+      expect(f.run.manifest.conversationIds.filter(id => id === 'v4-governance-service')).toHaveLength(1)
+    }
+  })
   it.each([
     ['the_fracture', 'v4-safety-fracture', 'v4-safety-fracture-act', 'shutdown'],
     ['control_lost', 'v4-safety-revocation', 'v4-safety-revocation-act', 'shutdown'],

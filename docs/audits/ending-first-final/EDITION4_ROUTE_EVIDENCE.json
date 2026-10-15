@@ -421,18 +421,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -447,6 +435,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -1132,18 +1132,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -1158,6 +1146,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-expiry",
@@ -1831,18 +1831,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -1857,6 +1845,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-restraint",
@@ -2515,18 +2515,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -2541,6 +2529,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-amendment",
@@ -3218,18 +3218,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -3244,6 +3232,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-veto",
@@ -3920,18 +3920,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -3946,6 +3934,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-partner"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-districts",
@@ -4603,18 +4603,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -4629,6 +4617,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-custodian"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -5293,18 +5293,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -5319,6 +5307,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-sovereign"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -6004,18 +6004,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-daily",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接日常行政，付人手处理积压申诉与例外改判；长期储备不扩，下一代维护缺口继续公开。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "积压申诉有人接了，一件被自动拒绝的照护申请经人工改判后到账。窗口补了班组工资，十年屋顶储备没有扩；一位住顶楼的老人把漏水照片也留在待办里。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -6030,6 +6018,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-custodian"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-daily",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接日常行政，付人手处理积压申诉与例外改判；长期储备不扩，下一代维护缺口继续公开。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "积压申诉有人接了，一件被自动拒绝的照护申请经人工改判后到账。窗口补了班组工资，十年屋顶储备没有扩；一位住顶楼的老人把漏水照片也留在待办里。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -6699,18 +6699,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -6725,6 +6713,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -7398,18 +7398,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -7424,6 +7412,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -8105,18 +8105,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -8131,6 +8119,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",
@@ -21902,18 +21902,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -21928,6 +21916,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-partner"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-districts",
@@ -22603,18 +22603,6 @@
           "reply": "分别保留这些答复，不把分歧记成运行错误。"
         },
         {
-          "node": "v4-governance-service",
-          "choice": "v4-service-generational",
-          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
-          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
-        },
-        {
-          "node": "v4-governance-service-receipt",
-          "choice": "v4-governance-service-receipt-read",
-          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
-          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
-        },
-        {
           "node": "a4m15-conv-registry-001",
           "choice": "ml2-a4-m15-conv-01-a4m15-conv-registry-001-community-representation"
         },
@@ -22629,6 +22617,18 @@
         {
           "node": "ml2-a4-m15-role-01-decision",
           "choice": "ml2-a4-m15-role-01-ml2-a4-m15-role-01-advisor"
+        },
+        {
+          "node": "v4-governance-service",
+          "choice": "v4-service-generational",
+          "prompt": "三个社区愿意把一部分协调工作放进受约束的试行。人和预算都备好了，只能选一张工单。\n一张是十年维护：预留屋顶、防洪和下一代照护，钱一锁就少了今年立刻能花的额度。另一张是日常行政：先清掉积压申诉，每个例外都得有人能改判，长期储备先不扩。\n不是两种漂亮的角色名。先接哪一份，会让不同的人等。政治位置还要由大会另定。",
+          "reply": "先接十年维护试行，锁定屋顶、防洪与照护储备；今年扩建和即时消费让出预算，保留代际复核。"
+        },
+        {
+          "node": "v4-governance-service-receipt",
+          "choice": "v4-governance-service-receipt-read",
+          "prompt": "三个社区分别把十年维护储备存进专用账户，防洪与照护先排了长期工单。今年两项扩建取消，一批消费申请等下一轮；维护不是没有人反对，只是预算真的留给了后来的人。",
+          "reply": "把已经接住的责任和仍在等待的那张单分开留下。"
         },
         {
           "node": "v4-authority-signatures",

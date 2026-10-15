@@ -266,7 +266,8 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   // causal action. Neither load nor old ending replay fabricates such history.
   if (run.mainlineCalendarVersion === 4 && !run.mainlineCausalityVersion
     && (/^v4-safety-(handover|fracture|revocation|protectorate|disarmament|defense)$/.test(scene.id)
-      || ['v4-governance-service', 'v4-sovereignty-settlement', 'v4-final-handover'].includes(scene.id))) {
+      || ['v4-governance-service', 'v4-sovereignty-settlement'].includes(scene.id)
+      || choice.id === 'v4-final-handover-act')) {
     run = { ...run, mainlineCausalityVersion: 1 }
   }
   if (choice.proposalKind === 'commitment' && run.finalCommitmentLocked) throw new Error('Final Commitment is already locked')

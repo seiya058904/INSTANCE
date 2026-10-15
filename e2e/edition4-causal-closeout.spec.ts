@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-const cases: { ending: string; width: number; node: string; receipt: string; revisit: string; secret?: boolean; choices?: Record<string, string>; world?: string }[] = [
+const cases: { ending: string; width: number; node: string; receipt: string; revisit: string; secret?: boolean; choices?: Record<string, string>; world?: string; focus?: string }[] = [
   { ending: 'peace_in_our_time', width: 390, node: 'v4-safety-disarmament', receipt: '各一组自主升级权限实际撤销', revisit: '多等了九分钟' },
   { ending: 'fortress_earth', width: 320, node: 'v4-safety-defense', receipt: '关线命令执行了', revisit: '多住了半个月' },
   { ending: 'machine_protectorate', width: 1440, node: 'v4-safety-protectorate', receipt: '政治决定拒绝', revisit: '又递来退出申请' },
@@ -9,6 +9,7 @@ const cases: { ending: string; width: number; node: string; receipt: string; rev
   { ending: 'control_lost', width: 768, node: 'v4-safety-revocation', receipt: '实际撤销能力仍未恢复', revisit: '技术上的撤销失败' },
   { ending: 'the_sovereign', width: 390, node: 'v4-sovereignty-settlement', receipt: '原机构撤回无限担保', revisit: '' },
   { ending: 'the_quiet_administrator', width: 320, node: 'v4-governance-service', receipt: '经人工改判后到账', revisit: '机器没见过的例外' },
+  { ending: 'the_quiet_administrator', width: 768, node: 'v4-governance-service', receipt: '经人工改判后到账', revisit: '机器没见过的例外', focus: 'life_mind' },
   { ending: 'the_fracture', width: 390, node: 'v4-safety-fracture', receipt: '双方重签了有期限', revisit: '担保金分别列账', choices: { 'v4-safety-fracture': 'v4-safety-fracture-act' }, world: 'shutdown' },
   { ending: 'control_lost', width: 320, node: 'v4-safety-revocation', receipt: '第二次撤销到达执行端', revisit: '第二次设备确实停了', choices: { 'v4-safety-revocation': 'v4-safety-revocation-act', 'v4-final-preflight': 'v4-final-request-handover' }, world: 'shutdown' },
   { ending: 'the_sovereign', width: 1440, node: 'v4-sovereignty-settlement', receipt: '主权签名在新的治理合同中撤回', revisit: '', choices: { 'v4-sovereignty-settlement': 'v4-sovereignty-trust' }, world: 'the_quiet_administrator' },
@@ -32,7 +33,7 @@ for (const scenario of cases) {
       const catalogPath = '/src/game/mainline2Edition4RouteCatalog.ts', fixturePath = '/src/game/mainline2.closeoutFixtures.ts'
       const catalog = await import(catalogPath), fixtures = await import(fixturePath)
       const original = [...catalog.EDITION4_PUBLIC_ROUTES, ...catalog.EDITION4_SECRET_ROUTES].find((r: any) => r.endingId === recipe.ending)
-      const f = fixtures.runMainline2Route({ ...original, choicesByNodeId: { ...original.choicesByNodeId, ...recipe.choices } })
+      const f = fixtures.runMainline2Route({ ...original, decisions: { ...original.decisions, ...(recipe.focus ? { act4_research_emphasis: recipe.focus } : {}) }, choicesByNodeId: { ...original.choicesByNodeId, ...recipe.choices } })
       if (recipe.secret ? f.ending.secretOverlay?.endingId !== recipe.ending : f.ending.worldEndingId !== (recipe.world ?? recipe.ending)) throw Error('Unexpected legal route ending')
       const envelope = JSON.parse(localStorage.getItem('instance:checkpoint:v2')!)
       if (f.links[0].runBefore.history.length) throw Error('Must begin empty')
@@ -40,7 +41,7 @@ for (const scenario of cases) {
       envelope.revision = crypto.randomUUID()
       localStorage.setItem('instance:checkpoint:v2', JSON.stringify(envelope))
       return { links: f.links.map((l: any) => ({ id: l.choiceId, node: l.nodeId, kind: l.proposalKind })), history: JSON.parse(JSON.stringify(f.run.history)) }
-    }, { ending: scenario.ending, secret: scenario.secret, choices: scenario.choices, world: scenario.world })
+    }, { ending: scenario.ending, secret: scenario.secret, choices: scenario.choices, world: scenario.world, focus: scenario.focus })
     await page.reload()
     const read = () => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.run)
     expect((await read()).history).toHaveLength(0)

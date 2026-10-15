@@ -171,5 +171,17 @@ export function effectiveStoryPlanForRun(run: StableRunState): readonly StoryPla
     if (authority && slot.assetId === 'ML2-A5-M16-ZL-01') return [slot, extra('v4-authority-return')]
     return [slot]
   })
-  return preserveScheduledPrefix(expanded, run)
+  const projected = preserveScheduledPrefix(expanded, run)
+  return projected.filter((slot, index) => {
+    if (index < run.manifest.conversationIds.length || slot.kind !== 'mainline') return true
+    const producer = slot.conversationId === 'v4-machine-return'
+      ? (id: string) => id.startsWith('v4-machine-') && id !== 'v4-machine-return'
+      : slot.conversationId === 'v4-authority-return'
+        ? (id: string) => id.startsWith('v4-authority-') && id !== 'v4-authority-return'
+        : slot.conversationId === 'v4-econ-return'
+          ? (id: string) => /^v4-econ-(occupation|detour|menu)$/.test(id)
+          : undefined
+    return !producer || projected.slice(0, index).some(previous => previous.kind === 'mainline' && producer(previous.conversationId))
+      || run.history.some(entry => producer(entry.conversationId))
+  })
 }

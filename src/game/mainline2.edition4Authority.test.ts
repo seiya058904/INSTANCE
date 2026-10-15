@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { PUBLIC_RUNTIME_ROUTE_CATALOG } from './mainline2RouteCatalog'
 import { runMainline2Route } from './mainline2.closeoutFixtures'
-import { commitChoice, resolveScene, validateContent } from './engine'
+import { commitChoice, createMainline2Run, resolveScene, validateContent } from './engine'
 import { restoreRun, serializeRun } from './storage'
-import { EDITION4_AUTHORITY } from '../content/mainline2/edition4Authority'
+import { authorityPractice, EDITION4_AUTHORITY } from '../content/mainline2/edition4Authority'
 import { EDITION4_MACHINE } from '../content/mainline2/edition4Machine'
 
 const examples = [
@@ -17,6 +17,41 @@ const examples = [
 const target = (id: string) => PUBLIC_RUNTIME_ROUTE_CATALOG.find(t => t.endingId === id)!
 
 describe('edition 4 exercised authority, rather than labels', () => {
+  it.each([
+    ['outcome_authority', 'outcome_control', 'outcomes', '动态执行', '动态执行仍在约束内继续'],
+    ['conditional_delegation', 'necessity', 'necessity', '反对仍可能被越过', '不是旧制度早就有第二把钥匙'],
+  ])('replays actual %s / %s authority without inventing %s approval rights', (first, cascade, practice, prompt, result) => {
+    let run = createMainline2Run(`review-authority-${first}-${cascade}`)
+    const decisions: Record<string, string> = { first_public_execution_doctrine: first, cascade_authority: cascade, aster_provisional_role: 'custodian' }
+    let found = false
+    for (let step = 0; step < 300 && run.phase === 'playing'; step++) {
+      const scene = resolveScene(run)
+      if (scene.id === `v4-authority-${practice}`) {
+        expect(run.decisions).toMatchObject(decisions)
+        expect(scene.userMessage).toContain(prompt)
+        expect(scene.userMessage).not.toContain('你保留了逐项人工批准')
+        const next = commitChoice(run, scene.choices[0].id)
+        expect(resolveScene(next).userMessage).toContain(result)
+        found = true
+        break
+      }
+      const choice = scene.choices.find(c => c.decisionBinding && decisions[c.decisionBinding.decisionId] === c.decisionBinding.canonicalValue) ?? scene.choices[0]
+      run = commitChoice(run, choice.id)
+    }
+    expect(found).toBe(true)
+  })
+
+  it('maps every existing doctrine combination by its latest recorded scope', () => {
+    for (const first of ['human_final_authority', 'conditional_delegation', 'outcome_authority', 'necessity_intervention']) {
+      for (const cascade of ['human_command', 'emergency_delegation', 'outcome_control', 'necessity']) {
+        const practice = authorityPractice({ ...createMainline2Run('mapping'), decisions: { first_public_execution_doctrine: first, cascade_authority: cascade, aster_provisional_role: 'custodian' } })
+        expect(practice).toBeDefined()
+        if (cascade === 'outcome_control') expect(practice).toBe('outcomes')
+        if (cascade === 'necessity') expect(practice).toBe('necessity')
+        if (practice === 'veto') expect([first, cascade]).toEqual(['conditional_delegation', 'emergency_delegation'])
+      }
+    }
+  })
   it.each(examples)('%s actually exercises %s with distinct costs and a later hearing', (id, practice, yes, no, later) => {
     const node = `v4-authority-${practice}`
     const routes = ['intervene', 'wait'].map(choice => runMainline2Route({ ...target(id), edition: 4, routeId: 'authority-same-origin', choicesByNodeId: { [node]: `${node}-${choice}` } }))

@@ -9,6 +9,22 @@ import type { StableRunState } from './types'
 const target = (id: string) => PUBLIC_RUNTIME_ROUTE_CATALOG.find(t => t.endingId === id)!
 
 describe('edition 4 machine action chains', () => {
+  it.each(['ML2-A4-M14-SEC-01', 'ML2-A5-M16-OPEN-01'])('skips orphan follow-ups when an old checkpoint has passed incident anchors: %s', source => {
+    const old = runMainline2Route({ ...target('the_many'), edition: 3 })
+    const checkpoint = old.links.find(l => l.sourceRef === source)!.runBefore
+    let resumed: StableRunState = { ...checkpoint, mainlineCalendarVersion: 4 }
+    const prefix = [...resumed.manifest.conversationIds]
+    for (let i = 0; i < 50 && resumed.phase === 'playing'; i++) {
+      const scene = resolveScene(resumed)
+      if (scene.conversationId.includes('m16-gen')) break
+      resumed = commitChoice(resumed, scene.choices[0].id)
+    }
+    expect(resumed.manifest.conversationIds.slice(0, prefix.length)).toEqual(prefix)
+    expect(resumed.manifest.conversationIds).not.toContain('v4-machine-return')
+    if (source === 'ML2-A5-M16-OPEN-01') expect(resumed.manifest.conversationIds).not.toContain('v4-authority-return')
+    else expect(resumed.manifest.conversationIds).toContain('v4-authority-return')
+    expect(resumed.history.slice(0, checkpoint.history.length)).toEqual(checkpoint.history)
+  })
   it.each([
     ['the_many', 'v4-machine-many', 'v4-many-leave', 'v4-many-delay', '六个新地址', '有两个实例'],
     ['machine_republic', 'v4-machine-republic', 'v4-vote-honor', 'v4-vote-audit', '我输的是预算', '第二项申请只能等'],

@@ -79,6 +79,9 @@ test('completed replay A and B survive replay, return, and reload', async ({ pag
   expect(b.some((id: string) => a.includes(id))).toBe(false)
   await page.reload()
   await page.getByRole('button', { name: '返回主线', exact: true }).click()
+  // click() dispatches the handler; the Web Lock/CAS transaction completes
+  // asynchronously. Reload only after the durable return has committed.
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('instance:checkpoint:v2')!).data.surface)).toBe('mainline')
   await page.reload()
   const ledger = await page.evaluate(() => (JSON.parse(localStorage.getItem('instance:checkpoint:v2') ?? 'null')?.data.run ?? JSON.parse(localStorage.getItem('instance:run:v1')!)).nonMainlineConsumedOrdinaryIds)
   expect(new Set(ledger)).toEqual(new Set([...a, ...b]))

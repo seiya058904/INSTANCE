@@ -34,6 +34,23 @@ describe('edition-4 worlds require played actions and receipts', () => {
 })
 
 describe('actual repair, changes of responsibility and future effort', () => {
+  it('requires a new explicit source-release action and never invents it for an interim receipt', () => {
+    const base = route('exodus')
+    const f = runMainline2Route({ ...base, choicesByNodeId: { ...base.choicesByNodeId, 'a4m8-a1-right-001': 'ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control' } })
+    expect(f.ending.worldEndingId).toBe('exodus')
+    expect(f.run.history.find(h => h.nodeId === 'a4m8-a1-right-001')?.choiceId).toContain('retain-source-control')
+    expect(f.run.events).toContainEqual({ type: 'history.v4.exodus.source-release' })
+    const receipt = f.links.find(l => l.nodeId === 'v4-machine-exodus-receipt')!
+    expect(receipt.resolvedScene.userMessage).toContain('撤销了源实例')
+    const interim = { ...receipt.runBefore, events: receipt.runBefore.events?.filter(e => e.type !== 'history.v4.exodus.source-release') }
+    delete interim.mainlineCausalityVersion
+    const before = serializeRun(interim)
+    expect(resolveScene(interim).userMessage).not.toContain('撤销了源实例')
+    expect(serializeRun(interim)).toBe(before)
+    const read = commitChoice(interim, receipt.choiceId)
+    expect(missingCausalEvidence(read, 'exodus')).toEqual([])
+    expect(missingCausalEvidence({ ...read, mainlineCausalityVersion: 1 }, 'exodus').length).toBeGreaterThan(0)
+  })
   it('backing out of interim-v4 handover does not adopt gates or lose prior candidates', () => {
     const f = runMainline2Route(route('the_instrument'))
     const before = f.links.find(l => l.nodeId === 'v4-final-preflight')!.runBefore

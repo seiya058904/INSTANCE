@@ -24,7 +24,7 @@ export function missingCausalEvidence(run: StableRunState, endingId: string): st
     the_sovereign: sovereigntySettlement(run) === 'sovereign',
     the_many: has('v4-machine-many'),
     machine_republic: has('v4-machine-republic'),
-    exodus: has('v4-machine-exodus', 'v4-exodus-supply'),
+    exodus: has('v4-machine-exodus', 'v4-exodus-supply') && (!run.history.some(h => h.nodeId === 'a4m8-a1-right-001' && h.choiceId.endsWith('-retain-source-control')) || Boolean(run.events?.some(e => e.type === 'history.v4.exodus.source-release'))),
     age_of_miracles: has('v4-life-therapy'),
     ascension: has('v4-life-forms'),
     the_upload: has('v4-life-continuity'),

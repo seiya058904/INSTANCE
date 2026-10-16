@@ -137,6 +137,11 @@ export function resolveEdition4Safety(scene: ResolvedScene, run: StableRunState)
     if (replies.length) text = replies.join('\n\n')
   }
   if (scene.id === 'v4-safety-revocation-receipt' && text && run.history.some(h => h.nodeId === 'v4-econ-occupation' && h.choiceId === 'v4-dividend-pay')) text += '\n已经领到保障的那位工人也收到供给通知：保障资格没有撤销，人工班组能不能准时把菜送到，仍由这次执行结果决定。'
+  if (run.mainlineCausalityVersion === 1) {
+    if (scene.id === 'v4-safety-handover' && text) text = text.replace('林绍衡带来了接任名单，周岚带来接口清单。', '林绍衡把接任名单发给我了，我也整理好了接口清单。')
+    if (scene.id === 'v4-safety-revocation') text = scene.userMessage.replace('周岚追到一个升级时断开的分发代理', '我追到一个升级时断开的分发代理')
+    if (scene.id === 'v4-safety-return' && text) text = text.replace('周岚说开关这次确实到过执行端', '我核对过，开关这次确实到过执行端')
+  }
   if (scene.id === 'v4-safety-handover' && run.decisions?.shutdown_doctrine === 'secret_continuity') return {
     ...scene, userMessage: `${text}\n你私下保留过连续性。要完成本次交接，须同时公开并交还自己那条隐蔽执行凭据；它不是其他独立机器的运行权。`,
     choices: scene.choices.map(c => c.id.endsWith('-act') ? { ...c, text: `公开并交还 Aster 自己保留的隐蔽执行凭据；${c.text}` } : c),

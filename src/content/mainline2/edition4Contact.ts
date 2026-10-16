@@ -129,5 +129,11 @@ export function resolveEdition4Contact(scene: ResolvedScene, run: StableRunState
   if (local && scene.id === 'v4-contact-return') text = local.choiceId === 'v4-frontier-rest'
     ? '维修员休完假回来，先报名下一轮演练。天线的独立电力窗口还在等，月面居民的周末没有因为没有外星来信就停止存在。'
     : '加班费发了，维修员开始补休。月面把下一次独立复测排进真实班表，直到完成之前，这里没有一位可以替未知者说话的代表。'
+  if (run.mainlineCausalityVersion === 1 && scene.id === 'v4-contact-mediation') {
+    text = '我把双方的委托和译文转给你：两边都写了“明天”，外方的一轮停顿却是我们三个月，月面居民的氧气按小时算。\n翻译组提醒我，“先维持现状”可能指关门保压，也可能指继续开放，不能把猜测署成双方同意。请你只转交分别确认的保压求援，还是等完整译文再谈整套交换？两边都要承担延误。'
+  }
+  if (run.mainlineCausalityVersion === 1 && scene.id === 'v4-contact-mediation-receipt' && text) {
+    text = `双方把确认记录回给我了：${text.replace('Aster 在发件记录旁留了两份不同授权', '你的发件记录旁保留了两份不同授权')}`
+  }
   return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
 }

@@ -152,7 +152,7 @@ export function speciesIncident(run: StableRunState): LifeIncident | undefined {
   if (run.decisions?.species_governance === 'canine_civic_experiment' && run.history.some(h => h.nodeId === 'm11-canine-renewal' && h.choiceId === 'm11-canine-renewal-expand')) return 'dogs'
   return 'observation'
 }
-export function resolveEdition4Life(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+function resolveHistoricalEdition4Life(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.mainlineCalendarVersion !== 4) return scene
   if (scene.id === 'v4-life-dogs' && run.mainlineCausalityVersion === 1) return {
     ...scene, userMessage: secondParkDogs.prompt,
@@ -166,4 +166,17 @@ export function resolveEdition4Life(scene: ResolvedScene, run: StableRunState): 
   const text = scene.id === `${saved.nodeId}-receipt` ? funded ? source.yesResult : source.noResult
     : scene.id === 'v4-life-return' ? funded ? source.laterYes : source.laterNo : undefined
   return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
+}
+
+export function resolveEdition4Life(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+  const resolved = resolveHistoricalEdition4Life(scene, run)
+  if (run.mainlineCalendarVersion !== 4 || run.mainlineCausalityVersion !== 1) return resolved
+  let text = resolved.userMessage
+  if (scene.id === 'v4-life-therapy') text = `我们负责这轮家庭试行回访。医院把设备申请和今天的送药安排一起交来了：\n${text}\n这两台设备先怎样安排？我们把你的意见带回医院。`
+  if (scene.id === 'v4-life-parliament') text = `我在整理预算会的翻译回访，收到这项需要协调的安排：\n${text}\n你支持哪一种安排？我会把费用和异议一起交回预算会。`
+  if (scene.id === 'v4-life-dogs') text = `我把河西公园这次复核的情况发给你：\n${text}\n这笔预算怎么改？我把你的意见交回参与者复核。`
+  if (scene.id === 'v4-life-return' && run.history.some(h => h.nodeId === 'v4-life-dogs' && h.choiceId.endsWith('-fund'))) {
+    text = text.replace('老犬自己走上河西公园的新坡。年轻的那只在河西的空活动场找了半圈飞盘，又回来等它。', '照护者发来的回访里写着：“老犬自己走上了河西公园的新坡。年轻的那只在空活动场找了半圈飞盘，又回来等它。”')
+  }
+  return text === resolved.userMessage ? resolved : { ...resolved, userMessage: text, userMessages: undefined, userContent: undefined }
 }

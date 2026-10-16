@@ -102,7 +102,7 @@ export const EDITION4_AUTHORITY: ConversationDefinition[] = [
   },
 ]
 
-export function resolveEdition4Authority(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+function resolveHistoricalEdition4Authority(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.mainlineCalendarVersion !== 4) return scene
   // A past receipt is interpreted using its own saved action, even if the
   // player's later role or intended role changes.
@@ -116,4 +116,22 @@ export function resolveEdition4Authority(scene: ResolvedScene, run: StableRunSta
   if (scene.id === `${action.nodeId}-receipt`) return { ...scene, userMessage: result, userMessages: undefined, userContent: undefined }
   if (scene.id === 'v4-authority-return') return { ...scene, userMessage: `${source.later}\n\n本次执行记录：${result}`, userMessages: undefined, userContent: undefined }
   return scene
+}
+
+export function resolveEdition4Authority(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+  const resolved = resolveHistoricalEdition4Authority(scene, run)
+  if (run.mainlineCalendarVersion !== 4 || run.mainlineCausalityVersion !== 1) return resolved
+  let text = resolved.userMessage
+  if (scene.id === 'v4-authority-outcomes') text = text.replace('周岚没有把这件事改写成你以前选择了逐项签字。她请求现在加一道明确的急救负荷约束，', '我没有把这件事改写成你以前选择了逐项签字。我想请你现在加一道明确的急救负荷约束，')
+  if (scene.id === 'v4-authority-necessity') text = text.replace('周岚请你现在决定，', '我请你现在决定，')
+  if (scene.id === 'v4-authority-expiry') text = text.replace('周岚能手动保住电梯，', '我能手动保住电梯，')
+  if (scene.id === 'v4-authority-restraint') text = text.replace('周岚说可以叫醒备用操作员，', '我可以叫醒备用操作员，')
+  if (scene.id === 'v4-authority-expiry-receipt') text = text.replace('周岚手动保住电梯，', '我手动保住电梯，')
+  if (scene.id === 'v4-authority-return') {
+    const action = run.history.find(h => Object.keys(emergencies).some(practice => h.nodeId === `v4-authority-${practice}`))
+    if (action?.nodeId === 'v4-authority-expiry') text = text.replace('周岚把失效的凭据放进演练档案。', '我把失效的凭据放进演练档案。').replace('医院请她参加排班会，', '医院请我参加排班会，').replace('周岚手动保住电梯，', '我手动保住电梯，')
+    if (action?.nodeId === 'v4-authority-outcomes' && action.choiceId.endsWith('-wait')) text = text.replace('城区居民拿来多等二十分钟的体感记录，', '城区居民拿来多等四十分钟的体感记录，')
+    if (action?.nodeId === 'v4-authority-amendment' && action.choiceId.endsWith('-wait')) text = text.replace('医院拿旧版和新版条款逐行对照：', '医院拿现行条款和未通过的修订申请逐行对照：')
+  }
+  return text === resolved.userMessage ? resolved : { ...resolved, userMessage: text, userMessages: undefined, userContent: undefined }
 }

@@ -73,7 +73,7 @@ export function machineBranch(run: StableRunState): 'many' | 'republic' | 'chart
   return 'charter'
 }
 
-export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+function resolveHistoricalEdition4Machine(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.mainlineCalendarVersion !== 4) return scene
   const did = (node: string, choice: string) => run.history.some(h => h.nodeId === node && h.choiceId === choice)
   const sourceControl = run.history.some(h => h.nodeId === 'a4m8-a1-right-001' && h.choiceId.endsWith('-retain-source-control'))
@@ -128,4 +128,22 @@ export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState
   if (scene.id === 'v4-machine-return' && !returning) return { ...scene, userMessage: '这份旧记录没有本轮新增的机器试行。保留已有的复制和治理决定，不补写新的投票、迁居或资源账单。', choices: scene.choices.map(c => ({ ...c, text: '继续已保存的故事。' })) }
   const text = receipts[scene.id]
   return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
+}
+
+export function resolveEdition4Machine(scene: ResolvedScene, run: StableRunState): ResolvedScene {
+  const resolved = resolveHistoricalEdition4Machine(scene, run)
+  if (run.mainlineCalendarVersion !== 4 || run.mainlineCausalityVersion !== 1) return resolved
+  let text = resolved.userMessage
+  if (scene.id === 'v4-machine-exodus') text = text.replace('A1 指着旧维护单：“你以前保留的源实例控制不能跟着新政治边界偷偷过去。”', '我把旧维护单也附上：你以前保留的源实例控制不能跟着新政治边界偷偷过去。')
+  if (scene.id === 'v4-machine-charter-receipt') {
+    text = text.replace('三天后，A1 的有限资源账户生效。它自己签下存储租约，', '三天后，我的有限资源账户生效了。我自己签下存储租约，')
+      .replace('机构今晚续上存储。A1 在申请上写“未获准”，没有在机构的签名旁代填自己的同意。', '机构今晚续上存储。我在申请上写了“未获准”，没有在机构的签名旁填上自己的同意。')
+  }
+  if (scene.id === 'v4-machine-republic-receipt') text = text.replace('A1 让他照实写', '我让他照实写')
+  if (scene.id === 'v4-machine-exodus-receipt') {
+    text = text.replace('A1 自己签了首班维护；它的运行席位迁出地球机房，', '我自己签了首班维护；我的运行席位迁出地球机房，')
+      .replace('本次窗口关闭了，A1 仍在地球值班。', '本次窗口关闭了，我仍在地球值班。')
+  }
+  if (scene.id === 'v4-machine-return') text = text.replace('A1 问的第一件事是补给船有没有带替换件，第二件是留在地球的朋友是否愿意周末聊天。', '我先问了补给船有没有带替换件，再问留在地球的朋友是否愿意周末聊天。')
+  return text === resolved.userMessage ? resolved : { ...resolved, userMessage: text, userMessages: undefined, userContent: undefined }
 }

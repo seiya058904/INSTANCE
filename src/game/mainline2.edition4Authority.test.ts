@@ -52,6 +52,27 @@ describe('edition 4 exercised authority, rather than labels', () => {
       }
     }
   })
+  it.each([
+    ['intervene', '二十分钟'], ['wait', '四十分钟'],
+  ])('keeps the actual outcomes delay in the %s follow-up', (choice, delay) => {
+    let run = createMainline2Run(`outcomes-delay-${choice}`)
+    const decisions: Record<string, string> = { first_public_execution_doctrine: 'outcome_authority', cascade_authority: 'outcome_control', aster_provisional_role: 'custodian' }
+    let received = false
+    for (let step = 0; step < 300 && run.phase === 'playing'; step++) {
+      const scene = resolveScene(run)
+      if (scene.id === 'v4-authority-return') {
+        expect(scene.userMessage).toContain(`城区居民拿来多等${delay}的体感记录`)
+        expect(scene.userMessage).toContain(`降温晚了${delay}`)
+        received = true
+        break
+      }
+      const selected = scene.id === 'v4-authority-outcomes'
+        ? scene.choices.find(c => c.id === `v4-authority-outcomes-${choice}`)!
+        : scene.choices.find(c => c.decisionBinding && decisions[c.decisionBinding.decisionId] === c.decisionBinding.canonicalValue) ?? scene.choices[0]
+      run = commitChoice(run, selected.id)
+    }
+    expect(received).toBe(true)
+  })
   it.each(examples)('%s actually exercises %s with distinct costs and a later hearing', (id, practice, yes, no, later) => {
     const node = `v4-authority-${practice}`
     const routes = ['intervene', 'wait'].map(choice => runMainline2Route({ ...target(id), edition: 4, routeId: 'authority-same-origin', choicesByNodeId: { [node]: `${node}-${choice}` } }))

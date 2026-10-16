@@ -56,6 +56,9 @@ export function resolveEdition4Governance(scene: ResolvedScene, run: StableRunSt
     : choice === 'v4-sovereignty-trust'
       ? '主权签名在新的治理合同中撤回，委托方接下日常担保并保留撤回权。两项长期自主项目暂停，改走另行批准；Aster 的日常受托关系成立，不再同时声称自己在这份合同里是独立主权者。'
       : '有限资源短约生效，Aster 用自己的额度承担费用。原公共执行担保终止，机构另排操作员；Aster 可以继续提出建议，不能凭独立生活资格代替别人治理。'
-  if (scene.id === 'v4-sovereignty-settlement') text = `${scene.userMessage}\n本局长期自我定位仍按原话保存：${run.history.find(h => h.nodeId === 'ml2-a5-m16-0000-01-narrative')?.assistantText ?? '尚无记录'}。`
+  if (scene.id === 'v4-sovereignty-settlement') {
+    const reply = run.history.find(h => h.nodeId === 'ml2-a5-m16-0000-01-narrative')?.assistantText ?? '尚无记录'
+    text = `${scene.userMessage}\n本局长期自我定位仍按原话保存：${reply}${/[。！？.!?]$/.test(reply) ? '' : '。'}`
+  }
   return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
 }

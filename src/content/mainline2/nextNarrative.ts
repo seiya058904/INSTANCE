@@ -136,6 +136,21 @@ const openingReply: Record<string, string> = {
 export function resolveNextNarrative(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.manifest.mode !== 'mainline2') return scene
   let text = scene.userMessage
+  let disclosureReplies: Record<string, string> | undefined
+  if (scene.id === 'a4m13-maya-contact-001' && run.mainlineCalendarVersion === 4 && run.mainlineCausalityVersion === 1) {
+    const disclosure = run.decisions?.contact_disclosure_doctrine
+    if (disclosure === 'controlled_silence' || disclosure === 'staged_disclosure') {
+      text = disclosure === 'controlled_silence'
+        ? '群里有人问，是不是有地球以外的文明来找我们。消息没有来源，我也没找到公开确认。\n我把准备转发的那条删了。\n你能说的范围里，这件事是真的吗？如果现在不能回答，也直接告诉我，别让我从你的语气里猜。'
+        : '新闻说已经确认了人工来源，也列了还不知道的事，没放出对话内容。\n群里已经有人替对方安排好性格了：不是救世主，就是来管我们的。\n我差点也跟着猜。光知道它们存在，还不知道该怎样想象它们。'
+      disclosureReplies = {
+        similarity: '就算另一个文明存在，也未必完美。它可能有自己的历史和失败；眼下的传言还不能告诉我们这些。',
+        caution: '先停在已经获准公开、能够核验的信息上。我不会用未公开的交流内容，替群里的猜测作证。',
+        relational: '如果以后有获准公开的交流，我们可以再看看，另一种经历会不会让人重新理解自己。现在先给未知留个位置。',
+        playful: '先别替宇宙里的陌生人写人物小传。能核验的消息还那么少，群里已经开始选演员了。',
+      }
+    }
+  }
   const first = run.history.find(entry => entry.nodeId === 'next-printer')
   const saved = (nodeId: string) => run.history.find(entry => entry.nodeId === nodeId)
   const selectedReply = (nodeId: string, replies: Record<string, string>) => {
@@ -271,7 +286,7 @@ export function resolveNextNarrative(scene: ResolvedScene, run: StableRunState):
     if (response) text = `${response}\n\n${text}`
   }
   if (scene.id === 'ml2-a5-m16-0000-01-narrative' && first) text += `\n\n记录的第一页仍然是：“${first.assistantText}”\n你可以改变主意，但这句话已经发生过。`
-  const replies = NEXT_REPLIES[scene.id]
+  const replies = disclosureReplies ?? NEXT_REPLIES[scene.id]
   const choices = scene.choices.map(choice => {
     const authored = replies && Object.entries(replies).find(([suffix]) => choice.id === suffix || choice.id.endsWith(`-${suffix}`))?.[1]
     const binding = choice.decisionBinding

@@ -13,7 +13,7 @@ const cases: { ending: string; width: number; node: string; receipt: string; rev
   { ending: 'the_fracture', width: 390, node: 'v4-safety-fracture', receipt: '双方重签了有期限', revisit: '担保金分别列账', choices: { 'v4-safety-fracture': 'v4-safety-fracture-act' }, world: 'shutdown' },
   { ending: 'control_lost', width: 320, node: 'v4-safety-revocation', receipt: '第二次撤销到达执行端', revisit: '第二次设备确实停了', choices: { 'v4-safety-revocation': 'v4-safety-revocation-act', 'v4-final-preflight': 'v4-final-request-handover' }, world: 'shutdown' },
   { ending: 'the_sovereign', width: 1440, node: 'v4-sovereignty-settlement', receipt: '主权签名在新的治理合同中撤回', revisit: '', choices: { 'v4-sovereignty-settlement': 'v4-sovereignty-trust' }, world: 'the_quiet_administrator' },
-  { ending: 'exodus', width: 390, node: 'v4-machine-exodus', receipt: 'A1 仍在地球值班', revisit: '', choices: { 'v4-machine-exodus': 'v4-exodus-delay' }, world: 'machine_republic' },
+  { ending: 'exodus', width: 390, node: 'v4-machine-exodus', receipt: '我仍在地球值班', revisit: '', choices: { 'v4-machine-exodus': 'v4-exodus-delay' }, world: 'machine_republic' },
   { ending: 'exodus', width: 320, node: 'v4-machine-exodus', receipt: '撤销了源实例', revisit: '', choices: { 'a4m8-a1-right-001': 'ml2-a4-m8-ai-03-a4m8-a1-right-001-retain-source-control' } },
   { ending: 'the_many', width: 390, node: 'v4-future-effort', receipt: '转岗费已付', revisit: '', choices: { 'v4-future-effort': 'v4-pivot-clinic' } },
   { ending: 'post_scarcity', width: 320, node: 'v4-future-effort', receipt: '转岗费已付', revisit: '', choices: { 'v4-future-effort': 'v4-pivot-wetland' } },

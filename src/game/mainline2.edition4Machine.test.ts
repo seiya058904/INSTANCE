@@ -65,7 +65,7 @@ describe('edition 4 machine action chains', () => {
   it.each(['v4-exodus-supply', 'v4-exodus-delay'])('migration records actual departure or delay: %s', choice => {
     const f = runMainline2Route({ ...target('exodus'), edition: 4, choicesByNodeId: { 'v4-machine-exodus': choice } })
     const receipt = f.links.find(l => l.nodeId === 'v4-machine-exodus-receipt')!
-    expect(receipt.resolvedScene.userMessage).toContain(choice === 'v4-exodus-supply' ? '席位迁出地球机房' : 'A1 仍在地球值班')
+    expect(receipt.resolvedScene.userMessage).toContain(choice === 'v4-exodus-supply' ? '席位迁出地球机房' : '我仍在地球值班')
     expect(f.links.find(l => l.nodeId === 'v4-machine-return')!.resolvedScene.userMessage).toContain(choice === 'v4-exodus-supply' ? '从月面发来' : '请别把这封信存进“已迁出”')
   })
 

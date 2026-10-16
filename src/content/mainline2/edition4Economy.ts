@@ -123,5 +123,17 @@ export function resolveEdition4Economy(scene: ResolvedScene, run: StableRunState
     if (messages['v4-econ-return']) messages['v4-econ-return'] += '\n冷库送到了东西，但修复通知还没来。新片区仍进不来，居民把等候单贴到了故障告示旁。'
   }
   const text = messages[scene.id]
-  return text ? { ...scene, userMessage: text, userMessages: undefined, userContent: undefined } : scene
+  const current = run.mainlineCausalityVersion === 1
+  // These are messages to the worker asking, rather than instructions about an
+  // absent third person. Existing saved replies and interim editions stay intact.
+  const replyCopy: Record<string, string> = current ? {
+    'v4-detour-correct': '我建议调度员维持原排程，送你回宿舍，并请你告诉朋友今晚赶不上；不能把错过晚饭包装成替你节约时间。',
+    'v4-menu-standard': '我建议厨房保持标准菜单和本周余量，这次先不试做；你的酸汤请求仍是未满足的愿望，不能算成已服务。',
+    'v4-dividend-pay': '我支持先取消新线订金，请林绍衡和预算负责人按现有授权兑现无职业条件的保障；产权结算继续，缺口由扩产计划承担。',
+    'v4-dividend-wait': '我支持先付订金，保留产权结算顺序；请预算负责人明确通知领取者：今天这批保障延后，并公开等待名单。',
+    'v4-detour-allow': '我支持请调度员允许你改道去朋友家，承担空驶并向后两班乘客说明六分钟延误；不把这次探访登记为错误。',
+    'v4-menu-experiment': '我支持请厨房给这道未知菜品留一口小锅，扣除试做食材并公布余量；这次试验不代表已更改全体的生产目标。',
+  } : {}
+  const choices = scene.choices.map(choice => replyCopy[choice.id] ? { ...choice, text: replyCopy[choice.id] } : choice)
+  return text ? { ...scene, choices, userMessage: text, userMessages: undefined, userContent: undefined } : { ...scene, choices }
 }

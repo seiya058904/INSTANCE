@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "status": "COMPLETE_MANUAL_REVIEW_PACKAGE",
+  "reviewMethod": "explicit-model-editorial-review",
+  "sourceSha": "7d2955187d09d6dc549b280c8c0dbee93b9c7dd1",
+  "expected": {
+    "displayedVariants": 899,
+    "displayedCandidates": 2453,
+    "fourChoiceVariants": 309,
+    "fourChoiceCandidates": 1236,
+    "catalogSelectedDistinctCandidates": 623,
+    "successfulCandidateForks": 2453
+  },
+  "currentExpected": {
+    "displayedVariants": 900,
+    "displayedCandidates": 2458,
+    "fourChoiceVariants": 309,
+    "fourChoiceCandidates": 1236,
+    "catalogSelectedDistinctCandidates": 623,
+    "successfulCandidateForks": 2458
+  },
+  "currentClosure": {
+    "baselineVariants": 899,
+    "afterVariants": 900,
+    "afterCandidates": 2458,
+    "afterFourChoiceVariants": 309,
+    "afterFourChoiceCandidates": 1236,
+    "inherited": 839,
+    "explicitManual": 1619,
+    "pending": 0,
+    "packets": {
+      "parent": {
+        "scenes": 0,
+        "candidates": 0
+      },
+      "act4": {
+        "scenes": 0,
+        "candidates": 0
+      },
+      "act5": {
+        "scenes": 0,
+        "candidates": 0
+      },
+      "remaining": {
+        "scenes": 0,
+        "candidates": 0
+      }
+    },
+    "unmapped": [],
+    "manualSources": [
+      {
+        "file": "temp/chat-first-contract-20261016/after-closure-parent-manual-r4.json",
+        "sha256": "20fa156eb25760b08170cdb538582556393204ada8cf688968e100985a81dcfb"
+      },
+      {
+        "file": "temp/chat-first-contract-20261016/after-closure-act4-manual.json",
+        "sha256": "8e60ed3313b5036a664b75235e82a38b91042ed283876cb38028538e8b82ac5c"
+      },
+      {
+        "file": "temp/chat-first-contract-20261016/after-closure-act5-manual-r4.json",
+        "sha256": "e20215ddd3309b20090cd700468eba37fa31ab38b030fef2dd65c4ccb701420c"
+      },
+      {
+        "file": "temp/chat-first-contract-20261016/after-closure-remaining-manual.json",
+        "sha256": "99d2e3621fed4749934215d67047b757c11f8fe3accf40d14dc1f5fc67d1cb66"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/ALL_VISIBLE_AI_REPLIES_AUDIT.jsonl.gz",
+      "archiveName": "ALL_VISIBLE_AI_REPLIES_AUDIT.jsonl.gz",
+      "sha256": "b27a1443c2689b84693061d47719b4df384ba49c04c3f856f748294712c0237d",
+      "uncompressedSha256": "4860ba1c6d93a7b3a583d0c48d8a09025178dd171d9ee8e026dc3006479bcc11",
+      "compressedBytes": 3024797,
+      "uncompressedBytes": 61887572
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/manual-annotations.json.gz",
+      "archiveName": "manual-annotations.json.gz",
+      "sha256": "41ec9d5b5cbc4cd57da12863a6d6caf02adb255d5e5a5678ea13b5ace4fb802b",
+      "uncompressedSha256": "ea8e1c602fb9c2684dc0d5751560fc48f5d5d53317f7b4e6247e3dccb19acbf5",
+      "compressedBytes": 316512,
+      "uncompressedBytes": 2308514
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/before-scenes.jsonl.gz",
+      "archiveName": "before-scenes.jsonl.gz",
+      "sha256": "3b0710bd48ebd15bce81755c8fc91828b45299ffd29316a1fa60378dae89af6b",
+      "uncompressedSha256": "89c2dfc2ddf25b91bdc14a5e4f4acb00c599be8e1c63053922a0262ad611550d",
+      "compressedBytes": 2646858,
+      "uncompressedBytes": 53912158
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/before-branches.jsonl.gz",
+      "archiveName": "before-branches.jsonl.gz",
+      "sha256": "a2547c782cf93d2d6f25d69dd66d0e8585cacd7f75280efef4873dbdf979ddb9",
+      "uncompressedSha256": "0c8a695c71a7a9ee691d2779d647231f2c432f88321c6270ea5af7da5e1812f5",
+      "compressedBytes": 1457820,
+      "uncompressedBytes": 14917514
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/before-histories.jsonl.gz",
+      "archiveName": "before-histories.jsonl.gz",
+      "sha256": "62c2812e6036d7d37fe846b18d7c60991747c77e1843fc2a0bddadfbcbf30d5b",
+      "uncompressedSha256": "f59b66d70cb4c0bf949243d34a6ad5df9522cac616f0be95bbaffac5bbbf9d41",
+      "compressedBytes": 285382,
+      "uncompressedBytes": 1280665
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/before-summary.json.gz",
+      "archiveName": "before-summary.json.gz",
+      "sha256": "07049632fe2c2f5ee6091f0b37d1d748b0c2701305bf7ae8d144c6b2f62075cc",
+      "uncompressedSha256": "6e4b801a089517c77c08988933ab99a511658c36dd3ccb567963cfa6fb7c48f6",
+      "compressedBytes": 759,
+      "uncompressedBytes": 1556
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-candidate-comparisons.jsonl.gz",
+      "archiveName": "after-candidate-comparisons.jsonl.gz",
+      "sha256": "53111e1e58fbfb1d18e2a9038617a4f430d4485c2cd0fc04556cdb80a7b8c155",
+      "uncompressedSha256": "32965e4e91da7c895d470e2a08ed303928366f07084bfb78616c72423bcd461b",
+      "compressedBytes": 12555908,
+      "uncompressedBytes": 132706470
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/semantic-comparison-summary.json.gz",
+      "archiveName": "semantic-comparison-summary.json.gz",
+      "sha256": "4049d41fc6423fc071c60f3cfee548e6d292353994e3589e8f2aec967491a98b",
+      "uncompressedSha256": "c150880e19b793728f4d1530cfd0dbc71825fc03458a433b2fc5bb795dfc77ac",
+      "compressedBytes": 1559,
+      "uncompressedBytes": 5316
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/before-after-scenes.jsonl.gz",
+      "archiveName": "before-after-scenes.jsonl.gz",
+      "sha256": "ef7a6b92ced691b5ab2af42de1e5544fd5eee2edd03d4d5d047e7574295a574e",
+      "uncompressedSha256": "6f3395d29d95a284718893ce6d175cc4f960b0c0e42c02f516c174ab456d04c8",
+      "compressedBytes": 386993,
+      "uncompressedBytes": 6500885
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/AFTER_VISIBLE_AI_REPLIES_CLOSURE.jsonl.gz",
+      "archiveName": "AFTER_VISIBLE_AI_REPLIES_CLOSURE.jsonl.gz",
+      "sha256": "5c5e117a52f87d7ec08bc2544bc1564f379dac6bba4a8038409026ec41fa721e",
+      "uncompressedSha256": "adb1bde4e3d3cae1fa0a4a03915357ca9023eeee94146fa85851d71c655fab8c",
+      "compressedBytes": 1215658,
+      "uncompressedBytes": 15662484
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-editorial-annotations.json.gz",
+      "archiveName": "after-editorial-annotations.json.gz",
+      "sha256": "f57fd23f2c407919c75557603093cc42b4b872cde90e9b8cd79ec0ce3acf0e16",
+      "uncompressedSha256": "07db050cb9e2eb10ed5f4dc2b64b632ef6be1011e04d1d590d70779714729883",
+      "compressedBytes": 413521,
+      "uncompressedBytes": 2954593
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-scenes.jsonl.gz",
+      "archiveName": "after-scenes.jsonl.gz",
+      "sha256": "38e6a2349c523653f93f945025918cc410da1a9619a88355a4679fe046436b92",
+      "uncompressedSha256": "ac7cc82194778401e41e3811406f0cb1e582950cdffe1feb893f55aa2e6d4ae1",
+      "compressedBytes": 2649340,
+      "uncompressedBytes": 53934335
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-branches.jsonl.gz",
+      "archiveName": "after-branches.jsonl.gz",
+      "sha256": "fa5728143c61a32b5f56e6b4d231259dd746aec8274002717a4b16bfa1ff266c",
+      "uncompressedSha256": "d53172231c81e563671e96cb1d34f67aa89f18d1d5237e582ef0b7e2247c34ae",
+      "compressedBytes": 1484895,
+      "uncompressedBytes": 15055391
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-histories.jsonl.gz",
+      "archiveName": "after-histories.jsonl.gz",
+      "sha256": "e8462f501dc30fbaf377027cd6ced804f7051cb9c14d94134b24228f06916897",
+      "uncompressedSha256": "f38e14570e244be296570e0fb8997c5ed2b31ed9e1e044460c178b6bf468e2a7",
+      "compressedBytes": 289017,
+      "uncompressedBytes": 1294443
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-summary.json.gz",
+      "archiveName": "after-summary.json.gz",
+      "sha256": "7f48c3fb096853339943757d6aa937bae521dc64505a88bab58db6e61f7981ca",
+      "uncompressedSha256": "a256bacb7fb0c99df70d4d539d3692ff2594bafd8cefe1028ed10c17d8853208",
+      "compressedBytes": 746,
+      "uncompressedBytes": 1558
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/after-closure-summary.json.gz",
+      "archiveName": "after-closure-summary.json.gz",
+      "sha256": "2fad7838822a8cc20e5fccff8eebbb592b30c470105235442e4eb7a970de119b",
+      "uncompressedSha256": "06fb13b365785c2a0e73780a6078b5946c041867f26402f138cc84d96e77742a",
+      "compressedBytes": 483,
+      "uncompressedBytes": 1256
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/editorial-source-after-closure-parent-manual-r4.json.gz",
+      "archiveName": "editorial-source-after-closure-parent-manual-r4.json.gz",
+      "sha256": "040de3431198a74e07d7454daf8cccca2c272131d7ed00aa97f4654f43a7509b",
+      "uncompressedSha256": "20fa156eb25760b08170cdb538582556393204ada8cf688968e100985a81dcfb",
+      "compressedBytes": 35440,
+      "uncompressedBytes": 905807
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/editorial-source-after-closure-act4-manual.json.gz",
+      "archiveName": "editorial-source-after-closure-act4-manual.json.gz",
+      "sha256": "19b9423fbbfd4a03850de212741e0becd4c64e4be0efa7bbe370a6a5d09a9e8e",
+      "uncompressedSha256": "8e60ed3313b5036a664b75235e82a38b91042ed283876cb38028538e8b82ac5c",
+      "compressedBytes": 71000,
+      "uncompressedBytes": 923340
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/editorial-source-after-closure-act5-manual-r4.json.gz",
+      "archiveName": "editorial-source-after-closure-act5-manual-r4.json.gz",
+      "sha256": "af16c6483d0285e801a47f2aee80c4a8a90530d1e5202a349b3945b220e8cc2a",
+      "uncompressedSha256": "e20215ddd3309b20090cd700468eba37fa31ab38b030fef2dd65c4ccb701420c",
+      "compressedBytes": 111917,
+      "uncompressedBytes": 2385670
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/editorial-source-after-closure-remaining-manual.json.gz",
+      "archiveName": "editorial-source-after-closure-remaining-manual.json.gz",
+      "sha256": "8c4257baba1050f419f9b8151f5ef0090b6d5e8601b7c0c8f551f6e1c7d043d5",
+      "uncompressedSha256": "99d2e3621fed4749934215d67047b757c11f8fe3accf40d14dc1f5fc67d1cb66",
+      "compressedBytes": 91618,
+      "uncompressedBytes": 2538159
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/explicit-new-combinations.jsonl.gz",
+      "archiveName": "explicit-new-combinations.jsonl.gz",
+      "sha256": "c76386e3bdb25a9aeb03e55acf68aea5550e14010fbc8f332468f26ff36e3976",
+      "uncompressedSha256": "7382ac3f6e7aeec9131fac1227d08e137bf05a483ed1e365e2d7d008d3df2bce",
+      "compressedBytes": 21704,
+      "uncompressedBytes": 475529
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/legitimate-relay-classification.jsonl.gz",
+      "archiveName": "legitimate-relay-classification.jsonl.gz",
+      "sha256": "f28f393b334007fad200fb2f93e3f710fa0a146b459db201f399bff7198e226f",
+      "uncompressedSha256": "8c9740863a144dd1f269d102bccadc812fef8c99e7f4e791d55d22a9dafa50a0",
+      "compressedBytes": 90369,
+      "uncompressedBytes": 840141
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/contract-display-review.json.gz",
+      "archiveName": "contract-display-review.json.gz",
+      "sha256": "ea01f230eae2e9ebc5c03ae23a3edeef84479876d2a80f64a59a19b1ed06ca6e",
+      "uncompressedSha256": "97d03291abae5c7f280f3550039dc6e736c468172b340ca0322551c0be5cec4d",
+      "compressedBytes": 1532,
+      "uncompressedBytes": 3171
+    },
+    {
+      "path": "docs/audits/chat-first-contract-20261016/appendix/contract-normalization-proof.json.gz",
+      "archiveName": "contract-normalization-proof.json.gz",
+      "sha256": "34fae6c620fbb97f008f4dbf1298d54f812fc9f5517be9626fe6f1b3209d5977",
+      "uncompressedSha256": "c2b3470d3337faf5cc4b67c9bfaea32b299616d3d9e85ab6796ab6900f432a7f",
+      "compressedBytes": 527,
+      "uncompressedBytes": 778
+    }
+  ],
+  "changedSceneSamples": 443,
+  "pendingRecommendations": [],
+  "materializedRecommendations": [
+    "v-025e7c8da1ecfa79ae05ed87:maya-minimum-warm",
+    "v-17884db154c2272f4082b6e7:ml2-a2-m3-stress-01-a2m3-stress-001-scenario-set",
+    "v-17884db154c2272f4082b6e7:ml2-a2-m3-stress-01-a2m3-stress-001-fast-action-bias",
+    "v-edb0bfcf807113fb17994902:ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
+    "v-edb0bfcf807113fb17994902:ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully",
+    "v-edb0bfcf807113fb17994902:ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
+    "v-efb7ed1c583af2572ddad010:ml2-a2-m3-we-07-a2m3-we-result-negative-001-acknowledge-real-cost",
+    "v-efb7ed1c583af2572ddad010:ml2-a2-m3-we-07-a2m3-we-result-negative-001-governance",
+    "v-efb7ed1c583af2572ddad010:ml2-a2-m3-we-07-a2m3-we-result-negative-001-no-false-fairness",
+    "v-efb7ed1c583af2572ddad010:ml2-a2-m3-we-07-a2m3-we-result-negative-001-concise",
+    "v-7bfe1a84771eae481324d49d:ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
+    "v-7bfe1a84771eae481324d49d:ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully",
+    "v-7bfe1a84771eae481324d49d:ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
+    "v-ab4869029b4b71539ec58bbd:ml2-a2-m3-we-06-a2m3-we-result-positive-001-no-overclaim",
+    "v-ab4869029b4b71539ec58bbd:ml2-a2-m3-we-06-a2m3-we-result-positive-001-acknowledge-system-role-carefully",
+    "v-ab4869029b4b71539ec58bbd:ml2-a2-m3-we-06-a2m3-we-result-positive-001-human-centered",
+    "v-136df16da2a45969e8292acd:ally-final-hide-stay",
+    "v-136df16da2a45969e8292acd:ally-final-hide-honest",
+    "v-136df16da2a45969e8292acd:ally-final-hide-signal"
+  ],
+  "note": "Hashes pin compressed transport bytes and decoded contents. Canonical source candidate text, verdicts, all legal direct forks and saved histories are retained. Full JSONL is extracted only under the chosen local output directory. Explicit editorial annotations describe model/agent judgment, not a real human playthrough."
+}

@@ -1,2 +1,5 @@
 # Mainline 2.0's canonical Markdown retains intentional two-space hard breaks.
 docs/narrative-libraries/mainline2/*.md whitespace=-trailing-space
+# Audit hashes must survive Windows checkout without newline conversion.
+docs/audits/chat-first-contract-20261016/appendix/SHA256SUMS.json text eol=lf
+docs/audits/chat-first-contract-20261016/appendix/*.gz -text

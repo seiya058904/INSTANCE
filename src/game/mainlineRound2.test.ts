@@ -18,7 +18,7 @@ const idFor = (node: string, suffix: string) => MAINLINE2_LIBRARY.flatMap(c => c
 describe('Round 2 authored consequences', () => {
   it('binds every editorial reply to exactly one existing choice without changing its effects', () => {
     const nodes = [...MAINLINE2_LIBRARY, ...activeRunConversations, ...ordinaryConversationPool].flatMap(c => c.nodes)
-    const run = createMainline2Run('round2-binding-audit')
+    const run = createMainline2Run('round2-binding-audit', undefined, 3)
     for (const [nodeId, copy] of Object.entries(NEXT_REPLIES)) {
       const node = nodes.find(n => n.id === nodeId)!
       expect(node, nodeId).toBeDefined()

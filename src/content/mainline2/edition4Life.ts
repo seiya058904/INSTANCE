@@ -85,6 +85,18 @@ const incidents = {
 } as const
 type LifeIncident = keyof typeof incidents
 
+// The renewal bridge already paid for the original park's ramp. New trials
+// concern a second site; in-flight old choices retain their original receipt.
+const secondParkDogs = {
+  prompt: '原试点公园的缓坡已经建好，这项成绩留在续期材料里。今天送来的是河西公园另一笔预算：草案把最多的钱拨给飞盘活动，犬类代表投了反对票——这里的台阶仍挡着老犬。\n独立翻译审计确认，反对的是河西公园的预算，不是游戏。承包商说改这里的缓坡就要取消本季活动；重编一份同时保留两项的小预算要等一周，河西的台阶也再挡一周。',
+  yes: '执行河西公园的反对票，取消这里本季的飞盘活动，将这笔预算改为缓坡；新方案由参与者复核。',
+  no: '退回河西公园草案，花一周重编这里缩小后的活动与缓坡预算；公开等待和通行不便，不动原试点已建好的坡道。',
+  yesResult: '河西公园的飞盘活动取消，这里的缓坡开工了。承包商退回这笔活动预付款，犬类代表复核坡度；照护者要解释为什么河西今年没有庆典。原试点坡道继续使用，河西的反对票确实改变了支出。',
+  noResult: '河西公园原预算没有执行。一周后这里两项都缩小，缓坡终于开工；等待时仍有人得把老犬抱上河西的台阶。原试点坡道照常使用，河西那张被退回的草案没有补盖赞成章。',
+  laterYes: '老犬自己走上河西公园的新坡。年轻的那只在河西的空活动场找了半圈飞盘，又回来等它。原试点和河西各留着自己的账，下次预算会仍得分别听两条意见。',
+  laterNo: '河西公园新坡道短了一截，活动也少了半天。代表再次提出意见，工作人员这回没说是互动环节。原试点的成绩仍在；河西那张被退回的预算确实没花出去。',
+} as const
+
 export const EDITION4_LIFE: ConversationDefinition[] = [
   {
     id: 'v4-life-clinic-next', sourceRefs: ['ML2-V4-LIFE-CLINIC-NEXT'], act: 4, module: 'ascension', behaviorModes: ['direct'], handoffProfile: 'sensitive', turnShape: 'dialogue', topic: '身体还是另一份人生',
@@ -142,9 +154,14 @@ export function speciesIncident(run: StableRunState): LifeIncident | undefined {
 }
 export function resolveEdition4Life(scene: ResolvedScene, run: StableRunState): ResolvedScene {
   if (run.mainlineCalendarVersion !== 4) return scene
+  if (scene.id === 'v4-life-dogs' && run.mainlineCausalityVersion === 1) return {
+    ...scene, userMessage: secondParkDogs.prompt,
+    choices: scene.choices.map(choice => ({ ...choice, text: choice.id.endsWith('-fund') ? secondParkDogs.yes : secondParkDogs.no })),
+  }
   const saved = run.history.find(h => Object.keys(incidents).some(branch => h.nodeId === `v4-life-${branch}`))
   if (!saved) return scene
-  const source = incidents[saved.nodeId.replace('v4-life-', '') as LifeIncident]
+  const source = saved.nodeId === 'v4-life-dogs' && saved.assistantText.includes('河西公园')
+    ? secondParkDogs : incidents[saved.nodeId.replace('v4-life-', '') as LifeIncident]
   const funded = saved.choiceId.endsWith('-fund')
   const text = scene.id === `${saved.nodeId}-receipt` ? funded ? source.yesResult : source.noResult
     : scene.id === 'v4-life-return' ? funded ? source.laterYes : source.laterNo : undefined

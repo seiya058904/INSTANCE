@@ -308,7 +308,10 @@ export function commitChoice(run: StableRunState, choiceId: string): StableRunSt
   let proposalFields: Partial<StableRunState> = {}
 
   if (choice.proposalKind && choice.proposalId && choice.proposalKind !== 'commitment') {
-    const generatedIds = (run.retainedProposalIds ?? run.availableProposalIds ?? generateFutureProposals(run).map((proposal) => proposal.id))
+    // Loading a checkpoint normalizes an ungenerated menu to empty arrays.
+    // Retain exactly the menu shown by resolveScene, while preserving old IDs.
+    const retained = run.retainedProposalIds ?? run.availableProposalIds ?? []
+    const generatedIds = retained.length ? retained : generateFutureProposals(run).map((proposal) => proposal.id)
     const retainedProposalIds = [...generatedIds]
     const rejectedProposalIds = choice.proposalKind === 'rejection'
       ? [...new Set([...(run.rejectedProposalIds ?? []), choice.proposalId])]

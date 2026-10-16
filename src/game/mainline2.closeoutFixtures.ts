@@ -1,6 +1,7 @@
 import { getManifestConversation } from '../content/runManifest'
 import { generateFutureProposals } from '../content/mainline2/futureProposalGenerator'
-import { getFutureProposalDefinitions } from '../content/mainline2/proposals'
+import { getFutureProposalById, getFutureProposalDefinitions } from '../content/mainline2/proposals'
+import { proposalContract } from '../content/mainline2/proposalPresentation'
 import { evaluateCondition } from './narrativeSchema'
 import { resolveMainline2Ending } from '../content/mainline2/endings'
 import { createMainline2Run, commitChoice, resolveScene } from './engine'
@@ -70,6 +71,14 @@ export function runMainline2Route(target: Mainline2RouteTarget): Mainline2RouteF
     if (ref === 'ML2-A5-M16-GEN-01') {
       const selectedProposalId = target.initialProposalId ?? target.proposalId
       choice = scene.choices.find((candidate) => candidate.proposalKind === 'proposal' && matchesProposalLineage(candidate.proposalId, selectedProposalId))
+      // A fresh menu may represent two equivalent base proposals with one ID.
+      // Follow that legal visible choice only when its complete bargain matches.
+      if (!choice && target.edition === 4) {
+        const desired = getFutureProposalById(selectedProposalId)
+        const contract = desired && JSON.stringify(proposalContract(run, desired))
+        choice = scene.choices.find(candidate => candidate.proposalKind === 'proposal' && candidate.proposalId
+          && JSON.stringify(proposalContract(run, getFutureProposalById(candidate.proposalId)!)) === contract)
+      }
       if (choice?.proposalId) {
         initialRouteProposalId = choice.proposalId
         if (!target.initialProposalId) routeProposalId = choice.proposalId

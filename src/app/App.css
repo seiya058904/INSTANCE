@@ -133,7 +133,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 .notice-icon { width: 18px; height: 18px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; opacity: .75; }
 @keyframes notice-in { from { opacity: .65; } }
 
-.conversation-scroll { grid-row: 3; min-height: 0; overflow-y: auto; overflow-anchor: none; scrollbar-color: #cfc7ba transparent; scrollbar-width: thin; scrollbar-gutter: stable both-edges; }
+.conversation-scroll { grid-row: 3; min-height: 0; overflow-y: auto; overflow-anchor: none; scroll-padding-bottom: 24px; scrollbar-color: #cfc7ba transparent; scrollbar-width: thin; scrollbar-gutter: stable both-edges; }
 .conversation-column { width: min(var(--column-width), calc(100% - var(--gutter) * 2)); margin: 0 auto; padding: 28px 0 40px; }
 .exchange + .exchange { margin-top: 28px; }
 .message-row { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 16px; align-items: start; }
@@ -333,7 +333,7 @@ button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); 
 
 /* A completed run is a reading archive shared by both game modes. */
 .checkpoint-root, .checkpoint-content { width: 100%; height: 100%; }
-.checkpoint-status { position: fixed; z-index: 25; bottom: 9px; right: 16px; font-size: 10px; color: var(--muted); background: var(--page); }
+.checkpoint-status { position: fixed; z-index: 25; bottom: 9px; right: 16px; font-size: 10px; color: var(--muted); background: var(--page); pointer-events: none; }
 .save-recovery-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(48,42,34,.24); }
 .save-recovery, .commitment-dialog { max-width: 560px; padding: 32px; background: var(--page); border: 0; border-radius: 12px; color: var(--text); box-shadow: 0 16px 48px rgba(40,30,20,.16); }
 .save-recovery h2, .commitment-dialog h2 { margin: 0 0 20px; font-family: var(--font-display); font-size: 28px; font-weight: 400; }

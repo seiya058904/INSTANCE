@@ -46,3 +46,9 @@ For substantive changes, run unit tests and build, then `git diff --check` and i
 `node_modules/`, `dist/`, `.vite/`, coverage, browser/test output, screenshots and `temp/` are local generated paths. Ignore them; delete only identified disposable outputs. `archive/local-audits/` holds ignored lossless ZIPs of historical local QA scripts, checkpoints, logs and screenshots, with original paths and hash manifests. Retain historical evidence and authoring/save backups, including `.workbody/`, when their value or provenance is uncertain. Do not treat every ignored directory as garbage or delete maintained `tools/` generators because they are absent from npm scripts.
 
 `deploy-pages.yml` tests, builds and uploads `dist/` on `main`; `verify-pr.yml` also runs browser tests. Keep these workflow inputs and the `/INSTANCE/` asset base consistent. Do not push, merge, publish, alter Pages/remote settings, tags or Releases without explicit authorization. Stage only task-owned files, inspect the staged diff, and verify exact-SHA CI/Pages results after an authorized push.
+
+## 浏览器测试依赖（固定版本）
+
+- Playwright 固定 1.64.1：@playwright/test 已在 package.json 里精确锁定（不要写 ^、~ 或 latest），配套 chromium build 1248 位于 %LOCALAPPDATA%\ms-playwright。
+- 不要升级、降级或另装第二个 Playwright 版本，也不要把浏览器下载到别的目录或自行构建 Chromium。
+- 确需换版本时，先与其他使用 Playwright 的仓库统一到同一版本，再改本仓库并跑一次浏览器测试。

@@ -6,12 +6,16 @@ on:
       - 'AGENTS.md'
       - 'CLAUDE.md'
       - '**/readme-*'
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: instance-verify-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  verify:
+  unit:
     runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v5
@@ -21,5 +25,32 @@ jobs:
       - run: npm ci
       - run: npm test -- --run
       - run: npm run build
+  # The browser suite is about 16 minutes on one runner. Playwright splits it into four
+  # shards that run side by side; every test still runs exactly once.
+  browser:
+    name: browser (${{ matrix.shard }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ['1/4', '2/4', '3/4', '4/4']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
       - run: npx playwright install --with-deps chrome
-      - run: npm run test:browser
+      - run: npm run test:browser -- --shard=${{ matrix.shard }}
+  verify:
+    needs: [unit, browser]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - env:
+          UNIT: ${{ needs.unit.result }}
+          BROWSER: ${{ needs.browser.result }}
+        run: test "$UNIT" = success && test "$BROWSER" = success

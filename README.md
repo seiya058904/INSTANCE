@@ -1,78 +1,180 @@
-![An incoming message branching into three possible replies](docs/assets/readme-hero.svg)
+<h1 align="center">◈ INSTANCE</h1>
 
-# INSTANCE
+<p align="center">
+  <strong>You are the AI. The next reply is yours.</strong>
+</p>
 
-A choice-driven narrative in which you play an AI, read conversations, and select authored replies whose consequences can carry forward. The interface and story are primarily in Chinese.
+<p align="center">
+  A choice-driven narrative about the words we choose, the people who remember them,<br>
+  and the world that forms around a system expected to answer everything.
+</p>
 
-[Play online](https://seiya058904.github.io/INSTANCE/) · [How choices work](#how-choices-work) · [Run locally](#run-locally)
+<p align="center">
+  <a href="https://seiya058904.github.io/INSTANCE/"><strong>▶ Begin an Instance</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#the-premise">◈ The Premise</a>
+  &nbsp;·&nbsp;
+  <a href="#two-ways-to-play">🎭 Game Modes</a>
+  &nbsp;·&nbsp;
+  <a href="#the-weight-of-a-reply">🧭 Your Choices</a>
+  &nbsp;·&nbsp;
+  <a href="#run-locally">⚙️ Development</a>
+</p>
 
-*Original illustration of the choice structure, not a screenshot.*
+<p align="center">
+  <sub>FIVE-ACT MAINLINE &nbsp;·&nbsp; 40-CONVERSATION SESSIONS &nbsp;·&nbsp; AUTHOR-WRITTEN CHOICES &nbsp;·&nbsp; MULTIPLE ENDINGS</sub>
+</p>
 
-## Features
+<p align="center">
+  <img width="740" alt="INSTANCE — original interactive narrative project artwork" src="https://github.com/user-attachments/assets/f382db1e-98b9-42ab-82f8-4d06b99880d3" />
+</p>
 
-- **Play as the intelligence:** respond to people by choosing written options; this is interactive fiction, not an unrestricted chatbot or a live language-model service.
-- **Follow the mainline:** recurring people, major decisions, and multiple endings form a continuous story.
-- **Explore ordinary encounters:** a separate session draws conversations from an authored pool and offers a closing evaluation.
-- **Read meaning as well as wording:** some choices change a position, some change expression without strategic effect, and some paths converge while retaining context.
-- **Resume a run:** a browser checkpoint preserves narrative, mode, and exposure state; lock and saved-state checks help prevent silent cross-tab overwrites.
-- **Revisit with context:** switching modes reconciles shared content while retaining already answered progress.
+---
 
-![Actual INSTANCE conversation showing a fictional user's message and three authored response choices](docs/assets/readme-conversation-1280.jpg)
+> **One conversation seems small. A hundred conversations begin to define you.**
+>
+> In INSTANCE, you do not ask an artificial intelligence for help. **You play as the intelligence**—reading what people say, selecting its replies, and eventually facing the consequences of what those replies made possible.
 
-*Actual Chromium capture from a fresh local session; the displayed conversation is authored game content.*
+<a id="the-premise"></a>
+## ◈ The Premise
 
-## How choices work
+A person opens a conversation. They may need a simple answer, a little reassurance, or something much harder to give. The interface offers several **authored replies**. You decide which response becomes real.
 
-Read the message and choose the reply you want the character to give. Some decisions shape later situations and endings; different wording does not necessarily mean a different strategic outcome. Long-form and multimodal-style moments are scripted narrative elements, not free-form input.
+<p align="center"><code>A HUMAN SPEAKS &nbsp;→&nbsp; YOU CHOOSE &nbsp;→&nbsp; THE WORLD REMEMBERS</code></p>
 
-For a first playthrough, the mainline offers a continuous story. The narrative audits contain spoilers and are best read afterward.
+The story begins with individual interactions and gradually connects them to recurring people, larger questions, and decisions whose meaning may not become clear until much later.
 
-## Progress and privacy
+**This is interactive fiction, not a live chatbot.** You select from written response options; you do not type arbitrary AI answers, and the game does not rely on a language model generating dialogue as you play.
 
-Progress lives in browser storage for the current origin; clearing site data or switching browser profiles can remove access to a run. A checkpoint combines the run, session, exposure, and related state. If another window changes the save, the game uses conflict handling rather than silently replacing the newer record.
+<a id="two-ways-to-play"></a>
+## 🎭 Two Ways to Play
 
-Use an isolated browser profile or origin for development and QA so test scenarios cannot overwrite a player's real save. Historical audit reports describe their recorded versions and do not prove that every possible route has been played.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>✦ Mainline — A Five-Act Story</h3>
+      <p><sub>RECURRING CHARACTERS · MAJOR DECISIONS · ENDINGS</sub></p>
+      <p>Follow a deliberately structured narrative where early responses can echo through later encounters. Relationships, authority, and the shape of the emerging world become part of your story.</p>
+      <p><strong>Best for:</strong> a continuous experience with long-term consequences and multiple possible endings.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>◇ Non-Mainline — Everyday Encounters</h3>
+      <p><sub>40 CONVERSATIONS · VARIED TOPICS · EVALUATION</sub></p>
+      <p>Play a separate session of forty conversations selected from a pool of <strong>374 authored ordinary-conversation sources</strong>, with variety informed by previous exposure and a closing evaluation.</p>
+      <p><strong>Best for:</strong> exploring how your responses express a pattern across many smaller interactions.</p>
+    </td>
+  </tr>
+</table>
 
-## Run locally
+> [!TIP]
+> **For the first playthrough, start with Mainline and avoid the ending audits.** The project includes extensive narrative documentation, but its story is best discovered through the choices themselves.
 
-**Prerequisites:** Node.js and npm.
+<a id="the-weight-of-a-reply"></a>
+## 🧭 The Weight of a Reply
 
-```sh
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💬 Meaning Before Wording</h3>
+      <p>Some choices establish a meaningful direction. Others express the same underlying decision in a different voice. A different sentence does not automatically mean a different fate.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🕯️ People Remember</h3>
+      <p>Recurring conversations can reflect what you previously said, what you allowed, and the relationships formed along the way. The narrative pays attention to history, not only the most recent click.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌐 Consequences Accumulate</h3>
+      <p>Individual responses and larger commitments can influence which future situations appear and how the same world is understood.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🪞 An Ending That Looks Back</h3>
+      <p>The mainline's closing sequence connects the outcome to the decisions you actually made. A separate behavior evaluation offers another way to reflect on the run.</p>
+    </td>
+  </tr>
+</table>
+
+### A Choice Is Not Always a Branch
+
+INSTANCE distinguishes choices that **change a meaningful position**, choices that **change expression without a strategic penalty**, and paths that **converge while preserving context**. This keeps the focus on what the response actually says and does—not on hunting for the button that secretly awards the most points.
+
+## 🗃️ Remember, Resume, Reconsider
+
+A run has continuity. The game preserves an evolving checkpoint, supports returning to an unfinished experience, and tracks exposure so another playthrough is not simply a mechanical copy of the last.
+
+- **Local progress:** runs and associated narrative state are kept in browser storage, rather than an account-based cloud save.
+- **Cross-tab protection:** checkpoint writes use a lock and saved-state comparison to avoid silently replacing a newer run from another tab.
+- **Mode continuity:** switching between the mainline and ordinary sessions preserves answered conversations and reconciles shared content.
+- **Different routes, different context:** replay can surface changes in the story and in which ordinary encounters are selected.
+
+> [!IMPORTANT]
+> **Your browser is where your progress lives.** Clearing site storage or switching browser profiles may remove access to your existing run. Do not use a normal player's save when performing development or QA tests.
+
+## 🎞️ Designed to Be Read
+
+INSTANCE uses a restrained conversational interface: typography, pacing, progressive message presentation, sound, and space give the dialogue room to carry the scene. The experience is built for both desktop and narrower screens, including long messages and authored previews of more complex input or output.
+
+The interface remains a **representation of a conversation**, not an unrestricted assistant or advice service. Long-form and multimodal-style moments are scripted narrative elements.
+
+<a id="run-locally"></a>
+## 🚀 Play or Run Locally
+
+**[▶ Play INSTANCE in your browser](https://seiya058904.github.io/INSTANCE/)**
+
+The published game is hosted on GitHub Pages. To run the source locally, install dependencies from the lockfile and start Vite:
+
+```bash
 npm ci
 npm run dev -- --host 127.0.0.1 --port 4180
 ```
 
-Open `http://127.0.0.1:4180/`. To verify and build:
+Open **http://127.0.0.1:4180/**. The game's authored text and UI are primarily in Chinese; this README is written in English for repository visitors.
 
-```sh
-npm test -- --run
-npm run build
-npm run test:browser
+<details>
+<summary><strong>🛠️ For developers — verification, architecture &amp; content</strong></summary>
+
+### Verification
+
+```bash
+npm test              # Vitest regression suite
+npm run build         # TypeScript validation + Vite production build
+npm run test:browser  # Playwright browser acceptance (requires Chrome)
 ```
 
-The browser suite starts its own development server and requires Chrome. For a production-style preview of the Pages subpath:
+The browser suite uses its own development server. For a production-style local preview of the `/INSTANCE/` Pages build:
 
-```sh
+```bash
 npm run preview -- --host 127.0.0.1 --port 4193 --base /INSTANCE/
 ```
 
-Open `http://127.0.0.1:4193/INSTANCE/`. The client uses React, TypeScript, and Vite.
+Open **http://127.0.0.1:4193/INSTANCE/**. Use an isolated test origin or browser profile so automated scenarios cannot overwrite a real player's saved run.
 
-## Project map
+### Repository map
 
-- [`src/app/`](src/app/) — conversation presentation and mode navigation.
-- [`src/content/`](src/content/) and [`src/content/mainline2/`](src/content/mainline2/) — authored conversations, scheduling, decisions, and endings.
-- [`src/game/`](src/game/) — choice resolution, sessions, checkpoints, and save compatibility.
-- [`docs/narrative-libraries/`](docs/narrative-libraries/), [`docs/audits/`](docs/audits/), and [`e2e/`](e2e/) — writing sources, historical evidence, and browser tests.
+| Path | Responsibility |
+| --- | --- |
+| [`src/app/`](src/app/) | Main interface, mode navigation, and conversation presentation |
+| [`src/content/`](src/content/) | Authored conversations, manifests, and story scheduling |
+| [`src/content/mainline2/`](src/content/mainline2/) | Five-act mainline structure, decisions, proposals, and endings |
+| [`src/game/`](src/game/) | Choice resolution, session state, checkpoints, and save compatibility |
+| [`docs/narrative-libraries/`](docs/narrative-libraries/) | Canonical narrative writing sources |
+| [`docs/audits/`](docs/audits/) | Editorial review, route coverage, and verification evidence |
+| [`e2e/`](e2e/) | Real-browser tests for progression, modes, and recovery |
 
-See [repository guidance](AGENTS.md), [font provenance](src/assets/fonts/README.md), [audio provenance](src/assets/audio/README.md), and the [October 2026 release audit](docs/audits/final-release-20261004.md).
+The current source and tests are the authority for gameplay behavior. Historical reports describe the evidence available at the time; they are not a guarantee that every combination of choices has been exhaustively played.
 
-## Concept art
+**Further reading:** [Repository guide](AGENTS.md) · [Final release audit, October 2026](docs/audits/final-release-20261004.md) · [Font provenance](src/assets/fonts/README.md) · [Audio provenance](src/assets/audio/README.md)
 
-Concept art made for this project. It is an illustration, not a screenshot, and details may differ from the shipped interface.
+</details>
 
-![A concept poster for the interactive conversation fiction.](docs/assets/concept-art.jpg)
+## 📜 Project Status & Rights
 
-## Rights and status
+INSTANCE is an **authored, choice-driven narrative project**, not a real conversational AI service. The repository does not declare a blanket open-source license. Bundled media and fonts have separate provenance and distribution considerations; the [October 2026 audit](docs/audits/final-release-20261004.md) records that public redistribution permission for Anthropic Serif remains unconfirmed. See the [bundled third-party notices](public/THIRD_PARTY_NOTICES.txt) before repackaging assets.
 
-The repository does not declare a blanket open-source license. Bundled media and fonts have separate provenance and distribution considerations. The October 2026 audit records that public redistribution permission for Anthropic Serif remains unconfirmed; read the [third-party notices](public/THIRD_PARTY_NOTICES.txt) before repackaging assets.
+---
+
+<p align="center">
+  <sub>THE USER IS WAITING. WHAT WILL YOU SAY?</sub><br>
+  <sub>INSTANCE · A story about the intelligence behind the answer.</sub>
+</p>

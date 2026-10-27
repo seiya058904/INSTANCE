@@ -1,4 +1,8 @@
 name: Verify pull request
+# Pull requests run the unit tests, the build, 149 browser tests in three shards, and four
+# representative "full causal closeout" playthroughs (one per viewport width). The complete
+# set of 21 closeout playthroughs is the slowest part of the suite, so it runs weekly and on
+# demand (and before a release) instead of on every pull request.
 on:
   pull_request:
     paths-ignore:
@@ -7,10 +11,12 @@ on:
       - 'CLAUDE.md'
       - '**/readme-*'
   workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
 permissions:
   contents: read
 concurrency:
-  group: instance-verify-${{ github.ref }}
+  group: instance-verify-${{ github.ref }}-${{ github.event_name }}
   cancel-in-progress: true
 jobs:
   unit:
@@ -25,16 +31,23 @@ jobs:
       - run: npm ci
       - run: npm test -- --run
       - run: npm run build
-  # The browser suite is about 16 minutes on one runner. Playwright splits it into four
-  # shards that run side by side; every test still runs exactly once.
   browser:
-    name: browser (${{ matrix.shard }})
+    name: browser (${{ matrix.name }})
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
-        shard: ['1/4', '2/4', '3/4', '4/4']
+        include:
+          - {name: tests 1/3, grep_invert: 'edition4 full causal closeout', shard: '1/3'}
+          - {name: tests 2/3, grep_invert: 'edition4 full causal closeout', shard: '2/3'}
+          - {name: tests 3/3, grep_invert: 'edition4 full causal closeout', shard: '3/3'}
+          - {name: closeout sample, grep: 'edition4 full causal closeout (peace_in_our_time 390|fortress_earth 320|machine_protectorate 1440|control_lost 768) base'}
+    env:
+      GREP: ${{ matrix.grep }}
+      GREP_INVERT: ${{ matrix.grep_invert }}
+      SHARD: ${{ matrix.shard }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v5
@@ -43,9 +56,49 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chrome
-      - run: npm run test:browser -- --shard=${{ matrix.shard }}
+      - name: Run this slice of the browser suite
+        run: |
+          args=()
+          [ -n "$GREP" ] && args+=(--grep "$GREP")
+          [ -n "$GREP_INVERT" ] && args+=(--grep-invert "$GREP_INVERT")
+          [ -n "$SHARD" ] && args+=("--shard=$SHARD")
+          npm run test:browser -- "${args[@]}"
+  browser-full:
+    name: browser full (${{ matrix.name }})
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: tests 1/3, grep_invert: 'edition4 full causal closeout', shard: '1/3'}
+          - {name: tests 2/3, grep_invert: 'edition4 full causal closeout', shard: '2/3'}
+          - {name: tests 3/3, grep_invert: 'edition4 full causal closeout', shard: '3/3'}
+          - {name: closeout 320, grep: 'edition4 full causal closeout \S+ 320 '}
+          - {name: closeout 390, grep: 'edition4 full causal closeout \S+ 390 '}
+          - {name: closeout 768 and 1440, grep: 'edition4 full causal closeout \S+ (768|1440) '}
+    env:
+      GREP: ${{ matrix.grep }}
+      GREP_INVERT: ${{ matrix.grep_invert }}
+      SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chrome
+      - name: Run this slice of the browser suite
+        run: |
+          args=()
+          [ -n "$GREP" ] && args+=(--grep "$GREP")
+          [ -n "$GREP_INVERT" ] && args+=(--grep-invert "$GREP_INVERT")
+          [ -n "$SHARD" ] && args+=("--shard=$SHARD")
+          npm run test:browser -- "${args[@]}"
   verify:
-    needs: [unit, browser]
+    needs: [unit, browser, browser-full]
     if: always()
     runs-on: ubuntu-24.04
     timeout-minutes: 5
@@ -53,4 +106,9 @@ jobs:
       - env:
           UNIT: ${{ needs.unit.result }}
           BROWSER: ${{ needs.browser.result }}
-        run: test "$UNIT" = success && test "$BROWSER" = success
+          FULL: ${{ needs.browser-full.result }}
+        run: |
+          test "$UNIT" = success
+          case "$BROWSER" in success|skipped) ;; *) exit 1;; esac
+          case "$FULL" in success|skipped) ;; *) exit 1;; esac
+          test "$BROWSER" = success -o "$FULL" = success

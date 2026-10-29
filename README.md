@@ -1,6 +1,12 @@
 <h1 align="center">◈ INSTANCE</h1>
 
 <p align="center">
+  <a href="https://seiya058904.github.io/INSTANCE/">
+    <img src="docs/media/readme-cover.svg" width="100%" alt="Original dark conversation illustration for INSTANCE, with a human message, an authored reply and an unfinished conversation." />
+  </a>
+</p>
+
+<p align="center">
   <strong>You are the AI. The next reply is yours.</strong>
 </p>
 
@@ -122,7 +128,7 @@ The interface remains a **representation of a conversation**, not an unrestricte
 
 **[▶ Play INSTANCE in your browser](https://seiya058904.github.io/INSTANCE/)**
 
-The published game is hosted on GitHub Pages. To run the source locally, install dependencies from the lockfile and start Vite:
+The published game is hosted on GitHub Pages. For local development, use **Node.js 22.12+** and npm, install dependencies from the lockfile, and start Vite:
 
 ```bash
 npm ci

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">INSTANCE — conversational narrative cover</title>
+  <desc id="desc">Original dark conversation illustration for INSTANCE, with a human message, an authored reply and an unfinished conversation.</desc>
+  <defs><linearGradient id="bg"><stop stop-color="#101820"/><stop offset="1" stop-color="#182730"/></linearGradient></defs>
+  <rect width="1200" height="400" rx="18" fill="url(#bg)"/>
+  <path d="M0 335h1200M672 0v400" stroke="#34505b" stroke-width="1"/>
+  <g fill="#263e48"><circle cx="723" cy="46" r="2"/><circle cx="755" cy="46" r="2"/><circle cx="787" cy="46" r="2"/><circle cx="819" cy="46" r="2"/></g>
+  <rect x="57" y="64" width="9" height="23" rx="2" fill="#9cd6ce"/>
+  <text x="82" y="83" font-family="Arial, sans-serif" font-size="18" fill="#a7c9c9" letter-spacing="4">AUTHORED INTERACTIVE FICTION</text>
+  <text x="55" y="184" font-family="'Courier New', monospace" font-size="86" fill="#edf5f1" letter-spacing="-3">INSTANCE</text>
+  <text x="61" y="238" font-family="Georgia, serif" font-size="31" fill="#e1e9e6">You are the AI.</text>
+  <text x="61" y="282" font-family="Georgia, serif" font-size="31" fill="#9fbdbf">The next reply is yours.</text>
+  <g font-family="'Courier New', monospace" font-size="15" fill="#a6c1c3" letter-spacing="2"><text x="61" y="371">A CONVERSATION BECOMES A HISTORY</text></g>
+  <g fill="none" stroke="#6b9a9c" stroke-width="2"><path d="M744 130v74h54M853 228v62h73"/><path d="M744 130V88h38" opacity=".35"/></g>
+  <rect x="724" y="71" width="334" height="80" rx="14" fill="#263c46" stroke="#48636b"/>
+  <circle cx="752" cy="98" r="5" fill="#d1b48c"/>
+  <path d="M772 98h188M752 122h266" stroke="#91a9ab" stroke-width="4" stroke-linecap="round"/>
+  <rect x="798" y="181" width="335" height="80" rx="14" fill="#29443f" stroke="#80afa3"/>
+  <circle cx="826" cy="208" r="5" fill="#a9dac5"/>
+  <path d="M846 208h186M826 232h230" stroke="#b7d0c5" stroke-width="4" stroke-linecap="round"/>
+  <rect x="926" y="290" width="172" height="54" rx="12" fill="#182c35" stroke="#637e86" stroke-dasharray="5 5"/>
+  <circle cx="981" cy="317" r="4" fill="#8babb0"/><circle cx="1006" cy="317" r="4" fill="#8babb0"/><circle cx="1031" cy="317" r="4" fill="#8babb0"/>
+
+</svg>

@@ -12,7 +12,7 @@ INSTANCE is a React + TypeScript narrative game: the player acts as an AI and se
 - `src/game/checkpoint.ts` stores the combined run, session, mode, exposure and meta state. New games use calendar edition 4 with causality version 1; edition 3 and interim edition-4 records remain readable with their original interpretation. The key remains `instance:checkpoint:v2`; preserve validation and lock/CAS behavior. Never infer completed trials while loading old records.
 - `src/content/mainline2/nextNarrative.ts` is the Next edition's Chinese scene/feedback authority, applied after historical localization; `endingCinema.ts` owns its ending storyboard. `docs/narrative-libraries/` retains the underlying authored sources. See `docs/reference/MAINLINE-NEXT.md` for editing boundaries. `docs/audits/` holds verification evidence; `tools/` holds maintained generators; `docs/workbench/` contains local task inputs.
 
-Read relevant runtime code and narrative sources before changing their behavior. Old audit reports and local archives explain history; they do not override current code. For structural exploration, use the installed `codebase-memory` skill, check index freshness and cited-path coverage, and read source for stale or incomplete results.
+Read relevant runtime code and narrative sources before changing their behavior. Old audit reports and local archives explain history; they do not override current code.
 
 ## Invariants and common traps
 
@@ -50,13 +50,17 @@ For substantive changes, run unit tests and build, then `git diff --check` and i
 ## 浏览器测试依赖（固定版本）
 
 - Playwright 固定 1.64.1：@playwright/test 已在 package.json 里精确锁定（不要写 ^、~ 或 latest），配套 chromium build 1248 位于 %LOCALAPPDATA%\ms-playwright。
-- 不要升级、降级或另装第二个 Playwright 版本，也不要把浏览器下载到别的目录或自行构建 Chromium。
-- 确需换版本时，先与其他使用 Playwright 的仓库统一到同一版本，再改本仓库并跑一次浏览器测试。
+- 不得擅自调整本仓库锁定的 Playwright 版本或改用其他项目的浏览器缓存。确需换版本时，先取得明确授权，核对本仓库的兼容性并运行相关浏览器回归。
 
 ## CI policy (minimal-test principle)
 
 The owner decided on 2026-10-27 that CI should run the smallest set of checks relevant to a change and keep heavy suites for schedules and manual runs. Do not undo this by running every closeout playthrough on each pull request.
 
-- Pull requests run the unit tests, the build, 149 browser tests in three shards, and four representative `edition4 full causal closeout` playthroughs (one per viewport width).
+- Pull requests run the unit tests, the build, browser tests in four shards, and four representative `edition4 full causal closeout` playthroughs (one per viewport width).
 - The complete set of 21 closeout playthroughs, split by viewport width, runs weekly and on manual dispatch.
 - The `verify` job is the single gate. README, AGENTS and CLAUDE changes do not start the workflow.
+
+## Browser tool selection
+
+- Prefer Ego Browser for exploratory navigation, visual review and interactive checks when available. Use Playwright for repeatable regression, CI, isolation, request interception or other automation requiring its APIs; combine tools when useful. If Ego is unavailable, use a suitable existing browser tool.
+- Keep this repository's required browser commands, versions, profiles and safety boundaries; an exploratory check does not replace required automated tests. Do not alter real user data or production state for testing. Report the tools, coverage and any untested paths.
